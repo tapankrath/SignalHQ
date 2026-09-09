@@ -125,6 +125,54 @@
   .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
   @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
 
+  .portfolio-bar{
+    max-width:1080px; margin:0 auto; padding:12px 18px;
+    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+    border-bottom:1px solid var(--border); background:var(--surface-2);
+  }
+  .portfolio-bar label{
+    display:flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:700; color:var(--text-dim);
+    white-space:nowrap;
+  }
+  .portfolio-bar input{
+    font-size:16px; font-family:var(--mono);
+    background:var(--surface); border:1px solid var(--border-strong);
+    border-radius:7px; padding:7px 9px; color:var(--text);
+  }
+  #portfolioCapital{ width:120px; }
+  #portfolioSplit{ width:56px; text-align:center; }
+  .portfolio-split-readout{ font-size:12.5px; font-weight:700; color:var(--text-dim); white-space:nowrap; }
+
+  .portfolio-fab{
+    position:fixed; bottom:20px; right:20px; z-index:50;
+    display:flex; align-items:center; gap:8px;
+    background:var(--green); color:#fff; border:none; border-radius:26px;
+    padding:13px 18px; font-family:inherit; font-size:14px; font-weight:800;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25); cursor:pointer;
+  }
+  .portfolio-fab:active{ opacity:0.85; }
+  .portfolio-fab-count{
+    background:rgba(255,255,255,0.25); border-radius:12px;
+    padding:2px 8px; font-family:var(--mono); font-size:13px;
+  }
+
+  .row-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
+  .card-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; margin-right:10px; }
+
+  .portfolio-line-list{ display:flex; flex-direction:column; gap:2px; margin-bottom:10px; }
+  .portfolio-line-item{
+    padding:8px 0; border-bottom:1px solid var(--border);
+  }
+  .portfolio-line-title{ font-weight:700; font-size:14px; margin-bottom:4px; }
+  .portfolio-line-stats{
+    display:flex; flex-wrap:wrap; gap:4px 14px;
+    font-family:var(--mono); font-size:12.5px; color:var(--text-dim);
+  }
+  .portfolio-line-stats b{ color:var(--text); font-weight:700; }
+  .portfolio-line-stats .val-pos{ font-weight:700; margin-left:auto; }
+  .portfolio-line-warn{ color:var(--red); font-size:11.5px; font-weight:600; margin-top:3px; }
+
   .export-btn{
     display:flex; align-items:center; gap:6px;
     background:var(--surface); border:1px solid var(--border-strong);
@@ -455,6 +503,8 @@
     .layout{ padding:14px 12px 155px; }
     .header-inner{ padding:12px 14px; }
     .status-row{ padding:8px 14px; }
+    .portfolio-bar{ padding:10px 14px; gap:10px; }
+    #portfolioCapital{ width:88px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand-sub{ display:none; }
 
@@ -478,6 +528,8 @@
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);
     }
     .active-count{ display:none; }
+    .portfolio-fab{ bottom:calc(20px + env(safe-area-inset-bottom)); right:14px; }
+    .portfolio-fab.clear-apply-bar{ bottom:calc(150px + env(safe-area-inset-bottom)); }
   }
 
   /* only stack outlook columns AND the sections grid on genuinely narrow screens (e.g. iPhone SE) */
@@ -539,6 +591,22 @@
     <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
   </div>
 </header>
+
+<div class="portfolio-bar">
+  <label>
+    Cap $
+    <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
+  </label>
+  <label>
+    Eq %
+    <input type="text" id="portfolioSplit" inputmode="numeric" value="60">
+  </label>
+  <span class="portfolio-split-readout">Opts: <span id="optionsSplitDisplay">40</span>%</span>
+</div>
+
+<button class="portfolio-fab clear-apply-bar" id="portfolioSummaryBtn">
+  View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span>
+</button>
 
 <div class="layout" id="optionsView">
 
@@ -619,6 +687,7 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>Symbol / Strategy</th>
           <th>Side</th>
           <th>Exp / DTE</th>
@@ -666,6 +735,7 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>Symbol</th>
           <th>Price</th>
           <th>Trend</th>
@@ -737,6 +807,14 @@
 
   let currentList = [];
 
+  // Portfolio builder selection state — keyed by stable IDs (not array index,
+  // since sorting/filtering re-renders shift indices but selections should
+  // survive that).
+  const selectedOptionIds = new Set();
+  const selectedEquityIds = new Set();
+  function optionId(t){ return `${t.sym}::${t.strat}::${t.exp}`; }
+  function equityId(e){ return e.sym; }
+
   const tbody = document.getElementById('tableBody');
   const cardList = document.getElementById('cardList');
   const resultCountEl = document.getElementById('resultCount');
@@ -754,7 +832,7 @@
     cardList.innerHTML = '';
 
     if(list.length === 0){
-      tbody.innerHTML = `<tr><td colspan="8" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="9" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</td></tr>`;
       cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</div>`;
     }
 
@@ -762,9 +840,12 @@
       const pill = t.side==='bull'
         ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
         : `<span class="side-pill bear"><span class="dot"></span>Bearish</span>`;
+      const oid = optionId(t);
+      const isChecked = selectedOptionIds.has(oid);
 
       tbody.innerHTML += `
         <tr>
+          <td><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></td>
           <td>
             <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.strike}</span></div>
             <div class="strat-name">${t.strat}</div>
@@ -782,7 +863,8 @@
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top">
-            <div>
+            <input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
+            <div style="flex:1;">
               <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strike}</span></div>
               <div class="strat-name">${t.strat}</div>
             </div>
@@ -791,7 +873,7 @@
           ${meterHtml(t.score)}
           <div class="trade-card-metrics">
             <div><div class="tcm-label">Prob. of Touch</div><div class="tcm-val">${t.pot}%</div></div>
-            <div><div class="tcm-label">Trade / Ann. Profit</div><div class="tcm-val val-pos">+${t.roc}% · +${t.ap}%</div></div>
+            <div><div class="tcm-label">Trade / Ann. Profit</div><div class="tcm-val val-pos" style="font-size:11px; white-space:nowrap;">+${t.roc}%/+${t.ap}%</div></div>
             <div><div class="tcm-label">Exp / DTE</div><div class="tcm-val">${t.exp} · ${t.dte}d</div></div>
             <div class="tcm-more">View details ›</div>
           </div>
@@ -899,7 +981,6 @@
   let currentEquityList = [];
   const equityTbody = document.getElementById('equityTableBody');
   const equityCardList = document.getElementById('equityCardList');
-  let equitiesRenderedOnce = false;
 
   function switchMode(mode){
     const isOptions = mode === 'options';
@@ -909,8 +990,15 @@
     document.getElementById('tabStocks').classList.toggle('active', !isOptions);
     document.getElementById('tabOptions').setAttribute('aria-selected', isOptions);
     document.getElementById('tabStocks').setAttribute('aria-selected', !isOptions);
-    if(!isOptions && !equitiesRenderedOnce){
-      equitiesRenderedOnce = true;
+    // only the Options tab has the two-row Reset/Copy/Apply bar pinned at the
+    // bottom — the FAB needs extra clearance there, but on Stocks & ETFs
+    // (no bottom bar) that same clearance pushes it awkwardly into the
+    // middle of the list instead of sitting near the actual bottom edge
+    document.getElementById('portfolioSummaryBtn').classList.toggle('clear-apply-bar', isOptions);
+    if(!isOptions){
+      // always re-render (not just the first time) — cheap for ~20 rows, and
+      // guarantees correctness if the user switches tabs before loadTrades()
+      // has actually finished fetching data.json
       renderEquities(sortEquities(filterEquitiesByType(equities)));
     }
   }
@@ -954,14 +1042,20 @@
     document.getElementById('equityCount').textContent = list.length;
 
     if(list.length === 0){
-      equityTbody.innerHTML = `<tr><td colspan="6" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.</td></tr>`;
-      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.</div>`;
+      const typeVal = document.getElementById('equityTypeSelect').value;
+      const diag = `(diagnostic: equities array has ${equities.length} total item(s) loaded · type filter = "${typeVal}" · after filtering = ${list.length})`;
+      equityTbody.innerHTML = `<tr><td colspan="7" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:400; color:var(--text-faint);">${diag}</span></td></tr>`;
+      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:400; color:var(--text-faint);">${diag}</span></div>`;
       return;
     }
 
     list.forEach((e, idx)=>{
+      const eid = equityId(e);
+      const isChecked = selectedEquityIds.has(eid);
+
       equityTbody.innerHTML += `
         <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
+          <td><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()"></td>
           <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}</td>
           <td class="num">$${e.price.toFixed(2)}</td>
           <td>${trendPill(e.trend)}</td>
@@ -973,7 +1067,8 @@
       equityCardList.innerHTML += `
         <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
-            <div class="ticker-sym">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}</div>
+            <input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
+            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}</div>
             ${trendPill(e.trend)}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
@@ -1067,6 +1162,141 @@
       showToast(ok ? 'Summary copied' : 'Copy blocked — select the text manually');
     });
   }
+
+  function openPortfolioSummary(){
+    const capitalRaw = document.getElementById('portfolioCapital').value.trim();
+    const capital = parseFloat(capitalRaw);
+    let equityPct = parseFloat(document.getElementById('portfolioSplit').value);
+    if(isNaN(equityPct)) equityPct = 0;
+    equityPct = Math.min(100, Math.max(0, equityPct));
+    const optionsPct = 100 - equityPct;
+
+    const selectedTrades = trades.filter(t => selectedOptionIds.has(optionId(t)));
+    const selectedEquities = equities.filter(e => selectedEquityIds.has(equityId(e)));
+    const totalSelected = selectedTrades.length + selectedEquities.length;
+
+    if(!capitalRaw || isNaN(capital) || capital <= 0){
+      const clearBtn = totalSelected > 0
+        ? `<button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-top:10px;">Clear all selections (${totalSelected})</button>`
+        : '';
+      tradeModal.innerHTML = `
+        <div class="modal-top">
+          <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
+          <button class="modal-close" id="modalCloseBtn">✕</button>
+        </div>
+        <div class="modal-note" style="margin-top:12px;">Enter a capital amount in the bar at the top of the page to see position sizing.</div>
+        ${clearBtn}`;
+      modalScrim.classList.add('show');
+      document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+      if(totalSelected > 0){
+        document.getElementById('clearSelectionsBtn').addEventListener('click', ()=>{
+          clearAllSelections();
+          closeTradeModal();
+          showToast('Selections cleared');
+        });
+      }
+      return;
+    }
+
+    if(totalSelected === 0){
+      tradeModal.innerHTML = `
+        <div class="modal-top">
+          <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
+          <button class="modal-close" id="modalCloseBtn">✕</button>
+        </div>
+        <div class="modal-note" style="margin-top:12px;">Check at least one trade or ticker (in either tab) to build a position-sizing summary.</div>`;
+      modalScrim.classList.add('show');
+      document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+      return;
+    }
+
+    const equityCapital = capital * equityPct / 100;
+    const optionsCapital = capital * optionsPct / 100;
+    const perEquityBudget = selectedEquities.length ? equityCapital / selectedEquities.length : 0;
+    const perOptionBudget = selectedTrades.length ? optionsCapital / selectedTrades.length : 0;
+
+    let totalEquityUsed = 0, totalOptionsUsed = 0;
+
+    const equityRows = selectedEquities.map(e=>{
+      const shares = Math.floor(perEquityBudget / e.price);
+      const used = shares * e.price;
+      totalEquityUsed += used;
+      const warn = shares === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 share</div>` : '';
+      return `<div class="portfolio-line-item">
+        <div class="portfolio-line-title">${e.sym}</div>
+        <div class="portfolio-line-stats">
+          <span>Price <b>$${e.price.toFixed(2)}</b></span>
+          <span>Shares <b>${shares}</b></span>
+          <span class="val-pos">$${used.toFixed(2)}</span>
+        </div>
+        ${warn}
+      </div>`;
+    }).join('');
+
+    const optionRows = selectedTrades.map(t=>{
+      const contracts = t.maxLoss > 0 ? Math.floor(perOptionBudget / t.maxLoss) : 0;
+      const used = contracts * t.maxLoss;
+      totalOptionsUsed += used;
+      const warn = contracts === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 contract</div>` : '';
+      return `<div class="portfolio-line-item">
+        <div class="portfolio-line-title">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strat}</span></div>
+        <div class="portfolio-line-stats">
+          <span>Cost/Contract <b>$${t.maxLoss.toLocaleString()}</b></span>
+          <span>Contracts <b>${contracts}</b></span>
+          <span class="val-pos">$${used.toLocaleString()}</span>
+        </div>
+        ${warn}
+      </div>`;
+    }).join('');
+
+    const totalUsed = totalEquityUsed + totalOptionsUsed;
+    const unallocated = capital - totalUsed;
+
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-metrics">
+        <div><div class="mm-label">Total Capital</div><div class="mm-val">$${capital.toLocaleString()}</div></div>
+        <div><div class="mm-label">Split</div><div class="mm-val">${equityPct}% / ${optionsPct}%</div></div>
+        <div><div class="mm-label">Equities Allocation</div><div class="mm-val">$${equityCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Options Allocation</div><div class="mm-val">$${optionsCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+      </div>
+
+      ${selectedEquities.length ? `
+      <div class="news-section-header"><span class="mm-label" style="margin:0;">Equities (${selectedEquities.length} selected, split equally)</span></div>
+      <div class="portfolio-line-list">${equityRows}</div>` : ''}
+
+      ${selectedTrades.length ? `
+      <div class="news-section-header"><span class="mm-label" style="margin:0;">Options (${selectedTrades.length} selected, split equally)</span></div>
+      <div class="portfolio-line-list">${optionRows}</div>` : ''}
+
+      <div class="modal-metrics">
+        <div><div class="mm-label">Total Deployed</div><div class="mm-val val-pos">$${totalUsed.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Unallocated Cash</div><div class="mm-val">$${unallocated.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+      </div>
+
+      <div class="modal-note">Position sizing splits each category's capital EQUALLY across whatever you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" for options uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Share/contract counts round down, so "Unallocated Cash" reflects both rounding leftovers and any category with nothing checked in it. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" below if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
+      <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong);">Clear all selections</button>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    document.getElementById('clearSelectionsBtn').addEventListener('click', ()=>{
+      clearAllSelections();
+      closeTradeModal();
+      showToast('Selections cleared');
+    });
+  }
+
+  function clearAllSelections(){
+    selectedOptionIds.clear();
+    selectedEquityIds.clear();
+    document.querySelectorAll('.row-checkbox, .card-checkbox').forEach(cb => { cb.checked = false; });
+    updatePortfolioCount();
+  }
+
+  document.getElementById('portfolioSummaryBtn').addEventListener('click', openPortfolioSummary);
 
   function sortTrades(list){
     const sortBy = document.getElementById('sortSelect').value;
@@ -1532,6 +1762,38 @@
     location.reload();
   });
 
+  // --- Portfolio builder: checkbox selection + capital/split inputs ---
+  function updatePortfolioCount(){
+    const n = selectedOptionIds.size + selectedEquityIds.size;
+    document.getElementById('portfolioSelectedCount').textContent = n;
+  }
+
+  document.addEventListener('change', (e)=>{
+    const cb = e.target;
+    if(!cb.matches('.row-checkbox, .card-checkbox')) return;
+
+    if(cb.dataset.oid){
+      const id = cb.dataset.oid;
+      if(cb.checked) selectedOptionIds.add(id); else selectedOptionIds.delete(id);
+      // keep the table-row and mobile-card checkboxes for the same trade in sync —
+      // both exist in the DOM at once (CSS just hides one based on screen width)
+      document.querySelectorAll(`[data-oid="${CSS.escape(id)}"]`).forEach(other => { other.checked = cb.checked; });
+    } else if(cb.dataset.eid){
+      const id = cb.dataset.eid;
+      if(cb.checked) selectedEquityIds.add(id); else selectedEquityIds.delete(id);
+      document.querySelectorAll(`[data-eid="${CSS.escape(id)}"]`).forEach(other => { other.checked = cb.checked; });
+    }
+    updatePortfolioCount();
+  });
+
+  document.getElementById('portfolioSplit').addEventListener('input', ()=>{
+    const el = document.getElementById('portfolioSplit');
+    let v = parseFloat(el.value);
+    if(isNaN(v)) v = 0;
+    v = Math.min(100, Math.max(0, v));
+    document.getElementById('optionsSplitDisplay').textContent = (100 - v).toFixed(0);
+  });
+
   document.getElementById('refreshBtn').addEventListener('click', async ()=>{
     const btn = document.getElementById('refreshBtn');
     if(btn.classList.contains('spinning')) return; // already refreshing, ignore double-tap
@@ -1559,6 +1821,11 @@
     render(sortTrades(computeFiltered()));
     renderFunnel();
     updateActiveCount();
+    // covers the (unlikely but possible) case where the user is already on
+    // the Stocks tab by the time this resolves
+    if(!document.getElementById('tabOptions').classList.contains('active')){
+      renderEquities(sortEquities(filterEquitiesByType(equities)));
+    }
   });
 
   if ('serviceWorker' in navigator) {

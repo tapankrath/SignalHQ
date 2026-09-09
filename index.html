@@ -860,22 +860,19 @@
           <td><button class="row-action" data-idx="${idx}">View</button></td>
         </tr>`;
 
+      const stratShort = t.strat.replace(/ Spread$/, '');
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
-          <div class="trade-card-top">
+          <div class="trade-card-top" style="margin-bottom:6px;">
             <input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
-            <div style="flex:1;">
-              <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strike}</span></div>
-              <div class="strat-name">${t.strat}</div>
-            </div>
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
-          ${meterHtml(t.score)}
-          <div class="trade-card-metrics">
-            <div><div class="tcm-label">Prob. of Touch</div><div class="tcm-val">${t.pot}%</div></div>
-            <div><div class="tcm-label">Trade / Ann. Profit</div><div class="tcm-val val-pos" style="font-size:11px; white-space:nowrap;">+${t.roc}%/+${t.ap}%</div></div>
-            <div><div class="tcm-label">Exp / DTE</div><div class="tcm-val">${t.exp} · ${t.dte}d</div></div>
-            <div class="tcm-more">View details ›</div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
+              <span class="val-pos">+${t.roc}%/+${t.ap}%</span> · ${t.exp}·${t.dte}d
+            </span>
+            ${meterHtml(t.score)}
           </div>
         </div>`;
     });

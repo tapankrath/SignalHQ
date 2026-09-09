@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T00:11:50.156905+00:00",
+  "generated_at": "2026-09-09T01:35:37.412267+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -45,9 +45,9 @@
           "sentiment": 0.0
         },
         {
-          "title": "Dow Jones Futures: Dow Skids But AMD, HPE Are New Buys; Apple iPhone Event Due",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-oil-prices-amd-hpe-new-buys-apple-iphone-event/?src=A00220&yptr=yahoo",
+          "title": "Apple\u2019s First Foldable iPhone Could Be Huge\u2014but Should You Be an Early Buyer?",
+          "publisher": "Benzinga",
+          "link": "https://tech.yahoo.com/ai/apple-intelligence/articles/apple-first-foldable-iphone-could-223056702.html",
           "sentiment": 0.0
         }
       ],
@@ -131,20 +131,7 @@
       "pcVol": 0.53,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Prediction: Sept. 10 Will Be a Big Day for Nvidia Shareholders. Here\u2019s What to Watch.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/08/prediction-sept-10-will-be-a-big-day-for-nvidia-shareholders-here-s-what-to-watch/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "NVIDIA and ASML Back Mistral\u2019s \u20ac3 Billion Round. Their Payoffs Could Look Very Different",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-asml-back-mistral-3-230147307.html",
-          "sentiment": 0.0
-        }
-      ],
+      "newsHeadlines": [],
       "volRegime": "Cheap",
       "ivRvRatio": 0.72,
       "realizedVol": 44.8
@@ -176,9 +163,15 @@
       "maxLoss": 59080.0,
       "pcOI": 0.61,
       "pcVol": 0.48,
-      "newsSentiment": -0.2,
+      "newsSentiment": -0.38,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Meta Platforms Settles Major Lawsuit, Pays $18 Billion",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/08/meta-platforms-settles-major-lawsuit-pays-18-billion/",
+          "sentiment": -0.54
+        },
         {
           "title": "Meta Launches Simple-To-Use Muse Personal AI Agent",
           "publisher": "Investor's Business Daily",
@@ -190,12 +183,6 @@
           "publisher": "MediaPost",
           "link": "https://www.mediapost.com/publications/article/417725/meta-sued-over-crypto-scams.html",
           "sentiment": -0.59
-        },
-        {
-          "title": "Meta stock wavers as Zuckerberg unveils \u2018Muse\u2019 autonomous AI assistant",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-stock-wavers-zuckerberg-unveils-195124270.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -282,9 +269,15 @@
       "maxLoss": 1010.0,
       "pcOI": 1.28,
       "pcVol": 1.02,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.12,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Applied Materials, AMD, Broadcom, Lam Research, and Marvell Technology Shares Skyrocket, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amd-broadcom-lam-012718535.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Dow Jones Futures: Dow Skids But AMD, HPE Are New Buys; Apple iPhone Event Due",
           "publisher": "Investor's Business Daily",
@@ -296,12 +289,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/amd-just-put-70-billion-212844853.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Why AMD Stock Popped Today?",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-amd-stock-popped-today-212023035.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -547,8 +534,8 @@
       "maxLoss": 26500.0,
       "pcOI": 0.56,
       "pcVol": 0.34,
-      "newsSentiment": 0.08,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.22,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Qualcomm and Amazon ink deal for custom data center chips",
@@ -557,16 +544,16 @@
           "sentiment": 0.18
         },
         {
+          "title": "Jeff Bezos Remains Amazon's Largest Individual Shareholder With Roughly 900 Million Shares. Here's Why That Stake Still Anchors the Stock.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/08/jeff-bezos-remains-amazons-largest-individual-shar/",
+          "sentiment": 0.3
+        },
+        {
           "title": "Jim Cramer Says Amazon and Alphabet Are Cheap. Their Cash Flows Complicate the Case",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-amazon-alphabet-231012551.html",
           "sentiment": 0.18
-        },
-        {
-          "title": "S&P 500, Dow End Lower As Middle East Tensions Spur Oil Rally Ahead Of Key Inflation Data \u2014 META, QCOM, BE, AMZN, AVGO In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-dow-end-lower-as-middle-east-tensions-spur-oil-rally/cZtEOUNRJyE",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Fair",
@@ -806,9 +793,15 @@
       "maxLoss": 1415.0,
       "pcOI": 1.26,
       "pcVol": 1.26,
-      "newsSentiment": 0.82,
+      "newsSentiment": 0.41,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "STX Stock: The Math Hidden In Its Price",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/614503/stx-stock-the-math-hidden-in-its-price/2026-09-08",
+          "sentiment": 0.0
+        },
         {
           "title": "SK Hynix Surges 7% as Memory Bid Widens Beyond NAND; Seagate Rallies 5%",
           "publisher": "24/7 Wall St.",
@@ -825,28 +818,28 @@
       "strat": "Covered Call",
       "side": "bull",
       "isETF": false,
-      "strike": "$147 C",
-      "exp": "Sep 11",
-      "dte": 2,
+      "strike": "$1220 C",
+      "exp": "Sep 18",
+      "dte": 9,
       "pot": 100,
-      "ap": 31.0,
+      "ap": 429.1,
       "ivr": 64,
-      "dailyReturn": 12.0,
-      "roc": 0.17,
-      "score": 4.1,
+      "dailyReturn": 166.11,
+      "roc": 10.58,
+      "score": 5.8,
       "buy": true,
       "sell": false,
       "ema": true,
       "earningsSoon": false,
       "daysToEarnings": 49,
       "marginOfSafety": false,
-      "delta": 0.22,
-      "iv": 66.3,
-      "premium": 0.24,
-      "breakeven": 141.02,
-      "maxLoss": 14102.0,
-      "pcOI": 0.96,
-      "pcVol": 0.79,
+      "delta": 0.21,
+      "iv": 897.7,
+      "premium": 14.95,
+      "breakeven": 126.31,
+      "maxLoss": 12631.0,
+      "pcOI": 0.97,
+      "pcVol": 0.68,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -869,8 +862,8 @@
           "sentiment": 0.0
         }
       ],
-      "volRegime": "Fair",
-      "ivRvRatio": 1.08,
+      "volRegime": "Rich",
+      "ivRvRatio": 14.67,
       "realizedVol": 61.2
     },
     {
@@ -899,7 +892,7 @@
       "breakeven": 241.97,
       "maxLoss": 697.5,
       "pcOI": 0.63,
-      "pcVol": 0.84,
+      "pcVol": 0.83,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -953,9 +946,15 @@
       "maxLoss": 14144.0,
       "pcOI": 1.83,
       "pcVol": 0.79,
-      "newsSentiment": 0.15,
+      "newsSentiment": -0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Elon Musk\u2019s Space Data Center Bet Faces a Reality Check \u2014 Experts Says It Could Be a \u2018Next-Decade Event\u2019",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/elon-musk-space-data-center-233023547.html",
+          "sentiment": 0.0
+        },
         {
           "title": "DAL Stock Drops: Jefferies Sees Possible Snag To In-Cabin Experience Owing To SPCX-VSAT Spectrum Fight",
           "publisher": "Stocktwits",
@@ -967,12 +966,6 @@
           "publisher": "TechCrunch",
           "link": "https://finance.yahoo.com/technology/articles/exploration-company-nabs-450-million-204734267.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "SpaceX Stock Can Gain Nearly 50%, New Bull Says",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/spacex-stock-price-buy-rating-462a5f42?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.53
         }
       ],
       "volRegime": "Rich",

@@ -144,17 +144,10 @@
   #portfolioSplit{ width:56px; text-align:center; }
   .portfolio-split-readout{ font-size:12.5px; font-weight:700; color:var(--text-dim); white-space:nowrap; }
 
-  .portfolio-fab{
-    position:fixed; bottom:20px; right:20px; z-index:50;
-    display:flex; align-items:center; gap:8px;
-    background:var(--green); color:#fff; border:none; border-radius:26px;
-    padding:13px 18px; font-family:inherit; font-size:14px; font-weight:800;
-    box-shadow:0 4px 14px rgba(0,0,0,0.25); cursor:pointer;
-  }
-  .portfolio-fab:active{ opacity:0.85; }
   .portfolio-fab-count{
-    background:rgba(255,255,255,0.25); border-radius:12px;
-    padding:2px 8px; font-family:var(--mono); font-size:13px;
+    background:var(--amber-strong); color:#fff;
+    border-radius:12px; padding:2px 8px; font-family:var(--mono); font-size:12px;
+    margin-left:6px;
   }
 
   .row-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
@@ -527,8 +520,6 @@
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);
     }
     .active-count{ display:none; }
-    .portfolio-fab{ bottom:calc(20px + env(safe-area-inset-bottom)); right:14px; }
-    .portfolio-fab.clear-apply-bar{ bottom:calc(150px + env(safe-area-inset-bottom)); }
   }
 
   /* only stack outlook columns AND the sections grid on genuinely narrow screens (e.g. iPhone SE) */
@@ -603,10 +594,6 @@
   <span class="portfolio-split-readout">Opts: <span id="optionsSplitDisplay">40</span>%</span>
 </div>
 
-<button class="portfolio-fab clear-apply-bar" id="portfolioSummaryBtn">
-  View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span>
-</button>
-
 <div class="layout" id="optionsView">
 
   <div class="section-label">Filters</div>
@@ -659,7 +646,7 @@
     <div class="apply-bar">
       <div class="apply-bar-row">
         <button class="reset-btn" id="resetFilters">Reset to defaults</button>
-        <button class="copy-btn" id="copyPromptBtn">✦ Copy Filters</button>
+        <button class="copy-btn" id="portfolioSummaryBtn">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
       </div>
       <div class="apply-bar-row2">
         <span class="active-count" id="activeCountLabel">2 filters active</span>
@@ -752,6 +739,10 @@
   <footer>
     Screens the same free EOD data and ticker list as the Options tab, evaluated as plain stock/ETF buy candidates instead of options strategies. "Trend" is a moving-average-alignment heuristic (8/20/50-day EMA), not a prediction. RSI is a standard 14-day momentum indicator. P/E, dividend yield, and market cap come from Yahoo's fundamentals data, which is frequently incomplete — especially for ETFs, where expense ratio, holdings, and AUM aren't reliably available for free at all. For research purposes only — not a recommendation to buy or sell any security.
   </footer>
+
+  <div class="apply-bar">
+    <button class="apply-btn" id="portfolioSummaryBtnStocks">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
+  </div>
 </div>
 
 <div class="modal-scrim" id="modalScrim">
@@ -986,11 +977,6 @@
     document.getElementById('tabStocks').classList.toggle('active', !isOptions);
     document.getElementById('tabOptions').setAttribute('aria-selected', isOptions);
     document.getElementById('tabStocks').setAttribute('aria-selected', !isOptions);
-    // only the Options tab has the two-row Reset/Copy/Apply bar pinned at the
-    // bottom — the FAB needs extra clearance there, but on Stocks & ETFs
-    // (no bottom bar) that same clearance pushes it awkwardly into the
-    // middle of the list instead of sitting near the actual bottom edge
-    document.getElementById('portfolioSummaryBtn').classList.toggle('clear-apply-bar', isOptions);
     if(!isOptions){
       // always re-render (not just the first time) — cheap for ~20 rows, and
       // guarantees correctness if the user switches tabs before loadTrades()
@@ -1293,6 +1279,7 @@
   }
 
   document.getElementById('portfolioSummaryBtn').addEventListener('click', openPortfolioSummary);
+  document.getElementById('portfolioSummaryBtnStocks').addEventListener('click', openPortfolioSummary);
 
   function sortTrades(list){
     const sortBy = document.getElementById('sortSelect').value;
@@ -1465,53 +1452,6 @@
   function closeTradeModal(){ modalScrim.classList.remove('show'); }
   modalScrim.addEventListener('click', (e)=>{ if(e.target === modalScrim) closeTradeModal(); });
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeTradeModal(); });
-
-  // --- Copy Filters ---
-  function buildFiltersText(){
-    const groups = [
-      { label:'Outlook & Strategy', selector:'[data-strat]:checked, [data-pcoi]:checked, [data-pcvol]:checked' },
-      { label:'Quality',            selector:'[data-quality]:checked' },
-      { label:'Risk',               selector:'[data-risk]:checked' },
-    ];
-
-    const lines = [];
-    groups.forEach(g=>{
-      const items = Array.from(document.querySelectorAll(`.filter-card ${g.selector}`))
-        .map(cb => cb.closest('label').textContent.trim());
-      if(items.length) lines.push(`${g.label}: ${items.join(', ')}`);
-    });
-
-    lines.push('Fixed: annualized profit > 100%');
-
-    return lines.join('\n') || 'No filters selected.';
-  }
-
-  function openPromptModal(){
-    const filtersText = buildFiltersText();
-    tradeModal.innerHTML = `
-      <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Active Filters</div>
-        <button class="modal-close" id="modalCloseBtn">✕</button>
-      </div>
-      <div class="modal-strat">Your currently selected filters, ready to paste anywhere.</div>
-      <textarea id="promptTextarea" readonly
-        style="width:100%; min-height:160px; margin:14px 0; padding:12px; font-family:var(--mono); font-size:16px; line-height:1.5; color:var(--text); background:var(--surface-2); border:1px solid var(--border); border-radius:8px; resize:vertical;"
-      >${filtersText}</textarea>
-      <div class="modal-note">If "Copy" doesn't work in your browser, tap the box above and select all manually.</div>
-      <button class="modal-copy-btn" id="promptCopyBtn">Copy to clipboard</button>
-    `;
-    modalScrim.classList.add('show');
-    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
-    document.getElementById('promptCopyBtn').addEventListener('click', async ()=>{
-      const ok = await copyText(filtersText);
-      showToast(ok ? 'Filters copied to clipboard' : 'Copy blocked by browser — select the text above and copy manually');
-    });
-    // auto-select the textarea content so a manual copy is a single tap away regardless
-    const ta = document.getElementById('promptTextarea');
-    ta.addEventListener('focus', ()=> ta.select());
-  }
-
-  document.getElementById('copyPromptBtn').addEventListener('click', openPromptModal);
 
   // --- Export ---
   function downloadFile(filename, content, mime){
@@ -1762,6 +1702,7 @@
   function updatePortfolioCount(){
     const n = selectedOptionIds.size + selectedEquityIds.size;
     document.getElementById('portfolioSelectedCount').textContent = n;
+    document.getElementById('portfolioSelectedCountStocks').textContent = n;
   }
 
   document.addEventListener('change', (e)=>{

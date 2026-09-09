@@ -158,7 +158,12 @@
   }
 
   .row-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
-  .card-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; margin-right:10px; }
+  .card-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
+  .checkbox-wrap{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px; margin:-12px; cursor:pointer; flex-shrink:0;
+  }
+  .trade-card-top .checkbox-wrap{ margin-right:-2px; }
 
   .portfolio-line-list{ display:flex; flex-direction:column; gap:2px; margin-bottom:10px; }
   .portfolio-line-item{
@@ -845,7 +850,7 @@
 
       tbody.innerHTML += `
         <tr>
-          <td><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></td>
+          <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
             <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.strike}</span></div>
             <div class="strat-name">${t.strat}</div>
@@ -864,7 +869,7 @@
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
-            <input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
+            <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
             <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
@@ -1052,7 +1057,7 @@
 
       equityTbody.innerHTML += `
         <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
-          <td><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()"></td>
+          <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label></td>
           <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}</td>
           <td class="num">$${e.price.toFixed(2)}</td>
           <td>${trendPill(e.trend)}</td>
@@ -1064,7 +1069,7 @@
       equityCardList.innerHTML += `
         <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
-            <input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
+            <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label>
             <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}</div>
             ${trendPill(e.trend)}
           </div>
@@ -1254,6 +1259,7 @@
         <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
+      <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-bottom:12px;">Clear all selections (${totalSelected})</button>
       <div class="modal-metrics">
         <div><div class="mm-label">Total Capital</div><div class="mm-val">$${capital.toLocaleString()}</div></div>
         <div><div class="mm-label">Split</div><div class="mm-val">${equityPct}% / ${optionsPct}%</div></div>
@@ -1274,8 +1280,7 @@
         <div><div class="mm-label">Unallocated Cash</div><div class="mm-val">$${unallocated.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
       </div>
 
-      <div class="modal-note">Position sizing splits each category's capital EQUALLY across whatever you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" for options uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Share/contract counts round down, so "Unallocated Cash" reflects both rounding leftovers and any category with nothing checked in it. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" below if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
-      <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong);">Clear all selections</button>
+      <div class="modal-note">Position sizing splits each category's capital EQUALLY across whatever you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" for options uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Share/contract counts round down, so "Unallocated Cash" reflects both rounding leftovers and any category with nothing checked in it. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
     `;
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);

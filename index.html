@@ -127,11 +127,11 @@
 
   .portfolio-bar{
     max-width:1080px; margin:0 auto; padding:12px 18px;
-    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
     border-bottom:1px solid var(--border); background:var(--surface-2);
   }
   .portfolio-bar label{
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; gap:6px;
     font-size:12.5px; font-weight:700; color:var(--text-dim);
     white-space:nowrap;
   }
@@ -504,6 +504,7 @@
     .header-inner{ padding:12px 14px; }
     .status-row{ padding:8px 14px; }
     .portfolio-bar{ padding:10px 14px; gap:10px; }
+    #portfolioCapital{ width:88px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand-sub{ display:none; }
 
@@ -592,14 +593,14 @@
 
 <div class="portfolio-bar">
   <label>
-    Capital $
-    <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="e.g. 50000">
+    Cap $
+    <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000">
   </label>
   <label>
-    Equities %
+    Eq %
     <input type="text" id="portfolioSplit" inputmode="numeric" value="60">
   </label>
-  <span class="portfolio-split-readout">Options: <span id="optionsSplitDisplay">40</span>%</span>
+  <span class="portfolio-split-readout">Opts: <span id="optionsSplitDisplay">40</span>%</span>
 </div>
 
 <button class="portfolio-fab" id="portfolioSummaryBtn">
@@ -1035,8 +1036,10 @@
     document.getElementById('equityCount').textContent = list.length;
 
     if(list.length === 0){
-      equityTbody.innerHTML = `<tr><td colspan="7" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.</td></tr>`;
-      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.</div>`;
+      const typeVal = document.getElementById('equityTypeSelect').value;
+      const diag = `(diagnostic: equities array has ${equities.length} total item(s) loaded · type filter = "${typeVal}" · after filtering = ${list.length})`;
+      equityTbody.innerHTML = `<tr><td colspan="7" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:400; color:var(--text-faint);">${diag}</span></td></tr>`;
+      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:400; color:var(--text-faint);">${diag}</span></div>`;
       return;
     }
 

@@ -22,20 +22,20 @@
        site; only the values changed. */
     --bg:#FFFFFF;
     --surface:#FFFFFF;
-    --surface-2:#F2F2F2;
-    --border:#B0B0B0;
-    --border-strong:#000000;
-    --text:#000000;
-    --text-dim:#1F1F1F;
-    --text-faint:#444444;
+    --surface-2:#F5F6F8;
+    --border:#E2E5EA;
+    --border-strong:#0B0E14;
+    --text:#0B0E14;
+    --text-dim:#4B5563;
+    --text-faint:#8B93A1;
     --amber:#15803D;
-    --amber-strong:#14532D;
-    --amber-soft:#DCFCE7;
+    --amber-strong:#0F7A38;
+    --amber-soft:#EAFBF1;
     --amber-border:#4ADE80;
     --green:#15803D;
-    --green-soft:#DCFCE7;
-    --red:#C7291D;
-    --red-soft:#FEE2E2;
+    --green-soft:#EAFBF1;
+    --red:#D14343;
+    --red-soft:#FDECEC;
     --radius:10px;
     --sans: 'IBM Plex Sans', -apple-system, sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', monospace;
@@ -192,15 +192,14 @@
   .layout{ max-width:1080px; margin:0 auto; padding:18px 18px 100px; }
 
   .section-label{
-    font-size:10.5px; font-weight:700; letter-spacing:0.08em; color:var(--text-faint);
-    text-transform:uppercase; margin-bottom:8px;
+    font-size:13px; font-weight:700; letter-spacing:0; color:var(--text-dim);
+    margin-bottom:8px;
   }
 
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:16px;
-    box-shadow:0 1px 2px rgba(16,24,40,0.03);
     margin-bottom:14px;
   }
 
@@ -212,7 +211,7 @@
   .outlook-col{ padding:10px 12px; }
   .outlook-col + .outlook-col{ border-left:1px solid var(--border); }
   .outlook-col-label{
-    font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;
+    font-size:12px; font-weight:700; letter-spacing:0;
     margin-bottom:6px;
   }
   .outlook-col-label.bull{ color:var(--green); }
@@ -329,12 +328,11 @@
   .table-wrap{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); overflow:hidden;
-    box-shadow:0 1px 2px rgba(16,24,40,0.03);
   }
   table{ width:100%; border-collapse:collapse; }
   thead th{
-    text-align:left; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--text-faint); font-weight:700; padding:11px 14px;
+    text-align:left; font-size:12.5px; letter-spacing:0;
+    color:var(--text-dim); font-weight:700; padding:11px 14px;
     border-bottom:1px solid var(--border); white-space:nowrap;
     background:var(--surface-2);
   }
@@ -374,21 +372,11 @@
   .trade-card{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:12px;
-    box-shadow:0 1px 2px rgba(16,24,40,0.03);
-    cursor:pointer; transition:border-color .12s;
+    box-shadow:0 1px 3px rgba(11,14,20,0.06);
+    cursor:pointer; transition:border-color .12s, box-shadow .12s;
   }
-  .trade-card:active{ border-color:var(--border-strong); }
+  .trade-card:active{ border-color:var(--border-strong); box-shadow:none; }
   .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
-  .trade-card-metrics{
-    display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;
-    padding-top:8px; border-top:1px solid var(--border);
-  }
-  .tcm-label{ font-size:9px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:1px; }
-  .tcm-val{ font-family:var(--mono); font-size:12.5px; font-weight:700; }
-  .tcm-more{
-    grid-column:1 / -1; text-align:right; font-size:11px; font-weight:600;
-    color:var(--green); padding-top:2px;
-  }
 
   footer{
     max-width:1080px; margin:0 auto; padding:20px 18px 30px;
@@ -421,7 +409,7 @@
     padding:14px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);
     margin-bottom:16px;
   }
-  .mm-label{ font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:3px; }
+  .mm-label{ font-size:12px; color:var(--text-dim); letter-spacing:0; margin-bottom:3px; }
   .mm-val{ font-family:var(--mono); font-size:14.5px; font-weight:700; }
   .modal-note{ font-size:12px; color:var(--text-dim); line-height:1.55; margin-bottom:16px; }
 

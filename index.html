@@ -157,7 +157,8 @@
     padding:2px 8px; font-family:var(--mono); font-size:13px;
   }
 
-  .row-checkbox, .card-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
+  .row-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
+  .card-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; margin-right:10px; }
 
   .portfolio-line-list{ display:flex; flex-direction:column; gap:2px; margin-bottom:10px; }
   .portfolio-line-item{
@@ -870,7 +871,7 @@
           ${meterHtml(t.score)}
           <div class="trade-card-metrics">
             <div><div class="tcm-label">Prob. of Touch</div><div class="tcm-val">${t.pot}%</div></div>
-            <div><div class="tcm-label">Trade / Ann. Profit</div><div class="tcm-val val-pos">+${t.roc}% · +${t.ap}%</div></div>
+            <div><div class="tcm-label">Trade / Ann. Profit</div><div class="tcm-val val-pos" style="font-size:11px; white-space:nowrap;">+${t.roc}%/+${t.ap}%</div></div>
             <div><div class="tcm-label">Exp / DTE</div><div class="tcm-val">${t.exp} · ${t.dte}d</div></div>
             <div class="tcm-more">View details ›</div>
           </div>
@@ -1057,7 +1058,7 @@
       equityCardList.innerHTML += `
         <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
-            <input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()" style="margin-right:2px;">
+            <input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
             <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}</div>
             ${trendPill(e.trend)}
           </div>

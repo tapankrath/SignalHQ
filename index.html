@@ -528,7 +528,8 @@
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);
     }
     .active-count{ display:none; }
-    .portfolio-fab{ bottom:calc(150px + env(safe-area-inset-bottom)); right:14px; }
+    .portfolio-fab{ bottom:calc(20px + env(safe-area-inset-bottom)); right:14px; }
+    .portfolio-fab.clear-apply-bar{ bottom:calc(150px + env(safe-area-inset-bottom)); }
   }
 
   /* only stack outlook columns AND the sections grid on genuinely narrow screens (e.g. iPhone SE) */
@@ -603,7 +604,7 @@
   <span class="portfolio-split-readout">Opts: <span id="optionsSplitDisplay">40</span>%</span>
 </div>
 
-<button class="portfolio-fab" id="portfolioSummaryBtn">
+<button class="portfolio-fab clear-apply-bar" id="portfolioSummaryBtn">
   View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span>
 </button>
 
@@ -989,6 +990,11 @@
     document.getElementById('tabStocks').classList.toggle('active', !isOptions);
     document.getElementById('tabOptions').setAttribute('aria-selected', isOptions);
     document.getElementById('tabStocks').setAttribute('aria-selected', !isOptions);
+    // only the Options tab has the two-row Reset/Copy/Apply bar pinned at the
+    // bottom — the FAB needs extra clearance there, but on Stocks & ETFs
+    // (no bottom bar) that same clearance pushes it awkwardly into the
+    // middle of the list instead of sitting near the actual bottom edge
+    document.getElementById('portfolioSummaryBtn').classList.toggle('clear-apply-bar', isOptions);
     if(!isOptions){
       // always re-render (not just the first time) — cheap for ~20 rows, and
       // guarantees correctness if the user switches tabs before loadTrades()

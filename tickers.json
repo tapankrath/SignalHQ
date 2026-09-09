@@ -1,0 +1,35 @@
+{
+  "tickers": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "META",
+    "TSLA",
+    "AMD",
+    "MU",
+    "GOOG",
+    "JPM",
+    "ORCL",
+    "AMZN",
+    "SOXL",
+    "TQQQ",
+    "NFLX",
+    "SNDK",
+    "STX",
+    "NOW",
+    "ADBE",
+    "SPCX",
+    "CRM"
+  ],
+  "etfs": [
+    "QQQ",
+    "IWM",
+    "DIA",
+    "XLF",
+    "XLE",
+    "XLK",
+    "GLD",
+    "SOXL",
+    "TQQQ"
+  ]
+}

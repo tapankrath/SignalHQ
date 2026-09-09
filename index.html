@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>SignalHQ — Ready-Made Option Trades</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="SignalHQ">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Note: --amber* variable names are historical — they hold the green accent
+       color now. Kept the names to avoid touching every var(--amber...) usage
+       site; only the values changed. */
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-2:#F2F2F2;
+    --border:#B0B0B0;
+    --border-strong:#000000;
+    --text:#000000;
+    --text-dim:#1F1F1F;
+    --text-faint:#444444;
+    --amber:#15803D;
+    --amber-strong:#14532D;
+    --amber-soft:#DCFCE7;
+    --amber-border:#4ADE80;
+    --green:#15803D;
+    --green-soft:#DCFCE7;
+    --red:#C7291D;
+    --red-soft:#FEE2E2;
+    --radius:10px;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', 'SF Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{
+    overflow-x:hidden;
+    overscroll-behavior-x:none;
+    touch-action:pan-y;
+    -webkit-text-size-adjust:100%;
+  }
+  html,body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    min-height:100vh;
+    width:100%;
+    max-width:100vw;
+  }
+  body{
+    position:relative;
+  }
+  ::selection{ background:var(--amber-soft); color:var(--amber-strong); }
+  button{ font-family:inherit; cursor:pointer; }
+  input,select{ font-family:inherit; }
+  .num{ font-family:var(--mono); font-variant-numeric:tabular-nums; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:1080px; margin:0 auto;
+    padding:14px 18px;
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    flex-wrap:wrap;
+  }
+  .header-left{ display:flex; align-items:center; gap:14px; min-width:0; }
+  .header-right{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  .brand{ display:flex; align-items:center; gap:14px; flex-shrink:0; }
+
+  .mode-toggle{
+    max-width:1080px; margin:0 auto; padding:12px 18px 14px;
+    display:flex; gap:8px;
+  }
+  .mode-tab{
+    flex:1; min-height:44px; padding:10px 14px;
+    font-family:inherit; font-size:14px; font-weight:700;
+    background:var(--surface-2); color:var(--text-dim);
+    border:1px solid var(--border); border-radius:9px;
+    cursor:pointer; transition:background .12s, color .12s;
+  }
+  .mode-tab.active{ background:var(--text); color:#fff; border-color:var(--text); }
+  .mode-tab:active{ opacity:0.85; }
+  .brand-mark{
+    width:60px; height:60px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:14px; }
+  .brand-name{ font-weight:700; font-size:30px; letter-spacing:-0.01em; color:var(--text); }
+  .brand-sub{ font-size:10.5px; color:var(--text-faint); font-family:var(--mono); letter-spacing:0.03em;}
+
+  .data-status{
+    display:flex; align-items:center; gap:6px;
+    font-family:var(--mono); font-size:11px; color:var(--text-dim);
+    padding:5px 10px; border:1px solid var(--border); border-radius:20px;
+    background:var(--surface-2); flex-shrink:0;
+  }
+  .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); }
+
+  .status-row{
+    max-width:1080px; margin:0 auto; padding:8px 18px;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    border-top:1px solid var(--border);
+  }
+  .refresh-btn{
+    display:flex; align-items:center; gap:5px;
+    font-family:inherit; font-size:11px; font-weight:700; color:var(--text-dim);
+    background:var(--surface-2); border:1px solid var(--border); border-radius:20px;
+    padding:5px 10px; cursor:pointer; min-height:28px;
+  }
+  .refresh-btn:active{ opacity:0.7; }
+  .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
+  @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+
+  .export-btn{
+    display:flex; align-items:center; gap:6px;
+    background:var(--surface); border:1px solid var(--border-strong);
+    color:var(--text); padding:9px 14px; border-radius:8px;
+    font-size:12.5px; font-weight:600; flex-shrink:0;
+    transition:border-color .15s, background .15s;
+  }
+  .export-btn:hover{ border-color:var(--amber); background:var(--amber-soft); }
+  .export-btn:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+
+  /* ---------- LAYOUT ---------- */
+  .layout{ max-width:1080px; margin:0 auto; padding:18px 18px 100px; }
+
+  .section-label{
+    font-size:10.5px; font-weight:700; letter-spacing:0.08em; color:var(--text-faint);
+    text-transform:uppercase; margin-bottom:8px;
+  }
+
+  /* ---------- FILTER TOOLBAR ---------- */
+  .filter-card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:16px;
+    box-shadow:0 1px 2px rgba(16,24,40,0.03);
+    margin-bottom:14px;
+  }
+
+  .outlook-details{ margin-bottom:12px; }
+  .outlook-details > summary{ font-weight:700; }
+  .outlook-body{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+  }
+  .outlook-col{ padding:10px 12px; }
+  .outlook-col + .outlook-col{ border-left:1px solid var(--border); }
+  .outlook-col-label{
+    font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;
+    margin-bottom:6px;
+  }
+  .outlook-col-label.bull{ color:var(--green); }
+  .outlook-col-label.bear{ color:var(--red); }
+  .filter-hint{ font-size:10.5px; color:var(--text-faint); line-height:1.45; padding:0 12px 12px; }
+
+  details.filter-section{
+    border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
+    margin-bottom:0;
+  }
+  details.filter-section > summary{
+    cursor:pointer; padding:12px 14px; font-weight:600; font-size:13px;
+    display:flex; align-items:center; justify-content:space-between;
+    list-style:none; user-select:none;
+  }
+  details.filter-section > summary::-webkit-details-marker{ display:none; }
+  details.filter-section > summary::after{
+    content:"›"; font-size:18px; color:var(--text-faint); transform:rotate(90deg);
+    transition:transform .15s; line-height:1;
+  }
+  details.filter-section[open] > summary::after{ transform:rotate(-90deg); }
+  details.filter-section[open] > summary{ border-bottom:1px solid var(--border); }
+  .filter-section-body{ padding:12px 14px; }
+  .summary-count{
+    font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--amber-strong);
+    background:var(--amber-soft); border:1px solid var(--amber-border);
+    padding:1px 7px; border-radius:10px; margin-left:8px;
+  }
+
+  .filter-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin-bottom:10px; }
+
+  .check-row{
+    display:flex; align-items:center; gap:9px;
+    padding:7px 4px; border-radius:6px; cursor:pointer;
+    font-size:13px; font-weight:600; color:var(--text);
+    transition:background .12s;
+  }
+  .check-row:hover{ background:var(--surface); }
+  .check-row input[type="checkbox"]{
+    appearance:none; -webkit-appearance:none;
+    width:16px; height:16px; border-radius:5px;
+    border:1.5px solid var(--border-strong);
+    background:var(--surface);
+    flex-shrink:0; position:relative; cursor:pointer;
+    transition:border-color .12s, background .12s;
+  }
+  .check-row input[type="checkbox"]:checked{ background:var(--amber); border-color:var(--amber); }
+  .check-row input[type="checkbox"]:checked::after{
+    content:""; position:absolute; left:4.5px; top:1.5px;
+    width:4px; height:8px; border:solid #fff; border-width:0 2px 2px 0;
+    transform:rotate(45deg);
+  }
+  .check-row input[type="checkbox"]:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  .check-row.disabled{ opacity:0.4; pointer-events:none; }
+
+  .outlook-col .check-row{
+    padding:5px 2px; font-size:12px; gap:7px;
+  }
+  .outlook-col .check-row input[type="checkbox"]{ width:14px; height:14px; }
+
+  .expiry-row{ display:flex; gap:8px; }
+  .expiry-row select, .expiry-row input{
+    flex:1; background:var(--surface); border:1px solid var(--border-strong);
+    color:var(--text); font-size:16px; padding:9px 10px; border-radius:7px;
+  }
+
+  .sections-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start; }
+
+  /* apply/reset/copy bar */
+  .apply-bar{
+    margin-top:14px; padding-top:14px; border-top:1px solid var(--border);
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .apply-bar-row{ display:flex; gap:8px; }
+  .apply-bar-row2{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .apply-btn{
+    flex:1; background:var(--amber); color:#fff; border:none;
+    padding:12px; border-radius:8px; font-weight:700; font-size:13.5px;
+    transition:filter .12s;
+  }
+  .apply-btn:hover{ filter:brightness(1.08); }
+  .apply-btn:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
+  .reset-btn{
+    flex:1; background:var(--surface); border:1px solid var(--border-strong); color:var(--text-dim);
+    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:600;
+    transition:border-color .12s, color .12s;
+  }
+  .reset-btn:hover{ border-color:var(--text-dim); color:var(--text); }
+  .copy-btn{
+    flex:1; background:var(--amber-soft); border:1px solid var(--amber-border); color:var(--amber-strong);
+    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:700;
+    transition:filter .12s;
+  }
+  .copy-btn:hover{ filter:brightness(0.97); }
+  .active-count{ font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-faint); white-space:nowrap; }
+
+  /* ---------- RESULTS ---------- */
+  .results-bar{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:12px; gap:12px; flex-wrap:wrap;
+  }
+  .results-count{ font-size:13.5px; font-weight:600; color:var(--text-dim); }
+  .results-count strong{ color:var(--text); font-family:var(--mono); }
+  .funnel-note{
+    font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-dim);
+    margin-bottom:12px; margin-top:-4px; line-height:1.6;
+  }
+  .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:var(--text-dim); }
+  .sort-wrap select{
+    background:var(--surface); border:1px solid var(--border-strong);
+    color:var(--text); padding:7px 10px; border-radius:7px; font-size:16px;
+  }
+
+  .table-wrap{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); overflow:hidden;
+    box-shadow:0 1px 2px rgba(16,24,40,0.03);
+  }
+  table{ width:100%; border-collapse:collapse; }
+  thead th{
+    text-align:left; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--text-faint); font-weight:700; padding:11px 14px;
+    border-bottom:1px solid var(--border); white-space:nowrap;
+    background:var(--surface-2);
+  }
+  tbody tr{ border-bottom:1px solid var(--border); transition:background .12s; }
+  tbody tr:last-child{ border-bottom:none; }
+  tbody tr:hover{ background:var(--surface-2); }
+  tbody td{ padding:13px 14px; font-size:13px; font-weight:600; vertical-align:middle; white-space:nowrap; }
+
+  .ticker-sym{ font-weight:700; font-family:var(--mono); font-size:13.5px; }
+  .strat-name{ font-size:11.5px; color:var(--text-dim); }
+
+  .side-pill{
+    display:inline-flex; align-items:center; gap:5px;
+    padding:3px 9px; border-radius:20px; font-size:11px; font-weight:700;
+  }
+  .side-pill.bull{ background:var(--green-soft); color:var(--green); }
+  .side-pill.bear{ background:var(--red-soft); color:var(--red); }
+  .side-pill .dot{ width:5px; height:5px; border-radius:50%; background:currentColor; }
+
+  .val-pos{ color:var(--green); }
+  .val-neg{ color:var(--red); }
+
+  .meter{ display:flex; align-items:center; gap:8px; }
+  .meter-ticks{ display:flex; gap:2px; }
+  .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:var(--border-strong); }
+  .meter-ticks span.on{ background:var(--amber); }
+  .meter-score{ font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--amber-strong); min-width:26px; }
+
+  .row-action{
+    background:var(--surface); border:1px solid var(--border-strong);
+    color:var(--text-dim); padding:7px 13px; border-radius:7px; font-size:11.5px;
+    font-weight:600; transition:all .12s;
+  }
+  .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
+
+  .card-list{ display:none; flex-direction:column; gap:8px; }
+  .trade-card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:12px;
+    box-shadow:0 1px 2px rgba(16,24,40,0.03);
+    cursor:pointer; transition:border-color .12s;
+  }
+  .trade-card:active{ border-color:var(--border-strong); }
+  .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
+  .trade-card-metrics{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;
+    padding-top:8px; border-top:1px solid var(--border);
+  }
+  .tcm-label{ font-size:9px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:1px; }
+  .tcm-val{ font-family:var(--mono); font-size:12.5px; font-weight:700; }
+  .tcm-more{
+    grid-column:1 / -1; text-align:right; font-size:11px; font-weight:600;
+    color:var(--green); padding-top:2px;
+  }
+
+  footer{
+    max-width:1080px; margin:0 auto; padding:20px 18px 30px;
+    font-size:11px; color:var(--text-faint); line-height:1.6;
+    border-top:1px solid var(--border); margin-top:20px;
+  }
+
+  /* ---------- MODAL ---------- */
+  .modal-scrim{
+    display:none; position:fixed; inset:0; background:rgba(19,23,34,0.45);
+    z-index:80; align-items:center; justify-content:center; padding:20px;
+  }
+  .modal-scrim.show{ display:flex; }
+  .trade-modal{
+    width:100%; max-width:440px; background:var(--surface);
+    border:1px solid var(--border); border-radius:14px;
+    padding:22px; max-height:86vh; overflow-y:auto;
+    box-shadow:0 12px 40px rgba(16,24,40,0.16);
+  }
+  .modal-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px; }
+  .modal-close{
+    background:var(--surface-2); border:1px solid var(--border); color:var(--text-dim);
+    width:28px; height:28px; border-radius:7px; font-size:15px; line-height:1;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .modal-close:hover{ color:var(--text); border-color:var(--border-strong); }
+  .modal-strat{ font-size:12.5px; color:var(--text-dim); margin-bottom:16px; }
+  .modal-metrics{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px 16px;
+    padding:14px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    margin-bottom:16px;
+  }
+  .mm-label{ font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:3px; }
+  .mm-val{ font-family:var(--mono); font-size:14.5px; font-weight:700; }
+  .modal-note{ font-size:12px; color:var(--text-dim); line-height:1.55; margin-bottom:16px; }
+
+  .news-section-header{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-top:16px; margin-bottom:10px;
+  }
+  .sentiment-badge{
+    display:inline-flex; align-items:center; gap:5px;
+    font-size:11px; font-weight:700; padding:3px 9px;
+    border:1px solid; border-radius:20px;
+  }
+  .sentiment-dot{ width:6px; height:6px; border-radius:50%; }
+  .news-list{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+  .news-headline{
+    display:block; padding:10px 12px; border:1px solid var(--border); border-radius:8px;
+    text-decoration:none; transition:border-color .12s, background .12s;
+  }
+  .news-headline:hover{ border-color:var(--border-strong); background:var(--surface-2); }
+  .news-headline-title{ font-size:12.5px; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:4px; }
+  .news-headline-meta{ font-size:10.5px; color:var(--text-faint); font-weight:500; display:flex; gap:6px; }
+  .news-empty{ font-size:12px; color:var(--text-faint); padding:10px 0; }
+  .modal-copy-btn{
+    width:100%; background:var(--amber); color:#fff; border:none;
+    padding:11px; border-radius:8px; font-weight:700; font-size:13px;
+  }
+
+  /* ticker chips */
+  .ticker-chips{
+    display:flex; flex-wrap:wrap; gap:7px;
+    padding:12px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    margin:14px 0;
+  }
+  .ticker-chip{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--surface-2); border:1px solid var(--border-strong);
+    padding:5px 6px 5px 10px; border-radius:20px;
+    font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--text);
+  }
+  .ticker-chip.etf{ background:var(--amber-soft); border-color:var(--amber-border); color:var(--amber-strong); }
+  .ticker-chip button{
+    background:transparent; border:none; color:var(--text-faint);
+    width:16px; height:16px; border-radius:50%; font-size:13px; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ticker-chip button:hover{ background:var(--border); color:var(--text); }
+  .ticker-add-row{ display:flex; gap:8px; margin-bottom:10px; }
+  .ticker-add-row input{
+    flex:1; background:var(--surface); border:1px solid var(--border-strong);
+    color:var(--text); font-size:16px; padding:9px 12px; border-radius:7px;
+    font-family:var(--mono); text-transform:uppercase;
+  }
+  .ticker-add-row button{
+    background:var(--amber); color:#fff; border:none;
+    width:38px; border-radius:7px; font-size:18px; font-weight:700; flex-shrink:0;
+  }
+  .ticker-add-row button:hover{ filter:brightness(1.08); }
+  .ticker-etf-check{ display:flex; align-items:center; gap:7px; font-size:12px; color:var(--text-dim); margin-bottom:14px; }
+  .ticker-etf-check input{ width:14px; height:14px; }
+  .ticker-json-box{
+    width:100%; min-height:100px; padding:10px; margin-bottom:12px;
+    font-family:var(--mono); font-size:16px; line-height:1.5; color:var(--text);
+    background:var(--surface-2); border:1px solid var(--border); border-radius:8px; resize:vertical;
+  }
+  .ticker-github-link{
+    display:block; text-align:center; font-size:12px; font-weight:600; color:var(--amber-strong);
+    padding:11px; border:1px solid var(--amber-border); border-radius:8px; text-decoration:none;
+    margin-top:8px;
+  }
+  .ticker-github-link:hover{ background:var(--amber-soft); }
+
+  .toast{
+    position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
+    background:var(--text); color:#fff;
+    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    padding:10px 18px; border-radius:20px; z-index:90;
+    opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
+    box-shadow:0 8px 24px rgba(16,24,40,0.25);
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 720px){
+    .layout{ padding:14px 12px 155px; }
+    .header-inner{ padding:12px 14px; }
+    .status-row{ padding:8px 14px; }
+    .mode-toggle{ padding:10px 14px 12px; }
+    .brand-sub{ display:none; }
+
+    .filter-grid{ grid-template-columns:1fr; }
+
+    /* Quality/Risk/Reward/Expiration stay 2-up on phones — only Outlook keeps its own full row */
+    details.filter-section > summary{
+      padding:11px 10px; font-size:12px; gap:4px;
+    }
+    .summary-count{ font-size:10px; padding:1px 6px; margin-left:5px; }
+    details.filter-section > summary::after{ font-size:16px; }
+
+    .table-wrap{ display:none; }
+    .card-list{ display:flex; }
+
+    .apply-bar{
+      position:fixed; left:0; right:0; bottom:0; z-index:70;
+      background:var(--surface); border-top:1px solid var(--border);
+      padding:12px 14px; padding-bottom:calc(12px + env(safe-area-inset-bottom));
+      margin-top:0;
+      box-shadow:0 -4px 16px rgba(16,24,40,0.06);
+    }
+    .active-count{ display:none; }
+  }
+
+  /* only stack outlook columns AND the sections grid on genuinely narrow screens (e.g. iPhone SE) */
+  @media (max-width: 360px){
+    .outlook-body{ grid-template-columns:1fr; }
+    .outlook-col + .outlook-col{ border-left:none; border-top:1px solid var(--border); }
+    .sections-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload SignalHQ" style="cursor:pointer;">
+        <div class="brand-mark">
+          <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="SignalHQ logo">
+            <rect width="24" height="24" fill="#0E1116"/>
+            <rect x="2.5" y="14" width="3" height="6"  rx="1.2" fill="#14532D"/>
+            <rect x="8"   y="11" width="3" height="9"  rx="1.2" fill="#166534"/>
+            <rect x="13.5" y="8" width="3" height="12" rx="1.2" fill="#15803D"/>
+            <rect x="19"  y="4"  width="3" height="16" rx="1.2" fill="#22C55E"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">SignalHQ</div>
+          <div class="brand-sub">READY-MADE OPTION TRADES</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="export-btn" id="tickersBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Tickers
+      </button>
+
+      <button class="export-btn" id="exportBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Export
+      </button>
+    </div>
+  </div>
+
+  <div class="status-row">
+    <div class="data-status">
+      <span class="pulse-dot" id="dataStatusDot"></span>
+      <span id="dataStatusText">Loading data…</span>
+    </div>
+    <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data" title="Refresh data">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      Refresh
+    </button>
+  </div>
+
+  <div class="mode-toggle" role="tablist">
+    <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
+    <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
+  </div>
+</header>
+
+<div class="layout" id="optionsView">
+
+  <div class="section-label">Filters</div>
+  <div class="filter-card">
+
+    <details class="filter-section outlook-details" id="outlookSection">
+      <summary>Outlook &amp; Strategy<span class="summary-count" id="outlookCount" style="display:none;"></span></summary>
+      <div class="outlook-body">
+        <div class="outlook-col">
+          <div class="outlook-col-label bull">Bullish / Positive</div>
+          <label class="check-row"><input type="checkbox" data-strat="Short Put"> Short Put</label>
+          <label class="check-row"><input type="checkbox" data-strat="Covered Call"> Covered Call</label>
+          <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread"> Bull Put Spread</label>
+          <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Call"> Long Call</label>
+          <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
+          <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
+        </div>
+        <div class="outlook-col">
+          <div class="outlook-col-label bear">Bearish / Negative</div>
+          <label class="check-row"><input type="checkbox" data-strat="Short Call"> Short Call</label>
+          <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread"> Bear Call Spread</label>
+          <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Put"> Long Put</label>
+          <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
+          <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
+        </div>
+      </div>
+      <div class="filter-hint">Check any strategy from either side — results combine bullish and bearish setups that match.</div>
+    </details>
+
+    <div class="sections-grid">
+      <details class="filter-section" id="qualitySection">
+        <summary>Quality<span class="summary-count" id="qualityCount" style="display:none;"></span></summary>
+        <div class="filter-section-body">
+          <label class="check-row"><input type="checkbox" data-quality="buy"> Buy signal</label>
+          <label class="check-row"><input type="checkbox" data-quality="sell"> Sell signal</label>
+          <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
+        </div>
+      </details>
+
+      <details class="filter-section" id="riskSection">
+        <summary>Risk<span class="summary-count" id="riskCount" style="display:none;"></span></summary>
+        <div class="filter-section-body">
+          <label class="check-row"><input type="checkbox" data-risk="excludeEarnings"> Exclude earnings within DTE</label>
+          <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
+          <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
+        </div>
+      </details>
+    </div>
+
+    <div class="apply-bar">
+      <div class="apply-bar-row">
+        <button class="reset-btn" id="resetFilters">Reset to defaults</button>
+        <button class="copy-btn" id="copyPromptBtn">✦ Copy Filters</button>
+      </div>
+      <div class="apply-bar-row2">
+        <span class="active-count" id="activeCountLabel">2 filters active</span>
+        <button class="apply-btn" id="applyFilters">Apply filters</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-bar">
+    <div class="results-count"><strong id="resultCount">…</strong> setups match your filters</div>
+    <div class="sort-wrap">
+      Sort by
+      <select id="sortSelect">
+        <option value="score">Composite rating</option>
+        <option value="ap">Annualized profit</option>
+        <option value="pot">Probability of touch</option>
+        <option value="dte">Days to expiration</option>
+      </select>
+    </div>
+  </div>
+  <div class="funnel-note" id="funnelNote"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Symbol / Strategy</th>
+          <th>Side</th>
+          <th>Exp / DTE</th>
+          <th>Prob. of Touch</th>
+          <th>Trade Profit</th>
+          <th>Ann. Profit</th>
+          <th>IV Rank</th>
+          <th>Composite</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="card-list" id="cardList"></div>
+
+  <footer>
+    Data reflects the prior session's close (EOD), snapshotted shortly before market close to avoid wide bid/ask distortion. This tool surfaces candidate setups for research purposes only and is not a recommendation to buy or sell any security. Screen for real-time or 15-minute-delayed pricing before entering a trade — quotes shown may be stale relative to the live market.
+  </footer>
+</div>
+
+<div class="layout" id="stocksView" style="display:none;">
+
+  <div class="results-bar" style="margin-top:14px;">
+    <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
+    <div class="sort-wrap">
+      Sort by
+      <select id="equitySortSelect">
+        <option value="score">Composite score</option>
+        <option value="chg1y">1-year change</option>
+      </select>
+    </div>
+  </div>
+  <div class="sort-wrap" style="margin-bottom:14px;">
+    Show
+    <select id="equityTypeSelect" style="flex:1;">
+      <option value="all">All</option>
+      <option value="stocks">Stocks only</option>
+      <option value="etfs">ETFs only</option>
+    </select>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Price</th>
+          <th>Trend</th>
+          <th>RSI</th>
+          <th>Composite</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="equityTableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="card-list" id="equityCardList"></div>
+
+  <footer>
+    Screens the same free EOD data and ticker list as the Options tab, evaluated as plain stock/ETF buy candidates instead of options strategies. "Trend" is a moving-average-alignment heuristic (8/20/50-day EMA), not a prediction. RSI is a standard 14-day momentum indicator. P/E, dividend yield, and market cap come from Yahoo's fundamentals data, which is frequently incomplete — especially for ETFs, where expense ratio, holdings, and AUM aren't reliably available for free at all. For research purposes only — not a recommendation to buy or sell any security.
+  </footer>
+</div>
+
+<div class="modal-scrim" id="modalScrim">
+  <div class="trade-modal" id="tradeModal"></div>
+</div>
+
+<div class="toast" id="toast">Filters applied</div>
+
+<script>
+  // Trade data is loaded from data.json (see loadTrades() near the bottom of this
+  // script) — this array starts empty and gets populated once the fetch resolves.
+  // data.json is either the committed seed file, or real output from the nightly
+  // update-data GitHub Action (scripts/fetch_data.py) once that's run at least once.
+  let trades = [];
+  let equities = [];
+  let dataGeneratedAt = null;
+
+  function formatDataDate(isoString){
+    if(!isoString) return null;
+    const d = new Date(isoString);
+    if(isNaN(d)) return null;
+    return d.toLocaleDateString(undefined, { month:'short', day:'numeric' });
+  }
+
+  async function loadTrades(){
+    const statusText = document.getElementById('dataStatusText');
+    const statusDot = document.getElementById('dataStatusDot');
+    try{
+      const res = await fetch('data.json', { cache:'no-store' });
+      if(!res.ok) throw new Error(`data.json fetch failed: ${res.status}`);
+      const json = await res.json();
+      trades = Array.isArray(json.trades) ? json.trades : [];
+      equities = Array.isArray(json.equities) ? json.equities : [];
+      dataGeneratedAt = json.generated_at || null;
+
+      const dateLabel = formatDataDate(json.generated_at);
+      if(dateLabel){
+        statusText.textContent = `EOD data · ${dateLabel} close`;
+        statusDot.style.background = 'var(--green)';
+      } else {
+        statusText.textContent = 'Seed data — not live yet';
+        statusDot.style.background = 'var(--text-faint)';
+      }
+    }catch(err){
+      console.error('Failed to load data.json', err);
+      trades = [];
+      equities = [];
+      statusText.textContent = 'Data unavailable';
+      statusDot.style.background = 'var(--red)';
+    }
+  }
+
+  let currentList = [];
+
+  const tbody = document.getElementById('tableBody');
+  const cardList = document.getElementById('cardList');
+  const resultCountEl = document.getElementById('resultCount');
+  const activeCountLabel = document.getElementById('activeCountLabel');
+
+  function meterHtml(score){
+    let ticks = '';
+    for(let i=1;i<=10;i++){ ticks += `<span class="${i<=score?'on':''}"></span>`; }
+    return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${score}.0</span></div>`;
+  }
+
+  function render(list){
+    currentList = list;
+    tbody.innerHTML = '';
+    cardList.innerHTML = '';
+
+    if(list.length === 0){
+      tbody.innerHTML = `<tr><td colspan="8" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</td></tr>`;
+      cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</div>`;
+    }
+
+    list.forEach((t, idx)=>{
+      const pill = t.side==='bull'
+        ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
+        : `<span class="side-pill bear"><span class="dot"></span>Bearish</span>`;
+
+      tbody.innerHTML += `
+        <tr>
+          <td>
+            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.strike}</span></div>
+            <div class="strat-name">${t.strat}</div>
+          </td>
+          <td>${pill}</td>
+          <td class="num">${t.exp} <span style="color:var(--text-faint);">· ${t.dte}d</span></td>
+          <td class="num">${t.pot}%</td>
+          <td class="num val-pos">+${t.roc}%</td>
+          <td class="num val-pos">+${t.ap}%</td>
+          <td class="num">${t.ivr}</td>
+          <td>${meterHtml(t.score)}</td>
+          <td><button class="row-action" data-idx="${idx}">View</button></td>
+        </tr>`;
+
+      cardList.innerHTML += `
+        <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
+          <div class="trade-card-top">
+            <div>
+              <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strike}</span></div>
+              <div class="strat-name">${t.strat}</div>
+            </div>
+            ${pill}
+          </div>
+          ${meterHtml(t.score)}
+          <div class="trade-card-metrics">
+            <div><div class="tcm-label">Prob. of Touch</div><div class="tcm-val">${t.pot}%</div></div>
+            <div><div class="tcm-label">Trade / Ann. Profit</div><div class="tcm-val val-pos">+${t.roc}% · +${t.ap}%</div></div>
+            <div><div class="tcm-label">Exp / DTE</div><div class="tcm-val">${t.exp} · ${t.dte}d</div></div>
+            <div class="tcm-more">View details ›</div>
+          </div>
+        </div>`;
+    });
+
+    resultCountEl.textContent = list.length;
+  }
+
+  let lastFunnel = null;
+
+  function computeFiltered(){
+    const activeStrats = Array.from(document.querySelectorAll('[data-strat]:checked')).map(cb=>cb.dataset.strat);
+    const pcoiChecks = Array.from(document.querySelectorAll('[data-pcoi]:checked')).map(cb=>cb.dataset.pcoi);
+    const pcvolChecks = Array.from(document.querySelectorAll('[data-pcvol]:checked')).map(cb=>cb.dataset.pcvol);
+
+    const wantBuy    = document.querySelector('[data-quality="buy"]').checked;
+    const wantSell   = document.querySelector('[data-quality="sell"]').checked;
+    const wantEma    = document.querySelector('[data-quality="ema"]').checked;
+    const excludeEarnings = document.querySelector('[data-risk="excludeEarnings"]').checked;
+    const etfOnly          = document.querySelector('[data-risk="etfOnly"]').checked;
+    const wantMoS           = document.querySelector('[data-risk="marginOfSafety"]').checked;
+
+    // Staged funnel — each stage narrows the previous one, so you can see exactly
+    // which filter category is doing the eliminating instead of just a final count.
+    let pool = trades;
+    const funnel = [{ label:'All setups', count: pool.length }];
+
+    if(activeStrats.length || pcoiChecks.length || pcvolChecks.length){
+      pool = pool.filter(t=>{
+        if(activeStrats.length && !activeStrats.includes(t.strat)) return false;
+        if(pcoiChecks.length){
+          const passesOI = pcoiChecks.some(side => side==='bull' ? t.pcOI < 0.7 : t.pcOI > 1.4);
+          if(!passesOI) return false;
+        }
+        if(pcvolChecks.length){
+          const passesVol = pcvolChecks.some(side => side==='bull' ? t.pcVol < 0.7 : t.pcVol > 1.4);
+          if(!passesVol) return false;
+        }
+        return true;
+      });
+      funnel.push({ label:'After Outlook & Strategy', count: pool.length });
+    }
+
+    if(wantBuy || wantSell || wantEma){
+      pool = pool.filter(t=> (!wantBuy || t.buy) && (!wantSell || t.sell) && (!wantEma || t.ema));
+      funnel.push({ label:'After Quality', count: pool.length });
+    }
+
+    if(excludeEarnings || etfOnly || wantMoS){
+      pool = pool.filter(t=> (!excludeEarnings || !t.earningsSoon) && (!etfOnly || t.isETF) && (!wantMoS || t.marginOfSafety));
+      funnel.push({ label:'After Risk', count: pool.length });
+    }
+
+    // Fixed quality floor, not user-toggleable: below 100% annualized isn't
+    // worth surfacing as a "ready-made" pick. Removed the old Min 20%/Min $10/
+    // RoC checkboxes and the Expiration/DTE-min filter entirely — the DTE-min
+    // filter in particular actively fought the backend's search-7-to-45-days-
+    // and-pick-the-best-return logic (a "min 15 days" filter would silently
+    // hide a genuinely-best 8-day pick the backend deliberately chose).
+    pool = pool.filter(t=> t.ap > 100);
+    funnel.push({ label:'After Min Profit (>100%)', count: pool.length });
+
+    lastFunnel = funnel;
+    return pool;
+  }
+
+  function renderFunnel(){
+    const el = document.getElementById('funnelNote');
+    if(!lastFunnel || lastFunnel.length <= 1){ el.textContent = ''; return; }
+    el.textContent = lastFunnel.map(f => `${f.label}: ${f.count}`).join('  →  ');
+  }
+
+  const FILTER_CHECKBOX_SELECTOR = '[data-strat], [data-quality], [data-risk], [data-pcoi], [data-pcvol]';
+
+  const SECTION_BADGES = {
+    outlookSection: 'outlookCount',
+    qualitySection: 'qualityCount',
+    riskSection: 'riskCount',
+  };
+
+  function updateSectionBadges(){
+    Object.entries(SECTION_BADGES).forEach(([sectionId, badgeId])=>{
+      const section = document.getElementById(sectionId);
+      const badge = document.getElementById(badgeId);
+      if(!section || !badge) return;
+      const n = section.querySelectorAll('input[type="checkbox"]:checked').length;
+      badge.textContent = n;
+      badge.style.display = n > 0 ? 'inline-block' : 'none';
+    });
+  }
+
+  function updateActiveCount(){
+    const n = document.querySelectorAll(`.filter-card input[type="checkbox"]:checked:is(${FILTER_CHECKBOX_SELECTOR})`).length;
+    activeCountLabel.textContent = `${n} filter${n===1?'':'s'} active`;
+    updateSectionBadges();
+  }
+
+  // badges update live as you check boxes, before you even hit Apply
+  document.querySelector('.filter-card').addEventListener('change', (e)=>{
+    if(e.target.matches('input[type="checkbox"]')) updateSectionBadges();
+  });
+
+  // --- Stocks & ETFs mode ---
+  let currentEquityList = [];
+  const equityTbody = document.getElementById('equityTableBody');
+  const equityCardList = document.getElementById('equityCardList');
+  let equitiesRenderedOnce = false;
+
+  function switchMode(mode){
+    const isOptions = mode === 'options';
+    document.getElementById('optionsView').style.display = isOptions ? '' : 'none';
+    document.getElementById('stocksView').style.display = isOptions ? 'none' : '';
+    document.getElementById('tabOptions').classList.toggle('active', isOptions);
+    document.getElementById('tabStocks').classList.toggle('active', !isOptions);
+    document.getElementById('tabOptions').setAttribute('aria-selected', isOptions);
+    document.getElementById('tabStocks').setAttribute('aria-selected', !isOptions);
+    if(!isOptions && !equitiesRenderedOnce){
+      equitiesRenderedOnce = true;
+      renderEquities(sortEquities(filterEquitiesByType(equities)));
+    }
+  }
+
+  function filterEquitiesByType(list){
+    const type = document.getElementById('equityTypeSelect').value;
+    if(type === 'stocks') return list.filter(e => !e.isETF);
+    if(type === 'etfs') return list.filter(e => e.isETF);
+    return list;
+  }
+
+  function sortEquities(list){
+    const sortBy = document.getElementById('equitySortSelect').value;
+    const sorted = [...list];
+    switch(sortBy){
+      case 'chg1y':
+        sorted.sort((a,b)=> (b.chg1y ?? -Infinity) - (a.chg1y ?? -Infinity));
+        break;
+      case 'score':
+      default:
+        sorted.sort((a,b)=> b.score - a.score);
+    }
+    return sorted;
+  }
+
+  function fmtPct(v){ return v == null ? '—' : `${v >= 0 ? '+' : ''}${v}%`; }
+  function pctClass(v){ return v == null ? '' : (v >= 0 ? 'val-pos' : 'val-neg'); }
+
+  function trendPill(trend){
+    const bullish = trend.includes('Uptrend');
+    const bearish = trend.includes('Downtrend');
+    const cls = bullish ? 'bull' : bearish ? 'bear' : '';
+    const style = cls ? '' : 'style="background:var(--surface-2); color:var(--text-dim); border-color:var(--border);"';
+    return `<span class="side-pill ${cls}" ${style}><span class="dot"></span>${trend}</span>`;
+  }
+
+  function renderEquities(list){
+    currentEquityList = list;
+    equityTbody.innerHTML = '';
+    equityCardList.innerHTML = '';
+    document.getElementById('equityCount').textContent = list.length;
+
+    if(list.length === 0){
+      equityTbody.innerHTML = `<tr><td colspan="6" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.</td></tr>`;
+      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.</div>`;
+      return;
+    }
+
+    list.forEach((e, idx)=>{
+      equityTbody.innerHTML += `
+        <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
+          <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}</td>
+          <td class="num">$${e.price.toFixed(2)}</td>
+          <td>${trendPill(e.trend)}</td>
+          <td class="num">${e.rsi ?? '—'}</td>
+          <td>${meterHtml(e.score)}</td>
+          <td style="color:var(--text-faint); font-size:12px;">View ›</td>
+        </tr>`;
+
+      equityCardList.innerHTML += `
+        <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
+          <div class="trade-card-top" style="margin-bottom:6px;">
+            <div class="ticker-sym">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}</div>
+            ${trendPill(e.trend)}
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">$${e.price.toFixed(2)} · RSI ${e.rsi ?? '—'}</span>
+            ${meterHtml(e.score)}
+          </div>
+        </div>`;
+    });
+  }
+
+  document.getElementById('equitySortSelect').addEventListener('change', ()=>{
+    renderEquities(sortEquities(currentEquityList));
+  });
+  document.getElementById('equityTypeSelect').addEventListener('change', ()=>{
+    renderEquities(sortEquities(filterEquitiesByType(equities)));
+  });
+
+  document.addEventListener('click', (e)=>{
+    const target = e.target.closest('#equityTableBody .row-action, #equityCardList .trade-card');
+    if(!target) return;
+    const idx = parseInt(target.dataset.eidx, 10);
+    const equity = currentEquityList[idx];
+    if(equity) openEquityModal(equity);
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('#equityCardList .trade-card');
+    if(!card) return;
+    e.preventDefault();
+    const idx = parseInt(card.dataset.eidx, 10);
+    const equity = currentEquityList[idx];
+    if(equity) openEquityModal(equity);
+  });
+
+  function openEquityModal(e){
+    const sentimentLabel = e.newsSentimentLabel || 'Neutral';
+    const sentimentColor = sentimentLabel === 'Positive' ? 'var(--green)' : sentimentLabel === 'Negative' ? 'var(--red)' : 'var(--text-faint)';
+    const hasNews = Array.isArray(e.newsHeadlines) && e.newsHeadlines.length > 0;
+
+    const headlinesHtml = hasNews
+      ? e.newsHeadlines.map(h => {
+          const s = typeof h.sentiment === 'number' ? h.sentiment : null;
+          const sColor = s == null ? 'var(--text-faint)' : s > 0.1 ? 'var(--green)' : s < -0.1 ? 'var(--red)' : 'var(--text-faint)';
+          const sLabel = s == null ? '' : ` · ${s > 0 ? '+' : ''}${s.toFixed(2)}`;
+          return `
+            <a class="news-headline" href="${h.link || '#'}" target="_blank" rel="noopener">
+              <div class="news-headline-title">${h.title}</div>
+              <div class="news-headline-meta">${h.publisher || 'Unknown source'}<span style="color:${sColor}; font-family:var(--mono);">${sLabel}</span></div>
+            </a>`;
+        }).join('')
+      : `<div class="news-empty">No recent headlines available for this ticker.</div>`;
+
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div>
+          <div class="ticker-sym" style="font-size:19px;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:14px;">ETF</span>' : ''}</div>
+        </div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-strat">$${e.price.toFixed(2)} · ${e.trend}</div>
+      <div class="modal-metrics">
+        <div><div class="mm-label">RSI (14-day)</div><div class="mm-val">${e.rsi ?? '—'}</div></div>
+        <div><div class="mm-label">1-Month Change</div><div class="mm-val ${pctClass(e.chg1m)}">${fmtPct(e.chg1m)}</div></div>
+        <div><div class="mm-label">3-Month Change</div><div class="mm-val ${pctClass(e.chg3m)}">${fmtPct(e.chg3m)}</div></div>
+        <div><div class="mm-label">6-Month Change</div><div class="mm-val ${pctClass(e.chg6m)}">${fmtPct(e.chg6m)}</div></div>
+        <div><div class="mm-label">1-Year Change</div><div class="mm-val ${pctClass(e.chg1y)}">${fmtPct(e.chg1y)}</div></div>
+        <div><div class="mm-label">52-Week High</div><div class="mm-val">$${e.high52wk.toFixed(2)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromHigh)})</span></div></div>
+        <div><div class="mm-label">52-Week Low</div><div class="mm-val">$${e.low52wk.toFixed(2)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromLow)})</span></div></div>
+        <div><div class="mm-label">P/E Ratio</div><div class="mm-val">${e.peRatio ?? '—'}</div></div>
+        <div><div class="mm-label">Dividend Yield</div><div class="mm-val">${e.dividendYield != null ? e.dividendYield + '%' : '—'}</div></div>
+        <div><div class="mm-label">Market Cap</div><div class="mm-val">${e.marketCap ? '$' + (e.marketCap/1e9).toFixed(1) + 'B' : '—'}</div></div>
+        <div><div class="mm-label">Volume vs 30-day Avg</div><div class="mm-val">${e.volRatio != null ? e.volRatio + '×' : '—'}</div></div>
+        <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${e.score}.0 / 10</div></div>
+      </div>
+
+      <div class="news-section-header">
+        <span class="mm-label" style="margin:0;">Recent News Sentiment</span>
+        <span class="sentiment-badge" style="color:${sentimentColor}; border-color:${sentimentColor};">
+          <span class="sentiment-dot" style="background:${sentimentColor};"></span>${sentimentLabel}
+        </span>
+      </div>
+      <div class="news-list">${headlinesHtml}</div>
+      <div class="modal-note">"Trend" is a moving-average-alignment heuristic (8/20/50-day EMA) — it describes the current shape of the average, not a prediction. RSI is a standard 14-day momentum indicator. P/E, dividend yield, and market cap come from Yahoo's fundamentals data, which is frequently incomplete, especially for ETFs. Sentiment is a lexicon-based score of headline text only, not full-article analysis. Figures are computed from the prior session's EOD close — for research purposes only, not a recommendation to buy or sell.</div>
+      <button class="modal-copy-btn" id="modalCopyBtn">Copy summary</button>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    document.getElementById('modalCopyBtn').addEventListener('click', async ()=>{
+      const summary = `${e.sym} $${e.price.toFixed(2)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${e.score}.0`;
+      const ok = await copyText(summary);
+      showToast(ok ? 'Summary copied' : 'Copy blocked — select the text manually');
+    });
+  }
+
+  function sortTrades(list){
+    const sortBy = document.getElementById('sortSelect').value;
+    const sorted = [...list];
+    switch(sortBy){
+      case 'ap':
+        sorted.sort((a, b) => b.ap - a.ap); // highest annualized profit first
+        break;
+      case 'pot':
+        sorted.sort((a, b) => a.pot - b.pot); // lowest probability of touch first (safer first)
+        break;
+      case 'dte':
+        sorted.sort((a, b) => a.dte - b.dte); // soonest expiration first
+        break;
+      case 'score':
+      default:
+        sorted.sort((a, b) => b.score - a.score); // highest composite rating first
+    }
+    return sorted;
+  }
+
+  function applyFilters(){
+    const prevCount = currentList.length;
+    const filtered = sortTrades(computeFiltered());
+    render(filtered);
+    renderFunnel();
+    updateActiveCount();
+
+    if(filtered.length === prevCount){
+      showToast(`Filters applied — still ${filtered.length} setup${filtered.length===1?'':'s'} (see funnel below results)`);
+    } else {
+      showToast(`Filters applied — ${filtered.length} setup${filtered.length===1?'':'s'} found`);
+    }
+    document.querySelector('.results-bar').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
+  // Currently: no filters pre-selected. The >100% annualized profit floor and
+  // the 7-45 DTE search window are now fixed in the backend/filter logic, not
+  // user-toggleable — a DTE-min filter here would fight the backend's
+  // search-and-pick-best-return logic, so there's no equivalent front-end knob.
+  const DEFAULT_CHECKED = [];
+
+  function resetFilters(){
+    document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);
+    DEFAULT_CHECKED.forEach(sel => { document.querySelector(sel).checked = true; });
+    applyFilters();
+  }
+
+  document.getElementById('applyFilters').addEventListener('click', applyFilters);
+  document.getElementById('resetFilters').addEventListener('click', resetFilters);
+
+  // sort takes effect immediately on the currently-filtered list, no need to hit Apply
+  document.getElementById('sortSelect').addEventListener('change', ()=>{
+    render(sortTrades(currentList));
+  });
+
+  // --- apply feedback toast ---
+  const toastEl = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=> toastEl.classList.remove('show'), 2200);
+  }
+
+  // --- clipboard helper with fallback for sandboxed/non-secure contexts ---
+  // navigator.clipboard silently fails (or is unavailable) inside many iframe
+  // previews and non-HTTPS contexts — this always returns whether it actually worked.
+  async function copyText(text){
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    }catch(e){ /* fall through to legacy fallback */ }
+    try{
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    }catch(e){
+      return false;
+    }
+  }
+
+  // --- trade detail modal ---
+  const modalScrim = document.getElementById('modalScrim');
+  const tradeModal = document.getElementById('tradeModal');
+
+  function openTradeModal(t){
+    const sentimentLabel = t.newsSentimentLabel || 'Neutral';
+    const sentimentColor = sentimentLabel === 'Positive' ? 'var(--green)' : sentimentLabel === 'Negative' ? 'var(--red)' : 'var(--text-faint)';
+    const hasNews = Array.isArray(t.newsHeadlines) && t.newsHeadlines.length > 0;
+
+    const headlinesHtml = hasNews
+      ? t.newsHeadlines.map(h => {
+          const s = typeof h.sentiment === 'number' ? h.sentiment : null;
+          const sColor = s == null ? 'var(--text-faint)' : s > 0.1 ? 'var(--green)' : s < -0.1 ? 'var(--red)' : 'var(--text-faint)';
+          const sLabel = s == null ? '' : ` · ${s > 0 ? '+' : ''}${s.toFixed(2)}`;
+          return `
+            <a class="news-headline" href="${h.link || '#'}" target="_blank" rel="noopener">
+              <div class="news-headline-title">${h.title}</div>
+              <div class="news-headline-meta">${h.publisher || 'Unknown source'}<span style="color:${sColor}; font-family:var(--mono);">${sLabel}</span></div>
+            </a>`;
+        }).join('')
+      : `<div class="news-empty">No recent headlines available for this ticker.</div>`;
+
+    const earningsHtml = (t.daysToEarnings != null)
+      ? `<div class="mm-label" style="margin-top:2px;">Next Earnings</div><div class="mm-val">${t.daysToEarnings} day${t.daysToEarnings === 1 ? '' : 's'} away</div>`
+      : '';
+
+    const hasVolRegime = t.volRegime && t.volRegime !== 'Unknown';
+    const volRegimeColor = t.volRegime === 'Rich' ? 'var(--green)' : t.volRegime === 'Cheap' ? 'var(--red)' : 'var(--text-faint)';
+    const volRegimeHtml = hasVolRegime
+      ? `<div class="mm-label" style="margin-top:2px;">IV vs Realized Vol</div><div class="mm-val" style="color:${volRegimeColor};">${t.volRegime}${t.ivRvRatio != null ? ` (${t.ivRvRatio}×)` : ''}</div>`
+      : '';
+
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div>
+          <div class="ticker-sym" style="font-size:19px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:14px;">${t.strike}</span></div>
+        </div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days</div>
+      <div class="modal-metrics">
+        <div><div class="mm-label">Probability of Touch</div><div class="mm-val">${t.pot}%</div></div>
+        <div><div class="mm-label">Trade Profit</div><div class="mm-val val-pos">+${t.roc}%</div></div>
+        <div><div class="mm-label">Annualized Profit</div><div class="mm-val val-pos">+${t.ap}%</div></div>
+        <div><div class="mm-label">Premium</div><div class="mm-val">$${t.premium.toFixed(2)}</div></div>
+        <div><div class="mm-label">Breakeven</div><div class="mm-val">$${t.breakeven.toFixed(2)}</div></div>
+        <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
+        <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
+        <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>
+        <div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>
+        <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
+        <div><div class="mm-label">Put/Call Volume</div><div class="mm-val">${t.pcVol.toFixed(2)}</div></div>
+        <div><div class="mm-label">Max Loss (est.)</div><div class="mm-val val-neg">$${t.maxLoss.toLocaleString()}</div></div>
+        <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${t.score}.0 / 10</div></div>
+        ${earningsHtml}
+        ${volRegimeHtml}
+      </div>
+
+      <div class="news-section-header">
+        <span class="mm-label" style="margin:0;">Recent News Sentiment</span>
+        <span class="sentiment-badge" style="color:${sentimentColor}; border-color:${sentimentColor};">
+          <span class="sentiment-dot" style="background:${sentimentColor};"></span>${sentimentLabel}
+        </span>
+      </div>
+      <div class="news-list">${headlinesHtml}</div>
+      <div class="modal-note">"IV vs Realized Vol" compares this option's implied volatility to the stock's own recent 20-day realized volatility — "Rich" means the market is paying more for this option than recent price action alone would suggest, which favors premium-selling strategies (everything SignalHQ screens for); "Cheap" means less edge for a seller. Sentiment is a lexicon-based score of headline text only (not full articles, not an LLM reading the story) — treat it as a rough gauge of recent press tone, not analysis. Figures are computed from the prior session's EOD close and are for research purposes only — not a recommendation to enter this trade. Verify live pricing before placing an order.</div>
+      <button class="modal-copy-btn" id="modalCopyBtn">Copy trade summary</button>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    document.getElementById('modalCopyBtn').addEventListener('click', async ()=>{
+      const summary = `${t.sym} ${t.strat} ${t.strike} · exp ${t.exp} (${t.dte}d) · POT ${t.pot}% · Trade Profit +${t.roc}% · Ann. Profit +${t.ap}% · IV Rank ${t.ivr} · News: ${sentimentLabel} · Composite ${t.score}.0`;
+      const ok = await copyText(summary);
+      showToast(ok ? 'Trade summary copied' : 'Copy blocked — select the text manually');
+    });
+  }
+  function closeTradeModal(){ modalScrim.classList.remove('show'); }
+  modalScrim.addEventListener('click', (e)=>{ if(e.target === modalScrim) closeTradeModal(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeTradeModal(); });
+
+  // --- Copy Filters ---
+  function buildFiltersText(){
+    const groups = [
+      { label:'Outlook & Strategy', selector:'[data-strat]:checked, [data-pcoi]:checked, [data-pcvol]:checked' },
+      { label:'Quality',            selector:'[data-quality]:checked' },
+      { label:'Risk',               selector:'[data-risk]:checked' },
+    ];
+
+    const lines = [];
+    groups.forEach(g=>{
+      const items = Array.from(document.querySelectorAll(`.filter-card ${g.selector}`))
+        .map(cb => cb.closest('label').textContent.trim());
+      if(items.length) lines.push(`${g.label}: ${items.join(', ')}`);
+    });
+
+    lines.push('Fixed: annualized profit > 100%');
+
+    return lines.join('\n') || 'No filters selected.';
+  }
+
+  function openPromptModal(){
+    const filtersText = buildFiltersText();
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:17px;">Active Filters</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-strat">Your currently selected filters, ready to paste anywhere.</div>
+      <textarea id="promptTextarea" readonly
+        style="width:100%; min-height:160px; margin:14px 0; padding:12px; font-family:var(--mono); font-size:16px; line-height:1.5; color:var(--text); background:var(--surface-2); border:1px solid var(--border); border-radius:8px; resize:vertical;"
+      >${filtersText}</textarea>
+      <div class="modal-note">If "Copy" doesn't work in your browser, tap the box above and select all manually.</div>
+      <button class="modal-copy-btn" id="promptCopyBtn">Copy to clipboard</button>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    document.getElementById('promptCopyBtn').addEventListener('click', async ()=>{
+      const ok = await copyText(filtersText);
+      showToast(ok ? 'Filters copied to clipboard' : 'Copy blocked by browser — select the text above and copy manually');
+    });
+    // auto-select the textarea content so a manual copy is a single tap away regardless
+    const ta = document.getElementById('promptTextarea');
+    ta.addEventListener('focus', ()=> ta.select());
+  }
+
+  document.getElementById('copyPromptBtn').addEventListener('click', openPromptModal);
+
+  // --- Export ---
+  function downloadFile(filename, content, mime){
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function exportFilenameBase(){
+    const dateLabel = dataGeneratedAt ? dataGeneratedAt.slice(0,10) : new Date().toISOString().slice(0,10);
+    return `signalhq-export-${dateLabel}`;
+  }
+
+  function buildExportJSON(list){
+    return JSON.stringify({ generated_at: dataGeneratedAt, exported_at: new Date().toISOString(), count: list.length, trades: list }, null, 2);
+  }
+
+  function buildExportCSV(list){
+    if(list.length === 0) return 'No setups match the active filters.';
+    const cols = Object.keys(list[0]);
+    const escape = (v) => {
+      const s = String(v);
+      return /[",\n]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s;
+    };
+    const rows = [cols.join(',')];
+    list.forEach(t => rows.push(cols.map(c => escape(t[c])).join(',')));
+    return rows.join('\n');
+  }
+
+  function buildExportXML(list){
+    const esc = (v) => String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const rows = list.map(t => {
+      const fields = Object.entries(t).map(([k,v]) => `    <${k}>${esc(v)}</${k}>`).join('\n');
+      return `  <trade>\n${fields}\n  </trade>`;
+    }).join('\n');
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<trades count="${list.length}" generatedAt="${esc(dataGeneratedAt || '')}">\n${rows}\n</trades>`;
+  }
+
+  function openExportModal(){
+    const n = currentList.length;
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:17px;">Export Results</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-strat">
+        Exports the <strong style="color:var(--text);">${n} setup${n===1?'':'s'}</strong> currently shown below — the same rows your active filters produced, not the full unfiltered dataset. Adjust filters and hit Apply first if you want a different set.
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; margin:16px 0;">
+        <button class="modal-copy-btn" id="exportJsonBtn" style="background:var(--amber);">Download JSON</button>
+        <button class="modal-copy-btn" id="exportCsvBtn" style="background:var(--surface); color:var(--text); border:1px solid var(--border-strong);">Download CSV (opens in Excel/Sheets)</button>
+        <button class="modal-copy-btn" id="exportXmlBtn" style="background:var(--surface); color:var(--text); border:1px solid var(--border-strong);">Download XML</button>
+      </div>
+      <div class="modal-note">Files download straight to your device — nothing is uploaded anywhere.</div>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+
+    document.getElementById('exportJsonBtn').addEventListener('click', ()=>{
+      downloadFile(`${exportFilenameBase()}.json`, buildExportJSON(currentList), 'application/json');
+      showToast(`Downloaded ${n} setup${n===1?'':'s'} as JSON`);
+    });
+    document.getElementById('exportCsvBtn').addEventListener('click', ()=>{
+      downloadFile(`${exportFilenameBase()}.csv`, buildExportCSV(currentList), 'text/csv');
+      showToast(`Downloaded ${n} setup${n===1?'':'s'} as CSV`);
+    });
+    document.getElementById('exportXmlBtn').addEventListener('click', ()=>{
+      downloadFile(`${exportFilenameBase()}.xml`, buildExportXML(currentList), 'application/xml');
+      showToast(`Downloaded ${n} setup${n===1?'':'s'} as XML`);
+    });
+  }
+
+  document.getElementById('exportBtn').addEventListener('click', openExportModal);
+
+  // --- Manage Tickers ---
+  // The watchlist that scripts/fetch_data.py screens lives in tickers.json at the
+  // repo root — this panel can't write to GitHub directly (that would require a
+  // token embedded in this public page, which is a real security risk), so instead
+  // it prepares the exact new file content and links straight to GitHub's editor
+  // for a one-paste commit.
+  let workingTickers = [];
+  let workingEtfs = [];
+
+  function githubEditUrl(path){
+    const host = window.location.hostname;
+    if(!host.endsWith('.github.io')) return null;
+    const username = host.split('.')[0];
+    const repo = window.location.pathname.split('/').filter(Boolean)[0];
+    if(!repo) return null;
+    return `https://github.com/${username}/${repo}/edit/main/${path}`;
+  }
+
+  async function loadTickersConfig(){
+    try{
+      const res = await fetch('tickers.json', { cache:'no-store' });
+      if(!res.ok) throw new Error(`tickers.json fetch failed: ${res.status}`);
+      const json = await res.json();
+      workingTickers = Array.isArray(json.tickers) ? [...json.tickers] : [];
+      workingEtfs = Array.isArray(json.etfs) ? [...json.etfs] : [];
+    }catch(err){
+      console.error('Failed to load tickers.json', err);
+      workingTickers = [];
+      workingEtfs = [];
+    }
+  }
+
+  function tickersJsonContent(){
+    return JSON.stringify({ tickers: workingTickers, etfs: workingEtfs }, null, 2) + '\n';
+  }
+
+  function renderTickersModalBody(){
+    const chipsHtml = workingTickers.map(t => {
+      const isEtf = workingEtfs.includes(t);
+      return `<span class="ticker-chip${isEtf ? ' etf' : ''}">${t}${isEtf ? ' · ETF' : ''}<button data-remove-ticker="${t}" aria-label="Remove ${t}">✕</button></span>`;
+    }).join('');
+
+    const editUrl = githubEditUrl('tickers.json');
+
+    document.getElementById('tickerChips').innerHTML = chipsHtml || `<span style="color:var(--text-faint); font-size:12.5px;">No tickers yet — add one below.</span>`;
+    document.getElementById('tickerJsonBox').value = tickersJsonContent();
+
+    const linkEl = document.getElementById('tickerGithubLink');
+    if(editUrl){
+      linkEl.href = editUrl;
+      linkEl.style.display = 'block';
+    } else {
+      linkEl.style.display = 'none';
+    }
+  }
+
+  function addTicker(){
+    const input = document.getElementById('tickerAddInput');
+    const etfCheck = document.getElementById('tickerEtfCheck');
+    let sym = input.value.trim().toUpperCase();
+
+    if(!sym) return;
+    if(!/^[A-Z]{1,6}(\.[A-Z])?$/.test(sym)){
+      showToast(`"${sym}" doesn't look like a valid ticker`);
+      return;
+    }
+    if(workingTickers.includes(sym)){
+      showToast(`${sym} is already in the list`);
+      input.value = '';
+      return;
+    }
+
+    workingTickers.push(sym);
+    if(etfCheck.checked) workingEtfs.push(sym);
+
+    input.value = '';
+    etfCheck.checked = false;
+    renderTickersModalBody();
+  }
+
+  function removeTicker(sym){
+    workingTickers = workingTickers.filter(t => t !== sym);
+    workingEtfs = workingEtfs.filter(t => t !== sym);
+    renderTickersModalBody();
+  }
+
+  async function openTickersModal(){
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-strat">Loading current watchlist…</div>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+
+    await loadTickersConfig();
+
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-strat">This is the watchlist the nightly data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to paste into GitHub.</div>
+
+      <div class="ticker-chips" id="tickerChips"></div>
+
+      <div class="ticker-add-row">
+        <input type="text" id="tickerAddInput" placeholder="e.g. GOOGL" maxlength="8" autocapitalize="characters">
+        <button id="tickerAddBtn" aria-label="Add ticker">+</button>
+      </div>
+      <label class="ticker-etf-check">
+        <input type="checkbox" id="tickerEtfCheck"> This is an ETF (affects the "ETFs only" filter)
+      </label>
+
+      <div class="modal-note">Updated <code>tickers.json</code> — copy this or use the link below:</div>
+      <textarea class="ticker-json-box" id="tickerJsonBox" readonly></textarea>
+      <button class="modal-copy-btn" id="tickerCopyBtn">Copy JSON</button>
+      <a class="ticker-github-link" id="tickerGithubLink" target="_blank" rel="noopener">Open tickers.json on GitHub to paste &amp; commit →</a>
+    `;
+
+    renderTickersModalBody();
+
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    document.getElementById('tickerAddBtn').addEventListener('click', addTicker);
+    document.getElementById('tickerAddInput').addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){ e.preventDefault(); addTicker(); }
+    });
+    document.getElementById('tickerChips').addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-remove-ticker]');
+      if(btn) removeTicker(btn.dataset.removeTicker);
+    });
+    document.getElementById('tickerCopyBtn').addEventListener('click', async ()=>{
+      const ok = await copyText(tickersJsonContent());
+      showToast(ok ? 'tickers.json copied' : 'Copy blocked — select the text above and copy manually');
+    });
+  }
+
+  document.getElementById('tickersBtn').addEventListener('click', openTickersModal);
+
+  document.addEventListener('click', (e)=>{
+    const target = e.target.closest('.row-action, .trade-card');
+    if(!target) return;
+    const idx = parseInt(target.dataset.idx, 10);
+    const trade = currentList[idx];
+    if(trade) openTradeModal(trade);
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.trade-card');
+    if(!card) return;
+    e.preventDefault();
+    const idx = parseInt(card.dataset.idx, 10);
+    const trade = currentList[idx];
+    if(trade) openTradeModal(trade);
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    if(!e.target.closest('.brand')) return;
+    e.preventDefault();
+    location.reload();
+  });
+
+  document.getElementById('refreshBtn').addEventListener('click', async ()=>{
+    const btn = document.getElementById('refreshBtn');
+    if(btn.classList.contains('spinning')) return; // already refreshing, ignore double-tap
+    btn.classList.add('spinning');
+    btn.disabled = true;
+
+    await loadTrades(); // re-fetches data.json fresh (cache:'no-store') and updates the status badge
+
+    const onOptions = document.getElementById('tabOptions').classList.contains('active');
+    if(onOptions){
+      render(sortTrades(computeFiltered()));
+      renderFunnel();
+      updateActiveCount();
+    } else {
+      renderEquities(sortEquities(filterEquitiesByType(equities)));
+    }
+
+    btn.classList.remove('spinning');
+    btn.disabled = false;
+    showToast('Data refreshed');
+  });
+
+  // initial render matches default-checked filters (no toast/scroll on load)
+  loadTrades().then(() => {
+    render(sortTrades(computeFiltered()));
+    renderFunnel();
+    updateActiveCount();
+  });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js').catch(()=>{});
+    });
+  }
+</script>
+
+</body>
+</html>

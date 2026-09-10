@@ -823,8 +823,17 @@ def build_equity_snapshot(ticker_symbol, is_etf):
         closes = history["Close"]
         price = float(closes.iloc[-1])
         if math.isnan(price) or price <= 0:
-            print(f"  skip {ticker_symbol} (equity): invalid current price")
-            return None
+            # same fallback as build_trade_for_ticker above — the most recent
+            # bar is occasionally incomplete/NaN right after close. Confirmed
+            # in production: every equity snapshot failed with "invalid
+            # current price" in the exact same run where every options trade
+            # for the same tickers succeeded, because that function already
+            # had this fallback and this one didn't.
+            if len(closes) >= 2:
+                price = float(closes.iloc[-2])
+            if math.isnan(price) or price <= 0:
+                print(f"  skip {ticker_symbol} (equity): current price is invalid/NaN (most recent close data looks broken)")
+                return None
 
         high_52wk = float(history["High"].max())
         low_52wk = float(history["Low"].min())

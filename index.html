@@ -606,18 +606,18 @@
           <div class="outlook-col-label bull">Bullish / Positive</div>
           <label class="check-row"><input type="checkbox" data-strat="Short Put"> Short Put</label>
           <label class="check-row"><input type="checkbox" data-strat="Covered Call"> Covered Call</label>
-          <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread"> Bull Put Spread</label>
+          <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> Bull Put Spread</label>
           <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Call"> Long Call</label>
-          <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
-          <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
+          <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
+          <label class="check-row"><input type="checkbox" data-pcvol="bull" checked> P/C Vol &lt; 0.7</label>
         </div>
         <div class="outlook-col">
           <div class="outlook-col-label bear">Bearish / Negative</div>
           <label class="check-row"><input type="checkbox" data-strat="Short Call"> Short Call</label>
-          <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread"> Bear Call Spread</label>
+          <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> Bear Call Spread</label>
           <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Put"> Long Put</label>
-          <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
-          <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
+          <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
+          <label class="check-row"><input type="checkbox" data-pcvol="bear" checked> P/C Vol &gt; 1.4</label>
         </div>
       </div>
       <div class="filter-hint">Check any strategy from either side — results combine bullish and bearish setups that match.</div>
@@ -636,7 +636,7 @@
       <details class="filter-section" id="riskSection">
         <summary>Risk<span class="summary-count" id="riskCount" style="display:none;"></span></summary>
         <div class="filter-section-body">
-          <label class="check-row"><input type="checkbox" data-risk="excludeEarnings"> Exclude earnings within DTE</label>
+          <label class="check-row"><input type="checkbox" data-risk="excludeEarnings" checked> Exclude earnings within DTE</label>
           <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
           <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
         </div>
@@ -1317,11 +1317,15 @@
   }
 
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
-  // Currently: no filters pre-selected. The >100% annualized profit floor and
-  // the 7-45 DTE search window are now fixed in the backend/filter logic, not
-  // user-toggleable — a DTE-min filter here would fight the backend's
-  // search-and-pick-best-return logic, so there's no equivalent front-end knob.
-  const DEFAULT_CHECKED = [];
+  const DEFAULT_CHECKED = [
+    '[data-strat="Bull Put Spread"]',
+    '[data-strat="Bear Call Spread"]',
+    '[data-pcoi="bull"]',
+    '[data-pcvol="bull"]',
+    '[data-pcoi="bear"]',
+    '[data-pcvol="bear"]',
+    '[data-risk="excludeEarnings"]',
+  ];
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);

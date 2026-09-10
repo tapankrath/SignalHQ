@@ -212,14 +212,17 @@ def composite_score(ann_profit, pot, ivr):
     return round(min(10, max(1, score)), 1)
 
 
-def chain_diagnostics(df):
+def chain_diagnostics(df, spot=None):
     """
     Describes what a chain actually contained, for logging when strike-picking
     fails. The distinction matters a lot: 0 rows means Yahoo likely blocked or
     rate-limited the request (a known risk running yfinance from shared CI IP
     ranges); rows present but no valid IV means a stale/garbage snapshot; rows
     with valid IV but still no match means the target delta genuinely wasn't
-    available that day, which is a data problem, not a request problem.
+    available that day, which is a data problem, not a request problem;
+    strikes wildly inconsistent with spot means a stale/un-adjusted chain,
+    most commonly following a real stock split the chain hasn't caught up to
+    (confirmed against ServiceNow/NOW after its Dec 2025 5-for-1 split).
     """
     if df is None or len(df) == 0:
         return "chain came back with 0 rows — likely blocked/rate-limited by Yahoo, not a data-quality issue"
@@ -227,6 +230,13 @@ def chain_diagnostics(df):
     valid = ivs[(ivs > 0) & (~ivs.isna())]
     if len(valid) == 0:
         return f"{len(df)} rows but none had valid IV — likely a stale/blocked Yahoo snapshot"
+    if spot and spot > 0:
+        strikes = df["strike"].apply(lambda v: safe_float(v, default=0.0))
+        sane = strikes[(strikes / spot >= 0.25) & (strikes / spot <= 4.0)]
+        if len(sane) == 0:
+            return (f"{len(df)} rows with valid IV, but every strike is wildly inconsistent with "
+                    f"spot ${spot:.2f} (strike range {strikes.min():.0f}-{strikes.max():.0f}) — "
+                    f"likely a stale/un-adjusted chain, check for a recent stock split")
     return f"{len(df)} rows, {len(valid)} with valid IV (range {valid.min():.2f}-{valid.max():.2f})"
 
 
@@ -237,7 +247,24 @@ def pick_strike_by_delta(chain_df, spot, dte_days, target_delta, option_type):
         iv = safe_float(row.get("impliedVolatility"), default=0.0)
         if iv <= 0:
             continue
-        delta = bs_delta(spot, row["strike"], dte_days, iv, option_type)
+        strike = safe_float(row.get("strike"), default=0.0)
+        if strike <= 0:
+            continue
+        # Sanity guard: a ~20-delta strike should always land within a fairly
+        # narrow band of spot under any realistic market condition. A strike
+        # wildly outside that band (e.g. 5-10x spot) means the options chain
+        # itself is bad data — most commonly a real stock split that yfinance's
+        # free/unofficial chain hasn't caught up to adjusting for yet, so the
+        # strikes still reflect pre-split contract prices while `spot` (from
+        # price history) correctly reflects the post-split price. Confirmed
+        # this exact scenario against ServiceNow (NOW): a real 5-for-1 split
+        # effective Dec 18, 2025 left the chain showing ~$1200 strikes against
+        # a genuine ~$134 spot — an 8.96x mismatch a real 0.20-delta pick would
+        # never produce. Skip rather than publish an internally-inconsistent
+        # trade (strike and breakeven implying two different stock prices).
+        if not (0.25 <= strike / spot <= 4.0):
+            continue
+        delta = bs_delta(spot, strike, dte_days, iv, option_type)
         if math.isnan(delta):
             continue
         diff = abs(abs(delta) - target_delta)
@@ -494,7 +521,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     if strat == "Short Put":
         picked_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
         if not picked_row:
-            return None, f"no put near target delta — {chain_diagnostics(puts)}"
+            return None, f"no put near target delta — {chain_diagnostics(puts, spot)}"
         row, delta = picked_row
         premium = mid_price(row)
         strike = float(row["strike"])
@@ -508,7 +535,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     if strat == "Covered Call":
         picked_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
         if not picked_row:
-            return None, f"no call near target delta — {chain_diagnostics(calls)}"
+            return None, f"no call near target delta — {chain_diagnostics(calls, spot)}"
         row, delta = picked_row
         premium = mid_price(row)
         strike = float(row["strike"])
@@ -522,7 +549,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     if strat == "Short Call":
         picked_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
         if not picked_row:
-            return None, f"no call near target delta — {chain_diagnostics(calls)}"
+            return None, f"no call near target delta — {chain_diagnostics(calls, spot)}"
         row, delta = picked_row
         premium = mid_price(row)
         strike = float(row["strike"])
@@ -536,7 +563,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     if strat == "Bull Put Spread":
         short_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
         if not short_row:
-            return None, f"no put near target delta for short leg — {chain_diagnostics(puts)}"
+            return None, f"no put near target delta for short leg — {chain_diagnostics(puts, spot)}"
         s_row, s_delta = short_row
         short_strike = float(s_row["strike"])
         lower_strikes = puts[puts["strike"] < short_strike].sort_values("strike", ascending=False)
@@ -556,7 +583,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     # Bear Call Spread
     short_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
     if not short_row:
-        return None, f"no call near target delta for short leg — {chain_diagnostics(calls)}"
+        return None, f"no call near target delta for short leg — {chain_diagnostics(calls, spot)}"
     s_row, s_delta = short_row
     short_strike = float(s_row["strike"])
     higher_strikes = calls[calls["strike"] > short_strike].sort_values("strike")

@@ -141,13 +141,8 @@
     border-radius:7px; padding:7px 9px; color:var(--text);
   }
   #portfolioCapital{ width:120px; }
-  #portfolioTarget{ width:80px; }
-  .portfolio-split-readout{ font-size:13px; font-weight:700; color:var(--text-dim); white-space:nowrap; }
-  .portfolio-split-note{
-    max-width:1080px; margin:0 auto; padding:0 18px 10px;
-    font-size:11.5px; color:var(--text-faint); font-style:italic;
-    background:var(--surface-2);
-  }
+  #portfolioSplit{ width:56px; text-align:center; }
+  .portfolio-split-readout{ font-size:12.5px; font-weight:700; color:var(--text-dim); white-space:nowrap; }
 
   .portfolio-fab-count{
     background:var(--amber-strong); color:#fff;
@@ -496,7 +491,6 @@
     .status-row{ padding:8px 14px; }
     .portfolio-bar{ padding:10px 14px; gap:10px; }
     #portfolioCapital{ width:88px; }
-    #portfolioTarget{ width:64px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand{ gap:8px; }
     .brand-mark{ width:32px; height:32px; }
@@ -594,13 +588,11 @@
     <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
   </label>
   <label>
-    Target %
-    <input type="text" id="portfolioTarget" inputmode="numeric" placeholder="e.g. 20">
+    Equity %
+    <input type="text" id="portfolioSplit" inputmode="numeric" value="60">
   </label>
-  <span class="portfolio-split-readout" id="portfolioSplitReadout">Equity <span id="equitySplitDisplay">60</span>% / Options <span id="optionsSplitDisplay">40</span>%</span>
-  <input type="hidden" id="portfolioSplit" value="60">
+  <span class="portfolio-split-readout">Options: <span id="optionsSplitDisplay">40</span>%</span>
 </div>
-<div class="portfolio-split-note" id="portfolioSplitNote" style="display:none;"></div>
 
 <div class="layout" id="optionsView">
 
@@ -1729,77 +1721,15 @@
       document.querySelectorAll(`[data-eid="${CSS.escape(id)}"]`).forEach(other => { other.checked = cb.checked; });
     }
     updatePortfolioCount();
-    autoComputeSplit();
   });
 
-  // --- Target-return auto-split ---
-  // Solves equity% so that equity% * avgEquityReturn + options% * avgOptionsReturn
-  // = target, using the CURRENTLY SELECTED items' own numbers as the return
-  // estimate for each category: options' actual annualized profit (ap), and
-  // equities' trailing 1-year change as a rough stand-in (backward-looking,
-  // not a forecast — there's no real forward-looking return estimate for a
-  // stock anywhere in this app, so this is the most honest proxy available).
-  // This is simple averaging, not risk-adjusted portfolio optimization — it
-  // will often push toward whichever category has the higher average return,
-  // with no regard for how concentrated or risky that makes the result.
-  function setSplitDisplay(equityPct){
-    const opts = 100 - equityPct;
-    document.getElementById('portfolioSplit').value = equityPct;
-    document.getElementById('equitySplitDisplay').textContent = equityPct;
-    document.getElementById('optionsSplitDisplay').textContent = opts;
-  }
-
-  function autoComputeSplit(){
-    const noteEl = document.getElementById('portfolioSplitNote');
-    const targetRaw = document.getElementById('portfolioTarget').value.trim();
-    if(!targetRaw){
-      noteEl.style.display = 'none';
-      return; // no target set — leave whatever split is currently showing untouched
-    }
-    const target = parseFloat(targetRaw);
-    if(isNaN(target)){
-      noteEl.style.display = 'none';
-      return;
-    }
-
-    const selTrades = trades.filter(t => selectedOptionIds.has(optionId(t)));
-    const selEquities = equities.filter(e => selectedEquityIds.has(equityId(e)));
-
-    if(selTrades.length === 0 || selEquities.length === 0){
-      noteEl.textContent = 'Select at least one option and one stock/ETF to auto-calculate a split for your target — showing the last split until then.';
-      noteEl.style.display = '';
-      return;
-    }
-
-    const avgOptionsReturn = selTrades.reduce((s,t)=> s + t.ap, 0) / selTrades.length;
-    const validEqReturns = selEquities.map(e => e.chg1y).filter(v => v != null);
-    if(validEqReturns.length === 0){
-      noteEl.textContent = 'Selected stock/ETF picks are missing 1-year change data — can\'t estimate an equity return to solve against.';
-      noteEl.style.display = '';
-      return;
-    }
-    const avgEquityReturn = validEqReturns.reduce((s,v)=> s+v, 0) / validEqReturns.length;
-
-    if(Math.abs(avgEquityReturn - avgOptionsReturn) < 0.01){
-      noteEl.textContent = `Options (+${avgOptionsReturn.toFixed(1)}% avg) and equities (+${avgEquityReturn.toFixed(1)}% avg) are too close in return to solve a meaningful split — leaving the split as-is.`;
-      noteEl.style.display = '';
-      return;
-    }
-
-    const rawEquityPct = (target - avgOptionsReturn) / (avgEquityReturn - avgOptionsReturn) * 100;
-    const clamped = Math.min(100, Math.max(0, rawEquityPct));
-    const equityPct = Math.round(clamped);
-    setSplitDisplay(equityPct);
-
-    if(rawEquityPct < 0 || rawEquityPct > 100){
-      noteEl.textContent = `Target +${target}% isn't reachable by blending these picks (avg options +${avgOptionsReturn.toFixed(1)}%, avg equities +${avgEquityReturn.toFixed(1)}%) — showing the closest possible split instead of a number outside 0-100%.`;
-    } else {
-      noteEl.textContent = `Solved from avg option profit (+${avgOptionsReturn.toFixed(1)}%) and avg equity 1yr change (+${avgEquityReturn.toFixed(1)}%) across your current selections — a simple average, not a risk-adjusted forecast.`;
-    }
-    noteEl.style.display = '';
-  }
-
-  document.getElementById('portfolioTarget').addEventListener('input', autoComputeSplit);
+  document.getElementById('portfolioSplit').addEventListener('input', ()=>{
+    const el = document.getElementById('portfolioSplit');
+    let v = parseFloat(el.value);
+    if(isNaN(v)) v = 0;
+    v = Math.min(100, Math.max(0, v));
+    document.getElementById('optionsSplitDisplay').textContent = (100 - v).toFixed(0);
+  });
 
   document.getElementById('refreshBtn').addEventListener('click', async ()=>{
     const btn = document.getElementById('refreshBtn');

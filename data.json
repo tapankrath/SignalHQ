@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T00:06:37.268309+00:00",
+  "generated_at": "2026-09-10T00:15:15.791304+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -47,7 +47,7 @@
         {
           "title": "Here's the competition Apple\u2019s foldable iPhone faces",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/how-it-feels-to-handle-apples-foldable-iphone-duo-202001509.html",
+          "link": "https://finance.yahoo.com/video/heres-competition-apple-foldable-iphone-150047428.html",
           "sentiment": 0.0
         }
       ],
@@ -182,7 +182,7 @@
       "maxLoss": 55567.5,
       "pcOI": 0.35,
       "pcVol": 0.34,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -192,16 +192,16 @@
           "sentiment": 0.82
         },
         {
+          "title": "Why Are Meta (META) Shares Soaring Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-meta-shares-soaring-000238128.html",
+          "sentiment": 0.3
+        },
+        {
           "title": "Star AI Researcher Is Leaving Meta",
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/tech/ai/star-ai-researcher-is-leaving-meta-8906e4aa?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Stock Market Today, Sept. 9: Meta Surges Over 6.5% on Muse AI Agent Launch",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/09/stock-market-today-sept-9-meta-surges-over-6-5-on-muse-ai-agent-launch/",
-          "sentiment": 0.61
         }
       ],
       "volRegime": "Rich",
@@ -859,25 +859,13 @@
       "maxLoss": 13367.5,
       "pcOI": 0.96,
       "pcVol": 0.48,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "ServiceNow, Inc. (NOW) Is a Trending Stock: Facts to Know Before Betting on It",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-inc-now-trending-stock-130004402.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "ServiceNow Jumps 25% in 3 Months: Buy, Sell or Hold the Stock?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-jumps-25-3-months-183700784.html",
-          "sentiment": 0.49
-        },
-        {
-          "title": "Why ServiceNow Stock Popped 33% Last Month",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/08/why-servicenow-stock-popped-33-last-month/",
           "sentiment": 0.0
         }
       ],
@@ -890,7 +878,7 @@
       "strat": "Bull Put Spread",
       "side": "bull",
       "isETF": false,
-      "strike": "$240/235",
+      "strike": "$242/238",
       "exp": "Sep 11",
       "dte": 1,
       "pot": 37,
@@ -996,7 +984,7 @@
       "strat": "Covered Call",
       "side": "bull",
       "isETF": false,
-      "strike": "$250 C",
+      "strike": "$255 C",
       "exp": "Sep 11",
       "dte": 1,
       "pot": 100,
@@ -1007,7 +995,7 @@
       "score": 6.5,
       "buy": true,
       "sell": false,
-      "ema": false,
+      "ema": true,
       "earningsSoon": false,
       "daysToEarnings": 83,
       "marginOfSafety": false,

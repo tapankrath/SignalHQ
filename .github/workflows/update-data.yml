@@ -1,0 +1,81 @@
+name: Update EOD options data
+
+on:
+  schedule:
+    # Three runs/day, Mon-Fri, targeting 10:00 AM / 2:00 PM / 6:15 PM ET.
+    # GitHub Actions cron is always UTC and does NOT auto-adjust for daylight
+    # saving, so each target time needs two entries — one for EDT (UTC-4,
+    # roughly March-October) and one for EST (UTC-5, roughly November-
+    # February) — using cron's month field to pick the right one automatically.
+    # Approximation: DST actually flips on specific Sundays in March/November,
+    # not clean month boundaries, so the first ~1 week of March and November
+    # can be off by an hour until the month field catches up. Accepted as a
+    # reasonable tradeoff rather than building exact Sunday-based logic.
+    #
+    # EDT months (~Mar-Oct):
+    - cron: '0 14 * 3-10 1-5'    # 10:00 AM ET
+    - cron: '0 18 * 3-10 1-5'    # 2:00 PM ET
+    - cron: '15 22 * 3-10 1-5'   # 6:15 PM ET
+    # EST months (~Nov-Feb):
+    - cron: '0 15 * 11,12,1,2 1-5'   # 10:00 AM ET
+    - cron: '0 19 * 11,12,1,2 1-5'   # 2:00 PM ET
+    - cron: '15 23 * 11,12,1,2 1-5'  # 6:15 PM ET
+    # GitHub's schedule can lag by several minutes under load — fine for this.
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch data
+        run: python -u scripts/fetch_data.py
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json history.json
+          git diff --quiet --cached || git commit -m "Update EOD options data [automated]"
+          # Fetching data can take a minute or more — if a human commit landed on
+          # main while this was running, a plain push gets rejected as non-fast-
+          # forward. Rebasing picks up that intervening commit, but data.json is
+          # a purely generated file — if BOTH the intervening commit and this run
+          # touched it, there's no sane line-by-line merge of two different JSON
+          # snapshots, so git flags a real conflict instead of guessing.
+          #
+          # Fix: -X theirs tells git to auto-resolve any data.json conflict by
+          # keeping THIS run's freshly-generated version. Confirmed empirically
+          # before shipping — git's ours/theirs meaning is inverted during a
+          # rebase (a well-known gotcha), so -X ours would have silently kept
+          # the OLDER content instead, which is the opposite of what we want.
+          #
+          # Caveat specific to history.json: unlike data.json (a pure "latest
+          # snapshot," safe to overwrite), history.json ACCUMULATES entries
+          # over time. -X theirs is correct for data.json but NOT a true merge
+          # for history.json — confirmed empirically that if two runs somehow
+          # conflict on history.json specifically, whichever run's version
+          # "wins" will silently drop the other run's newly-logged/resolved
+          # entries, rather than combining them. Accepted as a reasonable
+          # tradeoff given the schedule has no overlapping windows (this can
+          # only happen if a manual trigger races a scheduled run within the
+          # ~1-minute job runtime) — a proper fix would need a JSON-aware
+          # merge driver, which felt like more fragility than this rare,
+          # low-impact edge case (a few dropped log entries, not corruption)
+          # actually warrants right now.
+          for attempt in 1 2 3; do
+            git pull --rebase -X theirs --autostash origin main && git push && break
+            echo "Push attempt $attempt failed — retrying after rebase..."
+            sleep 5
+          done

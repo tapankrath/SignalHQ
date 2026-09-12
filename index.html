@@ -348,14 +348,6 @@
   .val-pos{ color:var(--green); }
   .val-neg{ color:var(--red); }
 
-  .outcome-badge{
-    display:inline-flex; align-items:center; padding:3px 9px;
-    border-radius:20px; font-size:11px; font-weight:700; white-space:nowrap;
-  }
-  .outcome-badge.won{ background:var(--green-soft); color:var(--green); }
-  .outcome-badge.lost{ background:var(--red-soft); color:var(--red); }
-  .outcome-badge.pending{ background:var(--surface-2); color:var(--text-dim); }
-
   .meter{ display:flex; align-items:center; gap:8px; }
   .meter-ticks{ display:flex; gap:2px; }
   .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:var(--border-strong); }
@@ -587,7 +579,6 @@
   <div class="mode-toggle" role="tablist">
     <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
     <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-    <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest</button>
   </div>
 </header>
 
@@ -754,50 +745,6 @@
   </div>
 </div>
 
-<div class="layout" id="backtestView" style="display:none;">
-
-  <div class="modal-metrics" style="margin-bottom:14px;">
-    <div><div class="mm-label">Win Rate (resolved only)</div><div class="mm-val" id="btWinRate">—</div></div>
-    <div><div class="mm-label">Won</div><div class="mm-val val-pos" id="btWonCount">0</div></div>
-    <div><div class="mm-label">Lost</div><div class="mm-val val-neg" id="btLostCount">0</div></div>
-    <div><div class="mm-label">Pending</div><div class="mm-val" id="btPendingCount">0</div></div>
-  </div>
-
-  <div class="results-bar" style="margin-top:14px;">
-    <div class="results-count"><strong id="btCount">…</strong> logged picks</div>
-    <div class="sort-wrap">
-      Show
-      <select id="btStatusSelect">
-        <option value="all">All</option>
-        <option value="pending">Pending</option>
-        <option value="won">Won</option>
-        <option value="lost">Lost</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Symbol / Strategy</th>
-          <th>Strike</th>
-          <th>Logged / Expires</th>
-          <th>Predicted Ann.</th>
-          <th>Outcome</th>
-        </tr>
-      </thead>
-      <tbody id="backtestTableBody"></tbody>
-    </table>
-  </div>
-
-  <div class="card-list" id="backtestCardList"></div>
-
-  <footer>
-    Tracks every pick this screener has made and checks whether the underlying actually stayed on the safe side of the short strike by expiration. "Won" means the short option expired out-of-the-money (full premium kept); "Lost" means it finished in-the-money. For Covered Call specifically, "Lost" means the stock got called away — a purely technical statement that the sold call finished in-the-money, not necessarily a bad outcome overall (the premium is still kept, and assignment happens at your own chosen strike). This is a simple binary strike-breach check, not a full profit/loss simulation — it doesn't account for early assignment, partial fills, or the exact dollar P&L between a full win and a full loss. Entries stay "Pending" until their expiration date has passed and the actual closing price can be confirmed.
-  </footer>
-</div>
-
 <div class="modal-scrim" id="modalScrim">
   <div class="trade-modal" id="tradeModal"></div>
 </div>
@@ -811,7 +758,6 @@
   // update-data GitHub Action (scripts/fetch_data.py) once that's run at least once.
   let trades = [];
   let equities = [];
-  let historyEntries = [];
   let dataGeneratedAt = null;
 
   function formatDataDate(isoString){
@@ -846,22 +792,6 @@
       equities = [];
       statusText.textContent = 'Data unavailable';
       statusDot.style.background = 'var(--red)';
-    }
-
-    // Failing independently of data.json on purpose — history.json won't exist
-    // at all until the backend's first run after this feature shipped, and
-    // that shouldn't take down the Options/Stocks tabs in the meantime.
-    try{
-      const histRes = await fetch('history.json', { cache:'no-store' });
-      if(histRes.ok){
-        const histJson = await histRes.json();
-        historyEntries = Array.isArray(histJson.entries) ? histJson.entries : [];
-      } else {
-        historyEntries = [];
-      }
-    }catch(err){
-      console.error('Failed to load history.json', err);
-      historyEntries = [];
     }
   }
 
@@ -1040,23 +970,18 @@
   const equityCardList = document.getElementById('equityCardList');
 
   function switchMode(mode){
-    document.getElementById('optionsView').style.display = mode === 'options' ? '' : 'none';
-    document.getElementById('stocksView').style.display = mode === 'stocks' ? '' : 'none';
-    document.getElementById('backtestView').style.display = mode === 'backtest' ? '' : 'none';
-
-    ['tabOptions','tabStocks','tabBacktest'].forEach(id=>{
-      const isActive = id === `tab${mode.charAt(0).toUpperCase()}${mode.slice(1)}`;
-      document.getElementById(id).classList.toggle('active', isActive);
-      document.getElementById(id).setAttribute('aria-selected', isActive);
-    });
-
-    // always re-render (not just the first time) — cheap at this scale, and
-    // guarantees correctness if the user switches tabs before loadTrades()
-    // has actually finished fetching data
-    if(mode === 'stocks'){
+    const isOptions = mode === 'options';
+    document.getElementById('optionsView').style.display = isOptions ? '' : 'none';
+    document.getElementById('stocksView').style.display = isOptions ? 'none' : '';
+    document.getElementById('tabOptions').classList.toggle('active', isOptions);
+    document.getElementById('tabStocks').classList.toggle('active', !isOptions);
+    document.getElementById('tabOptions').setAttribute('aria-selected', isOptions);
+    document.getElementById('tabStocks').setAttribute('aria-selected', !isOptions);
+    if(!isOptions){
+      // always re-render (not just the first time) — cheap for ~20 rows, and
+      // guarantees correctness if the user switches tabs before loadTrades()
+      // has actually finished fetching data.json
       renderEquities(sortEquities(filterEquitiesByType(equities)));
-    } else if(mode === 'backtest'){
-      renderBacktest(filterBacktest(historyEntries));
     }
   }
 
@@ -1066,76 +991,6 @@
     if(type === 'etfs') return list.filter(e => e.isETF);
     return list;
   }
-
-  function filterBacktest(list){
-    const status = document.getElementById('btStatusSelect').value;
-    if(status === 'all') return list;
-    return list.filter(e => e.status === status);
-  }
-
-  function outcomeBadge(status){
-    const label = status === 'won' ? 'Won' : status === 'lost' ? 'Lost' : 'Pending';
-    return `<span class="outcome-badge ${status}">${label}</span>`;
-  }
-
-  function renderBacktest(list){
-    // most-recently-logged first — entries accumulate in append order, so
-    // reverse for display rather than making people scroll to the bottom
-    const displayList = [...list].reverse();
-
-    document.getElementById('btCount').textContent = displayList.length;
-
-    const won = historyEntries.filter(e => e.status === 'won').length;
-    const lost = historyEntries.filter(e => e.status === 'lost').length;
-    const pending = historyEntries.filter(e => e.status === 'pending').length;
-    const resolved = won + lost;
-    document.getElementById('btWonCount').textContent = won;
-    document.getElementById('btLostCount').textContent = lost;
-    document.getElementById('btPendingCount').textContent = pending;
-    document.getElementById('btWinRate').textContent = resolved > 0 ? `${Math.round(won / resolved * 100)}%` : '—';
-
-    const tbody = document.getElementById('backtestTableBody');
-    const cardList = document.getElementById('backtestCardList');
-    tbody.innerHTML = '';
-    cardList.innerHTML = '';
-
-    if(displayList.length === 0){
-      tbody.innerHTML = `<tr><td colspan="5" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No picks logged yet — this fills in automatically as the nightly screener runs.</td></tr>`;
-      cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No picks logged yet — this fills in automatically as the nightly screener runs.</div>`;
-      return;
-    }
-
-    displayList.forEach(e=>{
-      const resolvedNote = e.status !== 'pending' && e.actualClose != null
-        ? ` <span style="color:var(--text-faint); font-size:11px;">(closed $${e.actualClose.toFixed(2)})</span>` : '';
-
-      tbody.innerHTML += `
-        <tr>
-          <td><span class="ticker-sym">${e.sym}</span> <span style="color:var(--text-faint); font-size:12px;">${e.strat}</span></td>
-          <td class="num">${e.strike}</td>
-          <td class="num">${e.loggedAt} → ${e.expDate}</td>
-          <td class="num val-pos">+${e.ap}%</td>
-          <td>${outcomeBadge(e.status)}${resolvedNote}</td>
-        </tr>`;
-
-      cardList.innerHTML += `
-        <div class="trade-card">
-          <div class="trade-card-top" style="margin-bottom:6px;">
-            <div class="ticker-sym" style="flex:1;">${e.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${e.strike} · ${e.strat}</span></div>
-            ${outcomeBadge(e.status)}
-          </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-family:var(--mono); font-size:11.5px; color:var(--text-dim);">
-            <span>${e.loggedAt} → ${e.expDate}</span>
-            <span class="val-pos" style="font-weight:700;">+${e.ap}%</span>
-          </div>
-          ${resolvedNote ? `<div style="margin-top:4px; font-size:11px; color:var(--text-faint);">Closed $${e.actualClose.toFixed(2)}</div>` : ''}
-        </div>`;
-    });
-  }
-
-  document.getElementById('btStatusSelect').addEventListener('change', ()=>{
-    renderBacktest(filterBacktest(historyEntries));
-  });
 
   function sortEquities(list){
     const sortBy = document.getElementById('equitySortSelect').value;

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T03:46:26.055637+00:00",
+  "generated_at": "2026-09-13T04:20:03.148572+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -8,14 +8,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$330 P",
-      "shortStrike": 330.0,
       "hedge": {
         "hedgeStrike": 320.0,
         "hedgeCost": 0.1,
         "cappedMaxLoss": 894.0
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 54,
       "ap": 127.7,
@@ -68,14 +66,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$500 C",
-      "shortStrike": 500.0,
       "hedge": {
         "hedgeStrike": 490.0,
         "hedgeCost": 0.84,
         "cappedMaxLoss": 533.0
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 100,
       "ap": 84.0,
@@ -128,10 +124,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$215/205",
-      "shortStrike": 215.0,
       "hedge": null,
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 28,
       "ap": 1898.0,
@@ -152,20 +146,20 @@
       "maxLoss": 948.0,
       "pcOI": 0.59,
       "pcVol": 0.46,
-      "newsSentiment": 0.26,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Oracle's AI Chips Ran 97.9% Utilized Last Quarter. For Nvidia, That Is What a Shortage Looks Like.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/12/oracle-s-ai-chips-ran-97-9-utilized-last-quarter-for-nvidia-that-is-what-a-shortage-looks-like/",
+          "sentiment": 0.13
+        },
         {
           "title": "Not Nvidia. Not Micron. This Dirt Cheap \u201cMagnificent Seven\u201d Stock Could Be the Biggest Winner of the Trillion-Dollar AI Race \u2013 Here\u2019s the Case.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/12/not-nvidia-not-micron-this-dirt-cheap-magnificent-seven-stock-could-be-the-biggest-winner-of-the-trillion-dollar-ai-race-here-s-the-case/",
           "sentiment": 0.26
-        },
-        {
-          "title": "Nvidia (NVDA)\u2019s 2 GW Australia AI Push Could Deepen Its Infrastructure Advantage",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-nvda-2-gw-australia-220311518.html",
-          "sentiment": 0.25
         }
       ],
       "volRegime": "Cheap",
@@ -178,14 +172,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$640 P",
-      "shortStrike": 640.0,
       "hedge": {
         "hedgeStrike": 630.0,
         "hedgeCost": 1.06,
         "cappedMaxLoss": 805.0
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 46,
       "ap": 171.5,
@@ -238,14 +230,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$370 C",
-      "shortStrike": 370.0,
       "hedge": {
         "hedgeStrike": 360.0,
         "hedgeCost": 1.34,
         "cappedMaxLoss": 504.5
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 100,
       "ap": 171.5,
@@ -298,10 +288,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$505/495",
-      "shortStrike": 505.0,
       "hedge": null,
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 32,
       "ap": 5383.8,
@@ -354,14 +342,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$955 P",
-      "shortStrike": 955.0,
       "hedge": {
         "hedgeStrike": 945.0,
         "hedgeCost": 2.76,
         "cappedMaxLoss": 811.0
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 34,
       "ap": 178.8,
@@ -414,10 +400,8 @@
       "side": "bear",
       "isETF": false,
       "strike": "$345/350",
-      "shortStrike": 345.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 45,
       "ap": 1160.7,
@@ -458,14 +442,12 @@
       "side": "bear",
       "isETF": false,
       "strike": "$365 C",
-      "shortStrike": 365.0,
       "hedge": {
         "hedgeStrike": 370.0,
         "hedgeCost": 0.42,
         "cappedMaxLoss": 424.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 40,
       "ap": 23.4,
@@ -518,14 +500,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$143 P",
-      "shortStrike": 143.0,
       "hedge": {
         "hedgeStrike": 141.0,
         "hedgeCost": 1.03,
         "cappedMaxLoss": 156.5
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 42,
       "ap": 74.5,
@@ -546,9 +526,15 @@
       "maxLoss": 14153.5,
       "pcOI": 0.57,
       "pcVol": 0.33,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Oracle's AI Chips Ran 97.9% Utilized Last Quarter. For Nvidia, That Is What a Shortage Looks Like.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/12/oracle-s-ai-chips-ran-97-9-utilized-last-quarter-for-nvidia-that-is-what-a-shortage-looks-like/",
+          "sentiment": 0.13
+        },
         {
           "title": "Morgan Stanley revamps Oracle stock price target",
           "publisher": "TheStreet",
@@ -560,12 +546,6 @@
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-ellison-cancels-plan-sell-183328354.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Larry Ellison Ends Plan to Sell Up to $7.5 Billion in Oracle Stock",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/larry-ellison-ends-plan-sell-171853217.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -578,14 +558,12 @@
       "side": "bear",
       "isETF": false,
       "strike": "$260 C",
-      "shortStrike": 260.0,
       "hedge": {
         "hedgeStrike": 270.0,
         "hedgeCost": 0.03,
         "cappedMaxLoss": 942.5
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 32,
       "ap": 84.0,
@@ -638,10 +616,8 @@
       "side": "bear",
       "isETF": true,
       "strike": "$125/135",
-      "shortStrike": 125.0,
       "hedge": null,
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 49,
       "ap": 4288.8,
@@ -694,14 +670,12 @@
       "side": "bear",
       "isETF": true,
       "strike": "$72 C",
-      "shortStrike": 72.0,
       "hedge": {
         "hedgeStrike": 74.0,
         "hedgeCost": 0.03,
         "cappedMaxLoss": 173.0
       },
       "exp": "Sep 14",
-      "expDate": "2026-09-14",
       "dte": 1,
       "pot": 43,
       "ap": 153.3,
@@ -754,10 +728,8 @@
       "side": "bear",
       "isETF": false,
       "strike": "$80/82",
-      "shortStrike": 80.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 43,
       "ap": 967.2,
@@ -810,10 +782,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$1540/1520",
-      "shortStrike": 1540.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 41,
       "ap": 1569.5,
@@ -866,14 +836,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$780 P",
-      "shortStrike": 780.0,
       "hedge": {
         "hedgeStrike": 760.0,
         "hedgeCost": 6.35,
         "cappedMaxLoss": 1600.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 42,
       "ap": 97.1,
@@ -926,14 +894,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$140 C",
-      "shortStrike": 140.0,
       "hedge": {
         "hedgeStrike": 126.0,
         "hedgeCost": 1.22,
         "cappedMaxLoss": 653.5
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 100,
       "ap": 67.2,
@@ -986,10 +952,8 @@
       "side": "bear",
       "isETF": false,
       "strike": "$265/270",
-      "shortStrike": 265.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 43,
       "ap": 1182.6,
@@ -1042,14 +1006,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$144 P",
-      "shortStrike": 144.0,
       "hedge": {
         "hedgeStrike": 142.0,
         "hedgeCost": 1.09,
         "cappedMaxLoss": 158.5
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 42,
       "ap": 76.7,
@@ -1102,14 +1064,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$260 C",
-      "shortStrike": 260.0,
       "hedge": {
         "hedgeStrike": 235.0,
         "hedgeCost": 1.62,
         "cappedMaxLoss": 1285.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 100,
       "ap": 43.8,
@@ -1162,10 +1122,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$198/192",
-      "shortStrike": 197.5,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 43,
       "ap": 1357.8,
@@ -1218,14 +1176,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$160 P",
-      "shortStrike": 160.0,
       "hedge": {
         "hedgeStrike": 155.0,
         "hedgeCost": 0.62,
         "cappedMaxLoss": 423.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 41,
       "ap": 63.5,
@@ -1278,14 +1234,12 @@
       "side": "bear",
       "isETF": false,
       "strike": "$1785 C",
-      "shortStrike": 1785.0,
       "hedge": {
         "hedgeStrike": 1795.0,
         "hedgeCost": 8.35,
         "cappedMaxLoss": 920.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 39,
       "ap": 37.2,
@@ -1338,10 +1292,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$420/415",
-      "shortStrike": 420.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 42,
       "ap": 1408.9,
@@ -1394,14 +1346,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$530 P",
-      "shortStrike": 530.0,
       "hedge": {
         "hedgeStrike": 510.0,
         "hedgeCost": 2.65,
         "cappedMaxLoss": 1685.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 36,
       "ap": 79.6,
@@ -1454,10 +1404,8 @@
       "side": "bear",
       "isETF": false,
       "strike": "$348/352",
-      "shortStrike": 347.5,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 45,
       "ap": 1014.7,
@@ -1510,10 +1458,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$180/175",
-      "shortStrike": 180.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 42,
       "ap": 1423.5,
@@ -1547,14 +1493,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$208 P",
-      "shortStrike": 207.5,
       "hedge": {
         "hedgeStrike": 202.5,
         "hedgeCost": 1.92,
         "cappedMaxLoss": 407.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 37,
       "ap": 100.0,
@@ -1607,14 +1551,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$96 C",
-      "shortStrike": 96.0,
       "hedge": {
         "hedgeStrike": 83.0,
         "hedgeCost": 1.05,
         "cappedMaxLoss": 595.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 100,
       "ap": 89.1,
@@ -1667,10 +1609,8 @@
       "side": "bull",
       "isETF": false,
       "strike": "$40/40",
-      "shortStrike": 40.5,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 37,
       "ap": 1350.5,
@@ -1723,14 +1663,12 @@
       "side": "bear",
       "isETF": false,
       "strike": "$28 C",
-      "shortStrike": 28.5,
       "hedge": {
         "hedgeStrike": 29.5,
         "hedgeCost": 0.16,
         "cappedMaxLoss": 86.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 40,
       "ap": 78.1,
@@ -1783,10 +1721,8 @@
       "side": "bear",
       "isETF": false,
       "strike": "$68/70",
-      "shortStrike": 68.0,
       "hedge": null,
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 38,
       "ap": 876.0,
@@ -1839,14 +1775,12 @@
       "side": "bear",
       "isETF": false,
       "strike": "$90 C",
-      "shortStrike": 90.0,
       "hedge": {
         "hedgeStrike": 100.0,
         "hedgeCost": 0.05,
         "cappedMaxLoss": 970.0
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 20,
       "ap": 28.5,
@@ -1899,14 +1833,12 @@
       "side": "bull",
       "isETF": false,
       "strike": "$158 P",
-      "shortStrike": 157.5,
       "hedge": {
         "hedgeStrike": 152.5,
         "hedgeCost": 0.77,
         "cappedMaxLoss": 401.5
       },
       "exp": "Sep 18",
-      "expDate": "2026-09-18",
       "dte": 5,
       "pot": 41,
       "ap": 81.0,
@@ -2058,20 +1990,20 @@
       "dividendYield": 0.46,
       "marketCap": 5271048421376,
       "score": 9.4,
-      "newsSentiment": 0.26,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Oracle's AI Chips Ran 97.9% Utilized Last Quarter. For Nvidia, That Is What a Shortage Looks Like.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/12/oracle-s-ai-chips-ran-97-9-utilized-last-quarter-for-nvidia-that-is-what-a-shortage-looks-like/",
+          "sentiment": 0.13
+        },
         {
           "title": "Not Nvidia. Not Micron. This Dirt Cheap \u201cMagnificent Seven\u201d Stock Could Be the Biggest Winner of the Trillion-Dollar AI Race \u2013 Here\u2019s the Case.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/12/not-nvidia-not-micron-this-dirt-cheap-magnificent-seven-stock-could-be-the-biggest-winner-of-the-trillion-dollar-ai-race-here-s-the-case/",
           "sentiment": 0.26
-        },
-        {
-          "title": "Nvidia (NVDA)\u2019s 2 GW Australia AI Push Could Deepen Its Infrastructure Advantage",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-nvda-2-gw-australia-220311518.html",
-          "sentiment": 0.25
         }
       ]
     },
@@ -2334,9 +2266,15 @@
       "dividendYield": 1.33,
       "marketCap": 432877174784,
       "score": 7.8,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Oracle's AI Chips Ran 97.9% Utilized Last Quarter. For Nvidia, That Is What a Shortage Looks Like.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/12/oracle-s-ai-chips-ran-97-9-utilized-last-quarter-for-nvidia-that-is-what-a-shortage-looks-like/",
+          "sentiment": 0.13
+        },
         {
           "title": "Morgan Stanley revamps Oracle stock price target",
           "publisher": "TheStreet",
@@ -2348,12 +2286,6 @@
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-ellison-cancels-plan-sell-183328354.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Larry Ellison Ends Plan to Sell Up to $7.5 Billion in Oracle Stock",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/larry-ellison-ends-plan-sell-171853217.html",
-          "sentiment": 0.0
         }
       ]
     },

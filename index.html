@@ -588,10 +588,10 @@
     <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
   </label>
   <label>
-    Equity %
-    <input type="text" id="portfolioSplit" inputmode="numeric" value="60">
+    Options %
+    <input type="text" id="portfolioSplit" inputmode="numeric" value="100">
   </label>
-  <span class="portfolio-split-readout">Options: <span id="optionsSplitDisplay">40</span>%</span>
+  <span class="portfolio-split-readout">Equity: <span id="equitySplitDisplay">0</span>%</span>
 </div>
 
 <div class="layout" id="optionsView">
@@ -605,19 +605,19 @@
         <div class="outlook-col">
           <div class="outlook-col-label bull">Bullish / Positive</div>
           <label class="check-row"><input type="checkbox" data-strat="Short Put"> Short Put</label>
-          <label class="check-row"><input type="checkbox" data-strat="Covered Call"> Covered Call</label>
+          <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> Covered Call</label>
           <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> Bull Put Spread</label>
           <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Call"> Long Call</label>
-          <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
-          <label class="check-row"><input type="checkbox" data-pcvol="bull" checked> P/C Vol &lt; 0.7</label>
+          <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
+          <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
         </div>
         <div class="outlook-col">
           <div class="outlook-col-label bear">Bearish / Negative</div>
           <label class="check-row"><input type="checkbox" data-strat="Short Call"> Short Call</label>
           <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> Bear Call Spread</label>
           <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Put"> Long Put</label>
-          <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
-          <label class="check-row"><input type="checkbox" data-pcvol="bear" checked> P/C Vol &gt; 1.4</label>
+          <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
+          <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
         </div>
       </div>
       <div class="filter-hint">Check any strategy from either side — results combine bullish and bearish setups that match.</div>
@@ -1148,10 +1148,10 @@
   function openPortfolioSummary(){
     const capitalRaw = document.getElementById('portfolioCapital').value.trim();
     const capital = parseFloat(capitalRaw);
-    let equityPct = parseFloat(document.getElementById('portfolioSplit').value);
-    if(isNaN(equityPct)) equityPct = 0;
-    equityPct = Math.min(100, Math.max(0, equityPct));
-    const optionsPct = 100 - equityPct;
+    let optionsPct = parseFloat(document.getElementById('portfolioSplit').value);
+    if(isNaN(optionsPct)) optionsPct = 0;
+    optionsPct = Math.min(100, Math.max(0, optionsPct));
+    const equityPct = 100 - optionsPct;
 
     const selectedTrades = trades.filter(t => selectedOptionIds.has(optionId(t)));
     const selectedEquities = equities.filter(e => selectedEquityIds.has(equityId(e)));
@@ -1320,10 +1320,7 @@
   const DEFAULT_CHECKED = [
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-pcoi="bull"]',
-    '[data-pcvol="bull"]',
-    '[data-pcoi="bear"]',
-    '[data-pcvol="bear"]',
+    '[data-strat="Covered Call"]',
     '[data-risk="excludeEarnings"]',
   ];
 
@@ -1748,7 +1745,7 @@
     let v = parseFloat(el.value);
     if(isNaN(v)) v = 0;
     v = Math.min(100, Math.max(0, v));
-    document.getElementById('optionsSplitDisplay').textContent = (100 - v).toFixed(0);
+    document.getElementById('equitySplitDisplay').textContent = (100 - v).toFixed(0);
   });
 
   document.getElementById('refreshBtn').addEventListener('click', async ()=>{

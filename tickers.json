@@ -1,3 +1,4 @@
+
 {
   "tickers": [
     "AAPL",
@@ -19,7 +20,21 @@
     "NOW",
     "ADBE",
     "SPCX",
-    "CRM"
+    "CRM",
+    "CRWD",
+    "PLTR",
+    "ASML",
+    "TSM",
+    "DELL",
+    "PANW",
+    "SKHY",
+    "NBIS",
+    "CRWV",
+    "IREN",
+    "APLD",
+    "RKLB",
+    "VCX",
+    "GLW"
   ],
   "etfs": [
     "QQQ",

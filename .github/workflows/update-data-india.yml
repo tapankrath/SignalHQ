@@ -1,0 +1,47 @@
+name: Update India equity data
+
+on:
+  schedule:
+    # Once/day, Mon-Fri, targeting 4:00 PM IST — shortly after NSE's 3:30 PM
+    # close. India does NOT observe daylight saving time, so unlike the US
+    # workflow, this needs only a single fixed cron entry, no EDT/EST split.
+    # IST is a fixed UTC+5:30 offset year-round -> 4:00 PM IST = 10:30 UTC.
+    - cron: '30 10 * * 1-5'
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-data-india:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch India data
+        run: python -u scripts/fetch_data_india.py
+
+      - name: Commit updated data_india.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data_india.json
+          git diff --quiet --cached || git commit -m "Update India equity data [automated]"
+          # Same conflict-handling approach as the US workflow — see that
+          # file's comments for the full reasoning (-X theirs, the ours/
+          # theirs inversion gotcha during rebase, etc.). data_india.json is
+          # a separate file from data.json, so a conflict here can only
+          # happen if two India-specific runs overlap, not from any
+          # interaction with the US workflow.
+          for attempt in 1 2 3; do
+            git pull --rebase -X theirs --autostash origin main && git push && break
+            echo "Push attempt $attempt failed — retrying after rebase..."
+            sleep 5
+          done

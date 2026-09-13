@@ -1,0 +1,764 @@
+{
+  "generated_at": "2026-09-13T16:01:48.452564+00:00",
+  "source": "yfinance (unofficial, free, EOD)",
+  "market": "IN",
+  "currency": "INR",
+  "equities": [
+    {
+      "sym": "RELIANCE.NS",
+      "isETF": false,
+      "price": 1257.5,
+      "high52wk": 1604.38,
+      "low52wk": 1249.8,
+      "pctFromHigh": -21.6,
+      "pctFromLow": 0.6,
+      "trend": "Strong Downtrend",
+      "rsi": 37.1,
+      "chg1m": -4.5,
+      "chg3m": -5.4,
+      "chg6m": -8.5,
+      "chg1y": -8.7,
+      "volRatio": 0.79,
+      "peRatio": 22.8,
+      "dividendYield": 0.48,
+      "marketCap": null,
+      "score": 2.2,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Reliance\u2019s JioHotstar takes its streaming empire global \u2014 without sports",
+          "publisher": "TechCrunch",
+          "link": "https://finance.yahoo.com/media-advertising/articles/reliance-jiohotstar-takes-streaming-empire-230000359.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Reliance's luxury unit brings Kim Kardashian's SKIMS to India",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/reliances-luxury-unit-brings-kim-121321384.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "India's Reliance ramps up diesel exports to Europe, Brazil in July, sources say",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-reliance-ramps-diesel-exports-100646238.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "TCS.NS",
+      "isETF": false,
+      "price": 2200.8,
+      "high52wk": 3287.16,
+      "low52wk": 1966.02,
+      "pctFromHigh": -33.0,
+      "pctFromLow": 11.9,
+      "trend": "Strong Downtrend",
+      "rsi": 38.2,
+      "chg1m": -7.3,
+      "chg3m": 0.6,
+      "chg6m": -7.0,
+      "chg1y": -26.6,
+      "volRatio": 0.98,
+      "peRatio": 16.0,
+      "dividendYield": 2.95,
+      "marketCap": null,
+      "score": 2.3,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Tata Consultancy Services Stock And Other Indian Dividend Anchors Built For Steady Income",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/tata-consultancy-services-stock-other-002511725.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "HDFCBANK.NS",
+      "isETF": false,
+      "price": 708.25,
+      "high52wk": 1003.9,
+      "low52wk": 681.9,
+      "pctFromHigh": -29.4,
+      "pctFromLow": 3.9,
+      "trend": "Strong Downtrend",
+      "rsi": 44.0,
+      "chg1m": -2.3,
+      "chg3m": -8.3,
+      "chg6m": -11.9,
+      "chg1y": -25.6,
+      "volRatio": 1.13,
+      "peRatio": 15.5,
+      "dividendYield": 1.84,
+      "marketCap": 10917006802944,
+      "score": 2.0,
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "India\u2019s NPCI, HDFC tie up to launch sovereign AI retail banking model",
+          "publisher": "Retail Banker International",
+          "link": "https://www.retailbankerinternational.com/news/india-npci-hdfc-sovereign-ai-retail-banking-model/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "HDFC Bank Hits 30-Month Low as CEO Exit Deepens Overhang",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/hdfc-bank-hits-30-month-021933567.html",
+          "sentiment": -0.27
+        },
+        {
+          "title": "India's HDFC Bank slips to 2-1/2-year low as legal, leadership woes linger",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-hdfc-bank-slips-2-091645918.html",
+          "sentiment": -0.54
+        }
+      ]
+    },
+    {
+      "sym": "ICICIBANK.NS",
+      "isETF": false,
+      "price": 1379.3,
+      "high52wk": 1467.63,
+      "low52wk": 1177.67,
+      "pctFromHigh": -6.0,
+      "pctFromLow": 17.1,
+      "trend": "Downtrend",
+      "rsi": 37.7,
+      "chg1m": -2.0,
+      "chg3m": 4.2,
+      "chg6m": 10.8,
+      "chg1y": -0.8,
+      "volRatio": 0.74,
+      "peRatio": 17.8,
+      "dividendYield": 0.87,
+      "marketCap": 9900202655744,
+      "score": 4.8,
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "ICICI Prudential AMC gets clearance to buy up to 9.95% of four\u00a0lenders",
+          "publisher": "Retail Banker International",
+          "link": "https://www.retailbankerinternational.com/news/icici-prudential-amc-gets-clearance-to-buy-up-to-9-95-of-four-lenders/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Prudential to sell 2% stake in ICICI Prudential AMC worth about $333 million",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/prudential-sell-2-stake-icici-104449355.html",
+          "sentiment": 0.23
+        }
+      ]
+    },
+    {
+      "sym": "INFY.NS",
+      "isETF": false,
+      "price": 1037.7,
+      "high52wk": 1691.4,
+      "low52wk": 982.4,
+      "pctFromHigh": -38.6,
+      "pctFromLow": 5.6,
+      "trend": "Strong Downtrend",
+      "rsi": 32.6,
+      "chg1m": -11.7,
+      "chg3m": -9.3,
+      "chg6m": -15.1,
+      "chg1y": -28.7,
+      "volRatio": 0.75,
+      "peRatio": 13.5,
+      "dividendYield": 4.82,
+      "marketCap": 4202995384320,
+      "score": 1.8,
+      "newsSentiment": -0.33,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "Infosys (NSEI:INFY) Stock Fair Value Falls After Analysts Cut Targets On Weaker Outlook",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/infosys-nsei-infy-stock-fair-220859737.html",
+          "sentiment": -0.25
+        },
+        {
+          "title": "Infosys Q1 Earnings Miss Estimates, Revenues Increase Y/Y",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/infosys-q1-earnings-miss-estimates-160500537.html",
+          "sentiment": -0.4
+        }
+      ]
+    },
+    {
+      "sym": "SBIN.NS",
+      "isETF": false,
+      "price": 995.7,
+      "high52wk": 1212.84,
+      "low52wk": 804.5,
+      "pctFromHigh": -17.9,
+      "pctFromLow": 23.8,
+      "trend": "Strong Downtrend",
+      "rsi": 35.4,
+      "chg1m": -8.1,
+      "chg3m": -1.9,
+      "chg6m": -3.2,
+      "chg1y": 23.1,
+      "volRatio": 0.85,
+      "peRatio": 10.6,
+      "dividendYield": 1.74,
+      "marketCap": 9190925926400,
+      "score": 2.6,
+      "newsSentiment": 0.17,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "State Bank of India targets 12,000 hires and 250 more branches \u2013 report",
+          "publisher": "Retail Banker International",
+          "link": "https://www.retailbankerinternational.com/news/state-bank-of-india-hires-branches/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "State Bank of India returns to dollar debt market, bankers see strong demand",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/state-bank-india-returns-dollar-110032371.html",
+          "sentiment": 0.08
+        },
+        {
+          "title": "State Bank of India (SBKFF) (Q1 2027) Earnings Call Highlights: Record Profit and Digital Push ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/state-bank-india-sbkff-q1-190158807.html",
+          "sentiment": 0.44
+        }
+      ]
+    },
+    {
+      "sym": "BHARTIARTL.NS",
+      "isETF": false,
+      "price": 1831.1,
+      "high52wk": 2147.47,
+      "low52wk": 1718.87,
+      "pctFromHigh": -14.7,
+      "pctFromLow": 6.5,
+      "trend": "Strong Downtrend",
+      "rsi": 41.0,
+      "chg1m": -5.6,
+      "chg3m": 0.1,
+      "chg6m": 2.8,
+      "chg1y": -3.1,
+      "volRatio": 0.65,
+      "peRatio": 38.3,
+      "dividendYield": 1.31,
+      "marketCap": 11423606374400,
+      "score": 2.9,
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Bharti Airtel Ltd (BOM:532454) (Q1 2027) Earnings Call Highlights: Record Postpaid Adds and ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/bharti-airtel-ltd-bom-532454-010337318.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "India's Bharti Airtel posts profit rise on subscriber upgrades",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-bharti-airtel-posts-profit-110123142.html",
+          "sentiment": 0.75
+        },
+        {
+          "title": "Singtel winds up Mauritius unit linked to Bharti Airtel investment",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/singtel-winds-mauritius-unit-linked-121750266.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "ITC.NS",
+      "isETF": false,
+      "price": 259.85,
+      "high52wk": 406.57,
+      "low52wk": 255.5,
+      "pctFromHigh": -36.1,
+      "pctFromLow": 1.7,
+      "trend": "Strong Downtrend",
+      "rsi": 36.1,
+      "chg1m": -6.7,
+      "chg3m": -10.9,
+      "chg6m": -11.5,
+      "chg1y": -34.3,
+      "volRatio": 0.79,
+      "peRatio": 16.4,
+      "dividendYield": 6.16,
+      "marketCap": 3255863869440,
+      "score": 2.0,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "British American Tobacco plans to offload stake in India's ITC Hotels",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/british-american-tobacco-plans-offload-142827642.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "LT.NS",
+      "isETF": false,
+      "price": 3930.7,
+      "high52wk": 4397.05,
+      "low52wk": 3256.29,
+      "pctFromHigh": -10.6,
+      "pctFromLow": 20.7,
+      "trend": "Strong Downtrend",
+      "rsi": 41.2,
+      "chg1m": -3.4,
+      "chg3m": -6.1,
+      "chg6m": 15.4,
+      "chg1y": 12.1,
+      "volRatio": 0.85,
+      "peRatio": 32.6,
+      "dividendYield": 0.97,
+      "marketCap": 5408116703232,
+      "score": 3.7,
+      "newsSentiment": 0.41,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "India's Larsen and Toubro secures AI data centre order worth up to $1.57 billion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/technology/ai/articles/indias-larsen-toubro-secures-order-061543153.html",
+          "sentiment": 0.49
+        },
+        {
+          "title": "India's Larsen and Toubro secures order to build AI factory for Nvidia",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-larsen-toubro-secures-order-061543746.html",
+          "sentiment": 0.32
+        }
+      ]
+    },
+    {
+      "sym": "KOTAKBANK.NS",
+      "isETF": false,
+      "price": 419.0,
+      "high52wk": 452.42,
+      "low52wk": 344.9,
+      "pctFromHigh": -7.4,
+      "pctFromLow": 21.5,
+      "trend": "Strong Uptrend",
+      "rsi": 59.9,
+      "chg1m": 6.8,
+      "chg3m": 2.9,
+      "chg6m": 14.4,
+      "chg1y": 6.4,
+      "volRatio": 1.34,
+      "peRatio": 20.5,
+      "dividendYield": 0.16,
+      "marketCap": 4168067842048,
+      "score": 9.0,
+      "newsSentiment": 0.54,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "India's Kotak Investment Banking appoints co-CEOs",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-kotak-investment-banking-appoints-122745893.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Kotak Mahindra Bank Ltd (BOM:500247) Q1 2027 Earnings Call Highlights: Strong Profit Growth ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/kotak-mahindra-bank-ltd-bom-010045699.html",
+          "sentiment": 0.83
+        },
+        {
+          "title": "India's Kotak bank reports 26% jump in Q1 profit, beats estimates",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-kotak-bank-reports-26-090724940.html",
+          "sentiment": 0.78
+        }
+      ]
+    },
+    {
+      "sym": "HINDUNILVR.NS",
+      "isETF": false,
+      "price": 1927.0,
+      "high52wk": 2619.75,
+      "low52wk": 1926.2,
+      "pctFromHigh": -26.4,
+      "pctFromLow": 0.0,
+      "trend": "Strong Downtrend",
+      "rsi": 30.8,
+      "chg1m": -6.6,
+      "chg3m": -9.7,
+      "chg6m": -8.9,
+      "chg1y": -25.2,
+      "volRatio": 0.9,
+      "peRatio": 42.7,
+      "dividendYield": 2.28,
+      "marketCap": 4527662563328,
+      "score": 2.2,
+      "newsSentiment": 0.72,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Hindustan Unilever Ltd (BOM:500696) Q1 2027 Earnings Call Highlights: Strong Revenue Growth ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/hindustan-unilever-ltd-bom-500696-190030403.html",
+          "sentiment": 0.71
+        },
+        {
+          "title": "Hindustan Unilever Reports 70.8 Billion Rupees Profit on One-Off Gain",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/news/hindustan-unilever-reports-70-8-192111311.html",
+          "sentiment": 0.74
+        },
+        {
+          "title": "Hindustan Unilever Ltd (BOM:500696) Q3 2026 Earnings Call Highlights: Strong Revenue Growth ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/news/hindustan-unilever-ltd-bom-500696-170310195.html",
+          "sentiment": 0.71
+        }
+      ]
+    },
+    {
+      "sym": "AXISBANK.NS",
+      "isETF": false,
+      "price": 1246.0,
+      "high52wk": 1417.21,
+      "low52wk": 1068.18,
+      "pctFromHigh": -12.1,
+      "pctFromLow": 16.6,
+      "trend": "Strong Downtrend",
+      "rsi": 47.4,
+      "chg1m": 1.3,
+      "chg3m": -8.9,
+      "chg6m": 1.0,
+      "chg1y": 14.7,
+      "volRatio": 0.93,
+      "peRatio": 14.0,
+      "dividendYield": 0.08,
+      "marketCap": 3879329071104,
+      "score": 3.7,
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Axis Bank CEO's AI Push Signals Slower Hiring Ahead",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/video/axis-bank-ceos-ai-push-142352226.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "India's Axis Bank bets on data centres to gold loans to outpace industry credit growth",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-axis-bank-bets-data-065341753.html",
+          "sentiment": 0.64
+        },
+        {
+          "title": "India's ICICI Bank, Axis Bank tap dollar debt again in less than two months, bankers say",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-icici-bank-axis-bank-102907020.html",
+          "sentiment": -0.36
+        }
+      ]
+    },
+    {
+      "sym": "BAJFINANCE.NS",
+      "isETF": false,
+      "price": 1034.5,
+      "high52wk": 1176.4,
+      "low52wk": 783.09,
+      "pctFromHigh": -12.1,
+      "pctFromLow": 32.1,
+      "trend": "Downtrend",
+      "rsi": 38.2,
+      "chg1m": -5.2,
+      "chg3m": 8.5,
+      "chg6m": 21.7,
+      "chg1y": 7.3,
+      "volRatio": 0.94,
+      "peRatio": 31.7,
+      "dividendYield": 0.52,
+      "marketCap": 6435534536704,
+      "score": 5.3,
+      "newsSentiment": 0.51,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Bajaj Finserv Ltd (BOM:532978) (Q1 2027) Earnings Call Highlights: Strong Growth Amid Insurance ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/bajaj-finserv-ltd-bom-532978-190139205.html",
+          "sentiment": 0.71
+        },
+        {
+          "title": "India's Bajaj Finance hits record high on strong loan growth, asset quality",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-bajaj-finance-record-high-043826183.html",
+          "sentiment": 0.81
+        },
+        {
+          "title": "Bajaj Finance Ltd (BOM:500034) (Q1 2027) Earnings Call Highlights: Record Customer Additions ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/bajaj-finance-ltd-bom-500034-210105931.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "MARUTI.NS",
+      "isETF": false,
+      "price": 12400.0,
+      "high52wk": 17197.29,
+      "low52wk": 12079.68,
+      "pctFromHigh": -27.9,
+      "pctFromLow": 2.7,
+      "trend": "Strong Downtrend",
+      "rsi": 24.2,
+      "chg1m": -10.8,
+      "chg3m": -8.5,
+      "chg6m": -0.5,
+      "chg1y": -17.0,
+      "volRatio": 1.39,
+      "peRatio": 27.2,
+      "dividendYield": 1.13,
+      "marketCap": 3898591674368,
+      "score": 2.7,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Maruti Suzuki eyes 6.3 million-unit India car market by FY31",
+          "publisher": "Just Auto",
+          "link": "https://www.just-auto.com/news/maruti-suzuki-6-3-million-pv-market-fy31/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "India's Maruti sees passenger vehicle market rising to up to 6.3 million units by 2031",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-maruti-sees-passenger-vehicle-090706819.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Maruti Suzuki India Ltd (BOM:532500) (Q1 2027) Earnings Call Highlights: Record Volumes Amid ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/maruti-suzuki-india-ltd-bom-010450585.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "ASIANPAINT.NS",
+      "isETF": false,
+      "price": 2472.5,
+      "high52wk": 2960.02,
+      "low52wk": 2096.81,
+      "pctFromHigh": -16.5,
+      "pctFromLow": 17.9,
+      "trend": "Strong Downtrend",
+      "rsi": 28.7,
+      "chg1m": -10.3,
+      "chg3m": -9.2,
+      "chg6m": 13.5,
+      "chg1y": -2.3,
+      "volRatio": 1.01,
+      "peRatio": 49.7,
+      "dividendYield": 1.11,
+      "marketCap": 2370248114176,
+      "score": 3.6,
+      "newsSentiment": 0.16,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Asian Paints Ltd (BOM:500820) (Q1 2027) Earnings Call Highlights: Strong Volume Growth Amidst ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/asian-paints-ltd-bom-500820-010234656.html",
+          "sentiment": 0.71
+        },
+        {
+          "title": "India's Asian Paints maintains FY27 growth target, sees no immediate price hikes\u00a0",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-asian-paints-beats-first-083759772.html",
+          "sentiment": 0.1
+        },
+        {
+          "title": "India's Asian Paints hikes prices by 12% as West Asia conflict drives up costs",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-asian-paints-hikes-prices-121739163.html",
+          "sentiment": -0.32
+        }
+      ]
+    },
+    {
+      "sym": "SUNPHARMA.NS",
+      "isETF": false,
+      "price": 1840.0,
+      "high52wk": 2046.9,
+      "low52wk": 1533.99,
+      "pctFromHigh": -10.1,
+      "pctFromLow": 19.9,
+      "trend": "Strong Downtrend",
+      "rsi": 34.0,
+      "chg1m": -4.8,
+      "chg3m": 2.5,
+      "chg6m": 2.4,
+      "chg1y": 15.4,
+      "volRatio": 0.87,
+      "peRatio": 36.5,
+      "dividendYield": 0.86,
+      "marketCap": 4414776016896,
+      "score": 2.9,
+      "newsSentiment": 0.67,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Sun Pharma's quarterly profit jumps on strength in specialty medicines",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/healthcare/articles/indias-sun-pharma-posts-higher-090749675.html",
+          "sentiment": 0.85
+        },
+        {
+          "title": "Organon & Co. Shareholders Clear Sun Pharma Merger Deal",
+          "publisher": "MarketBeat",
+          "link": "https://www.marketbeat.com/instant-alerts/organon-co-shareholders-clear-sun-pharma-merger-deal-2026-07-23/?utm_source=yahoofinance&utm_medium=yahoofinance",
+          "sentiment": 0.38
+        },
+        {
+          "title": "India's Sun Pharma wins South Africa approval to launch generic Ozempic",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/healthcare/articles/indias-sun-pharma-wins-south-150606421.html",
+          "sentiment": 0.78
+        }
+      ]
+    },
+    {
+      "sym": "TITAN.NS",
+      "isETF": false,
+      "price": 5009.5,
+      "high52wk": 5186.7,
+      "low52wk": 3292.3,
+      "pctFromHigh": -3.4,
+      "pctFromLow": 52.2,
+      "trend": "Downtrend",
+      "rsi": 51.2,
+      "chg1m": -1.1,
+      "chg3m": 15.9,
+      "chg6m": 23.4,
+      "chg1y": 40.2,
+      "volRatio": 0.55,
+      "peRatio": 76.9,
+      "dividendYield": 0.3,
+      "marketCap": 4444991258624,
+      "score": 6.2,
+      "newsSentiment": 0.41,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Titan Co Ltd (BOM:500114) (Q1 FY27) Earnings Call Highlights: Strong Growth Amidst Customs Duty ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/titan-co-ltd-bom-500114-210242343.html",
+          "sentiment": 0.71
+        },
+        {
+          "title": "India's Titan hits record high on strong fourth-quarter sales",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-titan-hits-record-high-041707425.html",
+          "sentiment": 0.51
+        },
+        {
+          "title": "Titan Co Ltd (BOM:500114) Q3 2026 Earnings Call Highlights: Strategic Acquisitions and Market ...",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/news/titan-co-ltd-bom-500114-090032060.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "WIPRO.NS",
+      "isETF": false,
+      "price": 167.4,
+      "high52wk": 263.22,
+      "low52wk": 165.16,
+      "pctFromHigh": -36.4,
+      "pctFromLow": 1.4,
+      "trend": "Strong Downtrend",
+      "rsi": 33.0,
+      "chg1m": -8.6,
+      "chg3m": -7.3,
+      "chg6m": -14.3,
+      "chg1y": -31.6,
+      "volRatio": 0.99,
+      "peRatio": 13.3,
+      "dividendYield": 4.78,
+      "marketCap": 1656093147136,
+      "score": 1.9,
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "ABB renews Wipro contract for global digital workplace services",
+          "publisher": "Verdict",
+          "link": "https://www.verdict.co.uk/abb-renews-wipro-contract/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Why Rubrik (RBRK) Is Up 14.1% After New AI Resilience Offerings With Wipro",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/why-rubrik-rbrk-14-1-011141102.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Wipro Stock Falls as Nifty 50 Exit Looms",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/wipro-stock-falls-nifty-50-190146053.html",
+          "sentiment": 0.27
+        }
+      ]
+    },
+    {
+      "sym": "NTPC.NS",
+      "isETF": false,
+      "price": 333.4,
+      "high52wk": 409.97,
+      "low52wk": 309.84,
+      "pctFromHigh": -18.7,
+      "pctFromLow": 7.6,
+      "trend": "Strong Downtrend",
+      "rsi": 48.6,
+      "chg1m": -2.1,
+      "chg3m": -5.2,
+      "chg6m": -12.3,
+      "chg1y": 3.4,
+      "volRatio": 0.58,
+      "peRatio": 10.2,
+      "dividendYield": 3.7,
+      "marketCap": 3232868597760,
+      "score": 2.9,
+      "newsSentiment": 0.49,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "India's biggest power producer NTPC plans to invest $178 billion through 2037",
+          "publisher": "Reuters",
+          "link": "https://sg.finance.yahoo.com/news/indias-biggest-power-producer-ntpc-075306298.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "NTPC Ltd (BOM:532555) Q4 2026 Earnings Call Highlights: Profit Surge Amid Revenue Dip",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/sectors/energy/articles/ntpc-ltd-bom-532555-q4-010033146.html",
+          "sentiment": 0.78
+        },
+        {
+          "title": "NTPC Ltd (BOM:532555) Q3 2026 Earnings Call Highlights: Profit Growth Amid Renewable Expansion",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/news/ntpc-ltd-bom-532555-q3-190059202.html",
+          "sentiment": 0.67
+        }
+      ]
+    }
+  ]
+}

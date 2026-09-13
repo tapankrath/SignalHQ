@@ -26,9 +26,11 @@ OUTPUT_PATH = "data_india.json"
 
 # Popular large-cap NSE names to start with, per "start with some popular
 # tickers, add more later." Spans banking, IT, energy, consumer, auto, and
-# pharma — a reasonable starting set, not meant to be exhaustive. Add more
-# .NS-suffixed symbols here as the list grows.
-INDIA_TICKERS = [
+# pharma — a reasonable starting set, not meant to be exhaustive. These are
+# the FALLBACK defaults, used only if tickers_india.json is missing/invalid
+# — see load_tickers_india() below for the actual editable source, mirroring
+# the exact same tickers.json pattern the US pipeline already uses.
+DEFAULT_INDIA_TICKERS = [
     "RELIANCE.NS",    # Reliance Industries
     "TCS.NS",         # Tata Consultancy Services
     "HDFCBANK.NS",    # HDFC Bank
@@ -48,19 +50,43 @@ INDIA_TICKERS = [
     "TITAN.NS",       # Titan Company
     "WIPRO.NS",       # Wipro
     "NTPC.NS",        # NTPC
-    "TATAMOTORS.NS",  # Tata Motors
+    "TATAMOTORS.NS",  # Tata Motors — currently failing in production
+    # ("no data found, symbol may be delisted"), most likely because of
+    # Tata Motors' 2024 commercial/passenger vehicle demerger changing
+    # what this specific symbol now refers to. Worth replacing with
+    # whatever the correct current NSE symbol is.
 ]
 
-# None of the starting list are ETFs. Add .NS-suffixed ETF symbols here
-# as the list grows (e.g. "NIFTYBEES.NS" for the Nifty 50 ETF).
-KNOWN_INDIA_ETFS = set()
+# None of the defaults above are ETFs. Add .NS-suffixed ETF symbols to
+# tickers_india.json's "etfs" list as the ticker set grows (e.g.
+# "NIFTYBEES.NS" for the Nifty 50 ETF).
+DEFAULT_INDIA_ETFS = set()
+
+
+def load_tickers_india():
+    """
+    Reads the India watchlist from tickers_india.json (repo root), mirroring
+    load_tickers() in fetch_data.py exactly — same file-not-found/invalid-
+    JSON fallback behavior, so this can be edited without touching Python,
+    either by hand on GitHub or via the app's ticker-management panel.
+    """
+    try:
+        with open("tickers_india.json") as f:
+            cfg = json.load(f)
+        tickers = cfg.get("tickers") or DEFAULT_INDIA_TICKERS
+        etfs = set(cfg.get("etfs") or DEFAULT_INDIA_ETFS)
+        return [t.strip().upper() for t in tickers if t.strip()], etfs
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"tickers_india.json missing or invalid ({e}) — using built-in defaults", file=sys.stderr)
+        return DEFAULT_INDIA_TICKERS, DEFAULT_INDIA_ETFS
 
 
 def main():
+    india_tickers, known_india_etfs = load_tickers_india()
     equities = []
-    for ticker in INDIA_TICKERS:
+    for ticker in india_tickers:
         print(f"Fetching {ticker}...")
-        equity = build_equity_snapshot(ticker, ticker in KNOWN_INDIA_ETFS)
+        equity = build_equity_snapshot(ticker, ticker in known_india_etfs)
         if equity:
             equities.append(equity)
 

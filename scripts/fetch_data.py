@@ -31,7 +31,7 @@ import json
 import math
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 import numpy as np
 from scipy.stats import norm
@@ -361,6 +361,7 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
 
     return {
         "exp": exp_label,
+        "expDate": cand_exp,
         "dte": cand_dte,
         "pot": pot,
         "ap": ann_profit,
@@ -375,6 +376,8 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "pcOI": pc_oi,
         "pcVol": pc_vol,
         "strike": fields["strike_label"],
+        "shortStrike": fields["strike_for_pot"],
+        "hedge": fields.get("hedge"),
     }, None
 MAX_NEWS_HEADLINES = 3       # how many recent headlines to pull and score per ticker
 
@@ -511,6 +514,61 @@ def fetch_news_and_sentiment(tk, ticker_symbol):
     return round(avg, 2), label, headlines
 
 
+def compute_naked_hedge(direction, chain, primary_strike, primary_premium):
+    """
+    Suggests a protective leg that would convert a naked Short Put/Short Call
+    into a defined-risk spread — using the exact same further-OTM selection
+    rule the existing Bull Put Spread / Bear Call Spread strategies already
+    use (the 2nd-next further-OTM strike), for consistency rather than
+    inventing a separate rule. Returns None if no further-OTM strike exists.
+    """
+    if direction == "put":
+        candidates = chain[chain["strike"] < primary_strike].sort_values("strike", ascending=False)
+    else:
+        candidates = chain[chain["strike"] > primary_strike].sort_values("strike")
+    if candidates.empty:
+        return None
+
+    hedge_row = candidates.iloc[min(1, len(candidates) - 1)]
+    hedge_strike = float(hedge_row["strike"])
+    hedge_cost = mid_price(hedge_row)
+    width = abs(primary_strike - hedge_strike)
+    net_credit = primary_premium - hedge_cost
+    return {
+        "hedgeStrike": hedge_strike,
+        "hedgeCost": round(hedge_cost, 2),
+        "cappedMaxLoss": round((width - net_credit) * 100, 2),
+    }
+
+
+def compute_collar_hedge(puts, spot, dte, call_premium):
+    """
+    Suggests a protective put that would turn a Covered Call into a collar.
+    This is genuinely different math from compute_naked_hedge — a covered
+    call's risk is the STOCK declining, not option assignment, so the "max
+    loss" here is the gap between spot and the protective put's strike, net
+    of the combined premium (call collected, put paid). Reuses the same
+    delta-targeted strike-picking already used for the call leg, for the
+    protective put too, rather than a separate ad-hoc rule.
+    """
+    picked = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
+    if not picked:
+        return None
+    row, _ = picked
+    put_strike = float(row["strike"])
+    put_cost = mid_price(row)
+    net_credit_per_share = call_premium - put_cost
+    # floored at 0: a negative result means the net credit alone exceeds the
+    # spot-to-put gap, i.e. the worst case is still a net gain, not a loss —
+    # simpler to show "$0 max loss" than a confusing negative "loss" figure
+    max_loss = max(0.0, (spot - put_strike - net_credit_per_share) * 100)
+    return {
+        "hedgeStrike": put_strike,
+        "hedgeCost": round(put_cost, 2),
+        "cappedMaxLoss": round(max_loss, 2),
+    }
+
+
 def try_strategy_pick(strat, calls, puts, spot, dte):
     """
     Attempts to pick strikes for `strat` against one expiration's chain.
@@ -530,6 +588,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": strike - premium, "max_loss": round((strike - premium) * 100, 2),
             "strike_label": f"${strike:.0f} P", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
+            "hedge": compute_naked_hedge("put", puts, strike, premium),
         }, None
 
     if strat == "Covered Call":
@@ -544,6 +603,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": spot - premium, "max_loss": round((spot - premium) * 100, 2),
             "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
+            "hedge": compute_collar_hedge(puts, spot, dte, premium),
         }, None
 
     if strat == "Short Call":
@@ -558,6 +618,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": strike + premium, "max_loss": round(strike * 100, 2),  # illustrative cap, not a real max-loss figure
             "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
+            "hedge": compute_naked_hedge("call", calls, strike, premium),
         }, None
 
     if strat == "Bull Put Spread":
@@ -711,7 +772,10 @@ def build_trade_for_ticker(ticker_symbol, index):
             "side": side,
             "isETF": is_etf,
             "strike": best["strike"],
+            "shortStrike": best["shortStrike"],
+            "hedge": best["hedge"],
             "exp": best["exp"],
+            "expDate": best["expDate"],
             "dte": best["dte"],
             "pot": best["pot"],
             "ap": best["ap"],
@@ -923,6 +987,120 @@ def build_equity_snapshot(ticker_symbol, is_etf):
         return None
 
 
+HISTORY_PATH = "history.json"
+MAX_HISTORY_ENTRIES = 500  # cap so the file doesn't grow forever
+
+
+def load_history():
+    """Loads the accumulating backtest log. Starts fresh if missing/corrupt —
+    a broken history file should never crash the whole pipeline over it."""
+    try:
+        with open(HISTORY_PATH) as f:
+            data = json.load(f)
+        if isinstance(data, dict) and isinstance(data.get("entries"), list):
+            return data["entries"]
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+    return []
+
+
+def get_actual_close(ticker_symbol, target_date_str):
+    """
+    Fetches the underlying's actual closing price on (or the nearest trading
+    day before) target_date, to compare against a logged trade's strike. This
+    is a separate, on-demand fetch — the ticker may no longer be on the
+    current watchlist by the time its trade resolves, so we can't assume
+    today's screening run already has fresh data for it.
+    """
+    try:
+        tk = yf.Ticker(ticker_symbol)
+        target_date = datetime.strptime(target_date_str, "%Y-%m-%d").date()
+        history = tk.history(start=target_date - timedelta(days=7), end=target_date + timedelta(days=3))
+        if history.empty:
+            return None
+        history = history[history.index.date <= target_date]
+        if history.empty:
+            return None
+        close = float(history["Close"].iloc[-1])
+        return close if not math.isnan(close) else None
+    except Exception as e:
+        print(f"  backtest: couldn't fetch resolution price for {ticker_symbol}: {e}")
+        return None
+
+
+def determine_outcome(strat, short_strike, actual_close):
+    """
+    Binary win/loss based on whether the SHORT option (the one actually sold)
+    expired out-of-the-money (win, full premium kept) or in-the-money (loss,
+    assigned / spread lost value). Uses the strategy name directly rather than
+    the bull/bear "side" label, since side reflects the ticker's directional
+    thesis, not which option type was sold — Covered Call is side="bull" but
+    sells a CALL, the same win/loss direction as the "bear" strategies.
+
+    NOTE on Covered Call specifically: "loss" here means "got called away" —
+    a purely technical statement that the sold call finished in-the-money.
+    That is NOT necessarily a bad outcome for a covered-call writer in
+    absolute terms (the premium is still kept, and assignment happens at your
+    own chosen strike) — this tracker scores the option's own outcome, not
+    your overall portfolio result.
+    """
+    put_sold_strategies = {"Short Put", "Bull Put Spread"}
+    if strat in put_sold_strategies:
+        return "won" if actual_close >= short_strike else "lost"
+    return "won" if actual_close <= short_strike else "lost"  # Covered Call, Short Call, Bear Call Spread
+
+
+def update_history(history_entries, todays_trades, today):
+    """
+    Resolves any pending entry whose expiration has passed against the
+    underlying's actual close, and logs today's freshly-picked trades as new
+    pending entries (skipping re-logging a trade that's already pending for
+    the same symbol/strategy/expiration, so a pick that stays "best" across
+    several days doesn't pile up duplicate log lines).
+    """
+    resolved_count = 0
+    for entry in history_entries:
+        if entry["status"] != "pending":
+            continue
+        exp_date = datetime.strptime(entry["expDate"], "%Y-%m-%d").date()
+        if exp_date > today:
+            continue  # not expired yet
+        actual_close = get_actual_close(entry["sym"], entry["expDate"])
+        if actual_close is None:
+            continue  # couldn't resolve this run — leave pending, try again next run
+        entry["status"] = determine_outcome(entry["strat"], entry["shortStrike"], actual_close)
+        entry["actualClose"] = round(actual_close, 2)
+        entry["resolvedAt"] = today.isoformat()
+        resolved_count += 1
+
+    pending_keys = {
+        (e["sym"], e["strat"], e["expDate"])
+        for e in history_entries if e["status"] == "pending"
+    }
+    logged_count = 0
+    for t in todays_trades:
+        key = (t["sym"], t["strat"], t["expDate"])
+        if key in pending_keys:
+            continue  # already logged and still pending — don't duplicate
+        history_entries.append({
+            "sym": t["sym"], "strat": t["strat"], "side": t["side"],
+            "strike": t["strike"], "shortStrike": t["shortStrike"],
+            "loggedAt": today.isoformat(), "expDate": t["expDate"], "dte": t["dte"],
+            "ap": t["ap"], "roc": t["roc"], "score": t["score"],
+            "status": "pending", "actualClose": None, "resolvedAt": None,
+        })
+        pending_keys.add(key)
+        logged_count += 1
+
+    if resolved_count or logged_count:
+        print(f"\nBacktest: resolved {resolved_count} pending trade(s), logged {logged_count} new pick(s) this run")
+
+    if len(history_entries) > MAX_HISTORY_ENTRIES:
+        history_entries = history_entries[-MAX_HISTORY_ENTRIES:]
+
+    return history_entries
+
+
 def main():
     trades = []
     equities = []
@@ -939,6 +1117,12 @@ def main():
     if not trades and not equities:
         print("No trades or equities were built — leaving existing data.json untouched.", file=sys.stderr)
         sys.exit(1)
+
+    today = datetime.now(timezone.utc).date()
+    history_entries = load_history()
+    history_entries = update_history(history_entries, trades, today)
+    with open(HISTORY_PATH, "w") as f:
+        json.dump({"entries": history_entries}, f, indent=2)
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),

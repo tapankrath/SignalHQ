@@ -576,6 +576,11 @@
     </button>
   </div>
 
+  <div class="mode-toggle" role="tablist" style="margin-bottom:0; border-radius:0;">
+    <button class="mode-tab active" id="marketUS" role="tab" aria-selected="true" onclick="switchMarket('US')">🇺🇸 US</button>
+    <button class="mode-tab" id="marketIN" role="tab" aria-selected="false" onclick="switchMarket('IN')">🇮🇳 India</button>
+  </div>
+
   <div class="mode-toggle" role="tablist">
     <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
     <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
@@ -584,7 +589,7 @@
 
 <div class="portfolio-bar">
   <label>
-    Cash $
+    Cash <span id="cashLabelSym">$</span>
     <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
   </label>
   <label>
@@ -758,7 +763,30 @@
   // update-data GitHub Action (scripts/fetch_data.py) once that's run at least once.
   let trades = [];
   let equities = [];
+  let indiaEquities = [];
+  let currentMarket = 'US';
   let dataGeneratedAt = null;
+  let indiaDataGeneratedAt = null;
+
+  function curSym(){
+    return currentMarket === 'IN' ? '₹' : '$';
+  }
+  function fmtPrice(value){
+    if(value == null) return '—';
+    const locale = currentMarket === 'IN' ? 'en-IN' : 'en-US';
+    return curSym() + value.toLocaleString(locale, { minimumFractionDigits:2, maximumFractionDigits:2 });
+  }
+  function fmtMarketCap(value){
+    if(value == null) return '—';
+    if(currentMarket === 'IN'){
+      // Indian market caps are conventionally expressed in crores (1 crore =
+      // 1,00,00,000 = 10 million), not billions — a raw dollar-style "$18.5B"
+      // treatment would be unfamiliar and much harder to read for INR figures
+      const crores = value / 1e7;
+      return '₹' + crores.toLocaleString('en-IN', { maximumFractionDigits:0 }) + ' Cr';
+    }
+    return '$' + (value / 1e9).toFixed(1) + 'B';
+  }
 
   function formatDataDate(isoString){
     if(!isoString) return null;
@@ -792,6 +820,23 @@
       equities = [];
       statusText.textContent = 'Data unavailable';
       statusDot.style.background = 'var(--red)';
+    }
+
+    // Independent of data.json on purpose — data_india.json runs on its own
+    // schedule and may not exist yet on a fresh deploy. A missing/broken
+    // India file should never take down the US tabs.
+    try{
+      const inRes = await fetch('data_india.json', { cache:'no-store' });
+      if(inRes.ok){
+        const inJson = await inRes.json();
+        indiaEquities = Array.isArray(inJson.equities) ? inJson.equities : [];
+        indiaDataGeneratedAt = inJson.generated_at || null;
+      } else {
+        indiaEquities = [];
+      }
+    }catch(err){
+      console.error('Failed to load data_india.json', err);
+      indiaEquities = [];
     }
   }
 
@@ -969,6 +1014,56 @@
   const equityTbody = document.getElementById('equityTableBody');
   const equityCardList = document.getElementById('equityCardList');
 
+  function currentEquitiesSource(){
+    return currentMarket === 'IN' ? indiaEquities : equities;
+  }
+
+  function switchMarket(market){
+    currentMarket = market;
+    document.getElementById('marketUS').classList.toggle('active', market === 'US');
+    document.getElementById('marketIN').classList.toggle('active', market === 'IN');
+    document.getElementById('marketUS').setAttribute('aria-selected', market === 'US');
+    document.getElementById('marketIN').setAttribute('aria-selected', market === 'IN');
+
+    // India has no options data at all (confirmed directly — yfinance
+    // returns zero option expirations for Indian tickers, including Nifty
+    // 50 and Bank Nifty). Hide the tab rather than show an empty/broken one.
+    document.getElementById('tabOptions').style.display = market === 'IN' ? 'none' : '';
+    document.getElementById('cashLabelSym').textContent = curSym();
+    // the Options% split is meaningless with no options to allocate to
+    document.querySelector('.portfolio-bar label:nth-child(2)').style.display = market === 'IN' ? 'none' : '';
+    document.querySelector('.portfolio-split-readout').style.display = market === 'IN' ? 'none' : '';
+
+    // Selections can't safely carry across a market switch. equityId() is
+    // symbol-based, and while US and India symbols don't actually collide
+    // (India carries a .NS suffix), mixing a $-priced US pick and a
+    // ₹-priced India pick into one portfolio summary would silently combine
+    // two different currencies as if they were the same number. Clearing is
+    // the honest choice here, not something avoidable some cleverer way.
+    if(selectedEquityIds.size > 0){
+      selectedEquityIds.clear();
+      document.querySelectorAll('.row-checkbox[data-eid], .card-checkbox[data-eid]').forEach(cb => cb.checked = false);
+      updatePortfolioCount();
+    }
+
+    if(market === 'IN' && document.getElementById('tabOptions').classList.contains('active')){
+      switchMode('stocks');
+    } else if(document.getElementById('tabStocks').classList.contains('active')){
+      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
+    }
+
+    const dateLabel = formatDataDate(market === 'IN' ? indiaDataGeneratedAt : dataGeneratedAt);
+    const statusText = document.getElementById('dataStatusText');
+    const statusDot = document.getElementById('dataStatusDot');
+    if(dateLabel){
+      statusText.textContent = `EOD data · ${dateLabel} close`;
+      statusDot.style.background = 'var(--green)';
+    } else {
+      statusText.textContent = market === 'IN' ? 'India data not available yet' : 'Seed data — not live yet';
+      statusDot.style.background = 'var(--text-faint)';
+    }
+  }
+
   function switchMode(mode){
     const isOptions = mode === 'options';
     document.getElementById('optionsView').style.display = isOptions ? '' : 'none';
@@ -981,7 +1076,7 @@
       // always re-render (not just the first time) — cheap for ~20 rows, and
       // guarantees correctness if the user switches tabs before loadTrades()
       // has actually finished fetching data.json
-      renderEquities(sortEquities(filterEquitiesByType(equities)));
+      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
     }
   }
 
@@ -1039,7 +1134,7 @@
         <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label></td>
           <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}</td>
-          <td class="num">$${e.price.toFixed(2)}</td>
+          <td class="num">${fmtPrice(e.price)}</td>
           <td>${trendPill(e.trend)}</td>
           <td class="num">${e.rsi ?? '—'}</td>
           <td>${meterHtml(e.score)}</td>
@@ -1054,7 +1149,7 @@
             ${trendPill(e.trend)}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">$${e.price.toFixed(2)} · RSI ${e.rsi ?? '—'}</span>
+            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">${fmtPrice(e.price)} · RSI ${e.rsi ?? '—'}</span>
             ${meterHtml(e.score)}
           </div>
         </div>`;
@@ -1065,7 +1160,7 @@
     renderEquities(sortEquities(currentEquityList));
   });
   document.getElementById('equityTypeSelect').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filterEquitiesByType(equities)));
+    renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
   });
 
   document.addEventListener('click', (e)=>{
@@ -1110,18 +1205,18 @@
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">$${e.price.toFixed(2)} · ${e.trend}</div>
+      <div class="modal-strat">${fmtPrice(e.price)} · ${e.trend}</div>
       <div class="modal-metrics">
         <div><div class="mm-label">RSI (14-day)</div><div class="mm-val">${e.rsi ?? '—'}</div></div>
         <div><div class="mm-label">1-Month Change</div><div class="mm-val ${pctClass(e.chg1m)}">${fmtPct(e.chg1m)}</div></div>
         <div><div class="mm-label">3-Month Change</div><div class="mm-val ${pctClass(e.chg3m)}">${fmtPct(e.chg3m)}</div></div>
         <div><div class="mm-label">6-Month Change</div><div class="mm-val ${pctClass(e.chg6m)}">${fmtPct(e.chg6m)}</div></div>
         <div><div class="mm-label">1-Year Change</div><div class="mm-val ${pctClass(e.chg1y)}">${fmtPct(e.chg1y)}</div></div>
-        <div><div class="mm-label">52-Week High</div><div class="mm-val">$${e.high52wk.toFixed(2)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromHigh)})</span></div></div>
-        <div><div class="mm-label">52-Week Low</div><div class="mm-val">$${e.low52wk.toFixed(2)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromLow)})</span></div></div>
+        <div><div class="mm-label">52-Week High</div><div class="mm-val">${fmtPrice(e.high52wk)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromHigh)})</span></div></div>
+        <div><div class="mm-label">52-Week Low</div><div class="mm-val">${fmtPrice(e.low52wk)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromLow)})</span></div></div>
         <div><div class="mm-label">P/E Ratio</div><div class="mm-val">${e.peRatio ?? '—'}</div></div>
         <div><div class="mm-label">Dividend Yield</div><div class="mm-val">${e.dividendYield != null ? e.dividendYield + '%' : '—'}</div></div>
-        <div><div class="mm-label">Market Cap</div><div class="mm-val">${e.marketCap ? '$' + (e.marketCap/1e9).toFixed(1) + 'B' : '—'}</div></div>
+        <div><div class="mm-label">Market Cap</div><div class="mm-val">${fmtMarketCap(e.marketCap)}</div></div>
         <div><div class="mm-label">Volume vs 30-day Avg</div><div class="mm-val">${e.volRatio != null ? e.volRatio + '×' : '—'}</div></div>
         <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${e.score}.0 / 10</div></div>
       </div>
@@ -1139,7 +1234,7 @@
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
     document.getElementById('modalCopyBtn').addEventListener('click', async ()=>{
-      const summary = `${e.sym} $${e.price.toFixed(2)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${e.score}.0`;
+      const summary = `${e.sym} ${fmtPrice(e.price)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${e.score}.0`;
       const ok = await copyText(summary);
       showToast(ok ? 'Summary copied' : 'Copy blocked — select the text manually');
     });
@@ -1151,10 +1246,14 @@
     let optionsPct = parseFloat(document.getElementById('portfolioSplit').value);
     if(isNaN(optionsPct)) optionsPct = 0;
     optionsPct = Math.min(100, Math.max(0, optionsPct));
+    // India has no options at all — force 100% equity regardless of the
+    // split input, so capital doesn't silently show as "unallocated" against
+    // a category that has nothing selectable in it.
+    if(currentMarket === 'IN') optionsPct = 0;
     const equityPct = 100 - optionsPct;
 
     const selectedTrades = trades.filter(t => selectedOptionIds.has(optionId(t)));
-    const selectedEquities = equities.filter(e => selectedEquityIds.has(equityId(e)));
+    const selectedEquities = currentEquitiesSource().filter(e => selectedEquityIds.has(equityId(e)));
     const totalSelected = selectedTrades.length + selectedEquities.length;
 
     if(!capitalRaw || isNaN(capital) || capital <= 0){
@@ -1207,9 +1306,9 @@
       return `<div class="portfolio-line-item">
         <div class="portfolio-line-title">${e.sym}</div>
         <div class="portfolio-line-stats">
-          <span>Price <b>$${e.price.toFixed(2)}</b></span>
+          <span>Price <b>${fmtPrice(e.price)}</b></span>
           <span>Shares <b>${shares}</b></span>
-          <span class="val-pos">$${used.toFixed(2)}</span>
+          <span class="val-pos">${curSym()}${used.toFixed(2)}</span>
         </div>
         ${warn}
       </div>`;
@@ -1241,10 +1340,10 @@
       </div>
       <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-bottom:12px;">Clear all selections (${totalSelected})</button>
       <div class="modal-metrics">
-        <div><div class="mm-label">Total Capital</div><div class="mm-val">$${capital.toLocaleString()}</div></div>
+        <div><div class="mm-label">Total Capital</div><div class="mm-val">${curSym()}${capital.toLocaleString()}</div></div>
         <div><div class="mm-label">Split</div><div class="mm-val">${equityPct}% / ${optionsPct}%</div></div>
-        <div><div class="mm-label">Equities Allocation</div><div class="mm-val">$${equityCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
-        <div><div class="mm-label">Options Allocation</div><div class="mm-val">$${optionsCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Equities Allocation</div><div class="mm-val">${curSym()}${equityCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Options Allocation</div><div class="mm-val">${curSym()}${optionsCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
       </div>
 
       ${selectedEquities.length ? `
@@ -1256,8 +1355,8 @@
       <div class="portfolio-line-list">${optionRows}</div>` : ''}
 
       <div class="modal-metrics">
-        <div><div class="mm-label">Total Deployed</div><div class="mm-val val-pos">$${totalUsed.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
-        <div><div class="mm-label">Unallocated Cash</div><div class="mm-val">$${unallocated.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Total Deployed</div><div class="mm-val val-pos">${curSym()}${totalUsed.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Unallocated Cash</div><div class="mm-val">${curSym()}${unallocated.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
       </div>
 
       <div class="modal-note">Position sizing splits each category's capital EQUALLY across whatever you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" for options uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Share/contract counts round down, so "Unallocated Cash" reflects both rounding leftovers and any category with nothing checked in it. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
@@ -1762,7 +1861,7 @@
       renderFunnel();
       updateActiveCount();
     } else {
-      renderEquities(sortEquities(filterEquitiesByType(equities)));
+      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
     }
 
     btn.classList.remove('spinning');
@@ -1778,7 +1877,7 @@
     // covers the (unlikely but possible) case where the user is already on
     // the Stocks tab by the time this resolves
     if(!document.getElementById('tabOptions').classList.contains('active')){
-      renderEquities(sortEquities(filterEquitiesByType(equities)));
+      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
     }
   });
 

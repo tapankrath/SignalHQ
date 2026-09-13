@@ -210,8 +210,6 @@
     margin-bottom:14px;
   }
 
-  .outlook-details{ margin-bottom:12px; }
-  .outlook-details > summary{ font-weight:700; }
   .outlook-body{
     display:grid; grid-template-columns:1fr 1fr; gap:0;
   }
@@ -225,27 +223,28 @@
   .outlook-col-label.bear{ color:var(--red); }
   .filter-hint{ font-size:10.5px; color:var(--text-faint); line-height:1.45; padding:0 12px 12px; }
 
-  details.filter-section{
+  .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
+  .filter-header-btn{
     border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    margin-bottom:0;
+    padding:10px 8px; font-weight:600; font-size:11.5px; font-family:inherit; color:var(--text);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    cursor:pointer; user-select:none; text-align:center; line-height:1.25;
+    transition:border-color .12s, background .12s;
   }
-  details.filter-section > summary{
-    cursor:pointer; padding:12px 14px; font-weight:600; font-size:13px;
-    display:flex; align-items:center; justify-content:space-between;
-    list-style:none; user-select:none;
+  .filter-header-btn[aria-expanded="true"]{ border-color:var(--text); background:var(--surface); }
+  .filter-header-btn .filter-chevron{
+    font-size:15px; color:var(--text-faint); transform:rotate(90deg); transition:transform .15s; line-height:1;
   }
-  details.filter-section > summary::-webkit-details-marker{ display:none; }
-  details.filter-section > summary::after{
-    content:"›"; font-size:18px; color:var(--text-faint); transform:rotate(90deg);
-    transition:transform .15s; line-height:1;
+  .filter-header-btn[aria-expanded="true"] .filter-chevron{ transform:rotate(-90deg); }
+  .filter-section{
+    border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
+    margin-bottom:8px;
   }
-  details.filter-section[open] > summary::after{ transform:rotate(-90deg); }
-  details.filter-section[open] > summary{ border-bottom:1px solid var(--border); }
   .filter-section-body{ padding:12px 14px; }
   .summary-count{
     font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--amber-strong);
     background:var(--amber-soft); border:1px solid var(--amber-border);
-    padding:1px 7px; border-radius:10px; margin-left:8px;
+    padding:1px 7px; border-radius:10px;
   }
 
   .filter-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin-bottom:10px; }
@@ -284,8 +283,6 @@
     flex:1; background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); font-size:16px; padding:9px 10px; border-radius:7px;
   }
-
-  .sections-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start; }
 
   /* apply/reset/copy bar */
   .apply-bar{
@@ -515,12 +512,11 @@
 
     .filter-grid{ grid-template-columns:1fr; }
 
-    /* Quality/Risk/Reward/Expiration stay 2-up on phones — only Outlook keeps its own full row */
-    details.filter-section > summary{
-      padding:11px 10px; font-size:12px; gap:4px;
+    .filter-header-btn{
+      padding:8px 6px; font-size:10.5px; gap:1px;
     }
-    .summary-count{ font-size:10px; padding:1px 6px; margin-left:5px; }
-    details.filter-section > summary::after{ font-size:16px; }
+    .summary-count{ font-size:10px; padding:1px 6px; }
+    .filter-header-btn .filter-chevron{ font-size:13px; }
 
     .table-wrap{ display:none; }
     .card-list{ display:flex; }
@@ -535,11 +531,10 @@
     .active-count{ display:none; }
   }
 
-  /* only stack outlook columns AND the sections grid on genuinely narrow screens (e.g. iPhone SE) */
+  /* only stack outlook columns on genuinely narrow screens (e.g. iPhone SE) */
   @media (max-width: 360px){
     .outlook-body{ grid-template-columns:1fr; }
     .outlook-col + .outlook-col{ border-left:none; border-top:1px solid var(--border); }
-    .sections-grid{ grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -616,8 +611,25 @@
   <div class="section-label">Filters</div>
   <div class="filter-card">
 
-    <details class="filter-section outlook-details" id="outlookSection">
-      <summary>Outlook &amp; Strategy<span class="summary-count" id="outlookCount" style="display:none;"></span></summary>
+    <div class="filter-headers-row">
+      <button class="filter-header-btn" type="button" data-section="outlookSection" aria-expanded="false">
+        <span>Outlook &amp; Strategy</span>
+        <span class="summary-count" id="outlookCount" style="display:none;"></span>
+        <span class="filter-chevron">›</span>
+      </button>
+      <button class="filter-header-btn" type="button" data-section="qualitySection" aria-expanded="false">
+        <span>Quality</span>
+        <span class="summary-count" id="qualityCount" style="display:none;"></span>
+        <span class="filter-chevron">›</span>
+      </button>
+      <button class="filter-header-btn" type="button" data-section="riskSection" aria-expanded="false">
+        <span>Risk</span>
+        <span class="summary-count" id="riskCount" style="display:none;"></span>
+        <span class="filter-chevron">›</span>
+      </button>
+    </div>
+
+    <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="outlook-body">
         <div class="outlook-col">
           <div class="outlook-col-label bull">Bullish / Positive</div>
@@ -638,26 +650,22 @@
         </div>
       </div>
       <div class="filter-hint">Check any strategy from either side — results combine bullish and bearish setups that match.</div>
-    </details>
+    </div>
 
-    <div class="sections-grid">
-      <details class="filter-section" id="qualitySection">
-        <summary>Quality<span class="summary-count" id="qualityCount" style="display:none;"></span></summary>
-        <div class="filter-section-body">
-          <label class="check-row"><input type="checkbox" data-quality="buy"> Buy signal</label>
-          <label class="check-row"><input type="checkbox" data-quality="sell"> Sell signal</label>
-          <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
-        </div>
-      </details>
+    <div class="filter-section" id="qualitySection" style="display:none;">
+      <div class="filter-section-body">
+        <label class="check-row"><input type="checkbox" data-quality="buy"> Buy signal</label>
+        <label class="check-row"><input type="checkbox" data-quality="sell"> Sell signal</label>
+        <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
+      </div>
+    </div>
 
-      <details class="filter-section" id="riskSection">
-        <summary>Risk<span class="summary-count" id="riskCount" style="display:none;"></span></summary>
-        <div class="filter-section-body">
-          <label class="check-row"><input type="checkbox" data-risk="excludeEarnings" checked> Exclude earnings within DTE</label>
-          <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
-          <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
-        </div>
-      </details>
+    <div class="filter-section" id="riskSection" style="display:none;">
+      <div class="filter-section-body">
+        <label class="check-row"><input type="checkbox" data-risk="excludeEarnings" checked> Exclude earnings within DTE</label>
+        <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
+        <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
+      </div>
     </div>
 
     <div class="apply-bar">
@@ -1009,6 +1017,17 @@
       badge.style.display = n > 0 ? 'inline-block' : 'none';
     });
   }
+
+  // Each header button independently shows/hides its own panel — multiple
+  // sections can be open at once, same as the old <details> elements allowed.
+  document.querySelectorAll('.filter-header-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const panel = document.getElementById(btn.dataset.section);
+      const isOpen = panel.style.display !== 'none';
+      panel.style.display = isOpen ? 'none' : '';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
 
   function updateActiveCount(){
     const n = document.querySelectorAll(`.filter-card input[type="checkbox"]:checked:is(${FILTER_CHECKBOX_SELECTOR})`).length;

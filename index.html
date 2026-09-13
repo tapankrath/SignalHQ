@@ -1657,6 +1657,22 @@
   let workingTickers = [];
   let workingEtfs = [];
 
+  function tickersFilePath(){
+    return currentMarket === 'IN' ? 'tickers_india.json' : 'tickers.json';
+  }
+
+  function isValidTickerSymbol(sym){
+    if(currentMarket === 'IN'){
+      // India tickers in this app always carry an NSE suffix, and base
+      // symbols run longer than typical US ones (BHARTIARTL, ASIANPAINT,
+      // SUNPHARMA) — looser length cap, and the .NS suffix is mandatory
+      // rather than the single-letter optional suffix US tickers use.
+      return /^[A-Z]{1,12}\.NS$/.test(sym);
+    }
+    // US: up to 6 letters, optional single-letter share-class suffix (e.g. BRK.A)
+    return /^[A-Z]{1,6}(\.[A-Z])?$/.test(sym);
+  }
+
   function githubEditUrl(path){
     const host = window.location.hostname;
     if(!host.endsWith('.github.io')) return null;
@@ -1667,14 +1683,15 @@
   }
 
   async function loadTickersConfig(){
+    const path = tickersFilePath();
     try{
-      const res = await fetch('tickers.json', { cache:'no-store' });
-      if(!res.ok) throw new Error(`tickers.json fetch failed: ${res.status}`);
+      const res = await fetch(path, { cache:'no-store' });
+      if(!res.ok) throw new Error(`${path} fetch failed: ${res.status}`);
       const json = await res.json();
       workingTickers = Array.isArray(json.tickers) ? [...json.tickers] : [];
       workingEtfs = Array.isArray(json.etfs) ? [...json.etfs] : [];
     }catch(err){
-      console.error('Failed to load tickers.json', err);
+      console.error(`Failed to load ${path}`, err);
       workingTickers = [];
       workingEtfs = [];
     }
@@ -1690,7 +1707,7 @@
       return `<span class="ticker-chip${isEtf ? ' etf' : ''}">${t}${isEtf ? ' · ETF' : ''}<button data-remove-ticker="${t}" aria-label="Remove ${t}">✕</button></span>`;
     }).join('');
 
-    const editUrl = githubEditUrl('tickers.json');
+    const editUrl = githubEditUrl(tickersFilePath());
 
     document.getElementById('tickerChips').innerHTML = chipsHtml || `<span style="color:var(--text-faint); font-size:12.5px;">No tickers yet — add one below.</span>`;
     document.getElementById('tickerJsonBox').value = tickersJsonContent();
@@ -1698,6 +1715,7 @@
     const linkEl = document.getElementById('tickerGithubLink');
     if(editUrl){
       linkEl.href = editUrl;
+      linkEl.textContent = `Open ${tickersFilePath()} on GitHub to paste & commit →`;
       linkEl.style.display = 'block';
     } else {
       linkEl.style.display = 'none';
@@ -1710,8 +1728,9 @@
     let sym = input.value.trim().toUpperCase();
 
     if(!sym) return;
-    if(!/^[A-Z]{1,6}(\.[A-Z])?$/.test(sym)){
-      showToast(`"${sym}" doesn't look like a valid ticker`);
+    if(!isValidTickerSymbol(sym)){
+      const hint = currentMarket === 'IN' ? '(India tickers need an .NS suffix, e.g. TCS.NS)' : '';
+      showToast(`"${sym}" doesn't look like a valid ticker ${hint}`.trim());
       return;
     }
     if(workingTickers.includes(sym)){
@@ -1735,9 +1754,10 @@
   }
 
   async function openTickersModal(){
+    const marketLabel = currentMarket === 'IN' ? 'India' : 'US';
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
+        <div class="ticker-sym" style="font-size:17px;">Manage ${marketLabel} Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-strat">Loading current watchlist…</div>
@@ -1749,25 +1769,25 @@
 
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
+        <div class="ticker-sym" style="font-size:17px;">Manage ${marketLabel} Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">This is the watchlist the nightly data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to paste into GitHub.</div>
+      <div class="modal-strat">This is the watchlist the nightly ${marketLabel} data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to paste into GitHub.</div>
 
       <div class="ticker-chips" id="tickerChips"></div>
 
       <div class="ticker-add-row">
-        <input type="text" id="tickerAddInput" placeholder="e.g. GOOGL" maxlength="8" autocapitalize="characters">
+        <input type="text" id="tickerAddInput" placeholder="${currentMarket === 'IN' ? 'e.g. TCS.NS' : 'e.g. GOOGL'}" maxlength="${currentMarket === 'IN' ? 15 : 8}" autocapitalize="characters">
         <button id="tickerAddBtn" aria-label="Add ticker">+</button>
       </div>
       <label class="ticker-etf-check">
         <input type="checkbox" id="tickerEtfCheck"> This is an ETF (affects the "ETFs only" filter)
       </label>
 
-      <div class="modal-note">Updated <code>tickers.json</code> — copy this or use the link below:</div>
+      <div class="modal-note">Updated <code>${tickersFilePath()}</code> — copy this or use the link below:</div>
       <textarea class="ticker-json-box" id="tickerJsonBox" readonly></textarea>
       <button class="modal-copy-btn" id="tickerCopyBtn">Copy JSON</button>
-      <a class="ticker-github-link" id="tickerGithubLink" target="_blank" rel="noopener">Open tickers.json on GitHub to paste &amp; commit →</a>
+      <a class="ticker-github-link" id="tickerGithubLink" target="_blank" rel="noopener">Open ${tickersFilePath()} on GitHub to paste &amp; commit →</a>
     `;
 
     renderTickersModalBody();
@@ -1783,7 +1803,7 @@
     });
     document.getElementById('tickerCopyBtn').addEventListener('click', async ()=>{
       const ok = await copyText(tickersJsonContent());
-      showToast(ok ? 'tickers.json copied' : 'Copy blocked — select the text above and copy manually');
+      showToast(ok ? `${tickersFilePath()} copied` : 'Copy blocked — select the text above and copy manually');
     });
   }
 

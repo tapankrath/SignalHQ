@@ -1545,13 +1545,13 @@
       : `<div class="news-empty">No recent headlines available for this ticker.</div>`;
 
     const earningsHtml = (t.daysToEarnings != null)
-      ? `<div class="mm-label" style="margin-top:2px;">Next Earnings</div><div class="mm-val">${t.daysToEarnings} day${t.daysToEarnings === 1 ? '' : 's'} away</div>`
+      ? `<div><div class="mm-label" style="margin-top:2px;">Next Earnings</div><div class="mm-val">${t.daysToEarnings} day${t.daysToEarnings === 1 ? '' : 's'} away</div></div>`
       : '';
 
     const hasVolRegime = t.volRegime && t.volRegime !== 'Unknown';
     const volRegimeColor = t.volRegime === 'Rich' ? 'var(--green)' : t.volRegime === 'Cheap' ? 'var(--red)' : 'var(--text-faint)';
     const volRegimeHtml = hasVolRegime
-      ? `<div class="mm-label" style="margin-top:2px;">IV vs Realized Vol</div><div class="mm-val" style="color:${volRegimeColor};">${t.volRegime}${t.ivRvRatio != null ? ` (${t.ivRvRatio}×)` : ''}</div>`
+      ? `<div><div class="mm-label" style="margin-top:2px;">IV vs Realized Vol</div><div class="mm-val" style="color:${volRegimeColor};">${t.volRegime}${t.ivRvRatio != null ? ` (${t.ivRvRatio}×)` : ''}</div></div>`
       : '';
 
     const hedgeHtml = t.hedge ? `

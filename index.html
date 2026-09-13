@@ -96,8 +96,7 @@
   .mode-tab:active{ opacity:0.85; }
 
   .market-toggle{
-    max-width:1080px; margin:0 auto; padding:8px 18px 6px;
-    display:flex; gap:6px; justify-content:flex-start;
+    display:flex; gap:6px; flex-shrink:0;
   }
   .market-tab{
     min-height:26px; padding:4px 10px;
@@ -130,10 +129,10 @@
     border-top:1px solid var(--border);
   }
   .refresh-btn{
-    display:flex; align-items:center; gap:5px;
-    font-family:inherit; font-size:11px; font-weight:700; color:var(--text-dim);
-    background:var(--surface-2); border:1px solid var(--border); border-radius:20px;
-    padding:5px 10px; cursor:pointer; min-height:28px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--text-dim);
+    background:var(--surface-2); border:1px solid var(--border); border-radius:50%;
+    width:28px; height:28px; flex-shrink:0; cursor:pointer; padding:0;
   }
   .refresh-btn:active{ opacity:0.7; }
   .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
@@ -577,15 +576,13 @@
       <span class="pulse-dot" id="dataStatusDot"></span>
       <span id="dataStatusText">Loading data…</span>
     </div>
+    <div class="market-toggle" role="tablist">
+      <button class="market-tab active" id="marketUS" role="tab" aria-selected="true" onclick="switchMarket('US')">🇺🇸 US</button>
+      <button class="market-tab" id="marketIN" role="tab" aria-selected="false" onclick="switchMarket('IN')">🇮🇳 India</button>
+    </div>
     <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data" title="Refresh data">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-      Refresh
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
     </button>
-  </div>
-
-  <div class="market-toggle" role="tablist">
-    <button class="market-tab active" id="marketUS" role="tab" aria-selected="true" onclick="switchMarket('US')">🇺🇸 US</button>
-    <button class="market-tab" id="marketIN" role="tab" aria-selected="false" onclick="switchMarket('IN')">🇮🇳 India</button>
   </div>
 
   <div class="mode-toggle" role="tablist">

@@ -1,0 +1,47 @@
+name: Check India options data availability
+
+on:
+  workflow_dispatch: {}   # manual trigger only — this is a one-off diagnostic, not a scheduled job
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install yfinance
+        run: pip install yfinance
+
+      - name: Check options data for a few Indian tickers
+        run: |
+          python3 -u <<'EOF'
+          import yfinance as yf
+
+          # A large NSE stock, the NIFTY 50 index, and BANKNIFTY — testing
+          # more than one since index options are the most heavily traded in
+          # India and are the most likely to have data if anything does.
+          candidates = ["RELIANCE.NS", "^NSEI", "^NSEBANK", "TCS.NS"]
+
+          for symbol in candidates:
+              print(f"\n=== {symbol} ===")
+              try:
+                  tk = yf.Ticker(symbol)
+                  expirations = tk.options
+                  print(f"Available expirations: {expirations}")
+                  if not expirations:
+                      print("RESULT: No expirations returned — options data NOT available for this symbol.")
+                      continue
+                  chain = tk.option_chain(expirations[0])
+                  print(f"Calls returned: {len(chain.calls)} rows")
+                  print(f"Puts returned: {len(chain.puts)} rows")
+                  if len(chain.calls) > 0:
+                      print("Sample call row:")
+                      print(chain.calls.iloc[len(chain.calls)//2][["strike", "bid", "ask", "lastPrice", "openInterest", "impliedVolatility"]])
+                      print("RESULT: Options data IS available for this symbol.")
+                  else:
+                      print("RESULT: Expirations listed but the actual chain came back empty.")
+              except Exception as e:
+                  print(f"RESULT: Failed with error — {type(e).__name__}: {e}")
+          EOF

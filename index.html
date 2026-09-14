@@ -22,20 +22,20 @@
        site; only the values changed. */
     --bg:#FFFFFF;
     --surface:#FFFFFF;
-    --surface-2:#F5F6F8;
-    --border:#E2E5EA;
-    --border-strong:#0B0E14;
-    --text:#0B0E14;
-    --text-dim:#4B5563;
-    --text-faint:#8B93A1;
-    --amber:#15803D;
-    --amber-strong:#0F7A38;
-    --amber-soft:#EAFBF1;
-    --amber-border:#4ADE80;
-    --green:#15803D;
-    --green-soft:#EAFBF1;
-    --red:#D14343;
-    --red-soft:#FDECEC;
+    --surface-2:#F3F4F7;
+    --border:#C7CDD6;
+    --border-strong:#000000;
+    --text:#000000;
+    --text-dim:#374151;
+    --text-faint:#6B7280;
+    --amber:#16A34A;
+    --amber-strong:#0D8A3F;
+    --amber-soft:#DCFCE7;
+    --amber-border:#22C55E;
+    --green:#16A34A;
+    --green-soft:#DCFCE7;
+    --red:#DC2626;
+    --red-soft:#FEE2E2;
     --radius:10px;
     --sans: 'IBM Plex Sans', -apple-system, sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', monospace;
@@ -109,11 +109,11 @@
   .market-tab:active{ opacity:0.85; }
 
   .brand-mark{
-    width:60px; height:60px; flex-shrink:0;
+    width:68px; height:68px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
   .brand-mark svg{ display:block; width:100%; height:100%; border-radius:14px; }
-  .brand-name{ font-weight:700; font-size:30px; letter-spacing:-0.01em; color:var(--text); }
+  .brand-name{ font-weight:700; font-size:34px; letter-spacing:-0.01em; color:var(--text); }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -372,7 +372,11 @@
   }
   .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
 
-  .card-list{ display:none; flex-direction:column; gap:8px; }
+  .card-list{
+    display:none; flex-direction:column; gap:8px;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:8px;
+  }
   .trade-card{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:12px;
@@ -504,9 +508,9 @@
     #portfolioCapital{ width:88px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand{ gap:8px; }
-    .brand-mark{ width:32px; height:32px; }
-    .brand-mark svg{ border-radius:8px; }
-    .brand-name{ font-size:17px; }
+    .brand-mark{ width:38px; height:38px; }
+    .brand-mark svg{ border-radius:9px; }
+    .brand-name{ font-size:19px; }
     .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
     .header-right{ gap:6px; }
 
@@ -661,6 +665,9 @@
     <div class="filter-section" id="riskSection" style="display:none;">
       <div class="filter-section-body">
         <label class="check-row"><input type="checkbox" data-risk="excludeEarnings"> Exclude earnings within DTE</label>
+        <label class="check-row"><input type="checkbox" data-risk="earningsWithin3wk"> Earnings within 3 weeks</label>
+        <label class="check-row"><input type="checkbox" data-risk="lowVol"> Low volatility (IV Rank &lt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="highVol"> High volatility (IV Rank &gt; 50)</label>
         <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
         <label class="check-row"><input type="checkbox" data-risk="marginOfSafety" checked> Margin of safety (ATR-based)</label>
       </div>
@@ -944,6 +951,9 @@
     const wantSell   = document.querySelector('[data-quality="sell"]').checked;
     const wantEma    = document.querySelector('[data-quality="ema"]').checked;
     const excludeEarnings = document.querySelector('[data-risk="excludeEarnings"]').checked;
+    const earningsWithin3wk = document.querySelector('[data-risk="earningsWithin3wk"]').checked;
+    const wantLowVol = document.querySelector('[data-risk="lowVol"]').checked;
+    const wantHighVol = document.querySelector('[data-risk="highVol"]').checked;
     const etfOnly          = document.querySelector('[data-risk="etfOnly"]').checked;
     const wantMoS           = document.querySelector('[data-risk="marginOfSafety"]').checked;
 
@@ -973,8 +983,21 @@
       funnel.push({ label:'After Quality', count: pool.length });
     }
 
-    if(excludeEarnings || etfOnly || wantMoS){
-      pool = pool.filter(t=> (!excludeEarnings || !t.earningsSoon) && (!etfOnly || t.isETF) && (!wantMoS || t.marginOfSafety));
+    if(excludeEarnings || earningsWithin3wk || wantLowVol || wantHighVol || etfOnly || wantMoS){
+      pool = pool.filter(t=>{
+        if(excludeEarnings && t.earningsSoon) return false;
+        if(earningsWithin3wk && !(t.daysToEarnings != null && t.daysToEarnings <= 21)) return false;
+        if(wantLowVol || wantHighVol){
+          // low/high are mutually exclusive on the same ivr value — OR them
+          // together (same pattern as the pcoi/pcvol bull/bear checks above),
+          // since AND-ing them would always produce zero results
+          const passesVol = (wantLowVol && t.ivr < 50) || (wantHighVol && t.ivr > 50);
+          if(!passesVol) return false;
+        }
+        if(etfOnly && !t.isETF) return false;
+        if(wantMoS && !t.marginOfSafety) return false;
+        return true;
+      });
       funnel.push({ label:'After Risk', count: pool.length });
     }
 

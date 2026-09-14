@@ -330,9 +330,10 @@
 
   .table-wrap{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); overflow:hidden;
+    border-radius:var(--radius); overflow-x:auto; overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
   }
-  table{ width:100%; border-collapse:collapse; }
+  table{ width:100%; min-width:720px; border-collapse:collapse; }
   thead th{
     text-align:left; font-size:12.5px; letter-spacing:0;
     color:var(--text-dim); font-weight:700; padding:11px 14px;

@@ -119,9 +119,15 @@
     display:flex; align-items:center; gap:6px;
     font-family:var(--mono); font-size:11px; color:var(--text-dim);
     padding:5px 10px; border:1px solid var(--border); border-radius:20px;
-    background:var(--surface-2); flex-shrink:0;
+    background:var(--surface-2);
+    /* Shrinks (instead of the flex default, which refuses to shrink below
+       its own text width) so this pill loses the tug-of-war against the
+       market toggle + refresh button on narrow phones — those two stay
+       fixed-size (flex-shrink:0 below) and this is the one that gives. */
+    flex-shrink:1; min-width:0;
   }
-  .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); }
+  .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
+  #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 
   .index-pills{
     display:none; align-items:center; gap:8px; flex-shrink:0;
@@ -510,11 +516,17 @@
 
   /* ---------- MOBILE ---------- */
   @media (max-width: 720px){
-    .layout{ padding:14px 12px 155px; }
-    .header-inner{ padding:10px 12px; gap:8px; }
-    .status-row{ padding:8px 14px; }
+    /* Every row's left/right padding is 14px on mobile — kept identical on
+       purpose so the SPY/QQQ pills, "EOD data" pill, mode tabs, cash inputs
+       and filter card all line up on the same left edge instead of each
+       row starting 2px off from its neighbors. */
+    .layout{ padding:14px 14px 155px; }
+    .header-inner{ padding:10px 14px; gap:8px; }
+    .status-row{ padding:8px 14px; gap:6px; }
+    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:150px; }
     .portfolio-bar{ padding:10px 14px; gap:10px; }
-    #portfolioCapital{ width:88px; }
+    #portfolioCapital{ width:80px; }
+    #portfolioSplit{ width:48px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand{ gap:8px; }
     .brand-mark{ width:38px; height:38px; }

@@ -163,8 +163,17 @@
 
   .portfolio-bar{
     max-width:1080px; margin:0 auto; padding:12px 18px;
-    display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap;
-    border-bottom:1px solid var(--border); background:var(--surface-2);
+    border-bottom:1px solid var(--border);
+  }
+  /* Full-width so the pill's left/right edges line up with the
+     Options/Stocks&ETFs tabs above and the Filters card below, all of
+     which share the same .portfolio-bar / .mode-toggle / .layout
+     max-width + horizontal padding. */
+  .portfolio-bar-inner{
+    display:flex; align-items:center; justify-content:space-evenly; gap:22px; flex-wrap:wrap;
+    width:100%;
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:10px; padding:10px 16px;
   }
   .portfolio-bar label{
     display:flex; align-items:center; gap:6px;
@@ -179,7 +188,6 @@
   #portfolioCapital{ width:120px; }
   #portfolioSplit{ width:56px; text-align:center; }
   .portfolio-split-readout{ font-size:12.5px; font-weight:700; color:var(--text-dim); white-space:nowrap; }
-  .lbl-short{ display:none; }
 
   .portfolio-fab-count{
     background:var(--amber-strong); color:#fff;
@@ -525,16 +533,14 @@
     .header-inner{ padding:10px 14px; gap:8px; }
     .status-row{ padding:8px 14px; gap:6px; }
     .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:150px; }
-    /* "Equity: X%" used to sit as its own flex item and would wrap onto an
-       orphan line below Cash/Options% on narrow phones — folded into the
-       Options % label instead (so it's one item, not a competing third one)
-       and every label switches to a short mobile form so the whole row
-       fits on one line even at 320px (iPhone SE-class), verified directly
-       rather than assumed. */
-    .portfolio-bar{ padding:10px 14px; gap:8px; }
+    /* "Equity: X%" sits inside the Options % label (not as its own flex
+       item) so it doesn't wrap onto an orphan line below Capital/Options%
+       on narrow phones. Labels use full words (Capital/Options %/Equity)
+       at every width now; .portfolio-bar-inner's flex-wrap lets the row
+       break onto a second line on very narrow phones instead of abbreviating. */
+    .portfolio-bar{ padding:10px 14px; }
+    .portfolio-bar-inner{ gap:8px; padding:8px 10px; }
     .portfolio-bar label{ gap:4px; }
-    .lbl-full{ display:none; }
-    .lbl-short{ display:inline; }
     #portfolioCapital{ width:84px; padding:7px 7px; }
     #portfolioSplit{ width:48px; padding:7px 5px; text-align:center; }
     .portfolio-split-readout{ font-size:11px; font-weight:600; margin-left:2px; }
@@ -636,15 +642,17 @@
 </header>
 
 <div class="portfolio-bar">
-  <label>
-    <span class="lbl-full">Cash</span> <span id="cashLabelSym">$</span>
-    <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
-  </label>
-  <label>
-    <span class="lbl-full">Options %</span><span class="lbl-short">Opt %</span>
-    <input type="text" id="portfolioSplit" inputmode="numeric" value="100">
-    <span class="portfolio-split-readout"><span class="lbl-full">Equity:</span><span class="lbl-short">Eq</span> <span id="equitySplitDisplay">0</span>%</span>
-  </label>
+  <div class="portfolio-bar-inner">
+    <label>
+      <span>Capital</span> <span id="cashLabelSym">$</span>
+      <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
+    </label>
+    <label>
+      <span>Options %</span>
+      <input type="text" id="portfolioSplit" inputmode="numeric" value="100">
+      <span class="portfolio-split-readout">Equity: <span id="equitySplitDisplay">0</span>%</span>
+    </label>
+  </div>
 </div>
 
 <div class="layout" id="optionsView">
@@ -1169,7 +1177,7 @@
     document.getElementById('tabOptions').style.display = market === 'IN' ? 'none' : '';
     document.getElementById('cashLabelSym').textContent = curSym();
     // the Options% split is meaningless with no options to allocate to
-    document.querySelector('.portfolio-bar label:nth-child(2)').style.display = market === 'IN' ? 'none' : '';
+    document.querySelector('.portfolio-bar-inner label:nth-child(2)').style.display = market === 'IN' ? 'none' : '';
     document.querySelector('.portfolio-split-readout').style.display = market === 'IN' ? 'none' : '';
 
     // Selections can't safely carry across a market switch. equityId() is

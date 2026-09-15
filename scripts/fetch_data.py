@@ -108,6 +108,10 @@ TARGET_DTE_MIN = 7          # was 5, then 14 originally — narrowed to 7-45 so 
                              # EOD tool shouldn't be making picks for anyway.
 TARGET_DTE_MAX = 45
 TARGET_SHORT_DELTA = 0.20   # informal "20-delta" premium-selling target
+TARGET_LONG_DELTA = 0.45    # long call/put target delta — near-the-money; balances
+                             # cost against probability of profit, instead of either
+                             # a cheap far-OTM "lottery ticket" or an expensive
+                             # deep-ITM stock-replacement play
 RISK_FREE_RATE = 0.045      # flat approximation; update periodically
 OUTPUT_PATH = "data.json"
 MAX_PLAUSIBLE_ROC = 35      # raw period ROC (%) sanity ceiling — deliberately NOT applied to
@@ -151,6 +155,24 @@ def probability_of_touch(delta):
     if delta is None or math.isnan(delta):
         return 50  # neutral fallback rather than crashing the whole ticker
     return min(100, round(abs(delta) * 2 * 100))
+
+
+def probability_of_profit(delta):
+    """
+    Rough proxy for probability of finishing beyond a point AT expiration — used
+    for long option breakeven, where a HIGHER number is favorable (the opposite
+    reading from probability_of_touch's short-strike-touch risk metric above;
+    see the "potIsProfitProb" flag on Long Call/Long Put trades, which tells the
+    frontend which meaning applies).
+
+    Deliberately NOT doubled like probability_of_touch: that ×2 approximates
+    probability of touching a barrier ANY TIME before expiration, a different
+    (larger) quantity than probability of finishing beyond a point AT
+    expiration — delta itself is the standard rough proxy for the latter.
+    """
+    if delta is None or math.isnan(delta):
+        return 50  # neutral fallback rather than crashing the whole ticker
+    return min(100, round(abs(delta) * 100))
 
 
 def compute_ema(closes, span):
@@ -209,6 +231,47 @@ def composite_score(ann_profit, pot, ivr):
     safety_component = min(10, max(0, (100 - pot) / 10))     # lower POT -> higher score
     ivr_component = min(10, max(0, ivr / 10))
     score = 0.45 * profit_component + 0.35 * safety_component + 0.20 * ivr_component
+    return round(min(10, max(1, score)), 1)
+
+
+def composite_score_long_option(pot_profit, ivr, breakeven_move_pct):
+    """
+    Illustrative 0-10 blend for Long Call/Long Put — scored differently from
+    composite_score() above because none of its inputs carry over cleanly:
+    there's no annualized-profit figure (unlimited/floor-at-zero upside can't
+    be reduced to one number without inventing a price target), `pot` here
+    already means probability of PROFIT so higher is better (the opposite of
+    composite_score's touch-probability reading), and cheap IV (low ivr) is
+    what a BUYER wants — the inverse of composite_score's ivr_component,
+    which rewards rich premium for a seller.
+    """
+    profit_prob_component = min(10, max(0, pot_profit / 10))
+    cheap_iv_component = min(10, max(0, (100 - ivr) / 10))
+    move_component = min(10, max(0, 10 - (breakeven_move_pct or 0) / 2))  # smaller
+                                                                            # required
+                                                                            # move -> higher
+    score = 0.40 * profit_prob_component + 0.30 * cheap_iv_component + 0.30 * move_component
+    return round(min(10, max(1, score)), 1)
+
+
+def composite_score_calendar(ivr, front_iv, back_iv):
+    """
+    Rough illustrative 0-10 blend for Calendar Spread — the least-grounded of
+    the scores in this file, since a calendar's real edge depends on future
+    IV/theta dynamics this EOD, no-forecasting pipeline doesn't model (see
+    build_calendar_trade()'s docstring). Two weak signals only: cheap IV Rank
+    (entry-cost proxy, same preference every debit strategy here gets), and
+    whether the front (sold) leg's IV is rich relative to the back (bought)
+    leg's — the classic favorable calendar setup — defaulting to neutral when
+    either IV reading is missing. Treat this score even more skeptically than
+    the others in this file.
+    """
+    cheap_component = min(10, max(0, (100 - ivr) / 10))
+    term_structure_component = 5  # neutral default when IVs aren't usable
+    if front_iv and back_iv and back_iv > 0:
+        ratio = front_iv / back_iv
+        term_structure_component = min(10, max(0, (ratio - 0.8) * 25))  # >1.0 favorable
+    score = 0.5 * cheap_component + 0.5 * term_structure_component
     return round(min(10, max(1, score)), 1)
 
 
@@ -336,15 +399,44 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     if premium <= 0 or collateral <= 0:
         return None, "unusable premium/collateral"
 
-    roc = round((premium / collateral) * 100, 2)
-    ann_profit = round(roc * (365 / cand_dte), 1)
+    # Long Call/Long Put have uncapped (call) or floor-at-zero (put) upside — a
+    # "% return on capital" figure is either undefined or requires inventing a
+    # made-up price target, so these two skip roc/ap entirely. breakevenMovePct
+    # (below) is the honest substitute: the % move actually required to profit.
+    is_uncapped_debit = strat in ("Long Call", "Long Put")
+    if is_uncapped_debit:
+        if premium >= spot:
+            return None, f"premium (${premium:.2f}) implausibly >= spot (${spot:.2f}), likely a thin/wide-market quote"
+        roc = None
+        ann_profit = None
+    elif strat == "Butterfly":
+        # collateral/premium ARE the net debit here (see try_strategy_pick) —
+        # but ROC has to come from max PROFIT, not premium/collateral (that
+        # formula assumes premium = credit received, which isn't true for a
+        # debit trade), so it's computed explicitly instead of reusing the
+        # premium-selling formula below.
+        max_profit_per_share = fields["max_profit_per_share"]
+        if max_profit_per_share <= 0:
+            return None, "no room for profit after costs (net debit exceeds wing width)"
+        roc = round((max_profit_per_share / collateral) * 100, 2)
+        ann_profit = round(roc * (365 / cand_dte), 1)
+        # Butterflies legitimately run much higher MAX-ROI multiples than
+        # premium-selling strategies (cheap debit, wide payoff) — a several-
+        # hundred-percent max (not typical) return is normal here, not a data
+        # error, so the credit-strategy ceiling doesn't apply as-is. A much
+        # higher one still catches genuinely broken quotes.
+        if roc > MAX_PLAUSIBLE_ROC * 5:
+            return None, f"implausible max ROC ({roc}%), likely a thin/wide-market quote"
+    else:
+        roc = round((premium / collateral) * 100, 2)
+        ann_profit = round(roc * (365 / cand_dte), 1)
 
-    # sanity guard: check the RAW period ROC, not the annualized figure — annualizing
-    # amplifies short-DTE trades by 365/dte (60x+ at 6 DTE), so a flat cap on the
-    # annualized number would reject perfectly legitimate short-dated premium just
-    # for being short-dated. Raw ROC means the same thing regardless of DTE.
-    if roc > MAX_PLAUSIBLE_ROC:
-        return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
+        # sanity guard: check the RAW period ROC, not the annualized figure — annualizing
+        # amplifies short-DTE trades by 365/dte (60x+ at 6 DTE), so a flat cap on the
+        # annualized number would reject perfectly legitimate short-dated premium just
+        # for being short-dated. Raw ROC means the same thing regardless of DTE.
+        if roc > MAX_PLAUSIBLE_ROC:
+            return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
 
     total_call_oi = calls["openInterest"].fillna(0).sum()
     total_put_oi = puts["openInterest"].fillna(0).sum()
@@ -354,7 +446,10 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     pc_vol = round(total_put_vol / total_call_vol, 2) if total_call_vol else 0
 
     iv = fields["iv"]
-    daily_return = round(premium * 100 / cand_dte, 2)
+    # $/day only means "income per day" for a credit strategy — for a debit
+    # strategy premium is money PAID, so this is left unset rather than
+    # published under a label that implies the opposite of what it means.
+    daily_return = None if (is_uncapped_debit or strat == "Butterfly") else round(premium * 100 / cand_dte, 2)
 
     if strat == "Iron Condor":
         # Two strikes at risk instead of one — use the WORSE (higher) of the
@@ -369,12 +464,44 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         breakeven_out = fields["breakeven_low"]  # single-field fallback; breakevenLow/High carry the real range below
         breakeven_low_out = fields["breakeven_low"]
         breakeven_high_out = fields["breakeven_high"]
+        breakeven_move_pct_out = None
+        pot_is_profit_prob = False
+    elif strat == "Butterfly":
+        # Same "worse of the two boundaries" reading Iron Condor uses just
+        # above — pot means probability of BREACHING a breakeven (finishing
+        # outside the profit zone), higher = more likely to lose, same
+        # direction as every non-debit-long strategy in this file. NOT
+        # inverted like Long Call/Long Put below.
+        pot_low = probability_of_touch(bs_delta(spot, fields["breakeven_low"], cand_dte, iv / 100 if iv else 0.3, "put"))
+        pot_high = probability_of_touch(bs_delta(spot, fields["breakeven_high"], cand_dte, iv / 100 if iv else 0.3, "call"))
+        pot = max(pot_low, pot_high)
+        margin_of_safety = bool(atr and min(
+            abs(spot - fields["breakeven_low"]), abs(spot - fields["breakeven_high"])
+        ) >= atr)
+        breakeven_out = fields["breakeven_low"]
+        breakeven_low_out = fields["breakeven_low"]
+        breakeven_high_out = fields["breakeven_high"]
+        breakeven_move_pct_out = None
+        pot_is_profit_prob = False
+    elif is_uncapped_debit:
+        option_type = "call" if strat == "Long Call" else "put"
+        breakeven_delta = bs_delta(spot, fields["breakeven"], cand_dte, iv / 100 if iv else 0.3, option_type)
+        pot = probability_of_profit(breakeven_delta)
+        margin_of_safety = bool(atr and abs(spot - fields["strike_for_pot"]) >= atr)
+        breakeven_out = round(fields["breakeven"], 2)
+        breakeven_low_out = None
+        breakeven_high_out = None
+        move = (fields["breakeven"] - spot) if strat == "Long Call" else (spot - fields["breakeven"])
+        breakeven_move_pct_out = round(move / spot * 100, 2)
+        pot_is_profit_prob = True
     else:
         pot = probability_of_touch(bs_delta(spot, fields["strike_for_pot"], cand_dte, iv / 100 if iv else 0.3, "put" if side == "bull" else "call"))
         margin_of_safety = bool(atr and abs(spot - fields["strike_for_pot"]) >= atr)
         breakeven_out = round(fields["breakeven"], 2)
         breakeven_low_out = None
         breakeven_high_out = None
+        breakeven_move_pct_out = None
+        pot_is_profit_prob = False
 
     exp_label = datetime.strptime(cand_exp, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32" else datetime.strptime(cand_exp, "%Y-%m-%d").strftime("%b %d").replace(" 0", " ")
 
@@ -392,12 +519,131 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "breakeven": breakeven_out,
         "breakevenLow": breakeven_low_out,
         "breakevenHigh": breakeven_high_out,
+        "breakevenMovePct": breakeven_move_pct_out,
         "maxLoss": fields["max_loss"],
         "pcOI": pc_oi,
         "pcVol": pc_vol,
         "strike": fields["strike_label"],
         "hedge": fields.get("hedge"),
+        "debitStrategy": strat in ("Long Call", "Long Put", "Butterfly"),
+        "potIsProfitProb": pot_is_profit_prob,
     }, None
+
+
+def build_calendar_trade(tk, spot, expiration_candidates, atr):
+    """
+    Calendar Spread: sell a near-term ATM call, buy a longer-dated ATM call at
+    the SAME strike. A theta/term-structure play, not a directional one — it
+    profits from time decay differential between the two legs and/or an IV
+    pickup in the back month, not from the stock moving.
+
+    Needs TWO separate chain fetches (front + back expiration) instead of the
+    one every other strategy in this file uses, so it's meaningfully more
+    yfinance requests per pick — worth knowing if you're tuning how often the
+    nightly workflow runs.
+
+    Deliberately NOT modeled here: max profit and a breakeven. Both depend on
+    what the back-month leg is worth AT front-month expiration, which depends
+    on implied volatility at that future date — something this EOD, no-
+    forecasting pipeline has no honest way to estimate. Rather than publish a
+    plausible-looking but fundamentally made-up number, this only reports
+    what's actually knowable today: the net debit paid, which doubles as
+    calendars' standard textbook max loss (if held to front expiration and
+    unwound worthless). Treat the missing max-profit/breakeven fields as a
+    real gap, not an oversight — chart a real payoff diagram before trading
+    one of these, not just this app's numbers.
+    """
+    # front leg: nearest expiration with at least the usual minimum DTE (avoid
+    # an already-negligible front premium); back leg: first candidate at least
+    # 3 weeks past the front, so there's a real time-value gap between legs.
+    usable = sorted(
+        ((exp, dte) for exp, dte in expiration_candidates if dte >= TARGET_DTE_MIN),
+        key=lambda pair: pair[1],
+    )
+    if len(usable) < 2:
+        return None, "not enough listed expirations for a front+back calendar pair"
+    front_exp, front_dte = usable[0]
+    back_candidates = [(exp, dte) for exp, dte in usable if dte >= front_dte + 21]
+    if not back_candidates:
+        return None, "no back-month expiration at least 3 weeks past the front month"
+    back_exp, back_dte = back_candidates[0]
+
+    try:
+        front_chain = tk.option_chain(front_exp)
+        back_chain = tk.option_chain(back_exp)
+    except Exception as e:
+        return None, f"chain fetch failed: {e}"
+
+    front_calls, front_puts = front_chain.calls, front_chain.puts
+    front_sorted = front_calls.assign(_dist=(front_calls["strike"] - spot).abs()).sort_values("_dist")
+    front_row = None
+    for _, r in front_sorted.iterrows():
+        if safe_float(r.get("impliedVolatility"), 0) > 0 and safe_float(r.get("strike"), 0) > 0:
+            front_row = r
+            break
+    if front_row is None:
+        return None, f"no usable at-the-money front-month call — {chain_diagnostics(front_calls, spot)}"
+    strike = float(front_row["strike"])
+
+    back_matches = back_chain.calls[back_chain.calls["strike"] == strike]
+    if back_matches.empty:
+        return None, f"back-month chain has no matching ${strike:.0f} strike"
+    back_row = back_matches.iloc[0]
+    if safe_float(back_row.get("impliedVolatility"), 0) <= 0:
+        return None, f"back-month ${strike:.0f} strike has no valid IV — {chain_diagnostics(back_chain.calls, spot)}"
+
+    front_premium = mid_price(front_row)  # collected — this leg is sold
+    back_premium = mid_price(back_row)    # paid — this leg is bought
+    net_debit = back_premium - front_premium
+    if net_debit <= 0:
+        return None, "back-month leg isn't pricier than front-month — no real debit to pay (unusual/stale quote)"
+
+    front_iv = safe_float(front_row.get("impliedVolatility")) * 100
+    back_iv = safe_float(back_row.get("impliedVolatility")) * 100
+    front_delta = bs_delta(spot, strike, front_dte, front_iv / 100 if front_iv else 0.3, "call")
+
+    total_call_oi = front_calls["openInterest"].fillna(0).sum()
+    total_put_oi = front_puts["openInterest"].fillna(0).sum()
+    total_call_vol = front_calls["volume"].fillna(0).sum()
+    total_put_vol = front_puts["volume"].fillna(0).sum()
+    pc_oi = round(total_put_oi / total_call_oi, 2) if total_call_oi else 0
+    pc_vol = round(total_put_vol / total_call_vol, 2) if total_call_vol else 0
+
+    def label(exp_str):
+        d = datetime.strptime(exp_str, "%Y-%m-%d")
+        return d.strftime("%b %-d") if sys.platform != "win32" else d.strftime("%b %d").replace(" 0", " ")
+
+    return {
+        "exp": label(front_exp),
+        "backExp": label(back_exp),
+        "dte": front_dte,
+        "backDte": back_dte,
+        "pot": None,
+        "ap": None,
+        "dailyReturn": None,
+        "roc": None,
+        # Near-the-money IS the point for a calendar, so "margin of safety"
+        # here really means "well-centered on spot", not "far enough away" —
+        # the opposite sense from every other strategy's use of this flag.
+        "marginOfSafety": bool(atr and abs(spot - strike) < atr),
+        "delta": round(front_delta, 2),
+        "iv": round(front_iv, 1),
+        "backIv": round(back_iv, 1),
+        "premium": round(net_debit, 2),
+        "breakeven": None,
+        "breakevenLow": None,
+        "breakevenHigh": None,
+        "breakevenMovePct": None,
+        "maxLoss": round(net_debit * 100, 2),
+        "pcOI": pc_oi,
+        "pcVol": pc_vol,
+        "strike": f"${strike:.0f} C",
+        "hedge": None,
+        "debitStrategy": True,
+        "potIsProfitProb": False,
+    }, None
+
+
 MAX_NEWS_HEADLINES = 3       # how many recent headlines to pull and score per ticker
 
 
@@ -655,25 +901,128 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "hedge": None,
         }, None
 
-    # Bear Call Spread
-    short_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
-    if not short_row:
-        return None, f"no call near target delta for short leg — {chain_diagnostics(calls, spot)}"
-    s_row, s_delta = short_row
-    short_strike = float(s_row["strike"])
-    higher_strikes = calls[calls["strike"] > short_strike].sort_values("strike")
-    if higher_strikes.empty:
-        return None, "no further-OTM strike available for the long leg"
-    long_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
-    long_strike = float(long_row["strike"])
-    premium = mid_price(s_row) - mid_price(long_row)
-    width = long_strike - short_strike
-    return {
-        "premium": premium, "strike_for_pot": short_strike, "collateral": width,
-        "breakeven": short_strike + premium, "max_loss": round((width - premium) * 100, 2),
-        "strike_label": f"${short_strike:.0f}/{long_strike:.0f}", "iv": safe_float(s_row.get("impliedVolatility")) * 100,
-        "delta_for_output": s_delta,
-    }, None
+    if strat == "Bear Call Spread":
+        short_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
+        if not short_row:
+            return None, f"no call near target delta for short leg — {chain_diagnostics(calls, spot)}"
+        s_row, s_delta = short_row
+        short_strike = float(s_row["strike"])
+        higher_strikes = calls[calls["strike"] > short_strike].sort_values("strike")
+        if higher_strikes.empty:
+            return None, "no further-OTM strike available for the long leg"
+        long_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
+        long_strike = float(long_row["strike"])
+        premium = mid_price(s_row) - mid_price(long_row)
+        width = long_strike - short_strike
+        return {
+            "premium": premium, "strike_for_pot": short_strike, "collateral": width,
+            "breakeven": short_strike + premium, "max_loss": round((width - premium) * 100, 2),
+            "strike_label": f"${short_strike:.0f}/{long_strike:.0f}", "iv": safe_float(s_row.get("impliedVolatility")) * 100,
+            "delta_for_output": s_delta,
+        }, None
+
+    if strat == "Long Call":
+        picked_row = pick_strike_by_delta(calls, spot, dte, TARGET_LONG_DELTA, "call")
+        if not picked_row:
+            return None, f"no call near target delta — {chain_diagnostics(calls, spot)}"
+        row, delta = picked_row
+        premium = mid_price(row)
+        strike = float(row["strike"])
+        return {
+            "premium": premium, "strike_for_pot": strike, "collateral": premium,
+            "breakeven": strike + premium, "max_loss": round(premium * 100, 2),
+            "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
+            "delta_for_output": delta,
+        }, None
+
+    if strat == "Long Put":
+        picked_row = pick_strike_by_delta(puts, spot, dte, TARGET_LONG_DELTA, "put")
+        if not picked_row:
+            return None, f"no put near target delta — {chain_diagnostics(puts, spot)}"
+        row, delta = picked_row
+        premium = mid_price(row)
+        strike = float(row["strike"])
+        return {
+            "premium": premium, "strike_for_pot": strike, "collateral": premium,
+            "breakeven": strike - premium, "max_loss": round(premium * 100, 2),
+            "strike_label": f"${strike:.0f} P", "iv": safe_float(row.get("impliedVolatility")) * 100,
+            "delta_for_output": delta,
+        }, None
+
+    if strat == "Butterfly":
+        # Centered ATM (closest strike to spot), wings one "next available"
+        # strike further out on each side — same "2nd next" convention the
+        # spreads above use, applied symmetrically on both sides. Built with
+        # calls only: a call butterfly and a put butterfly at the same three
+        # strikes have virtually identical payoffs by put-call parity, so
+        # pricing both would cost extra requests for no real benefit.
+        sorted_by_dist = calls.assign(_dist=(calls["strike"] - spot).abs()).sort_values("_dist")
+        body_row = None
+        for _, r in sorted_by_dist.iterrows():
+            if safe_float(r.get("impliedVolatility"), 0) > 0 and safe_float(r.get("strike"), 0) > 0:
+                body_row = r
+                break
+        if body_row is None:
+            return None, f"no usable at-the-money call for butterfly body — {chain_diagnostics(calls, spot)}"
+        body_strike = float(body_row["strike"])
+
+        lower = calls[calls["strike"] < body_strike].sort_values("strike", ascending=False)
+        upper = calls[calls["strike"] > body_strike].sort_values("strike")
+        if lower.empty or upper.empty:
+            return None, "no further-OTM strikes available on both sides for butterfly wings"
+        lower_row = lower.iloc[min(1, len(lower) - 1)]
+        upper_row = upper.iloc[min(1, len(upper) - 1)]
+        lower_strike = float(lower_row["strike"])
+        upper_strike = float(upper_row["strike"])
+
+        lower_width = body_strike - lower_strike
+        upper_width = upper_strike - body_strike
+        # Reject meaningfully lopsided wings (thin chain / missing strikes)
+        # rather than publish a butterfly whose two sides have very different
+        # widths — the wider side's math (max profit, breakeven) gets murkier
+        # the more asymmetric it is, and a clean symmetric butterfly is the
+        # whole point of the strategy.
+        if lower_width <= 0 or upper_width <= 0 or max(lower_width, upper_width) / min(lower_width, upper_width) > 1.5:
+            return None, f"butterfly wings too asymmetric (lower ${lower_width:.2f} vs upper ${upper_width:.2f}) — thin chain"
+
+        body_price = mid_price(body_row)
+        lower_price = mid_price(lower_row)
+        upper_price = mid_price(upper_row)
+        net_debit = (lower_price + upper_price) - 2 * body_price
+        if net_debit <= 0:
+            return None, "net debit came out zero/negative — likely a stale/crossed quote"
+
+        width = min(lower_width, upper_width)  # conservative: size max profit off
+                                                 # the narrower side if not perfectly
+                                                 # symmetric
+        max_profit_per_share = width - net_debit
+
+        lower_iv = safe_float(lower_row.get("impliedVolatility"), 0.3)
+        body_iv = safe_float(body_row.get("impliedVolatility"), 0.3)
+        upper_iv = safe_float(upper_row.get("impliedVolatility"), 0.3)
+        # Net position delta (lower - 2*body + upper), not just the body call's
+        # ~0.50 delta — a well-centered butterfly's real directional exposure
+        # is close to zero by construction, same "net delta" framing Iron
+        # Condor already uses above.
+        net_delta = (
+            bs_delta(spot, lower_strike, dte, lower_iv, "call")
+            - 2 * bs_delta(spot, body_strike, dte, body_iv, "call")
+            + bs_delta(spot, upper_strike, dte, upper_iv, "call")
+        )
+
+        return {
+            "premium": net_debit, "collateral": net_debit,
+            "max_profit_per_share": max_profit_per_share,
+            "breakeven_low": round(lower_strike + net_debit, 2),
+            "breakeven_high": round(upper_strike - net_debit, 2),
+            "max_loss": round(net_debit * 100, 2),
+            "strike_label": f"${lower_strike:.0f}/{body_strike:.0f}/{upper_strike:.0f}",
+            "iv": body_iv * 100,
+            "delta_for_output": net_delta,
+            "hedge": None,
+        }, None
+
+    return None, f"unknown strategy '{strat}'"
 
 
 def build_trade_for_ticker(ticker_symbol, index):
@@ -718,49 +1067,67 @@ def build_trade_for_ticker(ticker_symbol, index):
 
         is_etf = ticker_symbol in KNOWN_ETFS
 
-        # strategy selection: 1-in-3 tickers try Iron Condor regardless of
-        # trend (it's a neutral, range-bound bet, not a directional one, so
-        # it doesn't belong gated behind uptrend/downtrend like the rest).
-        # The remaining tickers still split by trend: uptrend -> bullish
-        # rotation, downtrend -> bearish.
-        if index % 3 == 0:
-            strat = "Iron Condor"
+        # strategy selection: 1-in-4 tickers try a neutral, range-bound bet
+        # regardless of trend (rotating across Iron Condor / Butterfly /
+        # Calendar Spread) since none of those are directional the way the
+        # rest are. The remaining tickers still split by trend: uptrend ->
+        # bullish rotation (now including Long Call), downtrend -> bearish
+        # rotation (now including Long Put).
+        if index % 4 == 0:
+            strat = ["Iron Condor", "Butterfly", "Calendar Spread"][index % 3]
             side = "neutral"
         elif uptrend:
-            strat = ["Covered Call", "Bull Put Spread"][index % 2]
+            strat = ["Covered Call", "Bull Put Spread", "Long Call"][index % 3]
             side = "bull"
         else:
-            strat = "Bear Call Spread"
+            strat = ["Bear Call Spread", "Long Put"][index % 2]
             side = "bear"
 
-        # Evaluate every expiration candidate within the target window (up to the
-        # cap), and keep whichever produces the best annualized profit — instead
-        # of just taking the first usable one. This is also why different tickers
-        # naturally land on different expiration dates now, rather than every name
-        # converging on "whichever Friday is closest to 30 days out": each ticker's
-        # own IV term structure and chain liquidity determines its own best pick.
-        best = None
-        failure_reasons = []
-        evaluated_log = []  # every candidate's outcome, logged regardless of win/loss —
-                             # needed to see WHY a ticker keeps landing on the same
-                             # expiration: genuinely winning on merit vs. every
-                             # alternative failing validation outright.
-        for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
-            result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
-            if result:
-                evaluated_log.append(f"{cand_exp}({cand_dte}d)=ap:{result['ap']}%")
-                if best is None or result["ap"] > best["ap"]:
-                    best = result
-            else:
-                evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
-                failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
+        if strat == "Calendar Spread":
+            # Calendars span two expirations at once, so they can't go through
+            # the single-best-expiration loop below — build_calendar_trade
+            # picks its own front/back pair internally.
+            best, reason = build_calendar_trade(tk, spot, expiration_candidates, atr)
+            if not best:
+                print(f"  skip {ticker_symbol}: Calendar Spread unusable — {reason}")
+                return None
+        else:
+            # Evaluate every expiration candidate within the target window (up to the
+            # cap), and keep whichever produces the best annualized profit — instead
+            # of just taking the first usable one. This is also why different tickers
+            # naturally land on different expiration dates now, rather than every name
+            # converging on "whichever Friday is closest to 30 days out": each ticker's
+            # own IV term structure and chain liquidity determines its own best pick.
+            #
+            # Long Call/Long Put have no "ap" at all (see evaluate_expiration_candidate)
+            # — for those two, rank candidates by probability of profit instead, the
+            # only comparable-across-candidates number they do produce.
+            def _rank_key(result):
+                return result["ap"] if result["ap"] is not None else result["pot"]
 
-        print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
+            best = None
+            failure_reasons = []
+            evaluated_log = []  # every candidate's outcome, logged regardless of win/loss —
+                                 # needed to see WHY a ticker keeps landing on the same
+                                 # expiration: genuinely winning on merit vs. every
+                                 # alternative failing validation outright.
+            for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                if result:
+                    log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
+                    evaluated_log.append(f"{cand_exp}({cand_dte}d)={log_val}")
+                    if best is None or _rank_key(result) > _rank_key(best):
+                        best = result
+                else:
+                    evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
+                    failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
 
-        if not best:
-            tried = len(failure_reasons)
-            print(f"  skip {ticker_symbol}: {strat} unusable across {tried} expiration(s) tried — {'; '.join(failure_reasons)}")
-            return None
+            print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
+
+            if not best:
+                tried = len(failure_reasons)
+                print(f"  skip {ticker_symbol}: {strat} unusable across {tried} expiration(s) tried — {'; '.join(failure_reasons)}")
+                return None
 
         dte = best["dte"]
 
@@ -784,7 +1151,12 @@ def build_trade_for_ticker(ticker_symbol, index):
 
         news_sentiment, news_sentiment_label, news_headlines = fetch_news_and_sentiment(tk, ticker_symbol)
 
-        score = composite_score(best["ap"], best["pot"], ivr)
+        if strat == "Calendar Spread":
+            score = composite_score_calendar(ivr, best.get("iv"), best.get("backIv"))
+        elif strat in ("Long Call", "Long Put"):
+            score = composite_score_long_option(best["pot"], ivr, best["breakevenMovePct"])
+        else:
+            score = composite_score(best["ap"], best["pot"], ivr)
         vol_regime, iv_rv_ratio = classify_vol_regime(best["iv"], realized_vol)
 
         return {
@@ -797,6 +1169,8 @@ def build_trade_for_ticker(ticker_symbol, index):
             "hedge": best["hedge"],
             "exp": best["exp"],
             "dte": best["dte"],
+            "backExp": best.get("backExp"),
+            "backDte": best.get("backDte"),
             "pot": best["pot"],
             "ap": best["ap"],
             "ivr": ivr,
@@ -811,13 +1185,17 @@ def build_trade_for_ticker(ticker_symbol, index):
             "marginOfSafety": best["marginOfSafety"],
             "delta": best["delta"],
             "iv": best["iv"],
+            "backIv": best.get("backIv"),
             "premium": best["premium"],
             "breakeven": best["breakeven"],
             "breakevenLow": best["breakevenLow"],
             "breakevenHigh": best["breakevenHigh"],
+            "breakevenMovePct": best.get("breakevenMovePct"),
             "maxLoss": best["maxLoss"],
             "pcOI": best["pcOI"],
             "pcVol": best["pcVol"],
+            "debitStrategy": best.get("debitStrategy", False),
+            "potIsProfitProb": best.get("potIsProfitProb", False),
             "newsSentiment": news_sentiment,
             "newsSentimentLabel": news_sentiment_label,
             "newsHeadlines": news_headlines,

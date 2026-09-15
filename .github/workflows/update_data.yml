@@ -2,9 +2,10 @@ name: Update EOD options data
 
 on:
   schedule:
-    # Three runs/day, Mon-Fri, targeting 10:00 AM / 2:00 PM / 6:15 PM ET.
+    # Hourly during the US trading session (9:30am-3:30pm ET), Mon-Fri, plus a
+    # dedicated post-close run at 6:15 PM ET for the "official" EOD snapshot.
     # GitHub Actions cron is always UTC and does NOT auto-adjust for daylight
-    # saving, so each target time needs two entries — one for EDT (UTC-4,
+    # saving, so each target window needs two entries — one for EDT (UTC-4,
     # roughly March-October) and one for EST (UTC-5, roughly November-
     # February) — using cron's month field to pick the right one automatically.
     # Approximation: DST actually flips on specific Sundays in March/November,
@@ -13,14 +14,16 @@ on:
     # reasonable tradeoff rather than building exact Sunday-based logic.
     #
     # EDT months (~Mar-Oct):
-    - cron: '0 14 * 3-10 1-5'    # 10:00 AM ET
-    - cron: '0 18 * 3-10 1-5'    # 2:00 PM ET
-    - cron: '15 22 * 3-10 1-5'   # 6:15 PM ET
+    - cron: '30 13-19 * 3-10 1-5'   # hourly at :30, 9:30 AM - 3:30 PM ET
+    - cron: '15 22 * 3-10 1-5'      # 6:15 PM ET (post-close EOD snapshot)
     # EST months (~Nov-Feb):
-    - cron: '0 15 * 11,12,1,2 1-5'   # 10:00 AM ET
-    - cron: '0 19 * 11,12,1,2 1-5'   # 2:00 PM ET
-    - cron: '15 23 * 11,12,1,2 1-5'  # 6:15 PM ET
+    - cron: '30 14-20 * 11,12,1,2 1-5'  # hourly at :30, 9:30 AM - 3:30 PM ET
+    - cron: '15 23 * 11,12,1,2 1-5'     # 6:15 PM ET (post-close EOD snapshot)
     # GitHub's schedule can lag by several minutes under load — fine for this.
+    # NOTE: this is 8 runs/weekday (up from 3) against Yahoo's free/unofficial
+    # yfinance feed, which the fetch script's own docstring already flags as
+    # rate-limit-prone from shared CI IPs. If runs start failing/getting
+    # skipped more often, drop back toward fewer, wider-spaced entries.
   workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
 
 permissions:

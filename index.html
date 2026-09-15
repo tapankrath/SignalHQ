@@ -1452,12 +1452,18 @@
     return sorted;
   }
 
+  function collapseAllFilterSections(){
+    document.querySelectorAll('.filter-section').forEach(panel => { panel.style.display = 'none'; });
+    document.querySelectorAll('.filter-header-btn').forEach(btn => { btn.setAttribute('aria-expanded', 'false'); });
+  }
+
   function applyFilters(){
     const prevCount = currentList.length;
     const filtered = sortTrades(computeFiltered());
     render(filtered);
     renderFunnel();
     updateActiveCount();
+    collapseAllFilterSections();
 
     if(filtered.length === prevCount){
       showToast(`Filters applied — still ${filtered.length} setup${filtered.length===1?'':'s'} (see funnel below results)`);

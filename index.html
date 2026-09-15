@@ -664,12 +664,12 @@
 
     <div class="filter-section" id="riskSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-risk="excludeEarnings"> Exclude earnings within DTE</label>
+        <label class="check-row"><input type="checkbox" data-risk="excludeEarnings" checked> Exclude earnings within DTE</label>
         <label class="check-row"><input type="checkbox" data-risk="earningsWithin3wk"> Earnings within 3 weeks</label>
-        <label class="check-row"><input type="checkbox" data-risk="lowVol"> Low volatility (IV Rank &lt; 50)</label>
-        <label class="check-row"><input type="checkbox" data-risk="highVol"> High volatility (IV Rank &gt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="lowVol" checked> Low volatility (IV Rank &lt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="highVol" checked> High volatility (IV Rank &gt; 50)</label>
         <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
-        <label class="check-row"><input type="checkbox" data-risk="marginOfSafety" checked> Margin of safety (ATR-based)</label>
+        <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
       </div>
     </div>
 
@@ -1479,7 +1479,9 @@
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',
     '[data-quality="buy"]',
-    '[data-risk="marginOfSafety"]',
+    '[data-risk="excludeEarnings"]',
+    '[data-risk="lowVol"]',
+    '[data-risk="highVol"]',
   ];
 
   function resetFilters(){

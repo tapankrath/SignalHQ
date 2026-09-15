@@ -209,17 +209,13 @@
     margin-bottom:14px;
   }
 
-  .outlook-body{
-    display:grid; grid-template-columns:1fr 1fr; gap:0;
+  .strat-dot{
+    display:inline-block; width:8px; height:8px; border-radius:50%;
+    margin-right:7px; vertical-align:middle;
   }
-  .outlook-col{ padding:10px 12px; }
-  .outlook-col + .outlook-col{ border-left:1px solid var(--border); }
-  .outlook-col-label{
-    font-size:12px; font-weight:700; letter-spacing:0;
-    margin-bottom:6px;
-  }
-  .outlook-col-label.bull{ color:var(--green); }
-  .outlook-col-label.bear{ color:var(--red); }
+  .strat-dot.bull{ background:var(--green); }
+  .strat-dot.bear{ background:var(--red); }
+  .strat-dot.neutral{ background:#9CA3AF; }
   .filter-hint{ font-size:10.5px; color:var(--text-faint); line-height:1.45; padding:0 12px 12px; }
 
   .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
@@ -271,11 +267,6 @@
   }
   .check-row input[type="checkbox"]:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
   .check-row.disabled{ opacity:0.4; pointer-events:none; }
-
-  .outlook-col .check-row{
-    padding:5px 2px; font-size:12px; gap:7px;
-  }
-  .outlook-col .check-row input[type="checkbox"]{ width:14px; height:14px; }
 
   .expiry-row{ display:flex; gap:8px; }
   .expiry-row select, .expiry-row input{
@@ -354,6 +345,7 @@
   }
   .side-pill.bull{ background:var(--green-soft); color:var(--green); }
   .side-pill.bear{ background:var(--red-soft); color:var(--red); }
+  .side-pill.neutral{ background:#F1F2F4; color:#6B7280; }
   .side-pill .dot{ width:5px; height:5px; border-radius:50%; background:currentColor; }
 
   .val-pos{ color:var(--green); }
@@ -535,11 +527,6 @@
     .active-count{ display:none; }
   }
 
-  /* only stack outlook columns on genuinely narrow screens (e.g. iPhone SE) */
-  @media (max-width: 360px){
-    .outlook-body{ grid-template-columns:1fr; }
-    .outlook-col + .outlook-col{ border-left:none; border-top:1px solid var(--border); }
-  }
 </style>
 </head>
 <body>
@@ -632,26 +619,23 @@
     </div>
 
     <div class="filter-section" id="outlookSection" style="display:none;">
-      <div class="outlook-body">
-        <div class="outlook-col">
-          <div class="outlook-col-label bull">Bullish / Positive</div>
-          <label class="check-row"><input type="checkbox" data-strat="Short Put"> Short Put</label>
-          <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> Covered Call</label>
-          <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> Bull Put Spread</label>
-          <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Call"> Long Call</label>
-          <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
-          <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
-        </div>
-        <div class="outlook-col">
-          <div class="outlook-col-label bear">Bearish / Negative</div>
-          <label class="check-row"><input type="checkbox" data-strat="Short Call"> Short Call</label>
-          <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> Bear Call Spread</label>
-          <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Put"> Long Put</label>
-          <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
-          <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
-        </div>
+      <div class="filter-section-body">
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
+        <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
       </div>
-      <div class="filter-hint">Check any strategy from either side — results combine bullish and bearish setups that match.</div>
+      <div class="filter-hint">
+        <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
+      </div>
+      <div class="filter-section-body" style="padding-top:0; border-top:1px solid var(--border); margin-top:4px;">
+        <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
+      </div>
     </div>
 
     <div class="filter-section" id="qualitySection" style="display:none;">
@@ -899,7 +883,9 @@
     list.forEach((t, idx)=>{
       const pill = t.side==='bull'
         ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
-        : `<span class="side-pill bear"><span class="dot"></span>Bearish</span>`;
+        : t.side==='bear'
+        ? `<span class="side-pill bear"><span class="dot"></span>Bearish</span>`
+        : `<span class="side-pill neutral"><span class="dot"></span>Neutral</span>`;
       const oid = optionId(t);
       const isChecked = selectedOptionIds.has(oid);
 
@@ -921,11 +907,17 @@
         </tr>`;
 
       const stratShort = t.strat.replace(/ Spread$/, '');
+      // Iron Condor's 4-strike label ($85/95/110/115) is too long alongside
+      // the strategy name on the compact card — show just the 2 short
+      // (sold) strikes there, which are what actually define the profit
+      // zone; the full 4-strike detail is still shown in the modal via
+      // t.strike used as-is.
+      const cardStrike = t.strat === 'Iron Condor' ? t.strike.split('/').slice(1, 3).join('/') : t.strike;
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
@@ -1593,7 +1585,7 @@
         <div><div class="mm-label">Trade Profit</div><div class="mm-val val-pos">+${t.roc}%</div></div>
         <div><div class="mm-label">Annualized Profit</div><div class="mm-val val-pos">+${t.ap}%</div></div>
         <div><div class="mm-label">Premium</div><div class="mm-val">$${t.premium.toFixed(2)}</div></div>
-        <div><div class="mm-label">Breakeven</div><div class="mm-val">$${t.breakeven.toFixed(2)}</div></div>
+        <div><div class="mm-label">${t.strat === 'Iron Condor' ? 'Breakeven Range' : 'Breakeven'}</div><div class="mm-val">${t.strat === 'Iron Condor' ? `$${t.breakevenLow.toFixed(2)} – $${t.breakevenHigh.toFixed(2)}` : `$${t.breakeven.toFixed(2)}`}</div></div>
         <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
         <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
         <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>

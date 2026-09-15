@@ -355,8 +355,27 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
 
     iv = fields["iv"]
     daily_return = round(premium * 100 / cand_dte, 2)
-    pot = probability_of_touch(bs_delta(spot, fields["strike_for_pot"], cand_dte, iv / 100 if iv else 0.3, "put" if side == "bull" else "call"))
-    margin_of_safety = bool(atr and abs(spot - fields["strike_for_pot"]) >= atr)
+
+    if strat == "Iron Condor":
+        # Two strikes at risk instead of one — use the WORSE (higher) of the
+        # two individual touch probabilities as the overall risk reading,
+        # since the position is only as safe as its more-threatened wing.
+        pot_put = probability_of_touch(bs_delta(spot, fields["put_short_strike"], cand_dte, iv / 100 if iv else 0.3, "put"))
+        pot_call = probability_of_touch(bs_delta(spot, fields["call_short_strike"], cand_dte, iv / 100 if iv else 0.3, "call"))
+        pot = max(pot_put, pot_call)
+        margin_of_safety = bool(atr and min(
+            abs(spot - fields["put_short_strike"]), abs(spot - fields["call_short_strike"])
+        ) >= atr)
+        breakeven_out = fields["breakeven_low"]  # single-field fallback; breakevenLow/High carry the real range below
+        breakeven_low_out = fields["breakeven_low"]
+        breakeven_high_out = fields["breakeven_high"]
+    else:
+        pot = probability_of_touch(bs_delta(spot, fields["strike_for_pot"], cand_dte, iv / 100 if iv else 0.3, "put" if side == "bull" else "call"))
+        margin_of_safety = bool(atr and abs(spot - fields["strike_for_pot"]) >= atr)
+        breakeven_out = round(fields["breakeven"], 2)
+        breakeven_low_out = None
+        breakeven_high_out = None
+
     exp_label = datetime.strptime(cand_exp, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32" else datetime.strptime(cand_exp, "%Y-%m-%d").strftime("%b %d").replace(" 0", " ")
 
     return {
@@ -370,7 +389,9 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "delta": round(fields["delta_for_output"], 2),
         "iv": round(iv, 1),
         "premium": round(premium, 2),
-        "breakeven": round(fields["breakeven"], 2),
+        "breakeven": breakeven_out,
+        "breakevenLow": breakeven_low_out,
+        "breakevenHigh": breakeven_high_out,
         "maxLoss": fields["max_loss"],
         "pcOI": pc_oi,
         "pcVol": pc_vol,
@@ -512,33 +533,6 @@ def fetch_news_and_sentiment(tk, ticker_symbol):
     return round(avg, 2), label, headlines
 
 
-def compute_naked_hedge(direction, chain, primary_strike, primary_premium):
-    """
-    Suggests a protective leg that would convert a naked Short Put/Short Call
-    into a defined-risk spread — using the exact same further-OTM selection
-    rule the existing Bull Put Spread / Bear Call Spread strategies already
-    use (the 2nd-next further-OTM strike), for consistency rather than
-    inventing a separate rule. Returns None if no further-OTM strike exists.
-    """
-    if direction == "put":
-        candidates = chain[chain["strike"] < primary_strike].sort_values("strike", ascending=False)
-    else:
-        candidates = chain[chain["strike"] > primary_strike].sort_values("strike")
-    if candidates.empty:
-        return None
-
-    hedge_row = candidates.iloc[min(1, len(candidates) - 1)]
-    hedge_strike = float(hedge_row["strike"])
-    hedge_cost = mid_price(hedge_row)
-    width = abs(primary_strike - hedge_strike)
-    net_credit = primary_premium - hedge_cost
-    return {
-        "hedgeStrike": hedge_strike,
-        "hedgeCost": round(hedge_cost, 2),
-        "cappedMaxLoss": round((width - net_credit) * 100, 2),
-    }
-
-
 def compute_collar_hedge(puts, spot, dte, call_premium):
     """
     Suggests a protective put that would turn a Covered Call into a collar.
@@ -574,21 +568,6 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     the reason gets logged by the caller, and used to try the next expiration
     candidate rather than silently giving up on the whole ticker.
     """
-    if strat == "Short Put":
-        picked_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
-        if not picked_row:
-            return None, f"no put near target delta — {chain_diagnostics(puts, spot)}"
-        row, delta = picked_row
-        premium = mid_price(row)
-        strike = float(row["strike"])
-        return {
-            "premium": premium, "strike_for_pot": strike, "collateral": strike,
-            "breakeven": strike - premium, "max_loss": round((strike - premium) * 100, 2),
-            "strike_label": f"${strike:.0f} P", "iv": safe_float(row.get("impliedVolatility")) * 100,
-            "delta_for_output": delta,
-            "hedge": compute_naked_hedge("put", puts, strike, premium),
-        }, None
-
     if strat == "Covered Call":
         picked_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
         if not picked_row:
@@ -602,21 +581,6 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
             "hedge": compute_collar_hedge(puts, spot, dte, premium),
-        }, None
-
-    if strat == "Short Call":
-        picked_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
-        if not picked_row:
-            return None, f"no call near target delta — {chain_diagnostics(calls, spot)}"
-        row, delta = picked_row
-        premium = mid_price(row)
-        strike = float(row["strike"])
-        return {
-            "premium": premium, "strike_for_pot": strike, "collateral": strike,  # rough proxy; true naked-call risk is undefined
-            "breakeven": strike + premium, "max_loss": round(strike * 100, 2),  # illustrative cap, not a real max-loss figure
-            "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
-            "delta_for_output": delta,
-            "hedge": compute_naked_hedge("call", calls, strike, premium),
         }, None
 
     if strat == "Bull Put Spread":
@@ -637,6 +601,58 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": short_strike - premium, "max_loss": round((width - premium) * 100, 2),
             "strike_label": f"${short_strike:.0f}/{long_strike:.0f}", "iv": safe_float(s_row.get("impliedVolatility")) * 100,
             "delta_for_output": s_delta,
+        }, None
+
+    if strat == "Iron Condor":
+        # Both sides reuse the exact same leg-selection rule as the standalone
+        # Bull Put Spread / Bear Call Spread above (2nd-next further-OTM
+        # strike) — an iron condor IS those two spreads, run together on the
+        # same ticker and expiration, not a different construction method.
+        put_short_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
+        if not put_short_row:
+            return None, f"no put near target delta for condor's put side — {chain_diagnostics(puts, spot)}"
+        ps_row, ps_delta = put_short_row
+        put_short_strike = float(ps_row["strike"])
+        lower_strikes = puts[puts["strike"] < put_short_strike].sort_values("strike", ascending=False)
+        if lower_strikes.empty:
+            return None, "no further-OTM strike available for condor's put long leg"
+        put_long_row = lower_strikes.iloc[min(1, len(lower_strikes) - 1)]
+        put_long_strike = float(put_long_row["strike"])
+        put_premium = mid_price(ps_row) - mid_price(put_long_row)
+        put_width = put_short_strike - put_long_strike
+
+        call_short_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
+        if not call_short_row:
+            return None, f"no call near target delta for condor's call side — {chain_diagnostics(calls, spot)}"
+        cs_row, cs_delta = call_short_row
+        call_short_strike = float(cs_row["strike"])
+        higher_strikes = calls[calls["strike"] > call_short_strike].sort_values("strike")
+        if higher_strikes.empty:
+            return None, "no further-OTM strike available for condor's call long leg"
+        call_long_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
+        call_long_strike = float(call_long_row["strike"])
+        call_premium = mid_price(cs_row) - mid_price(call_long_row)
+        call_width = call_long_strike - call_short_strike
+
+        total_premium = put_premium + call_premium
+        # The stock can't simultaneously be above the call spread AND below
+        # the put spread at expiration — only one side can ever be breached —
+        # so max loss uses the WORSE single-side width, not the sum of both.
+        worst_width = max(put_width, call_width)
+        avg_iv = (safe_float(ps_row.get("impliedVolatility")) + safe_float(cs_row.get("impliedVolatility"))) / 2 * 100
+
+        return {
+            "premium": total_premium, "collateral": worst_width,
+            "max_loss": round((worst_width - total_premium) * 100, 2),
+            "strike_label": f"${put_long_strike:.0f}/{put_short_strike:.0f}/{call_short_strike:.0f}/{call_long_strike:.0f}",
+            "iv": avg_iv,
+            "delta_for_output": ps_delta + cs_delta,  # net delta -- roughly market-neutral by construction
+            "put_short_strike": put_short_strike, "call_short_strike": call_short_strike,
+            "breakeven_low": round(put_short_strike - total_premium, 2),
+            "breakeven_high": round(call_short_strike + total_premium, 2),
+            # Iron Condor is already defined-risk on both sides by construction —
+            # nothing to hedge, same as the standalone spreads above.
+            "hedge": None,
         }, None
 
     # Bear Call Spread
@@ -702,12 +718,19 @@ def build_trade_for_ticker(ticker_symbol, index):
 
         is_etf = ticker_symbol in KNOWN_ETFS
 
-        # strategy selection: uptrend -> bullish rotation, downtrend -> bearish rotation
-        if uptrend:
-            strat = ["Short Put", "Covered Call", "Bull Put Spread"][index % 3]
+        # strategy selection: 1-in-3 tickers try Iron Condor regardless of
+        # trend (it's a neutral, range-bound bet, not a directional one, so
+        # it doesn't belong gated behind uptrend/downtrend like the rest).
+        # The remaining tickers still split by trend: uptrend -> bullish
+        # rotation, downtrend -> bearish.
+        if index % 3 == 0:
+            strat = "Iron Condor"
+            side = "neutral"
+        elif uptrend:
+            strat = ["Covered Call", "Bull Put Spread"][index % 2]
             side = "bull"
         else:
-            strat = ["Short Call", "Bear Call Spread"][index % 2]
+            strat = "Bear Call Spread"
             side = "bear"
 
         # Evaluate every expiration candidate within the target window (up to the
@@ -789,6 +812,8 @@ def build_trade_for_ticker(ticker_symbol, index):
             "iv": best["iv"],
             "premium": best["premium"],
             "breakeven": best["breakeven"],
+            "breakevenLow": best["breakevenLow"],
+            "breakevenHigh": best["breakevenHigh"],
             "maxLoss": best["maxLoss"],
             "pcOI": best["pcOI"],
             "pcVol": best["pcVol"],

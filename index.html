@@ -533,7 +533,13 @@
     .brand-mark svg{ border-radius:9px; }
     .brand-name{ font-size:19px; }
     .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
-    .header-right{ gap:6px; }
+    /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
+       Export don't all fit on one row even at their already-compact mobile
+       sizes. Rather than clip Export off-screen (which also forces the
+       whole page into horizontal scroll, dragging every row below it out
+       of view too), this lets the row wrap onto a second line — pills on
+       one line, buttons on the next — so nothing gets cut off. */
+    .header-right{ gap:6px; flex-wrap:wrap; row-gap:6px; justify-content:flex-end; width:100%; flex-shrink:1; }
     .index-pills{ gap:5px; padding-right:8px; margin-right:0; }
     .index-pill{ padding:5px 8px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }

@@ -123,15 +123,22 @@
   }
   .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); }
 
-  .index-pills{ display:flex; align-items:center; gap:5px; flex-shrink:0; }
-  .index-pill{
-    display:inline-flex; align-items:center; gap:4px;
-    font-family:var(--mono); font-size:10.5px; font-weight:800;
-    padding:3px 7px; border-radius:20px; white-space:nowrap;
-    background:var(--surface-2); border:1px solid var(--border);
+  .index-pills{
+    display:none; align-items:center; gap:8px; flex-shrink:0;
+    padding-right:12px; margin-right:2px; border-right:1px solid var(--border);
   }
-  .index-pill .index-pill-sym{ color:var(--text-faint); font-weight:700; }
-  .index-pill .index-pill-px{ color:var(--text); font-weight:800; }
+  .index-pill{
+    display:inline-flex; align-items:baseline; gap:6px;
+    padding:8px 12px; border-radius:8px; white-space:nowrap;
+    background:var(--surface); border:1.5px solid var(--border-strong);
+  }
+  .index-pill .index-pill-sym{
+    font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:0.02em;
+    color:var(--text-dim);
+  }
+  .index-pill .index-pill-px{
+    font-family:var(--mono); font-size:14.5px; font-weight:800; color:var(--text);
+  }
 
   .status-row{
     max-width:1080px; margin:0 auto; padding:8px 18px;
@@ -515,8 +522,10 @@
     .brand-name{ font-size:19px; }
     .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
     .header-right{ gap:6px; }
-    .index-pills{ gap:4px; }
-    .index-pill{ font-size:9.5px; padding:2px 6px; }
+    .index-pills{ gap:5px; padding-right:8px; margin-right:0; }
+    .index-pill{ padding:5px 8px; border-width:1px; gap:4px; }
+    .index-pill .index-pill-sym{ font-size:9px; }
+    .index-pill .index-pill-px{ font-size:12px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -876,12 +885,16 @@
   function renderIndexPills(){
     const el = document.getElementById('indexPills');
     if(!el) return;
-    if(currentMarket === 'IN'){ el.innerHTML = ''; return; }
-    el.innerHTML = INDEX_PILL_SYMS.map(sym => {
+    if(currentMarket === 'IN'){ el.innerHTML = ''; el.style.display = 'none'; return; }
+    const html = INDEX_PILL_SYMS.map(sym => {
       const e = equities.find(x => x.sym === sym);
       if(!e || e.price == null) return '';
       return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span></span>`;
     }).join('');
+    el.innerHTML = html;
+    // display:none by default (see CSS) so there's no empty divider flash
+    // before the first data.json load resolves, or while on the India tab.
+    el.style.display = html ? 'flex' : 'none';
   }
 
   let currentList = [];

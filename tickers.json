@@ -1,4 +1,3 @@
-
 {
   "tickers": [
     "AAPL",
@@ -34,7 +33,9 @@
     "APLD",
     "RKLB",
     "VCX",
-    "GLW"
+    "GLW",
+    "SPY",
+    "QQQ"
   ],
   "etfs": [
     "QQQ",
@@ -45,6 +46,7 @@
     "XLK",
     "GLD",
     "SOXL",
-    "TQQQ"
+    "TQQQ",
+    "SPY"
   ]
 }

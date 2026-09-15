@@ -893,7 +893,7 @@
         <tr>
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
-            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.strike}</span></div>
+            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.spot != null ? `$${t.spot.toFixed(2)} · ` : ''}${t.strike}</span></div>
             <div class="strat-name">${t.strat}</div>
           </td>
           <td>${pill}</td>
@@ -913,11 +913,15 @@
       // zone; the full 4-strike detail is still shown in the modal via
       // t.strike used as-is.
       const cardStrike = t.strat === 'Iron Condor' ? t.strike.split('/').slice(1, 3).join('/') : t.strike;
+      // rounded, no decimals, arrow-separated -- the table/modal show full
+      // precision ($230.50), but this card layout has a tight, previously-
+      // tested character budget, so a compact form here specifically
+      const cardPrice = t.spot != null ? `${Math.round(t.spot)}→` : '';
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
@@ -1581,6 +1585,7 @@
       </div>
       <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days</div>
       <div class="modal-metrics">
+        ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}</div></div>` : ''}
         <div><div class="mm-label">Probability of Touch</div><div class="mm-val">${t.pot}%</div></div>
         <div><div class="mm-label">Trade Profit</div><div class="mm-val val-pos">+${t.roc}%</div></div>
         <div><div class="mm-label">Annualized Profit</div><div class="mm-val val-pos">+${t.ap}%</div></div>

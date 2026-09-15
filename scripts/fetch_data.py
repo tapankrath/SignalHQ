@@ -792,6 +792,7 @@ def build_trade_for_ticker(ticker_symbol, index):
             "strat": strat,
             "side": side,
             "isETF": is_etf,
+            "spot": round(spot, 2),
             "strike": best["strike"],
             "hedge": best["hedge"],
             "exp": best["exp"],

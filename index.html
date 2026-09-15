@@ -123,6 +123,16 @@
   }
   .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); }
 
+  .index-pills{ display:flex; align-items:center; gap:5px; flex-shrink:0; }
+  .index-pill{
+    display:inline-flex; align-items:center; gap:4px;
+    font-family:var(--mono); font-size:10.5px; font-weight:800;
+    padding:3px 7px; border-radius:20px; white-space:nowrap;
+    background:var(--surface-2); border:1px solid var(--border);
+  }
+  .index-pill .index-pill-sym{ color:var(--text-faint); font-weight:700; }
+  .index-pill .index-pill-px{ color:var(--text); font-weight:800; }
+
   .status-row{
     max-width:1080px; margin:0 auto; padding:8px 18px;
     display:flex; align-items:center; justify-content:space-between; gap:10px;
@@ -505,6 +515,8 @@
     .brand-name{ font-size:19px; }
     .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
     .header-right{ gap:6px; }
+    .index-pills{ gap:4px; }
+    .index-pill{ font-size:9.5px; padding:2px 6px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -551,6 +563,8 @@
     </div>
 
     <div class="header-right">
+      <div class="index-pills" id="indexPills"></div>
+
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         Tickers
@@ -847,6 +861,28 @@
       console.error('Failed to load data_india.json', err);
       indiaEquities = [];
     }
+
+    renderIndexPills();
+  }
+
+  // Small SPY/QQQ "current price" pills shown in the sticky header, next to
+  // Tickers/Export. Always pulled from the US `equities` array (not
+  // currentEquitiesSource()) since these are US index ETFs regardless of
+  // which market tab is active — the whole row just hides on the India tab,
+  // where a US-dollar price next to India's ₹ figures would be confusing.
+  // Sourced from data.json's "equities" array, so they only exist/update
+  // once SPY and QQQ are in tickers.json and a nightly/hourly run has
+  // actually fetched them — same refresh cadence as everything else here.
+  const INDEX_PILL_SYMS = ['SPY', 'QQQ'];
+  function renderIndexPills(){
+    const el = document.getElementById('indexPills');
+    if(!el) return;
+    if(currentMarket === 'IN'){ el.innerHTML = ''; return; }
+    el.innerHTML = INDEX_PILL_SYMS.map(sym => {
+      const e = equities.find(x => x.sym === sym);
+      if(!e || e.price == null) return '';
+      return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span></span>`;
+    }).join('');
   }
 
   let currentList = [];
@@ -1099,6 +1135,8 @@
     } else if(document.getElementById('tabStocks').classList.contains('active')){
       renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
     }
+
+    renderIndexPills();
 
     const dateLabel = formatDataDate(market === 'IN' ? indiaDataGeneratedAt : dataGeneratedAt);
     const statusText = document.getElementById('dataStatusText');

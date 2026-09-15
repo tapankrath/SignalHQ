@@ -638,8 +638,10 @@
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
-        <label class="check-row disabled"><input type="checkbox" disabled data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Butterfly"> <span class="strat-dot neutral"></span>Butterfly</label>
+        <label class="check-row"><input type="checkbox" data-strat="Calendar Spread"> <span class="strat-dot neutral"></span>Calendar Spread</label>
       </div>
       <div class="filter-hint">
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
@@ -870,9 +872,6 @@
   // currentEquitiesSource()) since these are US index ETFs regardless of
   // which market tab is active — the whole row just hides on the India tab,
   // where a US-dollar price next to India's ₹ figures would be confusing.
-  // Sourced from data.json's "equities" array, so they only exist/update
-  // once SPY and QQQ are in tickers.json and a nightly/hourly run has
-  // actually fetched them — same refresh cadence as everything else here.
   const INDEX_PILL_SYMS = ['SPY', 'QQQ'];
   function renderIndexPills(){
     const el = document.getElementById('indexPills');
@@ -934,9 +933,9 @@
           </td>
           <td>${pill}</td>
           <td class="num">${t.exp} <span style="color:var(--text-faint);">· ${t.dte}d</span></td>
-          <td class="num">${t.pot}%</td>
-          <td class="num val-pos">+${t.roc}%</td>
-          <td class="num val-pos">+${t.ap}%</td>
+          <td class="num">${t.pot != null ? t.pot + '%' : '—'}</td>
+          <td class="num ${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}</td>
+          <td class="num ${t.ap != null ? 'val-pos' : ''}">${fmtPct(t.ap)}</td>
           <td class="num">${t.ivr}</td>
           <td>${meterHtml(t.score)}</td>
           <td><button class="row-action" data-idx="${idx}">View</button></td>
@@ -962,7 +961,7 @@
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
             <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
-              <span class="val-pos">+${t.roc}%/+${t.ap}%</span> · ${t.exp}·${t.dte}d
+              <span class="${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}/${fmtPct(t.ap)}</span> · ${t.exp}·${t.dte}d
             </span>
             ${meterHtml(t.score)}
           </div>
@@ -1039,7 +1038,20 @@
     // filter in particular actively fought the backend's search-7-to-45-days-
     // and-pick-the-best-return logic (a "min 15 days" filter would silently
     // hide a genuinely-best 8-day pick the backend deliberately chose).
-    pool = pool.filter(t=> t.ap > 100);
+    //
+    // Long Call/Long Put have no "ap" at all (t.ap is null — see backend
+    // notes on breakevenMovePct) and Calendar Spread has neither an ap nor a
+    // breakeven, so `t.ap > 100` would silently drop every single one of
+    // those instead of actually filtering on quality. They get a different
+    // floor instead: Calendar Spread passes through as-is (its real quality
+    // control already happened upstream — see the backend's honesty note on
+    // why it doesn't publish a max-profit/breakeven for calendars at all),
+    // Long Call/Long Put need at least a rough 25% probability of profit.
+    pool = pool.filter(t=> {
+      if(t.ap != null) return t.ap > 100;
+      if(t.strat === 'Calendar Spread') return true;
+      return t.pot != null && t.pot >= 25;
+    });
     funnel.push({ label:'After Min Profit (>100%)', count: pool.length });
 
     lastFunnel = funnel;
@@ -1614,6 +1626,18 @@
       }</div>
     ` : '';
 
+    // Long Call/Long Put/Butterfly/Calendar Spread are debit strategies whose
+    // metrics don't map onto the premium-selling labels below 1:1 — see the
+    // backend's notes on debitStrategy/potIsProfitProb/breakevenMovePct for
+    // why. These just pick the right label (or hide a row entirely) per trade
+    // rather than showing a misleading number under the wrong name.
+    const isCalendar = t.strat === 'Calendar Spread';
+    const hasRange = t.strat === 'Iron Condor' || t.strat === 'Butterfly';
+    const potLabel = t.potIsProfitProb ? 'Probability of Profit' : 'Probability of Touch';
+    const roiLabel = t.debitStrategy ? 'Max ROI' : 'Trade Profit';
+    const annRoiLabel = t.debitStrategy ? 'Max Ann. ROI' : 'Annualized Profit';
+    const premiumLabel = t.debitStrategy ? 'Net Debit' : 'Premium';
+
     tradeModal.innerHTML = `
       <div class="modal-top">
         <div>
@@ -1624,15 +1648,23 @@
       <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days</div>
       <div class="modal-metrics">
         ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}</div></div>` : ''}
-        <div><div class="mm-label">Probability of Touch</div><div class="mm-val">${t.pot}%</div></div>
-        <div><div class="mm-label">Trade Profit</div><div class="mm-val val-pos">+${t.roc}%</div></div>
-        <div><div class="mm-label">Annualized Profit</div><div class="mm-val val-pos">+${t.ap}%</div></div>
-        <div><div class="mm-label">Premium</div><div class="mm-val">$${t.premium.toFixed(2)}</div></div>
-        <div><div class="mm-label">${t.strat === 'Iron Condor' ? 'Breakeven Range' : 'Breakeven'}</div><div class="mm-val">${t.strat === 'Iron Condor' ? `$${t.breakevenLow.toFixed(2)} – $${t.breakevenHigh.toFixed(2)}` : `$${t.breakeven.toFixed(2)}`}</div></div>
+        ${t.pot != null ? `<div><div class="mm-label">${potLabel}</div><div class="mm-val">${t.pot}%</div></div>` : ''}
+        ${t.roc != null ? `<div><div class="mm-label">${roiLabel}</div><div class="mm-val val-pos">+${t.roc}%</div></div>` : ''}
+        ${t.ap != null ? `<div><div class="mm-label">${annRoiLabel}</div><div class="mm-val val-pos">+${t.ap}%</div></div>` : ''}
+        ${t.breakevenMovePct != null ? `<div><div class="mm-label">Move Needed to Break Even</div><div class="mm-val">${t.breakevenMovePct >= 0 ? '+' : ''}${t.breakevenMovePct}%</div></div>` : ''}
+        <div><div class="mm-label">${premiumLabel}</div><div class="mm-val">$${t.premium.toFixed(2)}</div></div>
+        ${hasRange
+          ? `<div><div class="mm-label">Breakeven Range</div><div class="mm-val">$${t.breakevenLow.toFixed(2)} – $${t.breakevenHigh.toFixed(2)}</div></div>`
+          : t.breakeven != null
+            ? `<div><div class="mm-label">Breakeven</div><div class="mm-val">$${t.breakeven.toFixed(2)}</div></div>`
+            : ''
+        }
         <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
         <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
+        ${isCalendar ? `<div><div class="mm-label">Back-Month Expiration</div><div class="mm-val">${t.backExp} <span style="color:var(--text-faint); font-weight:400;">(${t.backDte}d)</span></div></div>` : ''}
+        ${isCalendar && t.backIv != null ? `<div><div class="mm-label">Back-Month IV</div><div class="mm-val">${t.backIv}%</div></div>` : ''}
         <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>
-        <div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>
+        ${t.dailyReturn != null ? `<div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>` : ''}
         <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
         <div><div class="mm-label">Put/Call Volume</div><div class="mm-val">${t.pcVol.toFixed(2)}</div></div>
         <div><div class="mm-label">Max Loss (est.)</div><div class="mm-val val-neg">$${t.maxLoss.toLocaleString()}</div></div>
@@ -1640,6 +1672,7 @@
         ${earningsHtml}
         ${volRegimeHtml}
       </div>
+      ${isCalendar ? `<div class="modal-note" style="margin-bottom:14px;">This calendar spread's max profit and breakeven aren't shown on purpose — both depend on what the back-month leg is worth at front-month expiration, which depends on implied volatility at that future date. This EOD pipeline has no honest way to estimate that, so rather than publish a plausible-looking but made-up number, it only shows what's actually knowable today: the net debit paid (also the standard textbook max loss if held to front expiration and unwound worthless). Chart a real payoff diagram before trading one of these.</div>` : ''}
 
       ${hedgeHtml}
 
@@ -1656,7 +1689,12 @@
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
     document.getElementById('modalCopyBtn').addEventListener('click', async ()=>{
-      const summary = `${t.sym} ${t.strat} ${t.strike} · exp ${t.exp} (${t.dte}d) · POT ${t.pot}% · Trade Profit +${t.roc}% · Ann. Profit +${t.ap}% · IV Rank ${t.ivr} · News: ${sentimentLabel} · Composite ${t.score}.0`;
+      const potPart = t.pot != null ? `${potLabel} ${t.pot}%` : '';
+      const roiPart = t.roc != null ? `${roiLabel} +${t.roc}%` : '';
+      const annPart = t.ap != null ? `${annRoiLabel} +${t.ap}%` : '';
+      const movePart = t.breakevenMovePct != null ? `Move to Breakeven ${t.breakevenMovePct >= 0 ? '+' : ''}${t.breakevenMovePct}%` : '';
+      const parts = [`${t.sym} ${t.strat} ${t.strike}`, `exp ${t.exp} (${t.dte}d)`, potPart, roiPart, annPart, movePart, `IV Rank ${t.ivr}`, `News: ${sentimentLabel}`, `Composite ${t.score}.0`].filter(Boolean);
+      const summary = parts.join(' · ');
       const ok = await copyText(summary);
       showToast(ok ? 'Trade summary copied' : 'Copy blocked — select the text manually');
     });

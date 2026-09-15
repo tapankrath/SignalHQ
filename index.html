@@ -179,6 +179,7 @@
   #portfolioCapital{ width:120px; }
   #portfolioSplit{ width:56px; text-align:center; }
   .portfolio-split-readout{ font-size:12.5px; font-weight:700; color:var(--text-dim); white-space:nowrap; }
+  .lbl-short{ display:none; }
 
   .portfolio-fab-count{
     background:var(--amber-strong); color:#fff;
@@ -524,9 +525,19 @@
     .header-inner{ padding:10px 14px; gap:8px; }
     .status-row{ padding:8px 14px; gap:6px; }
     .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:150px; }
-    .portfolio-bar{ padding:10px 14px; gap:10px; }
-    #portfolioCapital{ width:80px; }
-    #portfolioSplit{ width:48px; }
+    /* "Equity: X%" used to sit as its own flex item and would wrap onto an
+       orphan line below Cash/Options% on narrow phones — folded into the
+       Options % label instead (so it's one item, not a competing third one)
+       and every label switches to a short mobile form so the whole row
+       fits on one line even at 320px (iPhone SE-class), verified directly
+       rather than assumed. */
+    .portfolio-bar{ padding:10px 14px; gap:8px; }
+    .portfolio-bar label{ gap:4px; }
+    .lbl-full{ display:none; }
+    .lbl-short{ display:inline; }
+    #portfolioCapital{ width:84px; padding:7px 7px; }
+    #portfolioSplit{ width:48px; padding:7px 5px; text-align:center; }
+    .portfolio-split-readout{ font-size:11px; font-weight:600; margin-left:2px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand{ gap:8px; }
     .brand-mark{ width:38px; height:38px; }
@@ -626,14 +637,14 @@
 
 <div class="portfolio-bar">
   <label>
-    Cash <span id="cashLabelSym">$</span>
+    <span class="lbl-full">Cash</span> <span id="cashLabelSym">$</span>
     <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
   </label>
   <label>
-    Options %
+    <span class="lbl-full">Options %</span><span class="lbl-short">Opt %</span>
     <input type="text" id="portfolioSplit" inputmode="numeric" value="100">
+    <span class="portfolio-split-readout"><span class="lbl-full">Equity:</span><span class="lbl-short">Eq</span> <span id="equitySplitDisplay">0</span>%</span>
   </label>
-  <span class="portfolio-split-readout">Equity: <span id="equitySplitDisplay">0</span>%</span>
 </div>
 
 <div class="layout" id="optionsView">

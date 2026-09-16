@@ -167,19 +167,17 @@
 
   .portfolio-bar{
     max-width:1080px; margin:0 auto; padding:12px 18px;
-    border-bottom:1px solid var(--border); text-align:center;
+    border-bottom:1px solid var(--border);
   }
-  /* Content is a single settings cluster, not two things that belong on
-     opposite sides — so it's a left-aligned chip (matching the page's
-     shared left gutter used by the header logo, the Options/Stocks&ETFs
-     tab, and "Filters" below) rather than a full-bleed band. A full-bleed
-     tinted band with only this little content in it either stranded empty
-     color on the right (flex-start) or pulled the content away from the
-     page's left edge to center it — this chip avoids both. */
+  /* Full-width card, same left/right edges as .filter-card and every other
+     section below it — content is left-aligned inside, not the box itself
+     shrunk-and-centered (that's what made this look "shorter" than the
+     Filters card and everything else on the page, whose borders all line
+     up at the shared page gutter). */
   .portfolio-bar-inner{
-    display:inline-flex; align-items:center; gap:22px; flex-wrap:wrap;
+    display:flex; align-items:center; gap:22px; flex-wrap:wrap;
     background:var(--surface-2); border:1px solid var(--border);
-    border-radius:10px; padding:10px 16px; max-width:100%;
+    border-radius:10px; padding:10px 16px;
   }
   .portfolio-bar label{
     display:flex; align-items:center; gap:6px;

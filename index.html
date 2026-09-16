@@ -905,11 +905,18 @@
     return '$' + (value / 1e9).toFixed(1) + 'B';
   }
 
-  function formatDataDate(isoString){
+  // Date + time (in the viewer's own local timezone, browser-default) for the
+  // "Updated ..." status pill — deliberately not labeled "EOD" since the
+  // underlying fetch can run intraday (hourly during market hours), not just
+  // at end-of-day, so the pill should say exactly when the data was pulled
+  // rather than imply it's always yesterday's/today's official close.
+  function formatDataTimestamp(isoString){
     if(!isoString) return null;
     const d = new Date(isoString);
     if(isNaN(d)) return null;
-    return d.toLocaleDateString(undefined, { month:'short', day:'numeric' });
+    const datePart = d.toLocaleDateString(undefined, { month:'short', day:'numeric' });
+    const timePart = d.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
+    return `${datePart}, ${timePart}`;
   }
 
   async function loadTrades(){
@@ -924,9 +931,9 @@
       hedge = json.hedge && typeof json.hedge === 'object' ? json.hedge : null;
       dataGeneratedAt = json.generated_at || null;
 
-      const dateLabel = formatDataDate(json.generated_at);
+      const dateLabel = formatDataTimestamp(json.generated_at);
       if(dateLabel){
-        statusText.textContent = `EOD data · ${dateLabel} close`;
+        statusText.textContent = `Updated ${dateLabel}`;
         statusDot.style.background = 'var(--green)';
       } else {
         statusText.textContent = 'Seed data — not live yet';
@@ -1260,11 +1267,11 @@
 
     renderIndexPills();
 
-    const dateLabel = formatDataDate(market === 'IN' ? indiaDataGeneratedAt : dataGeneratedAt);
+    const dateLabel = formatDataTimestamp(market === 'IN' ? indiaDataGeneratedAt : dataGeneratedAt);
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
     if(dateLabel){
-      statusText.textContent = `EOD data · ${dateLabel} close`;
+      statusText.textContent = `Updated ${dateLabel}`;
       statusDot.style.background = 'var(--green)';
     } else {
       statusText.textContent = market === 'IN' ? 'India data not available yet' : 'Seed data — not live yet';

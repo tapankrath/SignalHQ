@@ -914,8 +914,17 @@
     if(!isoString) return null;
     const d = new Date(isoString);
     if(isNaN(d)) return null;
-    const datePart = d.toLocaleDateString(undefined, { month:'short', day:'numeric' });
     const timePart = d.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
+    // Date is dropped entirely when the update is from today (the normal
+    // case once the pipeline is running on schedule) — it's redundant next
+    // to "Next ..." and just eats space that's tight on a phone. It only
+    // reappears when the data is from a different calendar day, which is
+    // exactly when it's actually useful: it's the signal that something's
+    // stale, same idea as the red † stale-price marker on the index pills.
+    const now = new Date();
+    if(d.toDateString() === now.toDateString()) return timePart;
+    // Numeric M/D (e.g. "9/16") instead of a month name — shorter.
+    const datePart = d.toLocaleDateString(undefined, { month:'numeric', day:'numeric' });
     return `${datePart}, ${timePart}`;
   }
 

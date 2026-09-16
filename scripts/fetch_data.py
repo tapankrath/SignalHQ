@@ -32,6 +32,7 @@ import math
 import re
 import sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import numpy as np
 from scipy.stats import norm
@@ -195,6 +196,88 @@ def probability_of_profit(delta):
 
 def compute_ema(closes, span):
     return closes.ewm(span=span, adjust=False).mean()
+
+
+def _try_fast_info_price(tk):
+    """
+    Best-effort fresher price via yfinance's fast_info, which taps a
+    different, live-quote-oriented endpoint than history()'s historical-
+    chart data (see resolve_current_price() below for why that distinction
+    matters). fast_info's exact attribute/key names have shifted across
+    yfinance versions and requirements.txt only pins a lower bound
+    (yfinance>=0.2.40), so this tries several known spellings defensively
+    rather than assuming one — returns None (never raises) if none work,
+    so a yfinance version this wasn't written against just falls back to
+    the caller's existing history()-based price instead of crashing.
+    """
+    try:
+        fi = tk.fast_info
+    except Exception:
+        return None
+    for key in ("last_price", "lastPrice", "regular_market_price", "regularMarketPrice"):
+        val = None
+        try:
+            val = fi[key]
+        except Exception:
+            val = getattr(fi, key, None)
+        fval = safe_float(val, default=None)
+        if fval is not None and fval > 0:
+            return fval
+    return None
+
+
+def resolve_current_price(tk, history, ticker_symbol, context, now_et=None):
+    """
+    `history["Close"].iloc[-1]` (the price source every caller in this file
+    uses) can lag the real most-recent close by a full trading day — this
+    isn't theoretical, it's confirmed against real data: a run at 11:19pm ET
+    on 2026-09-15 (long after that day's 4pm close, well past normal
+    settlement) returned SPY at $760.88 and QQQ at $709.18 — both exactly
+    2026-09-14's close, not 2026-09-15's real close ($757.39 / $704.54, per
+    stockanalysis.com's published history). That's Yahoo's own historical-
+    chart data lagging its live-quote data, not something a caching
+    parameter here controls — a shorter period= on the same history() call
+    hits the same backend pipeline and would show the same lag.
+
+    Heuristic: if it's a weekday evening (past 5pm ET — safely past close
+    and normal settlement) and the most recent daily bar isn't from today,
+    treat the close as suspect and try fast_info, which isn't affected by
+    the same lag, as a fresher cross-check. This is a heuristic, not an
+    exhaustive fix (it won't catch every possible staleness window, e.g.
+    one spanning a long holiday weekend) — it directly targets the exact
+    failure mode confirmed above rather than trying to be a full market
+    calendar. Returns (price, is_stale): is_stale is True when this is
+    still using the (known-suspect) history() price because fast_info
+    wasn't available or didn't look any better — callers can use that to
+    flag the number rather than presenting it as confidently current.
+
+    `now_et` is exposed purely so tests can pin "now" instead of depending
+    on the real clock — production callers should always leave it as None.
+    """
+    price = float(history["Close"].iloc[-1])
+    last_bar_date = history.index[-1]
+    try:
+        last_bar_date = last_bar_date.date()
+    except AttributeError:
+        pass  # already a plain date, or an unexpected index type — comparison below just won't match, which is safe (treated as not-stale)
+
+    if now_et is None:
+        now_et = datetime.now(ZoneInfo("America/New_York"))
+    looks_stale = now_et.weekday() < 5 and now_et.hour >= 17 and last_bar_date < now_et.date()
+    if not looks_stale:
+        return price, False
+
+    fresher = _try_fast_info_price(tk)
+    if fresher is not None and price > 0 and abs(fresher - price) / price > 0.001:
+        print(f"  {ticker_symbol} ({context}): history() close ({price}) looks stale "
+              f"(last bar {last_bar_date}, but it's {now_et:%H:%M} ET) — using fast_info "
+              f"price ({fresher}) instead")
+        return fresher, False
+
+    print(f"  {ticker_symbol} ({context}): history() close ({price}) looks stale "
+          f"(last bar {last_bar_date}, but it's {now_et:%H:%M} ET) and no better fast_info "
+          f"price was available — using it anyway, flagged as stale")
+    return price, True
 
 
 def compute_atr(history, period=14):
@@ -1051,7 +1134,7 @@ def build_trade_for_ticker(ticker_symbol, index):
             print(f"  skip {ticker_symbol}: no price history")
             return None
 
-        spot = float(history["Close"].iloc[-1])
+        spot, spot_is_stale = resolve_current_price(tk, history, ticker_symbol, "options")
         if math.isnan(spot) or spot <= 0:
             # the most recent bar is occasionally incomplete/NaN right after close —
             # a NaN spot silently poisons every single strike's delta calculation
@@ -1061,6 +1144,7 @@ def build_trade_for_ticker(ticker_symbol, index):
             # falling back a day before giving up.
             if len(history) >= 2:
                 spot = float(history["Close"].iloc[-2])
+                spot_is_stale = True  # admittedly using an even older bar now
             if math.isnan(spot) or spot <= 0:
                 print(f"  skip {ticker_symbol}: spot price is invalid/NaN (most recent close data looks broken)")
                 return None
@@ -1183,6 +1267,7 @@ def build_trade_for_ticker(ticker_symbol, index):
             "side": side,
             "isETF": is_etf,
             "spot": round(spot, 2),
+            "spotPriceStale": spot_is_stale,
             "strike": best["strike"],
             "hedge": best["hedge"],
             "exp": best["exp"],
@@ -1303,7 +1388,7 @@ def build_equity_snapshot(ticker_symbol, is_etf):
             return None
 
         closes = history["Close"]
-        price = float(closes.iloc[-1])
+        price, price_is_stale = resolve_current_price(tk, history, ticker_symbol, "equity")
         if math.isnan(price) or price <= 0:
             # same fallback as build_trade_for_ticker above — the most recent
             # bar is occasionally incomplete/NaN right after close. Confirmed
@@ -1313,6 +1398,7 @@ def build_equity_snapshot(ticker_symbol, is_etf):
             # had this fallback and this one didn't.
             if len(closes) >= 2:
                 price = float(closes.iloc[-2])
+                price_is_stale = True  # admittedly using an even older bar now
             if math.isnan(price) or price <= 0:
                 print(f"  skip {ticker_symbol} (equity): current price is invalid/NaN (most recent close data looks broken)")
                 return None
@@ -1381,6 +1467,7 @@ def build_equity_snapshot(ticker_symbol, is_etf):
             "sym": ticker_symbol,
             "isETF": is_etf,
             "price": round(price, 2),
+            "priceStale": price_is_stale,
             "high52wk": round(high_52wk, 2),
             "low52wk": round(low_52wk, 2),
             "pctFromHigh": pct_from_high,

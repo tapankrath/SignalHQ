@@ -1,5 +1,11 @@
 name: Update EOD options data
 
+# NOTE (2026-09-16): scheduled runs stopped firing after the Sep 15 6:15 PM ET
+# post-close run — no run at all (not even a failed one) for the 9:30/10:30 AM
+# ET slots on Sep 16, a normal trading day. This is a no-op comment-only commit
+# to re-touch the workflow file on `main`, since GitHub's scheduler is keyed
+# off the latest commit and a stuck/stale scheduler state sometimes clears on
+# the next push to the file. No change to the actual schedule or job below.
 on:
   schedule:
     # Hourly during the US trading session (9:30am-3:30pm ET), Mon-Fri, plus a

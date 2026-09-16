@@ -1117,7 +1117,7 @@
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">

@@ -84,6 +84,7 @@
   .mode-toggle{
     max-width:1080px; margin:0 auto; padding:12px 18px 14px;
     display:flex; gap:8px;
+    border-bottom:1px solid var(--border);
   }
   .mode-tab{
     flex:1; min-height:44px; padding:10px 14px;
@@ -665,10 +666,6 @@
     </button>
   </div>
 
-  <div class="mode-toggle" role="tablist">
-    <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
-    <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-  </div>
 </header>
 
 <div class="portfolio-bar">
@@ -689,6 +686,11 @@
       <span class="lbl-full">Cash left</span><span class="lbl-short">Idle</span> <span id="cashLeftDisplay">0</span>%
     </span>
   </div>
+</div>
+
+<div class="mode-toggle" role="tablist">
+  <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
+  <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
 </div>
 
 <div class="layout" id="optionsView">

@@ -777,7 +777,7 @@
   </div>
 
   <div class="results-bar">
-    <div class="results-count"><strong id="resultCount">…</strong> setups match your filters</div>
+    <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
     <div class="sort-wrap">
       Sort by
       <select id="sortSelect">
@@ -1057,6 +1057,7 @@
   const tbody = document.getElementById('tableBody');
   const cardList = document.getElementById('cardList');
   const resultCountEl = document.getElementById('resultCount');
+  const resultCountLabelEl = document.getElementById('resultCountLabel');
   const activeCountLabel = document.getElementById('activeCountLabel');
 
   function meterHtml(score){
@@ -1111,7 +1112,7 @@
       // rounded, no decimals, arrow-separated -- the table/modal show full
       // precision ($230.50), but this card layout has a tight, previously-
       // tested character budget, so a compact form here specifically
-      const cardPrice = t.spot != null ? `${Math.round(t.spot)}→` : '';
+      const cardPrice = t.spot != null ? `$${Math.round(t.spot)}→` : '';
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
@@ -1129,6 +1130,7 @@
     });
 
     resultCountEl.textContent = list.length;
+    resultCountLabelEl.textContent = list.length === 1 ? 'setup matches' : 'setups match';
   }
 
   let lastFunnel = null;
@@ -1850,7 +1852,7 @@
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days</div>
+      <div class="modal-strat">${isCalendar ? `${t.strat} · Sell ${t.exp} (${t.dte}d) &rarr; Buy ${t.backExp} (${t.backDte}d)` : `${t.strat} · expires ${t.exp} · ${t.dte} days`}</div>
       <div class="modal-metrics">
         ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}</div></div>` : ''}
         ${t.pot != null ? `<div><div class="mm-label">${potLabel}</div><div class="mm-val">${t.pot}%</div></div>` : ''}
@@ -1866,7 +1868,8 @@
         }
         <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
         <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
-        ${isCalendar ? `<div><div class="mm-label">Back-Month Expiration</div><div class="mm-val">${t.backExp} <span style="color:var(--text-faint); font-weight:400;">(${t.backDte}d)</span></div></div>` : ''}
+        ${isCalendar ? `<div><div class="mm-label">Front-Month (Sold)</div><div class="mm-val">${t.exp} <span style="color:var(--text-faint); font-weight:400;">(${t.dte}d)</span></div></div>` : ''}
+        ${isCalendar ? `<div><div class="mm-label">Back-Month (Bought)</div><div class="mm-val">${t.backExp} <span style="color:var(--text-faint); font-weight:400;">(${t.backDte}d)</span></div></div>` : ''}
         ${isCalendar && t.backIv != null ? `<div><div class="mm-label">Back-Month IV</div><div class="mm-val">${t.backIv}%</div></div>` : ''}
         <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>
         ${t.dailyReturn != null ? `<div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>` : ''}

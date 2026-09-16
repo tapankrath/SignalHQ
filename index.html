@@ -145,6 +145,9 @@
   .index-pill .index-pill-px{
     font-family:var(--mono); font-size:14.5px; font-weight:800; color:var(--text);
   }
+  .index-pill-stale{
+    color:var(--red); font-weight:800; font-size:12px; margin-left:1px; cursor:help;
+  }
 
   .status-row{
     max-width:1080px; margin:0 auto; padding:8px 18px;
@@ -587,6 +590,7 @@
     .index-pill{ padding:5px 8px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }
     .index-pill .index-pill-px{ font-size:12px; }
+    .index-pill-stale{ font-size:10px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -961,7 +965,16 @@
     const html = INDEX_PILL_SYMS.map(sym => {
       const e = equities.find(x => x.sym === sym);
       if(!e || e.price == null) return '';
-      return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span></span>`;
+      // Confirmed directly (2026-09-15): the underlying fetch can land a
+      // trading day behind even when it runs hours after close — Yahoo's
+      // historical data lagging its own live quotes, not a schedule
+      // problem. fetch_data.py flags this per-ticker as "priceStale" when
+      // its own staleness check couldn't get a fresher number either — surface
+      // it here instead of quietly showing a wrong price as if it were current.
+      const stale = e.priceStale
+        ? `<span class="index-pill-stale" title="This price may be a trading day behind — Yahoo's data hadn't updated yet when this was fetched">†</span>`
+        : '';
+      return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span>${stale}</span>`;
     }).join('');
     el.innerHTML = html;
     // display:none by default (see CSS) so there's no empty divider flash

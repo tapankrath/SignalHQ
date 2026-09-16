@@ -555,7 +555,7 @@
     .header-top{ padding:10px 14px; gap:8px; }
     .header-tools{ padding:0 14px 12px; }
     .status-row{ padding:6px 14px 12px; gap:6px; }
-    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:150px; }
+    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:230px; }
     /* "Equity: X%" used to sit as its own flex item and would wrap onto an
        orphan line below Cash/Options% on narrow phones — now that Equity %
        and Cash left are their own fields there's too much to force onto
@@ -919,6 +919,40 @@
     return `${datePart}, ${timePart}`;
   }
 
+  // Mirrors .github/workflows/update_data.yml's cron schedule exactly (hourly
+  // at :30 from 9:30 AM-3:30 PM ET, plus a 6:15 PM ET post-close run,
+  // Mon-Fri) so the "Next ..." label always matches what that workflow will
+  // actually do next — update one if the other changes. Same EDT/EST
+  // approximation the workflow itself accepts (UTC month 3-10 = EDT, else
+  // EST; can be off by up to an hour in the ~1-week window around the actual
+  // DST changeover) rather than pulling in a timezone library for this.
+  const US_RUN_TIMES_ET = [[9,30],[10,30],[11,30],[12,30],[13,30],[14,30],[15,30],[18,15]];
+  function etOffsetHours(d){
+    const m = d.getUTCMonth() + 1;
+    return (m >= 3 && m <= 10) ? 4 : 5;
+  }
+  function computeNextUsUpdate(now){
+    now = now || new Date();
+    const roughOffset = etOffsetHours(now);
+    const etNow = new Date(now.getTime() - roughOffset * 3600000);
+    for(let dayOffset = 0; dayOffset <= 7; dayOffset++){
+      const candidate = new Date(Date.UTC(etNow.getUTCFullYear(), etNow.getUTCMonth(), etNow.getUTCDate() + dayOffset));
+      const weekday = candidate.getUTCDay(); // ET-calendar weekday, 0=Sun..6=Sat
+      if(weekday === 0 || weekday === 6) continue;
+      const offset = etOffsetHours(candidate);
+      for(const [h, m] of US_RUN_TIMES_ET){
+        const runMs = Date.UTC(candidate.getUTCFullYear(), candidate.getUTCMonth(), candidate.getUTCDate(), h + offset, m);
+        if(runMs > now.getTime()) return new Date(runMs);
+      }
+    }
+    return null;
+  }
+  function formatNextUpdateLabel(now){
+    const next = computeNextUsUpdate(now);
+    if(!next) return null;
+    return next.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
+  }
+
   async function loadTrades(){
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
@@ -933,7 +967,10 @@
 
       const dateLabel = formatDataTimestamp(json.generated_at);
       if(dateLabel){
-        statusText.textContent = `Updated ${dateLabel}`;
+        // This branch is always the US data.json regardless of which tab is
+        // showing, so the known US cron schedule applies — safe to append.
+        const nextLabel = formatNextUpdateLabel();
+        statusText.textContent = nextLabel ? `Updated ${dateLabel} · Next ${nextLabel}` : `Updated ${dateLabel}`;
         statusDot.style.background = 'var(--green)';
       } else {
         statusText.textContent = 'Seed data — not live yet';
@@ -1271,7 +1308,11 @@
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
     if(dateLabel){
-      statusText.textContent = `Updated ${dateLabel}`;
+      // India's data pipeline doesn't have a documented schedule here, so
+      // only show "Next ..." for the US tab, where the cron schedule above
+      // is known exactly — no guessing at India's refresh cadence.
+      const nextLabel = market === 'IN' ? null : formatNextUpdateLabel();
+      statusText.textContent = nextLabel ? `Updated ${dateLabel} · Next ${nextLabel}` : `Updated ${dateLabel}`;
       statusDot.style.background = 'var(--green)';
     } else {
       statusText.textContent = market === 'IN' ? 'India data not available yet' : 'Seed data — not live yet';

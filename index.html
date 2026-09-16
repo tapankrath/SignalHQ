@@ -1756,7 +1756,7 @@
     const hedgeHtml = t.hedge ? `
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Hedge Suggestion</span></div>
       <div class="modal-metrics" style="margin-bottom:14px;">
-        <div><div class="mm-label">Buy Protection At</div><div class="mm-val">$${t.hedge.hedgeStrike.toFixed(0)} ${t.strat === 'Short Put' ? 'P' : 'C'}</div></div>
+        <div><div class="mm-label">Buy Protection At</div><div class="mm-val">$${t.hedge.hedgeStrike.toFixed(0)} ${(t.strat === 'Covered Call' || t.strat === 'Short Put') ? 'P' : 'C'}</div></div>
         <div><div class="mm-label">Approx. Cost</div><div class="mm-val val-neg">$${t.hedge.hedgeCost.toFixed(2)}</div></div>
         <div><div class="mm-label">${t.strat === 'Covered Call' ? 'New Max Loss (collar)' : 'New Max Loss (as a spread)'}</div><div class="mm-val val-neg">$${t.hedge.cappedMaxLoss.toLocaleString()}</div></div>
       </div>

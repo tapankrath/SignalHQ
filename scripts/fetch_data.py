@@ -114,6 +114,24 @@ TARGET_LONG_DELTA = 0.45    # long call/put target delta — near-the-money; bal
                              # deep-ITM stock-replacement play
 RISK_FREE_RATE = 0.045      # flat approximation; update periodically
 OUTPUT_PATH = "data.json"
+
+# --- Portfolio hedge candidate ---------------------------------------------
+# Every current strategy in this file sells premium (short vol) — a portfolio
+# built entirely from them is exposed to the same bad day: a sudden move that
+# spikes IV and moves the underlying against several short strikes at once.
+# The common, simple offset is a small, cheap, far-OTM index put bought as
+# tail-risk insurance — it's not trying to make money, it's there to pay off
+# specifically when everything else is hurting at the same time. QQQ (not a
+# single name) so this doesn't overlap with any one ticker's own short strikes.
+HEDGE_TICKER = "QQQ"
+HEDGE_TARGET_DTE_MIN = 30    # longer-dated than the 7-45d strategy window on
+HEDGE_TARGET_DTE_MAX = 60    # purpose — a hedge you're re-checking every EOD run
+                             # doesn't need to be rolled as often as a premium-
+                             # selling trade does, and a 30-60d put decays slower.
+HEDGE_TARGET_DELTA = 0.15    # further OTM than the 0.20-delta short-strike
+                             # convention above — cheaper per contract, which
+                             # matters since this is meant to cost a small,
+                             # known amount, not be a large directional bet.
 MAX_PLAUSIBLE_ROC = 35      # raw period ROC (%) sanity ceiling — deliberately NOT applied to
                              # the annualized figure, since annualizing amplifies short-DTE
                              # trades by up to 365/DTE (60x+ at 6 DTE), which used to make
@@ -1387,6 +1405,102 @@ def build_equity_snapshot(ticker_symbol, is_etf):
         return None
 
 
+def build_hedge_candidate():
+    """
+    Suggests one small tail-risk hedge — a single OTM QQQ put — to sit
+    alongside the strategies above, all of which sell premium (short vol) and
+    so share the same bad-day exposure: a sudden move that spikes IV and goes
+    against several short strikes at once. Deliberately minimal: this returns
+    one contract's terms and cost, not a recommended size or an auto-sized
+    position — how many (if any) to actually buy is a sizing decision the
+    frontend leaves to the person, same as every other number in this file.
+    See the HEDGE_* constants above for the selection rules. Returns a dict,
+    or None if QQQ's chain isn't usable right now — the frontend treats a
+    missing "hedge" key as "not shown," not an error.
+    """
+    try:
+        tk = yf.Ticker(HEDGE_TICKER)
+        history = tk.history(period="5d")
+        if history.empty:
+            print(f"  skip hedge candidate: no price history for {HEDGE_TICKER}")
+            return None
+        spot = float(history["Close"].iloc[-1])
+        if math.isnan(spot) or spot <= 0:
+            print(f"  skip hedge candidate: {HEDGE_TICKER} spot price invalid")
+            return None
+
+        expirations = tk.options
+        if not expirations:
+            print(f"  skip hedge candidate: no options listed for {HEDGE_TICKER}")
+            return None
+
+        # Same closest-to-target-window ranking as rank_expirations() above,
+        # but against HEDGE_TARGET_DTE_MIN/MAX rather than the strategy
+        # picker's 7-45d window — kept as a local copy rather than
+        # parameterizing the shared helper, so this doesn't risk changing
+        # behavior for every existing strategy.
+        today = datetime.now(timezone.utc).date()
+        target_mid = (HEDGE_TARGET_DTE_MIN + HEDGE_TARGET_DTE_MAX) / 2
+        in_window, outside_window = [], []
+        for exp_str in expirations:
+            exp_date = datetime.strptime(exp_str, "%Y-%m-%d").date()
+            dte = (exp_date - today).days
+            if dte <= 0:
+                continue
+            diff = abs(dte - target_mid)
+            bucket = in_window if HEDGE_TARGET_DTE_MIN <= dte <= HEDGE_TARGET_DTE_MAX else outside_window
+            bucket.append((diff, exp_str, dte))
+        in_window.sort(key=lambda x: x[0])
+        outside_window.sort(key=lambda x: x[0])
+        candidates = [(exp_str, dte) for _, exp_str, dte in (in_window + outside_window)]
+        if not candidates:
+            print(f"  skip hedge candidate: no usable {HEDGE_TICKER} expiration")
+            return None
+
+        # Fall back to the next-ranked expiration if a chain turns out
+        # unusable (all-NaN IV on a bad data day) — same pattern the
+        # strategy picker uses instead of giving up on the first failure.
+        for exp_str, dte in candidates[:5]:
+            try:
+                chain = tk.option_chain(exp_str)
+            except Exception as e:
+                print(f"  hedge candidate: {HEDGE_TICKER} {exp_str} chain fetch failed: {e}")
+                continue
+            puts = chain.puts
+            if puts is None or puts.empty:
+                continue
+            picked = pick_strike_by_delta(puts, spot, dte, HEDGE_TARGET_DELTA, "put")
+            if not picked:
+                continue
+            row, delta = picked
+            premium = mid_price(row)
+            if premium <= 0:
+                continue
+            iv = safe_float(row.get("impliedVolatility"), default=0.0) * 100
+            strike = safe_float(row.get("strike"), default=0.0)
+            exp_label = (datetime.strptime(exp_str, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32"
+                         else datetime.strptime(exp_str, "%Y-%m-%d").strftime("%b %d").replace(" 0", " "))
+            return {
+                "symbol": HEDGE_TICKER,
+                "spot": round(spot, 2),
+                "strike": round(strike, 2),
+                "otmPct": round((spot - strike) / spot * 100, 1),
+                "exp": exp_label,
+                "expDate": exp_str,
+                "dte": dte,
+                "delta": round(delta, 2),
+                "iv": round(iv, 1),
+                "premium": round(premium, 2),
+                "costPerContract": round(premium * 100, 2),
+            }
+
+        print(f"  skip hedge candidate: no usable put found across {HEDGE_TICKER} candidates")
+        return None
+    except Exception as e:
+        print(f"  skip hedge candidate: {e}")
+        return None
+
+
 def main():
     trades = []
     equities = []
@@ -1404,17 +1518,26 @@ def main():
         print("No trades or equities were built — leaving existing data.json untouched.", file=sys.stderr)
         sys.exit(1)
 
+    print(f"Fetching hedge candidate ({HEDGE_TICKER})...")
+    hedge = build_hedge_candidate()
+    if not hedge:
+        # Not fatal — the frontend just hides the hedge section when this key
+        # is absent, same as any other optional field in this file.
+        print(f"  hedge candidate unavailable this run — omitting from {OUTPUT_PATH}")
+
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "yfinance (unofficial, free, EOD)",
         "trades": trades,
         "equities": equities,
+        "hedge": hedge,
     }
 
     with open(OUTPUT_PATH, "w") as f:
         json.dump(output, f, indent=2)
 
-    print(f"\nWrote {len(trades)} trades and {len(equities)} equity snapshots to {OUTPUT_PATH}")
+    print(f"\nWrote {len(trades)} trades, {len(equities)} equity snapshots, "
+          f"and {'a' if hedge else 'no'} hedge candidate to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

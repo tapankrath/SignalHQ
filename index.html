@@ -21,34 +21,33 @@
     /* Note: --amber* variable names are historical — they hold the green accent
        color now. Kept the names to avoid touching every var(--amber...) usage
        site; only the values changed. */
-    --bg:#FBFBFC;
+    --bg:#FFFFFF;
     --surface:#FFFFFF;
     --surface-2:#F3F4F7;
-    --border:#E5E7EC;
-    --border-strong:#111318;
-    --text:#0B0D12;
-    --text-dim:#3D4250;
+    --border:#E1E4EA;
+    --border-strong:#000000;
+    --text:#000000;
+    --text-dim:#374151;
     --text-faint:#6B7280;
-    --amber:#0E9F5C;
-    --amber-strong:#087A46;
-    --amber-soft:#E4F8ED;
-    --amber-border:#0E9F5C;
-    --green:#0E9F5C;
-    --green-soft:#E4F8ED;
+    --amber:#16A34A;
+    --amber-strong:#0D8A3F;
+    --amber-soft:#DCFCE7;
+    --amber-border:#22C55E;
+    --green:#16A34A;
+    --green-soft:#DCFCE7;
     --red:#DC2626;
     --red-soft:#FEE2E2;
     --radius:16px;
     --radius-sm:10px;
-    --radius-pill:999px;
     --sans: 'Inter', -apple-system, sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', monospace;
     /* Soft elevation scale — used on card-level containers instead of (or
        alongside) hairline borders, for a more "raised" fintech-card feel.
        --border itself is lightened below so borders read as a hairline
        under the shadow rather than competing with it. */
-    --shadow-sm:0 1px 2px rgba(16,24,40,0.04), 0 1px 3px rgba(16,24,40,0.04);
-    --shadow-md:0 2px 6px rgba(16,24,40,0.05), 0 8px 20px rgba(16,24,40,0.06);
-    --shadow-lg:0 16px 48px rgba(16,24,40,0.18);
+    --shadow-sm:0 1px 2px rgba(16,24,40,0.05), 0 1px 3px rgba(16,24,40,0.04);
+    --shadow-md:0 2px 6px rgba(16,24,40,0.06), 0 8px 20px rgba(16,24,40,0.07);
+    --shadow-lg:0 12px 40px rgba(16,24,40,0.16);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{
@@ -79,15 +78,7 @@
   /* ---------- HEADER ---------- */
   header{
     position:sticky; top:0; z-index:40;
-    background:rgba(255,255,255,0.92);
-    -webkit-backdrop-filter:saturate(180%) blur(14px);
-    backdrop-filter:saturate(180%) blur(14px);
-    border-bottom:1px solid transparent;
-    transition:border-color .18s, box-shadow .18s;
-  }
-  header.is-scrolled{
-    border-bottom-color:var(--border);
-    box-shadow:0 1px 0 rgba(16,24,40,0.02), var(--shadow-sm);
+    background:var(--surface);
   }
   .header-top{
     max-width:1080px; margin:0 auto;
@@ -126,26 +117,20 @@
   }
   .market-tab{
     min-height:26px; padding:4px 10px;
-    font-family:inherit; font-size:11px; font-weight:700;
-    background:var(--surface-2); color:var(--text-dim);
-    border:1px solid var(--border); border-radius:7px;
+    font-family:inherit; font-size:11px; font-weight:800;
+    background:#FBF3EA; color:#8B5E34;
+    border:1px solid #D8B78E; border-radius:6px;
     cursor:pointer; transition:background .12s, color .12s, border-color .12s;
   }
   .market-tab.active{ background:var(--green); color:#fff; border-color:var(--green); }
   .market-tab:active{ opacity:0.85; }
 
   .brand-mark{
-    width:40px; height:40px; flex-shrink:0;
+    width:68px; height:68px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:var(--shadow-sm);
-    border-radius:11px;
   }
-  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:11px; }
-  .brand-name{ font-weight:700; font-size:20px; letter-spacing:-0.02em; color:var(--text); line-height:1.1; }
-  .brand-tag{
-    font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.04em;
-    color:var(--text-faint); margin-top:1px; text-transform:uppercase;
-  }
+  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:14px; }
+  .brand-name{ font-weight:800; font-size:34px; letter-spacing:-0.025em; color:var(--text); }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -366,7 +351,7 @@
   .apply-btn{
     flex:1; background:var(--amber); color:#fff; border:none;
     padding:12px; border-radius:var(--radius-sm); font-weight:700; font-size:13.5px;
-    box-shadow:0 2px 8px rgba(14,159,92,0.28);
+    box-shadow:0 2px 8px rgba(22,163,74,0.28);
     transition:filter .12s, box-shadow .12s;
   }
   .apply-btn:hover{ filter:brightness(1.08); }
@@ -448,29 +433,18 @@
   }
   .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
 
-  /* Outer wrapper stays unstyled (no border/shadow of its own) — each
-     .trade-card below is the actual visible card. Giving both layers a
-     border+shadow used to nest a card inside a card, which read as boxy/
-     noisy; one layer of elevation is the cleaner, more deliberate look. */
   .card-list{
     display:none; flex-direction:column; gap:10px;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:10px;
+    box-shadow:var(--shadow-sm);
   }
   .trade-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:14px; padding:14px 14px 14px 16px;
+    border-radius:14px; padding:13px;
     box-shadow:var(--shadow-sm);
     cursor:pointer; transition:border-color .12s, box-shadow .12s, transform .12s;
-    position:relative; overflow:hidden;
   }
-  /* Thin color-coded rail on the leading edge so bullish/bearish/neutral
-     setups are scannable at a glance without reading the pill text first —
-     a small touch that makes a dense list feel organized rather than flat. */
-  .trade-card::before{
-    content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
-    background:var(--card-accent, var(--border));
-  }
-  .trade-card:has(.side-pill.bull)::before{ background:var(--green); }
-  .trade-card:has(.side-pill.bear)::before{ background:var(--red); }
   .trade-card:hover{ box-shadow:var(--shadow-md); border-color:#D3D7DE; }
   .trade-card:active{ border-color:var(--border-strong); box-shadow:var(--shadow-sm); transform:scale(0.994); }
   .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
@@ -626,10 +600,9 @@
     .cash-left-pill{ font-size:11px; font-weight:600; padding:4px 7px; gap:3px; }
     .mode-toggle{ padding:10px 14px 12px; }
     .brand{ gap:8px; }
-    .brand-mark{ width:34px; height:34px; border-radius:9px; }
+    .brand-mark{ width:38px; height:38px; }
     .brand-mark svg{ border-radius:9px; }
-    .brand-name{ font-size:17px; }
-    .brand-tag{ display:none; }
+    .brand-name{ font-size:19px; }
     .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
     /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
        Export don't all fit on one row even at their already-compact mobile
@@ -686,7 +659,6 @@
       </div>
       <div>
         <div class="brand-name">SignalHQ</div>
-        <div class="brand-tag">Options Signal Desk</div>
       </div>
     </div>
 
@@ -972,8 +944,15 @@
     // stale, same idea as the red † stale-price marker on the index pills.
     const now = new Date();
     if(d.toDateString() === now.toDateString()) return timePart;
-    // Numeric M/D (e.g. "9/16") instead of a month name — shorter.
-    const datePart = d.toLocaleDateString(undefined, { month:'numeric', day:'numeric' });
+    // Numeric M/D (e.g. "9/16") instead of a month name — shorter. Built by
+    // hand rather than toLocaleDateString(undefined, ...) on purpose: that
+    // form silently follows each *viewer's own device locale*, so the same
+    // code could render "9/16" (Sep 16) for one visitor and "16/9" (day/month
+    // — actually Jun 9) for another, depending on their phone's region
+    // setting. Same two digits, two different dates — not just a cosmetic
+    // difference. Hardcoding month-then-day here means everyone sees the
+    // same, unambiguous order regardless of device settings.
+    const datePart = `${d.getMonth() + 1}/${d.getDate()}`;
     return `${datePart}, ${timePart}`;
   }
 
@@ -1007,6 +986,30 @@
   }
   function formatNextUpdateLabel(now){
     const next = computeNextUsUpdate(now);
+    if(!next) return null;
+    return next.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
+  }
+
+  // Mirrors .github/workflows/update-data-india.yml's cron schedule exactly
+  // (once/day at 4:00 PM IST, Mon-Fri) so India's "Next ..." label matches
+  // what that workflow will actually do next — update one if the other
+  // changes. Unlike the US, India doesn't observe daylight saving, so IST is
+  // a fixed UTC+5:30 offset year-round — no EDT/EST-style split needed, just
+  // one fixed UTC target time.
+  const INDIA_RUN_TIME_UTC = [10, 30]; // 4:00 PM IST = 10:30 UTC, fixed year-round
+  function computeNextIndiaUpdate(now){
+    now = now || new Date();
+    for(let dayOffset = 0; dayOffset <= 7; dayOffset++){
+      const candidate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + dayOffset));
+      const weekday = candidate.getUTCDay(); // 0=Sun..6=Sat
+      if(weekday === 0 || weekday === 6) continue;
+      const runMs = Date.UTC(candidate.getUTCFullYear(), candidate.getUTCMonth(), candidate.getUTCDate(), INDIA_RUN_TIME_UTC[0], INDIA_RUN_TIME_UTC[1]);
+      if(runMs > now.getTime()) return new Date(runMs);
+    }
+    return null;
+  }
+  function formatNextIndiaUpdateLabel(now){
+    const next = computeNextIndiaUpdate(now);
     if(!next) return null;
     return next.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
   }
@@ -1368,10 +1371,9 @@
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
     if(dateLabel){
-      // India's data pipeline doesn't have a documented schedule here, so
-      // only show "Next ..." for the US tab, where the cron schedule above
-      // is known exactly — no guessing at India's refresh cadence.
-      const nextLabel = market === 'IN' ? null : formatNextUpdateLabel();
+      // India now has its own known cron schedule too (once/day, 4PM IST —
+      // see computeNextIndiaUpdate above), so both tabs can show "Next ...".
+      const nextLabel = market === 'IN' ? formatNextIndiaUpdateLabel() : formatNextUpdateLabel();
       statusText.textContent = nextLabel ? `Updated ${dateLabel} · Next ${nextLabel}` : `Updated ${dateLabel}`;
       statusDot.style.background = 'var(--green)';
     } else {
@@ -2305,25 +2307,6 @@
       renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
     }
   });
-
-  // Subtle sticky-header elevation once the page has scrolled past the very
-  // top — a hairline + soft shadow appear so the header reads as "floating
-  // above" content instead of just sitting flush with it. rAF-throttled;
-  // passive listener so it never blocks touch scrolling on mobile.
-  (function(){
-    const headerEl = document.querySelector('header');
-    let ticking = false;
-    function applyScrollState(){
-      headerEl.classList.toggle('is-scrolled', window.scrollY > 4);
-      ticking = false;
-    }
-    window.addEventListener('scroll', ()=>{
-      if(ticking) return;
-      ticking = true;
-      requestAnimationFrame(applyScrollState);
-    }, { passive:true });
-    applyScrollState();
-  })();
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

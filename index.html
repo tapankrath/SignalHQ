@@ -87,9 +87,9 @@
     background:var(--surface);
     border-bottom:1px solid var(--border);
     display:flex; flex-direction:column; gap:10px;
-    padding-top:10px; padding-bottom:10px;
+    padding-top:10px; padding-bottom:6px;
   }
-  header{ display:flex; flex-direction:column; gap:8px; }
+  header{ display:flex; flex-direction:column; gap:16px; }
   .header-top{
     max-width:1080px; margin:0 auto; width:100%;
     padding:0 18px;
@@ -272,12 +272,17 @@
   .export-btn:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
 
   /* ---------- LAYOUT ---------- */
-  .layout{ max-width:1080px; margin:0 auto; padding:18px 18px 100px; }
+  /* Top padding kept small on purpose — the sticky header's own bottom
+     padding already creates a gap above this, so stacking a full 18px on
+     top of that made the gap to the mode tabs look larger than the gaps
+     used everywhere else on the page. Left/right/bottom unchanged (bottom
+     stays tall to clear the fixed apply-bar on mobile). */
+  .layout{ max-width:1080px; margin:0 auto; padding:10px 18px 100px; }
 
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:18px;
+    border-radius:var(--radius); padding:12px;
     margin-bottom:16px;
     box-shadow:var(--shadow-sm);
   }
@@ -590,9 +595,9 @@
        purpose so the SPY/QQQ pills, "EOD data" pill, mode tabs, cash inputs
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
-    .layout{ padding:14px 14px 155px; }
-    .sticky-top{ gap:8px; padding-top:10px; padding-bottom:8px; }
-    header{ gap:8px; }
+    .layout{ padding:8px 14px 155px; }
+    .sticky-top{ gap:8px; padding-top:10px; padding-bottom:6px; }
+    header{ gap:12px; }
     .header-top{ padding:0 14px; gap:8px; }
     .header-tools{ padding:0 14px; }
     .header-top-right{ gap:8px; }

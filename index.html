@@ -131,6 +131,7 @@
   }
   .brand-mark svg{ display:block; width:100%; height:100%; border-radius:11px; }
   .brand-name{ font-weight:800; font-size:25px; letter-spacing:-0.025em; color:var(--text); }
+  .brand-hq{ color:var(--red); font-weight:800; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -338,6 +339,18 @@
     transition:border-color .12s, background .12s;
   }
   .check-row input[type="checkbox"]:checked{ background:var(--amber); border-color:var(--amber); }
+  /* Bullish/bearish checkboxes pick up the same green/red their strat-dot
+     already shows beside the label, instead of a flat green for every
+     checked box regardless of direction — Buy signal / P&C "bull" side /
+     Trend Up included, since they're directionally green too. */
+  .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
+  .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
+  .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
+  .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
+  .check-row input[type="checkbox"][data-quality="sell"]:checked,
+  #trendDownFilter:checked{
+    background:var(--red); border-color:var(--red);
+  }
   .check-row input[type="checkbox"]:checked::after{
     content:""; position:absolute; left:4.5px; top:1.5px;
     width:4px; height:8px; border:solid #fff; border-width:0 2px 2px 0;
@@ -702,7 +715,7 @@
         </svg>
       </div>
       <div>
-        <div class="brand-name">SignalHQ</div>
+        <div class="brand-name">Signal<span class="brand-hq">HQ</span></div>
       </div>
     </div>
 

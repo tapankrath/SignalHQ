@@ -967,64 +967,6 @@
     return `${datePart}, ${timePart}`;
   }
 
-  // Mirrors .github/workflows/update_data.yml's cron schedule exactly (hourly
-  // at :30 from 9:30 AM-3:30 PM ET, plus a 6:15 PM ET post-close run,
-  // Mon-Fri) so the "Next ..." label always matches what that workflow will
-  // actually do next — update one if the other changes. Same EDT/EST
-  // approximation the workflow itself accepts (UTC month 3-10 = EDT, else
-  // EST; can be off by up to an hour in the ~1-week window around the actual
-  // DST changeover) rather than pulling in a timezone library for this.
-  const US_RUN_TIMES_ET = [[9,30],[10,30],[11,30],[12,30],[13,30],[14,30],[15,30],[18,15]];
-  function etOffsetHours(d){
-    const m = d.getUTCMonth() + 1;
-    return (m >= 3 && m <= 10) ? 4 : 5;
-  }
-  function computeNextUsUpdate(now){
-    now = now || new Date();
-    const roughOffset = etOffsetHours(now);
-    const etNow = new Date(now.getTime() - roughOffset * 3600000);
-    for(let dayOffset = 0; dayOffset <= 7; dayOffset++){
-      const candidate = new Date(Date.UTC(etNow.getUTCFullYear(), etNow.getUTCMonth(), etNow.getUTCDate() + dayOffset));
-      const weekday = candidate.getUTCDay(); // ET-calendar weekday, 0=Sun..6=Sat
-      if(weekday === 0 || weekday === 6) continue;
-      const offset = etOffsetHours(candidate);
-      for(const [h, m] of US_RUN_TIMES_ET){
-        const runMs = Date.UTC(candidate.getUTCFullYear(), candidate.getUTCMonth(), candidate.getUTCDate(), h + offset, m);
-        if(runMs > now.getTime()) return new Date(runMs);
-      }
-    }
-    return null;
-  }
-  function formatNextUpdateLabel(now){
-    const next = computeNextUsUpdate(now);
-    if(!next) return null;
-    return next.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
-  }
-
-  // Mirrors .github/workflows/update-data-india.yml's cron schedule exactly
-  // (once/day at 4:00 PM IST, Mon-Fri) so India's "Next ..." label matches
-  // what that workflow will actually do next — update one if the other
-  // changes. Unlike the US, India doesn't observe daylight saving, so IST is
-  // a fixed UTC+5:30 offset year-round — no EDT/EST-style split needed, just
-  // one fixed UTC target time.
-  const INDIA_RUN_TIME_UTC = [10, 30]; // 4:00 PM IST = 10:30 UTC, fixed year-round
-  function computeNextIndiaUpdate(now){
-    now = now || new Date();
-    for(let dayOffset = 0; dayOffset <= 7; dayOffset++){
-      const candidate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + dayOffset));
-      const weekday = candidate.getUTCDay(); // 0=Sun..6=Sat
-      if(weekday === 0 || weekday === 6) continue;
-      const runMs = Date.UTC(candidate.getUTCFullYear(), candidate.getUTCMonth(), candidate.getUTCDate(), INDIA_RUN_TIME_UTC[0], INDIA_RUN_TIME_UTC[1]);
-      if(runMs > now.getTime()) return new Date(runMs);
-    }
-    return null;
-  }
-  function formatNextIndiaUpdateLabel(now){
-    const next = computeNextIndiaUpdate(now);
-    if(!next) return null;
-    return next.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
-  }
-
   async function loadTrades(){
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
@@ -1039,10 +981,7 @@
 
       const dateLabel = formatDataTimestamp(json.generated_at);
       if(dateLabel){
-        // This branch is always the US data.json regardless of which tab is
-        // showing, so the known US cron schedule applies — safe to append.
-        const nextLabel = formatNextUpdateLabel();
-        statusText.textContent = nextLabel ? `Updated ${dateLabel} · Next ${nextLabel}` : `Updated ${dateLabel}`;
+        statusText.textContent = `Updated ${dateLabel}`;
         statusDot.style.background = 'var(--green)';
       } else {
         statusText.textContent = 'Seed data — not live yet';
@@ -1382,10 +1321,7 @@
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
     if(dateLabel){
-      // India now has its own known cron schedule too (once/day, 4PM IST —
-      // see computeNextIndiaUpdate above), so both tabs can show "Next ...".
-      const nextLabel = market === 'IN' ? formatNextIndiaUpdateLabel() : formatNextUpdateLabel();
-      statusText.textContent = nextLabel ? `Updated ${dateLabel} · Next ${nextLabel}` : `Updated ${dateLabel}`;
+      statusText.textContent = `Updated ${dateLabel}`;
       statusDot.style.background = 'var(--green)';
     } else {
       statusText.textContent = market === 'IN' ? 'India data not available yet' : 'Seed data — not live yet';

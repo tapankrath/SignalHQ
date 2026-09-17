@@ -1198,7 +1198,15 @@
     // and-pick-the-best-return logic (a "min 15 days" filter would silently
     // hide a genuinely-best 8-day pick the backend deliberately chose).
     //
-    // Long Call/Long Put have no "ap" at all (t.ap is null — see backend
+    // Also require >20% raw (non-annualized) trade profit — t.roc, the
+    // "Trade Profit" column — alongside the >100% annualized figure. ap is
+    // just roc annualized (ap = roc * 365/dte, see fetch_data.py), so a
+    // short-DTE trade can clear the annualized bar on a tiny raw return
+    // (a 2% return at 6 DTE annualizes to 100%+) — the roc floor catches
+    // those and makes sure what's surfaced is a genuinely meaningful return
+    // per-trade, not just an annualization artifact.
+    //
+    // Long Call/Long Put have no "ap"/"roc" at all (both null — see backend
     // notes on breakevenMovePct) and Calendar Spread has neither an ap nor a
     // breakeven, so `t.ap > 100` would silently drop every single one of
     // those instead of actually filtering on quality. They get a different
@@ -1207,11 +1215,11 @@
     // why it doesn't publish a max-profit/breakeven for calendars at all),
     // Long Call/Long Put need at least a rough 25% probability of profit.
     pool = pool.filter(t=> {
-      if(t.ap != null) return t.ap > 100;
+      if(t.ap != null) return t.ap > 100 && t.roc != null && t.roc > 20;
       if(t.strat === 'Calendar Spread') return true;
       return t.pot != null && t.pot >= 25;
     });
-    funnel.push({ label:'After Min Profit (>100%)', count: pool.length });
+    funnel.push({ label:'After Min Profit (>100% ann. / >20% trade)', count: pool.length });
 
     lastFunnel = funnel;
     return pool;

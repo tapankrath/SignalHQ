@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T21:36:17.565262+00:00",
+  "generated_at": "2026-09-17T21:36:22.902539+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -1242,28 +1242,9 @@
       "pcVol": 0.48,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.02,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Palantir Gains as Europe Builds a Sovereign AI Counterweight",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-gains-europe-builds-sovereign-191050465.html",
-          "sentiment": 0.34
-        },
-        {
-          "title": "Palantir CEO Karp Says the Quiet Part Out Loud in the AI Risk Debate",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/palantir-karp-ai-government-risks-693bd6ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.27
-        }
-      ],
+      "newsHeadlines": [],
       "volRegime": "Cheap",
       "ivRvRatio": 0.72,
       "realizedVol": 51.5
@@ -3186,9 +3167,15 @@
       "dividendYield": null,
       "marketCap": 44056739840,
       "score": 2.5,
-      "newsSentiment": -0.08,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.2,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Stock Market Today, Sept. 17: CoreWeave Falls on Convertible Debt and Share Sale Announcement",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/17/stock-market-today-sept-17-coreweave-falls-on-convertible-debt-and-share-sale-announcement/",
+          "sentiment": -0.08
+        },
         {
           "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
@@ -3200,12 +3187,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/bernstein-flags-coreweave-most-exposed-182940468.html",
           "sentiment": -0.53
-        },
-        {
-          "title": "CoreWeave Shares Sink on $3 Billion Convertible Notes",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/coreweave-shares-sink-3-billion-181846879.html",
-          "sentiment": 0.3
         }
       ]
     },

@@ -352,6 +352,21 @@
     color:var(--text); font-size:16px; padding:9px 10px; border-radius:7px;
   }
 
+  .num-row{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:9px 4px 4px; margin-top:2px; border-top:1px solid var(--border);
+  }
+  .num-row label{ font-size:13px; font-weight:600; color:var(--text); }
+  .num-row input[type="number"]{
+    width:76px; background:var(--surface); border:1px solid var(--border-strong);
+    color:var(--text); font-family:var(--mono); font-size:14px; font-weight:700;
+    padding:7px 8px; border-radius:7px; text-align:center;
+    transition:border-color .12s, box-shadow .12s;
+  }
+  .num-row input[type="number"]:focus{
+    outline:none; border-color:var(--amber); box-shadow:0 0 0 3px var(--amber-soft);
+  }
+
   /* apply/reset/copy bar */
   .apply-bar{
     margin-top:14px; padding-top:14px; border-top:1px solid var(--border);
@@ -770,9 +785,9 @@
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread"> <span class="strat-dot bull"></span>Bull Put Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread"> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
@@ -795,7 +810,12 @@
         <label class="check-row"><input type="checkbox" data-quality="buy" checked> Buy signal</label>
         <label class="check-row"><input type="checkbox" data-quality="sell"> Sell signal</label>
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
+        <div class="num-row">
+          <label for="minTradeProfitInput">Min trade profit %</label>
+          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="10">
+        </div>
       </div>
+      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put use probability of profit instead; Calendar Spread isn't filtered on this.</div>
     </div>
 
     <div class="filter-section" id="riskSection" style="display:none;">
@@ -1191,35 +1211,30 @@
       funnel.push({ label:'After Risk', count: pool.length });
     }
 
-    // Fixed quality floor, not user-toggleable: below 100% annualized isn't
-    // worth surfacing as a "ready-made" pick. Removed the old Min 20%/Min $10/
-    // RoC checkboxes and the Expiration/DTE-min filter entirely — the DTE-min
-    // filter in particular actively fought the backend's search-7-to-45-days-
-    // and-pick-the-best-return logic (a "min 15 days" filter would silently
-    // hide a genuinely-best 8-day pick the backend deliberately chose).
-    //
-    // Also require >20% raw (non-annualized) trade profit — t.roc, the
-    // "Trade Profit" column — alongside the >100% annualized figure. ap is
-    // just roc annualized (ap = roc * 365/dte, see fetch_data.py), so a
-    // short-DTE trade can clear the annualized bar on a tiny raw return
-    // (a 2% return at 6 DTE annualizes to 100%+) — the roc floor catches
-    // those and makes sure what's surfaced is a genuinely meaningful return
-    // per-trade, not just an annualization artifact.
+    // User-adjustable floor on raw (non-annualized) trade profit — t.roc, the
+    // "Trade Profit" column. Replaces the old fixed >100% annualized / >20%
+    // trade-profit pair: annualizing (ap = roc * 365/dte, see fetch_data.py)
+    // made short-DTE spreads clear the bar on a tiny raw return (a 2% return
+    // at 6 DTE annualizes to 100%+), so filtering on roc directly is both
+    // simpler and closer to what the number actually means. Defaults to 10%.
     //
     // Long Call/Long Put have no "ap"/"roc" at all (both null — see backend
     // notes on breakevenMovePct) and Calendar Spread has neither an ap nor a
-    // breakeven, so `t.ap > 100` would silently drop every single one of
-    // those instead of actually filtering on quality. They get a different
-    // floor instead: Calendar Spread passes through as-is (its real quality
-    // control already happened upstream — see the backend's honesty note on
-    // why it doesn't publish a max-profit/breakeven for calendars at all),
-    // Long Call/Long Put need at least a rough 25% probability of profit.
+    // breakeven, so a roc-based check would silently drop every single one
+    // of those instead of actually filtering on quality. They get a
+    // different floor instead: Calendar Spread passes through as-is (its
+    // real quality control already happened upstream — see the backend's
+    // honesty note on why it doesn't publish a max-profit/breakeven for
+    // calendars at all), Long Call/Long Put need at least a rough 25%
+    // probability of profit.
+    const minTradeProfitInput = document.getElementById('minTradeProfitInput');
+    const minTradeProfit = Math.max(0, Number(minTradeProfitInput.value) || 0);
     pool = pool.filter(t=> {
-      if(t.ap != null) return t.ap > 100 && t.roc != null && t.roc > 20;
+      if(t.roc != null) return t.roc > minTradeProfit;
       if(t.strat === 'Calendar Spread') return true;
       return t.pot != null && t.pot >= 25;
     });
-    funnel.push({ label:'After Min Profit (>100% ann. / >20% trade)', count: pool.length });
+    funnel.push({ label:`After Min Trade Profit (>${minTradeProfit}%)`, count: pool.length });
 
     lastFunnel = funnel;
     return pool;
@@ -1262,14 +1277,16 @@
   });
 
   function updateActiveCount(){
-    const n = document.querySelectorAll(`.filter-card input[type="checkbox"]:checked:is(${FILTER_CHECKBOX_SELECTOR})`).length;
+    let n = document.querySelectorAll(`.filter-card input[type="checkbox"]:checked:is(${FILTER_CHECKBOX_SELECTOR})`).length;
+    const minTradeProfitInput = document.getElementById('minTradeProfitInput');
+    if(Number(minTradeProfitInput.value) !== DEFAULT_MIN_TRADE_PROFIT) n += 1;
     activeCountLabel.textContent = `${n} filter${n===1?'':'s'} active`;
     updateSectionBadges();
   }
 
   // badges update live as you check boxes, before you even hit Apply
   document.querySelector('.filter-card').addEventListener('change', (e)=>{
-    if(e.target.matches('input[type="checkbox"]')) updateSectionBadges();
+    if(e.target.matches('input[type="checkbox"]') || e.target.id === 'minTradeProfitInput') updateSectionBadges();
   });
 
   // --- Stocks & ETFs mode ---
@@ -1698,19 +1715,21 @@
   }
 
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
+  // Outlook & Strategy starts fully unselected (no strategy filter = all
+  // strategies shown) so it doesn't stack with the Min Trade Profit floor
+  // below and over-narrow results.
   const DEFAULT_CHECKED = [
-    '[data-strat="Covered Call"]',
-    '[data-strat="Bull Put Spread"]',
-    '[data-strat="Bear Call Spread"]',
     '[data-quality="buy"]',
     '[data-risk="excludeEarnings"]',
     '[data-risk="lowVol"]',
     '[data-risk="highVol"]',
   ];
+  const DEFAULT_MIN_TRADE_PROFIT = 10;
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);
     DEFAULT_CHECKED.forEach(sel => { document.querySelector(sel).checked = true; });
+    document.getElementById('minTradeProfitInput').value = DEFAULT_MIN_TRADE_PROFIT;
     applyFilters();
   }
 

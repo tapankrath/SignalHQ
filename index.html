@@ -153,9 +153,8 @@
     color:var(--red); font-weight:800; font-size:12px; margin-left:1px; cursor:help;
   }
 
-  .status-row{
-    max-width:1080px; margin:0 auto; padding:6px 18px 14px;
-    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  .header-top-right{
+    display:flex; align-items:center; gap:10px; min-width:0;
   }
   .refresh-btn{
     display:flex; align-items:center; justify-content:center;
@@ -562,8 +561,8 @@
     .layout{ padding:14px 14px 155px; }
     .header-top{ padding:10px 14px; gap:8px; }
     .header-tools{ padding:0 14px 12px; }
-    .status-row{ padding:6px 14px 12px; gap:6px; }
-    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:230px; }
+    .header-top-right{ gap:6px; }
+    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:130px; }
     /* "Equity: X%" used to sit as its own flex item and would wrap onto an
        orphan line below Cash/Options% on narrow phones — now that Equity %
        and Cash left are their own fields there's too much to force onto
@@ -649,9 +648,15 @@
       </div>
     </div>
 
-    <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data" title="Refresh data">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-    </button>
+    <div class="header-top-right">
+      <div class="data-status">
+        <span class="pulse-dot" id="dataStatusDot"></span>
+        <span id="dataStatusText">Loading data…</span>
+      </div>
+      <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data" title="Refresh data">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </button>
+    </div>
   </div>
 
   <div class="header-tools">
@@ -667,13 +672,6 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Export
       </button>
-    </div>
-  </div>
-
-  <div class="status-row">
-    <div class="data-status">
-      <span class="pulse-dot" id="dataStatusDot"></span>
-      <span id="dataStatusText">Loading data…</span>
     </div>
   </div>
 

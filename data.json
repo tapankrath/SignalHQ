@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T22:37:18.042495+00:00",
+  "generated_at": "2026-09-17T23:36:22.402262+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -149,9 +149,15 @@
       "pcVol": 0.51,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "China's Homegrown AI Chip Push Just Got Faster. Is This a Real Threat to Nvidia?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/chinas-homegrown-ai-chip-push-just-got-faster-is-this-a-real-threat-to-nvidia/",
+          "sentiment": -0.53
+        },
         {
           "title": "Trump-Xi Dinner Next Week Brings AI Titans To The Table \u2014 OpenAI, NVDA, and QCOM CEOs To Attend, Says Report",
           "publisher": "Stocktwits",
@@ -279,7 +285,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures Fall After S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
@@ -343,26 +349,26 @@
       "pcVol": 0.6,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.23,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Was Micron Technology Stock Up Today?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/why-was-micron-technology-stock-up-today/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Prediction: A $5,000 Investment Split Between Micron and Sandisk Will Triple Before 2028",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/prediction-a-5000-investment-split-between-micron/",
+          "sentiment": 0.0
+        },
         {
           "title": "Micron, Qualcomm, Nova, Lattice Semiconductor, and Workday Shares Are Soaring, What You Need To Know",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/micron-qualcomm-nova-lattice-semiconductor-211417375.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Why Micron Stock Is Jumping as Intel CEO Warns on Memory Chips",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-stock-price-intel-memory-chips-b0eca0f2?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Micron Jumps 5.5% as Labor Claims AI's Margin Windfall",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-jumps-5-5-labor-183703220.html",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Cheap",
@@ -593,7 +599,7 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -603,16 +609,16 @@
           "sentiment": -0.27
         },
         {
+          "title": "Amazon Can Absorb the 21 Air Suspension. Replacing Its Fleet Is a Different Story.",
+          "publisher": "Sourcing Journal",
+          "link": "https://wwd.com/sourcing-journal/logistics/amazon-21-air-cargo-suspension-miami-runway-crash-freight-network-capacity-1239243454/",
+          "sentiment": 0.18
+        },
+        {
           "title": "AI Power Stocks Rally After Generac's Deal For Amazon Data Centers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/generac-stock-recharged-amazon-deal-unlocks-data-center-opportunity/?src=A00220&yptr=yahoo",
           "sentiment": 0.64
-        },
-        {
-          "title": "Wells Fargo sees 50% upside for Amazon-linked stock",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/wells-fargo-sees-50-upside-for-amazon-linked-stock",
-          "sentiment": 0.25
         }
       ],
       "volRegime": "Fair",
@@ -853,6 +859,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Prediction: A $5,000 Investment Split Between Micron and Sandisk Will Triple Before 2028",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/prediction-a-5000-investment-split-between-micron/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Sandisk Is Up More Than 1,700% in a Year and Still 33% Off Its Peak. History Says This is What Happens Next.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/sandisk-is-up-more-than-1700-in-a-year-and-still-3/",
@@ -863,12 +875,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/memory-shortage-not-over-more-180200318.html",
           "sentiment": -0.25
-        },
-        {
-          "title": "Sandisk Stock Has Dropped 35% Since June. Here\u2019s Where the Stock Could Go in 2026",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/sandisk-stock-has-dropped-35-since-june-heres-where-the-stock-could-go-in-2026?ref=yahoofinance",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -1045,13 +1051,19 @@
       "pcVol": 1.06,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.08,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures Fall After S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "SPCX Stock Inches Higher After-Hours: NASA Selects SpaceX To Provide Launch Services For StarBurst Mission",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasa-selects-space-x-for-star-burst-mission/cZtsPMARBdr",
           "sentiment": 0.0
         },
         {
@@ -1059,12 +1071,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
-        },
-        {
-          "title": "Here's What a $500 Investment in SpaceX Stock Could Be Worth by 2030",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/heres-what-a-500-investment-in-spacex-stock-could/",
-          "sentiment": 0.23
         }
       ],
       "volRegime": "Fair",
@@ -2157,9 +2163,15 @@
       "dividendYield": 0.47,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": -0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "China's Homegrown AI Chip Push Just Got Faster. Is This a Real Threat to Nvidia?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/chinas-homegrown-ai-chip-push-just-got-faster-is-this-a-real-threat-to-nvidia/",
+          "sentiment": -0.53
+        },
         {
           "title": "Trump-Xi Dinner Next Week Brings AI Titans To The Table \u2014 OpenAI, NVDA, and QCOM CEOs To Attend, Says Report",
           "publisher": "Stocktwits",
@@ -2237,9 +2249,15 @@
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Tesla Posted Negative $1.1 Billion in Free Cash Flow Last Quarter as Elon Musk Ramps Up Spending on Robotaxis and Optimus. Here's Why the Company's $43.5 Billion Cash Cushion Still Matters.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/tesla-posted-negative-11-billion-in-free-cash-flow/",
+          "sentiment": -0.08
+        },
         {
           "title": "Tesla (TSLA) Exceeds Market Returns: Some Facts to Consider",
           "publisher": "Zacks",
@@ -2251,12 +2269,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-jumps-2-30-megawatts-191451504.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Goldman Slashes Tesla Q3 Delivery Forecast to 435,000: What Do Prediction Markets Say?",
-          "publisher": "Benzinga Prediction Markets",
-          "link": "https://www.benzinga.com/markets/prediction-markets/26/09/61852446/tesla-q3-deliveries-goldman-kalshi-480000?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
-          "sentiment": -0.2
         }
       ]
     },
@@ -2284,7 +2296,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures Fall After S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
@@ -2323,26 +2335,26 @@
       "dividendYield": 0.06,
       "marketCap": 1103981838336,
       "score": 9.4,
-      "newsSentiment": 0.23,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Was Micron Technology Stock Up Today?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/why-was-micron-technology-stock-up-today/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Prediction: A $5,000 Investment Split Between Micron and Sandisk Will Triple Before 2028",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/prediction-a-5000-investment-split-between-micron/",
+          "sentiment": 0.0
+        },
         {
           "title": "Micron, Qualcomm, Nova, Lattice Semiconductor, and Workday Shares Are Soaring, What You Need To Know",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/micron-qualcomm-nova-lattice-semiconductor-211417375.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Why Micron Stock Is Jumping as Intel CEO Warns on Memory Chips",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-stock-price-intel-memory-chips-b0eca0f2?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Micron Jumps 5.5% as Labor Claims AI's Margin Windfall",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-jumps-5-5-labor-183703220.html",
-          "sentiment": 0.49
         }
       ]
     },
@@ -2489,7 +2501,7 @@
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2499,16 +2511,16 @@
           "sentiment": -0.27
         },
         {
+          "title": "Amazon Can Absorb the 21 Air Suspension. Replacing Its Fleet Is a Different Story.",
+          "publisher": "Sourcing Journal",
+          "link": "https://wwd.com/sourcing-journal/logistics/amazon-21-air-cargo-suspension-miami-runway-crash-freight-network-capacity-1239243454/",
+          "sentiment": 0.18
+        },
+        {
           "title": "AI Power Stocks Rally After Generac's Deal For Amazon Data Centers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/generac-stock-recharged-amazon-deal-unlocks-data-center-opportunity/?src=A00220&yptr=yahoo",
           "sentiment": 0.64
-        },
-        {
-          "title": "Wells Fargo sees 50% upside for Amazon-linked stock",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/wells-fargo-sees-50-upside-for-amazon-linked-stock",
-          "sentiment": 0.25
         }
       ]
     },
@@ -2665,6 +2677,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Prediction: A $5,000 Investment Split Between Micron and Sandisk Will Triple Before 2028",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/prediction-a-5000-investment-split-between-micron/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Sandisk Is Up More Than 1,700% in a Year and Still 33% Off Its Peak. History Says This is What Happens Next.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/sandisk-is-up-more-than-1700-in-a-year-and-still-3/",
@@ -2675,12 +2693,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/memory-shortage-not-over-more-180200318.html",
           "sentiment": -0.25
-        },
-        {
-          "title": "Sandisk Stock Has Dropped 35% Since June. Here\u2019s Where the Stock Could Go in 2026",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/sandisk-stock-has-dropped-35-since-june-heres-where-the-stock-could-go-in-2026?ref=yahoofinance",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2819,15 +2831,21 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2040671371264,
+      "marketCap": 2039495917568,
       "score": 8.2,
-      "newsSentiment": 0.08,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures Fall After S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "SPCX Stock Inches Higher After-Hours: NASA Selects SpaceX To Provide Launch Services For StarBurst Mission",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasa-selects-space-x-for-star-burst-mission/cZtsPMARBdr",
           "sentiment": 0.0
         },
         {
@@ -2835,12 +2853,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
-        },
-        {
-          "title": "Here's What a $500 Investment in SpaceX Stock Could Be Worth by 2030",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/heres-what-a-500-investment-in-spacex-stock-could/",
-          "sentiment": 0.23
         }
       ]
     },
@@ -3157,7 +3169,7 @@
       "volRatio": 1.49,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 59261722624,
+      "marketCap": 55347269632,
       "score": 6.2,
       "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
@@ -3415,7 +3427,7 @@
       "volRatio": 0.92,
       "peRatio": 67.8,
       "dividendYield": 0.78,
-      "marketCap": 127313199104,
+      "marketCap": 127054471168,
       "score": 4.5,
       "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",

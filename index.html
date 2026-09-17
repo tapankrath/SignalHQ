@@ -112,19 +112,6 @@
   .mode-tab.active{ background:var(--text); color:#fff; border-color:var(--text); }
   .mode-tab:active{ opacity:0.85; }
 
-  .market-toggle{
-    display:flex; gap:6px; flex-shrink:0;
-  }
-  .market-tab{
-    min-height:26px; padding:4px 10px;
-    font-family:inherit; font-size:11px; font-weight:800;
-    background:#FBF3EA; color:#8B5E34;
-    border:1px solid #D8B78E; border-radius:6px;
-    cursor:pointer; transition:background .12s, color .12s, border-color .12s;
-  }
-  .market-tab.active{ background:var(--green); color:#fff; border-color:var(--green); }
-  .market-tab:active{ opacity:0.85; }
-
   .brand-mark{
     width:68px; height:68px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
@@ -688,10 +675,6 @@
       <span class="pulse-dot" id="dataStatusDot"></span>
       <span id="dataStatusText">Loading data…</span>
     </div>
-    <div class="market-toggle" role="tablist">
-      <button class="market-tab active" id="marketUS" role="tab" aria-selected="true" onclick="switchMarket('US')">🇺🇸 US</button>
-      <button class="market-tab" id="marketIN" role="tab" aria-selected="false" onclick="switchMarket('IN')">🇮🇳 India</button>
-    </div>
   </div>
 
 </header>
@@ -862,8 +845,7 @@
        as the Options tab's Outlook & Strategy checkboxes. Matches on
        e.trend via .includes() so "Uptrend" also catches "Strong Uptrend" and
        "Downtrend" also catches "Strong Downtrend" — Neutral only shows up
-       when neither box is checked. Same US/India equities array either way,
-       since currentEquitiesSource() already picks the right one. -->
+       when neither box is checked. -->
   <div class="sort-wrap" style="margin-bottom:14px; gap:16px;">
     Trend
     <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
@@ -912,28 +894,17 @@
   let trades = [];
   let equities = [];
   let hedge = null;
-  let indiaEquities = [];
-  let currentMarket = 'US';
   let dataGeneratedAt = null;
-  let indiaDataGeneratedAt = null;
 
   function curSym(){
-    return currentMarket === 'IN' ? '₹' : '$';
+    return '$';
   }
   function fmtPrice(value){
     if(value == null) return '—';
-    const locale = currentMarket === 'IN' ? 'en-IN' : 'en-US';
-    return curSym() + value.toLocaleString(locale, { minimumFractionDigits:2, maximumFractionDigits:2 });
+    return curSym() + value.toLocaleString('en-US', { minimumFractionDigits:2, maximumFractionDigits:2 });
   }
   function fmtMarketCap(value){
     if(value == null) return '—';
-    if(currentMarket === 'IN'){
-      // Indian market caps are conventionally expressed in crores (1 crore =
-      // 1,00,00,000 = 10 million), not billions — a raw dollar-style "$18.5B"
-      // treatment would be unfamiliar and much harder to read for INR figures
-      const crores = value / 1e7;
-      return '₹' + crores.toLocaleString('en-IN', { maximumFractionDigits:0 }) + ' Cr';
-    }
     return '$' + (value / 1e9).toFixed(1) + 'B';
   }
 
@@ -996,36 +967,15 @@
       statusDot.style.background = 'var(--red)';
     }
 
-    // Independent of data.json on purpose — data_india.json runs on its own
-    // schedule and may not exist yet on a fresh deploy. A missing/broken
-    // India file should never take down the US tabs.
-    try{
-      const inRes = await fetch('data_india.json', { cache:'no-store' });
-      if(inRes.ok){
-        const inJson = await inRes.json();
-        indiaEquities = Array.isArray(inJson.equities) ? inJson.equities : [];
-        indiaDataGeneratedAt = inJson.generated_at || null;
-      } else {
-        indiaEquities = [];
-      }
-    }catch(err){
-      console.error('Failed to load data_india.json', err);
-      indiaEquities = [];
-    }
-
     renderIndexPills();
   }
 
   // Small SPY/QQQ "current price" pills shown in the sticky header, next to
-  // Tickers/Export. Always pulled from the US `equities` array (not
-  // currentEquitiesSource()) since these are US index ETFs regardless of
-  // which market tab is active — the whole row just hides on the India tab,
-  // where a US-dollar price next to India's ₹ figures would be confusing.
+  // Tickers/Export.
   const INDEX_PILL_SYMS = ['SPY', 'QQQ'];
   function renderIndexPills(){
     const el = document.getElementById('indexPills');
     if(!el) return;
-    if(currentMarket === 'IN'){ el.innerHTML = ''; el.style.display = 'none'; return; }
     const html = INDEX_PILL_SYMS.map(sym => {
       const e = equities.find(x => x.sym === sym);
       if(!e || e.price == null) return '';
@@ -1042,7 +992,7 @@
     }).join('');
     el.innerHTML = html;
     // display:none by default (see CSS) so there's no empty divider flash
-    // before the first data.json load resolves, or while on the India tab.
+    // before the first data.json load resolves.
     el.style.display = html ? 'flex' : 'none';
   }
 
@@ -1275,58 +1225,7 @@
   const equityCardList = document.getElementById('equityCardList');
 
   function currentEquitiesSource(){
-    return currentMarket === 'IN' ? indiaEquities : equities;
-  }
-
-  function switchMarket(market){
-    currentMarket = market;
-    document.getElementById('marketUS').classList.toggle('active', market === 'US');
-    document.getElementById('marketIN').classList.toggle('active', market === 'IN');
-    document.getElementById('marketUS').setAttribute('aria-selected', market === 'US');
-    document.getElementById('marketIN').setAttribute('aria-selected', market === 'IN');
-
-    // India has no options data at all (confirmed directly — yfinance
-    // returns zero option expirations for Indian tickers, including Nifty
-    // 50 and Bank Nifty). Hide the tab rather than show an empty/broken one.
-    document.getElementById('tabOptions').style.display = market === 'IN' ? 'none' : '';
-    document.getElementById('cashLabelSym').textContent = curSym();
-    // The Options %/Equity %/Cash left split is meaningless with no options
-    // to allocate to — India is 100% equity by definition, so hide the whole
-    // split control rather than let it edit a split that doesn't apply.
-    document.querySelector('.portfolio-bar-inner label:nth-child(2)').style.display = market === 'IN' ? 'none' : '';
-    document.querySelector('.portfolio-bar-inner label:nth-child(3)').style.display = market === 'IN' ? 'none' : '';
-    document.getElementById('cashLeftPill').style.display = market === 'IN' ? 'none' : '';
-
-    // Selections can't safely carry across a market switch. equityId() is
-    // symbol-based, and while US and India symbols don't actually collide
-    // (India carries a .NS suffix), mixing a $-priced US pick and a
-    // ₹-priced India pick into one portfolio summary would silently combine
-    // two different currencies as if they were the same number. Clearing is
-    // the honest choice here, not something avoidable some cleverer way.
-    if(selectedEquityIds.size > 0){
-      selectedEquityIds.clear();
-      document.querySelectorAll('.row-checkbox[data-eid], .card-checkbox[data-eid]').forEach(cb => cb.checked = false);
-      updatePortfolioCount();
-    }
-
-    if(market === 'IN' && document.getElementById('tabOptions').classList.contains('active')){
-      switchMode('stocks');
-    } else if(document.getElementById('tabStocks').classList.contains('active')){
-      renderEquities(sortEquities(filteredEquities()));
-    }
-
-    renderIndexPills();
-
-    const dateLabel = formatDataTimestamp(market === 'IN' ? indiaDataGeneratedAt : dataGeneratedAt);
-    const statusText = document.getElementById('dataStatusText');
-    const statusDot = document.getElementById('dataStatusDot');
-    if(dateLabel){
-      statusText.textContent = `Updated ${dateLabel}`;
-      statusDot.style.background = 'var(--green)';
-    } else {
-      statusText.textContent = market === 'IN' ? 'India data not available yet' : 'Seed data — not live yet';
-      statusDot.style.background = 'var(--text-faint)';
-    }
+    return equities;
   }
 
   function switchMode(mode){
@@ -1541,10 +1440,6 @@
     let equityPct = parseFloat(document.getElementById('portfolioEquitySplit').value);
     if(isNaN(equityPct)) equityPct = 0;
     equityPct = Math.min(100, Math.max(0, equityPct));
-    // India has no options at all — force 100% equity regardless of the
-    // split inputs, so capital doesn't silently show as "unallocated" against
-    // a category that has nothing selectable in it.
-    if(currentMarket === 'IN'){ optionsPct = 0; equityPct = 100; }
     // Whatever's left over after both explicit allocations — never negative
     // here (over-allocation is shown as a warning below, not silently
     // absorbed by clamping the capital math).
@@ -1639,10 +1534,8 @@
 
     // A single suggested tail-risk hedge (see build_hedge_candidate() in
     // fetch_data.py) — informational only, deliberately NOT auto-sized or
-    // subtracted from any of the capital figures above. India has no
-    // options at all, and the hedge is a USD-priced QQQ put, so it's hidden
-    // there rather than shown next to ₹ figures it isn't denominated in.
-    const hedgeSection = (hedge && currentMarket !== 'IN') ? (()=>{
+    // subtracted from any of the capital figures above.
+    const hedgeSection = hedge ? (()=>{
       const hedgeCostPct = capital > 0 ? (hedge.costPerContract / capital * 100) : 0;
       return `
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Suggested Hedge</span></div>
@@ -2025,18 +1918,11 @@
   let workingEtfs = [];
 
   function tickersFilePath(){
-    return currentMarket === 'IN' ? 'tickers_india.json' : 'tickers.json';
+    return 'tickers.json';
   }
 
   function isValidTickerSymbol(sym){
-    if(currentMarket === 'IN'){
-      // India tickers in this app always carry an NSE suffix, and base
-      // symbols run longer than typical US ones (BHARTIARTL, ASIANPAINT,
-      // SUNPHARMA) — looser length cap, and the .NS suffix is mandatory
-      // rather than the single-letter optional suffix US tickers use.
-      return /^[A-Z]{1,12}\.NS$/.test(sym);
-    }
-    // US: up to 6 letters, optional single-letter share-class suffix (e.g. BRK.A)
+    // Up to 6 letters, optional single-letter share-class suffix (e.g. BRK.A)
     return /^[A-Z]{1,6}(\.[A-Z])?$/.test(sym);
   }
 
@@ -2096,8 +1982,7 @@
 
     if(!sym) return;
     if(!isValidTickerSymbol(sym)){
-      const hint = currentMarket === 'IN' ? '(India tickers need an .NS suffix, e.g. TCS.NS)' : '';
-      showToast(`"${sym}" doesn't look like a valid ticker ${hint}`.trim());
+      showToast(`"${sym}" doesn't look like a valid ticker`);
       return;
     }
     if(workingTickers.includes(sym)){
@@ -2121,10 +2006,9 @@
   }
 
   async function openTickersModal(){
-    const marketLabel = currentMarket === 'IN' ? 'India' : 'US';
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage ${marketLabel} Tickers</div>
+        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-strat">Loading current watchlist…</div>
@@ -2136,15 +2020,15 @@
 
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage ${marketLabel} Tickers</div>
+        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">This is the watchlist the nightly ${marketLabel} data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to paste into GitHub.</div>
+      <div class="modal-strat">This is the watchlist the nightly data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to paste into GitHub.</div>
 
       <div class="ticker-chips" id="tickerChips"></div>
 
       <div class="ticker-add-row">
-        <input type="text" id="tickerAddInput" placeholder="${currentMarket === 'IN' ? 'e.g. TCS.NS' : 'e.g. GOOGL'}" maxlength="${currentMarket === 'IN' ? 15 : 8}" autocapitalize="characters">
+        <input type="text" id="tickerAddInput" placeholder="e.g. GOOGL" maxlength="8" autocapitalize="characters">
         <button id="tickerAddBtn" aria-label="Add ticker">+</button>
       </div>
       <label class="ticker-etf-check">

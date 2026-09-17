@@ -359,15 +359,27 @@
   .active-count{ font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-faint); white-space:nowrap; }
 
   /* ---------- RESULTS ---------- */
+  /* Wrapped in the same card treatment (background/border/radius/padding)
+     as .filter-card and .card-list above and below it — before this, the
+     results count/sort/funnel text sat directly on the page background
+     with no inset of its own, so it read as edge-to-edge and "wider" than
+     the visibly-padded boxed sections around it even though their outer
+     DOM edges lined up exactly. This gives it the same visual gutter. */
+  .results-panel{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:14px 18px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow-sm);
+  }
   .results-bar{
     display:flex; align-items:center; justify-content:space-between;
-    margin-bottom:12px; gap:12px; flex-wrap:wrap;
+    gap:12px; flex-wrap:wrap;
   }
   .results-count{ font-size:13.5px; font-weight:600; color:var(--text-dim); }
   .results-count strong{ color:var(--text); font-family:var(--mono); }
   .funnel-note{
     font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-dim);
-    margin-bottom:12px; margin-top:-4px; line-height:1.6;
+    margin-top:10px; line-height:1.6;
   }
   .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:var(--text-dim); }
   .sort-wrap select{
@@ -786,19 +798,21 @@
     </div>
   </div>
 
-  <div class="results-bar">
-    <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
-    <div class="sort-wrap">
-      Sort by
-      <select id="sortSelect">
-        <option value="score">Composite rating</option>
-        <option value="ap">Annualized profit</option>
-        <option value="pot">Probability of touch</option>
-        <option value="dte">Days to expiration</option>
-      </select>
+  <div class="results-panel">
+    <div class="results-bar">
+      <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
+      <div class="sort-wrap">
+        Sort by
+        <select id="sortSelect">
+          <option value="score">Composite rating</option>
+          <option value="ap">Annualized profit</option>
+          <option value="pot">Probability of touch</option>
+          <option value="dte">Days to expiration</option>
+        </select>
+      </div>
     </div>
+    <div class="funnel-note" id="funnelNote"></div>
   </div>
-  <div class="funnel-note" id="funnelNote"></div>
 
   <div class="table-wrap">
     <table>
@@ -829,33 +843,35 @@
 
 <div class="layout" id="stocksView" style="display:none;">
 
-  <div class="results-bar" style="margin-top:14px;">
-    <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
-    <div class="sort-wrap">
-      Sort by
-      <select id="equitySortSelect">
-        <option value="score">Composite score</option>
-        <option value="chg1y">1-year change</option>
+  <div class="results-panel" style="margin-top:14px;">
+    <div class="results-bar">
+      <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
+      <div class="sort-wrap">
+        Sort by
+        <select id="equitySortSelect">
+          <option value="score">Composite score</option>
+          <option value="chg1y">1-year change</option>
+        </select>
+      </div>
+    </div>
+    <div class="sort-wrap" style="margin-top:12px;">
+      Show
+      <select id="equityTypeSelect" style="flex:1;">
+        <option value="all">All</option>
+        <option value="stocks">Stocks only</option>
+        <option value="etfs">ETFs only</option>
       </select>
     </div>
-  </div>
-  <div class="sort-wrap" style="margin-bottom:10px;">
-    Show
-    <select id="equityTypeSelect" style="flex:1;">
-      <option value="all">All</option>
-      <option value="stocks">Stocks only</option>
-      <option value="etfs">ETFs only</option>
-    </select>
-  </div>
-  <!-- Trend filter — same "check any, neither checked = no filter" pattern
-       as the Options tab's Outlook & Strategy checkboxes. Matches on
-       e.trend via .includes() so "Uptrend" also catches "Strong Uptrend" and
-       "Downtrend" also catches "Strong Downtrend" — Neutral only shows up
-       when neither box is checked. -->
-  <div class="sort-wrap" style="margin-bottom:14px; gap:16px;">
-    Trend
-    <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
-    <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
+    <!-- Trend filter — same "check any, neither checked = no filter" pattern
+         as the Options tab's Outlook & Strategy checkboxes. Matches on
+         e.trend via .includes() so "Uptrend" also catches "Strong Uptrend" and
+         "Downtrend" also catches "Strong Downtrend" — Neutral only shows up
+         when neither box is checked. -->
+    <div class="sort-wrap" style="margin-top:12px; gap:16px;">
+      Trend
+      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
+      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
+    </div>
   </div>
 
   <div class="table-wrap">

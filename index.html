@@ -82,7 +82,7 @@
   }
   .header-top{
     max-width:1080px; margin:0 auto;
-    padding:14px 18px;
+    padding:14px 18px 22px;
     display:flex; align-items:center; justify-content:space-between; gap:14px;
   }
   .brand{ display:flex; align-items:center; gap:14px; flex-shrink:0; min-width:0; }
@@ -131,7 +131,7 @@
     flex-shrink:1; min-width:0;
   }
   .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
-  #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; color:var(--text); }
 
   .index-pills{
     display:none; align-items:center; gap:8px; flex-shrink:0;
@@ -158,9 +158,9 @@
   }
   .refresh-btn{
     display:flex; align-items:center; justify-content:center;
-    color:var(--text-dim);
+    color:var(--text);
     background:var(--surface-2); border:1px solid var(--border); border-radius:50%;
-    width:28px; height:28px; flex-shrink:0; cursor:pointer; padding:0;
+    width:32px; height:32px; flex-shrink:0; cursor:pointer; padding:0;
   }
   .refresh-btn:active{ opacity:0.7; }
   .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
@@ -248,12 +248,6 @@
   /* ---------- LAYOUT ---------- */
   .layout{ max-width:1080px; margin:0 auto; padding:18px 18px 100px; }
 
-  .section-label{
-    font-size:11.5px; font-weight:800; letter-spacing:0.07em; text-transform:uppercase;
-    color:var(--text-faint);
-    margin-bottom:10px;
-  }
-
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
@@ -274,7 +268,7 @@
   .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
   .filter-header-btn{
     border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    padding:10px 8px; font-weight:600; font-size:11.5px; font-family:inherit; color:var(--text);
+    padding:6px 8px; font-weight:600; font-size:11.5px; font-family:inherit; color:var(--text);
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
     cursor:pointer; user-select:none; text-align:center; line-height:1.25;
     transition:border-color .12s, background .12s;
@@ -559,10 +553,10 @@
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
     .layout{ padding:14px 14px 155px; }
-    .header-top{ padding:10px 14px; gap:8px; }
+    .header-top{ padding:10px 14px 18px; gap:8px; }
     .header-tools{ padding:0 14px 12px; }
     .header-top-right{ gap:6px; }
-    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:130px; }
+    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:155px; }
     /* "Equity: X%" used to sit as its own flex item and would wrap onto an
        orphan line below Cash/Options% on narrow phones — now that Equity %
        and Cash left are their own fields there's too much to force onto
@@ -588,7 +582,7 @@
     .brand{ gap:8px; }
     .brand-mark{ width:38px; height:38px; }
     .brand-mark svg{ border-radius:9px; }
-    .brand-name{ font-size:19px; }
+    .brand-name{ font-size:23px; }
     .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
     /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
        Export don't all fit on one row even at their already-compact mobile
@@ -609,7 +603,7 @@
     .filter-grid{ grid-template-columns:1fr; }
 
     .filter-header-btn{
-      padding:8px 6px; font-size:10.5px; gap:1px;
+      padding:5px 6px; font-size:10.5px; gap:1px;
     }
     .summary-count{ font-size:10px; padding:1px 6px; }
     .filter-header-btn .filter-chevron{ font-size:13px; }
@@ -654,7 +648,7 @@
         <span id="dataStatusText">Loading data…</span>
       </div>
       <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data" title="Refresh data">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       </button>
     </div>
   </div>
@@ -704,7 +698,6 @@
 
 <div class="layout" id="optionsView">
 
-  <div class="section-label">Filters</div>
   <div class="filter-card">
 
     <div class="filter-headers-row">

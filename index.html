@@ -850,13 +850,24 @@
       </select>
     </div>
   </div>
-  <div class="sort-wrap" style="margin-bottom:14px;">
+  <div class="sort-wrap" style="margin-bottom:10px;">
     Show
     <select id="equityTypeSelect" style="flex:1;">
       <option value="all">All</option>
       <option value="stocks">Stocks only</option>
       <option value="etfs">ETFs only</option>
     </select>
+  </div>
+  <!-- Trend filter — same "check any, neither checked = no filter" pattern
+       as the Options tab's Outlook & Strategy checkboxes. Matches on
+       e.trend via .includes() so "Uptrend" also catches "Strong Uptrend" and
+       "Downtrend" also catches "Strong Downtrend" — Neutral only shows up
+       when neither box is checked. Same US/India equities array either way,
+       since currentEquitiesSource() already picks the right one. -->
+  <div class="sort-wrap" style="margin-bottom:14px; gap:16px;">
+    Trend
+    <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
+    <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
   </div>
 
   <div class="table-wrap">
@@ -1362,7 +1373,7 @@
     if(market === 'IN' && document.getElementById('tabOptions').classList.contains('active')){
       switchMode('stocks');
     } else if(document.getElementById('tabStocks').classList.contains('active')){
-      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
+      renderEquities(sortEquities(filteredEquities()));
     }
 
     renderIndexPills();
@@ -1394,7 +1405,7 @@
       // always re-render (not just the first time) — cheap for ~20 rows, and
       // guarantees correctness if the user switches tabs before loadTrades()
       // has actually finished fetching data.json
-      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
+      renderEquities(sortEquities(filteredEquities()));
     }
   }
 
@@ -1403,6 +1414,27 @@
     if(type === 'stocks') return list.filter(e => !e.isETF);
     if(type === 'etfs') return list.filter(e => e.isETF);
     return list;
+  }
+
+  // e.trend is one of "Strong Uptrend"/"Uptrend"/"Neutral"/"Downtrend"/
+  // "Strong Downtrend" (see fetch_data.py's classify_trend()) — .includes()
+  // buckets the "Strong ..." variants in with their plain counterpart, same
+  // as trendPill() already does for the pill's bull/bear coloring below.
+  function filterEquitiesByTrend(list){
+    const wantUp = document.getElementById('trendUpFilter').checked;
+    const wantDown = document.getElementById('trendDownFilter').checked;
+    if(!wantUp && !wantDown) return list; // neither checked = no trend filter
+    return list.filter(e => {
+      const trend = e.trend || '';
+      return (wantUp && trend.includes('Uptrend')) || (wantDown && trend.includes('Downtrend'));
+    });
+  }
+
+  // Single spot for the type + trend filter chain, so every call site below
+  // stays in sync automatically instead of each one needing its own update
+  // whenever a new equity filter gets added.
+  function filteredEquities(){
+    return filterEquitiesByTrend(filterEquitiesByType(currentEquitiesSource()));
   }
 
   function sortEquities(list){
@@ -1478,7 +1510,13 @@
     renderEquities(sortEquities(currentEquityList));
   });
   document.getElementById('equityTypeSelect').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
+    renderEquities(sortEquities(filteredEquities()));
+  });
+  document.getElementById('trendUpFilter').addEventListener('change', ()=>{
+    renderEquities(sortEquities(filteredEquities()));
+  });
+  document.getElementById('trendDownFilter').addEventListener('change', ()=>{
+    renderEquities(sortEquities(filteredEquities()));
   });
 
   document.addEventListener('click', (e)=>{
@@ -2288,7 +2326,7 @@
       renderFunnel();
       updateActiveCount();
     } else {
-      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
+      renderEquities(sortEquities(filteredEquities()));
     }
 
     btn.classList.remove('spinning');
@@ -2304,7 +2342,7 @@
     // covers the (unlikely but possible) case where the user is already on
     // the Stocks tab by the time this resolves
     if(!document.getElementById('tabOptions').classList.contains('active')){
-      renderEquities(sortEquities(filterEquitiesByType(currentEquitiesSource())));
+      renderEquities(sortEquities(filteredEquities()));
     }
   });
 

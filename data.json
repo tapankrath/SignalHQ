@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T20:36:26.497178+00:00",
+  "generated_at": "2026-09-17T21:36:17.565262+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -104,7 +104,7 @@
       "pcVol": 0.93,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -112,12 +112,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/microsoft-jumps-azure-turns-payment-180855716.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Microsoft fund backs British AI predictions start-up Mantic",
-          "publisher": "Sky News",
-          "link": "https://uk.finance.yahoo.com/news/microsoft-fund-backs-british-ai-175100832.html",
-          "sentiment": -0.05
         }
       ],
       "volRegime": "Fair",
@@ -162,19 +156,19 @@
       "pcVol": 0.51,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.35,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Stock Market Today: Nasdaq Snaps Losing Streak; Nvidia Gains As This Stock Soars On Amazon Deal",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-fed-reaction-generac-nebius-bloom-energy-spacex/?src=A00220&yptr=yahoo",
-          "sentiment": 0.69
+          "title": "Nvidia cloud partner crosses major compute threshold",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/coreweave-ai-infrastructure-milestone",
+          "sentiment": 0.0
         },
         {
-          "title": "Nvidia Stock Rises. Jensen Huang Sees Chip Sales Doubling in 2027",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/nvidia-stock-rises-jensen-huang-192938458.html",
+          "title": "Nvidia Stock Split in 2026? My Prediction: It's Unlikely, but the Stock Is Still a Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/nvidia-stock-split-in-2026-my-prediction-its-unlik/",
           "sentiment": 0.0
         }
       ],
@@ -224,9 +218,15 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.13,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta Just Launched a New Subscription Business Built Entirely Around AI. Here's Why It Could Be a Game-Changer.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/meta-just-launched-a-new-subscription-business-built-entirely-around-ai-heres-why-it-could-be-a-game-changer/",
+          "sentiment": 0.13
+        },
         {
           "title": "Meta Gets $4 Billion Reminder From China's AI Race",
           "publisher": "GuruFocus.com",
@@ -238,12 +238,6 @@
           "publisher": "Proactive",
           "link": "https://www.proactiveinvestors.com/companies/news/1098718/meta-s-ai-chips-and-meta-one-strengthen-bank-of-america-s-outlook-1098718.html",
           "sentiment": 0.32
-        },
-        {
-          "title": "Meta Platform Gets Blunt Court Warning Over Fraudulent Ads",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/media-advertising/articles/meta-platform-gets-blunt-court-184600631.html",
-          "sentiment": -0.72
         }
       ],
       "volRegime": "Fair",
@@ -288,26 +282,26 @@
       "pcVol": 0.87,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.01,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Vishay Intertechnology, Allegro MicroSystems, Himax, Bandwidth, and AMD Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/vishay-intertechnology-allegro-microsystems-himax-212217670.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "AMD Leads Chip Stocks Higher Amid Sector Rebound",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/amd-stock-leads-chip-stocks-sox-index-higher-amid-sector-rebound/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "AMD Jumps 7% as Semiconductor Rebound Reaches a Third Session; Broadcom Rises 3%, NVIDIA Edges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/amd-jumps-7-as-semiconductor-rebound-reaches-a-third-session-broadcom-rises-3-nvidia-edges-higher/",
-          "sentiment": 0.53
-        },
-        {
-          "title": "Forget the AI Doom Headlines. Watch This AMD Number Instead.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/amd-just-crashed-and-ripped-back-in-3-days-heres-the-number-nobodys-watching?ref=yahoofinance",
-          "sentiment": -0.51
         }
       ],
       "volRegime": "Fair",
@@ -356,26 +350,26 @@
       "pcVol": 0.6,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron, Qualcomm, Nova, Lattice Semiconductor, and Workday Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-qualcomm-nova-lattice-semiconductor-211417375.html",
+          "sentiment": 0.3
+        },
+        {
+          "title": "Why Micron Stock Is Jumping as Intel CEO Warns on Memory Chips",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/micron-stock-price-intel-memory-chips-b0eca0f2?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.1
+        },
         {
           "title": "Micron Jumps 5.5% as Labor Claims AI's Margin Windfall",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/micron-jumps-5-5-labor-183703220.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "The Memory Shortage Is Not Over: More Upside for Micron and Sandisk?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/memory-shortage-not-over-more-180200318.html",
-          "sentiment": -0.25
-        },
-        {
-          "title": "Micron Stock Soars as India Facility Bets Big on AI Memory Demand",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/micron-stock-soars-india-facility-172713195.html",
-          "sentiment": 0.57
         }
       ],
       "volRegime": "Cheap",
@@ -420,20 +414,14 @@
       "pcVol": 0.66,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Nearly 90% of the Fortune 100 Now Use Sundar Pichai's Gemini Enterprise Tool. Here's Why That Adoption Rate Matters for Alphabet Investors.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/nearly-90-of-the-fortune-100-now-use-gemini/",
           "sentiment": 0.03
-        },
-        {
-          "title": "Alphabet Gains 1.5% as $20 Opens Google Home to Rival Agents",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-gains-1-5-20-182048375.html",
-          "sentiment": 0.34
         }
       ],
       "volRegime": "Fair",
@@ -482,9 +470,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "'Mini boom': How JPMorgan CEO Jamie Dimon is betting on small businesses",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/mini-boom-jpmorgan-ceo-jamie-151004246.html",
+          "title": "JPMorgan CEO Jamie Dimon says small businesses are experiencing a 'mini boom'",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-says-small-businesses-are-experiencing-a-mini-boom-201551606.html",
           "sentiment": 0.0
         },
         {
@@ -542,9 +530,15 @@
       "pcVol": 0.69,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.58,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Fastly and Oracle Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/fastly-oracle-stocks-trade-know-210617235.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Oracle Rallies 5.4% as Restructuring Helps Carry a $664 Billion Backlog",
           "publisher": "GuruFocus.com",
@@ -556,12 +550,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/oracle-vs-broadcom-which-picks-and-shovels-ai-stoc/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Price Prediction: As AI Backlog Soars, Oracle Set for 50% Upside",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/price-prediction-as-ai-backlog-soars-oracle-set-for-50-upside/",
-          "sentiment": 0.64
         }
       ],
       "volRegime": "Fair",
@@ -606,26 +594,26 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AI Power Stocks Rally After Generac's Deal For Amazon Data Centers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/generac-stock-recharged-amazon-deal-unlocks-data-center-opportunity/?src=A00220&yptr=yahoo",
+          "sentiment": 0.64
+        },
+        {
+          "title": "Wells Fargo sees 50% upside for Amazon-linked stock",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/wells-fargo-sees-50-upside-for-amazon-linked-stock",
+          "sentiment": 0.25
+        },
         {
           "title": "Amazon, Walmart Face FTC Probe Call Over AI Chatbots And \u2018Made In USA\u2019 Claims \u2014 AMZN, WMT Stocks In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/amazon-walmart-face-ftc-probe-call-over-ai-chatbots-and-made-in-usa-claims-amzn-wmt-stocks-in-focus/cZtr6gmRBdn",
           "sentiment": 0.18
-        },
-        {
-          "title": "Qualcomm Gains 2% as Amazon's Warrant Prices AI Commitment",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-gains-2-amazons-warrant-184302300.html",
-          "sentiment": 0.61
-        },
-        {
-          "title": "Generac's Amazon Win Recharges Its Electrical Peers. This Is Why.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/generac-stock-recharged-amazon-deal-unlocks-data-center-opportunity/?src=A00220&yptr=yahoo",
-          "sentiment": 0.67
         }
       ],
       "volRegime": "Fair",
@@ -1058,26 +1046,26 @@
       "pcVol": 1.06,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.13,
+      "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "SpaceX Postpones Starship Flight 14 Launch. Musk Eyes This New Date.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/spacex-starship-flight-14-launch-postponed-elon-musk-spcx-stock/?src=A00220&yptr=yahoo",
-          "sentiment": -0.27
-        },
-        {
-          "title": "SPCX Stock In Focus \u2014 SpaceX Pushes Starship Launch To September 28, Reportedly Weighs Startup-Data Buys for AI",
+          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
           "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-in-focus-space-x-pushes-starship-launch-to-september-28-reportedly-weighs-startup-data-buys-for-ai/cZtrCyLRBdV",
+          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
         },
         {
-          "title": "SpaceX Stock Rises Again. AI Demand Isn\u2019t Slowing Down.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/spacex-stock-price-ai-demand-a5e66ad2?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.13
+          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Here's What a $500 Investment in SpaceX Stock Could Be Worth by 2030",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/heres-what-a-500-investment-in-spacex-stock-could/",
+          "sentiment": 0.23
         }
       ],
       "volRegime": "Fair",
@@ -1254,9 +1242,15 @@
       "pcVol": 0.48,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.04,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
+          "sentiment": 0.0
+        },
         {
           "title": "Palantir Gains as Europe Builds a Sovereign AI Counterweight",
           "publisher": "GuruFocus.com",
@@ -1268,12 +1262,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/palantir-karp-ai-government-risks-693bd6ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": -0.27
-        },
-        {
-          "title": "Mad Money Jim Cramer Sees 40% Upside for Palantir Stock. Does Wall Street Agree?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/mad-money-jim-cramer-palantir-new-price-target/",
-          "sentiment": -0.18
         }
       ],
       "volRegime": "Cheap",
@@ -1624,6 +1612,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Why Nvidia-Backed Nebius Group Stock Skyrocketed Thursday Morning",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/why-nvidia-backed-nebius-group-stock-skyrocketed-t/",
@@ -1634,12 +1628,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/nebius-stock-price-coreweave-iren-ai-neoclouds-2bc723d4?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.53
-        },
-        {
-          "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2053,6 +2041,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Daily ETF Flows: QQQ Inflows Total Nearly $1B",
+          "publisher": "etf.com",
+          "link": "http://www.etf.com/sections/daily-etf-flows/daily-etf-flows-qqq-inflows-total-nearly-1b?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
+          "sentiment": 0.0
+        },
+        {
           "title": "If QQQ Repeats Its Last Decade, $100,000 at 40 Could Hit $1 Million by 52",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/etf/2026/09/17/if-qqq-repeats-its-last-decade-100000-at-40-could-hit-1-million-by-52/",
@@ -2128,7 +2122,7 @@
       "dividendYield": 0.8,
       "marketCap": 3696065511424,
       "score": 9.4,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2136,12 +2130,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/microsoft-jumps-azure-turns-payment-180855716.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Microsoft fund backs British AI predictions start-up Mantic",
-          "publisher": "Sky News",
-          "link": "https://uk.finance.yahoo.com/news/microsoft-fund-backs-british-ai-175100832.html",
-          "sentiment": -0.05
         }
       ]
     },
@@ -2165,19 +2153,19 @@
       "dividendYield": 0.47,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.35,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Stock Market Today: Nasdaq Snaps Losing Streak; Nvidia Gains As This Stock Soars On Amazon Deal",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-fed-reaction-generac-nebius-bloom-energy-spacex/?src=A00220&yptr=yahoo",
-          "sentiment": 0.69
+          "title": "Nvidia cloud partner crosses major compute threshold",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/coreweave-ai-infrastructure-milestone",
+          "sentiment": 0.0
         },
         {
-          "title": "Nvidia Stock Rises. Jensen Huang Sees Chip Sales Doubling in 2027",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/nvidia-stock-rises-jensen-huang-192938458.html",
+          "title": "Nvidia Stock Split in 2026? My Prediction: It's Unlikely, but the Stock Is Still a Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/nvidia-stock-split-in-2026-my-prediction-its-unlik/",
           "sentiment": 0.0
         }
       ]
@@ -2197,14 +2185,20 @@
       "chg3m": 20.2,
       "chg6m": 10.9,
       "chg1y": -12.3,
-      "volRatio": 0.9,
+      "volRatio": 0.93,
       "peRatio": 25.7,
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.9,
-      "newsSentiment": -0.13,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta Just Launched a New Subscription Business Built Entirely Around AI. Here's Why It Could Be a Game-Changer.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/meta-just-launched-a-new-subscription-business-built-entirely-around-ai-heres-why-it-could-be-a-game-changer/",
+          "sentiment": 0.13
+        },
         {
           "title": "Meta Gets $4 Billion Reminder From China's AI Race",
           "publisher": "GuruFocus.com",
@@ -2216,12 +2210,6 @@
           "publisher": "Proactive",
           "link": "https://www.proactiveinvestors.com/companies/news/1098718/meta-s-ai-chips-and-meta-one-strengthen-bank-of-america-s-outlook-1098718.html",
           "sentiment": 0.32
-        },
-        {
-          "title": "Meta Platform Gets Blunt Court Warning Over Fraudulent Ads",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/media-advertising/articles/meta-platform-gets-blunt-court-184600631.html",
-          "sentiment": -0.72
         }
       ]
     },
@@ -2240,7 +2228,7 @@
       "chg3m": -7.6,
       "chg6m": -6.8,
       "chg1y": -12.2,
-      "volRatio": 1.03,
+      "volRatio": 1.06,
       "peRatio": 342.2,
       "dividendYield": null,
       "marketCap": 1446324338688,
@@ -2283,31 +2271,31 @@
       "chg3m": 6.4,
       "chg6m": 173.3,
       "chg1y": 245.2,
-      "volRatio": 1.46,
+      "volRatio": 1.47,
       "peRatio": 139.8,
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
-      "newsSentiment": 0.01,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Vishay Intertechnology, Allegro MicroSystems, Himax, Bandwidth, and AMD Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/vishay-intertechnology-allegro-microsystems-himax-212217670.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "AMD Leads Chip Stocks Higher Amid Sector Rebound",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/amd-stock-leads-chip-stocks-sox-index-higher-amid-sector-rebound/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "AMD Jumps 7% as Semiconductor Rebound Reaches a Third Session; Broadcom Rises 3%, NVIDIA Edges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/amd-jumps-7-as-semiconductor-rebound-reaches-a-third-session-broadcom-rises-3-nvidia-edges-higher/",
-          "sentiment": 0.53
-        },
-        {
-          "title": "Forget the AI Doom Headlines. Watch This AMD Number Instead.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/amd-just-crashed-and-ripped-back-in-3-days-heres-the-number-nobodys-watching?ref=yahoofinance",
-          "sentiment": -0.51
         }
       ]
     },
@@ -2326,31 +2314,31 @@
       "chg3m": -6.3,
       "chg6m": 111.8,
       "chg1y": 479.7,
-      "volRatio": 0.8,
+      "volRatio": 0.81,
       "peRatio": 22.1,
       "dividendYield": 0.06,
       "marketCap": 1103981838336,
       "score": 9.4,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron, Qualcomm, Nova, Lattice Semiconductor, and Workday Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-qualcomm-nova-lattice-semiconductor-211417375.html",
+          "sentiment": 0.3
+        },
+        {
+          "title": "Why Micron Stock Is Jumping as Intel CEO Warns on Memory Chips",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/micron-stock-price-intel-memory-chips-b0eca0f2?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.1
+        },
         {
           "title": "Micron Jumps 5.5% as Labor Claims AI's Margin Windfall",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/micron-jumps-5-5-labor-183703220.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "The Memory Shortage Is Not Over: More Upside for Micron and Sandisk?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/memory-shortage-not-over-more-180200318.html",
-          "sentiment": -0.25
-        },
-        {
-          "title": "Micron Stock Soars as India Facility Bets Big on AI Memory Demand",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/micron-stock-soars-india-facility-172713195.html",
-          "sentiment": 0.57
         }
       ]
     },
@@ -2369,25 +2357,19 @@
       "chg3m": -5.0,
       "chg6m": 12.3,
       "chg1y": 36.6,
-      "volRatio": 0.91,
+      "volRatio": 0.95,
       "peRatio": 17.3,
       "dividendYield": 0.26,
       "marketCap": 4203184128000,
       "score": 7.6,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Nearly 90% of the Fortune 100 Now Use Sundar Pichai's Gemini Enterprise Tool. Here's Why That Adoption Rate Matters for Alphabet Investors.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/nearly-90-of-the-fortune-100-now-use-gemini/",
           "sentiment": 0.03
-        },
-        {
-          "title": "Alphabet Gains 1.5% as $20 Opens Google Home to Rival Agents",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-gains-1-5-20-182048375.html",
-          "sentiment": 0.34
         }
       ]
     },
@@ -2415,9 +2397,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "'Mini boom': How JPMorgan CEO Jamie Dimon is betting on small businesses",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/mini-boom-jpmorgan-ceo-jamie-151004246.html",
+          "title": "JPMorgan CEO Jamie Dimon says small businesses are experiencing a 'mini boom'",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-says-small-businesses-are-experiencing-a-mini-boom-201551606.html",
           "sentiment": 0.0
         },
         {
@@ -2449,14 +2431,20 @@
       "chg3m": -17.7,
       "chg6m": -0.8,
       "chg1y": -48.7,
-      "volRatio": 0.94,
+      "volRatio": 0.96,
       "peRatio": 23.6,
       "dividendYield": 1.4,
       "marketCap": 455344390144,
       "score": 3.6,
-      "newsSentiment": 0.58,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Fastly and Oracle Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/fastly-oracle-stocks-trade-know-210617235.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Oracle Rallies 5.4% as Restructuring Helps Carry a $664 Billion Backlog",
           "publisher": "GuruFocus.com",
@@ -2468,12 +2456,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/oracle-vs-broadcom-which-picks-and-shovels-ai-stoc/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Price Prediction: As AI Backlog Soars, Oracle Set for 50% Upside",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/price-prediction-as-ai-backlog-soars-oracle-set-for-50-upside/",
-          "sentiment": 0.64
         }
       ]
     },
@@ -2497,26 +2479,26 @@
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AI Power Stocks Rally After Generac's Deal For Amazon Data Centers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/generac-stock-recharged-amazon-deal-unlocks-data-center-opportunity/?src=A00220&yptr=yahoo",
+          "sentiment": 0.64
+        },
+        {
+          "title": "Wells Fargo sees 50% upside for Amazon-linked stock",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/wells-fargo-sees-50-upside-for-amazon-linked-stock",
+          "sentiment": 0.25
+        },
         {
           "title": "Amazon, Walmart Face FTC Probe Call Over AI Chatbots And \u2018Made In USA\u2019 Claims \u2014 AMZN, WMT Stocks In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/amazon-walmart-face-ftc-probe-call-over-ai-chatbots-and-made-in-usa-claims-amzn-wmt-stocks-in-focus/cZtr6gmRBdn",
           "sentiment": 0.18
-        },
-        {
-          "title": "Qualcomm Gains 2% as Amazon's Warrant Prices AI Commitment",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-gains-2-amazons-warrant-184302300.html",
-          "sentiment": 0.61
-        },
-        {
-          "title": "Generac's Amazon Win Recharges Its Electrical Peers. This Is Why.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/generac-stock-recharged-amazon-deal-unlocks-data-center-opportunity/?src=A00220&yptr=yahoo",
-          "sentiment": 0.67
         }
       ]
     },
@@ -2535,7 +2517,7 @@
       "chg3m": -50.9,
       "chg6m": 112.6,
       "chg1y": 241.4,
-      "volRatio": 0.98,
+      "volRatio": 0.99,
       "peRatio": 38.2,
       "dividendYield": 0.01,
       "marketCap": null,
@@ -2578,7 +2560,7 @@
       "chg3m": -7.7,
       "chg6m": 55.5,
       "chg1y": 42.3,
-      "volRatio": 0.85,
+      "volRatio": 0.86,
       "peRatio": 29.0,
       "dividendYield": 0.52,
       "marketCap": null,
@@ -2707,7 +2689,7 @@
       "chg3m": -24.6,
       "chg6m": 97.9,
       "chg1y": 273.8,
-      "volRatio": 1.24,
+      "volRatio": 1.26,
       "peRatio": 57.9,
       "dividendYield": 0.38,
       "marketCap": 182626140160,
@@ -2824,31 +2806,31 @@
       "chg3m": -19.3,
       "chg6m": null,
       "chg1y": -3.8,
-      "volRatio": 0.83,
+      "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2039495917568,
+      "marketCap": 2040671371264,
       "score": 8.2,
-      "newsSentiment": -0.13,
+      "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "SpaceX Postpones Starship Flight 14 Launch. Musk Eyes This New Date.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/spacex-starship-flight-14-launch-postponed-elon-musk-spcx-stock/?src=A00220&yptr=yahoo",
-          "sentiment": -0.27
-        },
-        {
-          "title": "SPCX Stock In Focus \u2014 SpaceX Pushes Starship Launch To September 28, Reportedly Weighs Startup-Data Buys for AI",
+          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
           "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-in-focus-space-x-pushes-starship-launch-to-september-28-reportedly-weighs-startup-data-buys-for-ai/cZtrCyLRBdV",
+          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
         },
         {
-          "title": "SpaceX Stock Rises Again. AI Demand Isn\u2019t Slowing Down.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/spacex-stock-price-ai-demand-a5e66ad2?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.13
+          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Here's What a $500 Investment in SpaceX Stock Could Be Worth by 2030",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/heres-what-a-500-investment-in-spacex-stock-could/",
+          "sentiment": 0.23
         }
       ]
     },
@@ -2867,7 +2849,7 @@
       "chg3m": 56.7,
       "chg6m": 25.6,
       "chg1y": null,
-      "volRatio": 0.99,
+      "volRatio": 1.0,
       "peRatio": 22.2,
       "dividendYield": 0.7,
       "marketCap": 199865548800,
@@ -2953,14 +2935,20 @@
       "chg3m": 34.9,
       "chg6m": 15.4,
       "chg1y": -0.4,
-      "volRatio": 0.7,
+      "volRatio": 0.71,
       "peRatio": 150.6,
       "dividendYield": null,
       "marketCap": 423515029504,
       "score": 9.1,
-      "newsSentiment": -0.04,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
+          "sentiment": 0.0
+        },
         {
           "title": "Palantir Gains as Europe Builds a Sovereign AI Counterweight",
           "publisher": "GuruFocus.com",
@@ -2972,12 +2960,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/palantir-karp-ai-government-risks-693bd6ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": -0.27
-        },
-        {
-          "title": "Mad Money Jim Cramer Sees 40% Upside for Palantir Stock. Does Wall Street Agree?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/mad-money-jim-cramer-palantir-new-price-target/",
-          "sentiment": -0.18
         }
       ]
     },
@@ -3039,7 +3021,7 @@
       "chg3m": -0.2,
       "chg6m": 27.3,
       "chg1y": 61.9,
-      "volRatio": 1.27,
+      "volRatio": 1.28,
       "peRatio": 32.0,
       "dividendYield": 0.97,
       "marketCap": 2231532257280,
@@ -3076,7 +3058,7 @@
       "chg3m": 40.6,
       "chg6m": 296.2,
       "chg1y": 351.1,
-      "volRatio": 1.08,
+      "volRatio": 1.09,
       "peRatio": 34.2,
       "dividendYield": 0.45,
       "marketCap": 374112223232,
@@ -3119,7 +3101,7 @@
       "chg3m": 32.9,
       "chg6m": 122.0,
       "chg1y": 82.4,
-      "volRatio": 1.02,
+      "volRatio": 1.03,
       "peRatio": 914.8,
       "dividendYield": null,
       "marketCap": 306799083520,
@@ -3156,14 +3138,20 @@
       "chg3m": -22.4,
       "chg6m": 83.9,
       "chg1y": 131.6,
-      "volRatio": 1.47,
+      "volRatio": 1.49,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 55347269632,
+      "marketCap": 59261722624,
       "score": 6.2,
       "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Why Nvidia-Backed Nebius Group Stock Skyrocketed Thursday Morning",
           "publisher": "Motley Fool",
@@ -3175,12 +3163,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/nebius-stock-price-coreweave-iren-ai-neoclouds-2bc723d4?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.53
-        },
-        {
-          "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3199,7 +3181,7 @@
       "chg3m": -30.7,
       "chg6m": -3.5,
       "chg1y": -34.2,
-      "volRatio": 2.82,
+      "volRatio": 2.83,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 44056739840,
@@ -3207,6 +3189,12 @@
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Bernstein Flags CoreWeave as Most Exposed to an AI Training Slowdown",
           "publisher": "Insider Monkey",
@@ -3218,12 +3206,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/coreweave-shares-sink-3-billion-181846879.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "What Happens To CRWV Stock If Lenders Pull Back?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615688/what-happens-to-crwv-stock-if-lenders-pull-back/2026-09-17",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3328,7 +3310,7 @@
       "chg3m": -37.2,
       "chg6m": -2.4,
       "chg1y": 43.7,
-      "volRatio": 1.16,
+      "volRatio": 1.2,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 43364855808,
@@ -3417,7 +3399,7 @@
       "volRatio": 0.92,
       "peRatio": 67.8,
       "dividendYield": 0.78,
-      "marketCap": 127054471168,
+      "marketCap": 127313199104,
       "score": 4.5,
       "newsSentiment": 0.58,
       "newsSentimentLabel": "Positive",
@@ -3457,7 +3439,7 @@
       "chg3m": 3.2,
       "chg6m": 15.9,
       "chg1y": 16.4,
-      "volRatio": 1.16,
+      "volRatio": 1.26,
       "peRatio": 24.6,
       "dividendYield": 0.98,
       "marketCap": null,
@@ -3481,7 +3463,7 @@
       "chg3m": -0.7,
       "chg6m": 20.8,
       "chg1y": 21.0,
-      "volRatio": 1.14,
+      "volRatio": 1.18,
       "peRatio": 29.2,
       "dividendYield": 0.42,
       "marketCap": null,
@@ -3489,6 +3471,12 @@
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Daily ETF Flows: QQQ Inflows Total Nearly $1B",
+          "publisher": "etf.com",
+          "link": "http://www.etf.com/sections/daily-etf-flows/daily-etf-flows-qqq-inflows-total-nearly-1b?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
+          "sentiment": 0.0
+        },
         {
           "title": "If QQQ Repeats Its Last Decade, $100,000 at 40 Could Hit $1 Million by 52",
           "publisher": "24/7 Wall St.",

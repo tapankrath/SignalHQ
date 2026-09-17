@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T21:36:22.902539+00:00",
+  "generated_at": "2026-09-17T22:37:18.042495+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,9 +40,15 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Apple (AAPL) Outperforms Broader Market: What You Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-outperforms-broader-market-214506898.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Apple iPhone 18 Pro Sales Helped By Carrier Promotions",
           "publisher": "Investor's Business Daily",
@@ -54,12 +60,6 @@
           "publisher": "Proactive",
           "link": "https://www.proactiveinvestors.com/companies/news/1098719/apple-s-iphone-18-lineup-keeps-bank-of-america-bullish-1098719.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Apple Shares Trade 16.41% Above GF Value as AI Agreement Faces Disclosure",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/apple-shares-trade-16-41-182416925.html",
-          "sentiment": 0.78
         }
       ],
       "volRegime": "Cheap",
@@ -104,16 +104,9 @@
       "pcVol": 0.93,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.49,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "Microsoft Jumps as Azure Turns Payment Vaults Into a Service",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/microsoft-jumps-azure-turns-payment-180855716.html",
-          "sentiment": 0.49
-        }
-      ],
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [],
       "volRegime": "Fair",
       "ivRvRatio": 0.89,
       "realizedVol": 21.8
@@ -156,20 +149,20 @@
       "pcVol": 0.51,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia cloud partner crosses major compute threshold",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/coreweave-ai-infrastructure-milestone",
+          "title": "Trump-Xi Dinner Next Week Brings AI Titans To The Table \u2014 OpenAI, NVDA, and QCOM CEOs To Attend, Says Report",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/trump-xi-dinner-next-week-brings-ai-titans-to-the-table-open-ai-nvda-qcom-ceos-to-attend/cZtscudRBdp",
           "sentiment": 0.0
         },
         {
-          "title": "Nvidia Stock Split in 2026? My Prediction: It's Unlikely, but the Stock Is Still a Buy.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/nvidia-stock-split-in-2026-my-prediction-its-unlik/",
-          "sentiment": 0.0
+          "title": "S&P 500, Nasdaq, Dow End Higher As Drop In Oil Prices Allays Inflationary Concerns \u2014 NVDA, MCD, CRWV, LMT, AMZN In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-higher-amid-drop-in-oil-prices/cZtscNsRBdY",
+          "sentiment": -0.27
         }
       ],
       "volRegime": "Cheap",
@@ -218,9 +211,15 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.15,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Meta Platforms (META) Outpaced the Stock Market Today",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-platforms-meta-outpaced-214508942.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Meta Just Launched a New Subscription Business Built Entirely Around AI. Here's Why It Could Be a Game-Changer.",
           "publisher": "Motley Fool",
@@ -232,12 +231,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/meta-gets-4-billion-reminder-192011607.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s AI chips and Meta One strengthen Bank of America\u2019s outlook",
-          "publisher": "Proactive",
-          "link": "https://www.proactiveinvestors.com/companies/news/1098718/meta-s-ai-chips-and-meta-one-strengthen-bank-of-america-s-outlook-1098718.html",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Fair",
@@ -286,15 +279,15 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Vishay Intertechnology, Allegro MicroSystems, Himax, Bandwidth, and AMD Stocks Trade Up, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/vishay-intertechnology-allegro-microsystems-himax-212217670.html",
-          "sentiment": 0.0
-        },
-        {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Vishay Intertechnology, Allegro MicroSystems, Himax, Bandwidth, and AMD Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/vishay-intertechnology-allegro-microsystems-himax-212217670.html",
           "sentiment": 0.0
         },
         {
@@ -414,14 +407,20 @@
       "pcVol": 0.66,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nearly 90% of the Fortune 100 Now Use Sundar Pichai's Gemini Enterprise Tool. Here's Why That Adoption Rate Matters for Alphabet Investors.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/nearly-90-of-the-fortune-100-now-use-gemini/",
-          "sentiment": 0.03
+          "title": "Alphabet (GOOGL) Rises Higher Than Market: Key Facts",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-rises-higher-market-214503770.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-alphabet-inc-goog-outpaced-214503164.html",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -530,9 +529,15 @@
       "pcVol": 0.69,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Oracle (ORCL) Could Be 26% Below Fair Value After Project Jupiter Update",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-could-26-below-211345046.html",
+          "sentiment": 0.57
+        },
         {
           "title": "Fastly and Oracle Stocks Trade Up, What You Need To Know",
           "publisher": "StockStory",
@@ -544,12 +549,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-rallies-5-4-restructuring-184343432.html",
           "sentiment": 0.73
-        },
-        {
-          "title": "Oracle vs. Broadcom: Which \"Picks and Shovels\" AI Stock Has the Bigger Growth Runway From Here?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/oracle-vs-broadcom-which-picks-and-shovels-ai-stoc/",
-          "sentiment": 0.38
         }
       ],
       "volRegime": "Fair",
@@ -594,9 +593,15 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "S&P 500, Nasdaq, Dow End Higher As Drop In Oil Prices Allays Inflationary Concerns \u2014 NVDA, MCD, CRWV, LMT, AMZN In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-higher-amid-drop-in-oil-prices/cZtscNsRBdY",
+          "sentiment": -0.27
+        },
         {
           "title": "AI Power Stocks Rally After Generac's Deal For Amazon Data Centers",
           "publisher": "Investor's Business Daily",
@@ -608,12 +613,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/wells-fargo-sees-50-upside-for-amazon-linked-stock",
           "sentiment": 0.25
-        },
-        {
-          "title": "Amazon, Walmart Face FTC Probe Call Over AI Chatbots And \u2018Made In USA\u2019 Claims \u2014 AMZN, WMT Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amazon-walmart-face-ftc-probe-call-over-ai-chatbots-and-made-in-usa-claims-amzn-wmt-stocks-in-focus/cZtr6gmRBdn",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Fair",
@@ -1050,15 +1049,15 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
-          "sentiment": 0.0
-        },
-        {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
         },
         {
@@ -1110,7 +1109,7 @@
       "pcVol": 0.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.03,
+      "newsSentiment": -0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -1120,16 +1119,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Salesforce CEO warns AI companies not to repeat this costly mistake",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/crm-salesforce-ceo-marc-benioff-warns-ai-companies-not-to-repeat-social-medias-mistakes",
+          "sentiment": -0.51
+        },
+        {
           "title": "Would You Want CRM Stock Back At The Price It Just Left?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615696/would-you-want-crm-stock-back-at-the-price-it-just-left/2026-09-17",
           "sentiment": 0.08
-        },
-        {
-          "title": "Salesforce-in-Claude Ships on All Paid Plans, Making Enterprise CRM Data Native to Claude\u2019s Interface",
-          "publisher": "Forkast News",
-          "link": "https://finance.yahoo.com/technology/ai/articles/salesforce-claude-ships-paid-plans-172614533.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1174,9 +1173,15 @@
       "pcVol": 0.89,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.3,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Highlights CrowdStrike (CRWD) as AI Security Concerns Lift Cybersecurity Stocks",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jim-cramer-highlights-crowdstrike-crwd-215812820.html",
+          "sentiment": 0.34
+        },
         {
           "title": "Is CrowdStrike Holdings (CRWD) Priced For Perfection On Sales?",
           "publisher": "Simply Wall St.",
@@ -1188,12 +1193,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/cscos-splunk-ai-push-gains-144800670.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "The Ultimate Cyber Shield: CrowdStrike Rises Past $235",
-          "publisher": "MarketBeat",
-          "link": "https://www.marketbeat.com/articles/crowdstrike-hits-record-high-cyber-leader-breaks-out-on-call-flow/?utm_source=yahoofinance&utm_medium=yahoofinance",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1242,9 +1241,28 @@
       "pcVol": 0.48,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsHeadlines": [
+        {
+          "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/palantir-rocket-lab-among-biggest-climbers-in-power-ranking",
+          "sentiment": 0.0
+        },
+        {
+          "title": "'You\u2019re Liable For Your Own Actions': Palantir CEO Alex Karp Opens a Third Front In The AI Safety Fight",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/youre-liable-for-your-own-actions-palantir-ceo-alex-karp-opens-a-third-front-in-the-ai-safety-fight/",
+          "sentiment": 0.05
+        },
+        {
+          "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
+          "sentiment": 0.0
+        }
+      ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.72,
       "realizedVol": 51.5
@@ -1473,9 +1491,15 @@
       "pcVol": 0.5,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Prefers Palo Alto (PANW) Over SentinelOne (S)",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-prefers-palo-alto-220330487.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Can Palo Alto Networks' SASE Push Help It Challenge FTNT and ZS?",
           "publisher": "Zacks",
@@ -1531,20 +1555,20 @@
       "pcVol": 0.59,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.65,
+      "newsSentiment": 0.71,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Stock Market Today, Sept. 17: Intel Surges 8% on Rumored SK Hynix Talks",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/17/stock-market-today-sept-17-intel-surges-8-on-rumored-sk-hynix-talks/",
+          "sentiment": 0.61
+        },
         {
           "title": "Intel Stock Jumps 4% on SK Hynix Rumor, But Here\u2019s Why the Real Win Is Years Away",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/17/intel-stock-jumps-4-on-sk-hynix-rumor-but-heres-why-the-real-win-is-years-away/",
           "sentiment": 0.81
-        },
-        {
-          "title": "Intel Jumps 8%, SK Hynix Climbs 5% as Ohio Memory Talks Reignite; Micron Rises 6%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/intel-jumps-8-sk-hynix-climbs-5-as-ohio-memory-talks-reignite-micron-rises-6/",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Fair",
@@ -1781,26 +1805,26 @@
       "pcVol": 1.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.44,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Rocket Lab (RKLB) Completes $1.94 Billion Equity Offering",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completes-1-221636308.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/palantir-rocket-lab-among-biggest-climbers-in-power-ranking",
+          "sentiment": 0.0
+        },
         {
           "title": "Rocket Lab Is Playing a Much Bigger Game Than Rocket Launches, Eyes 90% Upside",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/17/rocket-lab-is-playing-a-much-bigger-game-than-rocket-launches-eyes-90-upside/",
           "sentiment": 0.2
-        },
-        {
-          "title": "Rocket Lab Jumps 6% as FCC Clears First Hurdle on Iridium Deal; Iridium Communications Barely Budges",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/rocket-lab-jumps-6-as-fcc-clears-first-hurdle-on-iridium-deal-iridium-communications-barely-budges/",
-          "sentiment": 0.54
-        },
-        {
-          "title": "RKLB Stock Eyes Ending 5-Week Slide: Iridium Deal Clears First FCC Hurdle, VC Backer Hails Solar Breakthrough",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-iridium-deal-fcc-hurdle-vc-backer-solar-breakthrough/cZtr9VxRB53",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Rich",
@@ -1909,9 +1933,15 @@
       "pcVol": 0.59,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.58,
+      "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Corning Just Signed a Multibillion-Dollar Fiber Deal for AI and Broadband With Verizon. What That Means for GLW Stock.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4662861/corning-just-signed-a-multibillion-dollar-fiber-deal-for-ai-and-broadband-with-verizon-what-that-means-for-glw-stock",
+          "sentiment": 0.0
+        },
         {
           "title": "Corning Rides on Expanding Partner Base: Will it Boost Prospects?",
           "publisher": "Zacks",
@@ -1923,12 +1953,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-rallied-strong-long-135038335.html",
           "sentiment": 0.88
-        },
-        {
-          "title": "Corning\u2019s (GLW) Leadership Advantage\u00a0in Adapting to Tech Transitions",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-leadership-advantage-adapting-134515382.html",
-          "sentiment": 0.25
         }
       ],
       "volRegime": "Cheap",
@@ -2022,6 +2046,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "$500,000 Split Between VOO and QQQ Owns the Same Seven Stocks Twice, and Nobody Adds Up the Overlap",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/17/500000-split-between-voo-and-qqq-owns-the-same-seven-stocks-twice-and-nobody-adds-up-the-overlap/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Daily ETF Flows: QQQ Inflows Total Nearly $1B",
           "publisher": "etf.com",
           "link": "http://www.etf.com/sections/daily-etf-flows/daily-etf-flows-qqq-inflows-total-nearly-1b?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
@@ -2060,9 +2090,15 @@
       "dividendYield": 0.32,
       "marketCap": 4918238773248,
       "score": 8.5,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Apple (AAPL) Outperforms Broader Market: What You Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-outperforms-broader-market-214506898.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Apple iPhone 18 Pro Sales Helped By Carrier Promotions",
           "publisher": "Investor's Business Daily",
@@ -2074,12 +2110,6 @@
           "publisher": "Proactive",
           "link": "https://www.proactiveinvestors.com/companies/news/1098719/apple-s-iphone-18-lineup-keeps-bank-of-america-bullish-1098719.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Apple Shares Trade 16.41% Above GF Value as AI Agreement Faces Disclosure",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/apple-shares-trade-16-41-182416925.html",
-          "sentiment": 0.78
         }
       ]
     },
@@ -2103,16 +2133,9 @@
       "dividendYield": 0.8,
       "marketCap": 3696065511424,
       "score": 9.4,
-      "newsSentiment": 0.49,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "Microsoft Jumps as Azure Turns Payment Vaults Into a Service",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/microsoft-jumps-azure-turns-payment-180855716.html",
-          "sentiment": 0.49
-        }
-      ]
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": []
     },
     {
       "sym": "NVDA",
@@ -2134,20 +2157,20 @@
       "dividendYield": 0.47,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia cloud partner crosses major compute threshold",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/coreweave-ai-infrastructure-milestone",
+          "title": "Trump-Xi Dinner Next Week Brings AI Titans To The Table \u2014 OpenAI, NVDA, and QCOM CEOs To Attend, Says Report",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/trump-xi-dinner-next-week-brings-ai-titans-to-the-table-open-ai-nvda-qcom-ceos-to-attend/cZtscudRBdp",
           "sentiment": 0.0
         },
         {
-          "title": "Nvidia Stock Split in 2026? My Prediction: It's Unlikely, but the Stock Is Still a Buy.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/nvidia-stock-split-in-2026-my-prediction-its-unlik/",
-          "sentiment": 0.0
+          "title": "S&P 500, Nasdaq, Dow End Higher As Drop In Oil Prices Allays Inflationary Concerns \u2014 NVDA, MCD, CRWV, LMT, AMZN In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-higher-amid-drop-in-oil-prices/cZtscNsRBdY",
+          "sentiment": -0.27
         }
       ]
     },
@@ -2171,9 +2194,15 @@
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.9,
-      "newsSentiment": 0.15,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Meta Platforms (META) Outpaced the Stock Market Today",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-platforms-meta-outpaced-214508942.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Meta Just Launched a New Subscription Business Built Entirely Around AI. Here's Why It Could Be a Game-Changer.",
           "publisher": "Motley Fool",
@@ -2185,12 +2214,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/meta-gets-4-billion-reminder-192011607.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s AI chips and Meta One strengthen Bank of America\u2019s outlook",
-          "publisher": "Proactive",
-          "link": "https://www.proactiveinvestors.com/companies/news/1098718/meta-s-ai-chips-and-meta-one-strengthen-bank-of-america-s-outlook-1098718.html",
-          "sentiment": 0.32
         }
       ]
     },
@@ -2214,9 +2237,15 @@
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Tesla (TSLA) Exceeds Market Returns: Some Facts to Consider",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-exceeds-market-returns-214506470.html",
+          "sentiment": 0.59
+        },
         {
           "title": "Tesla Jumps 2% as 30 Megawatts Build a Semi Beachhead",
           "publisher": "GuruFocus.com",
@@ -2228,12 +2257,6 @@
           "publisher": "Benzinga Prediction Markets",
           "link": "https://www.benzinga.com/markets/prediction-markets/26/09/61852446/tesla-q3-deliveries-goldman-kalshi-480000?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
           "sentiment": -0.2
-        },
-        {
-          "title": "Elon Musk sends strong message to SpaceX and Tesla investors",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/stocks/elon-musk-sends-a-strong-message-to-spacex-and-tesla-investors",
-          "sentiment": 0.51
         }
       ]
     },
@@ -2261,15 +2284,15 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Vishay Intertechnology, Allegro MicroSystems, Himax, Bandwidth, and AMD Stocks Trade Up, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/vishay-intertechnology-allegro-microsystems-himax-212217670.html",
-          "sentiment": 0.0
-        },
-        {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Vishay Intertechnology, Allegro MicroSystems, Himax, Bandwidth, and AMD Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/vishay-intertechnology-allegro-microsystems-himax-212217670.html",
           "sentiment": 0.0
         },
         {
@@ -2343,14 +2366,20 @@
       "dividendYield": 0.26,
       "marketCap": 4203184128000,
       "score": 7.6,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nearly 90% of the Fortune 100 Now Use Sundar Pichai's Gemini Enterprise Tool. Here's Why That Adoption Rate Matters for Alphabet Investors.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/nearly-90-of-the-fortune-100-now-use-gemini/",
-          "sentiment": 0.03
+          "title": "Alphabet (GOOGL) Rises Higher Than Market: Key Facts",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-rises-higher-market-214503770.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-alphabet-inc-goog-outpaced-214503164.html",
+          "sentiment": 0.0
         }
       ]
     },
@@ -2417,9 +2446,15 @@
       "dividendYield": 1.4,
       "marketCap": 455344390144,
       "score": 3.6,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Oracle (ORCL) Could Be 26% Below Fair Value After Project Jupiter Update",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-could-26-below-211345046.html",
+          "sentiment": 0.57
+        },
         {
           "title": "Fastly and Oracle Stocks Trade Up, What You Need To Know",
           "publisher": "StockStory",
@@ -2431,12 +2466,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-rallies-5-4-restructuring-184343432.html",
           "sentiment": 0.73
-        },
-        {
-          "title": "Oracle vs. Broadcom: Which \"Picks and Shovels\" AI Stock Has the Bigger Growth Runway From Here?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/oracle-vs-broadcom-which-picks-and-shovels-ai-stoc/",
-          "sentiment": 0.38
         }
       ]
     },
@@ -2460,9 +2489,15 @@
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "S&P 500, Nasdaq, Dow End Higher As Drop In Oil Prices Allays Inflationary Concerns \u2014 NVDA, MCD, CRWV, LMT, AMZN In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-higher-amid-drop-in-oil-prices/cZtscNsRBdY",
+          "sentiment": -0.27
+        },
         {
           "title": "AI Power Stocks Rally After Generac's Deal For Amazon Data Centers",
           "publisher": "Investor's Business Daily",
@@ -2474,12 +2509,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/wells-fargo-sees-50-upside-for-amazon-linked-stock",
           "sentiment": 0.25
-        },
-        {
-          "title": "Amazon, Walmart Face FTC Probe Call Over AI Chatbots And \u2018Made In USA\u2019 Claims \u2014 AMZN, WMT Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amazon-walmart-face-ftc-probe-call-over-ai-chatbots-and-made-in-usa-claims-amzn-wmt-stocks-in-focus/cZtr6gmRBdn",
-          "sentiment": 0.18
         }
       ]
     },
@@ -2796,15 +2825,15 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
-          "sentiment": 0.0
-        },
-        {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
         },
         {
@@ -2835,7 +2864,7 @@
       "dividendYield": 0.7,
       "marketCap": 199865548800,
       "score": 9.4,
-      "newsSentiment": 0.03,
+      "newsSentiment": -0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2845,16 +2874,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Salesforce CEO warns AI companies not to repeat this costly mistake",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/crm-salesforce-ceo-marc-benioff-warns-ai-companies-not-to-repeat-social-medias-mistakes",
+          "sentiment": -0.51
+        },
+        {
           "title": "Would You Want CRM Stock Back At The Price It Just Left?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615696/would-you-want-crm-stock-back-at-the-price-it-just-left/2026-09-17",
           "sentiment": 0.08
-        },
-        {
-          "title": "Salesforce-in-Claude Ships on All Paid Plans, Making Enterprise CRM Data Native to Claude\u2019s Interface",
-          "publisher": "Forkast News",
-          "link": "https://finance.yahoo.com/technology/ai/articles/salesforce-claude-ships-paid-plans-172614533.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2878,9 +2907,15 @@
       "dividendYield": null,
       "marketCap": 251580792832,
       "score": 8.5,
-      "newsSentiment": 0.3,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Highlights CrowdStrike (CRWD) as AI Security Concerns Lift Cybersecurity Stocks",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jim-cramer-highlights-crowdstrike-crwd-215812820.html",
+          "sentiment": 0.34
+        },
         {
           "title": "Is CrowdStrike Holdings (CRWD) Priced For Perfection On Sales?",
           "publisher": "Simply Wall St.",
@@ -2892,12 +2927,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/cscos-splunk-ai-push-gains-144800670.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "The Ultimate Cyber Shield: CrowdStrike Rises Past $235",
-          "publisher": "MarketBeat",
-          "link": "https://www.marketbeat.com/articles/crowdstrike-hits-record-high-cyber-leader-breaks-out-on-call-flow/?utm_source=yahoofinance&utm_medium=yahoofinance",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2925,22 +2954,22 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/palantir-rocket-lab-among-biggest-climbers-in-power-ranking",
+          "sentiment": 0.0
+        },
+        {
+          "title": "'You\u2019re Liable For Your Own Actions': Palantir CEO Alex Karp Opens a Third Front In The AI Safety Fight",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/youre-liable-for-your-own-actions-palantir-ceo-alex-karp-opens-a-third-front-in-the-ai-safety-fight/",
+          "sentiment": 0.05
+        },
+        {
           "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
           "publisher": "decrypt",
           "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
           "sentiment": 0.0
-        },
-        {
-          "title": "Palantir Gains as Europe Builds a Sovereign AI Counterweight",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-gains-europe-builds-sovereign-191050465.html",
-          "sentiment": 0.34
-        },
-        {
-          "title": "Palantir CEO Karp Says the Quiet Part Out Loud in the AI Risk Debate",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/palantir-karp-ai-government-risks-693bd6ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.27
         }
       ]
     },
@@ -3087,9 +3116,15 @@
       "dividendYield": null,
       "marketCap": 306799083520,
       "score": 9.4,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Prefers Palo Alto (PANW) Over SentinelOne (S)",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-prefers-palo-alto-220330487.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Can Palo Alto Networks' SASE Push Help It Challenge FTNT and ZS?",
           "publisher": "Zacks",
@@ -3296,26 +3331,26 @@
       "dividendYield": null,
       "marketCap": 43364855808,
       "score": 3.5,
-      "newsSentiment": 0.44,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Rocket Lab (RKLB) Completes $1.94 Billion Equity Offering",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completes-1-221636308.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/palantir-rocket-lab-among-biggest-climbers-in-power-ranking",
+          "sentiment": 0.0
+        },
         {
           "title": "Rocket Lab Is Playing a Much Bigger Game Than Rocket Launches, Eyes 90% Upside",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/17/rocket-lab-is-playing-a-much-bigger-game-than-rocket-launches-eyes-90-upside/",
           "sentiment": 0.2
-        },
-        {
-          "title": "Rocket Lab Jumps 6% as FCC Clears First Hurdle on Iridium Deal; Iridium Communications Barely Budges",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/rocket-lab-jumps-6-as-fcc-clears-first-hurdle-on-iridium-deal-iridium-communications-barely-budges/",
-          "sentiment": 0.54
-        },
-        {
-          "title": "RKLB Stock Eyes Ending 5-Week Slide: Iridium Deal Clears First FCC Hurdle, VC Backer Hails Solar Breakthrough",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-iridium-deal-fcc-hurdle-vc-backer-solar-breakthrough/cZtr9VxRB53",
-          "sentiment": 0.59
         }
       ]
     },
@@ -3382,9 +3417,15 @@
       "dividendYield": 0.78,
       "marketCap": 127313199104,
       "score": 4.5,
-      "newsSentiment": 0.58,
+      "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Corning Just Signed a Multibillion-Dollar Fiber Deal for AI and Broadband With Verizon. What That Means for GLW Stock.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4662861/corning-just-signed-a-multibillion-dollar-fiber-deal-for-ai-and-broadband-with-verizon-what-that-means-for-glw-stock",
+          "sentiment": 0.0
+        },
         {
           "title": "Corning Rides on Expanding Partner Base: Will it Boost Prospects?",
           "publisher": "Zacks",
@@ -3396,12 +3437,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-rallied-strong-long-135038335.html",
           "sentiment": 0.88
-        },
-        {
-          "title": "Corning\u2019s (GLW) Leadership Advantage\u00a0in Adapting to Tech Transitions",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-leadership-advantage-adapting-134515382.html",
-          "sentiment": 0.25
         }
       ]
     },
@@ -3452,6 +3487,12 @@
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "$500,000 Split Between VOO and QQQ Owns the Same Seven Stocks Twice, and Nobody Adds Up the Overlap",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/17/500000-split-between-voo-and-qqq-owns-the-same-seven-stocks-twice-and-nobody-adds-up-the-overlap/",
+          "sentiment": 0.0
+        },
         {
           "title": "Daily ETF Flows: QQQ Inflows Total Nearly $1B",
           "publisher": "etf.com",

@@ -76,13 +76,14 @@
   .num{ font-family:var(--mono); font-variant-numeric:tabular-nums; }
 
   /* ---------- HEADER ---------- */
-  header{
+  .sticky-top{
     position:sticky; top:0; z-index:40;
     background:var(--surface);
+    border-bottom:1px solid var(--border);
   }
   .header-top{
     max-width:1080px; margin:0 auto;
-    padding:14px 18px 22px;
+    padding:6px 18px 4px;
     display:flex; align-items:center; justify-content:space-between; gap:14px;
   }
   .brand{ display:flex; align-items:center; gap:14px; flex-shrink:0; min-width:0; }
@@ -92,19 +93,19 @@
      own second line on narrow phones if both groups can't fit together. */
   .header-tools{
     max-width:1080px; margin:0 auto;
-    padding:0 18px 14px;
+    padding:0 18px 4px;
     display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:10px; row-gap:8px;
+    flex-wrap:wrap; gap:10px; row-gap:6px;
   }
   .header-actions{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 
   .mode-toggle{
-    max-width:1080px; margin:0 auto; padding:12px 18px 14px;
+    max-width:1080px; margin:0 auto; padding:4px 18px;
     display:flex; gap:8px;
   }
   .mode-tab{
-    flex:1; min-height:44px; padding:10px 14px;
-    font-family:inherit; font-size:14px; font-weight:700;
+    flex:1; min-height:26px; padding:4px 14px;
+    font-family:inherit; font-size:12.5px; font-weight:700;
     background:var(--surface-2); color:var(--text-dim);
     border:1px solid var(--border); border-radius:9px;
     cursor:pointer; transition:background .12s, color .12s;
@@ -113,11 +114,11 @@
   .mode-tab:active{ opacity:0.85; }
 
   .brand-mark{
-    width:68px; height:68px; flex-shrink:0;
+    width:30px; height:30px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
-  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:14px; }
-  .brand-name{ font-weight:800; font-size:34px; letter-spacing:-0.025em; color:var(--text); }
+  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:9px; }
+  .brand-name{ font-weight:800; font-size:20px; letter-spacing:-0.025em; color:var(--text); }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -139,7 +140,7 @@
   }
   .index-pill{
     display:inline-flex; align-items:baseline; gap:6px;
-    padding:8px 12px; border-radius:8px; white-space:nowrap;
+    padding:6px 12px; border-radius:8px; white-space:nowrap;
     background:var(--surface); border:1.5px solid var(--border-strong);
   }
   .index-pill .index-pill-sym{
@@ -160,14 +161,14 @@
     display:flex; align-items:center; justify-content:center;
     color:var(--text);
     background:var(--surface-2); border:1px solid var(--border); border-radius:50%;
-    width:32px; height:32px; flex-shrink:0; cursor:pointer; padding:0;
+    width:28px; height:28px; flex-shrink:0; cursor:pointer; padding:0;
   }
   .refresh-btn:active{ opacity:0.7; }
   .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
   @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
 
   .portfolio-bar{
-    max-width:1080px; margin:0 auto; padding:12px 18px;
+    max-width:1080px; margin:0 auto; padding:5px 18px;
   }
   /* Full-width card, same left/right edges as .filter-card and every other
      section below it — content is left-aligned inside, not the box itself
@@ -177,7 +178,7 @@
   .portfolio-bar-inner{
     display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap;
     background:var(--surface-2); border:1px solid var(--border);
-    border-radius:14px; padding:12px 16px;
+    border-radius:14px; padding:6px 16px;
     box-shadow:var(--shadow-sm);
   }
   .portfolio-bar label{
@@ -188,7 +189,7 @@
   .portfolio-bar input{
     font-size:16px; font-family:var(--mono); text-align:right;
     background:var(--surface); border:1px solid var(--border-strong);
-    border-radius:7px; padding:7px 9px; color:var(--text);
+    border-radius:7px; padding:4px 9px; color:var(--text);
   }
   #portfolioCapital{ width:120px; }
   #portfolioSplit{ width:56px; }
@@ -553,10 +554,12 @@
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
     .layout{ padding:14px 14px 155px; }
-    .header-top{ padding:10px 14px 18px; gap:8px; }
-    .header-tools{ padding:0 14px 12px; }
+    .header-top{ padding:5px 14px 3px; gap:8px; }
+    .header-tools{ padding:0 14px 3px; }
     .header-top-right{ gap:6px; }
-    .data-status{ font-size:9.5px; padding:4px 8px; gap:4px; max-width:155px; }
+    .data-status{ font-size:9.5px; padding:3px 8px; gap:4px; max-width:155px; }
+    .refresh-btn{ width:26px; height:26px; }
+    .refresh-btn svg{ width:14px; height:14px; }
     /* "Equity: X%" used to sit as its own flex item and would wrap onto an
        orphan line below Cash/Options% on narrow phones — now that Equity %
        and Cash left are their own fields there's too much to force onto
@@ -569,21 +572,22 @@
        Narrower phones (iPhone SE-class, ~320-340px) still don't have room
        for all four fields at a legible size, so it wraps to 2 lines there
        instead of shrinking text past readability. */
-    .portfolio-bar{ padding:10px 14px; }
-    .portfolio-bar-inner{ gap:5px; padding:7px 8px; row-gap:6px; }
+    .portfolio-bar{ padding:3px 14px; }
+    .portfolio-bar-inner{ gap:5px; padding:3px 8px; row-gap:3px; }
     .portfolio-bar label{ gap:2px; }
     .lbl-full{ display:none; }
     .lbl-short{ display:inline; }
-    #portfolioCapital{ width:78px; padding:6px 4px; }
-    #portfolioSplit{ width:40px; padding:6px 3px; }
-    #portfolioEquitySplit{ width:40px; padding:6px 3px; }
-    .cash-left-pill{ font-size:11px; font-weight:600; padding:4px 7px; gap:3px; }
-    .mode-toggle{ padding:10px 14px 12px; }
-    .brand{ gap:8px; }
-    .brand-mark{ width:38px; height:38px; }
-    .brand-mark svg{ border-radius:9px; }
-    .brand-name{ font-size:23px; }
-    .export-btn{ padding:7px 10px; font-size:11.5px; gap:4px; }
+    #portfolioCapital{ width:78px; padding:2px 4px; }
+    #portfolioSplit{ width:40px; padding:2px 3px; }
+    #portfolioEquitySplit{ width:40px; padding:2px 3px; }
+    .cash-left-pill{ font-size:11px; font-weight:600; padding:2px 7px; gap:3px; }
+    .mode-toggle{ padding:3px 14px; }
+    .mode-tab{ min-height:24px; padding:3px 12px; font-size:12px; }
+    .brand{ gap:6px; }
+    .brand-mark{ width:24px; height:24px; }
+    .brand-mark svg{ border-radius:7px; }
+    .brand-name{ font-size:18px; }
+    .export-btn{ padding:5px 10px; font-size:11.5px; gap:4px; }
     /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
        Export don't all fit on one row even at their already-compact mobile
        sizes. Rather than clip Export off-screen (which also forces the
@@ -595,7 +599,7 @@
     .header-tools{ gap:6px; row-gap:6px; }
     .header-actions{ gap:6px; }
     .index-pills{ gap:5px; padding-right:8px; margin-right:0; }
-    .index-pill{ padding:5px 8px; border-width:1px; gap:4px; }
+    .index-pill{ padding:3px 8px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }
     .index-pill .index-pill-px{ font-size:12px; }
     .index-pill-stale{ font-size:10px; }
@@ -625,6 +629,7 @@
 </head>
 <body>
 
+<div class="sticky-top">
 <header>
   <div class="header-top">
     <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload SignalHQ" style="cursor:pointer;">
@@ -694,6 +699,7 @@
 <div class="mode-toggle" role="tablist">
   <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
   <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
+</div>
 </div>
 
 <div class="layout" id="optionsView">

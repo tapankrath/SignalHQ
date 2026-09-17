@@ -562,6 +562,15 @@
     width:100%; background:var(--amber); color:#fff; border:none;
     padding:11px; border-radius:8px; font-weight:700; font-size:13px;
   }
+  .ticker-action-row{ display:flex; gap:8px; margin-bottom:8px; }
+  .ticker-action-row .modal-copy-btn{ flex:2; }
+  .modal-copy-btn-secondary{
+    flex:1; background:var(--surface); color:var(--text-dim);
+    border:1px solid var(--border-strong);
+    padding:11px; border-radius:8px; font-weight:700; font-size:13px;
+    transition:border-color .12s, color .12s;
+  }
+  .modal-copy-btn-secondary:hover{ border-color:var(--text-dim); color:var(--text); }
 
   /* ticker chips */
   .ticker-chips{
@@ -606,6 +615,11 @@
     margin-top:8px;
   }
   .ticker-github-link:hover{ background:var(--amber-soft); }
+  .ticker-github-link-secondary{
+    border-color:transparent; color:var(--text-faint); font-weight:500;
+    padding:8px; margin-top:2px;
+  }
+  .ticker-github-link-secondary:hover{ background:var(--surface-2); color:var(--text-dim); }
 
   .toast{
     position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
@@ -2020,6 +2034,20 @@
     return `https://github.com/${username}/${repo}/edit/main/${path}`;
   }
 
+  // GitHub's "Upload files" page lets you drag a file straight onto the repo
+  // (it detects the name matches an existing file and offers to replace it)
+  // instead of opening the text editor and pasting over the old contents —
+  // pairs with downloadTickersJson() below for a download-then-drop workflow.
+  function githubUploadUrl(path){
+    const host = window.location.hostname;
+    if(!host.endsWith('.github.io')) return null;
+    const username = host.split('.')[0];
+    const repo = window.location.pathname.split('/').filter(Boolean)[0];
+    if(!repo) return null;
+    const dir = path.includes('/') ? path.slice(0, path.lastIndexOf('/')) : '';
+    return `https://github.com/${username}/${repo}/upload/main${dir ? '/' + dir : ''}`;
+  }
+
   async function loadTickersConfig(){
     const path = tickersFilePath();
     try{
@@ -2039,24 +2067,50 @@
     return JSON.stringify({ tickers: workingTickers, etfs: workingEtfs }, null, 2) + '\n';
   }
 
+  function downloadTickersJson(){
+    const blob = new Blob([tickersJsonContent()], { type:'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = tickersFilePath().split('/').pop();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    // Revoke on a delay, not immediately — some mobile browsers hand the
+    // blob off to a "Save to Files" sheet asynchronously, and revoking the
+    // URL before that finishes can produce an empty/broken download.
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
+  }
+
   function renderTickersModalBody(){
     const chipsHtml = workingTickers.map(t => {
       const isEtf = workingEtfs.includes(t);
       return `<span class="ticker-chip${isEtf ? ' etf' : ''}">${t}${isEtf ? ' · ETF' : ''}<button data-remove-ticker="${t}" aria-label="Remove ${t}">✕</button></span>`;
     }).join('');
 
+    const uploadUrl = githubUploadUrl(tickersFilePath());
     const editUrl = githubEditUrl(tickersFilePath());
 
     document.getElementById('tickerChips').innerHTML = chipsHtml || `<span style="color:var(--text-faint); font-size:12.5px;">No tickers yet — add one below.</span>`;
     document.getElementById('tickerJsonBox').value = tickersJsonContent();
 
     const linkEl = document.getElementById('tickerGithubLink');
-    if(editUrl){
-      linkEl.href = editUrl;
-      linkEl.textContent = `Open ${tickersFilePath()} on GitHub to paste & commit →`;
+    if(uploadUrl){
+      linkEl.href = uploadUrl;
+      linkEl.textContent = `Open GitHub upload page — drop the downloaded file to commit →`;
       linkEl.style.display = 'block';
     } else {
       linkEl.style.display = 'none';
+    }
+
+    const editLinkEl = document.getElementById('tickerGithubEditLink');
+    if(editLinkEl){
+      if(editUrl){
+        editLinkEl.href = editUrl;
+        editLinkEl.style.display = 'block';
+      } else {
+        editLinkEl.style.display = 'none';
+      }
     }
   }
 
@@ -2108,7 +2162,7 @@
         <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">This is the watchlist the nightly data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to paste into GitHub.</div>
+      <div class="modal-strat">This is the watchlist the nightly data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to download and commit to GitHub.</div>
 
       <div class="ticker-chips" id="tickerChips"></div>
 
@@ -2120,10 +2174,14 @@
         <input type="checkbox" id="tickerEtfCheck"> This is an ETF (affects the "ETFs only" filter)
       </label>
 
-      <div class="modal-note">Updated <code>${tickersFilePath()}</code> — copy this or use the link below:</div>
+      <div class="modal-note">Updated <code>${tickersFilePath()}</code> — download it, then drop the file on GitHub's upload page to commit:</div>
       <textarea class="ticker-json-box" id="tickerJsonBox" readonly></textarea>
-      <button class="modal-copy-btn" id="tickerCopyBtn">Copy JSON</button>
-      <a class="ticker-github-link" id="tickerGithubLink" target="_blank" rel="noopener">Open ${tickersFilePath()} on GitHub to paste &amp; commit →</a>
+      <div class="ticker-action-row">
+        <button class="modal-copy-btn" id="tickerDownloadBtn">Download ${tickersFilePath()}</button>
+        <button class="modal-copy-btn-secondary" id="tickerCopyBtn">Copy JSON</button>
+      </div>
+      <a class="ticker-github-link" id="tickerGithubLink" target="_blank" rel="noopener">Open GitHub upload page — drop the downloaded file to commit →</a>
+      <a class="ticker-github-link ticker-github-link-secondary" id="tickerGithubEditLink" target="_blank" rel="noopener">or edit ${tickersFilePath()} directly on GitHub →</a>
     `;
 
     renderTickersModalBody();
@@ -2136,6 +2194,10 @@
     document.getElementById('tickerChips').addEventListener('click', (e)=>{
       const btn = e.target.closest('[data-remove-ticker]');
       if(btn) removeTicker(btn.dataset.removeTicker);
+    });
+    document.getElementById('tickerDownloadBtn').addEventListener('click', ()=>{
+      downloadTickersJson();
+      showToast(`${tickersFilePath()} downloaded — check your device's downloads`);
     });
     document.getElementById('tickerCopyBtn').addEventListener('click', async ()=>{
       const ok = await copyText(tickersJsonContent());

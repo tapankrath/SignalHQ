@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T11:37:04.654190+00:00",
+  "generated_at": "2026-09-18T12:37:00.798375+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,26 +40,26 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.23,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Apple Just Announced a Groundbreaking iPhone, but It Has Alienated a Key Market",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/apple-just-announced-a-groundbreaking-iphone-but-it-has-alienated-a-key-market/",
-          "sentiment": 0.0
+          "title": "How Apple's iPhone 18 price increases impact your trade-in value at Verizon, T-Mobile, or AT&T",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/how-apples-iphone-18-price-increases-impact-your-trade-in-value-at-verizon-t-mobile-or-att-122122027.html",
+          "sentiment": 0.34
         },
         {
-          "title": "Apple\u2019s Chip Strategy Keeps Paying Dividends",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/apple-iphone-a20-chip-43d4ef59?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Apple iPhone Refresh Cycle Better-Than-Expected, Says Evercore As AAPL Stock Heads For 5th Straight Weekly Gain",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/aapl-stock-5th-straight-weekly-gain-evercore-iphone-refresh-cycle/cZtuHk3RB3F",
+          "sentiment": 0.65
         },
         {
-          "title": "Apple (AAPL) Challenges Secret UK Order For An iPhone Backdoor",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/articles/apple-aapl-challenges-secret-uk-231950589.html",
-          "sentiment": 0.08
+          "title": "Stock Market Today: Dow Wavers As Oil Extends Losses; Apple, AMD In Buy Zones (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": -0.3
         }
       ],
       "volRegime": "Rich",
@@ -156,14 +156,26 @@
       "pcVol": 0.49,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.26,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
           "publisher": "Yahoo Finance",
           "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Jensen Huang just gave Nvidia investors a massive 2027 signal",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-just-gave-nvidia-122600032.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Jensen Huang Calls Nvidia the \"World's First and Only Growth Value Stock,\" Pointing to Its 70% Revenue Growth Forecast Next Year. Here's Why That Framing Matters for How Investors Price NVDA.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/jensen-huang-calls-nvidia-the-worlds-first-and-onl/",
+          "sentiment": 0.77
         }
       ],
       "volRegime": "Cheap",
@@ -212,26 +224,26 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.11,
+      "newsSentiment": -0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Meta Could\u00a0Keep Surprising Wall\u00a0Street",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/why-meta-could-keep-surprising-wall-street/",
+          "sentiment": 0.27
+        },
+        {
+          "title": "Manus Eyes $4 Billion Valuation in First Round Since Beijing Forced Meta to Walk Away",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/technology/ai/articles/manus-eyes-4-billion-valuation-114511176.html",
+          "sentiment": -0.46
+        },
         {
           "title": "Meta Vs. Oracle: The Laggards of AI Capex Payback Velocity",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/meta-vs-oracle-the-laggards-of-ai-capex-payback-velocity/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s AI Agent Has a Trust Problem",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/tech/ai/metas-ai-agent-has-a-trust-problem-5ee5882c?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.15
-        },
-        {
-          "title": "Mark Cuban exposes a problem with how Meta and Google fund AI",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/mark-cuban-exposes-meta-google-funding-algorithm-anti-ai-outrage",
-          "sentiment": -0.49
         }
       ],
       "volRegime": "Cheap",
@@ -276,8 +288,8 @@
       "pcVol": 0.87,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: After S&P 500, Nasdaq Rebound, What's Next? Moderna, AMD, SpaceX Flash Buy Signals.",
@@ -286,16 +298,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Stock Market Today: Dow Wavers As Oil Extends Losses; Apple, AMD In Buy Zones (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": -0.3
+        },
+        {
           "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
           "sentiment": 0.71
-        },
-        {
-          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -453,26 +465,26 @@
       "pcVol": 0.61,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.06,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.4,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "JPMorgan Chase (JPM) Commits $750 Billion to Rebuilding America\u2019s Housing Supply",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/real-estate/articles/jpmorgan-chase-jpm-commits-750-003942638.html",
-          "sentiment": 0.03
-        },
-        {
-          "title": "JPMorgan Falls as Prime Lending Reprices to 7%",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-falls-prime-lending-reprices-184659168.html",
+          "title": "JPMorgan AWM operations head Julie Harris to retire in 2027\u00a0\u2013 report",
+          "publisher": "Private Banker International",
+          "link": "https://www.privatebankerinternational.com/news/jpmorgan-awm-head-julie-harris-retire/",
           "sentiment": 0.0
         },
         {
-          "title": "JPMorgan CEO doubles down on his inflation and economy verdict",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/jpmorgan-ceo-said-inflation-not-over-economy-verdict",
-          "sentiment": 0.15
+          "title": "JPMorgan drops Iran war oil forecast as redlines are crossed",
+          "publisher": "Quartz",
+          "link": "https://qz.com/jpmorgan-iran-war-oil-forecast-endgame-091826",
+          "sentiment": -0.6
+        },
+        {
+          "title": "The Assumption Behind JPMorgan's Iran War Forecast Is Gone",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/jpmorgan-iran-war-oil-forecast-brent/",
+          "sentiment": -0.6
         }
       ],
       "volRegime": "Cheap",
@@ -517,7 +529,7 @@
       "pcVol": 0.71,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.08,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -533,10 +545,10 @@
           "sentiment": -0.23
         },
         {
-          "title": "Our Oracle Stock Pick Is Down, But Stabilizing. Buy More.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/oracle-stock-pick-price-ai-d4e22af1?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "S&P kept Oracle investment grade. Its own numbers don\u2019t support that call.",
+          "publisher": "Fortune",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/p-kept-oracle-investment-grade-083200547.html",
+          "sentiment": 0.4
         }
       ],
       "volRegime": "Fair",
@@ -581,9 +593,15 @@
       "pcVol": 0.31,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "The Morning Risk Report: Senators Ask FTC to Probe Walmart and Amazon Over Bots\u2019 \u2018Made in America\u2019 Data",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/risk-compliance-journal/the-morning-risk-report-senators-ask-ftc-to-probe-walmart-and-amazon-over-bots-made-in-america-data-e84cf6e7?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.1
+        },
         {
           "title": "GNRC Stock Heads For Best Week Since May: Amazon Deal Sparks Fresh Data Center Growth Bets, Analysts Say Generac Is Trading Cheap",
           "publisher": "Stocktwits",
@@ -595,12 +613,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/employment/amazon-us-worker-pay-benefits",
           "sentiment": 0.18
-        },
-        {
-          "title": "What Amazon.com (AMZN)'s US$8 Billion Backup Power Deal With Generac Means For Shareholders",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-us-8-021233361.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -773,26 +785,26 @@
       "pcVol": 0.51,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.05,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.46,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Wells Fargo cuts Netflix rating on engagement risk, weak slate",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-cuts-netflix-rating-120836104.html",
+          "sentiment": -0.42
+        },
+        {
+          "title": "Premarket movers: Xenon sinks on trial pause, Netflix hit by downgrade",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-xenon-sinks-trial-120810100.html",
+          "sentiment": -0.79
+        },
         {
           "title": "NFLX Stock Heads For 4-Day Slide, Extends September Losing Streak After Wells Fargo Flags \u201cWorrying\u201d Engagement In Downgrade",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nflx-stock-4-day-slide-september-losing-streak-wells-fargo-downgrade/cZtutAKRB3m",
           "sentiment": -0.15
-        },
-        {
-          "title": "Intel, Netflix, Berkshire Hathaway, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-433c4e96?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Netflix vs. Disney: Which Streaming Stock Has an Edge Right Now?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/media-advertising/articles/netflix-vs-disney-streaming-stock-171100900.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -1014,7 +1026,7 @@
       "breakevenMovePct": 3.33,
       "maxLoss": 18075.0,
       "pcOI": 0.35,
-      "pcVol": 0.47,
+      "pcVol": 0.46,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.09,
@@ -1473,26 +1485,26 @@
       "pcVol": 1.07,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.64,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dell Gains Nearly 4% Today as 45-Watt Inference Expands Its Server Menu",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/dell-gains-nearly-4-today-184432523.html",
+          "title": "Dell Technologies (DELL) Buyback Puts Valuation Back In Focus",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-buyback-puts-121100348.html",
           "sentiment": 0.42
         },
         {
-          "title": "Dell\u2019s AI Backlog Surge Positions Stock for $600+ as Server Revenue Doubles",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/dells-ai-backlog-surge-positions-stock-for-600-as-server-revenue-doubles/",
-          "sentiment": 0.61
+          "title": "Jim Cramer Says Hewlett Packard Enterprise (HPE) Has the \u201cHorses\u201d but Remains a Dell (DELL) \u201cFan\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-hewlett-packard-115028988.html",
+          "sentiment": 0.0
         },
         {
-          "title": "AI Server Stocks Rally as the Hardware Bid Broadens: Hewlett Packard Enterprise Jumps 9%, Super Micro Climbs 6%, Dell Rises 3%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/ai-server-stocks-rally-as-the-hardware-bid-broadens-hewlett-packard-enterprise-jumps-9-super-micro-climbs-6-dell-rises-3/",
-          "sentiment": 0.89
+          "title": "Michael Dell's $6.25 Billion Bet on Compounding Wins Over Wall Street and Parents",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/michael-dell-compounding-trump-accounts-stock/",
+          "sentiment": 0.57
         }
       ],
       "volRegime": "Cheap",
@@ -2107,9 +2119,15 @@
       "pcVol": 1.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.08,
+      "newsSentiment": 0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Home Depot vs. Spotify Technology: Which Consumer Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/18/home-depot-vs-spotify-technology-which-consumer-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
         {
           "title": "Home Depot Paid $2.3 Billion in Dividends While Returns on Capital Slipped. Here\u2019s Where HD Stock Could Go.",
           "publisher": "TIKR",
@@ -2121,12 +2139,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615513/what-has-home-depot-stopped-telling-you-about-where-its-goods-come-from/2026-09-16",
           "sentiment": -0.23
-        },
-        {
-          "title": "Home Depot (HD) Could Be 21% Undervalued On Its Expanding Pro Supply Narrative",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-could-21-042727080.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2351,26 +2363,26 @@
       "dividendYield": 0.32,
       "marketCap": 4918238773248,
       "score": 8.5,
-      "newsSentiment": 0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.23,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Apple Just Announced a Groundbreaking iPhone, but It Has Alienated a Key Market",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/apple-just-announced-a-groundbreaking-iphone-but-it-has-alienated-a-key-market/",
-          "sentiment": 0.0
+          "title": "How Apple's iPhone 18 price increases impact your trade-in value at Verizon, T-Mobile, or AT&T",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/how-apples-iphone-18-price-increases-impact-your-trade-in-value-at-verizon-t-mobile-or-att-122122027.html",
+          "sentiment": 0.34
         },
         {
-          "title": "Apple\u2019s Chip Strategy Keeps Paying Dividends",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/apple-iphone-a20-chip-43d4ef59?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Apple iPhone Refresh Cycle Better-Than-Expected, Says Evercore As AAPL Stock Heads For 5th Straight Weekly Gain",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/aapl-stock-5th-straight-weekly-gain-evercore-iphone-refresh-cycle/cZtuHk3RB3F",
+          "sentiment": 0.65
         },
         {
-          "title": "Apple (AAPL) Challenges Secret UK Order For An iPhone Backdoor",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/articles/apple-aapl-challenges-secret-uk-231950589.html",
-          "sentiment": 0.08
+          "title": "Stock Market Today: Dow Wavers As Oil Extends Losses; Apple, AMD In Buy Zones (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": -0.3
         }
       ]
     },
@@ -2425,14 +2437,26 @@
       "dividendYield": 0.46,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.26,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
           "publisher": "Yahoo Finance",
           "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Jensen Huang just gave Nvidia investors a massive 2027 signal",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-just-gave-nvidia-122600032.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Jensen Huang Calls Nvidia the \"World's First and Only Growth Value Stock,\" Pointing to Its 70% Revenue Growth Forecast Next Year. Here's Why That Framing Matters for How Investors Price NVDA.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/jensen-huang-calls-nvidia-the-worlds-first-and-onl/",
+          "sentiment": 0.77
         }
       ]
     },
@@ -2456,26 +2480,26 @@
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.9,
-      "newsSentiment": -0.11,
+      "newsSentiment": -0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Meta Could\u00a0Keep Surprising Wall\u00a0Street",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/why-meta-could-keep-surprising-wall-street/",
+          "sentiment": 0.27
+        },
+        {
+          "title": "Manus Eyes $4 Billion Valuation in First Round Since Beijing Forced Meta to Walk Away",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/technology/ai/articles/manus-eyes-4-billion-valuation-114511176.html",
+          "sentiment": -0.46
+        },
         {
           "title": "Meta Vs. Oracle: The Laggards of AI Capex Payback Velocity",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/meta-vs-oracle-the-laggards-of-ai-capex-payback-velocity/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s AI Agent Has a Trust Problem",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/tech/ai/metas-ai-agent-has-a-trust-problem-5ee5882c?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.15
-        },
-        {
-          "title": "Mark Cuban exposes a problem with how Meta and Google fund AI",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/mark-cuban-exposes-meta-google-funding-algorithm-anti-ai-outrage",
-          "sentiment": -0.49
         }
       ]
     },
@@ -2542,8 +2566,8 @@
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: After S&P 500, Nasdaq Rebound, What's Next? Moderna, AMD, SpaceX Flash Buy Signals.",
@@ -2552,16 +2576,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Stock Market Today: Dow Wavers As Oil Extends Losses; Apple, AMD In Buy Zones (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": -0.3
+        },
+        {
           "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
           "sentiment": 0.71
-        },
-        {
-          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2652,26 +2676,26 @@
       "dividendYield": 1.72,
       "marketCap": 928531021824,
       "score": 5.3,
-      "newsSentiment": 0.06,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.4,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "JPMorgan Chase (JPM) Commits $750 Billion to Rebuilding America\u2019s Housing Supply",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/real-estate/articles/jpmorgan-chase-jpm-commits-750-003942638.html",
-          "sentiment": 0.03
-        },
-        {
-          "title": "JPMorgan Falls as Prime Lending Reprices to 7%",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-falls-prime-lending-reprices-184659168.html",
+          "title": "JPMorgan AWM operations head Julie Harris to retire in 2027\u00a0\u2013 report",
+          "publisher": "Private Banker International",
+          "link": "https://www.privatebankerinternational.com/news/jpmorgan-awm-head-julie-harris-retire/",
           "sentiment": 0.0
         },
         {
-          "title": "JPMorgan CEO doubles down on his inflation and economy verdict",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/jpmorgan-ceo-said-inflation-not-over-economy-verdict",
-          "sentiment": 0.15
+          "title": "JPMorgan drops Iran war oil forecast as redlines are crossed",
+          "publisher": "Quartz",
+          "link": "https://qz.com/jpmorgan-iran-war-oil-forecast-endgame-091826",
+          "sentiment": -0.6
+        },
+        {
+          "title": "The Assumption Behind JPMorgan's Iran War Forecast Is Gone",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/jpmorgan-iran-war-oil-forecast-brent/",
+          "sentiment": -0.6
         }
       ]
     },
@@ -2695,7 +2719,7 @@
       "dividendYield": 1.33,
       "marketCap": 455344390144,
       "score": 3.6,
-      "newsSentiment": -0.08,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2711,10 +2735,10 @@
           "sentiment": -0.23
         },
         {
-          "title": "Our Oracle Stock Pick Is Down, But Stabilizing. Buy More.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/oracle-stock-pick-price-ai-d4e22af1?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "S&P kept Oracle investment grade. Its own numbers don\u2019t support that call.",
+          "publisher": "Fortune",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/p-kept-oracle-investment-grade-083200547.html",
+          "sentiment": 0.4
         }
       ]
     },
@@ -2738,9 +2762,15 @@
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "The Morning Risk Report: Senators Ask FTC to Probe Walmart and Amazon Over Bots\u2019 \u2018Made in America\u2019 Data",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/risk-compliance-journal/the-morning-risk-report-senators-ask-ftc-to-probe-walmart-and-amazon-over-bots-made-in-america-data-e84cf6e7?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.1
+        },
         {
           "title": "GNRC Stock Heads For Best Week Since May: Amazon Deal Sparks Fresh Data Center Growth Bets, Analysts Say Generac Is Trading Cheap",
           "publisher": "Stocktwits",
@@ -2752,12 +2782,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/employment/amazon-us-worker-pay-benefits",
           "sentiment": 0.18
-        },
-        {
-          "title": "What Amazon.com (AMZN)'s US$8 Billion Backup Power Deal With Generac Means For Shareholders",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-us-8-021233361.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2867,26 +2891,26 @@
       "dividendYield": null,
       "marketCap": 313586286592,
       "score": 2.9,
-      "newsSentiment": -0.05,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.46,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Wells Fargo cuts Netflix rating on engagement risk, weak slate",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-cuts-netflix-rating-120836104.html",
+          "sentiment": -0.42
+        },
+        {
+          "title": "Premarket movers: Xenon sinks on trial pause, Netflix hit by downgrade",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-xenon-sinks-trial-120810100.html",
+          "sentiment": -0.79
+        },
         {
           "title": "NFLX Stock Heads For 4-Day Slide, Extends September Losing Streak After Wells Fargo Flags \u201cWorrying\u201d Engagement In Downgrade",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nflx-stock-4-day-slide-september-losing-streak-wells-fargo-downgrade/cZtutAKRB3m",
           "sentiment": -0.15
-        },
-        {
-          "title": "Intel, Netflix, Berkshire Hathaway, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-433c4e96?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Netflix vs. Disney: Which Streaming Stock Has an Edge Right Now?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/media-advertising/articles/netflix-vs-disney-streaming-stock-171100900.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3068,7 +3092,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2040671371264,
+      "marketCap": 2039495917568,
       "score": 8.2,
       "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
@@ -3328,26 +3352,26 @@
       "dividendYield": 0.43,
       "marketCap": 374112223232,
       "score": 8.5,
-      "newsSentiment": 0.64,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dell Gains Nearly 4% Today as 45-Watt Inference Expands Its Server Menu",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/dell-gains-nearly-4-today-184432523.html",
+          "title": "Dell Technologies (DELL) Buyback Puts Valuation Back In Focus",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-buyback-puts-121100348.html",
           "sentiment": 0.42
         },
         {
-          "title": "Dell\u2019s AI Backlog Surge Positions Stock for $600+ as Server Revenue Doubles",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/dells-ai-backlog-surge-positions-stock-for-600-as-server-revenue-doubles/",
-          "sentiment": 0.61
+          "title": "Jim Cramer Says Hewlett Packard Enterprise (HPE) Has the \u201cHorses\u201d but Remains a Dell (DELL) \u201cFan\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-hewlett-packard-115028988.html",
+          "sentiment": 0.0
         },
         {
-          "title": "AI Server Stocks Rally as the Hardware Bid Broadens: Hewlett Packard Enterprise Jumps 9%, Super Micro Climbs 6%, Dell Rises 3%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/ai-server-stocks-rally-as-the-hardware-bid-broadens-hewlett-packard-enterprise-jumps-9-super-micro-climbs-6-dell-rises-3/",
-          "sentiment": 0.89
+          "title": "Michael Dell's $6.25 Billion Bet on Compounding Wins Over Wall Street and Parents",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/michael-dell-compounding-trump-accounts-stock/",
+          "sentiment": 0.57
         }
       ]
     },
@@ -3406,7 +3430,7 @@
       "volRatio": 1.49,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 59261722624,
+      "marketCap": 55347269632,
       "score": 6.2,
       "newsSentiment": 0.27,
       "newsSentimentLabel": "Positive",
@@ -3455,6 +3479,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "CRWV Stock: CoreWeave Secures $3.7B For AI Expansion With Convertible Debt Deal",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-stock-coreweave-secures-3-7-b-for-ai-expansion-with-convertible-debt-deal/cZtuMHDRB3n",
+          "sentiment": -0.05
+        },
+        {
           "title": "CRWV Stock Rebounds From 1-Month Low \u2014 Cathie Wood\u2019s ARK Bets $19M As Retail Favors CoreWeave Over Nebius",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/crwv-stock-cathie-wood-ark-19m-retail-favors-coreweave-over-nebius/cZtulUPRB37",
@@ -3465,12 +3495,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/why-coreweave-stock-dived-by-more-than-5-today/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Stock Market Today, Sept. 17: CoreWeave Falls on Convertible Debt and Share Sale Announcement",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/17/stock-market-today-sept-17-coreweave-falls-on-convertible-debt-and-share-sale-announcement/",
-          "sentiment": -0.08
         }
       ]
     },
@@ -3664,7 +3688,7 @@
       "volRatio": 0.93,
       "peRatio": 66.3,
       "dividendYield": 0.76,
-      "marketCap": 127313199104,
+      "marketCap": 127054471168,
       "score": 4.5,
       "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
@@ -3776,9 +3800,15 @@
       "dividendYield": 3.08,
       "marketCap": 301811105792,
       "score": 2.3,
-      "newsSentiment": -0.08,
+      "newsSentiment": 0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Home Depot vs. Spotify Technology: Which Consumer Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/18/home-depot-vs-spotify-technology-which-consumer-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
         {
           "title": "Home Depot Paid $2.3 Billion in Dividends While Returns on Capital Slipped. Here\u2019s Where HD Stock Could Go.",
           "publisher": "TIKR",
@@ -3790,12 +3820,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615513/what-has-home-depot-stopped-telling-you-about-where-its-goods-come-from/2026-09-16",
           "sentiment": -0.23
-        },
-        {
-          "title": "Home Depot (HD) Could Be 21% Undervalued On Its Expanding Pro Supply Narrative",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-could-21-042727080.html",
-          "sentiment": 0.0
         }
       ]
     },

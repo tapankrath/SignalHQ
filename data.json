@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T08:36:48.911686+00:00",
+  "generated_at": "2026-09-18T09:37:07.266051+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -160,9 +160,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "title": "Nvidia vs. Broadcom: Whose AI Revenue Actually Grows Faster From Here?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/nvidia-broadcom-ai-revenue-forcast-growth/",
           "sentiment": 0.0
         }
       ],
@@ -270,9 +270,15 @@
       "pcVol": 0.87,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
+          "sentiment": 0.0
+        },
         {
           "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
           "publisher": "Stocktwits",
@@ -284,12 +290,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Cheap",
@@ -447,26 +447,26 @@
       "pcVol": 0.61,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": -0.09,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
-        {
-          "title": "JPMorgan CEO Jamie Dimon says small businesses are experiencing a 'mini boom'",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-says-small-businesses-are-experiencing-a-mini-boom-201551606.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "JPMorgan CEO Jamie Dimon: 'It's not clear to me we've slayed inflation'",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-its-not-clear-to-me-weve-slayed-inflation-210823303.html",
-          "sentiment": -0.29
-        },
         {
           "title": "JPMorgan Chase (JPM) Commits $750 Billion to Rebuilding America\u2019s Housing Supply",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/real-estate/articles/jpmorgan-chase-jpm-commits-750-003942638.html",
           "sentiment": 0.03
+        },
+        {
+          "title": "JPMorgan Falls as Prime Lending Reprices to 7%",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-falls-prime-lending-reprices-184659168.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "JPMorgan CEO doubles down on his inflation and economy verdict",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/jpmorgan-ceo-said-inflation-not-over-economy-verdict",
+          "sentiment": 0.15
         }
       ],
       "volRegime": "Cheap",
@@ -511,9 +511,15 @@
       "pcVol": 0.71,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Our Oracle Stock Pick Is Down, But Stabilizing. Buy More.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/oracle-stock-pick-price-ai-d4e22af1?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Oracle (ORCL) Could Be 26% Below Fair Value After Project Jupiter Update",
           "publisher": "Simply Wall St.",
@@ -525,12 +531,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/fastly-oracle-stocks-trade-know-210617235.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Oracle Rallies 5.4% as Restructuring Helps Carry a $664 Billion Backlog",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-rallies-5-4-restructuring-184343432.html",
-          "sentiment": 0.73
         }
       ],
       "volRegime": "Fair",
@@ -575,9 +575,15 @@
       "pcVol": 0.31,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "GNRC Stock Heads For Best Week Since May: Amazon Deal Sparks Fresh Data Center Growth Bets, Analysts Say Generac Is Trading Cheap",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/gnrc-stock-heads-for-best-week-since-may-amazon-deal-sparks-fresh-data-center-growth-bets-analysts-say-generac-is-trading-cheap/cZtuYTHRB3L",
+          "sentiment": 0.87
+        },
         {
           "title": "Amazon makes $1.5 billion move for U.S. workers",
           "publisher": "TheStreet",
@@ -589,12 +595,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-us-8-021233361.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "AI Security Debate \u2014 Amazon Says AI Models To Be Released Only When 'Ready And Safe'",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amazon-says-ai-models-to-be-released-only-when-ready-and-safe/cZts5oiRBdt",
-          "sentiment": 0.82
         }
       ],
       "volRegime": "Cheap",
@@ -1275,9 +1275,15 @@
       "pcVol": 0.84,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.06,
+      "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Prediction: This Will Be Palantir's Stock Price 1 Year From Now (Hint: It's a Bigger Move Than You Think)",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/prediction-this-will-be-palantirs-stock-price-1-ye/",
+          "sentiment": 0.0
+        },
         {
           "title": "Forget Michael Burry's Short Thesis. Here's the Bull Case for Palantir He's Not Talking About.",
           "publisher": "Motley Fool",
@@ -1289,12 +1295,6 @@
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/alex-karp-ai-nationalization-liability/",
           "sentiment": -0.15
-        },
-        {
-          "title": "Palantir Technologies (PLTR) AI Deal Rush Meets A Fair Value Debate",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-ai-deal-001448200.html",
-          "sentiment": 0.57
         }
       ],
       "volRegime": "Cheap",
@@ -1403,7 +1403,7 @@
       "pcVol": 0.9,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.42,
+      "newsSentiment": 0.51,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1417,12 +1417,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/17/theres-a-good-reason-to-choose-globalfoundries-over-taiwan-semiconductor-manufacturing/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Prediction: $1,000 Invested in Taiwan Semiconductor (TSMC) Today Will Be Worth This Much by the End of the Decade",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/16/prediction-1000-invested-in-taiwan-semiconductor-t/",
-          "sentiment": 0.23
         }
       ],
       "volRegime": "Cheap",
@@ -2385,7 +2379,7 @@
       "chg1y": -1.3,
       "volRatio": 0.81,
       "peRatio": 27.3,
-      "dividendYield": 0.8,
+      "dividendYield": 0.79,
       "marketCap": 3696065511424,
       "score": 9.4,
       "newsSentiment": 0.51,
@@ -2423,9 +2417,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "title": "Nvidia vs. Broadcom: Whose AI Revenue Actually Grows Faster From Here?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/nvidia-broadcom-ai-revenue-forcast-growth/",
           "sentiment": 0.0
         }
       ]
@@ -2487,9 +2481,15 @@
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": -0.13,
+      "newsSentiment": 0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Inside Tesla\u2019s Shanghai Gigafactory. What Its Largest Plant Means for the Stock.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/tesla-stock-shanghai-gigafactory-7bb4795b?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla (TSLA) Teases Deeper Integration And Roadster Reveal With New Chip Push",
           "publisher": "Simply Wall St.",
@@ -2501,12 +2501,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
           "sentiment": 0.44
-        },
-        {
-          "title": "TSLA Trades About 20% Below Fair Value, Says Analyst \u2014 But Retail Stays Bearish Amid Cybercab Scrutiny, SpaceX Merger Buzz",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-below-fair-value-analyst-retail-bearish-cybercab-scrutiny-spacex-merger-buzz/cZtuL7ERBdH",
-          "sentiment": -0.53
         }
       ]
     },
@@ -2530,9 +2524,15 @@
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
+          "sentiment": 0.0
+        },
         {
           "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
           "publisher": "Stocktwits",
@@ -2544,12 +2544,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
-          "sentiment": 0.54
         }
       ]
     },
@@ -2640,26 +2634,26 @@
       "dividendYield": 1.72,
       "marketCap": 928531021824,
       "score": 5.3,
-      "newsSentiment": -0.09,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
-        {
-          "title": "JPMorgan CEO Jamie Dimon says small businesses are experiencing a 'mini boom'",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-says-small-businesses-are-experiencing-a-mini-boom-201551606.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "JPMorgan CEO Jamie Dimon: 'It's not clear to me we've slayed inflation'",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-its-not-clear-to-me-weve-slayed-inflation-210823303.html",
-          "sentiment": -0.29
-        },
         {
           "title": "JPMorgan Chase (JPM) Commits $750 Billion to Rebuilding America\u2019s Housing Supply",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/real-estate/articles/jpmorgan-chase-jpm-commits-750-003942638.html",
           "sentiment": 0.03
+        },
+        {
+          "title": "JPMorgan Falls as Prime Lending Reprices to 7%",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-falls-prime-lending-reprices-184659168.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "JPMorgan CEO doubles down on his inflation and economy verdict",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/jpmorgan-ceo-said-inflation-not-over-economy-verdict",
+          "sentiment": 0.15
         }
       ]
     },
@@ -2683,9 +2677,15 @@
       "dividendYield": 1.4,
       "marketCap": 455344390144,
       "score": 3.6,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Our Oracle Stock Pick Is Down, But Stabilizing. Buy More.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/oracle-stock-pick-price-ai-d4e22af1?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Oracle (ORCL) Could Be 26% Below Fair Value After Project Jupiter Update",
           "publisher": "Simply Wall St.",
@@ -2697,12 +2697,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/fastly-oracle-stocks-trade-know-210617235.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Oracle Rallies 5.4% as Restructuring Helps Carry a $664 Billion Backlog",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-rallies-5-4-restructuring-184343432.html",
-          "sentiment": 0.73
         }
       ]
     },
@@ -2726,9 +2720,15 @@
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "GNRC Stock Heads For Best Week Since May: Amazon Deal Sparks Fresh Data Center Growth Bets, Analysts Say Generac Is Trading Cheap",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/gnrc-stock-heads-for-best-week-since-may-amazon-deal-sparks-fresh-data-center-growth-bets-analysts-say-generac-is-trading-cheap/cZtuYTHRB3L",
+          "sentiment": 0.87
+        },
         {
           "title": "Amazon makes $1.5 billion move for U.S. workers",
           "publisher": "TheStreet",
@@ -2740,12 +2740,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-com-amzn-us-8-021233361.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "AI Security Debate \u2014 Amazon Says AI Models To Be Released Only When 'Ready And Safe'",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amazon-says-ai-models-to-be-released-only-when-ready-and-safe/cZts5oiRBdt",
-          "sentiment": 0.82
         }
       ]
     },
@@ -2938,7 +2932,7 @@
       "chg1y": 273.8,
       "volRatio": 1.36,
       "peRatio": 56.5,
-      "dividendYield": 0.38,
+      "dividendYield": 0.37,
       "marketCap": 182626140160,
       "score": 4.9,
       "newsSentiment": 0.0,
@@ -3187,9 +3181,15 @@
       "dividendYield": null,
       "marketCap": 423515029504,
       "score": 9.1,
-      "newsSentiment": 0.06,
+      "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Prediction: This Will Be Palantir's Stock Price 1 Year From Now (Hint: It's a Bigger Move Than You Think)",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/prediction-this-will-be-palantirs-stock-price-1-ye/",
+          "sentiment": 0.0
+        },
         {
           "title": "Forget Michael Burry's Short Thesis. Here's the Bull Case for Palantir He's Not Talking About.",
           "publisher": "Motley Fool",
@@ -3201,12 +3201,6 @@
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/alex-karp-ai-nationalization-liability/",
           "sentiment": -0.15
-        },
-        {
-          "title": "Palantir Technologies (PLTR) AI Deal Rush Meets A Fair Value Debate",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-ai-deal-001448200.html",
-          "sentiment": 0.57
         }
       ]
     },
@@ -3273,7 +3267,7 @@
       "dividendYield": 0.97,
       "marketCap": 2231532257280,
       "score": 9.4,
-      "newsSentiment": 0.42,
+      "newsSentiment": 0.51,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3287,12 +3281,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/17/theres-a-good-reason-to-choose-globalfoundries-over-taiwan-semiconductor-manufacturing/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Prediction: $1,000 Invested in Taiwan Semiconductor (TSMC) Today Will Be Worth This Much by the End of the Decade",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/16/prediction-1000-invested-in-taiwan-semiconductor-t/",
-          "sentiment": 0.23
         }
       ]
     },

@@ -68,9 +68,13 @@
 
   /* Dark mode — follows the device/browser's system appearance automatically
      (no in-app toggle). Every color in the app is drawn from the tokens
-     above, so redefining them here is enough to re-skin the whole page;
-     only a couple of components that hard-code a color for contrast reasons
-     (see below, and --invert-bg's comment above) need their own override. */
+     above, so redefining them here is enough to re-skin the whole page.
+     A few components hard-code a color for contrast reasons and need their
+     own override too — those overrides are collected at the very end of
+     this stylesheet (search "Dark mode component overrides"), not here,
+     since a same-specificity rule placed here would lose the cascade to
+     that component's own (later-in-file) rule regardless of which theme is
+     active. */
   @media (prefers-color-scheme: dark){
     :root{
       --bg:#0B0C0E;
@@ -94,23 +98,6 @@
       --shadow-sm:0 1px 2px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
       --shadow-md:0 2px 6px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.45);
       --shadow-lg:0 12px 40px rgba(0,0,0,0.6);
-    }
-    /* --amber-strong is brightened above so it reads as text on a dark
-       surface (used almost everywhere it appears) — but this one spot uses
-       it as a solid badge fill behind white text, where the brighter value
-       would wash out. Give just this badge a fixed, deliberately darker
-       green instead of following --amber-strong. */
-    .portfolio-fab-count{ background:#15803D; }
-    /* Same story for the red strategy/quality checkboxes: --red is
-       brightened above for text legibility, but the checked-box fill needs
-       a darker, more saturated red for the white checkmark to read clearly. */
-    .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
-    .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
-    .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
-    .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
-    .check-row input[type="checkbox"][data-quality="sell"]:checked,
-    #trendDownFilter:checked{
-      background:#DC2626; border-color:#DC2626;
     }
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -769,6 +756,51 @@
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);
     }
     .active-count{ display:none; }
+  }
+
+  /* Dark mode component overrides — kept at the very end of the stylesheet
+     on purpose. Each of these targets a class that already has its own
+     rule earlier in this file at the same specificity; CSS breaks a
+     specificity tie by source order, so an override placed earlier (e.g.
+     right after :root, where the --variable overrides above live) would
+     silently lose to that later same-specificity rule regardless of which
+     theme is active. Living last guarantees these actually win. */
+  @media (prefers-color-scheme: dark){
+    /* --amber-strong is brightened above so it reads as text on a dark
+       surface (used almost everywhere it appears) — but this one spot uses
+       it as a solid badge fill behind white text, where the brighter value
+       would wash out. Give just this badge a fixed, deliberately darker
+       green instead of following --amber-strong. */
+    .portfolio-fab-count{ background:#15803D; }
+    /* Same story for the red strategy/quality checkboxes: --red is
+       brightened above for text legibility, but the checked-box fill needs
+       a darker, more saturated red for the white checkmark to read clearly. */
+    .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
+    .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
+    .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
+    .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
+    .check-row input[type="checkbox"][data-quality="sell"]:checked,
+    #trendDownFilter:checked{
+      background:#DC2626; border-color:#DC2626;
+    }
+    /* --surface equals --bg in dark mode (mirrors the light-mode design,
+       where a white button on a white page still read fine via its border
+       + shadow) — but on a near-black page that same trick makes the
+       button's fill invisible instead, so the Tickers/Export buttons read
+       as bare outlines while the SPY/QQQ chips next to them (which use
+       --surface-2) read as solid, filled pills. That mismatch is the
+       "scattered, doesn't match" look — give every control in the sticky
+       toolbar the same filled weight so it reads as one consistent group. */
+    .export-btn{ background:var(--surface-2); }
+    /* Same idea one level down: the Cash $/Options %/Equity % fields and
+       the Cash Left pill use --surface for their own fill, which is meant
+       to read as "lighter than the tray it sits in" (that's how it works
+       in light mode: white field on a light-gray tray). In dark mode
+       --surface is the same near-black as --bg, so instead of popping
+       forward off the tray (--surface-2, one step lighter than --bg) they
+       sink into it, darker than their own container. A dedicated shade
+       lighter than the tray restores that "raised field" relationship. */
+    .portfolio-bar input, .cash-left-pill{ background:#262A31; }
   }
 
 </style>

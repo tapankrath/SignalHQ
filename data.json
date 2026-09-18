@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T09:37:07.266051+00:00",
+  "generated_at": "2026-09-18T10:36:53.827443+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -44,6 +44,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Apple Just Announced a Groundbreaking iPhone, but It Has Alienated a Key Market",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/apple-just-announced-a-groundbreaking-iphone-but-it-has-alienated-a-key-market/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Apple\u2019s Chip Strategy Keeps Paying Dividends",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/apple-iphone-a20-chip-43d4ef59?siteid=yhoof2&yptr=yahoo",
@@ -54,12 +60,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/articles/apple-aapl-challenges-secret-uk-231950589.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Apple (AAPL) Outperforms Broader Market: What You Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-outperforms-broader-market-214506898.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -156,14 +156,20 @@
       "pcVol": 0.49,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.35,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Nvidia vs. Broadcom: Whose AI Revenue Actually Grows Faster From Here?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/nvidia-broadcom-ai-revenue-forcast-growth/",
+          "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
+          "sentiment": 0.71
         }
       ],
       "volRegime": "Cheap",
@@ -212,20 +218,20 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.25,
+      "newsSentiment": -0.17,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Meta\u2019s AI Agent Has a Trust Problem",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/tech/ai/metas-ai-agent-has-a-trust-problem-5ee5882c?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.15
+        },
         {
           "title": "Mark Cuban exposes a problem with how Meta and Google fund AI",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/technology/mark-cuban-exposes-meta-google-funding-algorithm-anti-ai-outrage",
           "sentiment": -0.49
-        },
-        {
-          "title": "Meta (META) Hands its New AI Agent the Keys to Your Inbox and Wallet",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-meta-hands-ai-agent-234026981.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -270,25 +276,25 @@
       "pcVol": 0.87,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
-        {
-          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
-          "sentiment": 0.0
-        },
         {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
+          "sentiment": 0.71
+        },
+        {
+          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
           "sentiment": 0.0
         }
       ],
@@ -342,6 +348,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Micron Is Still 22% Below Its All-Time High Heading Into Earnings -- Buying Opportunity or Warning Sign?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/micron-is-still-22-below-its-all-time-high-heading/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Micron's Largest Production Base Faces Strike Threats as Bonus Falls 'Short of Expectations,' Workers Demand Bigger Cut of AI-Driven Profits: Report",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microns-largest-production-faces-strike-052010224.html",
@@ -352,12 +364,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
           "sentiment": 0.54
-        },
-        {
-          "title": "Why Was Micron Technology Stock Up Today?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/why-was-micron-technology-stock-up-today/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1079,9 +1085,15 @@
       "pcVol": 0.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.02,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
           "publisher": "Stocktwits",
@@ -1093,12 +1105,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
           "sentiment": 0.44
-        },
-        {
-          "title": "RKLB, ASTS, VOYG, LUNR Steal SpaceX\u2019s Thunder \u2014 Here\u2019s What Lit Up Space Stocks This Week",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
-          "sentiment": -0.49
         }
       ],
       "volRegime": "Cheap",
@@ -1147,9 +1153,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Salesforce CEO Marc Benioff: 'We cannot let AI become social media 2.0'",
+          "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
           "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/article/salesforce-ceo-marc-benioff-we-cannot-let-ai-become-social-media-20-165753890.html",
+          "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
         },
         {
@@ -1525,7 +1531,7 @@
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1539,12 +1545,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/articles/palo-alto-networks-sase-push-142200188.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "CRWD, PANW Stocks Extend AI-Fueled Rally As Cybersecurity Bets Outpace Software",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/crwd-panw-stocks-extend-ai-fueled-rally-as-cybersecurity-bets-outpace-software/cZtYR7SRB2c",
-          "sentiment": 0.64
         }
       ],
       "volRegime": "Cheap",
@@ -2343,6 +2343,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Apple Just Announced a Groundbreaking iPhone, but It Has Alienated a Key Market",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/apple-just-announced-a-groundbreaking-iphone-but-it-has-alienated-a-key-market/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Apple\u2019s Chip Strategy Keeps Paying Dividends",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/apple-iphone-a20-chip-43d4ef59?siteid=yhoof2&yptr=yahoo",
@@ -2353,12 +2359,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/articles/apple-aapl-challenges-secret-uk-231950589.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Apple (AAPL) Outperforms Broader Market: What You Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-outperforms-broader-market-214506898.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2409,18 +2409,24 @@
       "chg6m": 21.9,
       "chg1y": 24.8,
       "volRatio": 0.78,
-      "peRatio": 27.0,
-      "dividendYield": 0.47,
+      "peRatio": 27.7,
+      "dividendYield": 0.46,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.35,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Nvidia vs. Broadcom: Whose AI Revenue Actually Grows Faster From Here?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/nvidia-broadcom-ai-revenue-forcast-growth/",
+          "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
+          "sentiment": 0.71
         }
       ]
     },
@@ -2444,20 +2450,20 @@
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.9,
-      "newsSentiment": -0.25,
+      "newsSentiment": -0.17,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Meta\u2019s AI Agent Has a Trust Problem",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/tech/ai/metas-ai-agent-has-a-trust-problem-5ee5882c?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.15
+        },
         {
           "title": "Mark Cuban exposes a problem with how Meta and Google fund AI",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/technology/mark-cuban-exposes-meta-google-funding-algorithm-anti-ai-outrage",
           "sentiment": -0.49
-        },
-        {
-          "title": "Meta (META) Hands its New AI Agent the Keys to Your Inbox and Wallet",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-meta-hands-ai-agent-234026981.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2481,9 +2487,15 @@
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": 0.05,
+      "newsSentiment": 0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla Gets 50% Tax Break for $10 Billion Texas Solar Factory. Here's Why That Benefits Tesla's Robotaxi Growth",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/tesla-gets-50-tax-break-for-usd10-billion-texas-solar-factory-here-s-why-that-benefits-tesla-s-robotaxi-growth/",
+          "sentiment": 0.64
+        },
         {
           "title": "Inside Tesla\u2019s Shanghai Gigafactory. What Its Largest Plant Means for the Stock.",
           "publisher": "Barrons.com",
@@ -2495,12 +2507,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/articles/tesla-tsla-teases-deeper-integration-081134328.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -2524,25 +2530,25 @@
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
-        {
-          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
-          "sentiment": 0.0
-        },
         {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
+          "sentiment": 0.71
+        },
+        {
+          "title": "AMD Stock Rises Premarket: Report Flags Chip Price Hike Linked To TSMC Costs",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30",
           "sentiment": 0.0
         }
       ]
@@ -2563,13 +2569,19 @@
       "chg6m": 111.8,
       "chg1y": 479.7,
       "volRatio": 0.81,
-      "peRatio": 21.0,
-      "dividendYield": 0.06,
+      "peRatio": 22.1,
+      "dividendYield": 0.05,
       "marketCap": 1103981838336,
       "score": 9.4,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron Is Still 22% Below Its All-Time High Heading Into Earnings -- Buying Opportunity or Warning Sign?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/micron-is-still-22-below-its-all-time-high-heading/",
+          "sentiment": 0.0
+        },
         {
           "title": "Micron's Largest Production Base Faces Strike Threats as Bonus Falls 'Short of Expectations,' Workers Demand Bigger Cut of AI-Driven Profits: Report",
           "publisher": "Benzinga",
@@ -2581,12 +2593,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
           "sentiment": 0.54
-        },
-        {
-          "title": "Why Was Micron Technology Stock Up Today?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/why-was-micron-technology-stock-up-today/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -2630,7 +2636,7 @@
       "chg6m": 22.6,
       "chg1y": 13.7,
       "volRatio": 1.08,
-      "peRatio": 14.9,
+      "peRatio": 15.0,
       "dividendYield": 1.72,
       "marketCap": 928531021824,
       "score": 5.3,
@@ -2673,8 +2679,8 @@
       "chg6m": -0.8,
       "chg1y": -48.7,
       "volRatio": 0.99,
-      "peRatio": 22.4,
-      "dividendYield": 1.4,
+      "peRatio": 23.6,
+      "dividendYield": 1.33,
       "marketCap": 455344390144,
       "score": 3.6,
       "newsSentiment": 0.19,
@@ -2845,7 +2851,7 @@
       "chg6m": -20.5,
       "chg1y": -37.6,
       "volRatio": 1.02,
-      "peRatio": 24.1,
+      "peRatio": 23.7,
       "dividendYield": null,
       "marketCap": 313586286592,
       "score": 2.9,
@@ -3005,7 +3011,7 @@
       "chg6m": 2.7,
       "chg1y": -31.2,
       "volRatio": 1.04,
-      "peRatio": 14.0,
+      "peRatio": 14.1,
       "dividendYield": null,
       "marketCap": 100436320256,
       "score": 4.3,
@@ -3052,9 +3058,15 @@
       "dividendYield": null,
       "marketCap": 2040671371264,
       "score": 8.2,
-      "newsSentiment": -0.02,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
           "publisher": "Stocktwits",
@@ -3066,12 +3078,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
           "sentiment": 0.44
-        },
-        {
-          "title": "RKLB, ASTS, VOYG, LUNR Steal SpaceX\u2019s Thunder \u2014 Here\u2019s What Lit Up Space Stocks This Week",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
-          "sentiment": -0.49
         }
       ]
     },
@@ -3092,16 +3098,16 @@
       "chg1y": null,
       "volRatio": 1.1,
       "peRatio": 22.9,
-      "dividendYield": 0.7,
+      "dividendYield": 0.72,
       "marketCap": 199865548800,
       "score": 9.4,
       "newsSentiment": -0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Salesforce CEO Marc Benioff: 'We cannot let AI become social media 2.0'",
+          "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
           "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/article/salesforce-ceo-marc-benioff-we-cannot-let-ai-become-social-media-20-165753890.html",
+          "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
         },
         {
@@ -3263,8 +3269,8 @@
       "chg6m": 27.3,
       "chg1y": 61.9,
       "volRatio": 1.28,
-      "peRatio": 31.1,
-      "dividendYield": 0.97,
+      "peRatio": 32.1,
+      "dividendYield": 0.95,
       "marketCap": 2231532257280,
       "score": 9.4,
       "newsSentiment": 0.51,
@@ -3347,7 +3353,7 @@
       "dividendYield": null,
       "marketCap": 306799083520,
       "score": 9.4,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3361,12 +3367,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/articles/palo-alto-networks-sase-push-142200188.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "CRWD, PANW Stocks Extend AI-Fueled Rally As Cybersecurity Bets Outpace Software",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/crwd-panw-stocks-extend-ai-fueled-rally-as-cybersecurity-bets-outpace-software/cZtYR7SRB2c",
-          "sentiment": 0.64
         }
       ]
     },

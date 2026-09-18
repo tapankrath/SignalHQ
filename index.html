@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Note: --amber* variable names are historical — they hold the green accent
@@ -183,8 +183,13 @@
     display:flex; align-items:center; justify-content:center;
   }
   .brand-mark svg{ display:block; width:100%; height:100%; border-radius:11px; }
-  .brand-name{ font-weight:800; font-size:37.5px; letter-spacing:-0.025em; color:var(--text); }
-  .brand-hq{ color:var(--red); font-weight:800; }
+  .brand-name{ font-family:'Space Grotesk', var(--sans); font-weight:700; font-size:37.5px; letter-spacing:-0.02em; color:var(--text); }
+  /* Deliberately its own value, not var(--red) — --red is brightened in dark
+     mode for small-text legibility (badges, bearish indicators) and reused
+     all over the app; the wordmark is large/bold and reads better with a
+     darker, more saturated red than that shared variable would give it, so
+     it gets its own light/dark values below instead of piggybacking on --red. */
+  .brand-hq{ color:#991B1B; font-weight:700; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -772,6 +777,11 @@
        sink into it, darker than their own container. A dedicated shade
        lighter than the tray restores that "raised field" relationship. */
     .portfolio-bar input, .cash-left-pill{ background:#262A31; }
+    /* Same reasoning as the light-mode value above (see .brand-hq) — its own
+       fixed color rather than var(--red), just a lighter shade so it still
+       reads as a clearly darker red against the near-black page instead of
+       vanishing into it. */
+    .brand-hq{ color:#EF4444; }
   }
 
 </style>

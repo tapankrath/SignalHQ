@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T10:36:53.827443+00:00",
+  "generated_at": "2026-09-18T11:37:04.654190+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -36,7 +36,7 @@
       "breakevenHigh": 510.1,
       "breakevenMovePct": null,
       "maxLoss": 1990.0,
-      "pcOI": 1.63,
+      "pcOI": 0.54,
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -100,7 +100,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 383.0,
-      "pcOI": 0,
+      "pcOI": 1.25,
       "pcVol": 0.78,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -152,24 +152,18 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 353.0,
-      "pcOI": 0,
+      "pcOI": 0.89,
       "pcVol": 0.49,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.35,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
           "publisher": "Yahoo Finance",
           "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
-          "sentiment": 0.71
         }
       ],
       "volRegime": "Cheap",
@@ -214,13 +208,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 67154.0,
-      "pcOI": 0,
+      "pcOI": 0.54,
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.17,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta Vs. Oracle: The Laggards of AI Capex Payback Velocity",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/meta-vs-oracle-the-laggards-of-ai-capex-payback-velocity/",
+          "sentiment": 0.0
+        },
         {
           "title": "Meta\u2019s AI Agent Has a Trust Problem",
           "publisher": "The Wall Street Journal",
@@ -272,7 +272,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 6.45,
       "maxLoss": 3025.0,
-      "pcOI": 0,
+      "pcOI": 0.95,
       "pcVol": 0.87,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -280,7 +280,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures: After S&P 500, Nasdaq Rebound, What's Next? Moderna, AMD, SpaceX Flash Buy Signals.",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
@@ -340,13 +340,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 96150.0,
-      "pcOI": 0,
+      "pcOI": 0.74,
       "pcVol": 0.65,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "What China\u2019s Fresh Memory-Chip Push Means for Micron and SK Hynix",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/micron-stock-price-sk-hynix-memory-chips-china-573a7f1d?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.32
+        },
         {
           "title": "Micron Is Still 22% Below Its All-Time High Heading Into Earnings -- Buying Opportunity or Warning Sign?",
           "publisher": "Motley Fool",
@@ -358,12 +364,6 @@
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microns-largest-production-faces-strike-052010224.html",
           "sentiment": -0.05
-        },
-        {
-          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Cheap",
@@ -404,7 +404,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 846.0,
-      "pcOI": 0,
+      "pcOI": 0.46,
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -449,7 +449,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 507.0,
-      "pcOI": 0,
+      "pcOI": 0.8,
       "pcVol": 0.61,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -513,29 +513,29 @@
       "breakevenHigh": null,
       "breakevenMovePct": 40.28,
       "maxLoss": 7.0,
-      "pcOI": 0,
+      "pcOI": 0.79,
       "pcVol": 0.71,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.19,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta Vs. Oracle: The Laggards of AI Capex Payback Velocity",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/meta-vs-oracle-the-laggards-of-ai-capex-payback-velocity/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Oracle Tells Employees 'Doing More With Less' Isn\u2019t The Goal After Recent Layoffs, CFO Urges 'Thoughtful' Spending: Report",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/oracle-tells-employees-doing-more-094508947.html",
+          "sentiment": -0.23
+        },
         {
           "title": "Our Oracle Stock Pick Is Down, But Stabilizing. Buy More.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/oracle-stock-pick-price-ai-d4e22af1?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Oracle (ORCL) Could Be 26% Below Fair Value After Project Jupiter Update",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-could-26-below-211345046.html",
-          "sentiment": 0.57
-        },
-        {
-          "title": "Fastly and Oracle Stocks Trade Up, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/fastly-oracle-stocks-trade-know-210617235.html",
           "sentiment": 0.0
         }
       ],
@@ -577,7 +577,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 367.0,
-      "pcOI": 0,
+      "pcOI": 0.35,
       "pcVol": 0.31,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -641,7 +641,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 13.04,
       "maxLoss": 1215.0,
-      "pcOI": 0,
+      "pcOI": 1.48,
       "pcVol": 0.76,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -705,7 +705,7 @@
       "breakevenHigh": 72.66,
       "breakevenMovePct": null,
       "maxLoss": 134.0,
-      "pcOI": 0,
+      "pcOI": 1.4,
       "pcVol": 1.44,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -769,30 +769,30 @@
       "breakevenHigh": null,
       "breakevenMovePct": 2.47,
       "maxLoss": 4155.0,
-      "pcOI": 0.0,
+      "pcOI": 0.57,
       "pcVol": 0.51,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "NFLX Stock Heads For 4-Day Slide, Extends September Losing Streak After Wells Fargo Flags \u201cWorrying\u201d Engagement In Downgrade",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nflx-stock-4-day-slide-september-losing-streak-wells-fargo-downgrade/cZtutAKRB3m",
+          "sentiment": -0.15
+        },
+        {
+          "title": "Intel, Netflix, Berkshire Hathaway, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-433c4e96?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Netflix vs. Disney: Which Streaming Stock Has an Edge Right Now?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/media-advertising/articles/netflix-vs-disney-streaming-stock-171100900.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Netflix (NFLX) Joins A New Streaming Policy Coalition",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/media-advertising/articles/netflix-nflx-joins-streaming-policy-151128766.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "The Next $100 Billion of Netflix\u2019s Value Could Come From Here, 98% Upside Ahead",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/the-next-100-billion-of-netflixs-value-could-come-from-here-98-upside-ahead/",
-          "sentiment": 0.34
         }
       ],
       "volRegime": "Rich",
@@ -833,7 +833,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 12.93,
       "maxLoss": 49305.0,
-      "pcOI": 0.6,
+      "pcOI": 1.45,
       "pcVol": 0.64,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -897,7 +897,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 1.61,
       "maxLoss": 39980.0,
-      "pcOI": 0.51,
+      "pcOI": 0.9,
       "pcVol": 0.69,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -961,7 +961,7 @@
       "breakevenHigh": 139.21,
       "breakevenMovePct": null,
       "maxLoss": 79.0,
-      "pcOI": 0,
+      "pcOI": 1.46,
       "pcVol": 1.12,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -1013,7 +1013,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.33,
       "maxLoss": 18075.0,
-      "pcOI": 0.16,
+      "pcOI": 0.35,
       "pcVol": 0.47,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1081,7 +1081,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 15036.0,
-      "pcOI": 0,
+      "pcOI": 1.39,
       "pcVol": 0.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1089,22 +1089,22 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures: After S&P 500, Nasdaq Rebound, What's Next? Moderna, AMD, SpaceX Flash Buy Signals.",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
+        },
+        {
+          "title": "SpaceX Stock Is on a Good Run While Retail Investors Are Selling. What Gives?",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/spacex-stock-selling-retail-0cb349cd?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.44
         },
         {
           "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
           "sentiment": 0.0
-        },
-        {
-          "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Cheap",
@@ -1145,12 +1145,12 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 457.0,
-      "pcOI": 0,
+      "pcOI": 1.4,
       "pcVol": 1.02,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.37,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
@@ -1159,16 +1159,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Salesforce CEO warns AI companies not to repeat this costly mistake",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/stocks/crm-salesforce-ceo-marc-benioff-warns-ai-companies-not-to-repeat-social-medias-mistakes",
-          "sentiment": -0.51
+          "title": "Six Analysts Turn Bullish on Salesforce, Signaling Major Re-Rating Ahead",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/six-analysts-turn-bullish-on-salesforce-signaling-major-re-rating-ahead/",
+          "sentiment": 0.54
         },
         {
-          "title": "Would You Want CRM Stock Back At The Price It Just Left?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615696/would-you-want-crm-stock-back-at-the-price-it-just-left/2026-09-17",
-          "sentiment": 0.08
+          "title": "Salesforce (CRM) Stock Sees Fair Value Lift After Koa Launch And Fin Acquisition",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-crm-stock-sees-fair-111536905.html",
+          "sentiment": 0.57
         }
       ],
       "volRegime": "Cheap",
@@ -1209,7 +1209,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 747.0,
-      "pcOI": 0,
+      "pcOI": 0.97,
       "pcVol": 0.89,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -1277,7 +1277,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 17194.0,
-      "pcOI": 0,
+      "pcOI": 1.25,
       "pcVol": 0.84,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1341,7 +1341,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 780.0,
-      "pcOI": 0,
+      "pcOI": 1.95,
       "pcVol": 1.68,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1405,13 +1405,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 14.26,
       "maxLoss": 163.0,
-      "pcOI": 0,
+      "pcOI": 1.58,
       "pcVol": 0.9,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.51,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Is Taiwan Semiconductor Manufacturing (TSM) Ramping 2nm Production And Spending More?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/articles/why-taiwan-semiconductor-manufacturing-tsm-101222060.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Taiwan Semiconductor Manufacturing (TSM) Could Be 14% Overvalued As 2nm MediaTek Win Lands",
           "publisher": "Simply Wall St.",
@@ -1463,7 +1469,7 @@
       "breakevenHigh": 625.68,
       "breakevenMovePct": null,
       "maxLoss": 1432.0,
-      "pcOI": 0,
+      "pcOI": 1.7,
       "pcVol": 1.07,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1527,7 +1533,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 650.0,
-      "pcOI": 0,
+      "pcOI": 0.83,
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1585,24 +1591,30 @@
       "breakevenHigh": null,
       "breakevenMovePct": 7.33,
       "maxLoss": 1140.0,
-      "pcOI": 0,
+      "pcOI": 1.15,
       "pcVol": 0.59,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.41,
+      "newsSentiment": 0.17,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Is SK hynix (KOSE:A000660) Building A New AI Venture Arm?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/why-sk-hynix-kose-a000660-111528622.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "What China\u2019s Fresh Memory-Chip Push Means for Micron and SK Hynix",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/micron-stock-price-sk-hynix-memory-chips-china-573a7f1d?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.32
+        },
         {
           "title": "SK Hynix has a $4 billion problem Intel could help solve",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/sk-hynix-intel-hbm-manufacturing-deal",
           "sentiment": 0.2
-        },
-        {
-          "title": "Stock Market Today, Sept. 17: Intel Surges 8% on Rumored SK Hynix Talks",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/17/stock-market-today-sept-17-intel-surges-8-on-rumored-sk-hynix-talks/",
-          "sentiment": 0.61
         }
       ],
       "volRegime": "Cheap",
@@ -1643,7 +1655,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 8.16,
       "maxLoss": 15980.0,
-      "pcOI": 0.56,
+      "pcOI": 1.05,
       "pcVol": 0.63,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1707,7 +1719,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 9.87,
       "maxLoss": 377.0,
-      "pcOI": 0,
+      "pcOI": 0.98,
       "pcVol": 0.71,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1771,7 +1783,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 141.0,
-      "pcOI": 0,
+      "pcOI": 0.74,
       "pcVol": 0.35,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1835,7 +1847,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 14.3,
       "maxLoss": 188.0,
-      "pcOI": 0,
+      "pcOI": 0.71,
       "pcVol": 1.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1899,7 +1911,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 310.0,
-      "pcOI": 0.05,
+      "pcOI": 0.39,
       "pcVol": 0.8,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -1963,7 +1975,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 1.74,
       "maxLoss": 13477.5,
-      "pcOI": 8.86,
+      "pcOI": 1.15,
       "pcVol": 0.48,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -2027,7 +2039,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.09,
       "maxLoss": 17523.5,
-      "pcOI": 0.0,
+      "pcOI": 1.64,
       "pcVol": 1.61,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -2091,7 +2103,7 @@
       "breakevenHigh": 307.23,
       "breakevenMovePct": null,
       "maxLoss": 527.0,
-      "pcOI": 0,
+      "pcOI": 0.62,
       "pcVol": 1.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2155,7 +2167,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 35.21,
       "maxLoss": 79.0,
-      "pcOI": 2.29,
+      "pcOI": 0.93,
       "pcVol": 1.07,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -2219,7 +2231,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 132.0,
-      "pcOI": 0,
+      "pcOI": 0.44,
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2287,13 +2299,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 23266.0,
-      "pcOI": 0,
+      "pcOI": 0.8,
       "pcVol": 0.67,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "GlobalFoundries and Marvell agree on SiGe technology expansion",
+          "publisher": "Verdict",
+          "link": "https://www.verdict.co.uk/globalfoundries-marvell-sige-technology/",
+          "sentiment": 0.36
+        },
         {
           "title": "Marvell Technology (MRVL) Deepens Its AI Infrastructure Footprint",
           "publisher": "Simply Wall St.",
@@ -2305,12 +2323,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sentinelone-marvell-technology-formfactor-teradyne-205817432.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Marvell Jumps 5.2% as AI Optics Win More U.S. Capacity",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/marvell-jumps-5-2-ai-180702375.html",
-          "sentiment": 0.79
         }
       ],
       "volRegime": "Cheap",
@@ -2413,20 +2425,14 @@
       "dividendYield": 0.46,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.35,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
           "publisher": "Yahoo Finance",
           "link": "https://finance.yahoo.com/markets/stocks/article/why-salesforce-ceo-marc-benioff-thinks-ai-chip-king-nvidia-is-exquisite-094642002.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Zacks Investment Ideas feature highlights: NVIDIA, Advanced Micro Devices, Tempus, Moderna, Super Micro Computer and Aya Gold & Silver",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-101300743.html",
-          "sentiment": 0.71
         }
       ]
     },
@@ -2446,13 +2452,19 @@
       "chg6m": 10.9,
       "chg1y": -12.3,
       "volRatio": 0.94,
-      "peRatio": 25.4,
+      "peRatio": 25.7,
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.9,
-      "newsSentiment": -0.17,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta Vs. Oracle: The Laggards of AI Capex Payback Velocity",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/meta-vs-oracle-the-laggards-of-ai-capex-payback-velocity/",
+          "sentiment": 0.0
+        },
         {
           "title": "Meta\u2019s AI Agent Has a Trust Problem",
           "publisher": "The Wall Street Journal",
@@ -2483,13 +2495,19 @@
       "chg6m": -6.8,
       "chg1y": -12.2,
       "volRatio": 1.06,
-      "peRatio": 332.9,
+      "peRatio": 345.5,
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": 0.11,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.39,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Tesla Trades at 331 Times Trailing Earnings While Facing Growing Competition From China's BYD. Is Elon Musk's Premium Valuation Still Justified?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/tesla-trades-earnings-byd-elon-musk-premium/",
+          "sentiment": 0.53
+        },
         {
           "title": "Tesla Gets 50% Tax Break for $10 Billion Texas Solar Factory. Here's Why That Benefits Tesla's Robotaxi Growth",
           "publisher": "Motley Fool",
@@ -2501,12 +2519,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/tesla-stock-shanghai-gigafactory-7bb4795b?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Tesla (TSLA) Teases Deeper Integration And Roadster Reveal With New Chip Push",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/articles/tesla-tsla-teases-deeper-integration-081134328.html",
-          "sentiment": -0.3
         }
       ]
     },
@@ -2526,7 +2538,7 @@
       "chg6m": 173.3,
       "chg1y": 245.2,
       "volRatio": 1.47,
-      "peRatio": 131.7,
+      "peRatio": 139.1,
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
@@ -2534,7 +2546,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures: After S&P 500, Nasdaq Rebound, What's Next? Moderna, AMD, SpaceX Flash Buy Signals.",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
@@ -2573,9 +2585,15 @@
       "dividendYield": 0.05,
       "marketCap": 1103981838336,
       "score": 9.4,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "What China\u2019s Fresh Memory-Chip Push Means for Micron and SK Hynix",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/micron-stock-price-sk-hynix-memory-chips-china-573a7f1d?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.32
+        },
         {
           "title": "Micron Is Still 22% Below Its All-Time High Heading Into Earnings -- Buying Opportunity or Warning Sign?",
           "publisher": "Motley Fool",
@@ -2587,12 +2605,6 @@
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microns-largest-production-faces-strike-052010224.html",
           "sentiment": -0.05
-        },
-        {
-          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
-          "sentiment": 0.54
         }
       ]
     },
@@ -2612,7 +2624,7 @@
       "chg6m": 12.3,
       "chg1y": 36.6,
       "volRatio": 0.99,
-      "peRatio": 17.0,
+      "peRatio": 17.2,
       "dividendYield": 0.26,
       "marketCap": 4203184128000,
       "score": 7.6,
@@ -2683,25 +2695,25 @@
       "dividendYield": 1.33,
       "marketCap": 455344390144,
       "score": 3.6,
-      "newsSentiment": 0.19,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta Vs. Oracle: The Laggards of AI Capex Payback Velocity",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/meta-vs-oracle-the-laggards-of-ai-capex-payback-velocity/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Oracle Tells Employees 'Doing More With Less' Isn\u2019t The Goal After Recent Layoffs, CFO Urges 'Thoughtful' Spending: Report",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/oracle-tells-employees-doing-more-094508947.html",
+          "sentiment": -0.23
+        },
         {
           "title": "Our Oracle Stock Pick Is Down, But Stabilizing. Buy More.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/oracle-stock-pick-price-ai-d4e22af1?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Oracle (ORCL) Could Be 26% Below Fair Value After Project Jupiter Update",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-orcl-could-26-below-211345046.html",
-          "sentiment": 0.57
-        },
-        {
-          "title": "Fastly and Oracle Stocks Trade Up, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/fastly-oracle-stocks-trade-know-210617235.html",
           "sentiment": 0.0
         }
       ]
@@ -2722,7 +2734,7 @@
       "chg6m": 19.7,
       "chg1y": 8.6,
       "volRatio": 0.94,
-      "peRatio": 19.8,
+      "peRatio": 20.2,
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
@@ -2855,26 +2867,26 @@
       "dividendYield": null,
       "marketCap": 313586286592,
       "score": 2.9,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "NFLX Stock Heads For 4-Day Slide, Extends September Losing Streak After Wells Fargo Flags \u201cWorrying\u201d Engagement In Downgrade",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nflx-stock-4-day-slide-september-losing-streak-wells-fargo-downgrade/cZtutAKRB3m",
+          "sentiment": -0.15
+        },
+        {
+          "title": "Intel, Netflix, Berkshire Hathaway, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-433c4e96?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Netflix vs. Disney: Which Streaming Stock Has an Edge Right Now?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/media-advertising/articles/netflix-vs-disney-streaming-stock-171100900.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Netflix (NFLX) Joins A New Streaming Policy Coalition",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/media-advertising/articles/netflix-nflx-joins-streaming-policy-151128766.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "The Next $100 Billion of Netflix\u2019s Value Could Come From Here, 98% Upside Ahead",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/the-next-100-billion-of-netflixs-value-could-come-from-here-98-upside-ahead/",
-          "sentiment": 0.34
         }
       ]
     },
@@ -2894,7 +2906,7 @@
       "chg6m": 114.2,
       "chg1y": 1532.8,
       "volRatio": 0.68,
-      "peRatio": 20.6,
+      "peRatio": 21.9,
       "dividendYield": null,
       "marketCap": 236377391104,
       "score": 9.4,
@@ -2937,7 +2949,7 @@
       "chg6m": 97.9,
       "chg1y": 273.8,
       "volRatio": 1.36,
-      "peRatio": 56.5,
+      "peRatio": 57.8,
       "dividendYield": 0.37,
       "marketCap": 182626140160,
       "score": 4.9,
@@ -3062,22 +3074,22 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+          "title": "Dow Jones Futures: After S&P 500, Nasdaq Rebound, What's Next? Moderna, AMD, SpaceX Flash Buy Signals.",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
+        },
+        {
+          "title": "SpaceX Stock Is on a Good Run While Retail Investors Are Selling. What Gives?",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/spacex-stock-selling-retail-0cb349cd?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.44
         },
         {
           "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
           "sentiment": 0.0
-        },
-        {
-          "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -3097,12 +3109,12 @@
       "chg6m": 25.8,
       "chg1y": null,
       "volRatio": 1.1,
-      "peRatio": 22.9,
+      "peRatio": 22.2,
       "dividendYield": 0.72,
       "marketCap": 199865548800,
       "score": 9.4,
-      "newsSentiment": -0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.37,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Why Salesforce CEO Marc Benioff thinks AI chip king Nvidia is 'exquisite'",
@@ -3111,16 +3123,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Salesforce CEO warns AI companies not to repeat this costly mistake",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/stocks/crm-salesforce-ceo-marc-benioff-warns-ai-companies-not-to-repeat-social-medias-mistakes",
-          "sentiment": -0.51
+          "title": "Six Analysts Turn Bullish on Salesforce, Signaling Major Re-Rating Ahead",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/six-analysts-turn-bullish-on-salesforce-signaling-major-re-rating-ahead/",
+          "sentiment": 0.54
         },
         {
-          "title": "Would You Want CRM Stock Back At The Price It Just Left?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615696/would-you-want-crm-stock-back-at-the-price-it-just-left/2026-09-17",
-          "sentiment": 0.08
+          "title": "Salesforce (CRM) Stock Sees Fair Value Lift After Koa Launch And Fin Acquisition",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-crm-stock-sees-fair-111536905.html",
+          "sentiment": 0.57
         }
       ]
     },
@@ -3183,7 +3195,7 @@
       "chg6m": 15.4,
       "chg1y": -0.4,
       "volRatio": 0.73,
-      "peRatio": 149.4,
+      "peRatio": 151.9,
       "dividendYield": null,
       "marketCap": 423515029504,
       "score": 9.1,
@@ -3226,8 +3238,8 @@
       "chg6m": 20.7,
       "chg1y": 76.8,
       "volRatio": 1.16,
-      "peRatio": 54.7,
-      "dividendYield": 0.57,
+      "peRatio": 55.6,
+      "dividendYield": 0.56,
       "marketCap": 625956290560,
       "score": 4.0,
       "newsSentiment": 0.11,
@@ -3273,9 +3285,15 @@
       "dividendYield": 0.95,
       "marketCap": 2231532257280,
       "score": 9.4,
-      "newsSentiment": 0.51,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Is Taiwan Semiconductor Manufacturing (TSM) Ramping 2nm Production And Spending More?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/articles/why-taiwan-semiconductor-manufacturing-tsm-101222060.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Taiwan Semiconductor Manufacturing (TSM) Could Be 14% Overvalued As 2nm MediaTek Win Lands",
           "publisher": "Simply Wall St.",
@@ -3306,8 +3324,8 @@
       "chg6m": 296.2,
       "chg1y": 351.1,
       "volRatio": 1.1,
-      "peRatio": 32.8,
-      "dividendYield": 0.45,
+      "peRatio": 34.2,
+      "dividendYield": 0.43,
       "marketCap": 374112223232,
       "score": 8.5,
       "newsSentiment": 0.64,
@@ -3645,7 +3663,7 @@
       "chg1y": 87.3,
       "volRatio": 0.93,
       "peRatio": 66.3,
-      "dividendYield": 0.78,
+      "dividendYield": 0.76,
       "marketCap": 127313199104,
       "score": 4.5,
       "newsSentiment": 0.2,
@@ -3841,7 +3859,7 @@
       "chg1y": 63.8,
       "volRatio": 0.91,
       "peRatio": 32.3,
-      "dividendYield": 1.56,
+      "dividendYield": 1.52,
       "marketCap": 434630754304,
       "score": 4.9,
       "newsSentiment": 0.0,
@@ -3887,9 +3905,15 @@
       "dividendYield": 0.1,
       "marketCap": 216372117504,
       "score": 9.4,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "GlobalFoundries and Marvell agree on SiGe technology expansion",
+          "publisher": "Verdict",
+          "link": "https://www.verdict.co.uk/globalfoundries-marvell-sige-technology/",
+          "sentiment": 0.36
+        },
         {
           "title": "Marvell Technology (MRVL) Deepens Its AI Infrastructure Footprint",
           "publisher": "Simply Wall St.",
@@ -3901,12 +3925,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sentinelone-marvell-technology-formfactor-teradyne-205817432.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Marvell Jumps 5.2% as AI Optics Win More U.S. Capacity",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/marvell-jumps-5-2-ai-180702375.html",
-          "sentiment": 0.79
         }
       ]
     }

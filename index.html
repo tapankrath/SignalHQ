@@ -21,39 +21,34 @@
     /* Note: --amber* variable names are historical — they hold the green accent
        color now. Kept the names to avoid touching every var(--amber...) usage
        site; only the values changed. */
-    --bg:#FFFFFF;
+    --bg:#F6F7F9;
     --surface:#FFFFFF;
-    --surface-2:#F3F4F7;
-    --border:#E1E4EA;
-    /* Was pure black — every pill/input/button using this token (SPY/QQQ
-       chips, Tickers/Export, the Cash/Opt%/Eq% inputs, Idle pill, etc.) read
-       as a hard-edged wireframe rather than a polished card. Softened to a
-       mid gray so shadows (added alongside, on chips/buttons that didn't
-       have one) carry the visual weight instead, matching the "hairline
-       under a shadow" intent this file's own shadow-scale comment states. */
-    --border-strong:#AFB5C2;
-    --text:#000000;
-    --text-dim:#374151;
-    --text-faint:#6B7280;
-    --amber:#16A34A;
-    --amber-strong:#0D8A3F;
-    --amber-soft:#DCFCE7;
-    --amber-border:#22C55E;
-    --green:#16A34A;
-    --green-soft:#DCFCE7;
+    --surface-2:#F1F2F5;
+    --border:#E4E7EC;
+    --border-strong:#181B22;
+    --text:#0B0D12;
+    --text-dim:#454B59;
+    --text-faint:#767C8C;
+    --amber:#0E9F5C;
+    --amber-strong:#087A46;
+    --amber-soft:#E4F8ED;
+    --amber-border:#BEE9D2;
+    --green:#0E9F5C;
+    --green-soft:#E4F8ED;
     --red:#DC2626;
-    --red-soft:#FEE2E2;
+    --red-soft:#FDECEC;
     --radius:16px;
     --radius-sm:10px;
+    --radius-pill:999px;
     --sans: 'Inter', -apple-system, sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', monospace;
     /* Soft elevation scale — used on card-level containers instead of (or
        alongside) hairline borders, for a more "raised" fintech-card feel.
        --border itself is lightened below so borders read as a hairline
        under the shadow rather than competing with it. */
-    --shadow-sm:0 1px 2px rgba(16,24,40,0.05), 0 1px 3px rgba(16,24,40,0.04);
-    --shadow-md:0 2px 6px rgba(16,24,40,0.06), 0 8px 20px rgba(16,24,40,0.07);
-    --shadow-lg:0 12px 40px rgba(16,24,40,0.16);
+    --shadow-sm:0 1px 2px rgba(16,24,40,0.04), 0 1px 3px rgba(16,24,40,0.04);
+    --shadow-md:0 2px 6px rgba(16,24,40,0.05), 0 8px 20px rgba(16,24,40,0.06);
+    --shadow-lg:0 16px 48px rgba(16,24,40,0.18);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{
@@ -84,10 +79,17 @@
   /* ---------- HEADER ---------- */
   .sticky-top{
     position:sticky; top:0; z-index:40;
-    background:var(--surface);
-    border-bottom:1px solid var(--border);
+    background:rgba(255,255,255,0.92);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid transparent;
     display:flex; flex-direction:column; gap:10px;
-    padding-top:10px; padding-bottom:6px;
+    padding-top:12px; padding-bottom:8px;
+    transition:border-color .18s, box-shadow .18s;
+  }
+  .sticky-top.is-scrolled{
+    border-bottom-color:var(--border);
+    box-shadow:0 1px 0 rgba(16,24,40,0.02), var(--shadow-sm);
   }
   header{ display:flex; flex-direction:column; gap:16px; }
   .header-top{
@@ -116,28 +118,34 @@
     box-sizing:border-box; width:100%;
   }
   .mode-tab{
-    flex:1; min-height:38px; padding:9px 14px;
+    flex:1; min-height:42px; padding:9px 14px;
     font-family:inherit; font-size:13.5px; font-weight:700;
     background:var(--surface-2); color:var(--text-dim);
     border:1px solid var(--border); border-radius:9px;
-    cursor:pointer; transition:background .12s, color .12s;
+    cursor:pointer; transition:background .12s, color .12s, border-color .12s;
   }
   .mode-tab.active{ background:var(--text); color:#fff; border-color:var(--text); }
   .mode-tab:active{ opacity:0.85; }
 
   .brand-mark{
-    width:42px; height:42px; flex-shrink:0;
+    width:38px; height:38px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
+    box-shadow:var(--shadow-sm); border-radius:10px;
   }
-  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:11px; }
-  .brand-name{ font-weight:800; font-size:25px; letter-spacing:-0.025em; color:var(--text); }
-  .brand-hq{ color:var(--red); font-weight:800; }
+  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:10px; }
+  .brand-name{ font-weight:700; font-size:19px; letter-spacing:-0.02em; color:var(--text); }
+  .brand-hq{ color:var(--amber-strong); font-weight:700; }
+  .brand-tag{
+    font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.05em;
+    color:var(--text-faint); text-transform:uppercase; margin-top:1px;
+  }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
     font-family:var(--mono); font-size:11.5px; color:var(--text-dim);
-    padding:6px 11px; border:1px solid var(--border); border-radius:20px;
+    padding:6px 12px; border:1px solid var(--border); border-radius:var(--radius-pill);
     background:var(--surface-2);
+    box-shadow:var(--shadow-sm);
     /* Shrinks (instead of the flex default, which refuses to shrink below
        its own text width) so this pill loses the tug-of-war against the
        market toggle + refresh button on narrow phones — those two stay
@@ -176,10 +184,13 @@
   }
   .refresh-btn{
     display:flex; align-items:center; justify-content:center;
-    color:var(--text);
-    background:var(--surface-2); border:1px solid var(--border); border-radius:50%;
+    color:var(--text-dim);
+    background:var(--surface); border:1px solid var(--border); border-radius:50%;
     width:34px; height:34px; flex-shrink:0; cursor:pointer; padding:0;
+    box-shadow:var(--shadow-sm);
+    transition:border-color .12s, color .12s, box-shadow .12s;
   }
+  .refresh-btn:hover{ border-color:var(--amber); color:var(--amber-strong); }
   .refresh-btn:active{ opacity:0.7; }
   .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
   @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
@@ -218,19 +229,30 @@
   #portfolioCapital{ width:120px; }
   #portfolioSplit{ width:56px; }
   #portfolioEquitySplit{ width:56px; }
-  /* Cash left = capital not claimed by either % input — a read-only pill
-     (not an input) since it's derived, not something you set directly.
-     Flips to the red/warning treatment if Options%+Equity% together
-     exceed 100, so over-allocation is visible right where it happens
-     instead of only surfacing later in the summary modal. */
-  .cash-left-pill{
-    display:inline-flex; align-items:center; gap:4px;
+  /* Cash left = capital not claimed by either % input — a read-only derived
+     value, not something you set directly. Styled as the exact same
+     "label + boxed value" shape as the three real inputs to its left
+     (same radius, border weight, mono value, matching width) instead of a
+     fully-rounded pill — that mismatch (3 sharp-cornered inputs + 1 pill)
+     was the inconsistency that made the row look unplanned. The read-only
+     distinction comes from a tinted fill on the value box, not a
+     different shape. Flips to the red/warning treatment if Options%+
+     Equity% together exceed 100, so over-allocation is visible right
+     where it happens instead of only surfacing later in the summary modal. */
+  .cash-left-wrap{
+    display:flex; align-items:center; gap:6px;
     font-size:12.5px; font-weight:700; color:var(--text-dim);
-    background:var(--surface); border:1px solid var(--border-strong);
-    border-radius:20px; padding:6px 12px; white-space:nowrap;
-    box-shadow:var(--shadow-sm);
+    white-space:nowrap;
   }
-  .cash-left-pill.is-over{ color:var(--red); border-color:var(--red); background:var(--red-soft); }
+  .cash-left-value{
+    display:inline-block; min-width:40px;
+    font-size:16px; font-family:var(--mono); font-weight:600; text-align:right;
+    background:var(--surface-2); border:1px solid var(--border-strong);
+    border-radius:7px; padding:7px 9px; color:var(--text);
+    box-shadow:inset 0 1px 2px rgba(16,24,40,0.04);
+    transition:border-color .12s, background .12s, color .12s;
+  }
+  .cash-left-wrap.is-over .cash-left-value{ color:var(--red); border-color:var(--red); background:var(--red-soft); }
   .lbl-short{ display:none; }
 
   .portfolio-fab-count{
@@ -263,13 +285,13 @@
 
   .export-btn{
     display:flex; align-items:center; gap:6px;
-    background:var(--surface); border:1px solid var(--border-strong);
-    color:var(--text); padding:9px 14px; border-radius:8px;
+    background:var(--surface); border:1px solid var(--border);
+    color:var(--text-dim); padding:9px 14px; border-radius:9px;
     font-size:12.5px; font-weight:600; flex-shrink:0;
     box-shadow:var(--shadow-sm);
-    transition:border-color .15s, background .15s, box-shadow .15s;
+    transition:border-color .15s, background .15s, color .15s, box-shadow .15s;
   }
-  .export-btn:hover{ border-color:var(--amber); background:var(--amber-soft); }
+  .export-btn:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
   .export-btn:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
 
   /* ---------- LAYOUT ---------- */
@@ -283,7 +305,7 @@
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:12px;
+    border-radius:var(--radius); padding:16px;
     margin-bottom:16px;
     box-shadow:var(--shadow-sm);
   }
@@ -300,12 +322,13 @@
   .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
   .filter-header-btn{
     border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    padding:6px 8px; font-weight:600; font-size:11.5px; font-family:inherit; color:var(--text);
+    padding:9px 8px; font-weight:600; font-size:11.5px; font-family:inherit; color:var(--text);
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
     cursor:pointer; user-select:none; text-align:center; line-height:1.25;
-    transition:border-color .12s, background .12s;
+    min-height:44px;
+    transition:border-color .12s, background .12s, box-shadow .12s;
   }
-  .filter-header-btn[aria-expanded="true"]{ border-color:var(--text); background:var(--surface); }
+  .filter-header-btn[aria-expanded="true"]{ border-color:var(--amber); background:var(--surface); box-shadow:0 0 0 3px var(--amber-soft); }
   .filter-header-btn .filter-chevron{
     font-size:15px; color:var(--text-faint); transform:rotate(90deg); transition:transform .15s; line-height:1;
   }
@@ -390,20 +413,20 @@
   .apply-btn{
     flex:1; background:var(--amber); color:#fff; border:none;
     padding:12px; border-radius:var(--radius-sm); font-weight:700; font-size:13.5px;
-    box-shadow:0 2px 8px rgba(22,163,74,0.28);
+    box-shadow:0 2px 8px rgba(14,159,92,0.28);
     transition:filter .12s, box-shadow .12s;
   }
   .apply-btn:hover{ filter:brightness(1.08); }
   .apply-btn:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
   .reset-btn{
     flex:1; background:var(--surface); border:1px solid var(--border-strong); color:var(--text-dim);
-    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:600;
+    padding:10px 14px; border-radius:var(--radius-sm); font-size:12.5px; font-weight:600;
     transition:border-color .12s, color .12s;
   }
   .reset-btn:hover{ border-color:var(--text-dim); color:var(--text); }
   .copy-btn{
     flex:1; background:var(--amber-soft); border:1px solid var(--amber-border); color:var(--amber-strong);
-    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:700;
+    padding:10px 14px; border-radius:var(--radius-sm); font-size:12.5px; font-weight:700;
     transition:filter .12s;
   }
   .copy-btn:hover{ filter:brightness(0.97); }
@@ -484,18 +507,29 @@
   }
   .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
 
+  /* Outer wrapper stays unstyled (no border/shadow of its own) — each
+     .trade-card below is the actual visible card. Giving both layers a
+     border+shadow used to nest a card inside a card, which read as boxy/
+     noisy; one layer of elevation is the cleaner, more deliberate look. */
   .card-list{
     display:none; flex-direction:column; gap:10px;
-    background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:10px;
-    box-shadow:var(--shadow-sm);
   }
   .trade-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:14px; padding:13px;
+    border-radius:14px; padding:14px 14px 14px 16px;
     box-shadow:var(--shadow-sm);
     cursor:pointer; transition:border-color .12s, box-shadow .12s, transform .12s;
+    position:relative; overflow:hidden;
   }
+  /* Thin color-coded rail on the leading edge so bullish/bearish/neutral
+     setups are scannable at a glance without reading the pill text first —
+     a small touch that makes a dense list feel organized rather than flat. */
+  .trade-card::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
+    background:var(--border);
+  }
+  .trade-card:has(.side-pill.bull)::before{ background:var(--green); }
+  .trade-card:has(.side-pill.bear)::before{ background:var(--red); }
   .trade-card:hover{ box-shadow:var(--shadow-md); border-color:#D3D7DE; }
   .trade-card:active{ border-color:var(--border-strong); box-shadow:var(--shadow-sm); transform:scale(0.994); }
   .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
@@ -666,13 +700,15 @@
     #portfolioCapital{ width:78px; padding:6px 4px; }
     #portfolioSplit{ width:40px; padding:6px 3px; }
     #portfolioEquitySplit{ width:40px; padding:6px 3px; }
-    .cash-left-pill{ font-size:11px; font-weight:600; padding:5px 9px; gap:3px; }
+    .cash-left-wrap{ font-size:11px; font-weight:600; gap:4px; }
+    .cash-left-value{ font-size:14px; padding:6px 6px; min-width:30px; }
     .mode-toggle{ padding:0 14px; }
-    .mode-tab{ min-height:34px; padding:7px 12px; font-size:12.5px; }
+    .mode-tab{ min-height:38px; padding:7px 12px; font-size:12.5px; }
     .brand{ gap:8px; }
-    .brand-mark{ width:34px; height:34px; }
+    .brand-mark{ width:32px; height:32px; border-radius:9px; }
     .brand-mark svg{ border-radius:9px; }
-    .brand-name{ font-size:21px; }
+    .brand-name{ font-size:16.5px; }
+    .brand-tag{ display:none; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
     /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
        Export don't all fit on one row even at their already-compact mobile
@@ -693,7 +729,7 @@
     .filter-grid{ grid-template-columns:1fr; }
 
     .filter-header-btn{
-      padding:5px 6px; font-size:10.5px; gap:1px;
+      padding:8px 6px; font-size:10.5px; gap:1px; min-height:40px;
     }
     .summary-count{ font-size:10px; padding:1px 6px; }
     .filter-header-btn .filter-chevron{ font-size:13px; }
@@ -730,6 +766,7 @@
       </div>
       <div>
         <div class="brand-name">Signal<span class="brand-hq">HQ</span></div>
+        <div class="brand-tag">Options Signal Desk</div>
       </div>
     </div>
 
@@ -776,8 +813,9 @@
       <span class="lbl-full">Equity %</span><span class="lbl-short">Eq%</span>
       <input type="text" id="portfolioEquitySplit" inputmode="numeric" value="0">
     </label>
-    <span class="cash-left-pill" id="cashLeftPill" title="Cash not allocated to Options % or Equity %">
-      <span class="lbl-full">Cash left</span><span class="lbl-short">Idle</span> <span id="cashLeftDisplay">0</span>%
+    <span class="cash-left-wrap" id="cashLeftPill" title="Cash not allocated to Options % or Equity %">
+      <span class="lbl-full">Cash left</span><span class="lbl-short">Idle</span>
+      <span class="cash-left-value"><span id="cashLeftDisplay">0</span>%</span>
     </span>
   </div>
 </div>
@@ -2312,6 +2350,25 @@
       renderEquities(sortEquities(filteredEquities()));
     }
   });
+
+  // Subtle sticky-header elevation once the page has scrolled past the very
+  // top — a hairline + soft shadow appear so the header reads as "floating
+  // above" content instead of just sitting flush with it. rAF-throttled;
+  // passive listener so it never blocks touch scrolling on mobile.
+  (function(){
+    const stickyEl = document.querySelector('.sticky-top');
+    let ticking = false;
+    function applyScrollState(){
+      stickyEl.classList.toggle('is-scrolled', window.scrollY > 4);
+      ticking = false;
+    }
+    window.addEventListener('scroll', ()=>{
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(applyScrollState);
+    }, { passive:true });
+    applyScrollState();
+  })();
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

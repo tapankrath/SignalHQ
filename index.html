@@ -142,17 +142,24 @@
     box-sizing:border-box;
   }
   .brand{ display:flex; align-items:center; gap:12px; flex-shrink:0; min-width:0; }
-  /* Just the Tickers button now (SPY/QQQ pills and Export both removed —
-     the index quotes were always at least an hour stale, and raw setup
-     export was replaced by the allocation-based summary export in the
-     Portfolio Summary modal instead) — right-aligned against the same
-     shared left/right gutter every other row on the page uses. */
+  /* An "Allocation" label on the left (a plain-language heading for the
+     Cash/Options%/Equity%/Cash-left row directly below it) and the Tickers
+     button on the right — the SPY/QQQ pills and Export button that used to
+     live here are gone (the index quotes were always at least an hour
+     stale, and raw setup export was replaced by the allocation-based
+     summary export in the Portfolio Summary modal instead), so this row is
+     just those two things pushed to the same shared left/right gutter
+     every other row on the page uses. */
   .header-tools{
     max-width:1080px; margin:0 auto; width:100%;
     padding:0 18px;
-    display:flex; align-items:center; justify-content:flex-end;
+    display:flex; align-items:center; justify-content:space-between;
     flex-wrap:wrap; gap:10px; row-gap:8px;
     box-sizing:border-box;
+  }
+  .header-tools-label{
+    font-size:11.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--text-faint);
   }
   .header-actions{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 
@@ -801,6 +808,7 @@
   </div>
 
   <div class="header-tools">
+    <div class="header-tools-label">Allocation</div>
     <div class="header-actions">
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>

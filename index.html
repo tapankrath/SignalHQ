@@ -128,16 +128,16 @@
   .mode-tab:active{ opacity:0.85; }
 
   .brand-mark{
-    width:38px; height:38px; flex-shrink:0;
+    width:60px; height:60px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:var(--shadow-sm); border-radius:10px;
+    box-shadow:var(--shadow-sm); border-radius:15px;
   }
-  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:10px; }
-  .brand-name{ font-weight:700; font-size:19px; letter-spacing:-0.02em; color:var(--text); }
+  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:15px; }
+  .brand-name{ font-weight:700; font-size:30px; letter-spacing:-0.02em; color:var(--text); }
   .brand-hq{ color:#065F36; font-weight:800; font-size:1.1em; letter-spacing:-0.01em; }
   .brand-tag{
-    font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:0.05em;
-    color:var(--text-faint); text-transform:uppercase; margin-top:1px;
+    font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:0.06em;
+    color:var(--text-faint); text-transform:uppercase; margin-top:2px;
   }
 
   .data-status{
@@ -176,7 +176,9 @@
     font-family:var(--mono); font-size:14.5px; font-weight:800; color:var(--text);
   }
   .index-pill-stale{
-    color:var(--red); font-weight:800; font-size:12px; margin-left:1px; cursor:help;
+    color:var(--text-faint); font-weight:700; font-size:9px; letter-spacing:0.03em;
+    margin-left:2px; padding:1px 4px; border-radius:4px; background:var(--surface);
+    border:1px solid var(--border); cursor:help; text-transform:uppercase; line-height:1.4;
   }
 
   .header-top-right{
@@ -705,9 +707,9 @@
     .mode-toggle{ padding:0 14px; }
     .mode-tab{ min-height:38px; padding:7px 12px; font-size:12.5px; }
     .brand{ gap:8px; }
-    .brand-mark{ width:32px; height:32px; border-radius:9px; }
-    .brand-mark svg{ border-radius:9px; }
-    .brand-name{ font-size:16.5px; }
+    .brand-mark{ width:46px; height:46px; border-radius:12px; }
+    .brand-mark svg{ border-radius:12px; }
+    .brand-name{ font-size:23px; }
     .brand-tag{ display:none; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
     /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
@@ -724,7 +726,7 @@
     .index-pill{ padding:6px 9px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }
     .index-pill .index-pill-px{ font-size:12px; }
-    .index-pill-stale{ font-size:10px; }
+    .index-pill-stale{ font-size:8px; padding:1px 3px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -1116,7 +1118,7 @@
       // its own staleness check couldn't get a fresher number either — surface
       // it here instead of quietly showing a wrong price as if it were current.
       const stale = e.priceStale
-        ? `<span class="index-pill-stale" title="This price may be a trading day behind — Yahoo's data hadn't updated yet when this was fetched">†</span>`
+        ? `<span class="index-pill-stale" title="This price may be a trading day behind — Yahoo's data hadn't updated yet when this was fetched">EOD</span>`
         : '';
       return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span>${stale}</span>`;
     }).join('');

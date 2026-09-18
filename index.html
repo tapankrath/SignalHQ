@@ -99,18 +99,27 @@
     box-sizing:border-box;
   }
   .brand{ display:flex; align-items:center; gap:12px; flex-shrink:0; min-width:0; }
-  /* Pills (SPY/QQQ) and the Tickers/Export actions are two separate groups
-     pushed to opposite edges — same shared left/right gutter every other
-     row on the page uses, instead of clumping in the middle. Wraps onto its
-     own second line on narrow phones if both groups can't fit together. */
+  /* header-tools now stacks two full-width "boxes" — index pills, then
+     Tickers/Export — instead of trying to fit both in one row. Each box
+     shares the same left/right gutter (page max-width + 18px padding) as
+     the portfolio bar, filter card, and everything else on the page, so
+     they read as part of the same layout system rather than a toolbar
+     bolted on with different edges. This also fixes Export getting cut
+     off / scrolling past the right edge on phones — it's now inside a
+     bounded box instead of a free-floating row. */
   .header-tools{
     max-width:1080px; margin:0 auto; width:100%;
     padding:0 18px;
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:10px; row-gap:8px;
+    display:flex; flex-direction:column; gap:10px;
     box-sizing:border-box;
   }
-  .header-actions{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  .tool-row{
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:14px; padding:8px 10px;
+    box-shadow:var(--shadow-sm);
+    display:flex; align-items:center; gap:8px;
+  }
+  .header-actions .export-btn{ flex:1; justify-content:center; }
 
   .mode-toggle{
     max-width:1080px; margin:0 auto; padding:0 18px;
@@ -156,16 +165,18 @@
   #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; color:var(--text); }
 
   .index-pills{
-    display:none; align-items:center; gap:8px; flex-shrink:0;
-    padding-right:12px; margin-right:2px; border-right:1px solid var(--border);
+    display:none; gap:8px; overflow-x:auto;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
   }
+  .index-pills::-webkit-scrollbar{ display:none; }
   .index-pill{
     display:inline-flex; align-items:baseline; gap:6px;
-    padding:9px 12px; border-radius:8px; white-space:nowrap;
-    /* Tinted fill (vs. the plain white of .export-btn) marks these as
-       passive data readouts, not clickable actions — a visual distinction
-       the previous identical white+black-border treatment didn't make. */
-    background:var(--surface-2); border:1px solid var(--border);
+    padding:9px 12px; border-radius:9px; white-space:nowrap; flex-shrink:0;
+    /* White inset chip on the gray .tool-row card — the same "tinted
+       track, white control" pattern the portfolio bar's cash/%% inputs
+       use — instead of matching the card's own gray, which made the
+       pills blend into their own container. */
+    background:var(--surface); border:1px solid var(--border);
     box-shadow:var(--shadow-sm);
   }
   .index-pill .index-pill-sym{
@@ -174,11 +185,6 @@
   }
   .index-pill .index-pill-px{
     font-family:var(--mono); font-size:14.5px; font-weight:800; color:var(--text);
-  }
-  .index-pill-stale{
-    color:var(--text-faint); font-weight:700; font-size:9px; letter-spacing:0.03em;
-    margin-left:2px; padding:1px 4px; border-radius:4px; background:var(--surface);
-    border:1px solid var(--border); cursor:help; text-transform:uppercase; line-height:1.4;
   }
 
   .header-top-right{
@@ -711,27 +717,16 @@
     .brand-mark svg{ border-radius:12px; }
     .brand-name{ font-size:23px; }
     .brand-tag{ display:none; }
-    .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
-    /* On very narrow phones the pills + Tickers + Export don't all fit on
-       one row even at compact mobile sizes. Previously this let the row
-       wrap onto a second line (pills above, buttons below) — but that
-       pushed Tickers/Export down and broke the "one toolbar row" look.
-       Instead the row now stays on one line and scrolls horizontally if
-       it's tighter than the content needs, the same pattern already used
-       for the results table on mobile. Everything stays reachable, just
-       via a short swipe instead of dropping to a second row. */
-    .header-tools{
-      gap:8px; flex-wrap:nowrap; justify-content:flex-start;
-      overflow-x:auto; -webkit-overflow-scrolling:touch;
-      scrollbar-width:none; -ms-overflow-style:none;
-    }
-    .header-tools::-webkit-scrollbar{ display:none; }
-    .header-actions{ gap:6px; margin-left:auto; }
-    .index-pills{ gap:6px; padding-right:8px; margin-right:0; }
+    .export-btn{ padding:8px 10px; font-size:11.5px; gap:4px; }
+    /* header-tools is a column of two boxes on all sizes (see base rule) —
+       on mobile each box just gets tighter internal padding/gaps, and the
+       index-pill row can still scroll sideways on its own if a phone is
+       narrow enough that even two compact pills don't fit, without
+       affecting the Tickers/Export box below it. */
+    .tool-row{ padding:6px 8px; gap:6px; }
     .index-pill{ padding:6px 9px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }
     .index-pill .index-pill-px{ font-size:12px; }
-    .index-pill-stale{ font-size:8px; padding:1px 3px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -789,9 +784,9 @@
   </div>
 
   <div class="header-tools">
-    <div class="index-pills" id="indexPills"></div>
+    <div class="tool-row index-pills" id="indexPills"></div>
 
-    <div class="header-actions">
+    <div class="tool-row header-actions">
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         Tickers
@@ -1120,12 +1115,14 @@
       // trading day behind even when it runs hours after close — Yahoo's
       // historical data lagging its own live quotes, not a schedule
       // problem. fetch_data.py flags this per-ticker as "priceStale" when
-      // its own staleness check couldn't get a fresher number either — surface
-      // it here instead of quietly showing a wrong price as if it were current.
-      const stale = e.priceStale
-        ? `<span class="index-pill-stale" title="This price may be a trading day behind — Yahoo's data hadn't updated yet when this was fetched">EOD</span>`
+      // its own staleness check couldn't get a fresher number either.
+      // No visible badge for this anymore (it read as a price-change
+      // indicator, not a data-quality note) — the title tooltip on the
+      // whole pill still explains it on hover/long-press.
+      const staleTitle = e.priceStale
+        ? ' title="This price may be a trading day behind — Yahoo\'s data hadn\'t updated yet when this was fetched"'
         : '';
-      return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span>${stale}</span>`;
+      return `<span class="index-pill"${staleTitle}><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span></span>`;
     }).join('');
     el.innerHTML = html;
     // display:none by default (see CSS) so there's no empty divider flash

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T00:16:05.003849+00:00",
+  "generated_at": "2026-09-18T00:37:02.587462+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -1235,9 +1235,15 @@
       "pcVol": 0.84,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.02,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.21,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palantir Technologies (PLTR) AI Deal Rush Meets A Fair Value Debate",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-ai-deal-001448200.html",
+          "sentiment": 0.57
+        },
         {
           "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
           "publisher": "TheStreet",
@@ -1249,12 +1255,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/youre-liable-for-your-own-actions-palantir-ceo-alex-karp-opens-a-third-front-in-the-ai-safety-fight/",
           "sentiment": 0.05
-        },
-        {
-          "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2414,7 +2414,7 @@
       "chg6m": 18.8,
       "chg1y": 21.7,
       "volRatio": 0.77,
-      "peRatio": 27.7,
+      "peRatio": 27.0,
       "dividendYield": 0.47,
       "marketCap": 5296402989056,
       "score": 6.2,
@@ -2567,7 +2567,7 @@
       "chg6m": 100.8,
       "chg1y": 449.5,
       "volRatio": 0.81,
-      "peRatio": 22.1,
+      "peRatio": 21.0,
       "dividendYield": 0.06,
       "marketCap": 1103981838336,
       "score": 9.4,
@@ -2862,7 +2862,7 @@
       "chg6m": -19.3,
       "chg1y": -36.7,
       "volRatio": 1.01,
-      "peRatio": 23.7,
+      "peRatio": 24.1,
       "dividendYield": null,
       "marketCap": 313586286592,
       "score": 3.8,
@@ -3067,7 +3067,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2039495917568,
+      "marketCap": 2040671371264,
       "score": 8.2,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -3198,9 +3198,15 @@
       "dividendYield": null,
       "marketCap": 423515029504,
       "score": 9.0,
-      "newsSentiment": 0.02,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.21,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palantir Technologies (PLTR) AI Deal Rush Meets A Fair Value Debate",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-ai-deal-001448200.html",
+          "sentiment": 0.57
+        },
         {
           "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
           "publisher": "TheStreet",
@@ -3212,12 +3218,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/youre-liable-for-your-own-actions-palantir-ceo-alex-karp-opens-a-third-front-in-the-ai-safety-fight/",
           "sentiment": 0.05
-        },
-        {
-          "title": "Why Is Chipotle Now Working With the CIA-Funded Palantir?",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378553/why-chipotle-working-with-palantir",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3280,7 +3280,7 @@
       "chg6m": 23.6,
       "chg1y": 57.1,
       "volRatio": 1.28,
-      "peRatio": 32.0,
+      "peRatio": 31.1,
       "dividendYield": 0.97,
       "marketCap": 2231532257280,
       "score": 9.4,
@@ -3405,7 +3405,7 @@
       "volRatio": 1.49,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 55347269632,
+      "marketCap": 59261722624,
       "score": 6.2,
       "newsSentiment": 0.11,
       "newsSentimentLabel": "Neutral",
@@ -3663,7 +3663,7 @@
       "volRatio": 0.92,
       "peRatio": 67.8,
       "dividendYield": 0.78,
-      "marketCap": 127054471168,
+      "marketCap": 127313199104,
       "score": 3.5,
       "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",

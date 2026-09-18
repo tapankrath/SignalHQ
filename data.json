@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T22:37:01.680995+00:00",
+  "generated_at": "2026-09-18T23:37:05.744742+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -156,7 +156,7 @@
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -166,16 +166,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Jensen Huang Maintained His Prediction That AI Infrastructure Spending Will Hit $3 Trillion to $4 Trillion by 2030 -- the Same Forecast He Made a Year Ago to the Day. Is Nvidia Still a Buy at These Levels?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/jensen-huang-maintained-his-prediction-that-ai-inf/",
+          "title": "Jim Cramer Said This AI Firm Has More Orders Than \u201cAlmost Anybody\u201d Other Than NVIDIA",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jim-cramer-said-ai-firm-232154601.html",
           "sentiment": 0.0
         },
         {
-          "title": "Nvidia-Backed Cloud Platform Nscale Files For IPO \u2014 NVDA Stock In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-backed-cloud-platform-nscale-files-for-ipo/cZtH7g6RBEQ",
-          "sentiment": 0.0
+          "title": "NVIDIA Vs Intel Corporation (NASDAQ:INTC): Here\u2019s The One Jim Cramer Likes",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-intel-corporation-nasdaq-230352152.html",
+          "sentiment": 0.42
         }
       ],
       "volRegime": "Cheap",
@@ -292,16 +292,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
           "title": "AMD (AMD) Stock Looks Cheap After Its Huge 3 Year Run",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-amd-stock-looks-cheap-211318753.html",
           "sentiment": 0.32
-        },
-        {
-          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
-          "sentiment": 0.61
         },
         {
           "title": "Top Research Reports for AMD, Linde & Amgen",
@@ -536,26 +536,26 @@
       "pcVol": 0.63,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.07,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Said The Strength In Oracle (ORCL)\u2019s Shares Was A \u201cPositive Sign\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-said-strength-oracle-230622055.html",
+          "sentiment": 0.66
+        },
+        {
+          "title": "Why Oracle (ORCL) Stock Is Trading Lower Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-oracle-orcl-stock-trading-224840340.html",
+          "sentiment": -0.3
+        },
         {
           "title": "Oracle Slides 3.4% as Buy Call Meets a Capital Burden",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-slides-3-4-buy-202108114.html",
           "sentiment": -0.69
-        },
-        {
-          "title": "Oracle Falls 3% While Cloud Rivals Hold Their Ground; Microsoft Dips, Amazon Nudges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/oracle-falls-3-while-cloud-rivals-hold-their-ground-microsoft-dips-amazon-nudges-higher/",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Oracle's CEO just sold $1.5 million in stock as shares rebound",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oracles-ceo-just-sold-1-140056942.html",
-          "sentiment": 0.3
         }
       ],
       "volRegime": "Fair",
@@ -786,7 +786,7 @@
       "pcVol": 0.39,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.22,
+      "newsSentiment": -0.26,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -796,16 +796,16 @@
           "sentiment": -0.13
         },
         {
+          "title": "Netflix (NFLX) Stock Trades Down, Here Is Why",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-trades-down-223240493.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stock Market Today, Sept. 18: Netflix Falls on Analyst Downgrade and Slashed Price Target",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/stock-market-today/2026/09/18/stock-market-today-sept-18-netflix-falls-on-analyst-downgrade-and-slashed-price-target/",
           "sentiment": -0.66
-        },
-        {
-          "title": "Netflix Stock Gets Downgraded by Wells Fargo on \u2018Worrying\u2019 Engagement Trends",
-          "publisher": "Investopedia",
-          "link": "https://www.investopedia.com/market-update-netflix-stock-gets-downgraded-by-wells-fargo-on-worrying-engagement-trends-nflx-12128200",
-          "sentiment": 0.13
         }
       ],
       "volRegime": "Cheap",
@@ -854,16 +854,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
           "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
-        },
-        {
-          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
-          "sentiment": 0.61
         },
         {
           "title": "Credo Technology Group vs. Sandisk: Which Technology Stock Is a Better Buy in 2026?",
@@ -1056,15 +1056,15 @@
           "sentiment": 0.3
         },
         {
-          "title": "Boeing Starliner May Get a Bigger NASA Role Despite Leaving Crew Behind As SpaceX Looks Past Dragon, Says Report",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/boeing-starliner-may-get-a-bigger-nasa-role-despite-leaving-crew-behind-as-space-x-looks-past-dragon-says-report/cZtHIQ2RBEf",
+          "title": "He Left SpaceX to Rebuild the American Factory",
+          "publisher": "The Hustle",
+          "link": "https://thehustle.videonest.co/videos/2142672/he-left-spacex-to-rebuild-the-american-factory-tNsg2ytwCw",
           "sentiment": 0.0
         },
         {
-          "title": "SpaceX adds $946M NASA crew deal through 2030",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36571/spacex-nasa-crew-missions-946-million",
+          "title": "Boeing Starliner May Get a Bigger NASA Role Despite Leaving Crew Behind As SpaceX Looks Past Dragon, Says Report",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/boeing-starliner-may-get-a-bigger-nasa-role-despite-leaving-crew-behind-as-space-x-looks-past-dragon-says-report/cZtHIQ2RBEf",
           "sentiment": 0.0
         }
       ],
@@ -1174,7 +1174,7 @@
       "pcVol": 0.46,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.66,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1184,16 +1184,16 @@
           "sentiment": 0.69
         },
         {
-          "title": "ZS, CRWD, PANW Stock In Focus \u2014 Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Debate Intensifies",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/zs-crwd-panw-stock-in-focus-cybersecurity-firms-lead-weekly-nasdaq-100-gains-as-ai-security-debate-intensifies/cZtHcYdRBE4",
-          "sentiment": 0.59
+          "title": "Jim Cramer Shared What CrowdStrike Holdings, Inc. (NASDAQ:CRWD)\u2019s CEO Told Him About AI \u201cDoomsaying\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jim-cramer-shared-crowdstrike-holdings-232242655.html",
+          "sentiment": 0.34
         },
         {
-          "title": "CrowdStrike Gets Higher Targets From BofA, Stephens \u2014 Guardian And Expanding AI Security Market Drive Analyst Confidence",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/crowd-strike-gets-higher-targets-from-bof-a-stephens-guardian-and-expanding-ai-security-market-drive-analyst-confidence/cZtuCJxRB3y",
-          "sentiment": 0.69
+          "title": "CRWD Stock Keeps Climbing. Should You Climb On?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615810/crwd-stock-keeps-climbing-should-you-climb-on/2026-09-18",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1242,9 +1242,15 @@
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.31,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.05,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Says His Palantir Technologies Inc. (NASDAQ:PLTR) Price Target Is $250",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-palantir-technologies-230154955.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Palantir CEO offers surprising solution to AI threats that involves Washington, D.C.",
           "publisher": "TheStreet",
@@ -1256,12 +1262,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615840/is-palantirs-lead-over-its-peers-already-priced-in/2026-09-18",
           "sentiment": 0.0
-        },
-        {
-          "title": "PLTR's 110% Commercial Revenue Surge Defines Its Q2 Growth",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/pltrs-110-commercial-revenue-surge-175000477.html",
-          "sentiment": 0.77
         }
       ],
       "volRegime": "Cheap",
@@ -1442,18 +1442,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615864/the-options-market-says-dell-stock-can-halve-or-double/2026-09-18",
           "sentiment": 0.0
-        },
-        {
-          "title": "Snowflake's Product Revenue Accelerates: Can It Outpace DELL & ORCL?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/articles/snowflakes-product-revenue-accelerates-outpace-132500473.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Dell Technologies Inc. (DELL) Is a Trending Stock: Facts to Know Before Betting on It",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-inc-dell-trending-130004426.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1498,7 +1486,7 @@
       "pcVol": 0.74,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.52,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1508,16 +1496,16 @@
           "sentiment": 0.69
         },
         {
+          "title": "Asana, Five9, Palo Alto Networks, Rapid7, and Sprout Social Shares Plummet, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/asana-five9-palo-alto-networks-232840904.html",
+          "sentiment": 0.3
+        },
+        {
           "title": "ZS, CRWD, PANW Stock In Focus \u2014 Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Debate Intensifies",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/zs-crwd-panw-stock-in-focus-cybersecurity-firms-lead-weekly-nasdaq-100-gains-as-ai-security-debate-intensifies/cZtHcYdRBE4",
           "sentiment": 0.59
-        },
-        {
-          "title": "Why Palo Alto Networks Stock Dropped Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/why-palo-alto-networks-stock-dropped-today/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2184,9 +2172,15 @@
       "pcVol": 2.52,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Here\u2019s When Jim Cramer Thinks Costco Wholesale Corporation (NASDAQ:COST) Will Cut Prices",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-thinks-costco-wholesale-231228388.html",
+          "sentiment": -0.42
+        },
         {
           "title": "Should You Buy the Instacart Dip Even After Costco Just Let DoorDash In?",
           "publisher": "24/7 Wall St.",
@@ -2198,12 +2192,6 @@
           "publisher": "FreightWaves",
           "link": "https://finance.yahoo.com/small-business/articles/costco-expands-ultra-fast-delivery-185042149.html",
           "sentiment": 0.1
-        },
-        {
-          "title": "Costco (COST) Stock May Be Priced For Perfection On Cash Flow",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-stock-may-priced-181408381.html",
-          "sentiment": 0.57
         }
       ],
       "volRegime": "Rich",
@@ -2438,7 +2426,7 @@
       "dividendYield": 0.46,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.14,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2448,16 +2436,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Jensen Huang Maintained His Prediction That AI Infrastructure Spending Will Hit $3 Trillion to $4 Trillion by 2030 -- the Same Forecast He Made a Year Ago to the Day. Is Nvidia Still a Buy at These Levels?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/jensen-huang-maintained-his-prediction-that-ai-inf/",
+          "title": "Jim Cramer Said This AI Firm Has More Orders Than \u201cAlmost Anybody\u201d Other Than NVIDIA",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jim-cramer-said-ai-firm-232154601.html",
           "sentiment": 0.0
         },
         {
-          "title": "Nvidia-Backed Cloud Platform Nscale Files For IPO \u2014 NVDA Stock In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-backed-cloud-platform-nscale-files-for-ipo/cZtH7g6RBEQ",
-          "sentiment": 0.0
+          "title": "NVIDIA Vs Intel Corporation (NASDAQ:INTC): Here\u2019s The One Jim Cramer Likes",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-intel-corporation-nasdaq-230352152.html",
+          "sentiment": 0.42
         }
       ]
     },
@@ -2524,9 +2512,15 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla, Inc. (TSLA) Eyes Europe\u2019s Electric Truck Boom With Semi Expansion",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/tesla-inc-tsla-eyes-europe-224919901.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Coinbase Files to List Single-Stock Perps on Apple, Tesla and Nvidia",
           "publisher": "decrypt",
@@ -2538,12 +2532,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-avoid-tsla-1-181640867.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "Tesla Q3 Deliveries Could Beat Expectations, Says Barclays \u2014 Analyst Calls Fundamentals An \u2018Afterthought\u2019 To AI Story",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tesla-q3-deliveries-could-beat-expectations-says-barclays-analyst-calls-fundamentals-an-afterthought-to-ai-story/cZtHcTnRBEE",
-          "sentiment": 0.61
         }
       ]
     },
@@ -2571,16 +2559,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
           "title": "AMD (AMD) Stock Looks Cheap After Its Huge 3 Year Run",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-amd-stock-looks-cheap-211318753.html",
           "sentiment": 0.32
-        },
-        {
-          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
-          "sentiment": 0.61
         },
         {
           "title": "Top Research Reports for AMD, Linde & Amgen",
@@ -2727,26 +2715,26 @@
       "dividendYield": 1.33,
       "marketCap": 446333681664,
       "score": 3.4,
-      "newsSentiment": -0.07,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Said The Strength In Oracle (ORCL)\u2019s Shares Was A \u201cPositive Sign\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-said-strength-oracle-230622055.html",
+          "sentiment": 0.66
+        },
+        {
+          "title": "Why Oracle (ORCL) Stock Is Trading Lower Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-oracle-orcl-stock-trading-224840340.html",
+          "sentiment": -0.3
+        },
         {
           "title": "Oracle Slides 3.4% as Buy Call Meets a Capital Burden",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-slides-3-4-buy-202108114.html",
           "sentiment": -0.69
-        },
-        {
-          "title": "Oracle Falls 3% While Cloud Rivals Hold Their Ground; Microsoft Dips, Amazon Nudges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/oracle-falls-3-while-cloud-rivals-hold-their-ground-microsoft-dips-amazon-nudges-higher/",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Oracle's CEO just sold $1.5 million in stock as shares rebound",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oracles-ceo-just-sold-1-140056942.html",
-          "sentiment": 0.3
         }
       ]
     },
@@ -2893,7 +2881,7 @@
       "dividendYield": null,
       "marketCap": 298929225728,
       "score": 1.5,
-      "newsSentiment": -0.22,
+      "newsSentiment": -0.26,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -2903,16 +2891,16 @@
           "sentiment": -0.13
         },
         {
+          "title": "Netflix (NFLX) Stock Trades Down, Here Is Why",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-trades-down-223240493.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stock Market Today, Sept. 18: Netflix Falls on Analyst Downgrade and Slashed Price Target",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/stock-market-today/2026/09/18/stock-market-today-sept-18-netflix-falls-on-analyst-downgrade-and-slashed-price-target/",
           "sentiment": -0.66
-        },
-        {
-          "title": "Netflix Stock Gets Downgraded by Wells Fargo on \u2018Worrying\u2019 Engagement Trends",
-          "publisher": "Investopedia",
-          "link": "https://www.investopedia.com/market-update-netflix-stock-gets-downgraded-by-wells-fargo-on-worrying-engagement-trends-nflx-12128200",
-          "sentiment": 0.13
         }
       ]
     },
@@ -2940,16 +2928,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
           "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
-        },
-        {
-          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
-          "sentiment": 0.61
         },
         {
           "title": "Credo Technology Group vs. Sandisk: Which Technology Stock Is a Better Buy in 2026?",
@@ -3106,7 +3094,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2011830157312,
+      "marketCap": 2012989751296,
       "score": 8.2,
       "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
@@ -3118,15 +3106,15 @@
           "sentiment": 0.3
         },
         {
-          "title": "Boeing Starliner May Get a Bigger NASA Role Despite Leaving Crew Behind As SpaceX Looks Past Dragon, Says Report",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/boeing-starliner-may-get-a-bigger-nasa-role-despite-leaving-crew-behind-as-space-x-looks-past-dragon-says-report/cZtHIQ2RBEf",
+          "title": "He Left SpaceX to Rebuild the American Factory",
+          "publisher": "The Hustle",
+          "link": "https://thehustle.videonest.co/videos/2142672/he-left-spacex-to-rebuild-the-american-factory-tNsg2ytwCw",
           "sentiment": 0.0
         },
         {
-          "title": "SpaceX adds $946M NASA crew deal through 2030",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36571/spacex-nasa-crew-missions-946-million",
+          "title": "Boeing Starliner May Get a Bigger NASA Role Despite Leaving Crew Behind As SpaceX Looks Past Dragon, Says Report",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/boeing-starliner-may-get-a-bigger-nasa-role-despite-leaving-crew-behind-as-space-x-looks-past-dragon-says-report/cZtHIQ2RBEf",
           "sentiment": 0.0
         }
       ]
@@ -3194,7 +3182,7 @@
       "dividendYield": null,
       "marketCap": 243338117120,
       "score": 9.4,
-      "newsSentiment": 0.66,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3204,16 +3192,16 @@
           "sentiment": 0.69
         },
         {
-          "title": "ZS, CRWD, PANW Stock In Focus \u2014 Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Debate Intensifies",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/zs-crwd-panw-stock-in-focus-cybersecurity-firms-lead-weekly-nasdaq-100-gains-as-ai-security-debate-intensifies/cZtHcYdRBE4",
-          "sentiment": 0.59
+          "title": "Jim Cramer Shared What CrowdStrike Holdings, Inc. (NASDAQ:CRWD)\u2019s CEO Told Him About AI \u201cDoomsaying\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/jim-cramer-shared-crowdstrike-holdings-232242655.html",
+          "sentiment": 0.34
         },
         {
-          "title": "CrowdStrike Gets Higher Targets From BofA, Stephens \u2014 Guardian And Expanding AI Security Market Drive Analyst Confidence",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/crowd-strike-gets-higher-targets-from-bof-a-stephens-guardian-and-expanding-ai-security-market-drive-analyst-confidence/cZtuCJxRB3y",
-          "sentiment": 0.69
+          "title": "CRWD Stock Keeps Climbing. Should You Climb On?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615810/crwd-stock-keeps-climbing-should-you-climb-on/2026-09-18",
+          "sentiment": 0.0
         }
       ]
     },
@@ -3237,9 +3225,15 @@
       "dividendYield": null,
       "marketCap": 426879287296,
       "score": 9.0,
-      "newsSentiment": 0.31,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.05,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Jim Cramer Says His Palantir Technologies Inc. (NASDAQ:PLTR) Price Target Is $250",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-palantir-technologies-230154955.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Palantir CEO offers surprising solution to AI threats that involves Washington, D.C.",
           "publisher": "TheStreet",
@@ -3251,12 +3245,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615840/is-palantirs-lead-over-its-peers-already-priced-in/2026-09-18",
           "sentiment": 0.0
-        },
-        {
-          "title": "PLTR's 110% Commercial Revenue Surge Defines Its Q2 Growth",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/pltrs-110-commercial-revenue-surge-175000477.html",
-          "sentiment": 0.77
         }
       ]
     },
@@ -3374,18 +3362,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615864/the-options-market-says-dell-stock-can-halve-or-double/2026-09-18",
           "sentiment": 0.0
-        },
-        {
-          "title": "Snowflake's Product Revenue Accelerates: Can It Outpace DELL & ORCL?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/articles/snowflakes-product-revenue-accelerates-outpace-132500473.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Dell Technologies Inc. (DELL) Is a Trending Stock: Facts to Know Before Betting on It",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-inc-dell-trending-130004426.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3409,7 +3385,7 @@
       "dividendYield": null,
       "marketCap": 297408430080,
       "score": 9.4,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.52,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3419,16 +3395,16 @@
           "sentiment": 0.69
         },
         {
+          "title": "Asana, Five9, Palo Alto Networks, Rapid7, and Sprout Social Shares Plummet, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/asana-five9-palo-alto-networks-232840904.html",
+          "sentiment": 0.3
+        },
+        {
           "title": "ZS, CRWD, PANW Stock In Focus \u2014 Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Debate Intensifies",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/zs-crwd-panw-stock-in-focus-cybersecurity-firms-lead-weekly-nasdaq-100-gains-as-ai-security-debate-intensifies/cZtHcYdRBE4",
           "sentiment": 0.59
-        },
-        {
-          "title": "Why Palo Alto Networks Stock Dropped Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/why-palo-alto-networks-stock-dropped-today/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3450,7 +3426,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 56756400128,
+      "marketCap": 60770516992,
       "score": 6.2,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
@@ -3667,9 +3643,28 @@
       "dividendYield": null,
       "marketCap": 1124388096,
       "score": 1.5,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsSentiment": 0.18,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "DXYZ, NASA, VCX Slip Overnight: SpaceX IPO Buyers Get Tiny Allocations, Rush To Take Profits",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/dxyz-nasa-vcx-spacex-buyers-tiny-allocations-profits-taking/cZKWOg8R7Ed",
+          "sentiment": 0.44
+        },
+        {
+          "title": "DXYZ, NASA, VCX Jump Premarket: Kevin O'Leary Says Betting On SpaceX, OpenAI Or Anthropic Alone Is A \u2018Mistake\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/dxyz-nasa-vcx-kevin-oleary-ipo-bet/cZKTmtvR72R",
+          "sentiment": -0.25
+        },
+        {
+          "title": "DXYZ, VCX, NASA Stocks Rocket As FTSE Clears Fast Lane For SpaceX IPO \u2014 Retail Shrugs Off Destiny Tech100\u2019s $1B Share Sale",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/spacex-ipo-ftse-fast-lane-dxyz-vcx-nasa-destinytech100-share-sale/cZgg23cReAK",
+          "sentiment": 0.36
+        }
+      ]
     },
     {
       "sym": "GLW",
@@ -3689,7 +3684,7 @@
       "volRatio": 1.58,
       "peRatio": 69.2,
       "dividendYield": 0.76,
-      "marketCap": 129057431552,
+      "marketCap": 129320239104,
       "score": 4.5,
       "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
@@ -3845,9 +3840,15 @@
       "dividendYield": 0.66,
       "marketCap": 397051002880,
       "score": 2.3,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Here\u2019s When Jim Cramer Thinks Costco Wholesale Corporation (NASDAQ:COST) Will Cut Prices",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-thinks-costco-wholesale-231228388.html",
+          "sentiment": -0.42
+        },
         {
           "title": "Should You Buy the Instacart Dip Even After Costco Just Let DoorDash In?",
           "publisher": "24/7 Wall St.",
@@ -3859,12 +3860,6 @@
           "publisher": "FreightWaves",
           "link": "https://finance.yahoo.com/small-business/articles/costco-expands-ultra-fast-delivery-185042149.html",
           "sentiment": 0.1
-        },
-        {
-          "title": "Costco (COST) Stock May Be Priced For Perfection On Cash Flow",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-stock-may-priced-181408381.html",
-          "sentiment": 0.57
         }
       ]
     },

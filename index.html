@@ -99,18 +99,18 @@
     box-sizing:border-box;
   }
   .brand{ display:flex; align-items:center; gap:12px; flex-shrink:0; min-width:0; }
-  /* header-tools now stacks two full-width "boxes" — index pills, then
-     Tickers/Export — instead of trying to fit both in one row. Each box
-     shares the same left/right gutter (page max-width + 18px padding) as
-     the portfolio bar, filter card, and everything else on the page, so
-     they read as part of the same layout system rather than a toolbar
-     bolted on with different edges. This also fixes Export getting cut
-     off / scrolling past the right edge on phones — it's now inside a
-     bounded box instead of a free-floating row. */
+  /* header-tools sits as two "boxes" — index pills, then Tickers/Export —
+     both sharing the same left/right gutter (page max-width + 18px
+     padding) as the portfolio bar, filter card, and everything else on
+     the page, instead of a toolbar with different edges. On screens with
+     room (tablet/desktop) they sit side by side on one line, since
+     stacking them there just wastes vertical space for no reason; only
+     mobile (see media query) stacks them, where there genuinely isn't
+     width for both. */
   .header-tools{
     max-width:1080px; margin:0 auto; width:100%;
     padding:0 18px;
-    display:flex; flex-direction:column; gap:10px;
+    display:flex; flex-direction:row; flex-wrap:wrap; align-items:stretch; gap:10px;
     box-sizing:border-box;
   }
   .tool-row{
@@ -119,6 +119,9 @@
     box-shadow:var(--shadow-sm);
     display:flex; align-items:center; gap:8px;
   }
+  /* Index pills stay content-sized (don't stretch to fill the row); the
+     Tickers/Export box takes whatever width is left over. */
+  .header-actions.tool-row{ flex:1 1 260px; }
   .header-actions .export-btn{ flex:1; justify-content:center; }
 
   .mode-toggle{
@@ -167,12 +170,7 @@
   .index-pills{
     display:none; gap:8px; overflow-x:auto;
     -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
-    /* Hugs its own content instead of stretching to the same width as the
-       Tickers/Export box below it — with just 1-2 pills that stretch left
-       a big empty gray strip on the right, which read as unfinished. Still
-       capped at the full gutter width (and still scrolls) for the rare
-       case a phone is too narrow even for two compact pills. */
-    align-self:flex-start; max-width:100%;
+    max-width:100%;
   }
   .index-pills::-webkit-scrollbar{ display:none; }
   .index-pill{
@@ -689,7 +687,7 @@
     .sticky-top{ gap:8px; padding-top:10px; padding-bottom:6px; }
     header{ gap:12px; }
     .header-top{ padding:0 14px; gap:8px; }
-    .header-tools{ padding:0 14px; }
+    .header-tools{ padding:0 14px; flex-direction:column; }
     .header-top-right{ gap:8px; }
     .data-status{ font-size:10px; padding:5px 9px; gap:4px; max-width:155px; }
     .refresh-btn{ width:30px; height:30px; }
@@ -724,11 +722,13 @@
     .brand-name{ font-size:23px; }
     .brand-tag{ display:none; }
     .export-btn{ padding:8px 10px; font-size:11.5px; gap:4px; }
-    /* header-tools is a column of two boxes on all sizes (see base rule) —
-       on mobile each box just gets tighter internal padding/gaps, and the
-       index-pill row can still scroll sideways on its own if a phone is
-       narrow enough that even two compact pills don't fit, without
-       affecting the Tickers/Export box below it. */
+    /* Side by side is the default (see base rule); below 720px there's
+       only room to stack the two boxes, so header-tools switches to a
+       column here and each box just gets tighter internal padding/gaps.
+       The index-pill row can still scroll sideways on its own if a phone
+       is narrow enough that even two compact pills don't fit. */
+    .index-pills{ align-self:flex-start; }
+    .header-actions.tool-row{ flex:none; }
     .tool-row{ padding:6px 8px; gap:6px; }
     .index-pill{ padding:6px 9px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }

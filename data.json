@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T02:36:27.911191+00:00",
+  "generated_at": "2026-09-18T03:36:34.412970+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -280,16 +280,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
-          "sentiment": 0.54
-        },
-        {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
+        },
+        {
+          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
+          "sentiment": 0.54
         },
         {
           "title": "Why AMD Stock Jumped Today",
@@ -415,12 +415,6 @@
           "title": "Alphabet (GOOGL) Rises Higher Than Market: Key Facts",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-rises-higher-market-214503770.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-alphabet-inc-goog-outpaced-214503164.html",
           "sentiment": 0.0
         }
       ],
@@ -594,9 +588,15 @@
       "pcVol": 0.31,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Amazon makes $1.5 billion move for U.S. workers",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/employment/amazon-us-worker-pay-benefits",
+          "sentiment": 0.18
+        },
         {
           "title": "What Amazon.com (AMZN)'s US$8 Billion Backup Power Deal With Generac Means For Shareholders",
           "publisher": "Simply Wall St.",
@@ -608,12 +608,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/amazon-says-ai-models-to-be-released-only-when-ready-and-safe/cZts5oiRBdt",
           "sentiment": 0.82
-        },
-        {
-          "title": "S&P 500, Nasdaq, Dow End Higher As Drop In Oil Prices Allays Inflationary Concerns \u2014 NVDA, MCD, CRWV, LMT, AMZN In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-higher-amid-drop-in-oil-prices/cZtscNsRBdY",
-          "sentiment": -0.27
         }
       ],
       "volRegime": "Fair",
@@ -1370,9 +1364,15 @@
       "pcVol": 2.05,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Taiwan Semiconductor Manufacturing (TSM) Could Be 14% Overvalued As 2nm MediaTek Win Lands",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-could-031716521.html",
+          "sentiment": 0.59
+        },
         {
           "title": "There\u2019s a Good Reason to Choose GLOBALFOUNDRIES Over Taiwan Semiconductor Manufacturing",
           "publisher": "24/7 Wall St.",
@@ -1614,8 +1614,8 @@
       "pcVol": 0.61,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.11,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Nebius Group (NBIS) Raises AI Cloud Prices As Compute Demand Tests Customer Costs",
@@ -1624,15 +1624,15 @@
           "sentiment": 0.32
         },
         {
+          "title": "NBIS Stock Jumps on Nebius Price Hike Rumors",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4667380/nbis-stock-jumps-on-nebius-price-hike-rumors",
+          "sentiment": 0.49
+        },
+        {
           "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Nvidia-Backed Nebius Group Stock Skyrocketed Thursday Morning",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/why-nvidia-backed-nebius-group-stock-skyrocketed-t/",
           "sentiment": 0.0
         }
       ],
@@ -2171,9 +2171,15 @@
       "pcVol": 1.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Costco just made grocery runs way more convenient",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/costco-uber-eats-grocery-delivery",
+          "sentiment": 0.0
+        },
         {
           "title": "Walmart tries to copy a successful Costco strategy",
           "publisher": "TheStreet",
@@ -2185,12 +2191,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-expands-doordash-uber-delivery-190417350.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "2 Reasons to Like COST (and 1 Not So Much)",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/2-reasons-cost-1-not-181017726.html",
-          "sentiment": 0.36
         }
       ],
       "volRegime": "Fair",
@@ -2303,9 +2303,15 @@
       "pcVol": 0.67,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Marvell Technology (MRVL) Deepens Its AI Infrastructure Footprint",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-mrvl-deepens-ai-031612345.html",
+          "sentiment": 0.0
+        },
         {
           "title": "SentinelOne, Marvell Technology, FormFactor, Teradyne, and Intel Shares Are Soaring, What You Need To Know",
           "publisher": "StockStory",
@@ -2317,12 +2323,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/marvell-jumps-5-2-ai-180702375.html",
           "sentiment": 0.79
-        },
-        {
-          "title": "GlobalFoundries and Marvell expand SiGe deal for AI data centers",
-          "publisher": "Proactive",
-          "link": "https://www.proactiveinvestors.com/companies/news/1098705/globalfoundries-and-marvell-expand-sige-deal-for-ai-data-centers-1098705.html",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Cheap",
@@ -2347,7 +2347,7 @@
       "chg6m": 35.1,
       "chg1y": 42.2,
       "volRatio": 0.89,
-      "peRatio": 38.7,
+      "peRatio": 38.2,
       "dividendYield": 0.32,
       "marketCap": 4918238773248,
       "score": 8.5,
@@ -2546,16 +2546,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
-          "sentiment": 0.54
-        },
-        {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
+        },
+        {
+          "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
+          "sentiment": 0.54
         },
         {
           "title": "Why AMD Stock Jumped Today",
@@ -2581,7 +2581,7 @@
       "chg6m": 111.8,
       "chg1y": 479.7,
       "volRatio": 0.81,
-      "peRatio": 22.1,
+      "peRatio": 21.0,
       "dividendYield": 0.06,
       "marketCap": 1103981838336,
       "score": 9.4,
@@ -2624,7 +2624,7 @@
       "chg6m": 12.3,
       "chg1y": 36.6,
       "volRatio": 0.99,
-      "peRatio": 17.3,
+      "peRatio": 17.0,
       "dividendYield": 0.26,
       "marketCap": 4203184128000,
       "score": 7.6,
@@ -2635,12 +2635,6 @@
           "title": "Alphabet (GOOGL) Rises Higher Than Market: Key Facts",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-rises-higher-market-214503770.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-alphabet-inc-goog-outpaced-214503164.html",
           "sentiment": 0.0
         }
       ]
@@ -2661,7 +2655,7 @@
       "chg6m": 22.6,
       "chg1y": 13.7,
       "volRatio": 1.08,
-      "peRatio": 15.0,
+      "peRatio": 14.9,
       "dividendYield": 1.72,
       "marketCap": 928531021824,
       "score": 5.3,
@@ -2751,9 +2745,15 @@
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 6.2,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Amazon makes $1.5 billion move for U.S. workers",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/employment/amazon-us-worker-pay-benefits",
+          "sentiment": 0.18
+        },
         {
           "title": "What Amazon.com (AMZN)'s US$8 Billion Backup Power Deal With Generac Means For Shareholders",
           "publisher": "Simply Wall St.",
@@ -2765,12 +2765,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/amazon-says-ai-models-to-be-released-only-when-ready-and-safe/cZts5oiRBdt",
           "sentiment": 0.82
-        },
-        {
-          "title": "S&P 500, Nasdaq, Dow End Higher As Drop In Oil Prices Allays Inflationary Concerns \u2014 NVDA, MCD, CRWV, LMT, AMZN In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-dow-end-higher-amid-drop-in-oil-prices/cZtscNsRBdY",
-          "sentiment": -0.27
         }
       ]
     },
@@ -2919,7 +2913,7 @@
       "chg6m": 114.2,
       "chg1y": 1532.8,
       "volRatio": 0.68,
-      "peRatio": 21.9,
+      "peRatio": 20.6,
       "dividendYield": null,
       "marketCap": 236377391104,
       "score": 9.4,
@@ -3081,7 +3075,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2039495917568,
+      "marketCap": 2040671371264,
       "score": 8.2,
       "newsSentiment": -0.03,
       "newsSentimentLabel": "Neutral",
@@ -3298,9 +3292,15 @@
       "dividendYield": 0.97,
       "marketCap": 2231532257280,
       "score": 9.4,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Taiwan Semiconductor Manufacturing (TSM) Could Be 14% Overvalued As 2nm MediaTek Win Lands",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-could-031716521.html",
+          "sentiment": 0.59
+        },
         {
           "title": "There\u2019s a Good Reason to Choose GLOBALFOUNDRIES Over Taiwan Semiconductor Manufacturing",
           "publisher": "24/7 Wall St.",
@@ -3419,10 +3419,10 @@
       "volRatio": 1.49,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 55347269632,
+      "marketCap": 59261722624,
       "score": 6.2,
-      "newsSentiment": 0.11,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Nebius Group (NBIS) Raises AI Cloud Prices As Compute Demand Tests Customer Costs",
@@ -3431,15 +3431,15 @@
           "sentiment": 0.32
         },
         {
+          "title": "NBIS Stock Jumps on Nebius Price Hike Rumors",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4667380/nbis-stock-jumps-on-nebius-price-hike-rumors",
+          "sentiment": 0.49
+        },
+        {
           "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Nvidia-Backed Nebius Group Stock Skyrocketed Thursday Morning",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/why-nvidia-backed-nebius-group-stock-skyrocketed-t/",
           "sentiment": 0.0
         }
       ]
@@ -3677,7 +3677,7 @@
       "volRatio": 0.93,
       "peRatio": 66.3,
       "dividendYield": 0.78,
-      "marketCap": 127054471168,
+      "marketCap": 127313199104,
       "score": 4.5,
       "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
@@ -3828,13 +3828,19 @@
       "chg6m": -8.5,
       "chg1y": -5.6,
       "volRatio": 1.25,
-      "peRatio": 45.1,
+      "peRatio": 45.0,
       "dividendYield": 0.66,
       "marketCap": 396439027712,
       "score": 2.2,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Costco just made grocery runs way more convenient",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/costco-uber-eats-grocery-delivery",
+          "sentiment": 0.0
+        },
         {
           "title": "Walmart tries to copy a successful Costco strategy",
           "publisher": "TheStreet",
@@ -3846,12 +3852,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-expands-doordash-uber-delivery-190417350.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "2 Reasons to Like COST (and 1 Not So Much)",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/2-reasons-cost-1-not-181017726.html",
-          "sentiment": 0.36
         }
       ]
     },
@@ -3871,7 +3871,7 @@
       "chg6m": 43.4,
       "chg1y": 63.8,
       "volRatio": 0.91,
-      "peRatio": 33.1,
+      "peRatio": 32.3,
       "dividendYield": 1.56,
       "marketCap": 434630754304,
       "score": 4.9,
@@ -3918,9 +3918,15 @@
       "dividendYield": 0.1,
       "marketCap": 216372117504,
       "score": 9.4,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Marvell Technology (MRVL) Deepens Its AI Infrastructure Footprint",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-mrvl-deepens-ai-031612345.html",
+          "sentiment": 0.0
+        },
         {
           "title": "SentinelOne, Marvell Technology, FormFactor, Teradyne, and Intel Shares Are Soaring, What You Need To Know",
           "publisher": "StockStory",
@@ -3932,12 +3938,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/marvell-jumps-5-2-ai-180702375.html",
           "sentiment": 0.79
-        },
-        {
-          "title": "GlobalFoundries and Marvell expand SiGe deal for AI data centers",
-          "publisher": "Proactive",
-          "link": "https://www.proactiveinvestors.com/companies/news/1098705/globalfoundries-and-marvell-expand-sige-deal-for-ai-data-centers-1098705.html",
-          "sentiment": 0.32
         }
       ]
     }

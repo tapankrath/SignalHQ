@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T05:36:55.049869+00:00",
+  "generated_at": "2026-09-18T06:36:37.217091+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -156,9 +156,16 @@
       "pcVol": 0.49,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.71,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Nvidia Stock Surge Points To 3 AI Chip Equipment Stocks Worth Watching",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-stock-surge-points-3-051729533.html",
+          "sentiment": 0.71
+        }
+      ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.02,
       "realizedVol": 45.6
@@ -337,9 +344,15 @@
       "pcVol": 0.65,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron's Largest Production Base Faces Strike Threats as Bonus Falls 'Short of Expectations,' Workers Demand Bigger Cut of AI-Driven Profits: Report",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microns-largest-production-faces-strike-052010224.html",
+          "sentiment": -0.05
+        },
         {
           "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
           "publisher": "Stocktwits",
@@ -350,12 +363,6 @@
           "title": "Why Was Micron Technology Stock Up Today?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/why-was-micron-technology-stock-up-today/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: A $5,000 Investment Split Between Micron and Sandisk Will Triple Before 2028",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/prediction-a-5000-investment-split-between-micron/",
           "sentiment": 0.0
         }
       ],
@@ -1013,8 +1020,8 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.33,
       "maxLoss": 18075.0,
-      "pcOI": 0.17,
-      "pcVol": 0.46,
+      "pcOI": 0.16,
+      "pcVol": 0.47,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.09,
@@ -2425,9 +2432,16 @@
       "dividendYield": 0.47,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsSentiment": 0.71,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Nvidia Stock Surge Points To 3 AI Chip Equipment Stocks Worth Watching",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-stock-surge-points-3-051729533.html",
+          "sentiment": 0.71
+        }
+      ]
     },
     {
       "sym": "META",
@@ -2578,9 +2592,15 @@
       "dividendYield": 0.06,
       "marketCap": 1103981838336,
       "score": 9.4,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron's Largest Production Base Faces Strike Threats as Bonus Falls 'Short of Expectations,' Workers Demand Bigger Cut of AI-Driven Profits: Report",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microns-largest-production-faces-strike-052010224.html",
+          "sentiment": -0.05
+        },
         {
           "title": "INTC, AMD, MU, NVDA: Chip Stocks Rally As Investors Look Past AI Concerns",
           "publisher": "Stocktwits",
@@ -2591,12 +2611,6 @@
           "title": "Why Was Micron Technology Stock Up Today?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/why-was-micron-technology-stock-up-today/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: A $5,000 Investment Split Between Micron and Sandisk Will Triple Before 2028",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/prediction-a-5000-investment-split-between-micron/",
           "sentiment": 0.0
         }
       ]
@@ -3068,7 +3082,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2039495917568,
+      "marketCap": 2040671371264,
       "score": 8.2,
       "newsSentiment": -0.27,
       "newsSentimentLabel": "Negative",
@@ -3412,7 +3426,7 @@
       "volRatio": 1.49,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 55347269632,
+      "marketCap": 59261722624,
       "score": 6.2,
       "newsSentiment": 0.27,
       "newsSentimentLabel": "Positive",
@@ -3461,6 +3475,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "CRWV Stock Rebounds From 1-Month Low \u2014 Cathie Wood\u2019s ARK Bets $19M As Retail Favors CoreWeave Over Nebius",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-stock-cathie-wood-ark-19m-retail-favors-coreweave-over-nebius/cZtulUPRB37",
+          "sentiment": -0.03
+        },
+        {
           "title": "Why CoreWeave Stock Dived by More Than 5% Today",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/why-coreweave-stock-dived-by-more-than-5-today/",
@@ -3471,12 +3491,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/stock-market-today/2026/09/17/stock-market-today-sept-17-coreweave-falls-on-convertible-debt-and-share-sale-announcement/",
           "sentiment": -0.08
-        },
-        {
-          "title": "Generac, Nebius, CoreWeave, Nokia, Lucid, Paramount, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-be111893?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3670,7 +3684,7 @@
       "volRatio": 0.93,
       "peRatio": 66.3,
       "dividendYield": 0.78,
-      "marketCap": 127054471168,
+      "marketCap": 127313199104,
       "score": 4.5,
       "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",

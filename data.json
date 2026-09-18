@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T06:36:37.217091+00:00",
+  "generated_at": "2026-09-18T07:36:32.902358+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -44,6 +44,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Apple\u2019s Chip Strategy Keeps Paying Dividends",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/apple-iphone-a20-chip-43d4ef59?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Apple (AAPL) Challenges Secret UK Order For An iPhone Backdoor",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/articles/apple-aapl-challenges-secret-uk-231950589.html",
@@ -53,12 +59,6 @@
           "title": "Apple (AAPL) Outperforms Broader Market: What You Need to Know",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-outperforms-broader-market-214506898.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Apple iPhone 18 Pro Sales Helped By Carrier Promotions",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/technology/apple-stock-iphone-18-pro-carrier-promotions/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -212,7 +212,7 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.16,
+      "newsSentiment": -0.25,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -225,12 +225,6 @@
           "title": "Meta (META) Hands its New AI Agent the Keys to Your Inbox and Wallet",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/meta-meta-hands-ai-agent-234026981.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Meta Platforms (META) Outpaced the Stock Market Today",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-platforms-meta-outpaced-214508942.html",
           "sentiment": 0.0
         }
       ],
@@ -410,14 +404,7 @@
       "potIsProfitProb": false,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Alphabet (GOOGL) Rises Higher Than Market: Key Facts",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-rises-higher-market-214503770.html",
-          "sentiment": 0.0
-        }
-      ],
+      "newsHeadlines": [],
       "volRegime": "Cheap",
       "ivRvRatio": 0.29,
       "realizedVol": 22.0
@@ -1092,26 +1079,26 @@
       "pcVol": 0.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.27,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "RKLB, ASTS, VOYG, LUNR Steal SpaceX\u2019s Thunder \u2014 Here\u2019s What Lit Up Space Stocks This Week",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
+          "sentiment": -0.49
+        },
         {
           "title": "ASTS Retail Sentiment Nears 1-Year Low As SpaceX Turns Up The Heat In Global Mobile Race",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/asts-retail-sentiment-1-year-low-spacex-turns-up-heat-global-mobile-race/cZtulTMRB33",
           "sentiment": -0.27
-        },
-        {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "TSLA Trades About 20% Below Fair Value, Says Analyst \u2014 But Retail Stays Bearish Amid Cybercab Scrutiny, SpaceX Merger Buzz",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-below-fair-value-analyst-retail-bearish-cybercab-scrutiny-spacex-merger-buzz/cZtuL7ERBdH",
-          "sentiment": -0.53
         }
       ],
       "volRegime": "Cheap",
@@ -1858,9 +1845,15 @@
       "pcVol": 1.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "RKLB, ASTS, VOYG, LUNR Steal SpaceX\u2019s Thunder \u2014 Here\u2019s What Lit Up Space Stocks This Week",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
+          "sentiment": -0.49
+        },
         {
           "title": "SpaceX or Rocket Lab: Which Space Stock Is the Better Buy for the Next Decade?",
           "publisher": "Motley Fool",
@@ -1872,12 +1865,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-tests-neutron-hardware-take-on-spacex/cZtugMvRBdM",
           "sentiment": 0.64
-        },
-        {
-          "title": "Rocket Lab (RKLB) Completes $1.94 Billion Equity Offering",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completes-1-221636308.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2362,6 +2349,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Apple\u2019s Chip Strategy Keeps Paying Dividends",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/apple-iphone-a20-chip-43d4ef59?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Apple (AAPL) Challenges Secret UK Order For An iPhone Backdoor",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/articles/apple-aapl-challenges-secret-uk-231950589.html",
@@ -2371,12 +2364,6 @@
           "title": "Apple (AAPL) Outperforms Broader Market: What You Need to Know",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-outperforms-broader-market-214506898.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Apple iPhone 18 Pro Sales Helped By Carrier Promotions",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/technology/apple-stock-iphone-18-pro-carrier-promotions/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
       ]
@@ -2463,7 +2450,7 @@
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.9,
-      "newsSentiment": -0.16,
+      "newsSentiment": -0.25,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -2476,12 +2463,6 @@
           "title": "Meta (META) Hands its New AI Agent the Keys to Your Inbox and Wallet",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/meta-meta-hands-ai-agent-234026981.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Meta Platforms (META) Outpaced the Stock Market Today",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-platforms-meta-outpaced-214508942.html",
           "sentiment": 0.0
         }
       ]
@@ -2506,9 +2487,15 @@
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": -0.01,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
+          "sentiment": 0.44
+        },
         {
           "title": "TSLA Trades About 20% Below Fair Value, Says Analyst \u2014 But Retail Stays Bearish Amid Cybercab Scrutiny, SpaceX Merger Buzz",
           "publisher": "Stocktwits",
@@ -2520,12 +2507,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/tesla-posted-negative-11-billion-in-free-cash-flow/",
           "sentiment": -0.08
-        },
-        {
-          "title": "Tesla (TSLA) Exceeds Market Returns: Some Facts to Consider",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-exceeds-market-returns-214506470.html",
-          "sentiment": 0.59
         }
       ]
     },
@@ -2637,14 +2618,7 @@
       "score": 7.6,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Alphabet (GOOGL) Rises Higher Than Market: Key Facts",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-rises-higher-market-214503770.html",
-          "sentiment": 0.0
-        }
-      ]
+      "newsHeadlines": []
     },
     {
       "sym": "JPM",
@@ -3084,26 +3058,26 @@
       "dividendYield": null,
       "marketCap": 2040671371264,
       "score": 8.2,
-      "newsSentiment": -0.27,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/tesla-vs-spacex-which-is-the-better-elon-musk-back/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "RKLB, ASTS, VOYG, LUNR Steal SpaceX\u2019s Thunder \u2014 Here\u2019s What Lit Up Space Stocks This Week",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
+          "sentiment": -0.49
+        },
         {
           "title": "ASTS Retail Sentiment Nears 1-Year Low As SpaceX Turns Up The Heat In Global Mobile Race",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/asts-retail-sentiment-1-year-low-spacex-turns-up-heat-global-mobile-race/cZtulTMRB33",
           "sentiment": -0.27
-        },
-        {
-          "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp500-nasdaq-moderna-amd-spacex-buy-signals/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "TSLA Trades About 20% Below Fair Value, Says Analyst \u2014 But Retail Stays Bearish Amid Cybercab Scrutiny, SpaceX Merger Buzz",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-below-fair-value-analyst-retail-bearish-cybercab-scrutiny-spacex-merger-buzz/cZtuL7ERBdH",
-          "sentiment": -0.53
         }
       ]
     },
@@ -3600,9 +3574,15 @@
       "dividendYield": null,
       "marketCap": 43364855808,
       "score": 3.5,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "RKLB, ASTS, VOYG, LUNR Steal SpaceX\u2019s Thunder \u2014 Here\u2019s What Lit Up Space Stocks This Week",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
+          "sentiment": -0.49
+        },
         {
           "title": "SpaceX or Rocket Lab: Which Space Stock Is the Better Buy for the Next Decade?",
           "publisher": "Motley Fool",
@@ -3614,12 +3594,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-tests-neutron-hardware-take-on-spacex/cZtugMvRBdM",
           "sentiment": 0.64
-        },
-        {
-          "title": "Rocket Lab (RKLB) Completes $1.94 Billion Equity Offering",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completes-1-221636308.html",
-          "sentiment": 0.0
         }
       ]
     },

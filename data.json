@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T21:37:27.333499+00:00",
+  "generated_at": "2026-09-18T22:37:01.680995+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,20 +40,20 @@
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.04,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "GM is re-downloading Apple CarPlay, Android Auto to its cars",
+          "title": "John Ternus has the 'Apple DNA' that will push company to the 'next level'",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/gm-downloading-apple-carplay-android-203500547.html",
+          "link": "https://finance.yahoo.com/video/john-ternus-apple-dna-push-220000814.html",
           "sentiment": 0.0
         },
         {
-          "title": "Tech stocks today: Apple's iPhone 18 Pro goes on sale, AI safety debate continues",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-apples-iphone-18-pro-goes-on-sale-ai-safety-debate-continues-140134624.html",
-          "sentiment": 0.42
+          "title": "Apple will essentially sell 'every single' iPhone Duo it makes: CFRA",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/apple-essentially-sell-every-single-200934859.html",
+          "sentiment": 0.0
         },
         {
           "title": "Apple's iPhone 18 Pro line hits stores with a $100 price bump amid memory crunch, AI pressure",
@@ -166,15 +166,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Nvidia Stock Is Up 21% in Six Months. Here\u2019s What the Street Still Isn\u2019t Pricing In",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/nvidia-stock-is-up-21-in-six-months-heres-what-the-street-still-isnt-pricing-in?ref=yahoofinance",
+          "title": "Jensen Huang Maintained His Prediction That AI Infrastructure Spending Will Hit $3 Trillion to $4 Trillion by 2030 -- the Same Forecast He Made a Year Ago to the Day. Is Nvidia Still a Buy at These Levels?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/jensen-huang-maintained-his-prediction-that-ai-inf/",
           "sentiment": 0.0
         },
         {
-          "title": "Coinbase Files to List Single-Stock Perps on Apple, Tesla and Nvidia",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378681/coinbase-single-stock-perps-apple-tesla-nvidia",
+          "title": "Nvidia-Backed Cloud Platform Nscale Files For IPO \u2014 NVDA Stock In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-backed-cloud-platform-nscale-files-for-ipo/cZtH7g6RBEQ",
           "sentiment": 0.0
         }
       ],
@@ -356,9 +356,15 @@
       "pcVol": 0.68,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron Turned $10,000 Into About $130,000 in 5 Years. Most of It Came in the Past 12 Months.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/micron-turned-usd10-000-into-about-usd130-000-in-5-years-most-of-it-came-in-the-past-12-months/",
+          "sentiment": 0.0
+        },
         {
           "title": "Micron Adds 1.3% as Intel Extends Memory Scarcity Into 2027",
           "publisher": "GuruFocus.com",
@@ -370,12 +376,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-calls-intel-intc-181522000.html",
           "sentiment": 0.64
-        },
-        {
-          "title": "Micron Faces Growing China Threat. It\u2019s a Bigger Problem for Memory-Chip Rivals.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-stock-price-sk-hynix-memory-chips-china-573a7f1d?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.66
         }
       ],
       "volRegime": "Cheap",
@@ -786,7 +786,7 @@
       "pcVol": 0.39,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.42,
+      "newsSentiment": -0.22,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -802,10 +802,10 @@
           "sentiment": -0.66
         },
         {
-          "title": "Wells Fargo Brutally Revamps Netflix Stock Price Target",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-brutally-revamps-netflix-202122052.html",
-          "sentiment": -0.46
+          "title": "Netflix Stock Gets Downgraded by Wells Fargo on \u2018Worrying\u2019 Engagement Trends",
+          "publisher": "Investopedia",
+          "link": "https://www.investopedia.com/market-update-netflix-stock-gets-downgraded-by-wells-fargo-on-worrying-engagement-trends-nflx-12128200",
+          "sentiment": 0.13
         }
       ],
       "volRegime": "Cheap",
@@ -854,7 +854,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally (Live Coverage)",
+          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
@@ -1370,9 +1370,15 @@
       "pcVol": 1.25,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-beats-stock-market-214505465.html",
+          "sentiment": 0.61
+        },
         {
           "title": "Why Is Taiwan Semiconductor Manufacturing (TSM) Ramping 2nm Production And Spending More?",
           "publisher": "Simply Wall St.",
@@ -1384,12 +1390,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-could-031716521.html",
           "sentiment": 0.59
-        },
-        {
-          "title": "There\u2019s a Good Reason to Choose GLOBALFOUNDRIES Over Taiwan Semiconductor Manufacturing",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/theres-a-good-reason-to-choose-globalfoundries-over-taiwan-semiconductor-manufacturing/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Rich",
@@ -2062,7 +2062,7 @@
       "pcVol": 2.72,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2076,12 +2076,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/100-monthly-investment-qqq-grow-20-years/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: The Invesco QQQ Trust Beats the S&P 500 Again Over the Next 5 Years",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/prediction-the-invesco-qqq-trust-beats-the-s-and-p-500-again-over-the-next-5-years/",
-          "sentiment": 0.81
         }
       ],
       "volRegime": "Rich",
@@ -2370,20 +2364,20 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.04,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "GM is re-downloading Apple CarPlay, Android Auto to its cars",
+          "title": "John Ternus has the 'Apple DNA' that will push company to the 'next level'",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/gm-downloading-apple-carplay-android-203500547.html",
+          "link": "https://finance.yahoo.com/video/john-ternus-apple-dna-push-220000814.html",
           "sentiment": 0.0
         },
         {
-          "title": "Tech stocks today: Apple's iPhone 18 Pro goes on sale, AI safety debate continues",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-apples-iphone-18-pro-goes-on-sale-ai-safety-debate-continues-140134624.html",
-          "sentiment": 0.42
+          "title": "Apple will essentially sell 'every single' iPhone Duo it makes: CFRA",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/apple-essentially-sell-every-single-200934859.html",
+          "sentiment": 0.0
         },
         {
           "title": "Apple's iPhone 18 Pro line hits stores with a $100 price bump amid memory crunch, AI pressure",
@@ -2454,15 +2448,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Nvidia Stock Is Up 21% in Six Months. Here\u2019s What the Street Still Isn\u2019t Pricing In",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/nvidia-stock-is-up-21-in-six-months-heres-what-the-street-still-isnt-pricing-in?ref=yahoofinance",
+          "title": "Jensen Huang Maintained His Prediction That AI Infrastructure Spending Will Hit $3 Trillion to $4 Trillion by 2030 -- the Same Forecast He Made a Year Ago to the Day. Is Nvidia Still a Buy at These Levels?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/jensen-huang-maintained-his-prediction-that-ai-inf/",
           "sentiment": 0.0
         },
         {
-          "title": "Coinbase Files to List Single-Stock Perps on Apple, Tesla and Nvidia",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378681/coinbase-single-stock-perps-apple-tesla-nvidia",
+          "title": "Nvidia-Backed Cloud Platform Nscale Files For IPO \u2014 NVDA Stock In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-backed-cloud-platform-nscale-files-for-ipo/cZtH7g6RBEQ",
           "sentiment": 0.0
         }
       ]
@@ -2616,9 +2610,15 @@
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
       "score": 9.4,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron Turned $10,000 Into About $130,000 in 5 Years. Most of It Came in the Past 12 Months.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/micron-turned-usd10-000-into-about-usd130-000-in-5-years-most-of-it-came-in-the-past-12-months/",
+          "sentiment": 0.0
+        },
         {
           "title": "Micron Adds 1.3% as Intel Extends Memory Scarcity Into 2027",
           "publisher": "GuruFocus.com",
@@ -2630,12 +2630,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-calls-intel-intc-181522000.html",
           "sentiment": 0.64
-        },
-        {
-          "title": "Micron Faces Growing China Threat. It\u2019s a Bigger Problem for Memory-Chip Rivals.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-stock-price-sk-hynix-memory-chips-china-573a7f1d?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.66
         }
       ]
     },
@@ -2899,7 +2893,7 @@
       "dividendYield": null,
       "marketCap": 298929225728,
       "score": 1.5,
-      "newsSentiment": -0.42,
+      "newsSentiment": -0.22,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -2915,10 +2909,10 @@
           "sentiment": -0.66
         },
         {
-          "title": "Wells Fargo Brutally Revamps Netflix Stock Price Target",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-brutally-revamps-netflix-202122052.html",
-          "sentiment": -0.46
+          "title": "Netflix Stock Gets Downgraded by Wells Fargo on \u2018Worrying\u2019 Engagement Trends",
+          "publisher": "Investopedia",
+          "link": "https://www.investopedia.com/market-update-netflix-stock-gets-downgraded-by-wells-fargo-on-worrying-engagement-trends-nflx-12128200",
+          "sentiment": 0.13
         }
       ]
     },
@@ -2946,7 +2940,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally (Live Coverage)",
+          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
@@ -3028,9 +3022,15 @@
       "dividendYield": null,
       "marketCap": 140057280512,
       "score": 9.4,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "ServiceNow (NOW) Stock Falls Amid Market Uptick: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-falls-amid-214503145.html",
+          "sentiment": 0.0
+        },
         {
           "title": "ServiceNow Stock Leads 3 Large Cap Growth Names Facing Higher Rate Pressure",
           "publisher": "Simply Wall St.",
@@ -3106,7 +3106,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2012989751296,
+      "marketCap": 2011830157312,
       "score": 8.2,
       "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
@@ -3323,9 +3323,15 @@
       "dividendYield": 0.95,
       "marketCap": 2254404845568,
       "score": 9.4,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-beats-stock-market-214505465.html",
+          "sentiment": 0.61
+        },
         {
           "title": "Why Is Taiwan Semiconductor Manufacturing (TSM) Ramping 2nm Production And Spending More?",
           "publisher": "Simply Wall St.",
@@ -3337,12 +3343,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-could-031716521.html",
           "sentiment": 0.59
-        },
-        {
-          "title": "There\u2019s a Good Reason to Choose GLOBALFOUNDRIES Over Taiwan Semiconductor Manufacturing",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/theres-a-good-reason-to-choose-globalfoundries-over-taiwan-semiconductor-manufacturing/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -3450,7 +3450,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 60770516992,
+      "marketCap": 56756400128,
       "score": 6.2,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
@@ -3495,9 +3495,15 @@
       "dividendYield": null,
       "marketCap": 44873015296,
       "score": 2.8,
-      "newsSentiment": 0.21,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "The ARK Trade Watch: Cathie Wood Cuts Crypto Exposure, Then Reverses Course On CoreWeave",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-arkb-crcl-coin-cathie-wood-biggest-ark-invest-trades-week/cZtH7mZRBEg",
+          "sentiment": -0.42
+        },
         {
           "title": "Jim Cramer on CoreWeave (CRWV): \u201cI Think It\u2019s Going to Be Okay to Buy\u201d",
           "publisher": "Insider Monkey",
@@ -3509,12 +3515,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-fully-valued-us-151247629.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "CoreWeave's $104 billion backlog comes with a costly catch",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/coreweaves-104-billion-backlog-comes-135448034.html",
-          "sentiment": -0.1
         }
       ]
     },
@@ -3667,28 +3667,9 @@
       "dividendYield": null,
       "marketCap": 1124388096,
       "score": 1.5,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "DXYZ, NASA, VCX Slip Overnight: SpaceX IPO Buyers Get Tiny Allocations, Rush To Take Profits",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/dxyz-nasa-vcx-spacex-buyers-tiny-allocations-profits-taking/cZKWOg8R7Ed",
-          "sentiment": 0.44
-        },
-        {
-          "title": "DXYZ, NASA, VCX Jump Premarket: Kevin O'Leary Says Betting On SpaceX, OpenAI Or Anthropic Alone Is A \u2018Mistake\u2019",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/dxyz-nasa-vcx-kevin-oleary-ipo-bet/cZKTmtvR72R",
-          "sentiment": -0.25
-        },
-        {
-          "title": "DXYZ, VCX, NASA Stocks Rocket As FTSE Clears Fast Lane For SpaceX IPO \u2014 Retail Shrugs Off Destiny Tech100\u2019s $1B Share Sale",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/spacex-ipo-ftse-fast-lane-dxyz-vcx-nasa-destinytech100-share-sale/cZgg23cReAK",
-          "sentiment": 0.36
-        }
-      ]
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": []
     },
     {
       "sym": "GLW",
@@ -3708,7 +3689,7 @@
       "volRatio": 1.58,
       "peRatio": 69.2,
       "dividendYield": 0.76,
-      "marketCap": 129320239104,
+      "marketCap": 129057431552,
       "score": 4.5,
       "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
@@ -3784,7 +3765,7 @@
       "dividendYield": 0.42,
       "marketCap": null,
       "score": 9.4,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3798,12 +3779,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/100-monthly-investment-qqq-grow-20-years/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: The Invesco QQQ Trust Beats the S&P 500 Again Over the Next 5 Years",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/prediction-the-invesco-qqq-trust-beats-the-s-and-p-500-again-over-the-next-5-years/",
-          "sentiment": 0.81
         }
       ]
     },

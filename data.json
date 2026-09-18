@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T07:36:32.902358+00:00",
+  "generated_at": "2026-09-18T08:36:48.911686+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -156,14 +156,14 @@
       "pcVol": 0.49,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.71,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia Stock Surge Points To 3 AI Chip Equipment Stocks Worth Watching",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-stock-surge-points-3-051729533.html",
-          "sentiment": 0.71
+          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -270,9 +270,15 @@
       "pcVol": 0.87,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "sentiment": 0.0
+        },
         {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
@@ -284,12 +290,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
           "sentiment": 0.54
-        },
-        {
-          "title": "Why AMD Stock Jumped Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/why-amd-stock-jumped-63-today/",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Cheap",
@@ -1079,9 +1079,15 @@
       "pcVol": 0.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.11,
+      "newsSentiment": -0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
           "publisher": "Motley Fool",
@@ -1093,12 +1099,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
           "sentiment": -0.49
-        },
-        {
-          "title": "ASTS Retail Sentiment Nears 1-Year Low As SpaceX Turns Up The Heat In Global Mobile Race",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/asts-retail-sentiment-1-year-low-spacex-turns-up-heat-global-mobile-race/cZtulTMRB33",
-          "sentiment": -0.27
         }
       ],
       "volRegime": "Cheap",
@@ -1275,9 +1275,15 @@
       "pcVol": 0.84,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.14,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Forget Michael Burry's Short Thesis. Here's the Bull Case for Palantir He's Not Talking About.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/forget-michael-burrys-short-thesis-heres-the-bull/",
+          "sentiment": -0.23
+        },
         {
           "title": "Palantir CEO Alex Karp Says Anthropic Wants AI Nationalization to Simply Dodge Lawsuits",
           "publisher": "BeInCrypto",
@@ -1289,12 +1295,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-ai-deal-001448200.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "Palantir Hires Former UK Labour Veteran With NHS Deal in Limbo",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/healthcare/articles/palantir-hires-former-uk-labour-230100008.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2037,9 +2037,15 @@
       "pcVol": 1.61,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "US Stock Market This Week: Are SPY, QQQ Beating Asian Equities?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/us-stock-market-this-week-are-spy-qqq-beating-asian-equities/cZtuFPnRB3Q",
+          "sentiment": 0.61
+        },
         {
           "title": "A $100 Monthly Investment in QQQ Could Grow Into This Over 20 Years",
           "publisher": "Motley Fool",
@@ -2051,12 +2057,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/prediction-the-invesco-qqq-trust-beats-the-s-and-p-500-again-over-the-next-5-years/",
           "sentiment": 0.81
-        },
-        {
-          "title": "$500,000 Split Between VOO and QQQ Owns the Same Seven Stocks Twice, and Nobody Adds Up the Overlap",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/etf/2026/09/17/500000-split-between-voo-and-qqq-owns-the-same-seven-stocks-twice-and-nobody-adds-up-the-overlap/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -2419,14 +2419,14 @@
       "dividendYield": 0.47,
       "marketCap": 5296402989056,
       "score": 6.2,
-      "newsSentiment": 0.71,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia Stock Surge Points To 3 AI Chip Equipment Stocks Worth Watching",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-stock-surge-points-3-051729533.html",
-          "sentiment": 0.71
+          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "sentiment": 0.0
         }
       ]
     },
@@ -2487,9 +2487,15 @@
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.4,
-      "newsSentiment": -0.05,
+      "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla (TSLA) Teases Deeper Integration And Roadster Reveal With New Chip Push",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/articles/tesla-tsla-teases-deeper-integration-081134328.html",
+          "sentiment": -0.3
+        },
         {
           "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
           "publisher": "Motley Fool",
@@ -2501,12 +2507,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/tsla-below-fair-value-analyst-retail-bearish-cybercab-scrutiny-spacex-merger-buzz/cZtuL7ERBdH",
           "sentiment": -0.53
-        },
-        {
-          "title": "Tesla Posted Negative $1.1 Billion in Free Cash Flow Last Quarter as Elon Musk Ramps Up Spending on Robotaxis and Optimus. Here's Why the Company's $43.5 Billion Cash Cushion Still Matters.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/tesla-posted-negative-11-billion-in-free-cash-flow/",
-          "sentiment": -0.08
         }
       ]
     },
@@ -2530,9 +2530,15 @@
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "sentiment": 0.0
+        },
         {
           "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
@@ -2544,12 +2550,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/intc-amd-mu-nvda-chip-stocks-rally-as-investors-look-past-ai-concerns/cZtuLZsRBdw",
           "sentiment": 0.54
-        },
-        {
-          "title": "Why AMD Stock Jumped Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/why-amd-stock-jumped-63-today/",
-          "sentiment": 0.49
         }
       ]
     },
@@ -3058,9 +3058,15 @@
       "dividendYield": null,
       "marketCap": 2040671371264,
       "score": 8.2,
-      "newsSentiment": -0.11,
+      "newsSentiment": -0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Are Nasdaq, S&P 500 And Dow Futures Rising Premarket? NVDA, CRWV, AMD, SPCX, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-are-nasdaq-sp500-dow-futures-rising-premarket-nvda-crwv-amd-spcx-be-stocks-in-focus/cZtuo1pRB3g",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla vs SpaceX: Which Is the Better Elon Musk-Backed Stock to Buy?",
           "publisher": "Motley Fool",
@@ -3072,12 +3078,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rklb-asts-voyg-lunr-steal-spacex-thunder-what-lit-up-space-stocks-this-week/cZtuNpRRB3O",
           "sentiment": -0.49
-        },
-        {
-          "title": "ASTS Retail Sentiment Nears 1-Year Low As SpaceX Turns Up The Heat In Global Mobile Race",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/asts-retail-sentiment-1-year-low-spacex-turns-up-heat-global-mobile-race/cZtulTMRB33",
-          "sentiment": -0.27
         }
       ]
     },
@@ -3187,9 +3187,15 @@
       "dividendYield": null,
       "marketCap": 423515029504,
       "score": 9.1,
-      "newsSentiment": 0.14,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Forget Michael Burry's Short Thesis. Here's the Bull Case for Palantir He's Not Talking About.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/forget-michael-burrys-short-thesis-heres-the-bull/",
+          "sentiment": -0.23
+        },
         {
           "title": "Palantir CEO Alex Karp Says Anthropic Wants AI Nationalization to Simply Dodge Lawsuits",
           "publisher": "BeInCrypto",
@@ -3201,12 +3207,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-ai-deal-001448200.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "Palantir Hires Former UK Labour Veteran With NHS Deal in Limbo",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/healthcare/articles/palantir-hires-former-uk-labour-230100008.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3727,9 +3727,15 @@
       "dividendYield": 0.42,
       "marketCap": null,
       "score": 6.2,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "US Stock Market This Week: Are SPY, QQQ Beating Asian Equities?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/us-stock-market-this-week-are-spy-qqq-beating-asian-equities/cZtuFPnRB3Q",
+          "sentiment": 0.61
+        },
         {
           "title": "A $100 Monthly Investment in QQQ Could Grow Into This Over 20 Years",
           "publisher": "Motley Fool",
@@ -3741,12 +3747,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/17/prediction-the-invesco-qqq-trust-beats-the-s-and-p-500-again-over-the-next-5-years/",
           "sentiment": 0.81
-        },
-        {
-          "title": "$500,000 Split Between VOO and QQQ Owns the Same Seven Stocks Twice, and Nobody Adds Up the Overlap",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/etf/2026/09/17/500000-split-between-voo-and-qqq-owns-the-same-seven-stocks-twice-and-nobody-adds-up-the-overlap/",
-          "sentiment": 0.0
         }
       ]
     },

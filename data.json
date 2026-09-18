@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T20:36:33.581488+00:00",
+  "generated_at": "2026-09-18T21:37:27.333499+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,26 +40,26 @@
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.41,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Apple CEO John Ternus celebrates launch of the iPhone 18",
+          "title": "GM is re-downloading Apple CarPlay, Android Auto to its cars",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/apple-ceo-john-ternus-celebrates-launch-of-the-iphone-18-144436192.html",
-          "sentiment": 0.57
-        },
-        {
-          "title": "Apple Stock Gets Stunning Price Target Hike on Strong iPhone Demand",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-stock-gets-stunning-price-202120422.html",
-          "sentiment": 0.66
-        },
-        {
-          "title": "Apple Stock Near Buy Point As iPhone 18 Pro Goes On Sale",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/technology/apple-stock-buy-point-iphone-18-pro-sales-begin/?src=A00220&yptr=yahoo",
+          "link": "https://finance.yahoo.com/video/gm-downloading-apple-carplay-android-203500547.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Tech stocks today: Apple's iPhone 18 Pro goes on sale, AI safety debate continues",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-apples-iphone-18-pro-goes-on-sale-ai-safety-debate-continues-140134624.html",
+          "sentiment": 0.42
+        },
+        {
+          "title": "Apple's iPhone 18 Pro line hits stores with a $100 price bump amid memory crunch, AI pressure",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/apples-iphone-18-pro-line-hits-stores-with-a-100-price-bump-amid-memory-crunch-ai-pressure-155709106.html",
+          "sentiment": -0.3
         }
       ],
       "volRegime": "Cheap",
@@ -104,7 +104,7 @@
       "pcVol": 0.54,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.16,
+      "newsSentiment": -0.49,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -112,12 +112,6 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/astonishing-theft-unprecedented-proportions-nyt-134822530.html",
           "sentiment": -0.49
-        },
-        {
-          "title": "Oracle Falls 3% While Cloud Rivals Hold Their Ground; Microsoft Dips, Amazon Nudges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/oracle-falls-3-while-cloud-rivals-hold-their-ground-microsoft-dips-amazon-nudges-higher/",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Cheap",
@@ -162,7 +156,7 @@
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -172,16 +166,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Prediction: This Much Nvidia (NVDA) Stock Bought Today Could Be Worth $28,560 by 2030",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/prediction-this-much-nvidia-nvda-stock-bought-toda/",
-          "sentiment": 0.23
+          "title": "Nvidia Stock Is Up 21% in Six Months. Here\u2019s What the Street Still Isn\u2019t Pricing In",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/nvidia-stock-is-up-21-in-six-months-heres-what-the-street-still-isnt-pricing-in?ref=yahoofinance",
+          "sentiment": 0.0
         },
         {
-          "title": "Breakout Watch: Savvy Investors Get Wired Up For This Nvidia, Amazon Partner",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/ibd-stock-analysis/f5-stock-near-breakout-as-top-funds-buy-into-nvidia-amazon-partner/?src=A00220&yptr=yahoo",
-          "sentiment": 0.18
+          "title": "Coinbase Files to List Single-Stock Perps on Apple, Tesla and Nvidia",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378681/coinbase-single-stock-perps-apple-tesla-nvidia",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -230,9 +224,15 @@
       "pcVol": 0.28,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.17,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Meta's Muse Just Had a Breakout Launch. Is It a Game Changer for the Stock?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/meta-s-muse-just-had-a-breakout-launch-here-s-what-it-means-for-the-stock/",
+          "sentiment": 0.0
+        },
         {
           "title": "How Shopify and Meta are diving deeper into banking",
           "publisher": "American Banker",
@@ -244,12 +244,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/meta-platforms-just-ripped-23-in-a-month-take-profits-or-buy-more/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-tied-data-center-draws-181816486.html",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Cheap",
@@ -294,26 +288,26 @@
       "pcVol": 0.99,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "AMD stock rises on a rumor that could give it a 2027 GPU edge",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-rises-rumor-could-162844610.html",
-          "sentiment": 0.0
+          "title": "AMD (AMD) Stock Looks Cheap After Its Huge 3 Year Run",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-amd-stock-looks-cheap-211318753.html",
+          "sentiment": 0.32
         },
         {
-          "title": "Prediction: AMD\u2019s Biggest Growth\u00a0Opportunity May Still\u00a0Be Ahead",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/prediction-amds-biggest-growth-opportunity-may-still-be-ahead/",
-          "sentiment": 0.66
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
         },
         {
-          "title": "XLK, Oracle and AMD Forecast: Tech Stocks Eye Breakouts",
-          "publisher": "FX Empire",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/xlk-oracle-amd-forecast-tech-133646780.html",
-          "sentiment": 0.0
+          "title": "Top Research Reports for AMD, Linde & Amgen",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-amd-linde-202800486.html",
+          "sentiment": 0.2
         }
       ],
       "volRegime": "Fair",
@@ -478,8 +472,8 @@
       "pcVol": 0.73,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.26,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "JPMorgan Values Bitcoin at $266,000 Against Gold. Why It\u2019s Trading Below $81,000?",
@@ -494,10 +488,10 @@
           "sentiment": 0.38
         },
         {
-          "title": "JPMorgan AWM operations head Julie Harris to retire in 2027\u00a0\u2013 report",
-          "publisher": "Private Banker International",
-          "link": "https://www.privatebankerinternational.com/news/jpmorgan-awm-head-julie-harris-retire/",
-          "sentiment": 0.0
+          "title": "JPMorgan Gives Up Forecasting Iran War Endgame as Trump Tells Reporters \u2018Anything Could Happen With Me\u2019",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4680967/jpmorgan-gives-up-forecasting-iran-war-endgame-as-trump-tells-reporters-anything-could-happen-with-me",
+          "sentiment": -0.6
         }
       ],
       "volRegime": "Rich",
@@ -792,7 +786,7 @@
       "pcVol": 0.39,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.26,
+      "newsSentiment": -0.42,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -802,16 +796,16 @@
           "sentiment": -0.13
         },
         {
+          "title": "Stock Market Today, Sept. 18: Netflix Falls on Analyst Downgrade and Slashed Price Target",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/18/stock-market-today-sept-18-netflix-falls-on-analyst-downgrade-and-slashed-price-target/",
+          "sentiment": -0.66
+        },
+        {
           "title": "Wells Fargo Brutally Revamps Netflix Stock Price Target",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-brutally-revamps-netflix-202122052.html",
           "sentiment": -0.46
-        },
-        {
-          "title": "Netflix Drops 4.8% as Wells Fargo Cuts Its Target to $57",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-drops-4-8-wells-202111557.html",
-          "sentiment": -0.2
         }
       ],
       "volRegime": "Cheap",
@@ -856,26 +850,26 @@
       "pcVol": 3.79,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.53,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
         {
           "title": "Credo Technology Group vs. Sandisk: Which Technology Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/18/credo-technology-group-vs-sandisk-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Is Sandisk (SNDK) Stock At Risk As New NAND Competition Targets AI Memory?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-stock-risk-nand-171245584.html",
-          "sentiment": -0.27
-        },
-        {
-          "title": "Why Sandisk Stock Rallied Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/why-sandisk-stock-rallied-today/",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Fair",
@@ -1062,15 +1056,15 @@
           "sentiment": 0.3
         },
         {
-          "title": "SpaceX adds $946M NASA crew deal through 2030",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36571/spacex-nasa-crew-missions-946-million",
+          "title": "Boeing Starliner May Get a Bigger NASA Role Despite Leaving Crew Behind As SpaceX Looks Past Dragon, Says Report",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/boeing-starliner-may-get-a-bigger-nasa-role-despite-leaving-crew-behind-as-space-x-looks-past-dragon-says-report/cZtHIQ2RBEf",
           "sentiment": 0.0
         },
         {
-          "title": "SpaceX Stock Is Down 33% From Its High. Here's Why Morgan Stanley Thinks There's 106% Upside From Here.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/spacex-stock-is-down-33-from-its-high-heres-why-mo/",
+          "title": "SpaceX adds $946M NASA crew deal through 2030",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36571/spacex-nasa-crew-missions-946-million",
           "sentiment": 0.0
         }
       ],
@@ -1696,26 +1690,26 @@
       "pcVol": 0.16,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "IREN (IREN) Stock Fair Value Edges Lower As AI Cloud Wins Meet Build Out Risks",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-stock-fair-value-211402157.html",
+          "sentiment": 0.62
+        },
+        {
+          "title": "Anthropic and OpenAI Seek 20-30MW Sites, Banks Up IREN and CIFR Price Targets, Data Centers Take Collateral Damage in Middle East and Ukraine",
+          "publisher": "Blockspace",
+          "link": "https://blockspace.media/podcast/anthropic-and-openai-seek-20-30mw-sites-banks-up-iren-and-cifr-price-targets-data-centers-take-collateral-damage-in-middle-east-and-ukraine/",
+          "sentiment": -0.49
+        },
         {
           "title": "Wolfspeed Climbs 6%, IREN Rises 4% as Buyers Pick Single Names Over the AI Infrastructure Sector; TeraWulf Sits Tight",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/wolfspeed-climbs-6-iren-rises-4-as-buyers-pick-single-names-over-the-ai-infrastructure-sector-terawulf-sits-tight/",
           "sentiment": 0.0
-        },
-        {
-          "title": "IREN Shares Rise as Northland Targets $99",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-shares-rise-northland-targets-162451738.html",
-          "sentiment": 0.3
-        },
-        {
-          "title": "Nebius Stock and IREN Gain. AI Neoclouds Are Flexing Their Pricing Power.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/nebius-stock-price-coreweave-iren-ai-neoclouds-2bc723d4?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.53
         }
       ],
       "volRegime": "Fair",
@@ -1824,9 +1818,15 @@
       "pcVol": 1.0,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.58,
+      "newsSentiment": -0.38,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Is RKLB Stock Paying You Enough For The Swings?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615858/is-rklb-stock-paying-you-enough-for-the-swings/2026-09-18",
+          "sentiment": 0.0
+        },
         {
           "title": "Rocket Lab stock tumbles after massive $1.94 billion equity raise",
           "publisher": "GuruFocus.com",
@@ -1838,12 +1838,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/nasa-hitches-ride-with-spacex-for-starburst-satellite-is-rocketlab-the-big-loser/",
           "sentiment": -0.53
-        },
-        {
-          "title": "Rocket Lab Slides 5% as Space Names Give Back Gains; AST SpaceMobile Drops 6%, Planet Labs Sinks 4%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/rocket-lab-slides-5-as-space-names-give-back-gains-ast-spacemobile-drops-6-planet-labs-sinks-4/",
-          "sentiment": -0.6
         }
       ],
       "volRegime": "Rich",
@@ -2016,9 +2010,16 @@
       "pcVol": 1.25,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.23,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "A $10,000 Investment in SPY at Its 1993 Launch Is Worth This Much Today Without You Adding a Dime",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/18/a-10000-investment-in-spy-at-its-1993-launch-is-worth-this-much-today-without-you-adding-a-dime/",
+          "sentiment": 0.23
+        }
+      ],
       "volRegime": "Fair",
       "ivRvRatio": 0.97,
       "realizedVol": 9.2
@@ -2193,6 +2194,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Should You Buy the Instacart Dip Even After Costco Just Let DoorDash In?",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/should-you-buy-the-instacart-dip-even-after-costco-just-let-doordash-in/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Costco expands ultra-fast delivery through DoorDash, Uber",
           "publisher": "FreightWaves",
           "link": "https://finance.yahoo.com/small-business/articles/costco-expands-ultra-fast-delivery-185042149.html",
@@ -2203,12 +2210,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-stock-may-priced-181408381.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "Bank of America resets Costco stock target ahead of earnings",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/costco-stock-lower-price-target-bank-of-america-earnings",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -2364,31 +2365,31 @@
       "chg3m": 12.9,
       "chg6m": 35.3,
       "chg1y": 37.4,
-      "volRatio": 2.01,
+      "volRatio": 2.02,
       "peRatio": 38.5,
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.41,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Apple CEO John Ternus celebrates launch of the iPhone 18",
+          "title": "GM is re-downloading Apple CarPlay, Android Auto to its cars",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/apple-ceo-john-ternus-celebrates-launch-of-the-iphone-18-144436192.html",
-          "sentiment": 0.57
-        },
-        {
-          "title": "Apple Stock Gets Stunning Price Target Hike on Strong iPhone Demand",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-stock-gets-stunning-price-202120422.html",
-          "sentiment": 0.66
-        },
-        {
-          "title": "Apple Stock Near Buy Point As iPhone 18 Pro Goes On Sale",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/technology/apple-stock-buy-point-iphone-18-pro-sales-begin/?src=A00220&yptr=yahoo",
+          "link": "https://finance.yahoo.com/video/gm-downloading-apple-carplay-android-203500547.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Tech stocks today: Apple's iPhone 18 Pro goes on sale, AI safety debate continues",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-apples-iphone-18-pro-goes-on-sale-ai-safety-debate-continues-140134624.html",
+          "sentiment": 0.42
+        },
+        {
+          "title": "Apple's iPhone 18 Pro line hits stores with a $100 price bump amid memory crunch, AI pressure",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/apples-iphone-18-pro-line-hits-stores-with-a-100-price-bump-amid-memory-crunch-ai-pressure-155709106.html",
+          "sentiment": -0.3
         }
       ]
     },
@@ -2407,12 +2408,12 @@
       "chg3m": 30.4,
       "chg6m": 27.4,
       "chg1y": -3.9,
-      "volRatio": 1.71,
+      "volRatio": 1.77,
       "peRatio": 27.5,
       "dividendYield": 0.79,
       "marketCap": 3666585845760,
       "score": 9.4,
-      "newsSentiment": -0.16,
+      "newsSentiment": -0.49,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -2420,12 +2421,6 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/astonishing-theft-unprecedented-proportions-nyt-134822530.html",
           "sentiment": -0.49
-        },
-        {
-          "title": "Oracle Falls 3% While Cloud Rivals Hold Their Ground; Microsoft Dips, Amazon Nudges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/oracle-falls-3-while-cloud-rivals-hold-their-ground-microsoft-dips-amazon-nudges-higher/",
-          "sentiment": 0.18
         }
       ]
     },
@@ -2444,12 +2439,12 @@
       "chg3m": 5.6,
       "chg6m": 24.8,
       "chg1y": 26.1,
-      "volRatio": 1.48,
+      "volRatio": 1.54,
       "peRatio": 28.1,
       "dividendYield": 0.46,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2459,16 +2454,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Prediction: This Much Nvidia (NVDA) Stock Bought Today Could Be Worth $28,560 by 2030",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/prediction-this-much-nvidia-nvda-stock-bought-toda/",
-          "sentiment": 0.23
+          "title": "Nvidia Stock Is Up 21% in Six Months. Here\u2019s What the Street Still Isn\u2019t Pricing In",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/nvidia-stock-is-up-21-in-six-months-heres-what-the-street-still-isnt-pricing-in?ref=yahoofinance",
+          "sentiment": 0.0
         },
         {
-          "title": "Breakout Watch: Savvy Investors Get Wired Up For This Nvidia, Amazon Partner",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/ibd-stock-analysis/f5-stock-near-breakout-as-top-funds-buy-into-nvidia-amazon-partner/?src=A00220&yptr=yahoo",
-          "sentiment": 0.18
+          "title": "Coinbase Files to List Single-Stock Perps on Apple, Tesla and Nvidia",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378681/coinbase-single-stock-perps-apple-tesla-nvidia",
+          "sentiment": 0.0
         }
       ]
     },
@@ -2487,14 +2482,20 @@
       "chg3m": 15.3,
       "chg6m": 9.8,
       "chg1y": -14.2,
-      "volRatio": 1.54,
+      "volRatio": 1.57,
       "peRatio": 25.1,
       "dividendYield": 0.31,
       "marketCap": 1696002211840,
       "score": 7.9,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.17,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Meta's Muse Just Had a Breakout Launch. Is It a Game Changer for the Stock?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/meta-s-muse-just-had-a-breakout-launch-here-s-what-it-means-for-the-stock/",
+          "sentiment": 0.0
+        },
         {
           "title": "How Shopify and Meta are diving deeper into banking",
           "publisher": "American Banker",
@@ -2506,12 +2507,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/meta-platforms-just-ripped-23-in-a-month-take-profits-or-buy-more/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Meta-Tied Data Center Draws Blowout Demand for Debut Junk Bond",
-          "publisher": "Bloomberg",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-tied-data-center-draws-181816486.html",
-          "sentiment": 0.54
         }
       ]
     },
@@ -2530,14 +2525,20 @@
       "chg3m": -9.0,
       "chg6m": -4.2,
       "chg1y": -14.5,
-      "volRatio": 1.37,
+      "volRatio": 1.38,
       "peRatio": 343.7,
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": 0.14,
+      "newsSentiment": 0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Coinbase Files to List Single-Stock Perps on Apple, Tesla and Nvidia",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378681/coinbase-single-stock-perps-apple-tesla-nvidia",
+          "sentiment": 0.0
+        },
         {
           "title": "3 Reasons to Avoid TSLA and 1 Stock to Buy Instead",
           "publisher": "StockStory",
@@ -2549,12 +2550,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/tesla-q3-deliveries-could-beat-expectations-says-barclays-analyst-calls-fundamentals-an-afterthought-to-ai-story/cZtHcTnRBEE",
           "sentiment": 0.61
-        },
-        {
-          "title": "Tesla Slips 1% as $16.8 Billion AI Fab Meets a Naming Fight",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/tesla-slips-1-16-8-172712872.html",
-          "sentiment": 0.1
         }
       ]
     },
@@ -2573,31 +2568,31 @@
       "chg3m": 4.2,
       "chg6m": 172.7,
       "chg1y": 255.7,
-      "volRatio": 1.59,
+      "volRatio": 1.62,
       "peRatio": 142.8,
       "dividendYield": null,
       "marketCap": 913892179968,
       "score": 8.5,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "AMD stock rises on a rumor that could give it a 2027 GPU edge",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-rises-rumor-could-162844610.html",
-          "sentiment": 0.0
+          "title": "AMD (AMD) Stock Looks Cheap After Its Huge 3 Year Run",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-amd-stock-looks-cheap-211318753.html",
+          "sentiment": 0.32
         },
         {
-          "title": "Prediction: AMD\u2019s Biggest Growth\u00a0Opportunity May Still\u00a0Be Ahead",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/prediction-amds-biggest-growth-opportunity-may-still-be-ahead/",
-          "sentiment": 0.66
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
         },
         {
-          "title": "XLK, Oracle and AMD Forecast: Tech Stocks Eye Breakouts",
-          "publisher": "FX Empire",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/xlk-oracle-amd-forecast-tech-133646780.html",
-          "sentiment": 0.0
+          "title": "Top Research Reports for AMD, Linde & Amgen",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-amd-linde-202800486.html",
+          "sentiment": 0.2
         }
       ]
     },
@@ -2616,7 +2611,7 @@
       "chg3m": -10.4,
       "chg6m": 128.8,
       "chg1y": 525.2,
-      "volRatio": 1.28,
+      "volRatio": 1.3,
       "peRatio": 22.9,
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
@@ -2659,7 +2654,7 @@
       "chg3m": -6.2,
       "chg6m": 12.8,
       "chg1y": 35.3,
-      "volRatio": 2.03,
+      "volRatio": 2.12,
       "peRatio": 17.3,
       "dividendYield": 0.26,
       "marketCap": 4212111966208,
@@ -2690,13 +2685,13 @@
       "chg3m": 8.0,
       "chg6m": 22.6,
       "chg1y": 13.2,
-      "volRatio": 2.79,
+      "volRatio": 2.85,
       "peRatio": 15.0,
       "dividendYield": 1.72,
       "marketCap": 929488044032,
       "score": 5.3,
-      "newsSentiment": 0.26,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "JPMorgan Values Bitcoin at $266,000 Against Gold. Why It\u2019s Trading Below $81,000?",
@@ -2711,10 +2706,10 @@
           "sentiment": 0.38
         },
         {
-          "title": "JPMorgan AWM operations head Julie Harris to retire in 2027\u00a0\u2013 report",
-          "publisher": "Private Banker International",
-          "link": "https://www.privatebankerinternational.com/news/jpmorgan-awm-head-julie-harris-retire/",
-          "sentiment": 0.0
+          "title": "JPMorgan Gives Up Forecasting Iran War Endgame as Trump Tells Reporters \u2018Anything Could Happen With Me\u2019",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4680967/jpmorgan-gives-up-forecasting-iran-war-endgame-as-trump-tells-reporters-anything-could-happen-with-me",
+          "sentiment": -0.6
         }
       ]
     },
@@ -2733,7 +2728,7 @@
       "chg3m": -19.6,
       "chg6m": -4.4,
       "chg1y": -51.6,
-      "volRatio": 1.34,
+      "volRatio": 1.37,
       "peRatio": 23.1,
       "dividendYield": 1.33,
       "marketCap": 446333681664,
@@ -2776,7 +2771,7 @@
       "chg3m": 3.8,
       "chg6m": 21.5,
       "chg1y": 9.6,
-      "volRatio": 1.57,
+      "volRatio": 1.58,
       "peRatio": 20.4,
       "dividendYield": null,
       "marketCap": 2736595664896,
@@ -2813,7 +2808,7 @@
       "chg3m": -55.7,
       "chg6m": 125.5,
       "chg1y": 274.6,
-      "volRatio": 0.77,
+      "volRatio": 0.79,
       "peRatio": 41.2,
       "dividendYield": 0.01,
       "marketCap": null,
@@ -2856,7 +2851,7 @@
       "chg3m": -12.1,
       "chg6m": 59.6,
       "chg1y": 42.0,
-      "volRatio": 0.83,
+      "volRatio": 0.85,
       "peRatio": 29.5,
       "dividendYield": 0.52,
       "marketCap": null,
@@ -2899,12 +2894,12 @@
       "chg3m": -7.2,
       "chg6m": -21.7,
       "chg1y": -41.5,
-      "volRatio": 3.72,
+      "volRatio": 3.74,
       "peRatio": 22.6,
       "dividendYield": null,
       "marketCap": 298929225728,
       "score": 1.5,
-      "newsSentiment": -0.26,
+      "newsSentiment": -0.42,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -2914,16 +2909,16 @@
           "sentiment": -0.13
         },
         {
+          "title": "Stock Market Today, Sept. 18: Netflix Falls on Analyst Downgrade and Slashed Price Target",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/18/stock-market-today-sept-18-netflix-falls-on-analyst-downgrade-and-slashed-price-target/",
+          "sentiment": -0.66
+        },
+        {
           "title": "Wells Fargo Brutally Revamps Netflix Stock Price Target",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-brutally-revamps-netflix-202122052.html",
           "sentiment": -0.46
-        },
-        {
-          "title": "Netflix Drops 4.8% as Wells Fargo Cuts Its Target to $57",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-drops-4-8-wells-202111557.html",
-          "sentiment": -0.2
         }
       ]
     },
@@ -2942,31 +2937,31 @@
       "chg3m": -18.0,
       "chg6m": 132.1,
       "chg1y": 1653.1,
-      "volRatio": 1.4,
+      "volRatio": 1.43,
       "peRatio": 24.3,
       "dividendYield": null,
       "marketCap": 262356500480,
       "score": 9.4,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.53,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Dow Jones Futures: Market Still Choppy; Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-still-choppy-robinhood-sandisk-amd-moderna-surge-into-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
         {
           "title": "Credo Technology Group vs. Sandisk: Which Technology Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/18/credo-technology-group-vs-sandisk-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Is Sandisk (SNDK) Stock At Risk As New NAND Competition Targets AI Memory?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-sndk-stock-risk-nand-171245584.html",
-          "sentiment": -0.27
-        },
-        {
-          "title": "Why Sandisk Stock Rallied Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/why-sandisk-stock-rallied-today/",
-          "sentiment": 0.54
         }
       ]
     },
@@ -2985,7 +2980,7 @@
       "chg3m": -19.7,
       "chg6m": 98.1,
       "chg1y": 291.4,
-      "volRatio": 1.76,
+      "volRatio": 1.77,
       "peRatio": 61.8,
       "dividendYield": 0.37,
       "marketCap": 195282829312,
@@ -3028,7 +3023,7 @@
       "chg3m": 42.5,
       "chg6m": 19.6,
       "chg1y": -29.5,
-      "volRatio": 1.12,
+      "volRatio": 1.14,
       "peRatio": 84.1,
       "dividendYield": null,
       "marketCap": 140057280512,
@@ -3065,7 +3060,7 @@
       "chg3m": 27.5,
       "chg6m": 1.2,
       "chg1y": -32.0,
-      "volRatio": 1.99,
+      "volRatio": 2.0,
       "peRatio": 13.9,
       "dividendYield": null,
       "marketCap": 98945695744,
@@ -3108,7 +3103,7 @@
       "chg3m": -17.5,
       "chg6m": null,
       "chg1y": -5.1,
-      "volRatio": 3.23,
+      "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 2012989751296,
@@ -3123,15 +3118,15 @@
           "sentiment": 0.3
         },
         {
-          "title": "SpaceX adds $946M NASA crew deal through 2030",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36571/spacex-nasa-crew-missions-946-million",
+          "title": "Boeing Starliner May Get a Bigger NASA Role Despite Leaving Crew Behind As SpaceX Looks Past Dragon, Says Report",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/boeing-starliner-may-get-a-bigger-nasa-role-despite-leaving-crew-behind-as-space-x-looks-past-dragon-says-report/cZtHIQ2RBEf",
           "sentiment": 0.0
         },
         {
-          "title": "SpaceX Stock Is Down 33% From Its High. Here's Why Morgan Stanley Thinks There's 106% Upside From Here.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/spacex-stock-is-down-33-from-its-high-heres-why-mo/",
+          "title": "SpaceX adds $946M NASA crew deal through 2030",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36571/spacex-nasa-crew-missions-946-million",
           "sentiment": 0.0
         }
       ]
@@ -3151,7 +3146,7 @@
       "chg3m": 57.0,
       "chg6m": 22.9,
       "chg1y": -2.9,
-      "volRatio": 1.35,
+      "volRatio": 1.4,
       "peRatio": 21.8,
       "dividendYield": 0.72,
       "marketCap": 195808165888,
@@ -3194,7 +3189,7 @@
       "chg3m": 38.8,
       "chg6m": 122.0,
       "chg1y": 89.2,
-      "volRatio": 1.7,
+      "volRatio": 1.77,
       "peRatio": 4753.0,
       "dividendYield": null,
       "marketCap": 243338117120,
@@ -3237,7 +3232,7 @@
       "chg3m": 38.3,
       "chg6m": 14.1,
       "chg1y": -2.6,
-      "volRatio": 1.2,
+      "volRatio": 1.21,
       "peRatio": 153.1,
       "dividendYield": null,
       "marketCap": 426879287296,
@@ -3280,7 +3275,7 @@
       "chg3m": -12.8,
       "chg6m": 23.4,
       "chg1y": 81.4,
-      "volRatio": 1.98,
+      "volRatio": 2.02,
       "peRatio": 57.3,
       "dividendYield": 0.56,
       "marketCap": 645257297920,
@@ -3323,7 +3318,7 @@
       "chg3m": -5.7,
       "chg6m": 28.9,
       "chg1y": 65.8,
-      "volRatio": 1.31,
+      "volRatio": 1.32,
       "peRatio": 32.4,
       "dividendYield": 0.95,
       "marketCap": 2254404845568,
@@ -3366,7 +3361,7 @@
       "chg3m": 38.9,
       "chg6m": 264.1,
       "chg1y": 336.0,
-      "volRatio": 1.32,
+      "volRatio": 1.35,
       "peRatio": 33.1,
       "dividendYield": 0.43,
       "marketCap": 361179774976,
@@ -3409,7 +3404,7 @@
       "chg3m": 26.3,
       "chg6m": 114.2,
       "chg1y": 74.6,
-      "volRatio": 2.1,
+      "volRatio": 2.15,
       "peRatio": 886.8,
       "dividendYield": null,
       "marketCap": 297408430080,
@@ -3495,7 +3490,7 @@
       "chg3m": -31.0,
       "chg6m": 0.9,
       "chg1y": -34.8,
-      "volRatio": 2.2,
+      "volRatio": 2.23,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 44873015296,
@@ -3538,31 +3533,31 @@
       "chg3m": -22.1,
       "chg6m": 12.0,
       "chg1y": 20.8,
-      "volRatio": 1.04,
+      "volRatio": 1.06,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 18394658816,
       "score": 7.6,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "IREN (IREN) Stock Fair Value Edges Lower As AI Cloud Wins Meet Build Out Risks",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-iren-stock-fair-value-211402157.html",
+          "sentiment": 0.62
+        },
+        {
+          "title": "Anthropic and OpenAI Seek 20-30MW Sites, Banks Up IREN and CIFR Price Targets, Data Centers Take Collateral Damage in Middle East and Ukraine",
+          "publisher": "Blockspace",
+          "link": "https://blockspace.media/podcast/anthropic-and-openai-seek-20-30mw-sites-banks-up-iren-and-cifr-price-targets-data-centers-take-collateral-damage-in-middle-east-and-ukraine/",
+          "sentiment": -0.49
+        },
         {
           "title": "Wolfspeed Climbs 6%, IREN Rises 4% as Buyers Pick Single Names Over the AI Infrastructure Sector; TeraWulf Sits Tight",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/wolfspeed-climbs-6-iren-rises-4-as-buyers-pick-single-names-over-the-ai-infrastructure-sector-terawulf-sits-tight/",
           "sentiment": 0.0
-        },
-        {
-          "title": "IREN Shares Rise as Northland Targets $99",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-shares-rise-northland-targets-162451738.html",
-          "sentiment": 0.3
-        },
-        {
-          "title": "Nebius Stock and IREN Gain. AI Neoclouds Are Flexing Their Pricing Power.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/nebius-stock-price-coreweave-iren-ai-neoclouds-2bc723d4?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.53
         }
       ]
     },
@@ -3581,7 +3576,7 @@
       "chg3m": -39.6,
       "chg6m": 5.3,
       "chg1y": 37.3,
-      "volRatio": 1.5,
+      "volRatio": 1.51,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 7994623488,
@@ -3629,9 +3624,15 @@
       "dividendYield": null,
       "marketCap": 41286766592,
       "score": 2.1,
-      "newsSentiment": -0.58,
+      "newsSentiment": -0.38,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Is RKLB Stock Paying You Enough For The Swings?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615858/is-rklb-stock-paying-you-enough-for-the-swings/2026-09-18",
+          "sentiment": 0.0
+        },
         {
           "title": "Rocket Lab stock tumbles after massive $1.94 billion equity raise",
           "publisher": "GuruFocus.com",
@@ -3643,12 +3644,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/nasa-hitches-ride-with-spacex-for-starburst-satellite-is-rocketlab-the-big-loser/",
           "sentiment": -0.53
-        },
-        {
-          "title": "Rocket Lab Slides 5% as Space Names Give Back Gains; AST SpaceMobile Drops 6%, Planet Labs Sinks 4%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/rocket-lab-slides-5-as-space-names-give-back-gains-ast-spacemobile-drops-6-planet-labs-sinks-4/",
-          "sentiment": -0.6
         }
       ]
     },
@@ -3710,7 +3705,7 @@
       "chg3m": -22.8,
       "chg6m": 13.2,
       "chg1y": 90.3,
-      "volRatio": 1.56,
+      "volRatio": 1.58,
       "peRatio": 69.2,
       "dividendYield": 0.76,
       "marketCap": 129320239104,
@@ -3753,14 +3748,21 @@
       "chg3m": 2.0,
       "chg6m": 16.1,
       "chg1y": 15.7,
-      "volRatio": 1.58,
+      "volRatio": 1.63,
       "peRatio": 24.6,
       "dividendYield": 0.98,
       "marketCap": null,
       "score": 6.0,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsSentiment": 0.23,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "A $10,000 Investment in SPY at Its 1993 Launch Is Worth This Much Today Without You Adding a Dime",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/18/a-10000-investment-in-spy-at-its-1993-launch-is-worth-this-much-today-without-you-adding-a-dime/",
+          "sentiment": 0.23
+        }
+      ]
     },
     {
       "sym": "QQQ",
@@ -3777,7 +3779,7 @@
       "chg3m": -2.5,
       "chg6m": 21.9,
       "chg1y": 21.0,
-      "volRatio": 1.5,
+      "volRatio": 1.52,
       "peRatio": 29.4,
       "dividendYield": 0.42,
       "marketCap": null,
@@ -3820,7 +3822,7 @@
       "chg3m": -9.6,
       "chg6m": -7.2,
       "chg1y": -25.8,
-      "volRatio": 2.04,
+      "volRatio": 2.07,
       "peRatio": 21.0,
       "dividendYield": 3.08,
       "marketCap": 299286921216,
@@ -3863,7 +3865,7 @@
       "chg3m": -5.8,
       "chg6m": -7.9,
       "chg1y": -5.3,
-      "volRatio": 2.13,
+      "volRatio": 2.16,
       "peRatio": 45.1,
       "dividendYield": 0.66,
       "marketCap": 397051002880,
@@ -3871,6 +3873,12 @@
       "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Should You Buy the Instacart Dip Even After Costco Just Let DoorDash In?",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/should-you-buy-the-instacart-dip-even-after-costco-just-let-doordash-in/",
+          "sentiment": 0.0
+        },
         {
           "title": "Costco expands ultra-fast delivery through DoorDash, Uber",
           "publisher": "FreightWaves",
@@ -3882,12 +3890,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-stock-may-priced-181408381.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "Bank of America resets Costco stock target ahead of earnings",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/costco-stock-lower-price-target-bank-of-america-earnings",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3906,7 +3908,7 @@
       "chg3m": -8.0,
       "chg6m": 40.8,
       "chg1y": 63.9,
-      "volRatio": 2.08,
+      "volRatio": 2.21,
       "peRatio": 32.9,
       "dividendYield": 1.52,
       "marketCap": 431752708096,
@@ -3949,7 +3951,7 @@
       "chg3m": -21.3,
       "chg6m": 173.0,
       "chg1y": 229.6,
-      "volRatio": 0.98,
+      "volRatio": 1.03,
       "peRatio": 81.1,
       "dividendYield": 0.1,
       "marketCap": 219508604928,

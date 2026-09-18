@@ -712,16 +712,21 @@
     .brand-name{ font-size:23px; }
     .brand-tag{ display:none; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
-    /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
-       Export don't all fit on one row even at their already-compact mobile
-       sizes. Rather than clip Export off-screen (which also forces the
-       whole page into horizontal scroll, dragging every row below it out
-       of view too), this lets the row wrap onto a second line — pills on
-       one line, buttons on the next — so nothing gets cut off. Each line
-       still hugs the shared left gutter (a single flex item under
-       space-between sits at the line's start, same as flex-start). */
-    .header-tools{ gap:6px; row-gap:8px; }
-    .header-actions{ gap:6px; }
+    /* On very narrow phones the pills + Tickers + Export don't all fit on
+       one row even at compact mobile sizes. Previously this let the row
+       wrap onto a second line (pills above, buttons below) — but that
+       pushed Tickers/Export down and broke the "one toolbar row" look.
+       Instead the row now stays on one line and scrolls horizontally if
+       it's tighter than the content needs, the same pattern already used
+       for the results table on mobile. Everything stays reachable, just
+       via a short swipe instead of dropping to a second row. */
+    .header-tools{
+      gap:8px; flex-wrap:nowrap; justify-content:flex-start;
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+      scrollbar-width:none; -ms-overflow-style:none;
+    }
+    .header-tools::-webkit-scrollbar{ display:none; }
+    .header-actions{ gap:6px; margin-left:auto; }
     .index-pills{ gap:6px; padding-right:8px; margin-right:0; }
     .index-pill{ padding:6px 9px; border-width:1px; gap:4px; }
     .index-pill .index-pill-sym{ font-size:9px; }

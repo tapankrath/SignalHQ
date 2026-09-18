@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T00:37:02.587462+00:00",
+  "generated_at": "2026-09-18T01:36:54.607323+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -205,9 +205,15 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.16,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Mark Cuban exposes a problem with how Meta and Google fund AI",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/mark-cuban-exposes-meta-google-funding-algorithm-anti-ai-outrage",
+          "sentiment": -0.49
+        },
         {
           "title": "Meta (META) Hands its New AI Agent the Keys to Your Inbox and Wallet",
           "publisher": "Insider Monkey",
@@ -219,12 +225,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-platforms-meta-outpaced-214508942.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta Just Launched a New Subscription Business Built Entirely Around AI. Here's Why It Could Be a Game-Changer.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/meta-just-launched-a-new-subscription-business-built-entirely-around-ai-heres-why-it-could-be-a-game-changer/",
-          "sentiment": 0.13
         }
       ],
       "volRegime": "Rich",
@@ -459,7 +459,7 @@
       "pcVol": 0.61,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": -0.1,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -475,10 +475,10 @@
           "sentiment": -0.29
         },
         {
-          "title": "JPMorgan Falls as Prime Lending Reprices to 7%",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-falls-prime-lending-reprices-184659168.html",
-          "sentiment": 0.0
+          "title": "JPMorgan Chase (JPM) Commits $750 Billion to Rebuilding America\u2019s Housing Supply",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/real-estate/articles/jpmorgan-chase-jpm-commits-750-003942638.html",
+          "sentiment": 0.03
         }
       ],
       "volRegime": "Rich",
@@ -1039,9 +1039,15 @@
       "pcVol": 0.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX or Rocket Lab: Which Space Stock Is the Better Buy for the Next Decade?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/spacex-or-rocket-lab-which-space-stock-is-the-bett/",
+          "sentiment": 0.44
+        },
         {
           "title": "Dow Jones Futures Fall After S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
@@ -1052,12 +1058,6 @@
           "title": "SPCX Stock Inches Higher After-Hours: NASA Selects SpaceX To Provide Launch Services For StarBurst Mission",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasa-selects-space-x-for-star-burst-mission/cZtsPMARBdr",
-          "sentiment": 0.0
-        },
-        {
-          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
         }
       ],
@@ -1799,26 +1799,26 @@
       "pcVol": 1.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.36,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "SpaceX or Rocket Lab: Which Space Stock Is the Better Buy for the Next Decade?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/spacex-or-rocket-lab-which-space-stock-is-the-bett/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "RKLB Stock Eyes Best Week In Over A Month: Rocket Lab Tests Key Neutron Hardware To Take On SpaceX",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-tests-neutron-hardware-take-on-spacex/cZtugMvRBdM",
+          "sentiment": 0.64
+        },
         {
           "title": "Rocket Lab (RKLB) Completes $1.94 Billion Equity Offering",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completes-1-221636308.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/palantir-rocket-lab-among-biggest-climbers-in-power-ranking",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Rocket Lab Is Playing a Much Bigger Game Than Rocket Launches, Eyes 90% Upside",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/rocket-lab-is-playing-a-much-bigger-game-than-rocket-launches-eyes-90-upside/",
-          "sentiment": 0.2
         }
       ],
       "volRegime": "Rich",
@@ -2036,9 +2036,15 @@
       "pcVol": 1.42,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: The Invesco QQQ Trust Beats the S&P 500 Again Over the Next 5 Years",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/prediction-the-invesco-qqq-trust-beats-the-s-and-p-500-again-over-the-next-5-years/",
+          "sentiment": 0.81
+        },
         {
           "title": "$500,000 Split Between VOO and QQQ Owns the Same Seven Stocks Twice, and Nobody Adds Up the Overlap",
           "publisher": "24/7 Wall St.",
@@ -2049,12 +2055,6 @@
           "title": "Daily ETF Flows: QQQ Inflows Total Nearly $1B",
           "publisher": "etf.com",
           "link": "http://www.etf.com/sections/daily-etf-flows/daily-etf-flows-qqq-inflows-total-nearly-1b?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
-          "sentiment": 0.0
-        },
-        {
-          "title": "If QQQ Repeats Its Last Decade, $100,000 at 40 Could Hit $1 Million by 52",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/etf/2026/09/17/if-qqq-repeats-its-last-decade-100000-at-40-could-hit-1-million-by-52/",
           "sentiment": 0.0
         }
       ],
@@ -2383,7 +2383,7 @@
       "chg6m": 25.7,
       "chg1y": -2.8,
       "volRatio": 0.8,
-      "peRatio": 27.7,
+      "peRatio": 27.3,
       "dividendYield": 0.8,
       "marketCap": 3696065511424,
       "score": 9.4,
@@ -2438,13 +2438,19 @@
       "chg6m": 9.5,
       "chg1y": -13.4,
       "volRatio": 0.93,
-      "peRatio": 25.7,
+      "peRatio": 25.4,
       "dividendYield": 0.31,
       "marketCap": 1738188914688,
       "score": 7.8,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.16,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Mark Cuban exposes a problem with how Meta and Google fund AI",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/mark-cuban-exposes-meta-google-funding-algorithm-anti-ai-outrage",
+          "sentiment": -0.49
+        },
         {
           "title": "Meta (META) Hands its New AI Agent the Keys to Your Inbox and Wallet",
           "publisher": "Insider Monkey",
@@ -2456,12 +2462,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/why-meta-platforms-meta-outpaced-214508942.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta Just Launched a New Subscription Business Built Entirely Around AI. Here's Why It Could Be a Game-Changer.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/17/meta-just-launched-a-new-subscription-business-built-entirely-around-ai-heres-why-it-could-be-a-game-changer/",
-          "sentiment": 0.13
         }
       ]
     },
@@ -2481,7 +2481,7 @@
       "chg6m": -8.8,
       "chg1y": -14.1,
       "volRatio": 1.06,
-      "peRatio": 342.2,
+      "peRatio": 332.9,
       "dividendYield": null,
       "marketCap": 1446324338688,
       "score": 6.2,
@@ -2524,7 +2524,7 @@
       "chg6m": 156.9,
       "chg1y": 224.5,
       "volRatio": 1.47,
-      "peRatio": 139.8,
+      "peRatio": 131.7,
       "dividendYield": null,
       "marketCap": 889845841920,
       "score": 9.4,
@@ -2651,7 +2651,7 @@
       "dividendYield": 1.72,
       "marketCap": 928531021824,
       "score": 5.3,
-      "newsSentiment": -0.1,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2667,10 +2667,10 @@
           "sentiment": -0.29
         },
         {
-          "title": "JPMorgan Falls as Prime Lending Reprices to 7%",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-falls-prime-lending-reprices-184659168.html",
-          "sentiment": 0.0
+          "title": "JPMorgan Chase (JPM) Commits $750 Billion to Rebuilding America\u2019s Housing Supply",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/real-estate/articles/jpmorgan-chase-jpm-commits-750-003942638.html",
+          "sentiment": 0.03
         }
       ]
     },
@@ -2690,7 +2690,7 @@
       "chg6m": -5.7,
       "chg1y": -51.2,
       "volRatio": 0.96,
-      "peRatio": 23.6,
+      "peRatio": 22.4,
       "dividendYield": 1.4,
       "marketCap": 455344390144,
       "score": 3.3,
@@ -2733,7 +2733,7 @@
       "chg6m": 17.2,
       "chg1y": 6.4,
       "volRatio": 0.92,
-      "peRatio": 20.2,
+      "peRatio": 19.8,
       "dividendYield": null,
       "marketCap": 2709413953536,
       "score": 5.2,
@@ -2948,7 +2948,7 @@
       "chg6m": 93.0,
       "chg1y": 264.5,
       "volRatio": 1.26,
-      "peRatio": 57.9,
+      "peRatio": 56.5,
       "dividendYield": 0.38,
       "marketCap": 182626140160,
       "score": 4.0,
@@ -2991,7 +2991,7 @@
       "chg6m": 23.0,
       "chg1y": -26.2,
       "volRatio": 0.59,
-      "peRatio": 87.1,
+      "peRatio": 87.6,
       "dividendYield": null,
       "marketCap": 143158870016,
       "score": 9.4,
@@ -3022,7 +3022,7 @@
       "chg6m": 1.8,
       "chg1y": -31.8,
       "volRatio": 1.01,
-      "peRatio": 14.1,
+      "peRatio": 14.0,
       "dividendYield": null,
       "marketCap": 100436320256,
       "score": 4.2,
@@ -3069,9 +3069,15 @@
       "dividendYield": null,
       "marketCap": 2040671371264,
       "score": 8.2,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX or Rocket Lab: Which Space Stock Is the Better Buy for the Next Decade?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/spacex-or-rocket-lab-which-space-stock-is-the-bett/",
+          "sentiment": 0.44
+        },
         {
           "title": "Dow Jones Futures Fall After S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
           "publisher": "Investor's Business Daily",
@@ -3082,12 +3088,6 @@
           "title": "SPCX Stock Inches Higher After-Hours: NASA Selects SpaceX To Provide Launch Services For StarBurst Mission",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasa-selects-space-x-for-star-burst-mission/cZtsPMARBdr",
-          "sentiment": 0.0
-        },
-        {
-          "title": "OpenAI Reportedly Poaches SpaceX's McCarthy To Lead Global Sales In Enterprise AI Push",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-poaches-space-x-s-mc-carthy-to-lead-global-sales-in-enterprise-ai-push/cZtsblGRBd8",
           "sentiment": 0.0
         }
       ]
@@ -3237,7 +3237,7 @@
       "chg6m": 18.6,
       "chg1y": 73.8,
       "volRatio": 1.16,
-      "peRatio": 55.6,
+      "peRatio": 54.7,
       "dividendYield": 0.57,
       "marketCap": 625956290560,
       "score": 3.9,
@@ -3317,7 +3317,7 @@
       "chg6m": 279.3,
       "chg1y": 331.8,
       "volRatio": 1.09,
-      "peRatio": 34.2,
+      "peRatio": 32.8,
       "dividendYield": 0.45,
       "marketCap": 374112223232,
       "score": 9.4,
@@ -3579,26 +3579,26 @@
       "dividendYield": null,
       "marketCap": 43364855808,
       "score": 2.2,
-      "newsSentiment": 0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.36,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "SpaceX or Rocket Lab: Which Space Stock Is the Better Buy for the Next Decade?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/spacex-or-rocket-lab-which-space-stock-is-the-bett/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "RKLB Stock Eyes Best Week In Over A Month: Rocket Lab Tests Key Neutron Hardware To Take On SpaceX",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-tests-neutron-hardware-take-on-spacex/cZtugMvRBdM",
+          "sentiment": 0.64
+        },
         {
           "title": "Rocket Lab (RKLB) Completes $1.94 Billion Equity Offering",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completes-1-221636308.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Palantir, Rocket Lab among biggest climbers in power ranking",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/palantir-rocket-lab-among-biggest-climbers-in-power-ranking",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Rocket Lab Is Playing a Much Bigger Game Than Rocket Launches, Eyes 90% Upside",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/17/rocket-lab-is-playing-a-much-bigger-game-than-rocket-launches-eyes-90-upside/",
-          "sentiment": 0.2
         }
       ]
     },
@@ -3661,7 +3661,7 @@
       "chg6m": 11.4,
       "chg1y": 82.6,
       "volRatio": 0.92,
-      "peRatio": 67.8,
+      "peRatio": 66.3,
       "dividendYield": 0.78,
       "marketCap": 127313199104,
       "score": 3.5,
@@ -3732,9 +3732,15 @@
       "dividendYield": 0.42,
       "marketCap": null,
       "score": 5.3,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: The Invesco QQQ Trust Beats the S&P 500 Again Over the Next 5 Years",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/17/prediction-the-invesco-qqq-trust-beats-the-s-and-p-500-again-over-the-next-5-years/",
+          "sentiment": 0.81
+        },
         {
           "title": "$500,000 Split Between VOO and QQQ Owns the Same Seven Stocks Twice, and Nobody Adds Up the Overlap",
           "publisher": "24/7 Wall St.",
@@ -3745,12 +3751,6 @@
           "title": "Daily ETF Flows: QQQ Inflows Total Nearly $1B",
           "publisher": "etf.com",
           "link": "http://www.etf.com/sections/daily-etf-flows/daily-etf-flows-qqq-inflows-total-nearly-1b?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
-          "sentiment": 0.0
-        },
-        {
-          "title": "If QQQ Repeats Its Last Decade, $100,000 at 40 Could Hit $1 Million by 52",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/etf/2026/09/17/if-qqq-repeats-its-last-decade-100000-at-40-could-hit-1-million-by-52/",
           "sentiment": 0.0
         }
       ]
@@ -3900,7 +3900,7 @@
       "chg6m": 162.4,
       "chg1y": 210.1,
       "volRatio": 0.93,
-      "peRatio": 80.0,
+      "peRatio": 76.4,
       "dividendYield": 0.1,
       "marketCap": 216372117504,
       "score": 9.4,

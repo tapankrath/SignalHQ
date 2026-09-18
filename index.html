@@ -6,7 +6,9 @@
 <title>SignalHQ — Ready-Made Option Trades</title>
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="SignalHQ">
@@ -43,6 +45,14 @@
     --green-soft:#DCFCE7;
     --red:#DC2626;
     --red-soft:#FEE2E2;
+    /* "Inverted" chip color — a black chip with white text (the toast, the
+       active mode tab) that's meant to read as strong/high-contrast against
+       the page regardless of theme. Kept as its own token, separate from
+       --text, specifically so dark mode (below) can flip it to a light chip
+       on dark text instead of quietly inheriting --text's flip and ending
+       up as a white-on-white chip. */
+    --invert-bg:#000000;
+    --invert-text:#FFFFFF;
     --radius:16px;
     --radius-sm:10px;
     --sans: 'Inter', -apple-system, sans-serif;
@@ -54,6 +64,54 @@
     --shadow-sm:0 1px 2px rgba(16,24,40,0.05), 0 1px 3px rgba(16,24,40,0.04);
     --shadow-md:0 2px 6px rgba(16,24,40,0.06), 0 8px 20px rgba(16,24,40,0.07);
     --shadow-lg:0 12px 40px rgba(16,24,40,0.16);
+  }
+
+  /* Dark mode — follows the device/browser's system appearance automatically
+     (no in-app toggle). Every color in the app is drawn from the tokens
+     above, so redefining them here is enough to re-skin the whole page;
+     only a couple of components that hard-code a color for contrast reasons
+     (see below, and --invert-bg's comment above) need their own override. */
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B0C0E;
+      --surface:#0B0C0E;
+      --surface-2:#1C1F25;
+      --border:#2B2F36;
+      --border-strong:#4B525C;
+      --text:#F2F3F5;
+      --text-dim:#B9BEC7;
+      --text-faint:#868C96;
+      --amber:#16A34A;
+      --amber-strong:#4ADE80;
+      --amber-soft:#123321;
+      --amber-border:#1F7A44;
+      --green:#34D399;
+      --green-soft:#123321;
+      --red:#F87171;
+      --red-soft:#3A1518;
+      --invert-bg:#F2F3F5;
+      --invert-text:#0B0C0E;
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+      --shadow-md:0 2px 6px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.45);
+      --shadow-lg:0 12px 40px rgba(0,0,0,0.6);
+    }
+    /* --amber-strong is brightened above so it reads as text on a dark
+       surface (used almost everywhere it appears) — but this one spot uses
+       it as a solid badge fill behind white text, where the brighter value
+       would wash out. Give just this badge a fixed, deliberately darker
+       green instead of following --amber-strong. */
+    .portfolio-fab-count{ background:#15803D; }
+    /* Same story for the red strategy/quality checkboxes: --red is
+       brightened above for text legibility, but the checked-box fill needs
+       a darker, more saturated red for the white checkmark to read clearly. */
+    .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
+    .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
+    .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
+    .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
+    .check-row input[type="checkbox"][data-quality="sell"]:checked,
+    #trendDownFilter:checked{
+      background:#DC2626; border-color:#DC2626;
+    }
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{
@@ -122,7 +180,7 @@
     border:1px solid var(--border); border-radius:9px;
     cursor:pointer; transition:background .12s, color .12s;
   }
-  .mode-tab.active{ background:var(--text); color:#fff; border-color:var(--text); }
+  .mode-tab.active{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
   .mode-tab:active{ opacity:0.85; }
 
   .brand-mark{
@@ -467,7 +525,7 @@
   }
   .side-pill.bull{ background:var(--green-soft); color:var(--green); }
   .side-pill.bear{ background:var(--red-soft); color:var(--red); }
-  .side-pill.neutral{ background:#F1F2F4; color:#6B7280; }
+  .side-pill.neutral{ background:var(--surface-2); color:var(--text-faint); }
   .side-pill .dot{ width:5px; height:5px; border-radius:50%; background:currentColor; }
 
   .val-pos{ color:var(--green); }
@@ -475,7 +533,7 @@
 
   .meter{ display:flex; align-items:center; gap:8px; }
   .meter-ticks{ display:flex; gap:2px; }
-  .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:#D3D7DE; }
+  .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:var(--border-strong); }
   .meter-ticks span.on{ background:var(--amber); }
   .meter-score{ font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--amber-strong); min-width:26px; }
 
@@ -498,7 +556,7 @@
     box-shadow:var(--shadow-sm);
     cursor:pointer; transition:border-color .12s, box-shadow .12s, transform .12s;
   }
-  .trade-card:hover{ box-shadow:var(--shadow-md); border-color:#D3D7DE; }
+  .trade-card:hover{ box-shadow:var(--shadow-md); border-color:var(--border-strong); }
   .trade-card:active{ border-color:var(--border-strong); box-shadow:var(--shadow-sm); transform:scale(0.994); }
   .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
 
@@ -625,7 +683,7 @@
 
   .toast{
     position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
-    background:var(--text); color:#fff;
+    background:var(--invert-bg); color:var(--invert-text);
     font-family:var(--mono); font-size:12.5px; font-weight:600;
     padding:10px 18px; border-radius:20px; z-index:90;
     opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;

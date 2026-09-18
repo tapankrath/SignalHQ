@@ -167,6 +167,12 @@
   .index-pills{
     display:none; gap:8px; overflow-x:auto;
     -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+    /* Hugs its own content instead of stretching to the same width as the
+       Tickers/Export box below it — with just 1-2 pills that stretch left
+       a big empty gray strip on the right, which read as unfinished. Still
+       capped at the full gutter width (and still scrolls) for the rare
+       case a phone is too narrow even for two compact pills. */
+    align-self:flex-start; max-width:100%;
   }
   .index-pills::-webkit-scrollbar{ display:none; }
   .index-pill{

@@ -142,14 +142,15 @@
     box-sizing:border-box;
   }
   .brand{ display:flex; align-items:center; gap:12px; flex-shrink:0; min-width:0; }
-  /* Pills (SPY/QQQ) and the Tickers/Export actions are two separate groups
-     pushed to opposite edges — same shared left/right gutter every other
-     row on the page uses, instead of clumping in the middle. Wraps onto its
-     own second line on narrow phones if both groups can't fit together. */
+  /* Just the Tickers button now (SPY/QQQ pills and Export both removed —
+     the index quotes were always at least an hour stale, and raw setup
+     export was replaced by the allocation-based summary export in the
+     Portfolio Summary modal instead) — right-aligned against the same
+     shared left/right gutter every other row on the page uses. */
   .header-tools{
     max-width:1080px; margin:0 auto; width:100%;
     padding:0 18px;
-    display:flex; align-items:center; justify-content:space-between;
+    display:flex; align-items:center; justify-content:flex-end;
     flex-wrap:wrap; gap:10px; row-gap:8px;
     box-sizing:border-box;
   }
@@ -191,30 +192,6 @@
   }
   .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
   #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; color:var(--text); }
-
-  .index-pills{
-    display:none; align-items:center; gap:8px; flex-shrink:0;
-    padding-right:12px; margin-right:2px; border-right:1px solid var(--border);
-  }
-  .index-pill{
-    display:inline-flex; align-items:baseline; gap:6px;
-    padding:9px 12px; border-radius:8px; white-space:nowrap;
-    /* Tinted fill (vs. the plain white of .export-btn) marks these as
-       passive data readouts, not clickable actions — a visual distinction
-       the previous identical white+black-border treatment didn't make. */
-    background:var(--surface-2); border:1px solid var(--border);
-    box-shadow:var(--shadow-sm);
-  }
-  .index-pill .index-pill-sym{
-    font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:0.02em;
-    color:var(--text-dim);
-  }
-  .index-pill .index-pill-px{
-    font-family:var(--mono); font-size:14.5px; font-weight:800; color:var(--text);
-  }
-  .index-pill-stale{
-    color:var(--red); font-weight:800; font-size:12px; margin-left:1px; cursor:help;
-  }
 
   .header-top-right{
     display:flex; align-items:center; gap:10px; min-width:0;
@@ -721,21 +698,8 @@
     .brand-mark svg{ border-radius:9px; }
     .brand-name{ font-size:31.5px; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
-    /* On very narrow phones (~320px, iPhone SE-class) the pills + Tickers +
-       Export don't all fit on one row even at their already-compact mobile
-       sizes. Rather than clip Export off-screen (which also forces the
-       whole page into horizontal scroll, dragging every row below it out
-       of view too), this lets the row wrap onto a second line — pills on
-       one line, buttons on the next — so nothing gets cut off. Each line
-       still hugs the shared left gutter (a single flex item under
-       space-between sits at the line's start, same as flex-start). */
     .header-tools{ gap:6px; row-gap:8px; }
     .header-actions{ gap:6px; }
-    .index-pills{ gap:6px; padding-right:8px; margin-right:0; }
-    .index-pill{ padding:6px 9px; border-width:1px; gap:4px; }
-    .index-pill .index-pill-sym{ font-size:9px; }
-    .index-pill .index-pill-px{ font-size:12px; }
-    .index-pill-stale{ font-size:10px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -837,17 +801,10 @@
   </div>
 
   <div class="header-tools">
-    <div class="index-pills" id="indexPills"></div>
-
     <div class="header-actions">
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         Tickers
-      </button>
-
-      <button class="export-btn" id="exportBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Export
       </button>
     </div>
   </div>
@@ -1150,34 +1107,6 @@
       statusText.textContent = 'Data unavailable';
       statusDot.style.background = 'var(--red)';
     }
-
-    renderIndexPills();
-  }
-
-  // Small SPY/QQQ "current price" pills shown in the sticky header, next to
-  // Tickers/Export.
-  const INDEX_PILL_SYMS = ['SPY', 'QQQ'];
-  function renderIndexPills(){
-    const el = document.getElementById('indexPills');
-    if(!el) return;
-    const html = INDEX_PILL_SYMS.map(sym => {
-      const e = equities.find(x => x.sym === sym);
-      if(!e || e.price == null) return '';
-      // Confirmed directly (2026-09-15): the underlying fetch can land a
-      // trading day behind even when it runs hours after close — Yahoo's
-      // historical data lagging its own live quotes, not a schedule
-      // problem. fetch_data.py flags this per-ticker as "priceStale" when
-      // its own staleness check couldn't get a fresher number either — surface
-      // it here instead of quietly showing a wrong price as if it were current.
-      const stale = e.priceStale
-        ? `<span class="index-pill-stale" title="This price may be a trading day behind — Yahoo's data hadn't updated yet when this was fetched">†</span>`
-        : '';
-      return `<span class="index-pill"><span class="index-pill-sym">${sym}</span><span class="index-pill-px num">$${Math.round(e.price)}</span>${stale}</span>`;
-    }).join('');
-    el.innerHTML = html;
-    // display:none by default (see CSS) so there's no empty divider flash
-    // before the first data.json load resolves.
-    el.style.display = html ? 'flex' : 'none';
   }
 
   let currentList = [];
@@ -1620,6 +1549,54 @@
     });
   }
 
+  // Plain-text rendering of the Portfolio Summary modal — the "Download
+  // Summary" button's payload. Takes the exact numbers openPortfolioSummary()
+  // already computed (equityRowsData/optionRowsData carry the same
+  // per-position shares/contracts/used figures the rendered rows show) so
+  // the file always matches what's on screen.
+  function buildPortfolioSummaryText({ capital, optionsPct, equityPct, cashLeftPct, isOverAllocated, equityCapital, optionsCapital, cashLeftCapital, equityRowsData, optionRowsData, totalUsed, unallocated, hedge }){
+    const lines = [];
+    lines.push('SignalHQ — Portfolio Summary');
+    lines.push(`Generated ${new Date().toLocaleString()}`);
+    lines.push('');
+    lines.push(`Total Capital: ${curSym()}${capital.toLocaleString()}`);
+    lines.push(`Split: ${equityPct}% Equity / ${optionsPct}% Options / ${cashLeftPct}% Cash${isOverAllocated ? '  [Options % + Equity % exceed 100% — Cash Left shown as 0 until the split is brought back to 100% or under]' : ''}`);
+    lines.push(`Equities Allocation: ${curSym()}${Math.round(equityCapital).toLocaleString()}`);
+    lines.push(`Options Allocation: ${curSym()}${Math.round(optionsCapital).toLocaleString()}`);
+    lines.push(`Cash Left (Not Invested): ${curSym()}${Math.round(cashLeftCapital).toLocaleString()}`);
+
+    if(equityRowsData.length){
+      lines.push('');
+      lines.push(`Equities (${equityRowsData.length} selected, split equally):`);
+      equityRowsData.forEach(({e, shares, used})=>{
+        const warn = shares === 0 ? ' — budget too small for 1 share' : '';
+        lines.push(`  ${e.sym}: price ${fmtPrice(e.price)}, shares ${shares}, ${curSym()}${used.toFixed(2)}${warn}`);
+      });
+    }
+
+    if(optionRowsData.length){
+      lines.push('');
+      lines.push(`Options (${optionRowsData.length} selected, split equally):`);
+      optionRowsData.forEach(({t, contracts, used})=>{
+        const warn = contracts === 0 ? ' — budget too small for 1 contract' : '';
+        lines.push(`  ${t.sym} ${t.strat}: cost/contract $${t.maxLoss.toLocaleString()}, contracts ${contracts}, $${used.toLocaleString()}${warn}`);
+      });
+    }
+
+    lines.push('');
+    lines.push(`Total Deployed: ${curSym()}${Math.round(totalUsed).toLocaleString()}`);
+    lines.push(`Rounding Leftover: ${curSym()}${Math.round(unallocated).toLocaleString()}`);
+
+    if(hedge){
+      lines.push('');
+      lines.push(`Suggested Hedge: ${hedge.symbol} $${hedge.strike} Put, exp ${hedge.exp} (${hedge.dte}d), delta ${hedge.delta}, ${hedge.otmPct}% OTM, $${hedge.costPerContract.toLocaleString()}/contract`);
+    }
+
+    lines.push('');
+    lines.push('Sizing calculator only — not a live order, not investment advice, and does not check your actual account buying power. Capital is split equally across whatever was checked, not weighted by score, conviction, or risk. Verify live pricing before placing any order.');
+    return lines.join('\n');
+  }
+
   function openPortfolioSummary(){
     const capitalRaw = document.getElementById('portfolioCapital').value.trim();
     const capital = parseFloat(capitalRaw);
@@ -1686,10 +1663,17 @@
 
     let totalEquityUsed = 0, totalOptionsUsed = 0;
 
-    const equityRows = selectedEquities.map(e=>{
+    // Computed once as plain data (not just HTML strings) so the same
+    // per-position numbers back both the rendered rows below and the
+    // plain-text "Download Summary" export — one source of truth instead
+    // of two copies of the sizing math that could drift apart.
+    const equityRowsData = selectedEquities.map(e=>{
       const shares = Math.floor(perEquityBudget / e.price);
       const used = shares * e.price;
       totalEquityUsed += used;
+      return { e, shares, used };
+    });
+    const equityRows = equityRowsData.map(({e, shares, used})=>{
       const warn = shares === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 share</div>` : '';
       return `<div class="portfolio-line-item">
         <div class="portfolio-line-title">${e.sym}</div>
@@ -1702,10 +1686,13 @@
       </div>`;
     }).join('');
 
-    const optionRows = selectedTrades.map(t=>{
+    const optionRowsData = selectedTrades.map(t=>{
       const contracts = t.maxLoss > 0 ? Math.floor(perOptionBudget / t.maxLoss) : 0;
       const used = contracts * t.maxLoss;
       totalOptionsUsed += used;
+      return { t, contracts, used };
+    });
+    const optionRows = optionRowsData.map(({t, contracts, used})=>{
       const warn = contracts === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 contract</div>` : '';
       return `<div class="portfolio-line-item">
         <div class="portfolio-line-title">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strat}</span></div>
@@ -1741,6 +1728,12 @@
       </div>` ;
     })() : '';
 
+    const summaryText = buildPortfolioSummaryText({
+      capital, optionsPct, equityPct, cashLeftPct, isOverAllocated,
+      equityCapital, optionsCapital, cashLeftCapital,
+      equityRowsData, optionRowsData, totalUsed, unallocated, hedge,
+    });
+
     tradeModal.innerHTML = `
       <div class="modal-top">
         <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
@@ -1772,6 +1765,7 @@
       ${hedgeSection}
 
       <div class="modal-note">Position sizing splits each category's capital EQUALLY across whatever you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" for options uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Share/contract counts round down, so "Rounding Leftover" reflects both rounding leftovers within the Equities/Options buckets and any category with nothing checked in it — it's separate from "Cash Left (Not Invested)" above, which is cash the split itself never allocated to either bucket. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
+      <button class="modal-copy-btn" id="downloadSummaryBtn">Download Summary</button>
     `;
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
@@ -1779,6 +1773,11 @@
       clearAllSelections();
       closeTradeModal();
       showToast('Selections cleared');
+    });
+    document.getElementById('downloadSummaryBtn').addEventListener('click', ()=>{
+      const dateLabel = new Date().toISOString().slice(0,10);
+      downloadFile(`signalhq-portfolio-summary-${dateLabel}.txt`, summaryText, 'text/plain');
+      showToast('Portfolio summary downloaded');
     });
   }
 
@@ -2021,6 +2020,11 @@
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeTradeModal(); });
 
   // --- Export ---
+  // Generic file-download helper — used by the Portfolio Summary modal's
+  // "Download Summary" button below (the old raw setup-list export, JSON/
+  // CSV/XML dumps of whatever the filters currently showed, was removed —
+  // that data isn't allocation-based and TR found it wasn't pulling its
+  // weight next to the Portfolio Summary's actual sizing math).
   function downloadFile(filename, content, mime){
     const blob = new Blob([content], { type: mime });
     const url = URL.createObjectURL(blob);
@@ -2032,72 +2036,6 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }
-
-  function exportFilenameBase(){
-    const dateLabel = dataGeneratedAt ? dataGeneratedAt.slice(0,10) : new Date().toISOString().slice(0,10);
-    return `signalhq-export-${dateLabel}`;
-  }
-
-  function buildExportJSON(list){
-    return JSON.stringify({ generated_at: dataGeneratedAt, exported_at: new Date().toISOString(), count: list.length, trades: list }, null, 2);
-  }
-
-  function buildExportCSV(list){
-    if(list.length === 0) return 'No setups match the active filters.';
-    const cols = Object.keys(list[0]);
-    const escape = (v) => {
-      const s = String(v);
-      return /[",\n]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s;
-    };
-    const rows = [cols.join(',')];
-    list.forEach(t => rows.push(cols.map(c => escape(t[c])).join(',')));
-    return rows.join('\n');
-  }
-
-  function buildExportXML(list){
-    const esc = (v) => String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    const rows = list.map(t => {
-      const fields = Object.entries(t).map(([k,v]) => `    <${k}>${esc(v)}</${k}>`).join('\n');
-      return `  <trade>\n${fields}\n  </trade>`;
-    }).join('\n');
-    return `<?xml version="1.0" encoding="UTF-8"?>\n<trades count="${list.length}" generatedAt="${esc(dataGeneratedAt || '')}">\n${rows}\n</trades>`;
-  }
-
-  function openExportModal(){
-    const n = currentList.length;
-    tradeModal.innerHTML = `
-      <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Export Results</div>
-        <button class="modal-close" id="modalCloseBtn">✕</button>
-      </div>
-      <div class="modal-strat">
-        Exports the <strong style="color:var(--text);">${n} setup${n===1?'':'s'}</strong> currently shown below — the same rows your active filters produced, not the full unfiltered dataset. Adjust filters and hit Apply first if you want a different set.
-      </div>
-      <div style="display:flex; flex-direction:column; gap:8px; margin:16px 0;">
-        <button class="modal-copy-btn" id="exportJsonBtn" style="background:var(--amber);">Download JSON</button>
-        <button class="modal-copy-btn" id="exportCsvBtn" style="background:var(--surface); color:var(--text); border:1px solid var(--border-strong);">Download CSV (opens in Excel/Sheets)</button>
-        <button class="modal-copy-btn" id="exportXmlBtn" style="background:var(--surface); color:var(--text); border:1px solid var(--border-strong);">Download XML</button>
-      </div>
-      <div class="modal-note">Files download straight to your device — nothing is uploaded anywhere.</div>
-    `;
-    modalScrim.classList.add('show');
-    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
-
-    document.getElementById('exportJsonBtn').addEventListener('click', ()=>{
-      downloadFile(`${exportFilenameBase()}.json`, buildExportJSON(currentList), 'application/json');
-      showToast(`Downloaded ${n} setup${n===1?'':'s'} as JSON`);
-    });
-    document.getElementById('exportCsvBtn').addEventListener('click', ()=>{
-      downloadFile(`${exportFilenameBase()}.csv`, buildExportCSV(currentList), 'text/csv');
-      showToast(`Downloaded ${n} setup${n===1?'':'s'} as CSV`);
-    });
-    document.getElementById('exportXmlBtn').addEventListener('click', ()=>{
-      downloadFile(`${exportFilenameBase()}.xml`, buildExportXML(currentList), 'application/xml');
-      showToast(`Downloaded ${n} setup${n===1?'':'s'} as XML`);
-    });
-  }
-
-  document.getElementById('exportBtn').addEventListener('click', openExportModal);
 
   // --- Manage Tickers ---
   // The watchlist that scripts/fetch_data.py screens lives in tickers.json at the

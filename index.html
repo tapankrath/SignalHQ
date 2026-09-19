@@ -582,6 +582,57 @@
   .trade-card:active{ border-color:var(--border-strong); box-shadow:var(--shadow-sm); transform:scale(0.994); }
   .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
 
+  /* ---------- BACKTEST TAB ---------- */
+  .backtest-count{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:16px; height:16px; padding:0 4px; margin-left:5px;
+    background:var(--amber-strong); color:#fff; border-radius:8px;
+    font-size:10px; font-weight:800; font-family:var(--mono); vertical-align:middle;
+  }
+  .tracked-card-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .tracked-card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; padding:13px 15px;
+    box-shadow:var(--shadow-sm);
+  }
+  .tracked-card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px; }
+  .tracked-status-pill{
+    display:inline-flex; align-items:center; gap:4px;
+    font-size:10.5px; font-weight:800; letter-spacing:0.02em; text-transform:uppercase;
+    padding:3px 9px; border-radius:20px; white-space:nowrap; flex-shrink:0;
+    background:var(--surface-2); color:var(--text-dim); border:1px solid var(--border);
+  }
+  .tracked-status-pill.status-open{ background:var(--green-soft); color:var(--green); border-color:transparent; }
+  .tracked-status-pill.status-expired{ background:var(--surface-2); color:var(--text-dim); }
+  .tracked-status-pill.status-pending{ background:var(--amber-soft); color:var(--amber-strong); }
+  .tracked-status-pill.status-error{ background:var(--red-soft); color:var(--red); }
+  .tracked-card-meta{ font-size:12px; color:var(--text-dim); line-height:1.6; margin-bottom:8px; }
+  .tracked-card-pnl{
+    display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+    padding-top:8px; border-top:1px solid var(--border);
+  }
+  .tracked-pnl-figures{ font-family:var(--mono); font-size:15px; font-weight:700; }
+  .tracked-pnl-sub{ font-size:11px; color:var(--text-faint); font-weight:600; margin-top:2px; }
+  .tracked-remove-btn{
+    background:none; border:none; color:var(--text-faint); font-size:11.5px; font-weight:700;
+    cursor:pointer; padding:4px 0; text-decoration:underline; text-underline-offset:2px;
+  }
+  .tracked-remove-btn:hover{ color:var(--red); }
+  .tracked-empty-state{
+    text-align:center; color:var(--text-dim); font-weight:600; font-size:13.5px;
+    padding:32px 18px; background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; margin-bottom:16px; line-height:1.7;
+  }
+  .tracked-export-box{
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:14px; padding:14px 16px;
+  }
+  .tracked-export-label{ font-size:13px; font-weight:800; color:var(--text); margin-bottom:4px; }
+  .tracked-export-sub{ font-size:12px; color:var(--text-dim); line-height:1.55; margin-bottom:12px; }
+  .modal-copy-btn-secondary.is-tracked{
+    background:var(--green-soft); color:var(--green); border-color:transparent;
+  }
+
   footer{
     max-width:1080px; margin:0 auto; padding:20px 18px 30px;
     font-size:11px; color:var(--text-faint); line-height:1.6;
@@ -743,8 +794,8 @@
     #portfolioCapital{ width:68px; height:32px; padding:6px 4px; }
     #portfolioSplit{ width:34px; height:32px; padding:6px 2px; }
     #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
-    .mode-toggle{ padding:0 14px; }
-    .mode-tab{ min-height:34px; padding:7px 12px; font-size:12.5px; }
+    .mode-toggle{ padding:0 14px; gap:3px; }
+    .mode-tab{ min-height:34px; padding:7px 2px; font-size:10px; }
     .brand{ gap:8px; }
     .brand-mark{ width:34px; height:34px; }
     .brand-mark svg{ border-radius:9px; }
@@ -890,6 +941,7 @@
   <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
   <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
   <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
+  <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
 </div>
 </div>
 
@@ -1085,6 +1137,26 @@
         Look Up
       </button>
     </form>
+  </div>
+</div>
+
+<div class="layout" id="backtestView" style="display:none;">
+  <div class="results-panel" style="margin-top:14px;">
+    <div class="results-bar">
+      <div class="results-count"><strong id="backtestTrackedCount">0</strong> <span id="backtestCountLabel">trades tracked</span></div>
+    </div>
+    <div class="funnel-note" id="backtestStatusNote"></div>
+  </div>
+
+  <div id="backtestCardList" class="tracked-card-list"></div>
+
+  <div class="tracked-export-box" id="backtestExportBox" style="display:none;">
+    <div class="tracked-export-label">Live P&amp;L needs one manual step</div>
+    <div class="tracked-export-sub">Tracked trades live in this browser only. To get real, auto-updating P&amp;L as DTE counts down, download the file below and commit it to your repo — the scheduled GitHub Action re-prices every tracked trade's exact contract(s) on its next run.</div>
+    <div class="ticker-action-row">
+      <button class="modal-copy-btn-secondary" id="backtestDownloadBtn" style="flex:1;">Download tracked_positions.json</button>
+      <a class="ticker-github-link-secondary" id="backtestGithubLink" href="#" target="_blank" rel="noopener" style="display:none; flex:1; text-align:center;">Open GitHub upload page →</a>
+    </div>
   </div>
 </div>
 
@@ -1431,8 +1503,8 @@
   // Three tabs as of 2026-09-19 (Options / Stocks & ETFs / Ticker Lookup) —
   // table-driven rather than a boolean so adding the third didn't mean
   // rewriting every line here a second time.
-  const MODE_VIEWS = { options: 'optionsView', stocks: 'stocksView', lookup: 'lookupView' };
-  const MODE_TABS = { options: 'tabOptions', stocks: 'tabStocks', lookup: 'tabLookup' };
+  const MODE_VIEWS = { options: 'optionsView', stocks: 'stocksView', lookup: 'lookupView', backtest: 'backtestView' };
+  const MODE_TABS = { options: 'tabOptions', stocks: 'tabStocks', lookup: 'tabLookup', backtest: 'tabBacktest' };
 
   function switchMode(mode){
     for(const key in MODE_VIEWS){
@@ -1446,6 +1518,9 @@
       // guarantees correctness if the user switches tabs before loadTrades()
       // has actually finished fetching data.json
       renderEquities(sortEquities(filteredEquities()));
+    }
+    if(mode === 'backtest'){
+      renderBacktestView();
     }
     // Deliberately NOT auto-focusing #lookupInput on switching to the Lookup
     // tab (tried this initially) — immediately popping the on-screen keyboard
@@ -2101,7 +2176,10 @@
       </div>
       <div class="news-list">${headlinesHtml}</div>
       <div class="modal-note">"IV vs Realized Vol" compares this option's implied volatility to the stock's own recent 20-day realized volatility — "Rich" means the market is paying more for this option than recent price action alone would suggest, which favors premium-selling strategies (everything SignalHQ screens for); "Cheap" means less edge for a seller. Sentiment is a lexicon-based score of headline text only (not full articles, not an LLM reading the story) — treat it as a rough gauge of recent press tone, not analysis. Figures are computed from the prior session's EOD close and are for research purposes only — not a recommendation to enter this trade. Verify live pricing before placing an order.</div>
-      <button class="modal-copy-btn" id="modalCopyBtn">Copy trade summary</button>
+      <div class="ticker-action-row">
+        <button class="modal-copy-btn" id="modalCopyBtn">Copy trade summary</button>
+        <button class="modal-copy-btn-secondary" id="modalTrackBtn"></button>
+      </div>
     `;
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
@@ -2115,10 +2193,220 @@
       const ok = await copyText(summary);
       showToast(ok ? 'Trade summary copied' : 'Copy blocked — select the text manually');
     });
+    refreshModalTrackBtn(t);
+    document.getElementById('modalTrackBtn').addEventListener('click', ()=>{
+      toggleTrackedPosition(t);
+      refreshModalTrackBtn(t);
+    });
   }
   function closeTradeModal(){ modalScrim.classList.remove('show'); }
   modalScrim.addEventListener('click', (e)=>{ if(e.target === modalScrim) closeTradeModal(); });
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeTradeModal(); });
+
+  // --- Backtest / tracked positions ---
+  // "Track" a recommendation from the trade modal and this app follows its
+  // P&L as DTE counts down. Selections live in THIS browser's localStorage
+  // only (see saveTrackedPositions()) — there's no backend to push to from
+  // a static GitHub Pages site — so live, auto-updating P&L is a two-step
+  // handoff: download the exported file below, commit it to the repo as
+  // tracked_positions.json, and scripts/fetch_data.py's
+  // update_tracked_positions() re-quotes every tracked contract's exact
+  // legs on each scheduled run and writes tracked_pnl.json, which this page
+  // then reads back in (see loadTrackedPnl()) to show real mark-to-market
+  // P&L instead of just entry details and a DTE countdown.
+  const TRACKED_KEY = 'signalhq_tracked_positions_v1';
+  let trackedPnlById = {};      // populated by loadTrackedPnl(), keyed by position id
+
+  function loadTrackedPositions(){
+    try{
+      const raw = JSON.parse(localStorage.getItem(TRACKED_KEY) || '[]');
+      return Array.isArray(raw) ? raw : [];
+    }catch(e){
+      console.error('Reading tracked positions failed', e);
+      return [];
+    }
+  }
+  function saveTrackedPositions(list){
+    try{
+      localStorage.setItem(TRACKED_KEY, JSON.stringify(list));
+      return true;
+    }catch(e){
+      console.error('Saving tracked positions failed', e);
+      return false;
+    }
+  }
+
+  // Deterministic from what the trade actually IS (ticker/strategy/strike/
+  // expiration), not a random id — tracking the exact same setup twice just
+  // finds the existing entry instead of creating a duplicate row.
+  function trackedPositionId(t){
+    return [t.sym, t.strat, t.expDate || t.exp, t.strike].join('|').replace(/\s+/g, '_');
+  }
+  function isTracked(t){
+    return loadTrackedPositions().some(p => p.id === trackedPositionId(t));
+  }
+
+  function toggleTrackedPosition(t){
+    const list = loadTrackedPositions();
+    const id = trackedPositionId(t);
+    const idx = list.findIndex(p => p.id === id);
+    if(idx >= 0){
+      list.splice(idx, 1);
+      saveTrackedPositions(list);
+      showToast('Removed from Backtest tracking');
+    } else {
+      if(!t.expDate || !t.legs){
+        // Only true if data.json predates this feature (old cached copy) —
+        // every trade built by the current fetch_data.py carries these.
+        showToast('This trade is missing pricing data needed to track it — try refreshing');
+        renderBacktestView();
+        updateTrackedBadge();
+        return;
+      }
+      list.push({
+        id, sym: t.sym, strat: t.strat, side: t.side, strike: t.strike,
+        exp: t.exp, expDate: t.expDate, backExp: t.backExp || null, backExpDate: t.backExpDate || null,
+        dte: t.dte, premium: t.premium, debitStrategy: !!t.debitStrategy, legs: t.legs,
+        roc: t.roc, ap: t.ap, spot: t.spot,
+        trackedAt: new Date().toISOString(), entryDate: new Date().toISOString().slice(0, 10),
+      });
+      const ok = saveTrackedPositions(list);
+      showToast(ok ? 'Tracking for Backtest' : 'Could not save — local storage may be full or blocked');
+    }
+    renderBacktestView();
+    updateTrackedBadge();
+  }
+  function removeTrackedPositionById(id){
+    saveTrackedPositions(loadTrackedPositions().filter(p => p.id !== id));
+    renderBacktestView();
+    updateTrackedBadge();
+  }
+
+  function refreshModalTrackBtn(t){
+    const btn = document.getElementById('modalTrackBtn');
+    if(!btn) return;
+    const tracked = isTracked(t);
+    btn.textContent = tracked ? 'Tracked ✓ — tap to remove' : 'Track for Backtest';
+    btn.classList.toggle('is-tracked', tracked);
+  }
+
+  function updateTrackedBadge(){
+    const n = loadTrackedPositions().length;
+    const badge = document.getElementById('backtestCount');
+    if(!badge) return;
+    badge.textContent = n;
+    badge.style.display = n > 0 ? '' : 'none';
+  }
+
+  async function loadTrackedPnl(){
+    try{
+      const res = await fetch(`tracked_pnl.json?_=${Date.now()}`, { cache: 'no-store' });
+      if(!res.ok) throw new Error(`tracked_pnl.json fetch failed: ${res.status}`);
+      const json = await res.json();
+      trackedPnlById = {};
+      (json.positions || []).forEach(p => { trackedPnlById[p.id] = p; });
+    }catch(err){
+      // Expected/normal until tracked_positions.json has been committed and
+      // the GitHub Action has run at least once — not logged as an error.
+      trackedPnlById = {};
+    }
+    renderBacktestView();
+  }
+
+  function fmtMoney(v){
+    if(v == null) return '—';
+    const sign = v >= 0 ? '+' : '−';
+    return `${sign}$${Math.abs(v).toFixed(2)}`;
+  }
+
+  function renderBacktestView(){
+    const list = loadTrackedPositions();
+    const countEl = document.getElementById('backtestTrackedCount');
+    const labelEl = document.getElementById('backtestCountLabel');
+    const cardList = document.getElementById('backtestCardList');
+    const exportBox = document.getElementById('backtestExportBox');
+    const statusNote = document.getElementById('backtestStatusNote');
+    if(!cardList) return;
+
+    countEl.textContent = list.length;
+    labelEl.textContent = list.length === 1 ? 'trade tracked' : 'trades tracked';
+    exportBox.style.display = list.length ? '' : 'none';
+
+    const uploadUrl = githubUploadUrl('tracked_positions.json');
+    const linkEl = document.getElementById('backtestGithubLink');
+    if(linkEl){
+      if(uploadUrl){ linkEl.href = uploadUrl; linkEl.style.display = ''; }
+      else linkEl.style.display = 'none';
+    }
+
+    if(list.length === 0){
+      cardList.innerHTML = `<div class="tracked-empty-state">Nothing tracked yet.<br>Open any recommendation and tap "Track for Backtest" to start following its P&amp;L as DTE counts down.</div>`;
+      statusNote.textContent = '';
+      return;
+    }
+
+    const hasAnyLivePnl = list.some(p => trackedPnlById[p.id]);
+    statusNote.textContent = hasAnyLivePnl
+      ? ''
+      : 'Showing entry details only — live P&L appears here once tracked_positions.json is committed and the next scheduled data run completes.';
+
+    const today = new Date(); today.setHours(0,0,0,0);
+    cardList.innerHTML = list.map(pos => {
+      const live = trackedPnlById[pos.id];
+      // DTE counts down live from today's date even before any backend
+      // update has run — the one number that never depends on tracked_pnl.json.
+      const expD = new Date(pos.expDate + 'T00:00:00');
+      const dte = Math.round((expD - today) / 86400000);
+
+      let statusCls = 'status-pending', statusLabel = 'Pending';
+      if(live){
+        if(live.status === 'open'){ statusCls = 'status-open'; statusLabel = 'Open'; }
+        else if(live.status === 'expired'){ statusCls = 'status-expired'; statusLabel = 'Expired'; }
+        else if(live.status === 'error'){ statusCls = 'status-error'; statusLabel = 'Update failed'; }
+      } else if(dte < 0){
+        statusCls = 'status-expired'; statusLabel = 'Expired';
+      }
+
+      const dteLabel = dte < 0 ? `expired ${Math.abs(dte)}d ago` : dte === 0 ? 'expires today' : `${dte}d left`;
+      const entryLine = `Entered ${pos.entryDate} · ${pos.debitStrategy ? 'paid' : 'collected'} $${pos.premium != null ? pos.premium.toFixed(2) : '—'}`;
+
+      let pnlHtml;
+      if(live && live.pnlDollars != null){
+        const cls = live.pnlDollars >= 0 ? 'val-pos' : 'val-neg';
+        pnlHtml = `
+          <div>
+            <div class="tracked-pnl-figures ${cls}">${fmtMoney(live.pnlDollars)} <span style="font-weight:600; font-size:12px;">(${fmtPct(live.pnlPct)})</span></div>
+            <div class="tracked-pnl-sub">mark $${live.currentPremium != null ? live.currentPremium.toFixed(2) : '—'} · updated ${live.lastUpdated ? live.lastUpdated.slice(0,10) : '—'}</div>
+          </div>`;
+      } else {
+        pnlHtml = `<div class="tracked-pnl-sub">No live update yet</div>`;
+      }
+
+      return `
+        <div class="tracked-card">
+          <div class="tracked-card-top">
+            <div class="ticker-sym" style="font-size:14.5px;">${pos.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${pos.strike}</span>
+              <div class="strat-name">${pos.strat}</div>
+            </div>
+            <span class="tracked-status-pill ${statusCls}">${statusLabel}</span>
+          </div>
+          <div class="tracked-card-meta">${entryLine}<br>Exp ${pos.exp}${pos.backExp ? ` / ${pos.backExp}` : ''} · ${dteLabel}</div>
+          <div class="tracked-card-pnl">
+            ${pnlHtml}
+            <button class="tracked-remove-btn" data-remove-tracked="${pos.id}">Remove</button>
+          </div>
+        </div>`;
+    }).join('');
+
+    cardList.querySelectorAll('[data-remove-tracked]').forEach(btn => {
+      btn.addEventListener('click', () => removeTrackedPositionById(btn.dataset.removeTracked));
+    });
+  }
+
+  function downloadTrackedPositionsJson(){
+    const content = JSON.stringify(loadTrackedPositions(), null, 2) + '\n';
+    downloadFile('tracked_positions.json', content, 'application/json');
+  }
 
   // --- Export ---
   // Generic file-download helper — used by the Portfolio Summary modal's
@@ -2743,6 +3031,10 @@
       renderEquities(sortEquities(filteredEquities()));
     }
   });
+
+  updateTrackedBadge();
+  loadTrackedPnl(); // best-effort — 404 until tracked_positions.json + a data run exist
+  document.getElementById('backtestDownloadBtn').addEventListener('click', downloadTrackedPositionsJson);
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

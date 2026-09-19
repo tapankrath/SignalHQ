@@ -474,6 +474,56 @@
     color:var(--text); padding:7px 10px; border-radius:7px; font-size:16px;
   }
 
+  /* On-demand single-ticker lookup — deliberately its own boxed section
+     above the regular results, not merged into the filtered list: the list
+     below represents the curated watchlist screen, and a one-off lookup
+     result is a different kind of thing (unscreened, ad hoc) that shouldn't
+     read as if it belongs to that same curated set. */
+  .lookup-panel{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:14px 18px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow-sm);
+  }
+  .lookup-panel-header{
+    font-size:13px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--text-dim);
+  }
+  .lookup-panel-sub{
+    font-size:12px; color:var(--text-faint); margin:4px 0 12px; line-height:1.5;
+  }
+  .lookup-form{ display:flex; gap:8px; flex-wrap:wrap; }
+  .lookup-input{
+    flex:1; min-width:120px;
+    background:var(--surface-2); border:1px solid var(--border-strong);
+    color:var(--text); padding:9px 12px; border-radius:var(--radius-sm);
+    font-family:var(--mono); font-size:16px; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.02em;
+  }
+  .lookup-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
+  .lookup-submit-btn{
+    background:var(--amber); color:#fff; border:none;
+    padding:9px 18px; border-radius:var(--radius-sm); font-weight:700; font-size:13.5px;
+    box-shadow:0 2px 8px rgba(22,163,74,0.28);
+    transition:filter .12s, box-shadow .12s; white-space:nowrap;
+  }
+  .lookup-submit-btn:hover:not(:disabled){ filter:brightness(1.08); }
+  .lookup-submit-btn:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
+  .lookup-status{
+    margin-top:10px; font-size:12.5px; font-weight:600; color:var(--text-dim);
+    display:none; line-height:1.5;
+  }
+  .lookup-status.visible{ display:block; }
+  .lookup-status.error{ color:var(--red); }
+  .lookup-status.ok{ color:var(--amber-strong); }
+  .lookup-result{ margin-top:12px; }
+  .lookup-result:empty{ margin-top:0; }
+
+  .stale-mark{
+    color:var(--red); font-weight:800; margin-left:2px; cursor:help;
+    font-size:0.85em; vertical-align:super;
+  }
+
   .table-wrap{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); overflow-x:auto; overflow-y:hidden;
@@ -935,6 +985,17 @@
     </div>
   </div>
 
+  <div class="lookup-panel">
+    <div class="lookup-panel-header">On-Demand Lookup</div>
+    <div class="lookup-panel-sub">Not on the watchlist below? Type any ticker to run it through the same screen live. Takes up to a minute — it kicks off a real data fetch, not a cached answer.</div>
+    <form class="lookup-form" id="lookupForm">
+      <input type="text" class="lookup-input" id="lookupInput" placeholder="e.g. NFLX" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false">
+      <button type="submit" class="lookup-submit-btn" id="lookupSubmitBtn">Look Up</button>
+    </form>
+    <div class="lookup-status" id="lookupStatus"></div>
+    <div class="lookup-result" id="lookupResult"></div>
+  </div>
+
   <div class="results-panel">
     <div class="results-bar">
       <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
@@ -1058,6 +1119,21 @@
     if(value == null) return '—';
     return curSym() + value.toLocaleString('en-US', { minimumFractionDigits:2, maximumFractionDigits:2 });
   }
+  // Surfaces spotPriceStale/priceStale (computed in fetch_data.py's
+  // resolve_current_price(), see that function's docstring) — a real,
+  // already-computed signal that used to go completely unused by this file.
+  // Yahoo's free historical-chart data can lag the true most recent close by
+  // a full session, most visibly right after hours; the backend already
+  // tries a fresher cross-check and flags it when it can't confirm one, this
+  // just makes that flag visible instead of silently dropping it. Added
+  // 2026-09-19 after a real mismatch (CRWD/AMD showing a materially old
+  // price) turned out to be exactly this, already flagged in the data and
+  // never shown.
+  function staleMark(isStale){
+    return isStale
+      ? `<span class="stale-mark" title="Price may be lagging the live market — Yahoo's free data can still show the prior close for a while after hours. Screen for a live/delayed quote before trading.">†</span>`
+      : '';
+  }
   function fmtMarketCap(value){
     if(value == null) return '—';
     return '$' + (value / 1e9).toFixed(1) + 'B';
@@ -1168,7 +1244,7 @@
         <tr>
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
-            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.spot != null ? `$${t.spot.toFixed(2)} · ` : ''}${t.strike}</span></div>
+            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
             <div class="strat-name">${t.strat}</div>
           </td>
           <td>${pill}</td>
@@ -1191,7 +1267,7 @@
       // rounded, no decimals, arrow-separated -- the table/modal show full
       // precision ($230.50), but this card layout has a tight, previously-
       // tested character budget, so a compact form here specifically
-      const cardPrice = t.spot != null ? `$${Math.round(t.spot)}→` : '';
+      const cardPrice = t.spot != null ? `$${Math.round(t.spot)}${staleMark(t.spotPriceStale)}→` : '';
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
@@ -1451,7 +1527,7 @@
         <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label></td>
           <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}</td>
-          <td class="num">${fmtPrice(e.price)}</td>
+          <td class="num">${fmtPrice(e.price)}${staleMark(e.priceStale)}</td>
           <td>${trendPill(e.trend)}</td>
           <td class="num">${e.rsi ?? '—'}</td>
           <td>${meterHtml(e.score)}</td>
@@ -1466,7 +1542,7 @@
             ${trendPill(e.trend)}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">${fmtPrice(e.price)} · RSI ${e.rsi ?? '—'}</span>
+            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">${fmtPrice(e.price)}${staleMark(e.priceStale)} · RSI ${e.rsi ?? '—'}</span>
             ${meterHtml(e.score)}
           </div>
         </div>`;
@@ -1528,7 +1604,7 @@
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">${fmtPrice(e.price)} · ${e.trend}</div>
+      <div class="modal-strat">${fmtPrice(e.price)}${staleMark(e.priceStale)} · ${e.trend}</div>
       <div class="modal-metrics">
         <div><div class="mm-label">RSI (14-day)</div><div class="mm-val">${e.rsi ?? '—'}</div></div>
         <div><div class="mm-label">1-Month Change</div><div class="mm-val ${pctClass(e.chg1m)}">${fmtPct(e.chg1m)}</div></div>
@@ -1543,6 +1619,8 @@
         <div><div class="mm-label">Volume vs 30-day Avg</div><div class="mm-val">${e.volRatio != null ? e.volRatio + '×' : '—'}</div></div>
         <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${e.score}.0 / 10</div></div>
       </div>
+
+      ${e.priceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
 
       <div class="news-section-header">
         <span class="mm-label" style="margin:0;">Recent News Sentiment</span>
@@ -1976,7 +2054,7 @@
       </div>
       <div class="modal-strat">${isCalendar ? `${t.strat} · Sell ${t.exp} (${t.dte}d) &rarr; Buy ${t.backExp} (${t.backDte}d)` : `${t.strat} · expires ${t.exp} · ${t.dte} days`}</div>
       <div class="modal-metrics">
-        ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}</div></div>` : ''}
+        ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)}</div></div>` : ''}
         ${t.pot != null ? `<div><div class="mm-label">${potLabel}</div><div class="mm-val">${t.pot}%</div></div>` : ''}
         ${t.roc != null ? `<div><div class="mm-label">${roiLabel}</div><div class="mm-val val-pos">+${t.roc}%</div></div>` : ''}
         ${t.ap != null ? `<div><div class="mm-label">${annRoiLabel}</div><div class="mm-val val-pos">+${t.ap}%</div></div>` : ''}
@@ -2002,6 +2080,7 @@
         ${earningsHtml}
         ${volRegimeHtml}
       </div>
+      ${t.spotPriceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
       ${isCalendar ? `<div class="modal-note" style="margin-bottom:14px;">This calendar spread's max profit and breakeven aren't shown on purpose — both depend on what the back-month leg is worth at front-month expiration, which depends on implied volatility at that future date. This EOD pipeline has no honest way to estimate that, so rather than publish a plausible-looking but made-up number, it only shows what's actually knowable today: the net debit paid (also the standard textbook max loss if held to front expiration and unwound worthless). Chart a real payoff diagram before trading one of these.</div>` : ''}
 
       ${hedgeHtml}
@@ -2343,6 +2422,190 @@
     btn.classList.remove('spinning');
     btn.disabled = false;
     showToast('Data refreshed');
+  });
+
+  // --- On-demand ticker lookup ---------------------------------------------
+  // Talks to the Cloudflare Worker in cloudflare-worker/signalhq-lookup-
+  // trigger.js, which is the only thing allowed to hold the real GitHub
+  // token (this page can't safely hold one — see that file's setup notes).
+  // Paste your deployed Worker's URL here (Worker setup step 6); until then
+  // the lookup box shows a clear "not set up yet" message instead of
+  // silently failing.
+  const LOOKUP_WORKER_URL = 'PASTE_YOUR_WORKER_URL_HERE';
+
+  const LOOKUP_POLL_INTERVAL_MS = 5000;
+  const LOOKUP_POLL_TIMEOUT_MS = 120000;   // 2 minutes
+  const LOOKUP_COOLDOWN_MS = 15000;        // after a result lands, before another lookup can start
+
+  let lookupPollTimer = null;
+  let lookupCooldownTimer = null;
+
+  function lookupSetStatus(message, kind){
+    const el = document.getElementById('lookupStatus');
+    el.textContent = message || '';
+    el.className = 'lookup-status' + (message ? ' visible' : '') + (kind ? ` ${kind}` : '');
+  }
+
+  function lookupStopPolling(){
+    if(lookupPollTimer){ clearTimeout(lookupPollTimer); lookupPollTimer = null; }
+  }
+
+  function lookupStartCooldown(){
+    const btn = document.getElementById('lookupSubmitBtn');
+    btn.disabled = true;
+    let remaining = Math.ceil(LOOKUP_COOLDOWN_MS / 1000);
+    btn.textContent = `Wait ${remaining}s`;
+    clearInterval(lookupCooldownTimer);
+    lookupCooldownTimer = setInterval(() => {
+      remaining -= 1;
+      if(remaining <= 0){
+        clearInterval(lookupCooldownTimer);
+        btn.disabled = false;
+        btn.textContent = 'Look Up';
+      } else {
+        btn.textContent = `Wait ${remaining}s`;
+      }
+    }, 1000);
+  }
+
+  // Keeps the .trade-card class for its visual styling, but this card is NOT
+  // meant to be caught by the global `.row-action, .trade-card` click
+  // delegate defined elsewhere in this file (it indexes into `currentList`,
+  // the filtered watchlist — not this one-off result — and would open the
+  // wrong trade or throw on a bad index). The click handler attached directly
+  // below calls stopPropagation() before that delegate (on `document`) ever
+  // sees the event, so it's opened correctly via this card's own listener
+  // instead of falling through to that unrelated one.
+  function renderLookupResult(trade, equity, ticker){
+    const resultEl = document.getElementById('lookupResult');
+    if(!trade){
+      resultEl.innerHTML = equity
+        ? `<div class="lookup-status visible">No options trade could be built for ${ticker} right now, but it's a valid, actively-traded symbol — see its Stocks &amp; ETFs snapshot after refreshing that tab, or try the lookup again later.</div>`
+        : '';
+      return;
+    }
+    const pill = trade.side === 'bull'
+      ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
+      : trade.side === 'bear'
+      ? `<span class="side-pill bear"><span class="dot"></span>Bearish</span>`
+      : `<span class="side-pill neutral"><span class="dot"></span>Neutral</span>`;
+    const cardStrike = trade.strat === 'Iron Condor' ? trade.strike.split('/').slice(1, 3).join('/') : trade.strike;
+    const cardPrice = trade.spot != null ? `$${Math.round(trade.spot)}${staleMark(trade.spotPriceStale)}→` : '';
+
+    resultEl.innerHTML = `
+      <div class="trade-card lookup-result-card" id="lookupResultCard" role="button" tabindex="0" style="cursor:pointer;">
+        <div class="trade-card-top" style="margin-bottom:6px;">
+          <div class="ticker-sym" style="flex:1; font-size:14px;">${trade.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${trade.strat}</span></div>
+          ${pill}
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+          <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
+            <span class="${trade.roc != null ? 'val-pos' : ''}">${fmtPct(trade.roc)}/${fmtPct(trade.ap)}</span> · ${trade.exp}·${trade.dte}d
+          </span>
+          ${meterHtml(trade.score)}
+        </div>
+        <div style="margin-top:8px; font-size:11px; color:var(--text-faint);">Tap for full details — not part of the screened watchlist below.</div>
+      </div>`;
+
+    const card = document.getElementById('lookupResultCard');
+    const open = (e) => { e.stopPropagation(); openTradeModal(trade); };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(e); }
+    });
+  }
+
+  function pollLookupResult(ticker, requestedAtIso){
+    const requestedAtMs = new Date(requestedAtIso).getTime();
+    const deadlineMs = Date.now() + LOOKUP_POLL_TIMEOUT_MS;
+
+    const poll = async () => {
+      try{
+        const res = await fetch(`lookup.json?_=${Date.now()}`, { cache: 'no-store' });
+        if(res.ok){
+          const json = await res.json();
+          // Compare as actual timestamps, not raw strings — Python's and
+          // JS's ISO-8601 output differ in format (offset style, fractional-
+          // second digits), so a lexicographic string compare here can give
+          // the wrong answer even though both are valid ISO-8601.
+          const generatedAtMs = json.generated_at ? new Date(json.generated_at).getTime() : NaN;
+          const isFresh = json.requested_ticker === ticker && !isNaN(generatedAtMs) && generatedAtMs > requestedAtMs;
+          if(isFresh){
+            lookupStopPolling();
+            if(json.status === 'ok'){
+              lookupSetStatus(json.trade ? `Done — here's what came back for ${ticker}.` : `Done — ${ticker} looks valid, but no options trade could be built right now (see below).`, 'ok');
+              renderLookupResult(json.trade, json.equity, ticker);
+            } else {
+              lookupSetStatus(json.error || `Couldn't build a result for ${ticker}.`, 'error');
+              renderLookupResult(null, null, ticker);
+            }
+            document.getElementById('lookupSubmitBtn').textContent = 'Look Up';
+            lookupStartCooldown();
+            return;
+          }
+        }
+      }catch(err){
+        console.error('lookup.json poll failed', err);
+      }
+      if(Date.now() >= deadlineMs){
+        lookupSetStatus(`Still no result for ${ticker} after 2 minutes — the run may still be queued behind other lookups. Check back shortly, or try again.`, 'error');
+        document.getElementById('lookupSubmitBtn').textContent = 'Look Up';
+        lookupStartCooldown();
+        return;
+      }
+      lookupPollTimer = setTimeout(poll, LOOKUP_POLL_INTERVAL_MS);
+    };
+    poll();
+  }
+
+  document.getElementById('lookupForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('lookupInput');
+    const ticker = input.value.trim().toUpperCase().replace(/[^A-Z0-9.\-]/g, '');
+    input.value = ticker;
+
+    if(!ticker || ticker.length > 10){
+      lookupSetStatus('Enter a valid ticker symbol (letters/numbers, up to 10 characters).', 'error');
+      return;
+    }
+    if(!LOOKUP_WORKER_URL || LOOKUP_WORKER_URL === 'PASTE_YOUR_WORKER_URL_HERE'){
+      lookupSetStatus("On-demand lookup isn't set up yet — the Cloudflare Worker URL still needs to be added near the top of this script. See cloudflare-worker/signalhq-lookup-trigger.js for setup steps.", 'error');
+      return;
+    }
+
+    lookupStopPolling();
+    clearInterval(lookupCooldownTimer);
+    document.getElementById('lookupResult').innerHTML = '';
+    const btn = document.getElementById('lookupSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Triggering…';
+    lookupSetStatus(`Triggering a live lookup for ${ticker}…`, null);
+
+    const requestedAtIso = new Date().toISOString();
+    try{
+      const res = await fetch(LOOKUP_WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ticker }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if(!res.ok || !body.ok){
+        lookupSetStatus(body.error || `Couldn't trigger the lookup (HTTP ${res.status}).`, 'error');
+        btn.disabled = false;
+        btn.textContent = 'Look Up';
+        return;
+      }
+    }catch(err){
+      console.error('lookup trigger failed', err);
+      lookupSetStatus("Couldn't reach the lookup service — check your connection and try again.", 'error');
+      btn.disabled = false;
+      btn.textContent = 'Look Up';
+      return;
+    }
+
+    lookupSetStatus(`Fetching live data for ${ticker}… this can take up to a minute.`, null);
+    btn.textContent = 'Fetching…';
+    pollLookupResult(ticker, requestedAtIso);
   });
 
   // initial render matches default-checked filters (no toast/scroll on load)

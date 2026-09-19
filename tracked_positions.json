@@ -1,0 +1,35 @@
+[
+  {
+    "id": "CRM|Bull_Put_Spread|2026-09-25|$228/222",
+    "sym": "CRM",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$228/222",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 6,
+    "premium": 0.77,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 227.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 222.5,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 15.4,
+    "ap": 936.8,
+    "spot": 237.92,
+    "trackedAt": "2026-09-19T18:12:44.164Z",
+    "entryDate": "2026-09-19"
+  }
+]

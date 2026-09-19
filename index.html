@@ -261,7 +261,7 @@
      Filters card and everything else on the page, whose borders all line
      up at the shared page gutter). */
   .portfolio-bar-inner{
-    display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap;
+    display:flex; align-items:center; justify-content:flex-start; gap:22px; flex-wrap:wrap;
     background:var(--surface-2); border:1px solid var(--border);
     border-radius:14px; padding:10px 16px;
     box-shadow:var(--shadow-sm);
@@ -286,21 +286,11 @@
   #portfolioCapital{ width:120px; }
   #portfolioSplit{ width:56px; }
   #portfolioEquitySplit{ width:56px; }
-  /* Cash left = capital not claimed by either % input — a read-only pill
-     (not an input) since it's derived, not something you set directly.
-     Flips to the red/warning treatment if Options%+Equity% together
-     exceed 100, so over-allocation is visible right where it happens
-     instead of only surfacing later in the summary modal. */
-  .cash-left-pill{
-    box-sizing:border-box; height:36px;
-    display:inline-flex; align-items:center; gap:4px;
-    font-size:12.5px; font-weight:700; color:var(--text-dim);
-    background:var(--surface); border:1px solid var(--border-strong);
-    border-radius:20px; padding:6px 14px; white-space:nowrap;
-    box-shadow:var(--shadow-sm);
-  }
-  .cash-left-pill.is-over{ color:var(--red); border-color:var(--red); background:var(--red-soft); }
-  .lbl-short{ display:none; }
+  /* Idle/"cash left" capital not claimed by either % input is still
+     computed (updateCashLeftDisplay(), and independently again in the
+     Portfolio Summary modal) — it's just not surfaced as its own field
+     here anymore, so the row stays to the 3 fields that are actually
+     set directly: Cash, Options %, Equities %. */
 
   .portfolio-fab-count{
     background:var(--amber-strong); color:#fff;
@@ -739,27 +729,21 @@
     .data-status{ font-size:10px; padding:5px 9px; gap:4px; max-width:155px; }
     .refresh-btn{ width:30px; height:30px; }
     .refresh-btn svg{ width:15px; height:15px; }
-    /* "Equity: X%" used to sit as its own flex item and would wrap onto an
-       orphan line below Cash/Options% on narrow phones — now that Equity %
-       and Cash left are their own fields there's too much to force onto
-       one line at 320px (iPhone SE-class), so the chip wraps to 2 lines
-       there instead — every label switches to a short mobile form, gaps
-       and input widths are trimmed to the minimum that still avoids the
-       earlier "100000" clipping bug, and it now fits down to a 360px-wide
-       phone on one line — verified via headless-browser measurement of
-       each input's actual scrollWidth vs its box width, not assumed.
-       Narrower phones (iPhone SE-class, ~320-340px) still don't have room
-       for all four fields at a legible size, so it wraps to 2 lines there
-       instead of shrinking text past readability. */
+    /* Down to 3 fields (Cash / Options % / Equities %) now that Idle isn't
+       shown, so labels stay spelled out at every width instead of
+       switching to an abbreviated mobile form — gaps and input widths are
+       trimmed with real margin to spare (not a bare fit) on narrow phones,
+       since real WebKit font/border rendering measures a little wider than
+       headless Chromium and a row sized to just barely fit in testing can
+       still wrap in the field. Verified via headless-browser measurement
+       of each input's actual scrollWidth vs its box width, with a
+       deliberate buffer left over rather than an exact match. */
     .portfolio-bar{ padding:0 14px; }
-    .portfolio-bar-inner{ gap:6px; padding:8px 10px; row-gap:7px; }
-    .portfolio-bar label{ gap:2px; }
-    .lbl-full{ display:none; }
-    .lbl-short{ display:inline; }
-    #portfolioCapital{ width:78px; height:32px; padding:6px 4px; }
-    #portfolioSplit{ width:40px; height:32px; padding:6px 3px; }
-    #portfolioEquitySplit{ width:40px; height:32px; padding:6px 3px; }
-    .cash-left-pill{ height:32px; font-size:11px; font-weight:600; padding:5px 11px; gap:3px; }
+    .portfolio-bar-inner{ gap:6px 4px; padding:8px 6px; row-gap:7px; }
+    .portfolio-bar label{ gap:2px; font-size:12px; }
+    #portfolioCapital{ width:68px; height:32px; padding:6px 4px; }
+    #portfolioSplit{ width:34px; height:32px; padding:6px 2px; }
+    #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
     .mode-toggle{ padding:0 14px; }
     .mode-tab{ min-height:34px; padding:7px 12px; font-size:12.5px; }
     .brand{ gap:8px; }
@@ -825,15 +809,15 @@
        "scattered, doesn't match" look — give every control in the sticky
        toolbar the same filled weight so it reads as one consistent group. */
     .export-btn{ background:var(--surface-2); }
-    /* Same idea one level down: the Cash $/Options %/Equity % fields and
-       the Cash Left pill use --surface for their own fill, which is meant
-       to read as "lighter than the tray it sits in" (that's how it works
-       in light mode: white field on a light-gray tray). In dark mode
-       --surface is the same near-black as --bg, so instead of popping
-       forward off the tray (--surface-2, one step lighter than --bg) they
-       sink into it, darker than their own container. A dedicated shade
-       lighter than the tray restores that "raised field" relationship. */
-    .portfolio-bar input, .cash-left-pill{ background:#262A31; }
+    /* Same idea one level down: the Cash $/Options %/Equities % fields use
+       --surface for their own fill, which is meant to read as "lighter
+       than the tray it sits in" (that's how it works in light mode: white
+       field on a light-gray tray). In dark mode --surface is the same
+       near-black as --bg, so instead of popping forward off the tray
+       (--surface-2, one step lighter than --bg) they sink into it, darker
+       than their own container. A dedicated shade lighter than the tray
+       restores that "raised field" relationship. */
+    .portfolio-bar input{ background:#262A31; }
     /* Same reasoning as the light-mode value above (see .brand-hq) — its own
        fixed color rather than var(--red), just a lighter shade so it still
        reads as a clearly darker red against the near-black page instead of
@@ -889,20 +873,17 @@
 <div class="portfolio-bar">
   <div class="portfolio-bar-inner">
     <label>
-      <span class="lbl-full">Cash</span> <span id="cashLabelSym">$</span>
+      Cash <span id="cashLabelSym">$</span>
       <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
     </label>
     <label>
-      <span class="lbl-full">Options %</span><span class="lbl-short">Opt%</span>
+      Options %
       <input type="text" id="portfolioSplit" inputmode="numeric" value="100">
     </label>
     <label>
-      <span class="lbl-full">Equity %</span><span class="lbl-short">Eq%</span>
+      Equities %
       <input type="text" id="portfolioEquitySplit" inputmode="numeric" value="0">
     </label>
-    <span class="cash-left-pill" id="cashLeftPill" title="Cash not allocated to Options % or Equity %">
-      <span class="lbl-full">Cash left</span><span class="lbl-short">Idle</span> <span id="cashLeftDisplay">0</span>%
-    </span>
   </div>
 </div>
 
@@ -2401,13 +2382,13 @@
     updatePortfolioCount();
   });
 
-  // Options % and Equity % are now independent inputs (not derived from one
+  // Options % and Equity % are independent inputs (not derived from one
   // another), so whatever's left over — cash not claimed by either — is
-  // shown, not set: recomputed from both fields any time either changes.
-  // Left un-clamped on purpose (not forced to sum to 100) so typing isn't
-  // fought mid-edit; if the two together exceed 100%, the pill goes red
-  // instead of silently correcting a number you're still in the middle of
-  // entering.
+  // still computed here any time either field changes, even though it's
+  // no longer shown in the header row itself (it remains visible in the
+  // Portfolio Summary modal via buildPortfolioSummaryText()'s own
+  // cashLeftPct/isOverAllocated calc). Left un-clamped on purpose (not
+  // forced to sum to 100) so typing isn't fought mid-edit.
   function updateCashLeftDisplay(){
     let opt = parseFloat(document.getElementById('portfolioSplit').value);
     if(isNaN(opt)) opt = 0;
@@ -2416,8 +2397,7 @@
     if(isNaN(eq)) eq = 0;
     eq = Math.min(100, Math.max(0, eq));
     const cashLeft = 100 - opt - eq;
-    document.getElementById('cashLeftDisplay').textContent = cashLeft.toFixed(0);
-    document.getElementById('cashLeftPill').classList.toggle('is-over', cashLeft < 0);
+    return cashLeft;
   }
   document.getElementById('portfolioSplit').addEventListener('input', updateCashLeftDisplay);
   document.getElementById('portfolioEquitySplit').addEventListener('input', updateCashLeftDisplay);

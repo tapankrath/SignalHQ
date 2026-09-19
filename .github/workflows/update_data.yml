@@ -45,11 +45,21 @@ permissions:
 # clicking, or retrying) queue behind each other instead of running
 # concurrently and racing to write lookup.json — cancel-in-progress is
 # deliberately false so a run already in flight finishes and commits rather
-# than being killed mid-write. Every OTHER trigger (the scheduled batch runs,
-# or a lookup for a different ticker) gets its own group via the run id
-# fallback, so this never blocks or delays the normal watchlist schedule.
+# than being killed mid-write. A lookup for a DIFFERENT ticker gets its own
+# group, so it's never blocked by one already in flight.
+#
+# Updated 2026-09-19 (again) when the "Hard Refresh" button was added to the
+# frontend, giving the full no-ticker batch a second way to fire on top of
+# the schedule: every no-ticker run (scheduled OR manually triggered via Hard
+# Refresh) now shares one fixed 'batch' group instead of each getting its own
+# via a run-id fallback. That fallback would have let a manual Hard Refresh
+# run at the exact same time as a scheduled run — doubling the request volume
+# against Yahoo's already rate-limit-prone free feed for no reason. Sharing
+# one group means they queue instead: whichever started first finishes, then
+# the other runs (or, with cancel-in-progress false, both eventually
+# complete) — never two full-watchlist runs hitting Yahoo simultaneously.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.inputs.ticker || github.run_id }}
+  group: ${{ github.workflow }}-${{ github.event.inputs.ticker || 'batch' }}
   cancel-in-progress: false
 
 jobs:

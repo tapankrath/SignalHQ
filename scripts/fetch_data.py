@@ -1312,6 +1312,235 @@ def build_trade_for_ticker(ticker_symbol, index):
         return None
 
 
+# --- On-demand single-ticker lookup ------------------------------------------
+# Added 2026-09-19 so the UI can offer a "look up any symbol" box on top of
+# the fixed nightly watchlist above, triggered on demand (see run_lookup()
+# and the --ticker CLI flag at the bottom of this file). Reuses every pricing/
+# validation helper the batch path above uses — the only real difference is
+# how the strategy gets picked.
+
+def pick_lookup_strategy(uptrend, near_ema):
+    """
+    Picks ONE strategy for an on-demand lookup, from trend alone. This is
+    deliberately NOT the nightly batch's `index % 4` / `index % 3` rotation in
+    build_trade_for_ticker() above — that rotation exists purely to keep the
+    fixed WATCHLIST diversified across strategy types across many tickers, and
+    has no meaning applied to a single ad-hoc symbol (a user typing in one
+    ticker doesn't have a "list position" to rotate on).
+
+    Also deliberately narrower than "evaluate every strategy and keep the
+    best": each strategy evaluated costs up to MAX_CANDIDATES_TO_EVALUATE
+    separate options-chain fetches against Yahoo's free, rate-limit-prone
+    feed (see the module docstring and chain_diagnostics() above) — trying
+    several strategies per click would multiply that cost every time someone
+    uses the lookup box. One well-established, defined-risk pick per trend
+    bucket keeps a single lookup roughly as expensive as one ticker in the
+    nightly batch, not several.
+    """
+    if near_ema:
+        return "Iron Condor", "neutral"
+    if uptrend:
+        return "Bull Put Spread", "bull"
+    return "Bear Call Spread", "bear"
+
+
+def build_lookup_trade(ticker_symbol):
+    """
+    On-demand equivalent of build_trade_for_ticker() above, for a single
+    symbol typed into the UI rather than a slot in the fixed watchlist.
+    Returns (trade_dict, None) on success, or (None, reason_string) on
+    failure — unlike the batch path (which only logs skip reasons to stderr
+    and silently omits the ticker from data.json), the reason here is shown
+    directly to whoever typed the symbol in, so it needs to read as an
+    explanation, not a log line.
+    """
+    try:
+        tk = yf.Ticker(ticker_symbol)
+        history = tk.history(period="1y")
+        if history.empty:
+            return None, "No price history found for this symbol — double-check the ticker."
+
+        spot, spot_is_stale = resolve_current_price(tk, history, ticker_symbol, "lookup")
+        if math.isnan(spot) or spot <= 0:
+            if len(history) >= 2:
+                spot = float(history["Close"].iloc[-2])
+                spot_is_stale = True
+            if math.isnan(spot) or spot <= 0:
+                return None, "This symbol's current price looks invalid — Yahoo's data may be broken for it right now."
+
+        ema8 = compute_ema(history["Close"], 8).iloc[-1]
+        ema20 = compute_ema(history["Close"], 20).iloc[-1]
+        uptrend = bool(ema8 > ema20)
+        near_ema = bool((abs(spot - ema8) / spot < 0.015) or (abs(spot - ema20) / spot < 0.015))
+        atr = compute_atr(history)
+        ivr, realized_vol = iv_rank_proxy(history)
+
+        today = datetime.now(timezone.utc).date()
+        expirations = tk.options
+        if not expirations:
+            return None, "This symbol doesn't have listed options."
+
+        expiration_candidates = rank_expirations(expirations, today)
+        if not expiration_candidates:
+            return None, "No usable (future-dated) options expiration is listed for this symbol."
+
+        strat, side = pick_lookup_strategy(uptrend, near_ema)
+        is_etf = ticker_symbol in KNOWN_ETFS
+
+        def _rank_key(result):
+            return result["ap"] if result["ap"] is not None else result["pot"]
+
+        best = None
+        failure_reasons = []
+        for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+            result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+            if result:
+                if best is None or _rank_key(result) > _rank_key(best):
+                    best = result
+            else:
+                failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
+
+        if not best:
+            reasons = "; ".join(failure_reasons[:3]) if failure_reasons else "no usable expirations"
+            return None, f"Couldn't build a {strat} for this symbol right now — {reasons}"
+
+        today_iso = today
+        earnings_soon = False
+        days_to_earnings = None
+        try:
+            edates = tk.get_earnings_dates(limit=4)
+            if edates is not None and not edates.empty:
+                for dt in edates.index:
+                    d = dt.date() if hasattr(dt, "date") else dt
+                    delta_days = (d - today_iso).days
+                    if delta_days >= 0 and (days_to_earnings is None or delta_days < days_to_earnings):
+                        days_to_earnings = delta_days
+                    if 0 <= delta_days <= best["dte"]:
+                        earnings_soon = True
+        except Exception:
+            pass
+
+        news_sentiment, news_sentiment_label, news_headlines = fetch_news_and_sentiment(tk, ticker_symbol)
+
+        if strat == "Calendar Spread":
+            score = composite_score_calendar(ivr, best.get("iv"), best.get("backIv"))
+        elif strat in ("Long Call", "Long Put"):
+            score = composite_score_long_option(best["pot"], ivr, best["breakevenMovePct"])
+        else:
+            score = composite_score(best["ap"], best["pot"], ivr)
+        vol_regime, iv_rv_ratio = classify_vol_regime(best["iv"], realized_vol)
+
+        return {
+            "sym": ticker_symbol,
+            "strat": strat,
+            "side": side,
+            "isETF": is_etf,
+            "spot": round(spot, 2),
+            "spotPriceStale": spot_is_stale,
+            "strike": best["strike"],
+            "hedge": best["hedge"],
+            "exp": best["exp"],
+            "dte": best["dte"],
+            "backExp": best.get("backExp"),
+            "backDte": best.get("backDte"),
+            "pot": best["pot"],
+            "ap": best["ap"],
+            "ivr": ivr,
+            "dailyReturn": best["dailyReturn"],
+            "roc": best["roc"],
+            "score": score,
+            "buy": uptrend,
+            "sell": not uptrend,
+            "ema": near_ema,
+            "earningsSoon": earnings_soon,
+            "daysToEarnings": days_to_earnings,
+            "marginOfSafety": best["marginOfSafety"],
+            "delta": best["delta"],
+            "iv": best["iv"],
+            "backIv": best.get("backIv"),
+            "premium": best["premium"],
+            "breakeven": best["breakeven"],
+            "breakevenLow": best["breakevenLow"],
+            "breakevenHigh": best["breakevenHigh"],
+            "breakevenMovePct": best.get("breakevenMovePct"),
+            "maxLoss": best["maxLoss"],
+            "pcOI": best["pcOI"],
+            "pcVol": best["pcVol"],
+            "debitStrategy": best.get("debitStrategy", False),
+            "potIsProfitProb": best.get("potIsProfitProb", False),
+            "newsSentiment": news_sentiment,
+            "newsSentimentLabel": news_sentiment_label,
+            "newsHeadlines": news_headlines,
+            "volRegime": vol_regime,
+            "ivRvRatio": iv_rv_ratio,
+            "realizedVol": realized_vol,
+        }, None
+
+    except Exception as e:
+        return None, f"Unexpected error while building a trade for this symbol: {e}"
+
+
+LOOKUP_OUTPUT_PATH = "lookup.json"
+
+
+def run_lookup(raw_symbol):
+    """
+    Entry point for `--ticker SYMBOL`. Always writes lookup.json — even on
+    failure — so the frontend polling for a result never waits forever on a
+    file that never changes; a "status": "error" response is itself the
+    answer. Never raises: an on-demand run failing loudly would still leave
+    the workflow's commit step with nothing new to commit, which is the same
+    "frontend polls forever" problem from the other direction.
+    """
+    ticker_symbol = re.sub(r"[^A-Za-z0-9.\-]", "", (raw_symbol or "")).strip().upper()
+    output = {
+        "requested_ticker": ticker_symbol,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "yfinance (unofficial, free, EOD)",
+        "status": "error",
+        "error": None,
+        "trade": None,
+        "equity": None,
+    }
+
+    if not ticker_symbol or not (1 <= len(ticker_symbol) <= 10):
+        output["error"] = "Enter a valid ticker symbol (letters/numbers, up to 10 characters)."
+        with open(LOOKUP_OUTPUT_PATH, "w") as f:
+            json.dump(output, f, indent=2)
+        print(f"Lookup rejected: invalid symbol {raw_symbol!r}")
+        return
+
+    print(f"On-demand lookup: {ticker_symbol}")
+    try:
+        trade, trade_error = build_lookup_trade(ticker_symbol)
+    except Exception as e:
+        trade, trade_error = None, f"Unexpected error: {e}"
+
+    try:
+        equity = build_equity_snapshot(ticker_symbol, ticker_symbol in KNOWN_ETFS)
+    except Exception as e:
+        print(f"  lookup equity snapshot failed for {ticker_symbol}: {e}")
+        equity = None
+
+    output["trade"] = trade
+    output["equity"] = equity
+
+    if trade is None and equity is None:
+        output["status"] = "error"
+        output["error"] = trade_error or "Couldn't find usable data for this symbol — check it's a valid, actively-traded ticker."
+        print(f"  lookup failed: {output['error']}")
+    else:
+        output["status"] = "ok"
+        # Surface a soft warning even on partial success (e.g. equity data came
+        # back but no usable options trade) rather than silently dropping it.
+        if trade is None:
+            output["error"] = trade_error
+
+    with open(LOOKUP_OUTPUT_PATH, "w") as f:
+        json.dump(output, f, indent=2)
+    print(f"Wrote lookup.json for {ticker_symbol} (status={output['status']})")
+
+
 def compute_rsi(closes, period=14):
     """Standard 14-day RSI, using an EWM approximation of Wilder's smoothing."""
     delta = closes.diff()
@@ -1628,4 +1857,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # `--ticker SYMBOL` runs the on-demand single-symbol lookup path instead
+    # of the normal full-watchlist batch — see run_lookup() above. No flag
+    # (the normal nightly/hourly invocation) behaves exactly as before.
+    if "--ticker" in sys.argv:
+        idx = sys.argv.index("--ticker")
+        symbol_arg = sys.argv[idx + 1] if idx + 1 < len(sys.argv) else ""
+        run_lookup(symbol_arg)
+    else:
+        main()

@@ -618,11 +618,27 @@
   .tracked-status-pill.status-pending{ background:var(--amber-soft); color:var(--amber-strong); }
   .tracked-status-pill.status-error{ background:var(--red-soft); color:var(--red); }
   .tracked-card-meta{ font-size:12px; color:var(--text-dim); line-height:1.6; margin-bottom:8px; }
+  .tracked-stat-row{
+    display:flex; gap:10px;
+    padding:9px 0; margin:2px 0 0;
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  }
+  .tracked-stat{ flex:1; min-width:0; }
+  .tracked-stat-dte{ flex:0.9; text-align:right; }
+  .tracked-stat-label{
+    font-size:9.5px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--text-faint); margin-bottom:3px;
+  }
+  .tracked-stat-val{ font-family:var(--mono); font-size:13.5px; font-weight:700; color:var(--text); white-space:nowrap; }
+  .tracked-stat-val.is-pending{ font-family:inherit; font-size:12px; font-weight:600; color:var(--text-faint); }
+  .tracked-stat-date{ display:block; font-family:var(--mono); font-size:10.5px; font-weight:600; color:var(--text-faint); margin-top:1px; }
   .tracked-card-pnl{
     display:flex; align-items:baseline; justify-content:space-between; gap:10px;
-    padding-top:8px; border-top:1px solid var(--border);
+    padding-top:10px;
   }
-  .tracked-pnl-figures{ font-family:var(--mono); font-size:15px; font-weight:700; }
+  .tracked-pnl-figures{ font-family:var(--mono); font-size:17px; font-weight:700; color:var(--text-dim); }
+  .tracked-pnl-figures.val-pos{ color:var(--green); }
+  .tracked-pnl-figures.val-neg{ color:var(--red); }
   .tracked-pnl-sub{ font-size:11px; color:var(--text-faint); font-weight:600; margin-top:2px; }
   .tracked-remove-btn{
     background:none; border:none; color:var(--text-faint); font-size:11.5px; font-weight:700;
@@ -1801,12 +1817,16 @@
       const clearBtn = totalSelected > 0
         ? `<button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-top:10px;">Clear all selections (${totalSelected})</button>`
         : '';
+      const trackBtn = selectedTrades.length > 0
+        ? `<button class="modal-copy-btn" id="trackFromSummaryBtn" style="background:var(--green-soft); color:var(--green); border:1px solid transparent; margin-top:10px;">Track ${selectedTrades.length} Option${selectedTrades.length === 1 ? '' : 's'} for Backtest</button>`
+        : '';
       tradeModal.innerHTML = `
         <div class="modal-top">
           <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
         <div class="modal-note" style="margin-top:12px;">Enter a capital amount in the bar at the top of the page to see position sizing.</div>
+        ${trackBtn}
         ${clearBtn}`;
       modalScrim.classList.add('show');
       document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
@@ -1815,6 +1835,12 @@
           clearAllSelections();
           closeTradeModal();
           showToast('Selections cleared');
+        });
+      }
+      if(selectedTrades.length > 0){
+        document.getElementById('trackFromSummaryBtn').addEventListener('click', ()=>{
+          trackSelectedTrades();
+          closeTradeModal();
         });
       }
       return;
@@ -1936,7 +1962,8 @@
 
       ${selectedTrades.length ? `
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Options (${selectedTrades.length} selected, split equally)</span></div>
-      <div class="portfolio-line-list">${optionRows}</div>` : ''}
+      <div class="portfolio-line-list">${optionRows}</div>
+      <button class="modal-copy-btn" id="trackFromSummaryBtn" style="background:var(--green-soft); color:var(--green); border:1px solid transparent; margin-top:2px; margin-bottom:14px;">Track ${selectedTrades.length} Option${selectedTrades.length === 1 ? '' : 's'} for Backtest</button>` : ''}
 
       <div class="modal-metrics">
         <div><div class="mm-label">Total Deployed</div><div class="mm-val val-pos">${curSym()}${totalUsed.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
@@ -1960,6 +1987,12 @@
       downloadFile(`signalhq-portfolio-summary-${dateLabel}.txt`, summaryText, 'text/plain');
       showToast('Portfolio summary downloaded');
     });
+    if(selectedTrades.length > 0){
+      document.getElementById('trackFromSummaryBtn').addEventListener('click', ()=>{
+        trackSelectedTrades();
+        closeTradeModal();
+      });
+    }
   }
 
   function clearAllSelections(){
@@ -2362,6 +2395,17 @@
     return `${sign}$${Math.abs(v).toFixed(2)}`;
   }
 
+  // Numeric M/D, hand-built rather than toLocaleDateString — same rationale
+  // as the fetch-freshness formatter above: a locale-dependent format could
+  // render "9/19" and "19/9" (two different dates) for two different
+  // viewers of the same tracked position.
+  function shortDate(iso){
+    if(!iso) return '';
+    const d = new Date(iso.length <= 10 ? iso + 'T00:00:00' : iso);
+    if(isNaN(d)) return '';
+    return `${d.getMonth() + 1}/${d.getDate()}`;
+  }
+
   function renderBacktestView(){
     const list = loadTrackedPositions();
     const countEl = document.getElementById('backtestTrackedCount');
@@ -2410,19 +2454,23 @@
         statusCls = 'status-expired'; statusLabel = 'Expired';
       }
 
-      const dteLabel = dte < 0 ? `expired ${Math.abs(dte)}d ago` : dte === 0 ? 'expires today' : `${dte}d left`;
-      const entryLine = `Entered ${pos.entryDate} · ${pos.debitStrategy ? 'paid' : 'collected'} $${pos.premium != null ? pos.premium.toFixed(2) : '—'}`;
+      const dteLabel = dte < 0 ? `${Math.abs(dte)}d ago` : dte === 0 ? 'today' : `${dte}d left`;
+      const entryWord = pos.debitStrategy ? 'paid' : 'collected';
+
+      const priceStr = v => v == null ? '—' : `${v < 0 ? '-' : ''}$${Math.abs(v).toFixed(2)}`;
+      const entryVal = priceStr(pos.premium);
+      const nowVal = live && live.currentPremium != null ? priceStr(live.currentPremium) : `pending`;
+      const nowDate = live && live.lastUpdated ? shortDate(live.lastUpdated) : '';
+      const expDateStr = pos.expDate ? shortDate(pos.expDate) : '';
+      const backExpDateStr = pos.backExpDate ? shortDate(pos.backExpDate) : '';
 
       let pnlHtml;
       if(live && live.pnlDollars != null){
-        const cls = live.pnlDollars >= 0 ? 'val-pos' : 'val-neg';
-        pnlHtml = `
-          <div>
-            <div class="tracked-pnl-figures ${cls}">${fmtMoney(live.pnlDollars)} <span style="font-weight:600; font-size:12px;">(${fmtPct(live.pnlPct)})</span></div>
-            <div class="tracked-pnl-sub">mark $${live.currentPremium != null ? live.currentPremium.toFixed(2) : '—'} · updated ${live.lastUpdated ? live.lastUpdated.slice(0,10) : '—'}</div>
-          </div>`;
+        const isZero = Math.abs(live.pnlDollars) < 0.005;
+        const cls = isZero ? '' : (live.pnlDollars >= 0 ? 'val-pos' : 'val-neg');
+        pnlHtml = `<div class="tracked-pnl-figures ${cls}">${fmtMoney(live.pnlDollars)} <span style="font-weight:600; font-size:12px;">(${fmtPct(live.pnlPct)})</span></div>`;
       } else {
-        pnlHtml = `<div class="tracked-pnl-sub">No live update yet</div>`;
+        pnlHtml = `<div class="tracked-pnl-sub">No live P&amp;L yet — ${entryWord} ${entryVal} at entry</div>`;
       }
 
       return `
@@ -2433,7 +2481,20 @@
             </div>
             <span class="tracked-status-pill ${statusCls}">${statusLabel}</span>
           </div>
-          <div class="tracked-card-meta">${entryLine}<br>Exp ${pos.exp}${pos.backExp ? ` / ${pos.backExp}` : ''} · ${dteLabel}</div>
+          <div class="tracked-stat-row">
+            <div class="tracked-stat">
+              <div class="tracked-stat-label">Entry (${entryWord})</div>
+              <div class="tracked-stat-val">${entryVal}<span class="tracked-stat-date">${shortDate(pos.entryDate)}</span></div>
+            </div>
+            <div class="tracked-stat">
+              <div class="tracked-stat-label">Now</div>
+              <div class="tracked-stat-val${live && live.currentPremium == null ? ' is-pending' : ''}">${nowVal}<span class="tracked-stat-date">${nowDate || ' '}</span></div>
+            </div>
+            <div class="tracked-stat tracked-stat-dte">
+              <div class="tracked-stat-label">DTE</div>
+              <div class="tracked-stat-val">${dteLabel}<span class="tracked-stat-date">${expDateStr}${backExpDateStr ? ` / ${backExpDateStr}` : ''}</span></div>
+            </div>
+          </div>
           <div class="tracked-card-pnl">
             ${pnlHtml}
             <button class="tracked-remove-btn" data-remove-tracked="${pos.id}">Remove</button>

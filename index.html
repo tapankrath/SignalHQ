@@ -163,43 +163,6 @@
   }
   .header-actions{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 
-  /* Compact on-demand ticker lookup, moved into the header row's own natural
-     gap between the "Allocation" label and the "My Tickers" button (was a
-     separate boxed panel lower on the page — see the 2026-09-19 change note
-     near the JS below for why it moved: buried down there, the "fetching"
-     status was easy to miss entirely once the page had scrolled). type="search"
-     gives most mobile keyboards a "Search"/"Go" return key, which submits the
-     form — no separate visible button needed in this tight a space. */
-  .header-lookup-form{ flex:0 0 auto; position:relative; }
-  .header-lookup-input{
-    width:86px; box-sizing:border-box;
-    background:var(--surface-2); border:1px solid var(--border-strong);
-    color:var(--text); padding:7px 24px 7px 8px; border-radius:7px;
-    font-family:var(--mono); font-size:13px; font-weight:700;
-    text-transform:uppercase; letter-spacing:0.02em; text-align:center;
-  }
-  .header-lookup-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
-  .header-lookup-input:disabled{ opacity:0.6; }
-  /* Chrome/Edge draw their own "clear" (×) button on type="search" inputs
-     once there's text in them, right where the magnifying-glass submit
-     button below is positioned — hiding it avoids the two crowding each
-     other in this narrow a box. Nothing is lost: selecting the text and
-     retyping clears it just as easily. */
-  .header-lookup-input::-webkit-search-cancel-button{ display:none; -webkit-appearance:none; }
-  /* Overlaid on the input's own right edge rather than added as a separate
-     row item — type="search" plus Enter already submits the form, but a
-     desktop user has no on-screen keyboard "Go" button to tell them that,
-     so this gives everyone a visible, clickable affordance without costing
-     any extra width in the header row. */
-  .header-lookup-submit{
-    position:absolute; right:5px; top:50%; transform:translateY(-50%);
-    width:18px; height:18px; padding:0; margin:0;
-    display:flex; align-items:center; justify-content:center;
-    background:transparent; border:none; color:var(--text-dim); cursor:pointer;
-  }
-  .header-lookup-submit:hover{ color:var(--text); }
-  .header-lookup-submit:disabled{ opacity:0.5; cursor:default; }
-
   .mode-toggle{
     max-width:1080px; margin:0 auto; padding:0 18px;
     display:flex; gap:8px;
@@ -214,6 +177,39 @@
   }
   .mode-tab.active{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
   .mode-tab:active{ opacity:0.85; }
+
+  /* "Ticker Lookup" tab (added 2026-09-19) — the on-demand single-ticker
+     lookup used to be squeezed into the header (first as its own boxed
+     panel, then as a compact box between "Allocation" and "My Tickers"),
+     but a submit button either took up scarce header width or had to be
+     overlaid inside the input itself, which crowded the browser's own
+     "clear" (×) button on type="search" fields. Its own tab gives it a
+     normal-sized input and a normal, clearly separate button instead. */
+  .lookup-tab-panel{
+    max-width:1080px; margin:0 auto; padding:0 18px; box-sizing:border-box;
+  }
+  .lookup-tab-label{ font-size:17px; font-weight:800; color:var(--text); margin-bottom:4px; }
+  .lookup-tab-sub{ font-size:13px; color:var(--text-dim); line-height:1.5; margin-bottom:16px; max-width:480px; }
+  .lookup-tab-form{ display:flex; gap:10px; max-width:360px; }
+  .lookup-tab-input{
+    flex:1; min-width:0; box-sizing:border-box;
+    background:var(--surface-2); border:1px solid var(--border-strong);
+    color:var(--text); padding:11px 14px; border-radius:var(--radius-sm);
+    font-family:var(--mono); font-size:15px; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.02em;
+  }
+  .lookup-tab-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
+  .lookup-tab-input:disabled{ opacity:0.6; }
+  .lookup-tab-input::-webkit-search-cancel-button{ display:none; -webkit-appearance:none; }
+  .lookup-tab-submit{
+    display:flex; align-items:center; justify-content:center; gap:6px; white-space:nowrap;
+    background:var(--amber); color:#fff; border:none;
+    padding:11px 18px; border-radius:var(--radius-sm); font-weight:700; font-size:14px;
+    cursor:pointer; box-shadow:0 2px 8px rgba(22,163,74,0.28);
+    transition:filter .12s;
+  }
+  .lookup-tab-submit:hover:not(:disabled){ filter:brightness(1.08); }
+  .lookup-tab-submit:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
 
   .brand-mark{
     width:42px; height:42px; flex-shrink:0;
@@ -880,12 +876,6 @@
 
   <div class="header-tools">
     <div class="header-tools-label">Allocation</div>
-    <form class="header-lookup-form" id="lookupForm">
-      <input type="search" class="header-lookup-input" id="lookupInput" placeholder="Ticker" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" aria-label="Look up any ticker live">
-      <button type="submit" class="header-lookup-submit" id="lookupSubmitBtn" aria-label="Look up ticker">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </button>
-    </form>
     <div class="header-actions">
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
@@ -919,6 +909,7 @@
 <div class="mode-toggle" role="tablist">
   <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
   <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
+  <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
 </div>
 </div>
 
@@ -1099,6 +1090,20 @@
 
   <div class="apply-bar">
     <button class="apply-btn" id="portfolioSummaryBtnStocks">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
+  </div>
+</div>
+
+<div class="layout" id="lookupView" style="display:none;">
+  <div class="lookup-tab-panel">
+    <div class="lookup-tab-label">Look up any ticker, live</div>
+    <div class="lookup-tab-sub">Runs the same screen as the watchlist tabs, on demand, for one symbol at a time — not limited to the tracked list. Takes up to a minute.</div>
+    <form class="lookup-tab-form" id="lookupForm">
+      <input type="search" class="lookup-tab-input" id="lookupInput" placeholder="Ticker symbol" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" aria-label="Look up any ticker live">
+      <button type="submit" class="lookup-tab-submit" id="lookupSubmitBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Look Up
+      </button>
+    </form>
   </div>
 </div>
 
@@ -1442,19 +1447,28 @@
     return equities;
   }
 
+  // Three tabs as of 2026-09-19 (Options / Stocks & ETFs / Ticker Lookup) —
+  // table-driven rather than a boolean so adding the third didn't mean
+  // rewriting every line here a second time.
+  const MODE_VIEWS = { options: 'optionsView', stocks: 'stocksView', lookup: 'lookupView' };
+  const MODE_TABS = { options: 'tabOptions', stocks: 'tabStocks', lookup: 'tabLookup' };
+
   function switchMode(mode){
-    const isOptions = mode === 'options';
-    document.getElementById('optionsView').style.display = isOptions ? '' : 'none';
-    document.getElementById('stocksView').style.display = isOptions ? 'none' : '';
-    document.getElementById('tabOptions').classList.toggle('active', isOptions);
-    document.getElementById('tabStocks').classList.toggle('active', !isOptions);
-    document.getElementById('tabOptions').setAttribute('aria-selected', isOptions);
-    document.getElementById('tabStocks').setAttribute('aria-selected', !isOptions);
-    if(!isOptions){
+    for(const key in MODE_VIEWS){
+      const isActive = key === mode;
+      document.getElementById(MODE_VIEWS[key]).style.display = isActive ? '' : 'none';
+      document.getElementById(MODE_TABS[key]).classList.toggle('active', isActive);
+      document.getElementById(MODE_TABS[key]).setAttribute('aria-selected', isActive);
+    }
+    if(mode === 'stocks'){
       // always re-render (not just the first time) — cheap for ~20 rows, and
       // guarantees correctness if the user switches tabs before loadTrades()
       // has actually finished fetching data.json
       renderEquities(sortEquities(filteredEquities()));
+    }
+    if(mode === 'lookup'){
+      const input = document.getElementById('lookupInput');
+      if(input && !input.disabled) input.focus();
     }
   }
 
@@ -2408,17 +2422,17 @@
   document.getElementById('portfolioEquitySplit').addEventListener('input', updateCashLeftDisplay);
   updateCashLeftDisplay();
 
-  // Shared by the (cheap) refresh button below and the (expensive) Hard
-  // Refresh flow further down — both end the same way: re-read data.json
-  // and re-render whichever tab is active.
+  // Called after the refresh button's live re-fetch lands: re-read data.json
+  // and re-render whichever of the two watchlist tabs is active. The Ticker
+  // Lookup tab has nothing of its own to re-render here — its result is a
+  // one-off, not part of data.json.
   async function reloadAndRerenderData(){
     await loadTrades(); // re-fetches data.json fresh (cache:'no-store') and updates the status badge
-    const onOptions = document.getElementById('tabOptions').classList.contains('active');
-    if(onOptions){
+    if(document.getElementById('tabOptions').classList.contains('active')){
       render(sortTrades(computeFiltered()));
       renderFunnel();
       updateActiveCount();
-    } else {
+    } else if(document.getElementById('tabStocks').classList.contains('active')){
       renderEquities(sortEquities(filteredEquities()));
     }
   }
@@ -2564,18 +2578,18 @@
     if(lookupPollTimer){ clearTimeout(lookupPollTimer); lookupPollTimer = null; }
   }
 
-  // Keeps the header input and its overlaid magnifying-glass submit button
-  // (see .header-lookup-submit) in sync — both need to be disabled together,
-  // since a non-disabled submit button would otherwise still fire the form's
-  // submit event even while the input itself is disabled.
+  // Keeps the Ticker Lookup tab's input and its separate "Look Up" button in
+  // sync — both need to be disabled together, since a non-disabled submit
+  // button would otherwise still fire the form's submit event even while the
+  // input itself is disabled.
   function setLookupInputEnabled(enabled){
     document.getElementById('lookupInput').disabled = !enabled;
     document.getElementById('lookupSubmitBtn').disabled = !enabled;
   }
 
-  // Cooldown runs on the header ticker input itself (disabled + a countdown
-  // in its placeholder) after a lookup finishes, so another one can't start
-  // until the previous run's Actions run has had a chance to land.
+  // Cooldown runs on the tab's ticker input (disabled + a countdown in its
+  // placeholder) after a lookup finishes, so another one can't start until
+  // the previous run's Actions run has had a chance to land.
   function lookupStartCooldown(){
     const input = document.getElementById('lookupInput');
     setLookupInputEnabled(false);
@@ -2588,7 +2602,7 @@
       if(remaining <= 0){
         clearInterval(lookupCooldownTimer);
         setLookupInputEnabled(true);
-        input.placeholder = 'Ticker';
+        input.placeholder = 'Ticker symbol';
       } else {
         label();
       }
@@ -2736,7 +2750,8 @@
     renderFunnel();
     updateActiveCount();
     // covers the (unlikely but possible) case where the user is already on
-    // the Stocks tab by the time this resolves
+    // the Stocks or Ticker Lookup tab by the time this resolves — harmless
+    // to pre-render the (hidden) equities view either way
     if(!document.getElementById('tabOptions').classList.contains('active')){
       renderEquities(sortEquities(filteredEquities()));
     }

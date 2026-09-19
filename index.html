@@ -981,6 +981,7 @@
         <select id="sortSelect">
           <option value="score">Composite rating</option>
           <option value="ap">Annualized profit</option>
+          <option value="roc">Trade profit</option>
           <option value="pot">Probability of touch</option>
           <option value="dte">Days to expiration</option>
         </select>
@@ -1890,6 +1891,12 @@
     switch(sortBy){
       case 'ap':
         sorted.sort((a, b) => b.ap - a.ap); // highest annualized profit first
+        break;
+      case 'roc':
+        // highest raw (non-annualized) trade profit first — rows with no
+        // trade profit value (shown as "–" in the table) sort to the bottom
+        // instead of scattering unpredictably.
+        sorted.sort((a, b) => (b.roc ?? -Infinity) - (a.roc ?? -Infinity));
         break;
       case 'pot':
         sorted.sort((a, b) => a.pot - b.pot); // lowest probability of touch first (safer first)

@@ -29,6 +29,7 @@ acting on it.
 
 import json
 import math
+import os
 import re
 import sys
 from datetime import datetime, timezone
@@ -628,6 +629,12 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "hedge": fields.get("hedge"),
         "debitStrategy": strat in ("Long Call", "Long Put", "Butterfly"),
         "potIsProfitProb": pot_is_profit_prob,
+        # Raw ISO expiration + per-leg strike/type/action data — not used by
+        # the recommendation display at all, only carried through so a
+        # tracked position (see update_tracked_positions()) can later
+        # re-identify and re-quote this exact contract combination.
+        "expDate": cand_exp,
+        "legs": fields.get("legs"),
     }, None
 
 
@@ -742,6 +749,16 @@ def build_calendar_trade(tk, spot, expiration_candidates, atr):
         "hedge": None,
         "debitStrategy": True,
         "potIsProfitProb": False,
+        # Same strike, two different expirations — the front (sold) leg lives
+        # in front_exp's chain, the back (bought) leg in back_exp's, so each
+        # leg carries its own "exp" tag ("front"/"back") for the re-pricer to
+        # know which chain fetch it belongs to.
+        "expDate": front_exp,
+        "backExpDate": back_exp,
+        "legs": [
+            {"type": "call", "strike": strike, "action": "sell", "qty": 1, "exp": "front"},
+            {"type": "call", "strike": strike, "action": "buy", "qty": 1, "exp": "back"},
+        ],
     }, None
 
 
@@ -928,6 +945,12 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
             "hedge": compute_collar_hedge(puts, spot, dte, premium),
+            # Tracks the short call leg only, not the underlying shares — a
+            # covered call's own roc/premium accounting above is already just
+            # the call premium (collateral is spot, not "P&L on the stock"),
+            # so later mark-to-market re-pricing follows that same convention
+            # rather than pretending to track full stock+option P&L.
+            "legs": [{"type": "call", "strike": strike, "action": "sell", "qty": 1}],
         }, None
 
     if strat == "Bull Put Spread":
@@ -948,6 +971,10 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": short_strike - premium, "max_loss": round((width - premium) * 100, 2),
             "strike_label": f"${short_strike:.0f}/{long_strike:.0f}", "iv": safe_float(s_row.get("impliedVolatility")) * 100,
             "delta_for_output": s_delta,
+            "legs": [
+                {"type": "put", "strike": short_strike, "action": "sell", "qty": 1},
+                {"type": "put", "strike": long_strike, "action": "buy", "qty": 1},
+            ],
         }, None
 
     if strat == "Iron Condor":
@@ -1000,6 +1027,12 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             # Iron Condor is already defined-risk on both sides by construction —
             # nothing to hedge, same as the standalone spreads above.
             "hedge": None,
+            "legs": [
+                {"type": "put", "strike": put_short_strike, "action": "sell", "qty": 1},
+                {"type": "put", "strike": put_long_strike, "action": "buy", "qty": 1},
+                {"type": "call", "strike": call_short_strike, "action": "sell", "qty": 1},
+                {"type": "call", "strike": call_long_strike, "action": "buy", "qty": 1},
+            ],
         }, None
 
     if strat == "Bear Call Spread":
@@ -1020,6 +1053,10 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": short_strike + premium, "max_loss": round((width - premium) * 100, 2),
             "strike_label": f"${short_strike:.0f}/{long_strike:.0f}", "iv": safe_float(s_row.get("impliedVolatility")) * 100,
             "delta_for_output": s_delta,
+            "legs": [
+                {"type": "call", "strike": short_strike, "action": "sell", "qty": 1},
+                {"type": "call", "strike": long_strike, "action": "buy", "qty": 1},
+            ],
         }, None
 
     if strat == "Long Call":
@@ -1034,6 +1071,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": strike + premium, "max_loss": round(premium * 100, 2),
             "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
+            "legs": [{"type": "call", "strike": strike, "action": "buy", "qty": 1}],
         }, None
 
     if strat == "Long Put":
@@ -1048,6 +1086,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "breakeven": strike - premium, "max_loss": round(premium * 100, 2),
             "strike_label": f"${strike:.0f} P", "iv": safe_float(row.get("impliedVolatility")) * 100,
             "delta_for_output": delta,
+            "legs": [{"type": "put", "strike": strike, "action": "buy", "qty": 1}],
         }, None
 
     if strat == "Butterfly":
@@ -1121,6 +1160,11 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "iv": body_iv * 100,
             "delta_for_output": net_delta,
             "hedge": None,
+            "legs": [
+                {"type": "call", "strike": lower_strike, "action": "buy", "qty": 1},
+                {"type": "call", "strike": body_strike, "action": "sell", "qty": 2},
+                {"type": "call", "strike": upper_strike, "action": "buy", "qty": 1},
+            ],
         }, None
 
     return None, f"unknown strategy '{strat}'"
@@ -1305,6 +1349,9 @@ def build_trade_for_ticker(ticker_symbol, index):
             "volRegime": vol_regime,
             "ivRvRatio": iv_rv_ratio,
             "realizedVol": realized_vol,
+            "expDate": best.get("expDate"),
+            "backExpDate": best.get("backExpDate"),
+            "legs": best.get("legs"),
         }
 
     except Exception as e:
@@ -1474,6 +1521,9 @@ def build_lookup_trade(ticker_symbol):
             "volRegime": vol_regime,
             "ivRvRatio": iv_rv_ratio,
             "realizedVol": realized_vol,
+            "expDate": best.get("expDate"),
+            "backExpDate": best.get("backExpDate"),
+            "legs": best.get("legs"),
         }, None
 
     except Exception as e:
@@ -1817,6 +1867,187 @@ def build_hedge_candidate():
         return None
 
 
+# --- Tracked position P&L (user-selected "backtest" tracking) -----------------
+#
+# Not part of the recommendation pipeline above — this re-prices whatever
+# trades the person has chosen to track from the frontend (a "Track" button
+# on each recommendation, saved to their browser and hand-committed to the
+# repo as tracked_positions.json; see the frontend's Backtest tab). Every
+# leg captured at tracking time (see the "legs"/"expDate"/"backExpDate" keys
+# added throughout the strategy builders above) is re-quoted here against
+# the CURRENT live chain, so the P&L shown is a real mark-to-market number,
+# not a modeled/estimated one — with one unavoidable catch: yfinance only
+# quotes chains for expirations that haven't happened yet, so a position
+# past its expiration date can no longer be re-priced at all (options
+# quotes aren't a historical data series the way stock closes are). Once a
+# position's expiration passes, its last known mark-to-market snapshot is
+# kept as-is and it's flagged "expired" rather than silently going stale.
+TRACKED_POSITIONS_PATH = "tracked_positions.json"
+TRACKED_PNL_PATH = "tracked_pnl.json"
+
+
+def _price_leg(chain_cache, tk, exp_date, leg):
+    """
+    Looks up one leg's current mid price against the live chain for exp_date,
+    fetching+caching that chain (chain_cache keyed by exp_date) at most once
+    even when several legs of the same position share an expiration.
+    Returns None (not an exception) if the chain can't be fetched or the
+    exact strike is no longer listed — the caller treats that as "can't
+    update this position right now," not a crash.
+    """
+    if exp_date not in chain_cache:
+        try:
+            chain_cache[exp_date] = tk.option_chain(exp_date)
+        except Exception as e:
+            print(f"    tracked-position chain fetch failed for {exp_date}: {e}")
+            chain_cache[exp_date] = None
+    chain = chain_cache[exp_date]
+    if chain is None:
+        return None
+    frame = chain.calls if leg["type"] == "call" else chain.puts
+    match = frame[(frame["strike"] - float(leg["strike"])).abs() < 0.01]
+    if match.empty:
+        return None
+    return mid_price(match.iloc[0])
+
+
+def _reprice_position(pos):
+    """
+    Re-quotes every leg of one tracked position and returns a snapshot dict,
+    or None if any leg couldn't be priced this run (missing chain, delisted
+    strike, etc.) — the caller keeps the position's prior history untouched
+    in that case rather than recording a bogus/partial number.
+    """
+    legs = pos.get("legs")
+    exp_date = pos.get("expDate")
+    if not legs or not exp_date:
+        return None  # tracked before the legs/expDate fields existed, or malformed
+
+    tk = yf.Ticker(pos["sym"])
+    chain_cache = {}
+    net_credit = 0.0
+    for leg in legs:
+        leg_exp = pos.get("backExpDate") if leg.get("exp") == "back" else exp_date
+        price = _price_leg(chain_cache, tk, leg_exp, leg)
+        if price is None:
+            return None
+        qty = leg.get("qty", 1)
+        sign = 1 if leg["action"] == "sell" else -1
+        net_credit += price * qty * sign
+
+    # Same orientation as the entry "premium" stored at tracking time: for a
+    # credit strategy premium = money received (net_credit as-is); for a
+    # debit strategy premium = money paid (net_credit flipped, since a debit
+    # position's legs are stored the same buy/sell way a credit one's are).
+    current_premium = net_credit if not pos.get("debitStrategy") else -net_credit
+    entry_premium = pos.get("premium")
+    if entry_premium in (None, 0):
+        pnl_dollars, pnl_pct = None, None
+    elif pos.get("debitStrategy"):
+        pnl_dollars = round((current_premium - entry_premium) * 100, 2)
+        pnl_pct = round((current_premium - entry_premium) / entry_premium * 100, 2)
+    else:
+        pnl_dollars = round((entry_premium - current_premium) * 100, 2)
+        pnl_pct = round((entry_premium - current_premium) / entry_premium * 100, 2)
+
+    return {
+        "currentPremium": round(current_premium, 2),
+        "pnlDollars": pnl_dollars,
+        "pnlPct": pnl_pct,
+    }
+
+
+def update_tracked_positions():
+    """
+    Reads tracked_positions.json (absent = nothing tracked yet = no-op),
+    re-prices every still-open position, and writes tracked_pnl.json with an
+    appended history entry per position. Every failure mode here (missing
+    file, malformed JSON, one bad position, a network error) is caught and
+    logged rather than raised, since this feature must never be able to
+    take down the core recommendation run in main() below.
+    """
+    if not os.path.exists(TRACKED_POSITIONS_PATH):
+        return  # nothing tracked yet — not an error, just nothing to do
+
+    try:
+        with open(TRACKED_POSITIONS_PATH) as f:
+            tracked = json.load(f)
+    except Exception as e:
+        print(f"  tracked positions: couldn't read {TRACKED_POSITIONS_PATH}: {e}")
+        return
+
+    prior_by_id = {}
+    if os.path.exists(TRACKED_PNL_PATH):
+        try:
+            with open(TRACKED_PNL_PATH) as f:
+                prior_by_id = {p["id"]: p for p in json.load(f).get("positions", [])}
+        except Exception as e:
+            print(f"  tracked positions: couldn't read prior {TRACKED_PNL_PATH}, starting fresh: {e}")
+
+    today = datetime.now(timezone.utc).date()
+    out_positions = []
+    for pos in tracked:
+        pos_id = pos.get("id")
+        if not pos_id or not pos.get("sym") or not pos.get("expDate"):
+            print(f"  tracked positions: skipping malformed entry {pos.get('id', '?')}")
+            continue
+
+        prior = prior_by_id.get(pos_id, {})
+        history = list(prior.get("history", []))
+        exp_date = datetime.strptime(pos["expDate"], "%Y-%m-%d").date()
+        dte_remaining = (exp_date - today).days
+
+        if dte_remaining < 0:
+            # Past expiration — yfinance no longer has a chain to quote, so
+            # this is the last snapshot this position will ever get. Keep
+            # whatever P&L was last recorded and just flip the status.
+            out_positions.append({
+                **{k: v for k, v in prior.items() if k not in ("dteRemaining", "status", "lastUpdated")},
+                "id": pos_id, "dteRemaining": dte_remaining, "status": "expired",
+                "lastUpdated": prior.get("lastUpdated"), "history": history,
+            })
+            continue
+
+        print(f"  re-pricing tracked position {pos_id} ({pos['sym']} {pos.get('strat', '')})...")
+        try:
+            snap = _reprice_position(pos)
+        except Exception as e:
+            snap = None
+            print(f"    failed: {e}")
+
+        if snap is None:
+            # Couldn't get a fresh quote this run — surface the last good
+            # snapshot rather than a blank/broken row on the frontend.
+            out_positions.append({
+                "id": pos_id, "status": "error", "dteRemaining": dte_remaining,
+                "lastUpdated": prior.get("lastUpdated"),
+                "currentPremium": prior.get("currentPremium"),
+                "pnlDollars": prior.get("pnlDollars"), "pnlPct": prior.get("pnlPct"),
+                "history": history,
+            })
+            continue
+
+        today_iso = today.isoformat()
+        if not history or history[-1].get("date") != today_iso:
+            history.append({
+                "date": today_iso, "dte": dte_remaining,
+                "premium": snap["currentPremium"],
+                "pnlDollars": snap["pnlDollars"], "pnlPct": snap["pnlPct"],
+            })
+        out_positions.append({
+            "id": pos_id, "status": "open", "dteRemaining": dte_remaining,
+            "lastUpdated": datetime.now(timezone.utc).isoformat(),
+            "currentPremium": snap["currentPremium"],
+            "pnlDollars": snap["pnlDollars"], "pnlPct": snap["pnlPct"],
+            "history": history,
+        })
+
+    output = {"generated_at": datetime.now(timezone.utc).isoformat(), "positions": out_positions}
+    with open(TRACKED_PNL_PATH, "w") as f:
+        json.dump(output, f, indent=2)
+    print(f"  Wrote {len(out_positions)} tracked position(s) to {TRACKED_PNL_PATH}")
+
+
 def main():
     trades = []
     equities = []
@@ -1854,6 +2085,14 @@ def main():
 
     print(f"\nWrote {len(trades)} trades, {len(equities)} equity snapshots, "
           f"and {'a' if hedge else 'no'} hedge candidate to {OUTPUT_PATH}")
+
+    # Best-effort — a bug or an unfetchable contract here must never take
+    # down the core recommendation run above, which has already succeeded
+    # and been written to disk by this point.
+    try:
+        update_tracked_positions()
+    except Exception as e:
+        print(f"  tracked positions: update failed, leaving existing {TRACKED_PNL_PATH} untouched: {e}")
 
 
 if __name__ == "__main__":

@@ -163,6 +163,24 @@
   }
   .header-actions{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 
+  /* Compact on-demand ticker lookup, moved into the header row's own natural
+     gap between the "Allocation" label and the "My Tickers" button (was a
+     separate boxed panel lower on the page — see the 2026-09-19 change note
+     near the JS below for why it moved: buried down there, the "fetching"
+     status was easy to miss entirely once the page had scrolled). type="search"
+     gives most mobile keyboards a "Search"/"Go" return key, which submits the
+     form — no separate visible button needed in this tight a space. */
+  .header-lookup-form{ flex:0 0 auto; }
+  .header-lookup-input{
+    width:86px; box-sizing:border-box;
+    background:var(--surface-2); border:1px solid var(--border-strong);
+    color:var(--text); padding:7px 8px; border-radius:7px;
+    font-family:var(--mono); font-size:13px; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.02em; text-align:center;
+  }
+  .header-lookup-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
+  .header-lookup-input:disabled{ opacity:0.6; }
+
   .mode-toggle{
     max-width:1080px; margin:0 auto; padding:0 18px;
     display:flex; gap:8px;
@@ -474,41 +492,19 @@
     color:var(--text); padding:7px 10px; border-radius:7px; font-size:16px;
   }
 
-  /* On-demand single-ticker lookup — deliberately its own boxed section
-     above the regular results, not merged into the filtered list: the list
-     below represents the curated watchlist screen, and a one-off lookup
-     result is a different kind of thing (unscreened, ad hoc) that shouldn't
-     read as if it belongs to that same curated set. */
+  /* Now holds just the "Hard Refresh" control — the single-ticker lookup
+     input moved into the header (.header-lookup-input above) on 2026-09-19,
+     since buried down here its "fetching" status was easy to miss entirely
+     once the page had scrolled. Kept as its own boxed section rather than
+     merged into the filtered list below: this panel is about live, on-
+     demand fetches, a different kind of thing from the curated watchlist
+     screen underneath it. */
   .lookup-panel{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:14px 18px;
     margin-bottom:16px;
     box-shadow:var(--shadow-sm);
   }
-  .lookup-panel-header{
-    font-size:13px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
-    color:var(--text-dim);
-  }
-  .lookup-panel-sub{
-    font-size:12px; color:var(--text-faint); margin:4px 0 12px; line-height:1.5;
-  }
-  .lookup-form{ display:flex; gap:8px; flex-wrap:wrap; }
-  .lookup-input{
-    flex:1; min-width:120px;
-    background:var(--surface-2); border:1px solid var(--border-strong);
-    color:var(--text); padding:9px 12px; border-radius:var(--radius-sm);
-    font-family:var(--mono); font-size:16px; font-weight:700;
-    text-transform:uppercase; letter-spacing:0.02em;
-  }
-  .lookup-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
-  .lookup-submit-btn{
-    background:var(--amber); color:#fff; border:none;
-    padding:9px 18px; border-radius:var(--radius-sm); font-weight:700; font-size:13.5px;
-    box-shadow:0 2px 8px rgba(22,163,74,0.28);
-    transition:filter .12s, box-shadow .12s; white-space:nowrap;
-  }
-  .lookup-submit-btn:hover:not(:disabled){ filter:brightness(1.08); }
-  .lookup-submit-btn:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
   .lookup-status{
     margin-top:10px; font-size:12.5px; font-weight:600; color:var(--text-dim);
     display:none; line-height:1.5;
@@ -516,12 +512,7 @@
   .lookup-status.visible{ display:block; }
   .lookup-status.error{ color:var(--red); }
   .lookup-status.ok{ color:var(--amber-strong); }
-  .lookup-result{ margin-top:12px; }
-  .lookup-result:empty{ margin-top:0; }
 
-  .lookup-panel-divider{
-    border-top:1px solid var(--border); margin:14px 0 12px;
-  }
   .lookup-refresh-row{
     display:flex; align-items:center; justify-content:space-between;
     gap:12px; flex-wrap:wrap;
@@ -545,6 +536,25 @@
     color:var(--red); font-weight:800; margin-left:2px; cursor:help;
     font-size:0.85em; vertical-align:super;
   }
+
+  /* Loading/error state shown in the shared trade-modal container while an
+     on-demand header lookup is in flight — see showLookupLoadingModal() in
+     the JS below. Once the result lands, this content is replaced by the
+     normal openTradeModal()/openEquityModal() output, same container, no
+     separate "result card" step. */
+  .lookup-loading{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    padding:36px 16px 24px;
+  }
+  .lookup-spinner{
+    width:32px; height:32px; border-radius:50%;
+    border:3px solid var(--border); border-top-color:var(--amber);
+    animation:lookup-spin 0.8s linear infinite;
+    margin-bottom:16px;
+  }
+  @keyframes lookup-spin{ to{ transform:rotate(360deg); } }
+  .lookup-loading-text{ font-size:15px; font-weight:700; color:var(--text); }
+  .lookup-loading-sub{ font-size:12.5px; color:var(--text-faint); margin-top:6px; line-height:1.5; max-width:280px; }
 
   .table-wrap{
     background:var(--surface); border:1px solid var(--border);
@@ -891,10 +901,13 @@
 
   <div class="header-tools">
     <div class="header-tools-label">Allocation</div>
+    <form class="header-lookup-form" id="lookupForm">
+      <input type="search" class="header-lookup-input" id="lookupInput" placeholder="Ticker" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" aria-label="Look up any ticker live">
+    </form>
     <div class="header-actions">
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        Tickers
+        My Tickers
       </button>
     </div>
   </div>
@@ -1008,16 +1021,6 @@
   </div>
 
   <div class="lookup-panel">
-    <div class="lookup-panel-header">On-Demand Lookup</div>
-    <div class="lookup-panel-sub">Not on the watchlist below? Type any ticker to run it through the same screen live. Takes up to a minute — it kicks off a real data fetch, not a cached answer.</div>
-    <form class="lookup-form" id="lookupForm">
-      <input type="text" class="lookup-input" id="lookupInput" placeholder="e.g. NFLX" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false">
-      <button type="submit" class="lookup-submit-btn" id="lookupSubmitBtn">Look Up</button>
-    </form>
-    <div class="lookup-status" id="lookupStatus"></div>
-    <div class="lookup-result" id="lookupResult"></div>
-
-    <div class="lookup-panel-divider"></div>
     <div class="lookup-refresh-row">
       <div class="lookup-refresh-copy">
         <div class="lookup-refresh-label">Refresh the whole watchlist live</div>
@@ -2302,7 +2305,7 @@
   async function openTickersModal(){
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
+        <div class="ticker-sym" style="font-size:17px;">Manage My Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-strat">Loading current watchlist…</div>
@@ -2314,7 +2317,7 @@
 
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage Tickers</div>
+        <div class="ticker-sym" style="font-size:17px;">Manage My Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-strat">This is the watchlist the nightly data pull screens. Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to download and commit to GitHub.</div>
@@ -2478,79 +2481,77 @@
   let lookupPollTimer = null;
   let lookupCooldownTimer = null;
 
-  function lookupSetStatus(message, kind){
-    const el = document.getElementById('lookupStatus');
-    el.textContent = message || '';
-    el.className = 'lookup-status' + (message ? ' visible' : '') + (kind ? ` ${kind}` : '');
-  }
-
   function lookupStopPolling(){
     if(lookupPollTimer){ clearTimeout(lookupPollTimer); lookupPollTimer = null; }
   }
 
+  // Cooldown now runs on the header ticker input itself (disabled + a
+  // countdown in its placeholder) since the compact header design (added
+  // 2026-09-19) has no separate visible submit button to show it on.
   function lookupStartCooldown(){
-    const btn = document.getElementById('lookupSubmitBtn');
-    btn.disabled = true;
+    const input = document.getElementById('lookupInput');
+    input.disabled = true;
     let remaining = Math.ceil(LOOKUP_COOLDOWN_MS / 1000);
-    btn.textContent = `Wait ${remaining}s`;
+    const label = () => { input.placeholder = `Wait ${remaining}s`; };
+    label();
     clearInterval(lookupCooldownTimer);
     lookupCooldownTimer = setInterval(() => {
       remaining -= 1;
       if(remaining <= 0){
         clearInterval(lookupCooldownTimer);
-        btn.disabled = false;
-        btn.textContent = 'Look Up';
+        input.disabled = false;
+        input.placeholder = 'Ticker';
       } else {
-        btn.textContent = `Wait ${remaining}s`;
+        label();
       }
     }, 1000);
   }
 
-  // Keeps the .trade-card class for its visual styling, but this card is NOT
-  // meant to be caught by the global `.row-action, .trade-card` click
-  // delegate defined elsewhere in this file (it indexes into `currentList`,
-  // the filtered watchlist — not this one-off result — and would open the
-  // wrong trade or throw on a bad index). The click handler attached directly
-  // below calls stopPropagation() before that delegate (on `document`) ever
-  // sees the event, so it's opened correctly via this card's own listener
-  // instead of falling through to that unrelated one.
-  function renderLookupResult(trade, equity, ticker){
-    const resultEl = document.getElementById('lookupResult');
-    if(!trade){
-      resultEl.innerHTML = equity
-        ? `<div class="lookup-status visible">No options trade could be built for ${ticker} right now, but it's a valid, actively-traded symbol — see its Stocks &amp; ETFs snapshot after refreshing that tab, or try the lookup again later.</div>`
-        : '';
-      return;
-    }
-    const pill = trade.side === 'bull'
-      ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
-      : trade.side === 'bear'
-      ? `<span class="side-pill bear"><span class="dot"></span>Bearish</span>`
-      : `<span class="side-pill neutral"><span class="dot"></span>Neutral</span>`;
-    const cardStrike = trade.strat === 'Iron Condor' ? trade.strike.split('/').slice(1, 3).join('/') : trade.strike;
-    const cardPrice = trade.spot != null ? `$${Math.round(trade.spot)}${staleMark(trade.spotPriceStale)}→` : '';
-
-    resultEl.innerHTML = `
-      <div class="trade-card lookup-result-card" id="lookupResultCard" role="button" tabindex="0" style="cursor:pointer;">
-        <div class="trade-card-top" style="margin-bottom:6px;">
-          <div class="ticker-sym" style="flex:1; font-size:14px;">${trade.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${trade.strat}</span></div>
-          ${pill}
+  // Loading state for an in-flight lookup, shown in the SAME shared modal
+  // (modalScrim/tradeModal, declared above near openTradeModal) that already
+  // renders every other trade/equity detail view in this file. Once a result
+  // lands, pollLookupResult() below hands off to openTradeModal()/
+  // openEquityModal() — those just overwrite this same modal's content, so
+  // the popup goes straight from "looking…" to the real card with no
+  // separate result panel to notice or miss.
+  function showLookupLoadingModal(ticker){
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div>
+          <div class="ticker-sym" style="font-size:19px;">${ticker}</div>
         </div>
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-          <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
-            <span class="${trade.roc != null ? 'val-pos' : ''}">${fmtPct(trade.roc)}/${fmtPct(trade.ap)}</span> · ${trade.exp}·${trade.dte}d
-          </span>
-          ${meterHtml(trade.score)}
-        </div>
-        <div style="margin-top:8px; font-size:11px; color:var(--text-faint);">Tap for full details — not part of the screened watchlist below.</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="lookup-loading">
+        <div class="lookup-spinner"></div>
+        <div class="lookup-loading-text">Looking up ${ticker}…</div>
+        <div class="lookup-loading-sub">Fetching live data and screening a strategy for this ticker — this can take up to a minute.</div>
       </div>`;
-
-    const card = document.getElementById('lookupResultCard');
-    const open = (e) => { e.stopPropagation(); openTradeModal(trade); };
-    card.addEventListener('click', open);
-    card.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(e); }
+    document.getElementById('modalCloseBtn').addEventListener('click', () => {
+      lookupStopPolling();
+      clearInterval(lookupCooldownTimer);
+      document.getElementById('lookupInput').disabled = false;
+      closeTradeModal();
     });
+    modalScrim.classList.add('show');
+  }
+
+  // Same shared modal, for a lookup that didn't pan out — bad symbol, no
+  // options trade could be built, or the request itself failed/timed out.
+  function showLookupErrorModal(ticker, message){
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div>
+          <div class="ticker-sym" style="font-size:19px;">${ticker || 'Lookup'}</div>
+        </div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="lookup-loading">
+        <div class="lookup-loading-text" style="color:var(--red);">No result</div>
+        <div class="lookup-loading-sub">${message}</div>
+      </div>`;
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    modalScrim.classList.add('show');
   }
 
   function pollLookupResult(ticker, requestedAtIso){
@@ -2570,15 +2571,16 @@
           const isFresh = json.requested_ticker === ticker && !isNaN(generatedAtMs) && generatedAtMs > requestedAtMs;
           if(isFresh){
             lookupStopPolling();
-            if(json.status === 'ok'){
-              lookupSetStatus(json.trade ? `Done — here's what came back for ${ticker}.` : `Done — ${ticker} looks valid, but no options trade could be built right now (see below).`, 'ok');
-              renderLookupResult(json.trade, json.equity, ticker);
-            } else {
-              lookupSetStatus(json.error || `Couldn't build a result for ${ticker}.`, 'error');
-              renderLookupResult(null, null, ticker);
-            }
-            document.getElementById('lookupSubmitBtn').textContent = 'Look Up';
             lookupStartCooldown();
+            if(json.status === 'ok' && json.trade){
+              openTradeModal(json.trade);
+            } else if(json.status === 'ok' && json.equity){
+              // No options trade could be built, but it's a valid, actively-
+              // traded symbol — show its equity snapshot instead of nothing.
+              openEquityModal(json.equity);
+            } else {
+              showLookupErrorModal(ticker, json.error || `No usable data came back for ${ticker} — double-check the ticker, or try again later.`);
+            }
             return;
           }
         }
@@ -2586,9 +2588,9 @@
         console.error('lookup.json poll failed', err);
       }
       if(Date.now() >= deadlineMs){
-        lookupSetStatus(`Still no result for ${ticker} after 2 minutes — the run may still be queued behind other lookups. Check back shortly, or try again.`, 'error');
-        document.getElementById('lookupSubmitBtn').textContent = 'Look Up';
+        lookupStopPolling();
         lookupStartCooldown();
+        showLookupErrorModal(ticker, `Still no result after 2 minutes — the run may still be queued behind other lookups. Check back shortly, or try again.`);
         return;
       }
       lookupPollTimer = setTimeout(poll, LOOKUP_POLL_INTERVAL_MS);
@@ -2603,21 +2605,18 @@
     input.value = ticker;
 
     if(!ticker || ticker.length > 10){
-      lookupSetStatus('Enter a valid ticker symbol (letters/numbers, up to 10 characters).', 'error');
+      showToast('Enter a valid ticker symbol (up to 10 characters).');
       return;
     }
     if(!LOOKUP_WORKER_URL || LOOKUP_WORKER_URL === 'PASTE_YOUR_WORKER_URL_HERE'){
-      lookupSetStatus("On-demand lookup isn't set up yet — the Cloudflare Worker URL still needs to be added near the top of this script. See cloudflare-worker/signalhq-lookup-trigger.js for setup steps.", 'error');
+      showToast("On-demand lookup isn't set up yet — see cloudflare-worker/signalhq-lookup-trigger.js for setup steps.");
       return;
     }
 
     lookupStopPolling();
     clearInterval(lookupCooldownTimer);
-    document.getElementById('lookupResult').innerHTML = '';
-    const btn = document.getElementById('lookupSubmitBtn');
-    btn.disabled = true;
-    btn.textContent = 'Triggering…';
-    lookupSetStatus(`Triggering a live lookup for ${ticker}…`, null);
+    input.disabled = true;
+    showLookupLoadingModal(ticker);
 
     const requestedAtIso = new Date().toISOString();
     try{
@@ -2628,21 +2627,17 @@
       });
       const body = await res.json().catch(() => ({}));
       if(!res.ok || !body.ok){
-        lookupSetStatus(body.error || `Couldn't trigger the lookup (HTTP ${res.status}).`, 'error');
-        btn.disabled = false;
-        btn.textContent = 'Look Up';
+        input.disabled = false;
+        showLookupErrorModal(ticker, body.error || `Couldn't trigger the lookup (HTTP ${res.status}).`);
         return;
       }
     }catch(err){
       console.error('lookup trigger failed', err);
-      lookupSetStatus("Couldn't reach the lookup service — check your connection and try again.", 'error');
-      btn.disabled = false;
-      btn.textContent = 'Look Up';
+      input.disabled = false;
+      showLookupErrorModal(ticker, "Couldn't reach the lookup service — check your connection and try again.");
       return;
     }
 
-    lookupSetStatus(`Fetching live data for ${ticker}… this can take up to a minute.`, null);
-    btn.textContent = 'Fetching…';
     pollLookupResult(ticker, requestedAtIso);
   });
 

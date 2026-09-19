@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T18:03:19.881682+00:00",
+  "generated_at": "2026-09-19T18:17:42.660816+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -1184,9 +1184,15 @@
       "pcVol": 0.27,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.09,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "A Pause on Advanced AI Is Wishful Thinking, But Adobe Stock Is a Buy Anyway",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4693911/a-pause-on-advanced-ai-is-wishful-thinking-but-adobe-stock-is-a-buy-anyway",
+          "sentiment": 0.13
+        },
         {
           "title": "How Much Upside Is Left In Adobe Stock?",
           "publisher": "Trefis",
@@ -1198,12 +1204,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/e-commerce-ai-powered-student-123734626.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "ADBE Stock On Track For Third Weekly Loss: Outgoing CEO Files $31.5M Share Sale",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/adbe-stock-on-track-for-third-weekly-loss-outgoing-ceo-files-31-5-m-share-sale/cZtrWoGRB5O",
-          "sentiment": 0.27
         }
       ],
       "volRegime": "Fair",
@@ -3554,9 +3554,15 @@
       "dividendYield": null,
       "marketCap": 98945695744,
       "score": 4.2,
-      "newsSentiment": 0.09,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "A Pause on Advanced AI Is Wishful Thinking, But Adobe Stock Is a Buy Anyway",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4693911/a-pause-on-advanced-ai-is-wishful-thinking-but-adobe-stock-is-a-buy-anyway",
+          "sentiment": 0.13
+        },
         {
           "title": "How Much Upside Is Left In Adobe Stock?",
           "publisher": "Trefis",
@@ -3568,12 +3574,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/e-commerce-ai-powered-student-123734626.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "ADBE Stock On Track For Third Weekly Loss: Outgoing CEO Files $31.5M Share Sale",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/adbe-stock-on-track-for-third-weekly-loss-outgoing-ceo-files-31-5-m-share-sale/cZtrWoGRB5O",
-          "sentiment": 0.27
         }
       ]
     },

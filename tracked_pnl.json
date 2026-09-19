@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-09-19T18:17:42.776556+00:00",
+  "positions": [
+    {
+      "id": "CRM|Bull_Put_Spread|2026-09-25|$228/222",
+      "status": "open",
+      "dteRemaining": 6,
+      "lastUpdated": "2026-09-19T18:17:42.776548+00:00",
+      "currentPremium": 0.77,
+      "pnlDollars": 0.0,
+      "pnlPct": 0.0,
+      "history": [
+        {
+          "date": "2026-09-19",
+          "dte": 6,
+          "premium": 0.77,
+          "pnlDollars": 0.0,
+          "pnlPct": 0.0
+        }
+      ]
+    }
+  ]
+}

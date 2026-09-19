@@ -130,7 +130,6 @@
   .sticky-top{
     position:sticky; top:0; z-index:40;
     background:var(--surface);
-    border-bottom:1px solid var(--border);
     display:flex; flex-direction:column; gap:10px;
     padding-top:10px; padding-bottom:6px;
   }
@@ -441,7 +440,7 @@
 
   /* apply/reset/copy bar */
   .apply-bar{
-    margin-top:14px; padding-top:14px; border-top:1px solid var(--border);
+    margin-top:14px; padding-top:14px;
     display:flex; flex-direction:column; gap:8px;
   }
   .apply-bar-row{ display:flex; gap:8px; }
@@ -767,7 +766,7 @@
 
     .apply-bar{
       position:fixed; left:0; right:0; bottom:0; z-index:70;
-      background:var(--surface); border-top:1px solid var(--border);
+      background:var(--surface);
       padding:12px 14px; padding-bottom:calc(12px + env(safe-area-inset-bottom));
       margin-top:0;
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);

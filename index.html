@@ -519,6 +519,28 @@
   .lookup-result{ margin-top:12px; }
   .lookup-result:empty{ margin-top:0; }
 
+  .lookup-panel-divider{
+    border-top:1px solid var(--border); margin:14px 0 12px;
+  }
+  .lookup-refresh-row{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; flex-wrap:wrap;
+  }
+  .lookup-refresh-copy{ flex:1; min-width:180px; }
+  .lookup-refresh-label{ font-size:12.5px; font-weight:700; color:var(--text); }
+  .lookup-refresh-sub{ font-size:11.5px; color:var(--text-faint); margin-top:2px; line-height:1.5; }
+  /* Deliberately an outline style, not the solid green of .lookup-submit-btn
+     above — this is a bigger, rarer, more expensive action (the whole
+     watchlist, not one ticker) and shouldn't visually compete with the
+     primary lookup button for attention. */
+  .lookup-refresh-btn{
+    background:transparent; color:var(--text-dim); border:1px solid var(--border-strong);
+    padding:8px 16px; border-radius:var(--radius-sm); font-weight:700; font-size:12.5px;
+    white-space:nowrap; transition:border-color .12s, color .12s;
+  }
+  .lookup-refresh-btn:hover:not(:disabled){ border-color:var(--amber); color:var(--amber-strong); }
+  .lookup-refresh-btn:disabled{ opacity:0.5; cursor:not-allowed; }
+
   .stale-mark{
     color:var(--red); font-weight:800; margin-left:2px; cursor:help;
     font-size:0.85em; vertical-align:super;
@@ -994,6 +1016,16 @@
     </form>
     <div class="lookup-status" id="lookupStatus"></div>
     <div class="lookup-result" id="lookupResult"></div>
+
+    <div class="lookup-panel-divider"></div>
+    <div class="lookup-refresh-row">
+      <div class="lookup-refresh-copy">
+        <div class="lookup-refresh-label">Refresh the whole watchlist live</div>
+        <div class="lookup-refresh-sub">Instead of waiting for the next scheduled update (runs automatically on its own). Re-fetches every ticker — takes a few minutes, so use sparingly.</div>
+      </div>
+      <button type="button" class="lookup-refresh-btn" id="hardRefreshBtn">Hard Refresh</button>
+    </div>
+    <div class="lookup-status" id="hardRefreshStatus"></div>
   </div>
 
   <div class="results-panel">
@@ -2402,14 +2434,11 @@
   document.getElementById('portfolioEquitySplit').addEventListener('input', updateCashLeftDisplay);
   updateCashLeftDisplay();
 
-  document.getElementById('refreshBtn').addEventListener('click', async ()=>{
-    const btn = document.getElementById('refreshBtn');
-    if(btn.classList.contains('spinning')) return; // already refreshing, ignore double-tap
-    btn.classList.add('spinning');
-    btn.disabled = true;
-
+  // Shared by the (cheap) refresh button below and the (expensive) Hard
+  // Refresh flow further down — both end the same way: re-read data.json
+  // and re-render whichever tab is active.
+  async function reloadAndRerenderData(){
     await loadTrades(); // re-fetches data.json fresh (cache:'no-store') and updates the status badge
-
     const onOptions = document.getElementById('tabOptions').classList.contains('active');
     if(onOptions){
       render(sortTrades(computeFiltered()));
@@ -2418,6 +2447,15 @@
     } else {
       renderEquities(sortEquities(filteredEquities()));
     }
+  }
+
+  document.getElementById('refreshBtn').addEventListener('click', async ()=>{
+    const btn = document.getElementById('refreshBtn');
+    if(btn.classList.contains('spinning')) return; // already refreshing, ignore double-tap
+    btn.classList.add('spinning');
+    btn.disabled = true;
+
+    await reloadAndRerenderData();
 
     btn.classList.remove('spinning');
     btn.disabled = false;
@@ -2606,6 +2644,132 @@
     lookupSetStatus(`Fetching live data for ${ticker}… this can take up to a minute.`, null);
     btn.textContent = 'Fetching…';
     pollLookupResult(ticker, requestedAtIso);
+  });
+
+  // --- "Hard Refresh" — on-demand full-watchlist run -----------------------
+  // Added 2026-09-19, alongside the single-ticker lookup above and reusing
+  // the same Worker/token — but this triggers the SAME expensive path the
+  // scheduled cron already runs (every ticker: history, options chains,
+  // news), not one cheap single-strategy pick. That's why the cooldown here
+  // is minutes, not seconds, and why the workflow's concurrency group (see
+  // update_data.yml) now queues this against the schedule instead of letting
+  // both hit Yahoo's free feed at the same time. This is meant as an
+  // occasional "I want the latest numbers right now" action, not a
+  // replacement for the automatic schedule, which keeps running regardless.
+  const HARD_REFRESH_POLL_INTERVAL_MS = 8000;
+  const HARD_REFRESH_POLL_TIMEOUT_MS = 300000;  // 5 minutes — a full run takes longer than one ticker
+  const HARD_REFRESH_COOLDOWN_MS = 300000;      // 5 minutes, deliberately far longer than the per-ticker lookup's 15s
+
+  let hardRefreshPollTimer = null;
+  let hardRefreshCooldownTimer = null;
+
+  function hardRefreshSetStatus(message, kind){
+    const el = document.getElementById('hardRefreshStatus');
+    el.textContent = message || '';
+    el.className = 'lookup-status' + (message ? ' visible' : '') + (kind ? ` ${kind}` : '');
+  }
+
+  function hardRefreshStartCooldown(){
+    const btn = document.getElementById('hardRefreshBtn');
+    btn.disabled = true;
+    let remainingSec = Math.ceil(HARD_REFRESH_COOLDOWN_MS / 1000);
+    const label = () => {
+      const m = Math.floor(remainingSec / 60), s = remainingSec % 60;
+      btn.textContent = `Wait ${m}:${String(s).padStart(2,'0')}`;
+    };
+    label();
+    clearInterval(hardRefreshCooldownTimer);
+    hardRefreshCooldownTimer = setInterval(() => {
+      remainingSec -= 1;
+      if(remainingSec <= 0){
+        clearInterval(hardRefreshCooldownTimer);
+        btn.disabled = false;
+        btn.textContent = 'Hard Refresh';
+      } else {
+        label();
+      }
+    }, 1000);
+  }
+
+  function pollHardRefreshResult(requestedAtIso){
+    const requestedAtMs = new Date(requestedAtIso).getTime();
+    const deadlineMs = Date.now() + HARD_REFRESH_POLL_TIMEOUT_MS;
+
+    const poll = async () => {
+      try{
+        const res = await fetch(`data.json?_=${Date.now()}`, { cache: 'no-store' });
+        if(res.ok){
+          const json = await res.json();
+          const generatedAtMs = json.generated_at ? new Date(json.generated_at).getTime() : NaN;
+          if(!isNaN(generatedAtMs) && generatedAtMs > requestedAtMs){
+            clearTimeout(hardRefreshPollTimer);
+            hardRefreshPollTimer = null;
+            hardRefreshSetStatus('Done — the whole watchlist is updated.', 'ok');
+            document.getElementById('hardRefreshBtn').textContent = 'Hard Refresh';
+            await reloadAndRerenderData();
+            showToast('Watchlist refreshed live');
+            hardRefreshStartCooldown();
+            return;
+          }
+        }
+      }catch(err){
+        console.error('data.json poll failed (hard refresh)', err);
+      }
+      if(Date.now() >= deadlineMs){
+        hardRefreshSetStatus("Still not showing up after 5 minutes — it may be queued behind another run. Check the repo's Actions tab, or try again shortly.", 'error');
+        document.getElementById('hardRefreshBtn').textContent = 'Hard Refresh';
+        hardRefreshStartCooldown();
+        return;
+      }
+      hardRefreshPollTimer = setTimeout(poll, HARD_REFRESH_POLL_INTERVAL_MS);
+    };
+    poll();
+  }
+
+  document.getElementById('hardRefreshBtn').addEventListener('click', async () => {
+    const confirmed = window.confirm(
+      "Re-fetch live data for the entire watchlist now, instead of waiting for the next scheduled update?\n\n" +
+      "This takes a few minutes and hits Yahoo's data feed hard — use sparingly."
+    );
+    if(!confirmed) return;
+
+    if(!LOOKUP_WORKER_URL || LOOKUP_WORKER_URL === 'PASTE_YOUR_WORKER_URL_HERE'){
+      hardRefreshSetStatus("On-demand refresh isn't set up yet — see cloudflare-worker/signalhq-lookup-trigger.js for setup steps.", 'error');
+      return;
+    }
+
+    if(hardRefreshPollTimer){ clearTimeout(hardRefreshPollTimer); hardRefreshPollTimer = null; }
+    clearInterval(hardRefreshCooldownTimer);
+    const btn = document.getElementById('hardRefreshBtn');
+    btn.disabled = true;
+    btn.textContent = 'Triggering…';
+    hardRefreshSetStatus('Triggering a live refresh of the whole watchlist…', null);
+
+    const requestedAtIso = new Date().toISOString();
+    try{
+      const res = await fetch(LOOKUP_WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'refresh_all' }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if(!res.ok || !body.ok){
+        hardRefreshSetStatus(body.error || `Couldn't trigger the refresh (HTTP ${res.status}).`, 'error');
+        btn.disabled = false;
+        btn.textContent = 'Hard Refresh';
+        return;
+      }
+    }catch(err){
+      console.error('hard refresh trigger failed', err);
+      hardRefreshSetStatus("Couldn't reach the refresh service — check your connection and try again.", 'error');
+      btn.disabled = false;
+      btn.textContent = 'Hard Refresh';
+      return;
+    }
+
+    hardRefreshSetStatus('Fetching live data for the whole watchlist… this can take a few minutes.', null);
+    btn.textContent = 'Fetching…';
+    pollHardRefreshResult(requestedAtIso);
   });
 
   // initial render matches default-checked filters (no toast/scroll on load)

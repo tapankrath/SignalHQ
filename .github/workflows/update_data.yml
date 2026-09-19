@@ -30,10 +30,27 @@ on:
     # yfinance feed, which the fetch script's own docstring already flags as
     # rate-limit-prone from shared CI IPs. If runs start failing/getting
     # skipped more often, drop back toward fewer, wider-spaced entries.
-  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      ticker:
+        description: 'On-demand lookup: a single ticker symbol (leave blank for a normal full-watchlist run)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
+
+# Added 2026-09-19 alongside the `ticker` input above, for the on-demand
+# lookup feature: repeated lookups of the SAME ticker (someone double-
+# clicking, or retrying) queue behind each other instead of running
+# concurrently and racing to write lookup.json — cancel-in-progress is
+# deliberately false so a run already in flight finishes and commits rather
+# than being killed mid-write. Every OTHER trigger (the scheduled batch runs,
+# or a lookup for a different ticker) gets its own group via the run id
+# fallback, so this never blocks or delays the normal watchlist schedule.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.inputs.ticker || github.run_id }}
+  cancel-in-progress: false
 
 jobs:
   update-data:
@@ -49,14 +66,30 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       - name: Fetch data
-        run: python -u scripts/fetch_data.py
+        env:
+          LOOKUP_TICKER: ${{ github.event.inputs.ticker }}
+        run: |
+          if [ -n "$LOOKUP_TICKER" ]; then
+            python -u scripts/fetch_data.py --ticker "$LOOKUP_TICKER"
+          else
+            python -u scripts/fetch_data.py
+          fi
 
-      - name: Commit updated data.json
+      - name: Commit updated data
+        env:
+          LOOKUP_TICKER: ${{ github.event.inputs.ticker }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git diff --quiet --cached || git commit -m "Update EOD options data [automated]"
+          if [ -n "$LOOKUP_TICKER" ]; then
+            # Lookup mode only ever touches lookup.json — data.json is
+            # intentionally left alone (see run_lookup() in fetch_data.py).
+            git add lookup.json
+            git diff --quiet --cached || git commit -m "On-demand lookup: $LOOKUP_TICKER [automated]"
+          else
+            git add data.json
+            git diff --quiet --cached || git commit -m "Update EOD options data [automated]"
+          fi
           # Fetching data can take a minute or more — if a human commit landed on
           # main while this was running, a plain push gets rejected as non-fast-
           # forward. Rebasing picks up that intervening commit, but data.json is

@@ -467,6 +467,17 @@
   .copy-btn:hover{ filter:brightness(0.97); }
   .active-count{ font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-faint); white-space:nowrap; }
 
+  /* Checking row/card checkboxes already means "select these trades" for
+     Portfolio Summary sizing — this reuses that exact same selection for a
+     one-tap bulk add to Backtest tracking too, instead of requiring a
+     separate per-trade trip through each trade's modal. */
+  .track-selected-btn{
+    background:var(--green-soft); border:1px solid transparent; color:var(--green);
+    padding:8px 13px; border-radius:8px; font-size:12px; font-weight:700;
+    transition:filter .12s; white-space:nowrap;
+  }
+  .track-selected-btn:hover{ filter:brightness(0.95); }
+
   /* ---------- RESULTS ---------- */
   /* Wrapped in the same card treatment (background/border/radius/padding)
      as .filter-card and .card-list above and below it — before this, the
@@ -1028,6 +1039,7 @@
   <div class="results-panel">
     <div class="results-bar">
       <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
+      <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       <div class="sort-wrap">
         Sort by
         <select id="sortSelect">
@@ -2246,6 +2258,16 @@
     return loadTrackedPositions().some(p => p.id === trackedPositionId(t));
   }
 
+  function buildTrackedEntry(t){
+    return {
+      id: trackedPositionId(t), sym: t.sym, strat: t.strat, side: t.side, strike: t.strike,
+      exp: t.exp, expDate: t.expDate, backExp: t.backExp || null, backExpDate: t.backExpDate || null,
+      dte: t.dte, premium: t.premium, debitStrategy: !!t.debitStrategy, legs: t.legs,
+      roc: t.roc, ap: t.ap, spot: t.spot,
+      trackedAt: new Date().toISOString(), entryDate: new Date().toISOString().slice(0, 10),
+    };
+  }
+
   function toggleTrackedPosition(t){
     const list = loadTrackedPositions();
     const id = trackedPositionId(t);
@@ -2263,13 +2285,7 @@
         updateTrackedBadge();
         return;
       }
-      list.push({
-        id, sym: t.sym, strat: t.strat, side: t.side, strike: t.strike,
-        exp: t.exp, expDate: t.expDate, backExp: t.backExp || null, backExpDate: t.backExpDate || null,
-        dte: t.dte, premium: t.premium, debitStrategy: !!t.debitStrategy, legs: t.legs,
-        roc: t.roc, ap: t.ap, spot: t.spot,
-        trackedAt: new Date().toISOString(), entryDate: new Date().toISOString().slice(0, 10),
-      });
+      list.push(buildTrackedEntry(t));
       const ok = saveTrackedPositions(list);
       showToast(ok ? 'Tracking for Backtest' : 'Could not save — local storage may be full or blocked');
     }
@@ -2278,6 +2294,33 @@
   }
   function removeTrackedPositionById(id){
     saveTrackedPositions(loadTrackedPositions().filter(p => p.id !== id));
+    renderBacktestView();
+    updateTrackedBadge();
+  }
+
+  // Bulk companion to the per-trade modal button — tracks every currently
+  // CHECKED row/card at once (the same selection Portfolio Summary reads),
+  // since checking boxes down the table is the more natural way to grab
+  // several picks in one pass than opening each one's modal individually.
+  function trackSelectedTrades(){
+    const selected = trades.filter(t => selectedOptionIds.has(optionId(t)));
+    if(!selected.length) return;
+    const list = loadTrackedPositions();
+    let added = 0, alreadyTracked = 0, missingData = 0;
+    selected.forEach(t => {
+      const id = trackedPositionId(t);
+      if(list.some(p => p.id === id)){ alreadyTracked++; return; }
+      if(!t.expDate || !t.legs){ missingData++; return; }
+      list.push(buildTrackedEntry(t));
+      added++;
+    });
+    const ok = added > 0 ? saveTrackedPositions(list) : true;
+    let msg;
+    if(!ok) msg = 'Could not save — local storage may be full or blocked';
+    else if(added > 0) msg = `Tracking ${added} trade${added === 1 ? '' : 's'} for Backtest` + (alreadyTracked ? ` (${alreadyTracked} already tracked)` : '');
+    else if(alreadyTracked) msg = 'Already tracking all selected trades';
+    else msg = missingData ? 'Selected trades are missing pricing data — try refreshing' : 'Nothing to track';
+    showToast(msg);
     renderBacktestView();
     updateTrackedBadge();
   }
@@ -2656,6 +2699,14 @@
     const n = selectedOptionIds.size + selectedEquityIds.size;
     document.getElementById('portfolioSelectedCount').textContent = n;
     document.getElementById('portfolioSelectedCountStocks').textContent = n;
+
+    // Track-selected only covers option trades (Backtest needs the per-leg
+    // pricing data options carry) — equity-only selections don't show it.
+    const trackBtn = document.getElementById('trackSelectedBtn');
+    if(trackBtn){
+      trackBtn.style.display = selectedOptionIds.size ? '' : 'none';
+      document.getElementById('trackSelectedCount').textContent = selectedOptionIds.size;
+    }
   }
 
   document.addEventListener('change', (e)=>{
@@ -3035,6 +3086,7 @@
   updateTrackedBadge();
   loadTrackedPnl(); // best-effort — 404 until tracked_positions.json + a data run exist
   document.getElementById('backtestDownloadBtn').addEventListener('click', downloadTrackedPositionsJson);
+  document.getElementById('trackSelectedBtn').addEventListener('click', trackSelectedTrades);
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

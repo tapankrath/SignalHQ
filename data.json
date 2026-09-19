@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T02:37:11.462182+00:00",
+  "generated_at": "2026-09-19T02:59:51.873170+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -2050,16 +2050,9 @@
       "pcVol": 2.72,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.61,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "US Stock Market This Week: Are SPY, QQQ Beating Asian Equities?",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/us-stock-market-this-week-are-spy-qqq-beating-asian-equities/cZtuFPnRB3Q",
-          "sentiment": 0.61
-        }
-      ],
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [],
       "volRegime": "Rich",
       "ivRvRatio": 1.43,
       "realizedVol": 13.2
@@ -2459,7 +2452,7 @@
       "chg6m": 9.8,
       "chg1y": -14.2,
       "volRatio": 1.58,
-      "peRatio": 25.1,
+      "peRatio": 25.7,
       "dividendYield": 0.31,
       "marketCap": 1696002211840,
       "score": 7.9,
@@ -2545,7 +2538,7 @@
       "chg6m": 172.7,
       "chg1y": 255.7,
       "volRatio": 1.63,
-      "peRatio": 142.8,
+      "peRatio": 138.9,
       "dividendYield": null,
       "marketCap": 913892179968,
       "score": 8.5,
@@ -2631,7 +2624,7 @@
       "chg6m": 12.8,
       "chg1y": 35.3,
       "volRatio": 2.12,
-      "peRatio": 17.3,
+      "peRatio": 17.2,
       "dividendYield": 0.26,
       "marketCap": 4212111966208,
       "score": 7.6,
@@ -3088,7 +3081,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2012989751296,
+      "marketCap": 2011830157312,
       "score": 8.2,
       "newsSentiment": -0.2,
       "newsSentimentLabel": "Negative",
@@ -3258,7 +3251,7 @@
       "chg6m": 23.4,
       "chg1y": 81.4,
       "volRatio": 2.02,
-      "peRatio": 57.3,
+      "peRatio": 55.6,
       "dividendYield": 0.56,
       "marketCap": 645257297920,
       "score": 4.9,
@@ -3344,7 +3337,7 @@
       "chg6m": 264.1,
       "chg1y": 336.0,
       "volRatio": 1.36,
-      "peRatio": 33.1,
+      "peRatio": 34.2,
       "dividendYield": 0.43,
       "marketCap": 361179774976,
       "score": 9.4,
@@ -3420,7 +3413,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 60770516992,
+      "marketCap": 56756400128,
       "score": 6.2,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
@@ -3676,9 +3669,9 @@
       "chg6m": 13.2,
       "chg1y": 90.3,
       "volRatio": 1.58,
-      "peRatio": 69.2,
+      "peRatio": 67.9,
       "dividendYield": 0.76,
-      "marketCap": 129320239104,
+      "marketCap": 129057431552,
       "score": 4.5,
       "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
@@ -3754,16 +3747,9 @@
       "dividendYield": 0.42,
       "marketCap": null,
       "score": 9.4,
-      "newsSentiment": 0.61,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "US Stock Market This Week: Are SPY, QQQ Beating Asian Equities?",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/us-stock-market-this-week-are-spy-qqq-beating-asian-equities/cZtuFPnRB3Q",
-          "sentiment": 0.61
-        }
-      ]
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": []
     },
     {
       "sym": "HD",
@@ -3824,7 +3810,7 @@
       "chg6m": -7.9,
       "chg1y": -5.3,
       "volRatio": 2.17,
-      "peRatio": 45.1,
+      "peRatio": 45.0,
       "dividendYield": 0.66,
       "marketCap": 397051002880,
       "score": 2.3,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T17:19:37.806014+00:00",
+  "generated_at": "2026-09-19T18:03:19.881682+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,8 +40,8 @@
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "John Ternus has the 'Apple DNA' that will push company to the 'next level'",
@@ -56,15 +56,43 @@
           "sentiment": 0.0
         },
         {
-          "title": "Apple gets bullish Wall Street call as iPhone demand jumps",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/apple-gets-bullish-wall-street-call-as-iphone-demand-jumps",
-          "sentiment": 0.74
+          "title": "Tech stocks today: Apple's iPhone 18 Pro goes on sale, AI safety debate continues",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-apples-iphone-18-pro-goes-on-sale-ai-safety-debate-continues-140134624.html",
+          "sentiment": 0.42
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.78,
-      "realizedVol": 21.7
+      "realizedVol": 21.7,
+      "expDate": "2026-09-21",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 332.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 327.5,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 340.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 345.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "MSFT",
@@ -116,7 +144,23 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.85,
-      "realizedVol": 22.0
+      "realizedVol": 22.0,
+      "expDate": "2026-09-21",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 487.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 482.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "NVDA",
@@ -156,7 +200,7 @@
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.6,
+      "newsSentiment": 0.48,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -164,17 +208,21 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/prediction-this-nvidia-backed-artificial-intellige/",
           "sentiment": 0.48
-        },
-        {
-          "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/19/better-artificial-intelligence-ai-stock-pick-for-2/",
-          "sentiment": 0.72
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.7,
-      "realizedVol": 45.8
+      "realizedVol": 45.8,
+      "expDate": "2026-10-23",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 225.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "META",
@@ -242,7 +290,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.92,
-      "realizedVol": 29.9
+      "realizedVol": 29.9,
+      "expDate": "2026-09-21",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 677.5,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "AMD",
@@ -306,7 +364,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 1.04,
-      "realizedVol": 49.9
+      "realizedVol": 49.9,
+      "expDate": "2026-10-23",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 580.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "MU",
@@ -350,9 +418,15 @@
       "pcVol": 0.68,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.41,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron (MU) Unveils Breakthrough Memory Product. It Says Much About the Memory Market",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/micron-mu-unveils-breakthrough-memory-171152232.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
           "publisher": "Motley Fool",
@@ -364,17 +438,21 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/is-microns-9-dip-a-warning-sign-or-buying-opportun/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Nvidia, SK Hynix send strong signal to Micron investors",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/stocks/nvidia-sk-hynix-warning-memory-prices-micron-investors",
-          "sentiment": 0.51
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.65,
-      "realizedVol": 52.2
+      "realizedVol": 52.2,
+      "expDate": "2026-09-21",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 1040.0,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "GOOG",
@@ -426,7 +504,23 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.35,
-      "realizedVol": 21.6
+      "realizedVol": 21.6,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 335.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 330.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "JPM",
@@ -490,7 +584,25 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.63,
-      "realizedVol": 13.9
+      "realizedVol": 13.9,
+      "expDate": "2026-10-02",
+      "backExpDate": "2026-10-23",
+      "legs": [
+        {
+          "type": "call",
+          "strike": 350.0,
+          "action": "sell",
+          "qty": 1,
+          "exp": "front"
+        },
+        {
+          "type": "call",
+          "strike": 350.0,
+          "action": "buy",
+          "qty": 1,
+          "exp": "back"
+        }
+      ]
     },
     {
       "sym": "ORCL",
@@ -554,7 +666,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.93,
-      "realizedVol": 52.4
+      "realizedVol": 52.4,
+      "expDate": "2026-10-09",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 147.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "AMZN",
@@ -618,7 +740,23 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.75,
-      "realizedVol": 26.1
+      "realizedVol": 26.1,
+      "expDate": "2026-09-21",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 257.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 262.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "SOXL",
@@ -682,7 +820,17 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.83,
-      "realizedVol": 113.6
+      "realizedVol": 113.6,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 123.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "TQQQ",
@@ -746,7 +894,35 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.74,
-      "realizedVol": 39.3
+      "realizedVol": 39.3,
+      "expDate": "2026-09-21",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 71.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 69.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 74.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 76.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "NFLX",
@@ -810,7 +986,17 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.82,
-      "realizedVol": 38.0
+      "realizedVol": 38.0,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 72.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "SNDK",
@@ -874,7 +1060,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 1.01,
-      "realizedVol": 73.5
+      "realizedVol": 73.5,
+      "expDate": "2026-10-30",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 1900.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "STX",
@@ -938,7 +1134,17 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.17,
-      "realizedVol": 58.5
+      "realizedVol": 58.5,
+      "expDate": "2026-10-30",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 880.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "ADBE",
@@ -1002,7 +1208,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.94,
-      "realizedVol": 46.2
+      "realizedVol": 46.2,
+      "expDate": "2026-10-02",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 250.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "SPCX",
@@ -1070,7 +1286,17 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.17,
-      "realizedVol": 41.8
+      "realizedVol": 41.8,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 162.5,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "CRM",
@@ -1134,7 +1360,23 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.49,
-      "realizedVol": 80.5
+      "realizedVol": 80.5,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 227.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 222.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "CRWD",
@@ -1198,7 +1440,25 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.53,
-      "realizedVol": 96.1
+      "realizedVol": 96.1,
+      "expDate": "2026-10-02",
+      "backExpDate": "2026-10-23",
+      "legs": [
+        {
+          "type": "call",
+          "strike": 240.0,
+          "action": "sell",
+          "qty": 1,
+          "exp": "front"
+        },
+        {
+          "type": "call",
+          "strike": 240.0,
+          "action": "buy",
+          "qty": 1,
+          "exp": "back"
+        }
+      ]
     },
     {
       "sym": "PLTR",
@@ -1266,7 +1526,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.87,
-      "realizedVol": 51.5
+      "realizedVol": 51.5,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 187.5,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "ASML",
@@ -1330,7 +1600,23 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.18,
-      "realizedVol": 40.2
+      "realizedVol": 40.2,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 1775.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 1785.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "TSM",
@@ -1394,7 +1680,17 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.2,
-      "realizedVol": 28.6
+      "realizedVol": 28.6,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 440.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "DELL",
@@ -1446,7 +1742,35 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.65,
-      "realizedVol": 85.1
+      "realizedVol": 85.1,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 537.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 532.5,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 607.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 612.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "PANW",
@@ -1510,7 +1834,23 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.6,
-      "realizedVol": 79.4
+      "realizedVol": 79.4,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 345.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 340.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "SKHY",
@@ -1574,7 +1914,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 1.1,
-      "realizedVol": 62.5
+      "realizedVol": 62.5,
+      "expDate": "2026-10-30",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 197.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "NBIS",
@@ -1638,7 +1988,17 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.19,
-      "realizedVol": 63.7
+      "realizedVol": 63.7,
+      "expDate": "2026-10-09",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 225.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "IREN",
@@ -1702,7 +2062,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 1.05,
-      "realizedVol": 86.4
+      "realizedVol": 86.4,
+      "expDate": "2026-12-18",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 55.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "APLD",
@@ -1766,7 +2136,23 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.86,
-      "realizedVol": 84.3
+      "realizedVol": 84.3,
+      "expDate": "2026-10-02",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 32.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 34.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "RKLB",
@@ -1830,7 +2216,17 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.35,
-      "realizedVol": 47.0
+      "realizedVol": 47.0,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 65.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "VCX",
@@ -1894,7 +2290,25 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.89,
-      "realizedVol": 82.6
+      "realizedVol": 82.6,
+      "expDate": "2026-10-16",
+      "backExpDate": "2027-01-15",
+      "legs": [
+        {
+          "type": "call",
+          "strike": 30.0,
+          "action": "sell",
+          "qty": 1,
+          "exp": "front"
+        },
+        {
+          "type": "call",
+          "strike": 30.0,
+          "action": "buy",
+          "qty": 1,
+          "exp": "back"
+        }
+      ]
     },
     {
       "sym": "GLW",
@@ -1958,7 +2372,17 @@
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.76,
-      "realizedVol": 69.5
+      "realizedVol": 69.5,
+      "expDate": "2026-10-09",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 150.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "SPY",
@@ -2016,7 +2440,23 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 1.05,
-      "realizedVol": 9.2
+      "realizedVol": 9.2,
+      "expDate": "2026-09-24",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 769.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 771.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "QQQ",
@@ -2061,7 +2501,17 @@
       "newsHeadlines": [],
       "volRegime": "Rich",
       "ivRvRatio": 1.43,
-      "realizedVol": 13.2
+      "realizedVol": 13.2,
+      "expDate": "2026-10-30",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 731.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "HD",
@@ -2125,7 +2575,35 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.35,
-      "realizedVol": 17.5
+      "realizedVol": 17.5,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 292.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 285.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 310.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 315.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "COST",
@@ -2189,7 +2667,17 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.32,
-      "realizedVol": 18.7
+      "realizedVol": 18.7,
+      "expDate": "2026-10-09",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 895.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "CSCO",
@@ -2253,7 +2741,23 @@
       ],
       "volRegime": "Rich",
       "ivRvRatio": 1.16,
-      "realizedVol": 24.5
+      "realizedVol": 24.5,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 113.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 115.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "MRVL",
@@ -2321,7 +2825,17 @@
       ],
       "volRegime": "Fair",
       "ivRvRatio": 0.86,
-      "realizedVol": 71.8
+      "realizedVol": 71.8,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 262.5,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
     }
   ],
   "equities": [
@@ -2345,8 +2859,8 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "John Ternus has the 'Apple DNA' that will push company to the 'next level'",
@@ -2361,10 +2875,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Apple gets bullish Wall Street call as iPhone demand jumps",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/apple-gets-bullish-wall-street-call-as-iphone-demand-jumps",
-          "sentiment": 0.74
+          "title": "Tech stocks today: Apple's iPhone 18 Pro goes on sale, AI safety debate continues",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-apples-iphone-18-pro-goes-on-sale-ai-safety-debate-continues-140134624.html",
+          "sentiment": 0.42
         }
       ]
     },
@@ -2419,7 +2933,7 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.6,
+      "newsSentiment": 0.48,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2427,12 +2941,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/prediction-this-nvidia-backed-artificial-intellige/",
           "sentiment": 0.48
-        },
-        {
-          "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/19/better-artificial-intelligence-ai-stock-pick-for-2/",
-          "sentiment": 0.72
         }
       ]
     },
@@ -2499,9 +3007,15 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": -0.21,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Delivery Outlook Shows Tesla (TSLA)\u2019s Core Business Under Pressure. Its Next Growth Engine Must Deliver",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/delivery-outlook-shows-tesla-tsla-171443015.html",
+          "sentiment": 0.1
+        },
         {
           "title": "Coinbase Files With CFTC To List US Single-Stock Perpetual Futures, Including AAPL And TSLA Contracts",
           "publisher": "Stocktwits",
@@ -2513,12 +3027,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/why-teslas-robotaxicybercab-bet-just-got-complicat/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Dow Drops To Record Worst Week In Six Months Amid Elevated Yields, Oil \u2014 NVDA, TSLA, SPCX, ONON In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/dow-drops-to-record-worst-week-in-six-months-amid-elevated-yields-oil-nvda-tsla-spcx-onon-in-focus/cZtHOYsRBEK",
-          "sentiment": -0.62
         }
       ]
     },
@@ -2585,9 +3093,15 @@
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
       "score": 9.4,
-      "newsSentiment": 0.41,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Micron (MU) Unveils Breakthrough Memory Product. It Says Much About the Memory Market",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/micron-mu-unveils-breakthrough-memory-171152232.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
           "publisher": "Motley Fool",
@@ -2599,12 +3113,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/is-microns-9-dip-a-warning-sign-or-buying-opportun/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Nvidia, SK Hynix send strong signal to Micron investors",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/stocks/nvidia-sk-hynix-warning-memory-prices-micron-investors",
-          "sentiment": 0.51
         }
       ]
     },
@@ -3087,7 +3595,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2011830157312,
+      "marketCap": 2012989751296,
       "score": 8.2,
       "newsSentiment": 0.21,
       "newsSentimentLabel": "Positive",
@@ -3419,7 +3927,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 56756400128,
+      "marketCap": 60770516992,
       "score": 6.2,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
@@ -3464,9 +3972,15 @@
       "dividendYield": null,
       "marketCap": 44873015296,
       "score": 2.8,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.35,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "The Unexpected Rival Threatening to Shake Up CoreWeave's Market",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/surprise-rival-threatening-to-shake-up-coreweave/",
+          "sentiment": -0.62
+        },
         {
           "title": "The ARK Trade Watch: Cathie Wood Cuts Crypto Exposure, Then Reverses Course On CoreWeave",
           "publisher": "Stocktwits",
@@ -3478,12 +3992,6 @@
           "publisher": "Barchart",
           "link": "https://www.barchart.com/story/news/4684161/a-25-billion-reason-to-buy-coreweave-stock",
           "sentiment": 0.0
-        },
-        {
-          "title": "Jim Cramer on CoreWeave (CRWV): \u201cI Think It\u2019s Going to Be Okay to Buy\u201d",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-coreweave-crwv-think-172910718.html",
-          "sentiment": 0.23
         }
       ]
     },
@@ -3677,7 +4185,7 @@
       "volRatio": 1.58,
       "peRatio": 68.9,
       "dividendYield": 0.75,
-      "marketCap": 129057431552,
+      "marketCap": 129320239104,
       "score": 4.5,
       "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
@@ -3908,7 +4416,7 @@
       "chg6m": 173.0,
       "chg1y": 229.6,
       "volRatio": 1.04,
-      "peRatio": 80.1,
+      "peRatio": 80.6,
       "dividendYield": 0.1,
       "marketCap": 219508604928,
       "score": 9.4,

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>SignalHQ — Ready-Made Option Trades</title>
+<title>VantEdgeAI — Ready-Made Option Trades</title>
 
 <link rel="manifest" href="manifest.json">
 <meta name="color-scheme" content="light dark">
@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="SignalHQ">
+<meta name="apple-mobile-web-app-title" content="VantEdgeAI">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icons/favicon.png">
 
@@ -215,13 +215,19 @@
     display:flex; align-items:center; justify-content:center;
   }
   .brand-mark svg{ display:block; width:100%; height:100%; border-radius:11px; }
-  .brand-name{ font-family:'Space Grotesk', var(--sans); font-weight:700; font-size:37.5px; letter-spacing:-0.02em; color:var(--text); }
-  /* Deliberately its own value, not var(--red) — --red is brightened in dark
-     mode for small-text legibility (badges, bearish indicators) and reused
-     all over the app; the wordmark is large/bold and reads better with a
-     darker, more saturated red than that shared variable would give it, so
-     it gets its own light/dark values below instead of piggybacking on --red. */
-  .brand-hq{ color:#991B1B; font-weight:700; }
+  /* Space Grotesk is deliberately kept for the wordmark — it's a geometric,
+     technical face (slightly squared terminals, monospace-derived
+     proportions), the opposite of a "rounded"/soft display font, which is
+     exactly the register a quant/trading brand wants here. */
+  .brand-name{ font-family:'Space Grotesk', var(--sans); font-weight:700; font-size:37.5px; letter-spacing:-0.02em; color:#14532D; }
+  /* Both halves of the wordmark get their own fixed colors, not var(--green)/
+     var(--red) — those shared variables are tuned for small badges/values
+     and read as too light/thin at this size and weight. "VantEdge" reuses
+     the darkest green from the bar-chart mark above (ties the wordmark to
+     the icon); "AI" gets a deliberately dark, desaturated red rather than
+     the brighter red used for bearish badges elsewhere — this is a brand
+     accent, not a "down" indicator, so it shouldn't read as an alert color. */
+  .brand-ai{ color:#7F1D1D; font-weight:700; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -899,11 +905,14 @@
        than their own container. A dedicated shade lighter than the tray
        restores that "raised field" relationship. */
     .portfolio-bar input{ background:#262A31; }
-    /* Same reasoning as the light-mode value above (see .brand-hq) — its own
-       fixed color rather than var(--red), just a lighter shade so it still
-       reads as a clearly darker red against the near-black page instead of
-       vanishing into it. */
-    .brand-hq{ color:#EF4444; }
+    /* Same reasoning as the light-mode values above (see .brand-name/.brand-ai)
+       — fixed colors rather than the shared variables, just lighter shades so
+       both halves of the wordmark stay legible against the near-black page
+       instead of sinking into it. Green reuses the brightest bar from the
+       mark's own icon (#22C55E); red is one step brighter than the light-mode
+       value, not the same bright red used for bearish badges. */
+    .brand-name{ color:#22C55E; }
+    .brand-ai{ color:#B91C1C; }
   }
 
 </style>
@@ -913,9 +922,9 @@
 <div class="sticky-top">
 <header>
   <div class="header-top">
-    <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload SignalHQ" style="cursor:pointer;">
+    <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI" style="cursor:pointer;">
       <div class="brand-mark">
-        <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="SignalHQ logo">
+        <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo">
           <rect width="24" height="24" fill="#0E1116"/>
           <rect x="2.5" y="14" width="3" height="6"  rx="1.2" fill="#14532D"/>
           <rect x="8"   y="11" width="3" height="9"  rx="1.2" fill="#166534"/>
@@ -924,7 +933,7 @@
         </svg>
       </div>
       <div>
-        <div class="brand-name">Signal<span class="brand-hq">HQ</span></div>
+        <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
       </div>
     </div>
 
@@ -1759,7 +1768,7 @@
   // the file always matches what's on screen.
   function buildPortfolioSummaryText({ capital, optionsPct, equityPct, cashLeftPct, isOverAllocated, equityCapital, optionsCapital, cashLeftCapital, equityRowsData, optionRowsData, totalUsed, unallocated, hedge }){
     const lines = [];
-    lines.push('SignalHQ — Portfolio Summary');
+    lines.push('VantEdgeAI — Portfolio Summary');
     lines.push(`Generated ${new Date().toLocaleString()}`);
     lines.push('');
     lines.push(`Total Capital: ${curSym()}${capital.toLocaleString()}`);
@@ -2163,7 +2172,7 @@
       <div class="modal-note" style="margin-bottom:14px;">${
         t.strat === 'Covered Call'
           ? `Buying this put turns your covered call into a "collar" — it caps how far the stock can fall against you, in exchange for giving up some of the call premium you'd otherwise keep. This is a real, standard hedge, not a guarantee: it doesn't protect against the stock gapping below the put strike overnight, and closing a collar early has its own costs and slippage.`
-          : `Buying this option converts your naked ${t.strat.toLowerCase()} into a defined-risk spread, using the same further-OTM strike SignalHQ's own Bull Put Spread / Bear Call Spread picks already use. This caps your max loss at $${t.hedge.cappedMaxLoss.toLocaleString()} instead of ${t.strat === 'Short Call' ? 'a theoretically unlimited loss' : 'the full strike value'} — it's a real trade-off (less credit collected, in exchange for defined risk), not a free upgrade.`
+          : `Buying this option converts your naked ${t.strat.toLowerCase()} into a defined-risk spread, using the same further-OTM strike VantEdgeAI's own Bull Put Spread / Bear Call Spread picks already use. This caps your max loss at $${t.hedge.cappedMaxLoss.toLocaleString()} instead of ${t.strat === 'Short Call' ? 'a theoretically unlimited loss' : 'the full strike value'} — it's a real trade-off (less credit collected, in exchange for defined risk), not a free upgrade.`
       }</div>
     ` : '';
 
@@ -2226,7 +2235,7 @@
         </span>
       </div>
       <div class="news-list">${headlinesHtml}</div>
-      <div class="modal-note">"IV vs Realized Vol" compares this option's implied volatility to the stock's own recent 20-day realized volatility — "Rich" means the market is paying more for this option than recent price action alone would suggest, which favors premium-selling strategies (everything SignalHQ screens for); "Cheap" means less edge for a seller. Sentiment is a lexicon-based score of headline text only (not full articles, not an LLM reading the story) — treat it as a rough gauge of recent press tone, not analysis. Figures are computed from the prior session's EOD close and are for research purposes only — not a recommendation to enter this trade. Verify live pricing before placing an order.</div>
+      <div class="modal-note">"IV vs Realized Vol" compares this option's implied volatility to the stock's own recent 20-day realized volatility — "Rich" means the market is paying more for this option than recent price action alone would suggest, which favors premium-selling strategies (everything VantEdgeAI screens for); "Cheap" means less edge for a seller. Sentiment is a lexicon-based score of headline text only (not full articles, not an LLM reading the story) — treat it as a rough gauge of recent press tone, not analysis. Figures are computed from the prior session's EOD close and are for research purposes only — not a recommendation to enter this trade. Verify live pricing before placing an order.</div>
       <div class="ticker-action-row">
         <button class="modal-copy-btn" id="modalCopyBtn">Copy trade summary</button>
         <button class="modal-copy-btn-secondary" id="modalTrackBtn"></button>

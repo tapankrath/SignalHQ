@@ -98,6 +98,12 @@ jobs:
             git diff --quiet --cached || git commit -m "On-demand lookup: $LOOKUP_TICKER [automated]"
           else
             git add data.json
+            # tracked_pnl.json is update_tracked_positions()'s output (see
+            # fetch_data.py) — it only exists once tracked_positions.json has
+            # been committed to the repo (the frontend's Backtest tab export;
+            # that file is hand-committed and never written by this workflow),
+            # so this only stages it once that handoff has actually happened.
+            [ -f tracked_pnl.json ] && git add tracked_pnl.json
             git diff --quiet --cached || git commit -m "Update EOD options data [automated]"
           fi
           # Fetching data can take a minute or more — if a human commit landed on

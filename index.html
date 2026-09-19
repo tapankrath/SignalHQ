@@ -170,16 +170,35 @@
      status was easy to miss entirely once the page had scrolled). type="search"
      gives most mobile keyboards a "Search"/"Go" return key, which submits the
      form — no separate visible button needed in this tight a space. */
-  .header-lookup-form{ flex:0 0 auto; }
+  .header-lookup-form{ flex:0 0 auto; position:relative; }
   .header-lookup-input{
     width:86px; box-sizing:border-box;
     background:var(--surface-2); border:1px solid var(--border-strong);
-    color:var(--text); padding:7px 8px; border-radius:7px;
+    color:var(--text); padding:7px 24px 7px 8px; border-radius:7px;
     font-family:var(--mono); font-size:13px; font-weight:700;
     text-transform:uppercase; letter-spacing:0.02em; text-align:center;
   }
   .header-lookup-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
   .header-lookup-input:disabled{ opacity:0.6; }
+  /* Chrome/Edge draw their own "clear" (×) button on type="search" inputs
+     once there's text in them, right where the magnifying-glass submit
+     button below is positioned — hiding it avoids the two crowding each
+     other in this narrow a box. Nothing is lost: selecting the text and
+     retyping clears it just as easily. */
+  .header-lookup-input::-webkit-search-cancel-button{ display:none; -webkit-appearance:none; }
+  /* Overlaid on the input's own right edge rather than added as a separate
+     row item — type="search" plus Enter already submits the form, but a
+     desktop user has no on-screen keyboard "Go" button to tell them that,
+     so this gives everyone a visible, clickable affordance without costing
+     any extra width in the header row. */
+  .header-lookup-submit{
+    position:absolute; right:5px; top:50%; transform:translateY(-50%);
+    width:18px; height:18px; padding:0; margin:0;
+    display:flex; align-items:center; justify-content:center;
+    background:transparent; border:none; color:var(--text-dim); cursor:pointer;
+  }
+  .header-lookup-submit:hover{ color:var(--text); }
+  .header-lookup-submit:disabled{ opacity:0.5; cursor:default; }
 
   .mode-toggle{
     max-width:1080px; margin:0 auto; padding:0 18px;
@@ -903,6 +922,9 @@
     <div class="header-tools-label">Allocation</div>
     <form class="header-lookup-form" id="lookupForm">
       <input type="search" class="header-lookup-input" id="lookupInput" placeholder="Ticker" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" aria-label="Look up any ticker live">
+      <button type="submit" class="header-lookup-submit" id="lookupSubmitBtn" aria-label="Look up ticker">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
     </form>
     <div class="header-actions">
       <button class="export-btn" id="tickersBtn">
@@ -2485,12 +2507,21 @@
     if(lookupPollTimer){ clearTimeout(lookupPollTimer); lookupPollTimer = null; }
   }
 
-  // Cooldown now runs on the header ticker input itself (disabled + a
-  // countdown in its placeholder) since the compact header design (added
-  // 2026-09-19) has no separate visible submit button to show it on.
+  // Keeps the header input and its overlaid magnifying-glass submit button
+  // (see .header-lookup-submit) in sync — both need to be disabled together,
+  // since a non-disabled submit button would otherwise still fire the form's
+  // submit event even while the input itself is disabled.
+  function setLookupInputEnabled(enabled){
+    document.getElementById('lookupInput').disabled = !enabled;
+    document.getElementById('lookupSubmitBtn').disabled = !enabled;
+  }
+
+  // Cooldown runs on the header ticker input itself (disabled + a countdown
+  // in its placeholder) after a lookup finishes, so another one can't start
+  // until the previous run's Actions run has had a chance to land.
   function lookupStartCooldown(){
     const input = document.getElementById('lookupInput');
-    input.disabled = true;
+    setLookupInputEnabled(false);
     let remaining = Math.ceil(LOOKUP_COOLDOWN_MS / 1000);
     const label = () => { input.placeholder = `Wait ${remaining}s`; };
     label();
@@ -2499,7 +2530,7 @@
       remaining -= 1;
       if(remaining <= 0){
         clearInterval(lookupCooldownTimer);
-        input.disabled = false;
+        setLookupInputEnabled(true);
         input.placeholder = 'Ticker';
       } else {
         label();
@@ -2530,7 +2561,7 @@
     document.getElementById('modalCloseBtn').addEventListener('click', () => {
       lookupStopPolling();
       clearInterval(lookupCooldownTimer);
-      document.getElementById('lookupInput').disabled = false;
+      setLookupInputEnabled(true);
       closeTradeModal();
     });
     modalScrim.classList.add('show');
@@ -2615,7 +2646,7 @@
 
     lookupStopPolling();
     clearInterval(lookupCooldownTimer);
-    input.disabled = true;
+    setLookupInputEnabled(false);
     showLookupLoadingModal(ticker);
 
     const requestedAtIso = new Date().toISOString();
@@ -2627,13 +2658,13 @@
       });
       const body = await res.json().catch(() => ({}));
       if(!res.ok || !body.ok){
-        input.disabled = false;
+        setLookupInputEnabled(true);
         showLookupErrorModal(ticker, body.error || `Couldn't trigger the lookup (HTTP ${res.status}).`);
         return;
       }
     }catch(err){
       console.error('lookup trigger failed', err);
-      input.disabled = false;
+      setLookupInputEnabled(true);
       showLookupErrorModal(ticker, "Couldn't reach the lookup service — check your connection and try again.");
       return;
     }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T00:19:43.540460+00:00",
+  "generated_at": "2026-09-19T00:36:36.794596+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -420,14 +420,14 @@
       "pcVol": 0.38,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.67,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Analyst Sets Jaw-Dropping Price Target on Alphabet Stock",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-sets-jaw-dropping-price-184326859.html",
-          "sentiment": 0.0
+          "title": "Alphabet's Ad Business Got a Lift From a Key Antitrust Ruling, Helping End Google's Worst Losing Streak in Over a Decade. Is Sundar Pichai's Alphabet Stock a Buy Now?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/alphabets-ad-business-got-a-lift-from-a-key-antitr/",
+          "sentiment": -0.67
         }
       ],
       "volRegime": "Rich",
@@ -536,9 +536,28 @@
       "pcVol": 0.55,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsHeadlines": [
+        {
+          "title": "Jim Cramer Said The Strength In Oracle (ORCL)\u2019s Shares Was A \u201cPositive Sign\u201d",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-said-strength-oracle-230622055.html",
+          "sentiment": 0.66
+        },
+        {
+          "title": "Why Oracle (ORCL) Stock Is Trading Lower Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-oracle-orcl-stock-trading-224840340.html",
+          "sentiment": -0.3
+        },
+        {
+          "title": "Oracle Slides 3.4% as Buy Call Meets a Capital Burden",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-slides-3-4-buy-202108114.html",
+          "sentiment": -0.69
+        }
+      ],
       "volRegime": "Fair",
       "ivRvRatio": 0.92,
       "realizedVol": 52.1
@@ -1467,7 +1486,7 @@
       "pcVol": 0.74,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.52,
+      "newsSentiment": 0.58,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1477,16 +1496,16 @@
           "sentiment": 0.69
         },
         {
+          "title": "Palo Alto Networks (PANW) Stock Gets Fair Value Boost After Analyst Target Increases",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-stock-001952926.html",
+          "sentiment": 0.75
+        },
+        {
           "title": "Asana, Five9, Palo Alto Networks, Rapid7, and Sprout Social Shares Plummet, What You Need To Know",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/asana-five9-palo-alto-networks-232840904.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "ZS, CRWD, PANW Stock In Focus \u2014 Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Debate Intensifies",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/zs-crwd-panw-stock-in-focus-cybersecurity-firms-lead-weekly-nasdaq-100-gains-as-ai-security-debate-intensifies/cZtHcYdRBE4",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Cheap",
@@ -1979,9 +1998,15 @@
       "pcVol": 1.11,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.19,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Corning Stock: The $2 Billion Dilution Scare Is Fading. Here\u2019s What Matters Now.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4684717/corning-stock-the-2-billion-dilution-scare-is-fading-heres-what-matters-now",
+          "sentiment": -0.48
+        },
         {
           "title": "Jim Cramer Says to Wait For Corning (GLW) to Fall Further",
           "publisher": "Insider Monkey",
@@ -1993,12 +2018,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/lumentum-climbs-3-as-optics-buying-extends-coherent-rises-5-corning-jumps-3/",
           "sentiment": 0.57
-        },
-        {
-          "title": "Corning (GLW) Completes SDM4 Multicore Fiber Specification For AI Data Centers",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/corning-glw-completes-sdm4-multicore-232033407.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2680,14 +2699,14 @@
       "dividendYield": 0.26,
       "marketCap": 4212111966208,
       "score": 7.6,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.67,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Analyst Sets Jaw-Dropping Price Target on Alphabet Stock",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-sets-jaw-dropping-price-184326859.html",
-          "sentiment": 0.0
+          "title": "Alphabet's Ad Business Got a Lift From a Key Antitrust Ruling, Helping End Google's Worst Losing Streak in Over a Decade. Is Sundar Pichai's Alphabet Stock a Buy Now?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/18/alphabets-ad-business-got-a-lift-from-a-key-antitr/",
+          "sentiment": -0.67
         }
       ]
     },
@@ -3424,7 +3443,7 @@
       "dividendYield": null,
       "marketCap": 297408430080,
       "score": 9.4,
-      "newsSentiment": 0.52,
+      "newsSentiment": 0.58,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3434,16 +3453,16 @@
           "sentiment": 0.69
         },
         {
+          "title": "Palo Alto Networks (PANW) Stock Gets Fair Value Boost After Analyst Target Increases",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-stock-001952926.html",
+          "sentiment": 0.75
+        },
+        {
           "title": "Asana, Five9, Palo Alto Networks, Rapid7, and Sprout Social Shares Plummet, What You Need To Know",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/asana-five9-palo-alto-networks-232840904.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "ZS, CRWD, PANW Stock In Focus \u2014 Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Debate Intensifies",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/zs-crwd-panw-stock-in-focus-cybersecurity-firms-lead-weekly-nasdaq-100-gains-as-ai-security-debate-intensifies/cZtHcYdRBE4",
-          "sentiment": 0.59
         }
       ]
     },
@@ -3725,9 +3744,15 @@
       "dividendYield": 0.76,
       "marketCap": 129320239104,
       "score": 4.4,
-      "newsSentiment": 0.19,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Corning Stock: The $2 Billion Dilution Scare Is Fading. Here\u2019s What Matters Now.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4684717/corning-stock-the-2-billion-dilution-scare-is-fading-heres-what-matters-now",
+          "sentiment": -0.48
+        },
         {
           "title": "Jim Cramer Says to Wait For Corning (GLW) to Fall Further",
           "publisher": "Insider Monkey",
@@ -3739,12 +3764,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/18/lumentum-climbs-3-as-optics-buying-extends-coherent-rises-5-corning-jumps-3/",
           "sentiment": 0.57
-        },
-        {
-          "title": "Corning (GLW) Completes SDM4 Multicore Fiber Specification For AI Data Centers",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/corning-glw-completes-sdm4-multicore-232033407.html",
-          "sentiment": 0.0
         }
       ]
     },

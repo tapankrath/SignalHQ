@@ -1,5 +1,71 @@
 [
   {
+    "id": "MSFT|Bull_Put_Spread|2026-09-21|$488/482",
+    "sym": "MSFT",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$488/482",
+    "exp": "Sep 21",
+    "expDate": "2026-09-21",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 2,
+    "premium": 0.65,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 487.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 482.5,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 12.9,
+    "ap": 2354.2,
+    "spot": 493.78,
+    "trackedAt": "2026-09-19T21:05:32.405Z",
+    "entryDate": "2026-09-19"
+  },
+  {
+    "id": "GOOG|Bull_Put_Spread|2026-09-25|$335/330",
+    "sym": "GOOG",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$335/330",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 6,
+    "premium": 0.82,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 335,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 330,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 16.4,
+    "ap": 997.7,
+    "spot": 344.41,
+    "trackedAt": "2026-09-19T21:05:32.405Z",
+    "entryDate": "2026-09-19"
+  },
+  {
     "id": "CRM|Bull_Put_Spread|2026-09-25|$228/222",
     "sym": "CRM",
     "strat": "Bull Put Spread",
@@ -29,7 +95,139 @@
     "roc": 15.4,
     "ap": 936.8,
     "spot": 237.92,
-    "trackedAt": "2026-09-19T18:12:44.164Z",
+    "trackedAt": "2026-09-19T21:05:32.405Z",
+    "entryDate": "2026-09-19"
+  },
+  {
+    "id": "ASML|Bear_Call_Spread|2026-09-25|$1775/1785",
+    "sym": "ASML",
+    "strat": "Bear Call Spread",
+    "side": "bear",
+    "strike": "$1775/1785",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 6,
+    "premium": 2.7,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "call",
+        "strike": 1775,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 1785,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 27,
+    "ap": 1642.5,
+    "spot": 1679.92,
+    "trackedAt": "2026-09-19T21:05:32.405Z",
+    "entryDate": "2026-09-19"
+  },
+  {
+    "id": "PANW|Bull_Put_Spread|2026-09-25|$345/340",
+    "sym": "PANW",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$345/340",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 6,
+    "premium": 0.66,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 345,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 340,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 13.2,
+    "ap": 803,
+    "spot": 363.58,
+    "trackedAt": "2026-09-19T21:05:32.405Z",
+    "entryDate": "2026-09-19"
+  },
+  {
+    "id": "SPY|Bear_Call_Spread|2026-09-24|$769/771",
+    "sym": "SPY",
+    "strat": "Bear Call Spread",
+    "side": "bear",
+    "strike": "$769/771",
+    "exp": "Sep 24",
+    "expDate": "2026-09-24",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 5,
+    "premium": 0.47,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "call",
+        "strike": 769,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 771,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 23.5,
+    "ap": 1715.5,
+    "spot": 761.69,
+    "trackedAt": "2026-09-19T21:05:32.405Z",
+    "entryDate": "2026-09-19"
+  },
+  {
+    "id": "CSCO|Bear_Call_Spread|2026-09-25|$113/115",
+    "sym": "CSCO",
+    "strat": "Bear Call Spread",
+    "side": "bear",
+    "strike": "$113/115",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 6,
+    "premium": 0.27,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "call",
+        "strike": 113,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 115,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 13.25,
+    "ap": 806,
+    "spot": 109.51,
+    "trackedAt": "2026-09-19T21:05:32.405Z",
     "entryDate": "2026-09-19"
   }
 ]

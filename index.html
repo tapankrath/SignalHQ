@@ -1466,10 +1466,11 @@
       // has actually finished fetching data.json
       renderEquities(sortEquities(filteredEquities()));
     }
-    if(mode === 'lookup'){
-      const input = document.getElementById('lookupInput');
-      if(input && !input.disabled) input.focus();
-    }
+    // Deliberately NOT auto-focusing #lookupInput on switching to the Lookup
+    // tab (tried this initially) — immediately popping the on-screen keyboard
+    // on tab-switch broke .sticky-top's sticky positioning on iOS Safari
+    // (a real, reported bug, not a hypothetical). Tapping the box to type is
+    // one extra tap, but a reliably-working sticky header matters more.
   }
 
   function filterEquitiesByType(list){

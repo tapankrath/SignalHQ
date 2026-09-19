@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T15:48:02.686669+00:00",
+  "generated_at": "2026-09-19T17:19:37.806014+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,8 +40,8 @@
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "John Ternus has the 'Apple DNA' that will push company to the 'next level'",
@@ -56,10 +56,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Apple's iPhone 18 Pro line hits stores with a $100 price bump amid memory crunch, AI pressure",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/article/apples-iphone-18-pro-line-hits-stores-with-a-100-price-bump-amid-memory-crunch-ai-pressure-155709106.html",
-          "sentiment": -0.3
+          "title": "Apple gets bullish Wall Street call as iPhone demand jumps",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/apple-gets-bullish-wall-street-call-as-iphone-demand-jumps",
+          "sentiment": 0.74
         }
       ],
       "volRegime": "Cheap",
@@ -156,9 +156,22 @@
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.6,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Prediction: This Nvidia-Backed Artificial Intelligence (AI) Stock Could 10X by 2033",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/prediction-this-nvidia-backed-artificial-intellige/",
+          "sentiment": 0.48
+        },
+        {
+          "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/better-artificial-intelligence-ai-stock-pick-for-2/",
+          "sentiment": 0.72
+        }
+      ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.7,
       "realizedVol": 45.8
@@ -205,9 +218,15 @@
       "pcVol": 0.28,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta stock delivers a bold case for a $900 target",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/meta-stock-900-price-target-ai-ad-engine",
+          "sentiment": 0.38
+        },
         {
           "title": "Meta (META)\u2019s Stilla.ai Deal Could Turn Business Agent Into a New Monetization Engine",
           "publisher": "Insider Monkey",
@@ -267,7 +286,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: Will The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "title": "Dow Jones Futures: Can The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.82
@@ -331,9 +350,15 @@
       "pcVol": 0.68,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.41,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/better-artificial-intelligence-ai-stock-pick-for-2/",
+          "sentiment": 0.72
+        },
         {
           "title": "Is Micron's 9% Dip a Warning Sign or Buying Opportunity?",
           "publisher": "Motley Fool",
@@ -345,12 +370,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/nvidia-sk-hynix-warning-memory-prices-micron-investors",
           "sentiment": 0.51
-        },
-        {
-          "title": "What Does Micron Technology (MU) Warning Of Shortages Through 2027 Mean?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/does-micron-technology-mu-warning-001915512.html",
-          "sentiment": -0.53
         }
       ],
       "volRegime": "Cheap",
@@ -579,6 +598,12 @@
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
+          "title": "Bank of America resets Amazon stock forecast on delivery plan",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/bank-of-america-reiterates-buy-amazon-stock-delivery-plan",
+          "sentiment": 0.18
+        },
+        {
           "title": "Amazon cargo delivery company files for Chapter 11 bankruptcy",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/travel/amazon-cargo-delivery-clj-transporting-chapter-11-bankruptcy",
@@ -589,12 +614,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/these-15-words-from-amazon-s-andy-jassy-may-eliminate-nvidia-s-biggest-risk/",
           "sentiment": -0.27
-        },
-        {
-          "title": "Amazon (AMZN) Is Reworking Its Air Fleet With 30 A330 Freighters By 2027",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-reworking-air-fleet-041803486.html",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Cheap",
@@ -767,9 +786,15 @@
       "pcVol": 0.39,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.22,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.18,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Netflix (NFLX) Gets a Bullish $110 Target: What\u2019s Driving the Outlook?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-gets-bullish-110-155252131.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Netflix Has $27 Billion Left to Buy Back Its Own Stock -- About 8% of the Whole Company",
           "publisher": "Motley Fool",
@@ -781,12 +806,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-trades-down-223240493.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Stock Market Today, Sept. 18: Netflix Falls on Analyst Downgrade and Slashed Price Target",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/18/stock-market-today-sept-18-netflix-falls-on-analyst-downgrade-and-slashed-price-target/",
-          "sentiment": -0.66
         }
       ],
       "volRegime": "Cheap",
@@ -835,7 +854,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: Will The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "title": "Dow Jones Futures: Can The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.82
@@ -2210,9 +2229,15 @@
       "pcVol": 0.63,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Cisco (CSCO) Leans on Splunk to Broaden Its Share of Enterprise AI Spending. It Faces a Big Test",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/cisco-csco-leans-splunk-broaden-171200277.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Cisco Drops 8% in 3 Months: Should You Buy the Stock on the Dip?",
           "publisher": "Zacks",
@@ -2223,12 +2248,6 @@
           "title": "Cisco Climbs 3.3% as Splunk Takes AI Behind the Firewall",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/cisco-climbs-3-3-splunk-182529645.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Is Cisco Stock Priced For Orders That Are Not Yet Revenue?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615687/is-cisco-stock-priced-for-orders-that-are-not-yet-revenue/2026-09-17",
           "sentiment": 0.0
         }
       ],
@@ -2278,9 +2297,15 @@
       "pcVol": 0.37,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.64,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Marvell (MRVL) and GlobalFoundries (GFS) Rise on Expanded Deal: What Investors Should Know",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/marvell-mrvl-globalfoundries-gfs-rise-155724895.html",
+          "sentiment": 0.0
+        },
         {
           "title": "APH's AI Datacom Strength Grows: Can It Challenge TEL & MRVL?",
           "publisher": "Zacks",
@@ -2292,12 +2317,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/globalfoundries-jumps-7-expanded-marvell-164315855.html",
           "sentiment": 0.75
-        },
-        {
-          "title": "Can GFS' Marvell Deal for SiGe Capacity Expansion Accelerate Growth?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/articles/gfs-marvell-deal-sige-capacity-151900054.html",
-          "sentiment": 0.62
         }
       ],
       "volRegime": "Fair",
@@ -2326,8 +2345,8 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": -0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "John Ternus has the 'Apple DNA' that will push company to the 'next level'",
@@ -2342,10 +2361,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Apple's iPhone 18 Pro line hits stores with a $100 price bump amid memory crunch, AI pressure",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/article/apples-iphone-18-pro-line-hits-stores-with-a-100-price-bump-amid-memory-crunch-ai-pressure-155709106.html",
-          "sentiment": -0.3
+          "title": "Apple gets bullish Wall Street call as iPhone demand jumps",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/apple-gets-bullish-wall-street-call-as-iphone-demand-jumps",
+          "sentiment": 0.74
         }
       ]
     },
@@ -2400,9 +2419,22 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsSentiment": 0.6,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Prediction: This Nvidia-Backed Artificial Intelligence (AI) Stock Could 10X by 2033",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/prediction-this-nvidia-backed-artificial-intellige/",
+          "sentiment": 0.48
+        },
+        {
+          "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/better-artificial-intelligence-ai-stock-pick-for-2/",
+          "sentiment": 0.72
+        }
+      ]
     },
     {
       "sym": "META",
@@ -2424,9 +2456,15 @@
       "dividendYield": 0.32,
       "marketCap": 1696002211840,
       "score": 7.9,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Meta stock delivers a bold case for a $900 target",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/meta-stock-900-price-target-ai-ad-engine",
+          "sentiment": 0.38
+        },
         {
           "title": "Meta (META)\u2019s Stilla.ai Deal Could Turn Business Agent Into a New Monetization Engine",
           "publisher": "Insider Monkey",
@@ -2508,7 +2546,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: Will The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "title": "Dow Jones Futures: Can The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.82
@@ -2547,9 +2585,15 @@
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
       "score": 9.4,
-      "newsSentiment": -0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.41,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Better Artificial Intelligence (AI) Stock Pick for 2027: Nvidia versus Micron",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/better-artificial-intelligence-ai-stock-pick-for-2/",
+          "sentiment": 0.72
+        },
         {
           "title": "Is Micron's 9% Dip a Warning Sign or Buying Opportunity?",
           "publisher": "Motley Fool",
@@ -2561,12 +2605,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/nvidia-sk-hynix-warning-memory-prices-micron-investors",
           "sentiment": 0.51
-        },
-        {
-          "title": "What Does Micron Technology (MU) Warning Of Shortages Through 2027 Mean?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/does-micron-technology-mu-warning-001915512.html",
-          "sentiment": -0.53
         }
       ]
     },
@@ -2711,6 +2749,12 @@
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
+          "title": "Bank of America resets Amazon stock forecast on delivery plan",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/bank-of-america-reiterates-buy-amazon-stock-delivery-plan",
+          "sentiment": 0.18
+        },
+        {
           "title": "Amazon cargo delivery company files for Chapter 11 bankruptcy",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/travel/amazon-cargo-delivery-clj-transporting-chapter-11-bankruptcy",
@@ -2721,12 +2765,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/these-15-words-from-amazon-s-andy-jassy-may-eliminate-nvidia-s-biggest-risk/",
           "sentiment": -0.27
-        },
-        {
-          "title": "Amazon (AMZN) Is Reworking Its Air Fleet With 30 A330 Freighters By 2027",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-reworking-air-fleet-041803486.html",
-          "sentiment": 0.18
         }
       ]
     },
@@ -2836,9 +2874,15 @@
       "dividendYield": null,
       "marketCap": 298929225728,
       "score": 1.5,
-      "newsSentiment": -0.22,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.18,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Netflix (NFLX) Gets a Bullish $110 Target: What\u2019s Driving the Outlook?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-gets-bullish-110-155252131.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Netflix Has $27 Billion Left to Buy Back Its Own Stock -- About 8% of the Whole Company",
           "publisher": "Motley Fool",
@@ -2850,12 +2894,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-stock-trades-down-223240493.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Stock Market Today, Sept. 18: Netflix Falls on Analyst Downgrade and Slashed Price Target",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/18/stock-market-today-sept-18-netflix-falls-on-analyst-downgrade-and-slashed-price-target/",
-          "sentiment": -0.66
         }
       ]
     },
@@ -2883,7 +2921,7 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Dow Jones Futures: Will The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "title": "Dow Jones Futures: Can The Market Rally Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.82
@@ -3049,7 +3087,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2012989751296,
+      "marketCap": 2011830157312,
       "score": 8.2,
       "newsSentiment": 0.21,
       "newsSentimentLabel": "Positive",
@@ -3381,7 +3419,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 60770516992,
+      "marketCap": 56756400128,
       "score": 6.2,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
@@ -3639,7 +3677,7 @@
       "volRatio": 1.58,
       "peRatio": 68.9,
       "dividendYield": 0.75,
-      "marketCap": 129320239104,
+      "marketCap": 129057431552,
       "score": 4.5,
       "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
@@ -3831,9 +3869,15 @@
       "dividendYield": 1.53,
       "marketCap": 431752708096,
       "score": 4.9,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Cisco (CSCO) Leans on Splunk to Broaden Its Share of Enterprise AI Spending. It Faces a Big Test",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/cisco-csco-leans-splunk-broaden-171200277.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Cisco Drops 8% in 3 Months: Should You Buy the Stock on the Dip?",
           "publisher": "Zacks",
@@ -3844,12 +3888,6 @@
           "title": "Cisco Climbs 3.3% as Splunk Takes AI Behind the Firewall",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/cisco-climbs-3-3-splunk-182529645.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Is Cisco Stock Priced For Orders That Are Not Yet Revenue?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615687/is-cisco-stock-priced-for-orders-that-are-not-yet-revenue/2026-09-17",
           "sentiment": 0.0
         }
       ]
@@ -3874,9 +3912,15 @@
       "dividendYield": 0.1,
       "marketCap": 219508604928,
       "score": 9.4,
-      "newsSentiment": 0.64,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Marvell (MRVL) and GlobalFoundries (GFS) Rise on Expanded Deal: What Investors Should Know",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/marvell-mrvl-globalfoundries-gfs-rise-155724895.html",
+          "sentiment": 0.0
+        },
         {
           "title": "APH's AI Datacom Strength Grows: Can It Challenge TEL & MRVL?",
           "publisher": "Zacks",
@@ -3888,12 +3932,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/globalfoundries-jumps-7-expanded-marvell-164315855.html",
           "sentiment": 0.75
-        },
-        {
-          "title": "Can GFS' Marvell Deal for SiGe Capacity Expansion Accelerate Growth?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/articles/gfs-marvell-deal-sige-capacity-151900054.html",
-          "sentiment": 0.62
         }
       ]
     }

@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Sora:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Note: --amber* variable names are historical — they hold the green accent
@@ -140,7 +140,16 @@
     display:flex; align-items:center; justify-content:space-between; gap:14px;
     box-sizing:border-box;
   }
-  .brand{ display:flex; align-items:center; gap:12px; flex-shrink:0; min-width:0; }
+  /* Badge treatment (2026-09-20): the wordmark now sits in its own fixed-dark
+     chip with a colored border, deliberately independent of the page's own
+     light/dark theme — a logo that "stands out" needs to read the same way
+     regardless of what mode the surrounding app is in, the same way a sticker
+     or a real product badge would. */
+  .brand{
+    display:flex; align-items:center; gap:10px; flex-shrink:0; min-width:0;
+    background:#0E1116; border:2px solid #B23A45; border-radius:14px;
+    padding:5px 16px 5px 5px;
+  }
   /* An "Allocation" label on the left (a plain-language heading for the
      Cash/Options%/Equity%/Cash-left row directly below it) and the Tickers
      button on the right — the SPY/QQQ pills and Export button that used to
@@ -211,23 +220,27 @@
   .lookup-tab-submit:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
 
   .brand-mark{
-    width:42px; height:42px; flex-shrink:0;
+    width:36px; height:36px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
-  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:11px; }
-  /* Space Grotesk is deliberately kept for the wordmark — it's a geometric,
-     technical face (slightly squared terminals, monospace-derived
-     proportions), the opposite of a "rounded"/soft display font, which is
-     exactly the register a quant/trading brand wants here. */
-  .brand-name{ font-family:'Space Grotesk', var(--sans); font-weight:700; font-size:37.5px; letter-spacing:-0.02em; color:#14532D; }
-  /* Both halves of the wordmark get their own fixed colors, not var(--green)/
-     var(--red) — those shared variables are tuned for small badges/values
-     and read as too light/thin at this size and weight. "VantEdge" reuses
-     the darkest green from the bar-chart mark above (ties the wordmark to
-     the icon); "AI" gets a deliberately dark, desaturated red rather than
-     the brighter red used for bearish badges elsewhere — this is a brand
-     accent, not a "down" indicator, so it shouldn't read as an alert color. */
-  .brand-ai{ color:#7F1D1D; font-weight:700; }
+  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:9px; }
+  /* Sora ExtraBold (800) replaces Space Grotesk for the wordmark itself —
+     Space Grotesk tops out at 700 (there's no heavier cut of it), and
+     "bolder/sharper/crispier" needs an actual heavier weight, not a faked
+     one. Sora at 800 is still a geometric, technical face (flat terminals,
+     no soft/rounded bowls) so it keeps the same non-round register, just
+     with more ink. Font-size is intentionally smaller than the old
+     unbadged wordmark (37.5px) — the badge's own padding and border now
+     carry the visual weight, so the text doesn't need to. */
+  .brand-name{ font-family:'Sora', var(--sans); font-weight:800; font-size:22.5px; letter-spacing:-0.01em; color:#22C55E; }
+  /* Colors are tuned for THIS badge's fixed near-black background, not the
+     page background — "VantEdge" reuses the brightest bar from the icon
+     (#22C55E) and "AI" is a vivid, saturated red (#EF4444) chosen to pop
+     hard against #0E1116, the same way the reference logo's white text pops
+     against black. Both are deliberately brighter than the badge's own
+     border (#B23A45, a muted rose) so text, border and icon all read as
+     related but distinct accents rather than blurring together. */
+  .brand-ai{ color:#EF4444; font-weight:800; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -833,10 +846,10 @@
     #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
     .mode-toggle{ padding:0 14px; gap:3px; }
     .mode-tab{ min-height:34px; padding:7px 2px; font-size:10px; }
-    .brand{ gap:8px; }
-    .brand-mark{ width:34px; height:34px; }
-    .brand-mark svg{ border-radius:9px; }
-    .brand-name{ font-size:31.5px; }
+    .brand{ gap:7px; border-width:1.5px; border-radius:12px; padding:4px 12px 4px 4px; }
+    .brand-mark{ width:28px; height:28px; }
+    .brand-mark svg{ border-radius:7px; }
+    .brand-name{ font-size:17.5px; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
     .header-tools{ gap:6px; row-gap:8px; }
     .header-actions{ gap:6px; }
@@ -905,14 +918,10 @@
        than their own container. A dedicated shade lighter than the tray
        restores that "raised field" relationship. */
     .portfolio-bar input{ background:#262A31; }
-    /* Same reasoning as the light-mode values above (see .brand-name/.brand-ai)
-       — fixed colors rather than the shared variables, just lighter shades so
-       both halves of the wordmark stay legible against the near-black page
-       instead of sinking into it. Green reuses the brightest bar from the
-       mark's own icon (#22C55E); red is one step brighter than the light-mode
-       value, not the same bright red used for bearish badges. */
-    .brand-name{ color:#22C55E; }
-    .brand-ai{ color:#B91C1C; }
+    /* .brand-name/.brand-ai need no dark-mode override any more — the
+       wordmark now lives inside its own fixed-dark badge (see .brand),
+       independent of the page's light/dark theme, so its colors stay the
+       same in both. */
   }
 
 </style>

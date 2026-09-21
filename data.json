@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T12:37:47.455391+00:00",
+  "generated_at": "2026-09-21T12:44:47.690002+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -13,8 +13,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 23,
       "ap": 7.3,
       "ivr": 42,
@@ -29,7 +27,6 @@
       "marginOfSafety": true,
       "delta": 0.01,
       "iv": 116.7,
-      "backIv": null,
       "premium": 0.1,
       "breakeven": 134.9,
       "breakevenLow": 134.9,
@@ -66,7 +63,6 @@
       "ivRvRatio": 5.38,
       "realizedVol": 21.7,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -105,8 +101,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 1697.3,
       "ivr": 31,
@@ -121,7 +115,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 0.93,
       "breakeven": 481.57,
       "breakevenLow": null,
@@ -158,7 +151,6 @@
       "ivRvRatio": 0.29,
       "realizedVol": 22.0,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -185,8 +177,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 92,
@@ -201,7 +191,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 1.6,
-      "backIv": null,
       "premium": 6.45,
       "breakeven": 231.45,
       "breakevenLow": null,
@@ -232,7 +221,6 @@
       "ivRvRatio": 0.03,
       "realizedVol": 45.8,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -257,8 +245,6 @@
       },
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 188.0,
       "ivr": 31,
@@ -273,7 +259,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 0.8,
-      "backIv": null,
       "premium": 13.7,
       "breakeven": 652.05,
       "breakevenLow": null,
@@ -284,7 +269,7 @@
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.16,
+      "newsSentiment": 0.39,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -294,28 +279,115 @@
           "sentiment": 0.0
         },
         {
+          "title": "Meta Heads Into Connect With Fresh Wells Fargo Bull Case As Muse Gains Traction \u2014 Analyst Says Company \u2018Now Has A Story To Tell\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/meta-heads-into-connect-with-fresh-wells-fargo-bull-case-as-muse-gains-traction-analyst-says-company-now-has-a-story-to-tell/cZMRimZRB4x",
+          "sentiment": 0.69
+        },
+        {
           "title": "Meta Stock Jumps Despite Another Facebook Outage. Here's Why",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/meta-stock-jumps-despite-another-123046847.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.03,
       "realizedVol": 29.9,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
           "strike": 667.5,
           "action": "sell",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "TSLA",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 364.27,
+      "spotPriceStale": false,
+      "strike": "$320/330/405/415",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 18,
+      "pot": 0,
+      "ap": 456.2,
+      "ivr": 62,
+      "dailyReturn": 12.5,
+      "roc": 22.5,
+      "score": 9.2,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 30,
+      "marginOfSafety": true,
+      "delta": -0.0,
+      "iv": 12.5,
+      "premium": 2.25,
+      "breakeven": 327.75,
+      "breakevenLow": 327.75,
+      "breakevenHigh": 407.25,
+      "breakevenMovePct": null,
+      "maxLoss": 775.0,
+      "pcOI": 0.64,
+      "pcVol": 0.47,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "\u201cWho Can Imagine What Action One Might Take\u201d: Musk\u2019s Latest Non-Answer Sends Tesla and SpaceX Higher",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/imagine-action-one-might-musk-113510252.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Market Chatter: Tesla's Racial Discrimination Trial in California Begins Today",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-tesla-apos-racial-110632807.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
+          "sentiment": 0.18
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.26,
+      "realizedVol": 49.0,
+      "expDate": "2026-10-09",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 330.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 320.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 405.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 415.0,
+          "action": "buy",
           "qty": 1
         }
       ]
@@ -331,8 +403,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 17,
@@ -347,7 +417,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 9.26,
       "breakeven": 639.26,
       "breakevenLow": null,
@@ -358,9 +427,15 @@
       "pcVol": 0.79,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.57,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "My AMD Price Prediction Comes Down to One Crucial Growth Opportunity",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/my-amd-price-prediction-comes-down-to-one-crucial-growth-opportunity/",
+          "sentiment": 0.66
+        },
         {
           "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
           "publisher": "Motley Fool",
@@ -372,19 +447,12 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
           "sentiment": 0.61
-        },
-        {
-          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.25,
       "realizedVol": 49.9,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -409,8 +477,6 @@
       },
       "exp": "Sep 23",
       "dte": 2,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 343.1,
       "ivr": 2,
@@ -425,7 +491,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 1.6,
-      "backIv": null,
       "premium": 19.1,
       "breakeven": 996.7,
       "breakevenLow": null,
@@ -436,9 +501,15 @@
       "pcVol": 0.91,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Here's How Much You'd Have If You Invested $1000 in Micron a Decade Ago",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/heres-much-youd-invested-1000-123001934.html",
+          "sentiment": 0.0
+        },
         {
           "title": "China's Memory Push Raises a New Question for Micron and SK Hynix",
           "publisher": "GuruFocus.com",
@@ -450,19 +521,12 @@
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/technology/articles/china-cxmt-says-reached-advanced-041453764.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China\u2019s CXMT Touts Faster Production",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-stocks-in-focus-memory-rebound-gains-steam-even-as-china-s-cxmt-touts-faster-production/cZMRGVORB43",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.03,
       "realizedVol": 52.2,
       "expDate": "2026-09-23",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -483,8 +547,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 255.5,
       "ivr": 16,
@@ -499,7 +561,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 1.75,
       "breakeven": 323.25,
       "breakevenLow": null,
@@ -510,7 +571,7 @@
       "pcVol": 0.37,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -524,13 +585,18 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
+        },
+        {
+          "title": "GOOG vs GOOGL - which Alphabet share class should you buy?",
+          "publisher": "Moneyweek",
+          "link": "https://moneyweek.com/investments/tech-stocks/goog-googl-which-alphabet-share-class-should-you-buy",
+          "sentiment": 0.3
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.29,
       "realizedVol": 21.6,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -548,41 +614,38 @@
     },
     {
       "sym": "JPM",
-      "strat": "Calendar Spread",
+      "strat": "Iron Condor",
       "side": "neutral",
       "isETF": false,
       "spot": 349.67,
       "spotPriceStale": false,
-      "strike": "$350 C",
+      "strike": "$195/205/355/365",
       "hedge": null,
-      "exp": "Oct 2",
-      "dte": 11,
-      "backExp": "Oct 23",
-      "backDte": 32,
-      "pot": null,
-      "ap": null,
+      "exp": "Oct 16",
+      "dte": 25,
+      "pot": 99,
+      "ap": 427.8,
       "ivr": 3,
-      "dailyReturn": null,
-      "roc": null,
-      "score": 9.8,
+      "dailyReturn": 11.72,
+      "roc": 29.3,
+      "score": 4.6,
       "buy": false,
       "sell": true,
       "ema": true,
-      "earningsSoon": false,
+      "earningsSoon": true,
       "daysToEarnings": 22,
-      "marginOfSafety": true,
-      "delta": 0.89,
-      "iv": 0.2,
-      "backIv": 0.1,
-      "premium": 4.22,
-      "breakeven": null,
-      "breakevenLow": null,
-      "breakevenHigh": null,
+      "marginOfSafety": false,
+      "delta": -0.02,
+      "iv": 56.0,
+      "premium": 2.93,
+      "breakeven": 202.07,
+      "breakevenLow": 202.07,
+      "breakevenHigh": 357.93,
       "breakevenMovePct": null,
-      "maxLoss": 422.0,
-      "pcOI": 1.07,
-      "pcVol": 1.38,
-      "debitStrategy": true,
+      "maxLoss": 707.0,
+      "pcOI": 0.79,
+      "pcVol": 0.4,
+      "debitStrategy": false,
       "potIsProfitProb": false,
       "newsSentiment": -0.14,
       "newsSentimentLabel": "Neutral",
@@ -606,25 +669,34 @@
           "sentiment": -0.42
         }
       ],
-      "volRegime": "Cheap",
-      "ivRvRatio": 0.01,
+      "volRegime": "Rich",
+      "ivRvRatio": 4.03,
       "realizedVol": 13.9,
-      "expDate": "2026-10-02",
-      "backExpDate": "2026-10-23",
+      "expDate": "2026-10-16",
       "legs": [
         {
-          "type": "call",
-          "strike": 350.0,
+          "type": "put",
+          "strike": 205.0,
           "action": "sell",
-          "qty": 1,
-          "exp": "front"
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 195.0,
+          "action": "buy",
+          "qty": 1
         },
         {
           "type": "call",
-          "strike": 350.0,
+          "strike": 355.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 365.0,
           "action": "buy",
-          "qty": 1,
-          "exp": "back"
+          "qty": 1
         }
       ]
     },
@@ -639,8 +711,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 48,
@@ -655,7 +725,6 @@
       "marginOfSafety": false,
       "delta": -0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 4.3,
       "breakeven": 135.7,
       "breakevenLow": null,
@@ -692,7 +761,6 @@
       "ivRvRatio": 0.12,
       "realizedVol": 52.4,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -713,8 +781,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 1,
       "ap": 3139.0,
       "ivr": 23,
@@ -729,7 +795,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 1.6,
-      "backIv": null,
       "premium": 1.72,
       "breakeven": 256.72,
       "breakevenLow": null,
@@ -766,7 +831,6 @@
       "ivRvRatio": 0.06,
       "realizedVol": 26.1,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -793,8 +857,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 42,
@@ -809,7 +871,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 10.05,
       "breakeven": 100.95,
       "breakevenLow": null,
@@ -846,7 +907,6 @@
       "ivRvRatio": 0.11,
       "realizedVol": 113.6,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -867,8 +927,6 @@
       "hedge": null,
       "exp": "Sep 30",
       "dte": 9,
-      "backExp": null,
-      "backDte": null,
       "pot": 86,
       "ap": 567.8,
       "ivr": 9,
@@ -883,7 +941,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 12.9,
-      "backIv": null,
       "premium": 0.28,
       "breakeven": 63.72,
       "breakevenLow": 63.72,
@@ -920,7 +977,6 @@
       "ivRvRatio": 0.33,
       "realizedVol": 39.3,
       "expDate": "2026-09-30",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -959,8 +1015,6 @@
       "hedge": null,
       "exp": "Dec 18",
       "dte": 88,
-      "backExp": null,
-      "backDte": null,
       "pot": 36,
       "ap": null,
       "ivr": 58,
@@ -975,14 +1029,13 @@
       "marginOfSafety": true,
       "delta": -0.8,
       "iv": 97.4,
-      "backIv": null,
       "premium": 53.23,
       "breakeven": 68.78,
       "breakevenLow": null,
       "breakevenHigh": null,
       "breakevenMovePct": 4.2,
       "maxLoss": 5322.5,
-      "pcOI": 1.14,
+      "pcOI": 1.15,
       "pcVol": 0.82,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1012,7 +1065,6 @@
       "ivRvRatio": 2.56,
       "realizedVol": 38.0,
       "expDate": "2026-12-18",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -1033,8 +1085,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 1,
@@ -1049,7 +1099,6 @@
       "marginOfSafety": false,
       "delta": 0.08,
       "iv": 0.4,
-      "backIv": null,
       "premium": 137.0,
       "breakeven": 1937.0,
       "breakevenLow": null,
@@ -1086,7 +1135,6 @@
       "ivRvRatio": 0.01,
       "realizedVol": 73.5,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -1107,8 +1155,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 34,
       "ap": null,
       "ivr": 13,
@@ -1123,7 +1169,6 @@
       "marginOfSafety": true,
       "delta": -0.68,
       "iv": 177.4,
-      "backIv": null,
       "premium": 399.8,
       "breakeven": 790.2,
       "breakevenLow": null,
@@ -1160,11 +1205,98 @@
       "ivRvRatio": 3.03,
       "realizedVol": 58.5,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
           "strike": 1190.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "NOW",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 135.47,
+      "spotPriceStale": false,
+      "strike": "$122/124/136/138",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 18,
+      "pot": 91,
+      "ap": 659.0,
+      "ivr": 64,
+      "dailyReturn": 3.61,
+      "roc": 32.5,
+      "score": 6.1,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 37,
+      "marginOfSafety": false,
+      "delta": 0.03,
+      "iv": 6.4,
+      "premium": 0.65,
+      "breakeven": 123.35,
+      "breakevenLow": 123.35,
+      "breakevenHigh": 136.65,
+      "breakevenMovePct": null,
+      "maxLoss": 135.0,
+      "pcOI": 1.11,
+      "pcVol": 0.57,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.16,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "ServiceNow (NOW) Stock Falls Amid Market Uptick: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-falls-amid-214503145.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "ServiceNow Stock Leads 3 Large Cap Growth Names Facing Higher Rate Pressure",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-stock-leads-3-large-161426966.html",
+          "sentiment": 0.1
+        },
+        {
+          "title": "This ServiceNow Bear Signal Has Never Been Wrong",
+          "publisher": "Schaeffer's Investment Research",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-bear-signal-never-wrong-175805864.html",
+          "sentiment": 0.37
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.1,
+      "realizedVol": 62.0,
+      "expDate": "2026-10-09",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 124.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 122.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 136.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 138.0,
           "action": "buy",
           "qty": 1
         }
@@ -1181,8 +1313,6 @@
       "hedge": null,
       "exp": "Nov 20",
       "dte": 60,
-      "backExp": null,
-      "backDte": null,
       "pot": 40,
       "ap": null,
       "ivr": 70,
@@ -1197,7 +1327,6 @@
       "marginOfSafety": true,
       "delta": -0.88,
       "iv": 94.4,
-      "backIv": null,
       "premium": 180.75,
       "breakeven": 244.25,
       "breakevenLow": null,
@@ -1205,7 +1334,7 @@
       "breakevenMovePct": 1.88,
       "maxLoss": 18075.0,
       "pcOI": 0.36,
-      "pcVol": 0.59,
+      "pcVol": 0.6,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.3,
@@ -1234,7 +1363,6 @@
       "ivRvRatio": 2.04,
       "realizedVol": 46.2,
       "expDate": "2026-11-20",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -1259,8 +1387,6 @@
       },
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 87.6,
       "ivr": 0,
@@ -1275,7 +1401,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 1.47,
       "breakeven": 151.24,
       "breakevenLow": null,
@@ -1312,7 +1437,6 @@
       "ivRvRatio": 0.3,
       "realizedVol": 41.8,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -1333,8 +1457,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 1825.0,
       "ivr": 98,
@@ -1349,7 +1471,6 @@
       "marginOfSafety": false,
       "delta": -0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 1.0,
       "breakeven": 231.5,
       "breakevenLow": null,
@@ -1386,7 +1507,6 @@
       "ivRvRatio": 0.08,
       "realizedVol": 80.5,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -1397,6 +1517,94 @@
         {
           "type": "put",
           "strike": 227.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "CRWD",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 237.65,
+      "spotPriceStale": false,
+      "strike": "$170/180/240/250",
+      "hedge": null,
+      "exp": "Oct 23",
+      "dte": 32,
+      "pot": 89,
+      "ap": 387.8,
+      "ivr": 98,
+      "dailyReturn": 10.63,
+      "roc": 34.0,
+      "score": 6.8,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 71,
+      "marginOfSafety": false,
+      "delta": 0.01,
+      "iv": 12.9,
+      "premium": 3.4,
+      "breakeven": 176.6,
+      "breakevenLow": 176.6,
+      "breakevenHigh": 243.4,
+      "breakevenMovePct": null,
+      "maxLoss": 660.0,
+      "pcOI": 1.07,
+      "pcVol": 1.41,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.56,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "CrowdStrike Stock Jumped 15% Last Week. Here\u2019s What Happened.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/crowdstrike-stock-jumped-15-last-week-heres-what-happened?ref=yahoofinance",
+          "sentiment": 0.49
+        },
+        {
+          "title": "The AI Slowdown Trade Has Some Winners: CrowdStrike and Palo Alto Rally While Chips Fall",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/ai-slowdown-trade-winners-crowdstrike-212311977.html",
+          "sentiment": 0.59
+        },
+        {
+          "title": "Why CrowdStrike, Palo Alto Networks, SentinelOne, and Other Cybersecurity Stocks Surged This Week",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/why-crowdstrike-palo-alto-sentinelone-stocks-up/",
+          "sentiment": 0.61
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.13,
+      "realizedVol": 96.1,
+      "expDate": "2026-10-23",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 180.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 170.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 240.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 250.0,
           "action": "buy",
           "qty": 1
         }
@@ -1417,8 +1625,6 @@
       },
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 167.9,
       "ivr": 40,
@@ -1433,7 +1639,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 3.1,
-      "backIv": null,
       "premium": 3.27,
       "breakeven": 174.37,
       "breakevenLow": null,
@@ -1470,7 +1675,6 @@
       "ivRvRatio": 0.06,
       "realizedVol": 51.5,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -1491,8 +1695,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 2828.8,
       "ivr": 34,
@@ -1507,7 +1709,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 0.8,
-      "backIv": null,
       "premium": 3.1,
       "breakeven": 1688.1,
       "breakevenLow": null,
@@ -1544,7 +1745,6 @@
       "ivRvRatio": 0.02,
       "realizedVol": 40.2,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -1571,8 +1771,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 14,
@@ -1587,7 +1785,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 1.6,
-      "backIv": null,
       "premium": 13.31,
       "breakeven": 453.31,
       "breakevenLow": null,
@@ -1618,7 +1815,6 @@
       "ivRvRatio": 0.06,
       "realizedVol": 28.6,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -1639,8 +1835,6 @@
       "hedge": null,
       "exp": "Oct 23",
       "dte": 32,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 159.7,
       "ivr": 78,
@@ -1655,7 +1849,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 2.8,
       "breakeven": 492.2,
       "breakevenLow": 492.2,
@@ -1680,7 +1873,6 @@
       "ivRvRatio": 0.15,
       "realizedVol": 85.1,
       "expDate": "2026-10-23",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -1719,8 +1911,6 @@
       "hedge": null,
       "exp": "Oct 2",
       "dte": 11,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 822.9,
       "ivr": 98,
@@ -1735,7 +1925,6 @@
       "marginOfSafety": false,
       "delta": -0.0,
       "iv": 3.1,
-      "backIv": null,
       "premium": 1.24,
       "breakeven": 356.26,
       "breakevenLow": null,
@@ -1772,7 +1961,6 @@
       "ivRvRatio": 0.04,
       "realizedVol": 79.4,
       "expDate": "2026-10-02",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -1799,8 +1987,6 @@
       "hedge": null,
       "exp": "Oct 2",
       "dte": 11,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 1128.2,
       "ivr": 0,
@@ -1815,7 +2001,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 3.1,
-      "backIv": null,
       "premium": 1.7,
       "breakeven": 229.2,
       "breakevenLow": null,
@@ -1852,7 +2037,6 @@
       "ivRvRatio": 0.05,
       "realizedVol": 63.7,
       "expDate": "2026-10-02",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -1879,8 +2063,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 3,
@@ -1895,7 +2077,6 @@
       "marginOfSafety": false,
       "delta": -0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 4.55,
       "breakeven": 72.95,
       "breakevenLow": null,
@@ -1932,11 +2113,98 @@
       "ivRvRatio": 0.09,
       "realizedVol": 68.8,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
           "strike": 77.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "IREN",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 46.68,
+      "spotPriceStale": false,
+      "strike": "$38/40/55/65",
+      "hedge": null,
+      "exp": "Nov 20",
+      "dte": 60,
+      "pot": 0,
+      "ap": 155.1,
+      "ivr": 10,
+      "dailyReturn": 4.25,
+      "roc": 25.5,
+      "score": 8.2,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 45,
+      "marginOfSafety": true,
+      "delta": 0.0,
+      "iv": 12.5,
+      "premium": 2.55,
+      "breakeven": 37.45,
+      "breakevenLow": 37.45,
+      "breakevenHigh": 57.55,
+      "breakevenMovePct": null,
+      "maxLoss": 745.0,
+      "pcOI": 0.6,
+      "pcVol": 1.1,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.36,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Neocloud Boom: Comparing Nebius, CoreWeave, & IREN",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/neocloud-boom-comparing-nebius-coreweave-020300874.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "1 Year Into the Microsoft Deal, IREN Is Delivering and a Rally May Follow Soon",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4695415/1-year-into-the-microsoft-deal-iren-is-delivering-and-a-rally-may-follow-soon",
+          "sentiment": 0.54
+        },
+        {
+          "title": "JPMorgan, Goldman Sachs issue bullish stock price targets for IREN, Cipher Digital",
+          "publisher": "Blockspace",
+          "link": "https://blockspace.media/short/jpmorgan-goldman-sachs-issue-bullish-stock-price-targets-for-iren-cipher-digital/",
+          "sentiment": 0.54
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.14,
+      "realizedVol": 86.4,
+      "expDate": "2026-11-20",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 40.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 38.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 55.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 65.0,
           "action": "buy",
           "qty": 1
         }
@@ -1953,8 +2221,6 @@
       "hedge": null,
       "exp": "Oct 23",
       "dte": 32,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 26,
@@ -1969,7 +2235,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 1.62,
       "breakeven": 23.38,
       "breakevenLow": null,
@@ -2006,7 +2271,6 @@
       "ivRvRatio": 0.15,
       "realizedVol": 84.3,
       "expDate": "2026-10-23",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2027,8 +2291,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 8,
       "ap": 443.8,
       "ivr": 4,
@@ -2043,7 +2305,6 @@
       "marginOfSafety": false,
       "delta": 0.04,
       "iv": 0.8,
-      "backIv": null,
       "premium": 3.04,
       "breakeven": 68.04,
       "breakevenLow": null,
@@ -2080,7 +2341,6 @@
       "ivRvRatio": 0.02,
       "realizedVol": 47.0,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -2107,8 +2367,6 @@
       "hedge": null,
       "exp": "Nov 20",
       "dte": 60,
-      "backExp": null,
-      "backDte": null,
       "pot": 37,
       "ap": null,
       "ivr": 47,
@@ -2123,7 +2381,6 @@
       "marginOfSafety": true,
       "delta": -0.84,
       "iv": 120.9,
-      "backIv": null,
       "premium": 134.78,
       "breakeven": 145.22,
       "breakevenLow": null,
@@ -2160,7 +2417,6 @@
       "ivRvRatio": 1.74,
       "realizedVol": 69.5,
       "expDate": "2026-11-20",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2172,41 +2428,38 @@
     },
     {
       "sym": "SPY",
-      "strat": "Calendar Spread",
+      "strat": "Iron Condor",
       "side": "neutral",
       "isETF": true,
       "spot": 761.69,
       "spotPriceStale": false,
-      "strike": "$762 C",
+      "strike": "$655/665/767/769",
       "hedge": null,
-      "exp": "Sep 28",
-      "dte": 7,
-      "backExp": "Oct 23",
-      "backDte": 32,
-      "pot": null,
-      "ap": null,
+      "exp": "Oct 23",
+      "dte": 32,
+      "pot": 89,
+      "ap": 79.8,
       "ivr": 10,
-      "dailyReturn": null,
-      "roc": null,
-      "score": 7.0,
+      "dailyReturn": 2.19,
+      "roc": 7.0,
+      "score": 5.1,
       "buy": false,
       "sell": true,
       "ema": true,
       "earningsSoon": false,
       "daysToEarnings": null,
-      "marginOfSafety": true,
-      "delta": 1.0,
-      "iv": 0.1,
-      "backIv": 0.0,
-      "premium": 7.62,
-      "breakeven": null,
-      "breakevenLow": null,
-      "breakevenHigh": null,
+      "marginOfSafety": false,
+      "delta": 0.1,
+      "iv": 6.6,
+      "premium": 0.7,
+      "breakeven": 664.3,
+      "breakevenLow": 664.3,
+      "breakevenHigh": 767.7,
       "breakevenMovePct": null,
-      "maxLoss": 762.0,
-      "pcOI": 1.22,
-      "pcVol": 0.28,
-      "debitStrategy": true,
+      "maxLoss": 930.0,
+      "pcOI": 0.99,
+      "pcVol": 1.08,
+      "debitStrategy": false,
       "potIsProfitProb": false,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -2219,24 +2472,33 @@
         }
       ],
       "volRegime": "Cheap",
-      "ivRvRatio": 0.01,
+      "ivRvRatio": 0.72,
       "realizedVol": 9.2,
-      "expDate": "2026-09-28",
-      "backExpDate": "2026-10-23",
+      "expDate": "2026-10-23",
       "legs": [
         {
-          "type": "call",
-          "strike": 762.0,
+          "type": "put",
+          "strike": 665.0,
           "action": "sell",
-          "qty": 1,
-          "exp": "front"
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 655.0,
+          "action": "buy",
+          "qty": 1
         },
         {
           "type": "call",
-          "strike": 762.0,
+          "strike": 767.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 769.0,
           "action": "buy",
-          "qty": 1,
-          "exp": "back"
+          "qty": 1
         }
       ]
     },
@@ -2255,8 +2517,6 @@
       },
       "exp": "Sep 30",
       "dte": 9,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 41.8,
       "ivr": 10,
@@ -2271,7 +2531,6 @@
       "marginOfSafety": false,
       "delta": 0.05,
       "iv": 0.4,
-      "backIv": null,
       "premium": 7.45,
       "breakeven": 714.0,
       "breakevenLow": null,
@@ -2296,7 +2555,6 @@
       "ivRvRatio": 0.03,
       "realizedVol": 13.2,
       "expDate": "2026-09-30",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -2317,8 +2575,6 @@
       "hedge": null,
       "exp": "Oct 23",
       "dte": 32,
-      "backExp": null,
-      "backDte": null,
       "pot": 1,
       "ap": 346.8,
       "ivr": 8,
@@ -2333,7 +2589,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 1.6,
-      "backIv": null,
       "premium": 3.04,
       "breakeven": 308.04,
       "breakevenLow": null,
@@ -2370,7 +2625,6 @@
       "ivRvRatio": 0.09,
       "realizedVol": 17.5,
       "expDate": "2026-10-23",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -2397,8 +2651,6 @@
       "hedge": null,
       "exp": "Nov 20",
       "dte": 60,
-      "backExp": null,
-      "backDte": null,
       "pot": 4,
       "ap": null,
       "ivr": 34,
@@ -2413,7 +2665,6 @@
       "marginOfSafety": true,
       "delta": -0.04,
       "iv": 65.9,
-      "backIv": null,
       "premium": 0.79,
       "breakeven": 579.21,
       "breakevenLow": null,
@@ -2450,7 +2701,6 @@
       "ivRvRatio": 3.52,
       "realizedVol": 18.7,
       "expDate": "2026-11-20",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2471,8 +2721,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 357.7,
       "ivr": 30,
@@ -2487,7 +2735,6 @@
       "marginOfSafety": false,
       "delta": 0.06,
       "iv": 108.7,
-      "backIv": null,
       "premium": 2.45,
       "breakeven": 42.55,
       "breakevenLow": 42.55,
@@ -2518,7 +2765,6 @@
       "ivRvRatio": 4.44,
       "realizedVol": 24.5,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2557,8 +2803,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 1952.7,
       "ivr": 61,
@@ -2573,7 +2817,6 @@
       "marginOfSafety": false,
       "delta": -0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 1.07,
       "breakeven": 231.43,
       "breakevenLow": null,
@@ -2610,7 +2853,6 @@
       "ivRvRatio": 0.17,
       "realizedVol": 71.8,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2637,8 +2879,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 34,
@@ -2653,7 +2893,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 1.6,
-      "backIv": null,
       "premium": 7.0,
       "breakeven": 117.0,
       "breakevenLow": null,
@@ -2690,7 +2929,6 @@
       "ivRvRatio": 0.03,
       "realizedVol": 60.3,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -2711,8 +2949,6 @@
       "hedge": null,
       "exp": "Sep 30",
       "dte": 9,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 973.3,
       "ivr": 23,
@@ -2727,7 +2963,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 1.2,
       "breakeven": 336.3,
       "breakevenLow": null,
@@ -2738,7 +2973,7 @@
       "pcVol": 0.61,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2752,13 +2987,18 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
+        },
+        {
+          "title": "GOOG vs GOOGL - which Alphabet share class should you buy?",
+          "publisher": "Moneyweek",
+          "link": "https://moneyweek.com/investments/tech-stocks/goog-googl-which-alphabet-share-class-should-you-buy",
+          "sentiment": 0.3
         }
       ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.27,
       "realizedVol": 23.1,
       "expDate": "2026-09-30",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2785,8 +3025,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 3,
@@ -2801,7 +3039,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 25.0,
-      "backIv": null,
       "premium": 0.34,
       "breakeven": 279.66,
       "breakevenLow": null,
@@ -2838,7 +3075,6 @@
       "ivRvRatio": 0.73,
       "realizedVol": 34.2,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2859,8 +3095,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 876.0,
       "ivr": 3,
@@ -2875,7 +3109,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 25.0,
-      "backIv": null,
       "premium": 0.48,
       "breakeven": 169.52,
       "breakevenLow": 169.52,
@@ -2912,7 +3145,6 @@
       "ivRvRatio": 0.4,
       "realizedVol": 62.5,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -2951,8 +3183,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 21,
@@ -2967,7 +3197,6 @@
       "marginOfSafety": false,
       "delta": 0.0,
       "iv": 0.8,
-      "backIv": null,
       "premium": 61.1,
       "breakeven": 1001.1,
       "breakevenLow": null,
@@ -3004,7 +3233,6 @@
       "ivRvRatio": 0.01,
       "realizedVol": 85.9,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -3025,8 +3253,6 @@
       "hedge": null,
       "exp": "Oct 2",
       "dte": 11,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 484.5,
       "ivr": 3,
@@ -3041,7 +3267,6 @@
       "marginOfSafety": true,
       "delta": -0.0,
       "iv": 25.0,
-      "backIv": null,
       "premium": 0.73,
       "breakeven": 226.77,
       "breakevenLow": null,
@@ -3078,7 +3303,6 @@
       "ivRvRatio": 0.34,
       "realizedVol": 74.2,
       "expDate": "2026-10-02",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -3105,8 +3329,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 2,
       "ap": 3157.2,
       "ivr": 33,
@@ -3121,7 +3343,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 0.2,
-      "backIv": null,
       "premium": 1.73,
       "breakeven": 446.73,
       "breakevenLow": null,
@@ -3158,7 +3379,6 @@
       "ivRvRatio": 0.0,
       "realizedVol": 47.9,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -3185,8 +3405,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 2920.0,
       "ivr": 91,
@@ -3201,7 +3419,6 @@
       "marginOfSafety": false,
       "delta": -0.0,
       "iv": 12.5,
-      "backIv": null,
       "premium": 0.64,
       "breakeven": 146.36,
       "breakevenLow": null,
@@ -3238,7 +3455,6 @@
       "ivRvRatio": 0.12,
       "realizedVol": 107.1,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -3265,8 +3481,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 77,
       "ap": 2445.5,
       "ivr": 4,
@@ -3281,7 +3495,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 6.6,
-      "backIv": null,
       "premium": 1.34,
       "breakeven": 418.66,
       "breakevenLow": 418.66,
@@ -3318,7 +3531,6 @@
       "ivRvRatio": 0.13,
       "realizedVol": 50.3,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -3357,8 +3569,6 @@
       "hedge": null,
       "exp": "Nov 20",
       "dte": 60,
-      "backExp": null,
-      "backDte": null,
       "pot": 3,
       "ap": null,
       "ivr": 0,
@@ -3373,7 +3583,6 @@
       "marginOfSafety": true,
       "delta": -0.03,
       "iv": 87.4,
-      "backIv": null,
       "premium": 2.1,
       "breakeven": 617.9,
       "breakevenLow": null,
@@ -3398,7 +3607,6 @@
       "ivRvRatio": 4.51,
       "realizedVol": 19.4,
       "expDate": "2026-11-20",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -3419,8 +3627,6 @@
       "hedge": null,
       "exp": "Dec 18",
       "dte": 88,
-      "backExp": null,
-      "backDte": null,
       "pot": 2,
       "ap": null,
       "ivr": 50,
@@ -3435,7 +3641,6 @@
       "marginOfSafety": true,
       "delta": -0.03,
       "iv": 73.5,
-      "backIv": null,
       "premium": 5.6,
       "breakeven": 150.4,
       "breakevenLow": null,
@@ -3472,7 +3677,6 @@
       "ivRvRatio": 1.27,
       "realizedVol": 57.7,
       "expDate": "2026-12-18",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -3483,132 +3687,49 @@
       ]
     },
     {
-      "sym": "V",
-      "strat": "Butterfly",
-      "side": "neutral",
-      "isETF": false,
-      "spot": 368.29,
-      "spotPriceStale": false,
-      "strike": "$360/370/380",
-      "hedge": null,
-      "exp": "Oct 9",
-      "dte": 18,
-      "backExp": null,
-      "backDte": null,
-      "pot": 0,
-      "ap": 1849.3,
-      "ivr": 28,
-      "dailyReturn": null,
-      "roc": 91.2,
-      "score": 8.6,
-      "buy": false,
-      "sell": true,
-      "ema": true,
-      "earningsSoon": false,
-      "daysToEarnings": 36,
-      "marginOfSafety": false,
-      "delta": 0.83,
-      "iv": 0.8,
-      "backIv": null,
-      "premium": 5.23,
-      "breakeven": 365.23,
-      "breakevenLow": 365.23,
-      "breakevenHigh": 374.77,
-      "breakevenMovePct": null,
-      "maxLoss": 523.0,
-      "pcOI": 1.24,
-      "pcVol": 1.7,
-      "debitStrategy": true,
-      "potIsProfitProb": false,
-      "newsSentiment": -0.19,
-      "newsSentimentLabel": "Negative",
-      "newsHeadlines": [
-        {
-          "title": "Visa, Mastercard, and Ant International Build First Cross-Network Know Your Agent Framework",
-          "publisher": "Forkast News",
-          "link": "https://finance.yahoo.com/technology/ai/articles/visa-mastercard-ant-international-build-111358124.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/visa-just-fired-2600-people-heres-where-that-money-is-going?ref=yahoofinance",
-          "sentiment": -0.56
-        },
-        {
-          "title": "Visa\u2019s Stablecoin Settlement Just Hit $20 Billion. The Rail Is Built Before the Rules Are.",
-          "publisher": "Forkast News",
-          "link": "https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html",
-          "sentiment": 0.0
-        }
-      ],
-      "volRegime": "Cheap",
-      "ivRvRatio": 0.04,
-      "realizedVol": 19.0,
-      "expDate": "2026-10-09",
-      "backExpDate": null,
-      "legs": [
-        {
-          "type": "call",
-          "strike": 360.0,
-          "action": "buy",
-          "qty": 1
-        },
-        {
-          "type": "call",
-          "strike": 370.0,
-          "action": "sell",
-          "qty": 2
-        },
-        {
-          "type": "call",
-          "strike": 380.0,
-          "action": "buy",
-          "qty": 1
-        }
-      ]
-    },
-    {
       "sym": "HOOD",
-      "strat": "Calendar Spread",
+      "strat": "Iron Condor",
       "side": "neutral",
       "isETF": false,
       "spot": 119.82,
       "spotPriceStale": false,
-      "strike": "$120 C",
+      "strike": "$85/95/150/160",
       "hedge": null,
-      "exp": "Oct 2",
-      "dte": 11,
-      "backExp": "Oct 23",
-      "backDte": 32,
-      "pot": null,
-      "ap": null,
+      "exp": "Oct 16",
+      "dte": 25,
+      "pot": 0,
+      "ap": 162.1,
       "ivr": 96,
-      "dailyReturn": null,
-      "roc": null,
-      "score": 5.2,
+      "dailyReturn": 4.44,
+      "roc": 11.1,
+      "score": 9.9,
       "buy": true,
       "sell": false,
       "ema": false,
       "earningsSoon": false,
       "daysToEarnings": 44,
       "marginOfSafety": true,
-      "delta": 0.42,
-      "iv": 0.4,
-      "backIv": 0.2,
-      "premium": 3.1,
-      "breakeven": null,
-      "breakevenLow": null,
-      "breakevenHigh": null,
+      "delta": 0.0,
+      "iv": 25.0,
+      "premium": 1.11,
+      "breakeven": 93.89,
+      "breakevenLow": 93.89,
+      "breakevenHigh": 151.11,
       "breakevenMovePct": null,
-      "maxLoss": 310.0,
-      "pcOI": 0.76,
-      "pcVol": 0.57,
-      "debitStrategy": true,
+      "maxLoss": 889.0,
+      "pcOI": 0.93,
+      "pcVol": 0.72,
+      "debitStrategy": false,
       "potIsProfitProb": false,
       "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: Robinhood Will Launch Tokenized Stock Trading in the U.S. Before the End of 2027",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/prediction-robinhood-will-launch-tokenized-stock-trading-in-the-u-s-before-the-end-of-2027/",
+          "sentiment": 0.0
+        },
         {
           "title": "These Recent Moves Are Brilliant. Here's Why Robinhood Is the Most Important Player in Crypto Right Now.",
           "publisher": "Motley Fool",
@@ -3620,33 +3741,36 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.61
-        },
-        {
-          "title": "Robinhood CEO Says Crypto Event-Contracts Will Overtake Sports Markets",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/robinhood-ceo-crypto-overtake-sports-markets/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
-      "ivRvRatio": 0.0,
+      "ivRvRatio": 0.26,
       "realizedVol": 94.8,
-      "expDate": "2026-10-02",
-      "backExpDate": "2026-10-23",
+      "expDate": "2026-10-16",
       "legs": [
         {
-          "type": "call",
-          "strike": 120.0,
+          "type": "put",
+          "strike": 95.0,
           "action": "sell",
-          "qty": 1,
-          "exp": "front"
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 85.0,
+          "action": "buy",
+          "qty": 1
         },
         {
           "type": "call",
-          "strike": 120.0,
+          "strike": 150.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 160.0,
           "action": "buy",
-          "qty": 1,
-          "exp": "back"
+          "qty": 1
         }
       ]
     },
@@ -3661,8 +3785,6 @@
       "hedge": null,
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 1,
       "ap": 3193.8,
       "ivr": 16,
@@ -3677,7 +3799,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 0.8,
-      "backIv": null,
       "premium": 0.7,
       "breakeven": 107.7,
       "breakevenLow": null,
@@ -3714,7 +3835,6 @@
       "ivRvRatio": 0.04,
       "realizedVol": 19.7,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -3741,8 +3861,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 41,
@@ -3757,7 +3875,6 @@
       "marginOfSafety": false,
       "delta": 0.01,
       "iv": 1.6,
-      "backIv": null,
       "premium": 8.2,
       "breakeven": 188.2,
       "breakevenLow": null,
@@ -3794,7 +3911,6 @@
       "ivRvRatio": 0.04,
       "realizedVol": 37.6,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -3815,8 +3931,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 78,
@@ -3831,7 +3945,6 @@
       "marginOfSafety": false,
       "delta": 0.06,
       "iv": 0.8,
-      "backIv": null,
       "premium": 10.33,
       "breakeven": 165.33,
       "breakevenLow": null,
@@ -3868,7 +3981,6 @@
       "ivRvRatio": 0.01,
       "realizedVol": 87.0,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -3893,8 +4005,6 @@
       },
       "exp": "Sep 25",
       "dte": 4,
-      "backExp": null,
-      "backDte": null,
       "pot": 100,
       "ap": 57.5,
       "ivr": 48,
@@ -3909,7 +4019,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 1.03,
       "breakeven": 162.51,
       "breakevenLow": null,
@@ -3946,7 +4055,6 @@
       "ivRvRatio": 0.24,
       "realizedVol": 26.0,
       "expDate": "2026-09-25",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -3967,8 +4075,6 @@
       "hedge": null,
       "exp": "Oct 30",
       "dte": 39,
-      "backExp": null,
-      "backDte": null,
       "pot": 3,
       "ap": 285.4,
       "ivr": 50,
@@ -3983,7 +4089,6 @@
       "marginOfSafety": false,
       "delta": 0.02,
       "iv": 0.8,
-      "backIv": null,
       "premium": 3.05,
       "breakeven": 953.05,
       "breakevenLow": null,
@@ -4020,7 +4125,6 @@
       "ivRvRatio": 0.02,
       "realizedVol": 50.0,
       "expDate": "2026-10-30",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -4047,8 +4151,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 13,
@@ -4063,7 +4165,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 3.1,
-      "backIv": null,
       "premium": 2.55,
       "breakeven": 527.55,
       "breakevenLow": null,
@@ -4100,7 +4201,6 @@
       "ivRvRatio": 0.27,
       "realizedVol": 11.4,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -4121,8 +4221,6 @@
       "hedge": null,
       "exp": "Oct 9",
       "dte": 18,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": 496.8,
       "ivr": 36,
@@ -4137,7 +4235,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 6.3,
-      "backIv": null,
       "premium": 2.45,
       "breakeven": 187.45,
       "breakevenLow": null,
@@ -4174,7 +4271,6 @@
       "ivRvRatio": 0.13,
       "realizedVol": 48.3,
       "expDate": "2026-10-09",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -4201,8 +4297,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 0,
       "ap": null,
       "ivr": 53,
@@ -4217,7 +4311,6 @@
       "marginOfSafety": true,
       "delta": 0.0,
       "iv": 25.0,
-      "backIv": null,
       "premium": 0.06,
       "breakeven": 350.06,
       "breakevenLow": null,
@@ -4242,7 +4335,6 @@
       "ivRvRatio": 1.41,
       "realizedVol": 17.7,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -4263,8 +4355,6 @@
       "hedge": null,
       "exp": "Nov 20",
       "dte": 60,
-      "backExp": null,
-      "backDte": null,
       "pot": 53,
       "ap": null,
       "ivr": 50,
@@ -4279,7 +4369,6 @@
       "marginOfSafety": true,
       "delta": 0.84,
       "iv": 81.3,
-      "backIv": null,
       "premium": 62.27,
       "breakeven": 237.28,
       "breakevenLow": null,
@@ -4316,7 +4405,6 @@
       "ivRvRatio": 2.22,
       "realizedVol": 36.7,
       "expDate": "2026-11-20",
-      "backExpDate": null,
       "legs": [
         {
           "type": "call",
@@ -4337,8 +4425,6 @@
       "hedge": null,
       "exp": "Oct 16",
       "dte": 25,
-      "backExp": null,
-      "backDte": null,
       "pot": 39,
       "ap": null,
       "ivr": 19,
@@ -4353,7 +4439,6 @@
       "marginOfSafety": true,
       "delta": -0.76,
       "iv": 95.4,
-      "backIv": null,
       "premium": 71.82,
       "breakeven": 258.18,
       "breakevenLow": null,
@@ -4390,7 +4475,6 @@
       "ivRvRatio": 3.29,
       "realizedVol": 29.0,
       "expDate": "2026-10-16",
-      "backExpDate": null,
       "legs": [
         {
           "type": "put",
@@ -4545,7 +4629,7 @@
       "dividendYield": 0.32,
       "marketCap": 1696002211840,
       "score": 7.9,
-      "newsSentiment": 0.16,
+      "newsSentiment": 0.39,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4555,16 +4639,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Meta Heads Into Connect With Fresh Wells Fargo Bull Case As Muse Gains Traction \u2014 Analyst Says Company \u2018Now Has A Story To Tell\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/meta-heads-into-connect-with-fresh-wells-fargo-bull-case-as-muse-gains-traction-analyst-says-company-now-has-a-story-to-tell/cZMRimZRB4x",
+          "sentiment": 0.69
+        },
+        {
           "title": "Meta Stock Jumps Despite Another Facebook Outage. Here's Why",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/meta-stock-jumps-despite-another-123046847.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4631,9 +4715,15 @@
       "dividendYield": null,
       "marketCap": 913892179968,
       "score": 8.5,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.57,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "My AMD Price Prediction Comes Down to One Crucial Growth Opportunity",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/my-amd-price-prediction-comes-down-to-one-crucial-growth-opportunity/",
+          "sentiment": 0.66
+        },
         {
           "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
           "publisher": "Motley Fool",
@@ -4645,12 +4735,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
           "sentiment": 0.61
-        },
-        {
-          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4674,9 +4758,15 @@
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
       "score": 9.4,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Here's How Much You'd Have If You Invested $1000 in Micron a Decade Ago",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/heres-much-youd-invested-1000-123001934.html",
+          "sentiment": 0.0
+        },
         {
           "title": "China's Memory Push Raises a New Question for Micron and SK Hynix",
           "publisher": "GuruFocus.com",
@@ -4688,12 +4778,6 @@
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/technology/articles/china-cxmt-says-reached-advanced-041453764.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China\u2019s CXMT Touts Faster Production",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-stocks-in-focus-memory-rebound-gains-steam-even-as-china-s-cxmt-touts-faster-production/cZMRGVORB43",
-          "sentiment": 0.32
         }
       ]
     },
@@ -4717,7 +4801,7 @@
       "dividendYield": 0.26,
       "marketCap": 4212111966208,
       "score": 7.6,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4731,6 +4815,12 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
+        },
+        {
+          "title": "GOOG vs GOOGL - which Alphabet share class should you buy?",
+          "publisher": "Moneyweek",
+          "link": "https://moneyweek.com/investments/tech-stocks/goog-googl-which-alphabet-share-class-should-you-buy",
+          "sentiment": 0.3
         }
       ]
     },
@@ -5182,7 +5272,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2011830157312,
+      "marketCap": 2012989751296,
       "score": 8.2,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -5508,7 +5598,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 56756400128,
+      "marketCap": 60770516992,
       "score": 6.2,
       "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
@@ -5723,7 +5813,7 @@
       "volRatio": 1.58,
       "peRatio": 68.9,
       "dividendYield": 0.75,
-      "marketCap": 129057431552,
+      "marketCap": 129320239104,
       "score": 4.5,
       "newsSentiment": -0.21,
       "newsSentimentLabel": "Negative",
@@ -6039,7 +6129,7 @@
       "dividendYield": 0.25,
       "marketCap": 4274851676160,
       "score": 7.7,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -6053,6 +6143,12 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
+        },
+        {
+          "title": "GOOG vs GOOGL - which Alphabet share class should you buy?",
+          "publisher": "Moneyweek",
+          "link": "https://moneyweek.com/investments/tech-stocks/goog-googl-which-alphabet-share-class-should-you-buy",
+          "sentiment": 0.3
         }
       ]
     },
@@ -6332,7 +6428,7 @@
       "volRatio": 1.86,
       "peRatio": 38.8,
       "dividendYield": 0.6,
-      "marketCap": 1027672309760,
+      "marketCap": 1028115464192,
       "score": 4.9,
       "newsSentiment": 0.74,
       "newsSentimentLabel": "Positive",
@@ -6455,6 +6551,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Prediction: Robinhood Will Launch Tokenized Stock Trading in the U.S. Before the End of 2027",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/prediction-robinhood-will-launch-tokenized-stock-trading-in-the-u-s-before-the-end-of-2027/",
+          "sentiment": 0.0
+        },
+        {
           "title": "These Recent Moves Are Brilliant. Here's Why Robinhood Is the Most Important Player in Crypto Right Now.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/these-recent-moves-are-brilliant-heres-why-robinho/",
@@ -6465,12 +6567,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.61
-        },
-        {
-          "title": "Robinhood CEO Says Crypto Event-Contracts Will Overtake Sports Markets",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/robinhood-ceo-crypto-overtake-sports-markets/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6492,7 +6588,7 @@
       "volRatio": 1.76,
       "peRatio": 38.7,
       "dividendYield": 0.93,
-      "marketCap": 846768766976,
+      "marketCap": 849365827584,
       "score": 2.9,
       "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",

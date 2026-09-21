@@ -147,8 +147,19 @@
      or a real product badge would. */
   .brand{
     display:flex; align-items:center; gap:10px; flex-shrink:0; min-width:0;
-    background:#0E1116; border:2px solid #B23A45; border-radius:14px;
-    padding:5px 16px 5px 5px;
+    /* 2026-09-20 polish: two-layer background = dark fill clipped to the padding
+       box + a green->red gradient painted under the (transparent) 1.5px border,
+       so the outline literally carries the two brand colors instead of a muted
+       rose that fought the red "AI". A faint top highlight + tight shadow lifts
+       the badge off the page without a heavy sticker-like edge. */
+    border:1.5px solid transparent; border-radius:12px;
+    background:
+      linear-gradient(180deg,#151A22 0%,#0B0E13 100%) padding-box,
+      linear-gradient(120deg,#22C55E 0%,#1E9E52 38%,#C93A3F 62%,#F0484D 100%) border-box;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 1px 2px rgba(11,14,19,0.28), 0 6px 16px -6px rgba(11,14,19,0.35);
+    padding:6px 16px 6px 8px;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    text-rendering:geometricPrecision;
   }
   /* An "Allocation" label on the left (a plain-language heading for the
      Cash/Options%/Equity%/Cash-left row directly below it) and the Tickers
@@ -220,27 +231,22 @@
   .lookup-tab-submit:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
 
   .brand-mark{
-    width:40px; height:40px; flex-shrink:0;
+    width:34px; height:34px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
-  .brand-mark svg{ display:block; width:100%; height:100%; border-radius:9px; }
-  /* Sora ExtraBold (800) replaces Space Grotesk for the wordmark itself —
-     Space Grotesk tops out at 700 (there's no heavier cut of it), and
-     "bolder/sharper/crispier" needs an actual heavier weight, not a faked
-     one. Sora at 800 is still a geometric, technical face (flat terminals,
-     no soft/rounded bowls) so it keeps the same non-round register, just
-     with more ink. Font-size is intentionally smaller than the old
-     unbadged wordmark (37.5px) — the badge's own padding and border now
-     carry the visual weight, so the text doesn't need to. */
-  .brand-name{ font-family:'Sora', var(--sans); font-weight:800; font-size:28px; letter-spacing:-0.01em; color:#22C55E; }
-  /* Colors are tuned for THIS badge's fixed near-black background, not the
-     page background — "VantEdge" reuses the brightest bar from the icon
-     (#22C55E) and "AI" is a vivid, saturated red (#EF4444) chosen to pop
-     hard against #0E1116, the same way the reference logo's white text pops
-     against black. Both are deliberately brighter than the badge's own
-     border (#B23A45, a muted rose) so text, border and icon all read as
-     related but distinct accents rather than blurring together. */
-  .brand-ai{ color:#EF4444; font-weight:800; }
+  .brand-mark svg{ display:block; width:100%; height:100%; }
+  /* Wordmark: Sora 700 (was 800) at 27px with tighter tracking. The 800 cut
+     filled in its counters at small sizes and read soft/blobby on dark;
+     700 keeps the geometric, flat-terminal look but with crisp, open letter
+     shapes. Grayscale antialiasing (set on .brand) stops macOS/iOS subpixel
+     rendering from fattening light-on-dark text. Colors are brightened one
+     step (#4ADE80 / #FF5A5F) so both hold contrast on the near-black badge. */
+  .brand-name{
+    font-family:'Sora', var(--sans); font-weight:700; font-size:27px;
+    line-height:1; letter-spacing:-0.03em; color:#4ADE80;
+    font-feature-settings:'kern' 1;
+  }
+  .brand-ai{ color:#FF5A5F; font-weight:700; margin-left:0.02em; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -846,10 +852,9 @@
     #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
     .mode-toggle{ padding:0 14px; gap:3px; }
     .mode-tab{ min-height:34px; padding:7px 2px; font-size:10px; }
-    .brand{ gap:7px; border-width:1.5px; border-radius:12px; padding:4px 12px 4px 4px; }
-    .brand-mark{ width:31px; height:31px; }
-    .brand-mark svg{ border-radius:7px; }
-    .brand-name{ font-size:22px; }
+    .brand{ gap:7px; border-width:1.5px; border-radius:10px; padding:5px 12px 5px 6px; }
+    .brand-mark{ width:28px; height:28px; }
+    .brand-name{ font-size:21px; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
     .header-tools{ gap:6px; row-gap:8px; }
     .header-actions{ gap:6px; }
@@ -933,12 +938,11 @@
   <div class="header-top">
     <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI" style="cursor:pointer;">
       <div class="brand-mark">
-        <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo">
-          <rect width="24" height="24" fill="#0E1116"/>
-          <rect x="2.5" y="14" width="3" height="6"  rx="1.2" fill="#14532D"/>
-          <rect x="8"   y="11" width="3" height="9"  rx="1.2" fill="#166534"/>
-          <rect x="13.5" y="8" width="3" height="12" rx="1.2" fill="#15803D"/>
-          <rect x="19"  y="4"  width="3" height="16" rx="1.2" fill="#22C55E"/>
+        <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo">
+          <rect x="3"    y="14.5" width="3.2" height="6"  rx="1.4" fill="#22C55E" fill-opacity="0.38"/>
+          <rect x="8"    y="11.5" width="3.2" height="9"  rx="1.4" fill="#22C55E" fill-opacity="0.60"/>
+          <rect x="13"   y="8"    width="3.2" height="12.5" rx="1.4" fill="#22C55E" fill-opacity="0.82"/>
+          <rect x="18"   y="3.5"  width="3.2" height="17" rx="1.4" fill="#4ADE80"/>
         </svg>
       </div>
       <div>

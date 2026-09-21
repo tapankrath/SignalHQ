@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T22:43:47.118325+00:00",
+  "generated_at": "2026-09-21T23:37:31.005732+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -195,7 +195,7 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.41,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -205,10 +205,10 @@
           "sentiment": 0.3
         },
         {
-          "title": "Should You Forget Nvidia and Buy These 3 Millionaire-Maker AI Infrastructure Stocks Instead?",
+          "title": "$500 a Month in Nvidia Stock Since ChatGPT Launched Is Now Worth About $79,000",
           "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/should-you-forget-nvidia-and-buy-these-3-millionai/",
-          "sentiment": -0.23
+          "link": "https://www.fool.com/investing/2026/09/21/usd500-a-month-in-nvidia-stock-since-chatgpt-launched-is-now-worth-about-usd79-000/",
+          "sentiment": 0.34
         },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
@@ -269,8 +269,8 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
@@ -279,16 +279,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Shopify to Use Meta\u2019s Muse for Agentic Checkout",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/tech/shopify-to-use-metas-muse-for-agentic-checkout-d23947c0?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
           "sentiment": 0.0
-        },
-        {
-          "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/21/stock-market-today-sept-21-meta-surges-on-excitement-over-muse-personal-ai-agent/",
-          "sentiment": 0.8
         }
       ],
       "volRegime": "Rich",
@@ -431,6 +431,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
+        },
+        {
           "title": "Advanced Micro Devices (AMD) Is Up 24.7% After Expanding Its Role In Regulated AI Infrastructure \u2013 Has The Bull Case Changed?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/advanced-micro-devices-amd-24-221840955.html",
@@ -441,12 +447,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
           "sentiment": 0.0
-        },
-        {
-          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Fair",
@@ -511,16 +511,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
-          "sentiment": 0.61
-        },
-        {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
+        },
+        {
+          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
+          "sentiment": 0.61
         }
       ],
       "volRegime": "Fair",
@@ -1312,9 +1312,15 @@
       "pcVol": 0.47,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.02,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Adobe (ADBE) Stock Still Looks Like A Bargain Following A 59% Slump",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-adbe-stock-still-looks-231655369.html",
+          "sentiment": -0.05
+        },
         {
           "title": "Adobe CEO Shantanu Narayen Sells $31.3 Million Stock",
           "publisher": "Motley Fool",
@@ -1326,12 +1332,6 @@
           "publisher": "FX Empire",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-microsoft-adobe-forecast-ai-132829225.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Beat the Market Like Zacks: PBF, Palantir, Adobe in Focus",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
-          "sentiment": 0.76
         }
       ],
       "volRegime": "Fair",
@@ -2630,7 +2630,7 @@
       "pcVol": 0.89,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2640,15 +2640,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "Should You Buy Costco Stock Before Sept. 24? History Has a Clear Answer.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/should-you-buy-costco-stock-before-sept-24-history/",
+          "sentiment": 0.38
+        },
+        {
           "title": "Costco Is Now on DoorDash Nationwide",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/media-advertising/articles/costco-now-doordash-nationwide-193007002.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Gear Up for Costco (COST) Q4 Earnings: Wall Street Estimates for Key Metrics",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/gear-costco-cost-q4-earnings-131503375.html",
           "sentiment": 0.0
         }
       ],
@@ -2864,8 +2864,8 @@
       "pcVol": 0.49,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.38,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
@@ -2874,16 +2874,16 @@
           "sentiment": 0.59
         },
         {
+          "title": "Stocks to Watch Recap: Paramount, Intel, Strategy, Critical Metals",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.32
+        },
+        {
           "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Fair",
@@ -3283,9 +3283,15 @@
       "pcVol": 0.53,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Applied Materials Stock Jumped Nearly 7% in a Chip-Equipment Rally. Its $5 Billion India Plan Is the Longer Story",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/applied-materials-stock-jumped-nearly-7-in-a-chip-equipment-rally-its-5-billion-india-plan-is-the-longer-story?ref=yahoofinance",
+          "sentiment": 0.77
+        },
         {
           "title": "Applied Materials (AMAT) Stock May Look Reasonable Following Fresh AI Demand Forecasts",
           "publisher": "Simply Wall St.",
@@ -3297,12 +3303,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/applied-materials-jumps-3-6-185847270.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Applied Materials vs. Nvidia: Which Tech Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/19/applied-materials-vs-nvidia-which-tech-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Fair",
@@ -3359,9 +3359,15 @@
       "pcVol": 0.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Strategy Stock Surged Today",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/why-strategy-stock-surged-today/",
+          "sentiment": 0.61
+        },
         {
           "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
@@ -3373,12 +3379,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/michael-saylors-strategy-buys-950-bitcoin-now-holds-846000",
           "sentiment": 0.0
-        },
-        {
-          "title": "Michael Saylor\u2019s Strategy buys Bitcoin again as surprise rally pushes price above $85,000",
-          "publisher": "Fortune",
-          "link": "https://finance.yahoo.com/markets/crypto/articles/michael-saylor-strategy-buys-bitcoin-170509444.html",
-          "sentiment": 0.68
         }
       ],
       "volRegime": "Cheap",
@@ -3609,7 +3609,7 @@
           "sentiment": 0.0
         },
         {
-          "title": "LLY Stock Gains As CEO Says Foundayo Wins One-Third of New GLP-1 Pill Starts, Breaks Ground On $6.5B Houston Plant",
+          "title": "LLY Stock Gains As CEO Says Foundayo Wins One-Third Of New GLP-1 Pill Starts, Breaks Ground On $6.5B Houston Plant",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/lly-stock-gains-as-ceo-says-foundayo-wins-one-third-of-new-glp-1-pill-starts-breaks-ground-on-6-5-b-houston-plant/cZMRA28RBIj",
           "sentiment": 0.73
@@ -3751,9 +3751,15 @@
       "pcVol": 0.93,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Circle Just Launched Arc With BlackRock and Visa. Here\u2019s What It Means for the Stock in 2026",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/circle-just-launched-arc-with-blackrock-and-visa-heres-what-it-means-for-the-stock-in-2026?ref=yahoofinance",
+          "sentiment": 0.13
+        },
         {
           "title": "Visa Inc. (V) is Attracting Investor Attention: Here is What You Should Know",
           "publisher": "Zacks",
@@ -3765,12 +3771,6 @@
           "publisher": "Forkast News",
           "link": "https://finance.yahoo.com/technology/ai/articles/visa-mastercard-ant-international-build-111358124.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/visa-just-fired-2600-people-heres-where-that-money-is-going?ref=yahoofinance",
-          "sentiment": -0.56
         }
       ],
       "volRegime": "Fair",
@@ -4689,7 +4689,7 @@
       "dividendYield": 0.45,
       "marketCap": 5490544738304,
       "score": 9.4,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.41,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4699,10 +4699,10 @@
           "sentiment": 0.3
         },
         {
-          "title": "Should You Forget Nvidia and Buy These 3 Millionaire-Maker AI Infrastructure Stocks Instead?",
+          "title": "$500 a Month in Nvidia Stock Since ChatGPT Launched Is Now Worth About $79,000",
           "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/should-you-forget-nvidia-and-buy-these-3-millionai/",
-          "sentiment": -0.23
+          "link": "https://www.fool.com/investing/2026/09/21/usd500-a-month-in-nvidia-stock-since-chatgpt-launched-is-now-worth-about-usd79-000/",
+          "sentiment": 0.34
         },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
@@ -4732,8 +4732,8 @@
       "dividendYield": 0.32,
       "marketCap": 1888326254592,
       "score": 8.5,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
@@ -4742,16 +4742,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Shopify to Use Meta\u2019s Muse for Agentic Checkout",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/tech/shopify-to-use-metas-muse-for-agentic-checkout-d23947c0?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
           "sentiment": 0.0
-        },
-        {
-          "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/21/stock-market-today-sept-21-meta-surges-on-excitement-over-muse-personal-ai-agent/",
-          "sentiment": 0.8
         }
       ]
     },
@@ -4822,6 +4822,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
+        },
+        {
           "title": "Advanced Micro Devices (AMD) Is Up 24.7% After Expanding Its Role In Regulated AI Infrastructure \u2013 Has The Bull Case Changed?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/advanced-micro-devices-amd-24-221840955.html",
@@ -4832,12 +4838,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
           "sentiment": 0.0
-        },
-        {
-          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
-          "sentiment": 0.59
         }
       ]
     },
@@ -4871,16 +4871,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
-          "sentiment": 0.61
-        },
-        {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
+        },
+        {
+          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
+          "sentiment": 0.61
         }
       ]
     },
@@ -5309,9 +5309,15 @@
       "dividendYield": null,
       "marketCap": 99184197632,
       "score": 4.1,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.02,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Adobe (ADBE) Stock Still Looks Like A Bargain Following A 59% Slump",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-adbe-stock-still-looks-231655369.html",
+          "sentiment": -0.05
+        },
         {
           "title": "Adobe CEO Shantanu Narayen Sells $31.3 Million Stock",
           "publisher": "Motley Fool",
@@ -5323,12 +5329,6 @@
           "publisher": "FX Empire",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-microsoft-adobe-forecast-ai-132829225.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Beat the Market Like Zacks: PBF, Palantir, Adobe in Focus",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
-          "sentiment": 0.76
         }
       ]
     },
@@ -5350,7 +5350,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2000500424704,
+      "marketCap": 2001653334016,
       "score": 8.2,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
@@ -5682,7 +5682,7 @@
       "volRatio": 0.86,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 59107500032,
+      "marketCap": 63287898112,
       "score": 9.4,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -5897,7 +5897,7 @@
       "volRatio": 0.96,
       "peRatio": 72.9,
       "dividendYield": 0.75,
-      "marketCap": 136665219072,
+      "marketCap": 136943517696,
       "score": 4.9,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -6027,7 +6027,7 @@
       "dividendYield": 0.66,
       "marketCap": 398456848384,
       "score": 2.3,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -6037,15 +6037,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "Should You Buy Costco Stock Before Sept. 24? History Has a Clear Answer.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/should-you-buy-costco-stock-before-sept-24-history/",
+          "sentiment": 0.38
+        },
+        {
           "title": "Costco Is Now on DoorDash Nationwide",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/media-advertising/articles/costco-now-doordash-nationwide-193007002.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Gear Up for Costco (COST) Q4 Earnings: Wall Street Estimates for Key Metrics",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/gear-costco-cost-q4-earnings-131503375.html",
           "sentiment": 0.0
         }
       ]
@@ -6156,8 +6156,8 @@
       "dividendYield": null,
       "marketCap": 643741843456,
       "score": 8.5,
-      "newsSentiment": 0.38,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
@@ -6166,16 +6166,16 @@
           "sentiment": 0.59
         },
         {
+          "title": "Stocks to Watch Recap: Paramount, Intel, Strategy, Critical Metals",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.32
+        },
+        {
           "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.54
         }
       ]
     },
@@ -6346,9 +6346,15 @@
       "dividendYield": 0.48,
       "marketCap": 368419667968,
       "score": 4.9,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.49,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Applied Materials Stock Jumped Nearly 7% in a Chip-Equipment Rally. Its $5 Billion India Plan Is the Longer Story",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/applied-materials-stock-jumped-nearly-7-in-a-chip-equipment-rally-its-5-billion-india-plan-is-the-longer-story?ref=yahoofinance",
+          "sentiment": 0.77
+        },
         {
           "title": "Applied Materials (AMAT) Stock May Look Reasonable Following Fresh AI Demand Forecasts",
           "publisher": "Simply Wall St.",
@@ -6360,12 +6366,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/applied-materials-jumps-3-6-185847270.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Applied Materials vs. Nvidia: Which Tech Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/19/applied-materials-vs-nvidia-which-tech-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -6389,9 +6389,15 @@
       "dividendYield": null,
       "marketCap": 66941960192,
       "score": 8.5,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Strategy Stock Surged Today",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/why-strategy-stock-surged-today/",
+          "sentiment": 0.61
+        },
         {
           "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
@@ -6403,12 +6409,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/michael-saylors-strategy-buys-950-bitcoin-now-holds-846000",
           "sentiment": 0.0
-        },
-        {
-          "title": "Michael Saylor\u2019s Strategy buys Bitcoin again as surprise rally pushes price above $85,000",
-          "publisher": "Fortune",
-          "link": "https://finance.yahoo.com/markets/crypto/articles/michael-saylor-strategy-buys-bitcoin-170509444.html",
-          "sentiment": 0.68
         }
       ]
     },
@@ -6516,7 +6516,7 @@
       "volRatio": 0.92,
       "peRatio": 39.2,
       "dividendYield": 0.6,
-      "marketCap": 1038332919808,
+      "marketCap": 1038780596224,
       "score": 4.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
@@ -6534,7 +6534,7 @@
           "sentiment": 0.0
         },
         {
-          "title": "LLY Stock Gains As CEO Says Foundayo Wins One-Third of New GLP-1 Pill Starts, Breaks Ground On $6.5B Houston Plant",
+          "title": "LLY Stock Gains As CEO Says Foundayo Wins One-Third Of New GLP-1 Pill Starts, Breaks Ground On $6.5B Houston Plant",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/lly-stock-gains-as-ceo-says-foundayo-wins-one-third-of-new-glp-1-pill-starts-breaks-ground-on-6-5-b-houston-plant/cZMRA28RBIj",
           "sentiment": 0.73
@@ -6604,9 +6604,15 @@
       "dividendYield": 0.73,
       "marketCap": 694527590400,
       "score": 6.2,
-      "newsSentiment": -0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Circle Just Launched Arc With BlackRock and Visa. Here\u2019s What It Means for the Stock in 2026",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/circle-just-launched-arc-with-blackrock-and-visa-heres-what-it-means-for-the-stock-in-2026?ref=yahoofinance",
+          "sentiment": 0.13
+        },
         {
           "title": "Visa Inc. (V) is Attracting Investor Attention: Here is What You Should Know",
           "publisher": "Zacks",
@@ -6618,12 +6624,6 @@
           "publisher": "Forkast News",
           "link": "https://finance.yahoo.com/technology/ai/articles/visa-mastercard-ant-international-build-111358124.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/visa-just-fired-2600-people-heres-where-that-money-is-going?ref=yahoofinance",
-          "sentiment": -0.56
         }
       ]
     },
@@ -6731,7 +6731,7 @@
       "volRatio": 0.88,
       "peRatio": 38.9,
       "dividendYield": 0.93,
-      "marketCap": 852401717248,
+      "marketCap": 855016013824,
       "score": 3.1,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",

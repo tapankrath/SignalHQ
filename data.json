@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T08:37:24.844791+00:00",
+  "generated_at": "2026-09-21T09:37:42.079155+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -132,20 +132,20 @@
       "pcVol": 0.39,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.39,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Market Chatter: Microsoft-backed OpenAI Seeks Valuation Above $1.2 Trillion Despite Projected $278 Billion Cash Burn",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-backed-openai-090300004.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Bill Ackman Built a $2.4 Billion Stake in Microsoft, Calling It a \"Core Holding\" Bought at a \"Highly Compelling Valuation.\" Here's Why He's Betting Big on Big Tech.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/bill-ackman-built-a-24-billion-stake-in-microsoft/",
           "sentiment": 0.29
-        },
-        {
-          "title": "Prediction: Micron Will Earn More Profit Than Microsoft in Fiscal 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Cheap",
@@ -206,20 +206,14 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.17,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia's CEO Huang says there's a \u20180% chance\u2019 AI ends the world \u2014 4 AI giants are sued over an alleged pact to slow it",
-          "publisher": "Moneywise",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
+          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
           "sentiment": 0.0
-        },
-        {
-          "title": "Jensen Huang Isn't 'Afraid' of Paying $8 Billion in California's Billionaire Tax: Nvidia CEO Says This Is What Scares Him Instead",
-          "publisher": "Benzinga",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-isnt-afraid-paying-065437968.html",
-          "sentiment": -0.34
         }
       ],
       "volRegime": "Cheap",
@@ -1280,26 +1274,26 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.01,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
+          "sentiment": 0.0
+        },
         {
           "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
           "sentiment": 0.0
-        },
-        {
-          "title": "One Vanguard ETF Is Betting Big on SpaceX, But Is 20% Too Big a Bet?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/vanguard-etf-spacex-concentration-risk/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Meet the Vanguard ETF That Increased Its SpaceX Holding by 39% in 1 Month and Shows No Signs of Slowing Down",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/vanguard-communication-services-etf-buy-spacex/",
-          "sentiment": -0.03
         }
       ],
       "volRegime": "Cheap",
@@ -1438,26 +1432,26 @@
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.06,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Michael Burry Doubles Down On Palantir Bear Case: \u2018A Lot Of\u2019 Money Still To Be Made Shorting PLTR",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/michael-burry-doubles-down-on-palantir-bear-case-a-lot-of-money-still-to-be-made-shorting-pltr/cZMR9RVRB4N",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Prediction: This Will Be Palantir\u2019s Stock Price in a Year (Hint: It Implies Upside)",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/this-be-palantir-stock-price-in-year-upside/",
+          "sentiment": 0.0
+        },
         {
           "title": "Wall Street Just Gave Palantir Its Highest-Ever Price Target, Right When Europe Started Saying No",
           "publisher": "TIKR",
           "link": "https://www.tikr.com/blog/wall-street-just-gave-palantir-its-highest-ever-price-target-right-when-europe-started-saying-no?ref=yahoofinance",
           "sentiment": -0.3
-        },
-        {
-          "title": "Palantir Technologies (PLTR) Unveils Alliance Push Across AI Supply Chains And Cyber Defense",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-unveils-alliance-011200856.html",
-          "sentiment": 0.13
-        },
-        {
-          "title": "Palantir Nearly Doubled Its Revenue. Its Stock Stood Still. Is It Time to Buy the Stock?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/palantir-nearly-doubled-its-revenue-its-stock-stood-still-is-it-time-to-buy-the-stock/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2041,9 +2035,15 @@
       "pcVol": 1.0,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
+          "sentiment": 0.0
+        },
         {
           "title": "RKLB Stock Gains Overnight: Rocket Lab\u2019s 97th Electron Is Already On The Pad After Another Mission Success",
           "publisher": "Stocktwits",
@@ -2055,12 +2055,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615858/is-rklb-stock-paying-you-enough-for-the-swings/2026-09-18",
           "sentiment": 0.0
-        },
-        {
-          "title": "Rocket Lab stock tumbles after massive $1.94 billion equity raise",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-stock-tumbles-massive-193427218.html",
-          "sentiment": -0.61
         }
       ],
       "volRegime": "Cheap",
@@ -2975,6 +2969,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Lumentum (LITE) Moves 4.2% Higher: Will This Strength Last?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/lumentum-lite-moves-4-2-090500089.html",
+          "sentiment": 0.58
+        },
+        {
           "title": "A Lumentum President Sells 1,500 Shares Worth $1.4 Million Amid a Soaring Stock Price",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/filings/2026/09/21/a-lumentum-president-sells-1-500-shares-worth-usd1-4-million-amid-a-soaring-stock-price/",
@@ -2985,12 +2985,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
-        },
-        {
-          "title": "Lumentum Climbs 3% as Optics Buying Extends; Coherent Rises 5%, Corning Jumps 3%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/lumentum-climbs-3-as-optics-buying-extends-coherent-rises-5-corning-jumps-3/",
-          "sentiment": 0.57
         }
       ],
       "volRegime": "Cheap",
@@ -3045,9 +3039,15 @@
       "pcVol": 1.24,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "BE Stock Jumps Premarket Ahead Of S&P 500 Inclusion: US Army Awards Power Leases To Indelible-Bloom Coalition",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/be-stock-jumps-premarket-ahead-of-s-and-p-500-inclusion-us-army-awards-power-leases-to-indelible-bloom-coalition/cZMR9dBRB4V",
+          "sentiment": 0.74
+        },
         {
           "title": "Bloom Energy\u2019s \u201cTime-to-Power\u201d Moat",
           "publisher": "Motley Fool",
@@ -3059,12 +3059,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/bloom-energy-unveils-power-play-164510735.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Plug Power vs. Bloom Energy: Which Hydrogen-Adjacent Stock Actually Has a Real Business Model?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/plug-power-vs-bloom-energy-which-hydrogen-adjacent/",
-          "sentiment": 0.27
         }
       ],
       "volRegime": "Cheap",
@@ -3773,9 +3767,15 @@
       "pcVol": 0.63,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.15,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye Snapdragon Summit For Cues",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/qcom-stock-inches-higher-after-worst-drop-in-three-months-traders-eye-snapdragon-summit-for-cues/cZMRaUqRB4F",
+          "sentiment": -0.74
+        },
         {
           "title": "Astera Labs vs. Qualcomm: Which Semiconductor Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -3786,12 +3786,6 @@
           "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means for QCOM Stock.",
           "publisher": "Barchart",
           "link": "https://www.barchart.com/story/news/4696893/mediatek-is-stepping-up-competition-against-qualcomm-with-a-new-2-nanometer-chip-what-this-means-for-qcom-stock",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Qualcomm (QCOM) Joins New Edge AI Ecosystem",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-joins-edge-ai-041937210.html",
           "sentiment": 0.0
         }
       ],
@@ -3999,26 +3993,26 @@
       "pcVol": 2.96,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Wall Street Just Got More Bullish on GE Vernova. Consensus Now Puts the Target at $1,237.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/wall-street-just-got-more-bullish-on-ge-vernova-consensus-now-puts-the-target-at-1237?ref=yahoofinance",
+          "sentiment": 0.58
+        },
+        {
+          "title": "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/interest-rates-caterpillar-ge-vernova-vertiv/",
+          "sentiment": 0.46
+        },
         {
           "title": "Eos Energy Enterprises vs. GE Vernova: Which Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/20/eos-energy-enterprises-vs-ge-vernova-which-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.61
-        },
-        {
-          "title": "GE Vernova\u2019s (GEV) $200 Billion Backlog is Coming Sooner than Expected",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-gev-200-billion-154331999.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Jim Cramer Revealed GE Vernova Inc. (NYSE:GEV)\u2019s Saying There\u2019s An Order Acceleration",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-revealed-ge-vernova-232155534.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -4476,20 +4470,20 @@
       "dividendYield": 0.79,
       "marketCap": 3666585845760,
       "score": 9.4,
-      "newsSentiment": 0.39,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Market Chatter: Microsoft-backed OpenAI Seeks Valuation Above $1.2 Trillion Despite Projected $278 Billion Cash Burn",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-backed-openai-090300004.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Bill Ackman Built a $2.4 Billion Stake in Microsoft, Calling It a \"Core Holding\" Bought at a \"Highly Compelling Valuation.\" Here's Why He's Betting Big on Big Tech.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/bill-ackman-built-a-24-billion-stake-in-microsoft/",
           "sentiment": 0.29
-        },
-        {
-          "title": "Prediction: Micron Will Earn More Profit Than Microsoft in Fiscal 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
-          "sentiment": 0.49
         }
       ]
     },
@@ -4513,20 +4507,14 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": -0.17,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia's CEO Huang says there's a \u20180% chance\u2019 AI ends the world \u2014 4 AI giants are sued over an alleged pact to slow it",
-          "publisher": "Moneywise",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
+          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
           "sentiment": 0.0
-        },
-        {
-          "title": "Jensen Huang Isn't 'Afraid' of Paying $8 Billion in California's Billionaire Tax: Nvidia CEO Says This Is What Scares Him Instead",
-          "publisher": "Benzinga",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-isnt-afraid-paying-065437968.html",
-          "sentiment": -0.34
         }
       ]
     },
@@ -4591,6 +4579,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
@@ -4601,12 +4595,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/teslas-free-cash-flow-went-negative-it-still-has-a/",
           "sentiment": -0.1
-        },
-        {
-          "title": "TSLA Stock Looks \u2018Slightly Undervalued\u2019 To This Analyst \u2014 But The Roadster Is Barely Part Of The Bull Case",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-undervalued-analyst-roadster-barely-bull-case/cZMRTeURB47",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5189,26 +5177,26 @@
       "dividendYield": null,
       "marketCap": 2012989751296,
       "score": 8.2,
-      "newsSentiment": -0.01,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
+          "sentiment": 0.0
+        },
         {
           "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
           "sentiment": 0.0
-        },
-        {
-          "title": "One Vanguard ETF Is Betting Big on SpaceX, But Is 20% Too Big a Bet?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/vanguard-etf-spacex-concentration-risk/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Meet the Vanguard ETF That Increased Its SpaceX Holding by 39% in 1 Month and Shows No Signs of Slowing Down",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/vanguard-communication-services-etf-buy-spacex/",
-          "sentiment": -0.03
         }
       ]
     },
@@ -5318,26 +5306,26 @@
       "dividendYield": null,
       "marketCap": 426879287296,
       "score": 9.0,
-      "newsSentiment": -0.06,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Michael Burry Doubles Down On Palantir Bear Case: \u2018A Lot Of\u2019 Money Still To Be Made Shorting PLTR",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/michael-burry-doubles-down-on-palantir-bear-case-a-lot-of-money-still-to-be-made-shorting-pltr/cZMR9RVRB4N",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Prediction: This Will Be Palantir\u2019s Stock Price in a Year (Hint: It Implies Upside)",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/this-be-palantir-stock-price-in-year-upside/",
+          "sentiment": 0.0
+        },
         {
           "title": "Wall Street Just Gave Palantir Its Highest-Ever Price Target, Right When Europe Started Saying No",
           "publisher": "TIKR",
           "link": "https://www.tikr.com/blog/wall-street-just-gave-palantir-its-highest-ever-price-target-right-when-europe-started-saying-no?ref=yahoofinance",
           "sentiment": -0.3
-        },
-        {
-          "title": "Palantir Technologies (PLTR) Unveils Alliance Push Across AI Supply Chains And Cyber Defense",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-unveils-alliance-011200856.html",
-          "sentiment": 0.13
-        },
-        {
-          "title": "Palantir Nearly Doubled Its Revenue. Its Stock Stood Still. Is It Time to Buy the Stock?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/palantir-nearly-doubled-its-revenue-its-stock-stood-still-is-it-time-to-buy-the-stock/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5680,9 +5668,15 @@
       "dividendYield": null,
       "marketCap": 41286766592,
       "score": 2.1,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
+          "sentiment": 0.0
+        },
         {
           "title": "RKLB Stock Gains Overnight: Rocket Lab\u2019s 97th Electron Is Already On The Pad After Another Mission Success",
           "publisher": "Stocktwits",
@@ -5694,12 +5688,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615858/is-rklb-stock-paying-you-enough-for-the-swings/2026-09-18",
           "sentiment": 0.0
-        },
-        {
-          "title": "Rocket Lab stock tumbles after massive $1.94 billion equity raise",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-stock-tumbles-massive-193427218.html",
-          "sentiment": -0.61
         }
       ]
     },
@@ -6127,6 +6115,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Lumentum (LITE) Moves 4.2% Higher: Will This Strength Last?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/lumentum-lite-moves-4-2-090500089.html",
+          "sentiment": 0.58
+        },
+        {
           "title": "A Lumentum President Sells 1,500 Shares Worth $1.4 Million Amid a Soaring Stock Price",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/filings/2026/09/21/a-lumentum-president-sells-1-500-shares-worth-usd1-4-million-amid-a-soaring-stock-price/",
@@ -6137,12 +6131,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
-        },
-        {
-          "title": "Lumentum Climbs 3% as Optics Buying Extends; Coherent Rises 5%, Corning Jumps 3%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/lumentum-climbs-3-as-optics-buying-extends-coherent-rises-5-corning-jumps-3/",
-          "sentiment": 0.57
         }
       ]
     },
@@ -6166,9 +6154,15 @@
       "dividendYield": null,
       "marketCap": 78235303936,
       "score": 9.4,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "BE Stock Jumps Premarket Ahead Of S&P 500 Inclusion: US Army Awards Power Leases To Indelible-Bloom Coalition",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/be-stock-jumps-premarket-ahead-of-s-and-p-500-inclusion-us-army-awards-power-leases-to-indelible-bloom-coalition/cZMR9dBRB4V",
+          "sentiment": 0.74
+        },
         {
           "title": "Bloom Energy\u2019s \u201cTime-to-Power\u201d Moat",
           "publisher": "Motley Fool",
@@ -6180,12 +6174,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/bloom-energy-unveils-power-play-164510735.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Plug Power vs. Bloom Energy: Which Hydrogen-Adjacent Stock Actually Has a Real Business Model?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/plug-power-vs-bloom-energy-which-hydrogen-adjacent/",
-          "sentiment": 0.27
         }
       ]
     },
@@ -6553,9 +6541,15 @@
       "dividendYield": 2.07,
       "marketCap": 189815717888,
       "score": 9.4,
-      "newsSentiment": 0.15,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye Snapdragon Summit For Cues",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/qcom-stock-inches-higher-after-worst-drop-in-three-months-traders-eye-snapdragon-summit-for-cues/cZMRaUqRB4F",
+          "sentiment": -0.74
+        },
         {
           "title": "Astera Labs vs. Qualcomm: Which Semiconductor Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -6566,12 +6560,6 @@
           "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means for QCOM Stock.",
           "publisher": "Barchart",
           "link": "https://www.barchart.com/story/news/4696893/mediatek-is-stepping-up-competition-against-qualcomm-with-a-new-2-nanometer-chip-what-this-means-for-qcom-stock",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Qualcomm (QCOM) Joins New Edge AI Ecosystem",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-joins-edge-ai-041937210.html",
           "sentiment": 0.0
         }
       ]
@@ -6639,9 +6627,15 @@
       "dividendYield": 0.81,
       "marketCap": 371872366592,
       "score": 4.8,
-      "newsSentiment": -0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/interest-rates-caterpillar-ge-vernova-vertiv/",
+          "sentiment": 0.46
+        },
         {
           "title": "The Caterpillar Correction Shouldn't Last Much Longer",
           "publisher": "Motley Fool",
@@ -6653,12 +6647,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-growing-quarry-autonomy-footprint-031806561.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "Should Caterpillar's Tariff Bill Worry You More Than Its Backlog?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615869/should-caterpillars-tariff-bill-worry-you-more-than-its-backlog/2026-09-18",
-          "sentiment": -0.44
         }
       ]
     },
@@ -6725,26 +6713,26 @@
       "dividendYield": 0.21,
       "marketCap": 250441465856,
       "score": 4.1,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Wall Street Just Got More Bullish on GE Vernova. Consensus Now Puts the Target at $1,237.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/wall-street-just-got-more-bullish-on-ge-vernova-consensus-now-puts-the-target-at-1237?ref=yahoofinance",
+          "sentiment": 0.58
+        },
+        {
+          "title": "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/interest-rates-caterpillar-ge-vernova-vertiv/",
+          "sentiment": 0.46
+        },
         {
           "title": "Eos Energy Enterprises vs. GE Vernova: Which Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/20/eos-energy-enterprises-vs-ge-vernova-which-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.61
-        },
-        {
-          "title": "GE Vernova\u2019s (GEV) $200 Billion Backlog is Coming Sooner than Expected",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-gev-200-billion-154331999.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Jim Cramer Revealed GE Vernova Inc. (NYSE:GEV)\u2019s Saying There\u2019s An Order Acceleration",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-revealed-ge-vernova-232155534.html",
-          "sentiment": 0.0
         }
       ]
     },

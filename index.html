@@ -1028,8 +1028,6 @@
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call" checked> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Put" checked> <span class="strat-dot bear"></span>Long Put</label>
-        <label class="check-row"><input type="checkbox" data-strat="Butterfly"> <span class="strat-dot neutral"></span>Butterfly</label>
-        <label class="check-row"><input type="checkbox" data-strat="Calendar Spread"> <span class="strat-dot neutral"></span>Calendar Spread</label>
       </div>
       <div class="filter-hint">
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
@@ -1052,7 +1050,7 @@
           <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20">
         </div>
       </div>
-      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put use probability of profit instead; Calendar Spread isn't filtered on this.</div>
+      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put have no fixed profit figure, so they don't pass this filter.</div>
     </div>
 
     <div class="filter-section" id="riskSection" style="display:none;">
@@ -1296,7 +1294,10 @@
       const res = await fetch('data.json', { cache:'no-store' });
       if(!res.ok) throw new Error(`data.json fetch failed: ${res.status}`);
       const json = await res.json();
-      trades = Array.isArray(json.trades) ? json.trades : [];
+      // Butterfly and Calendar Spread were retired 2026-09-20; an older cached
+      // data.json may still carry them until the next data run replaces it.
+      const RETIRED_STRATS = new Set(['Butterfly', 'Calendar Spread']);
+      trades = Array.isArray(json.trades) ? json.trades.filter(t => !RETIRED_STRATS.has(t.strat)) : [];
       equities = Array.isArray(json.equities) ? json.equities : [];
       hedge = json.hedge && typeof json.hedge === 'object' ? json.hedge : null;
       dataGeneratedAt = json.generated_at || null;
@@ -1477,16 +1478,15 @@
     // simpler and closer to what the number actually means. Defaults to 20%.
     //
     // Long Call/Long Put have no "ap"/"roc" at all (both null — see backend
-    // notes on breakevenMovePct) and Calendar Spread has neither an ap nor a
-    // breakeven. An earlier version let those three pass through here on a
+    // notes on breakevenMovePct). An earlier version let those pass through here on a
     // probability-based fallback instead of a profit check, but that meant
     // "Min Trade Profit" — a filter named and framed as a profit floor —
     // could still surface rows with a bare "–" in Trade Profit, which read
     // as broken rather than intentional. Decided (2026-09-18) to filter
-    // strictly on the number the control is named after: since these three
+    // strictly on the number the control is named after: since these two
     // strategies never have one, they're excluded here unconditionally.
     // This is a real behavior change worth knowing about, not just a
-    // formatting tweak — Long Call, Long Put, and Calendar Spread will not
+    // formatting tweak — Long Call and Long Put will not
     // appear in results at all (this stage always runs, at any threshold,
     // including 0), regardless of the Outlook & Strategy checkboxes.
     const minTradeProfitInput = document.getElementById('minTradeProfitInput');
@@ -2084,7 +2084,7 @@
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
   // Updated 2026-09-20: Outlook & Strategy now starts with the five directional
-  // strategies selected (Iron Condor, Butterfly and Calendar Spread stay off),
+  // strategies selected (Iron Condor stays off),
   // all four P/C boxes start unchecked, and the profit floor moved from 10% to 20%.
   const DEFAULT_CHECKED = [
     '[data-strat="Covered Call"]',
@@ -2196,13 +2196,12 @@
       }</div>
     ` : '';
 
-    // Long Call/Long Put/Butterfly/Calendar Spread are debit strategies whose
+    // Long Call/Long Put are debit strategies whose
     // metrics don't map onto the premium-selling labels below 1:1 — see the
     // backend's notes on debitStrategy/potIsProfitProb/breakevenMovePct for
     // why. These just pick the right label (or hide a row entirely) per trade
     // rather than showing a misleading number under the wrong name.
-    const isCalendar = t.strat === 'Calendar Spread';
-    const hasRange = t.strat === 'Iron Condor' || t.strat === 'Butterfly';
+    const hasRange = t.strat === 'Iron Condor';
     const potLabel = t.potIsProfitProb ? 'Probability of Profit' : 'Probability of Touch';
     const roiLabel = t.debitStrategy ? 'Max ROI' : 'Trade Profit';
     const annRoiLabel = t.debitStrategy ? 'Max Ann. ROI' : 'Annualized Profit';
@@ -2215,7 +2214,7 @@
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">${isCalendar ? `${t.strat} · Sell ${t.exp} (${t.dte}d) &rarr; Buy ${t.backExp} (${t.backDte}d)` : `${t.strat} · expires ${t.exp} · ${t.dte} days`}</div>
+      <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days</div>
       <div class="modal-metrics">
         ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)}</div></div>` : ''}
         ${t.pot != null ? `<div><div class="mm-label">${potLabel}</div><div class="mm-val">${t.pot}%</div></div>` : ''}
@@ -2231,9 +2230,6 @@
         }
         <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
         <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
-        ${isCalendar ? `<div><div class="mm-label">Front-Month (Sold)</div><div class="mm-val">${t.exp} <span style="color:var(--text-faint); font-weight:400;">(${t.dte}d)</span></div></div>` : ''}
-        ${isCalendar ? `<div><div class="mm-label">Back-Month (Bought)</div><div class="mm-val">${t.backExp} <span style="color:var(--text-faint); font-weight:400;">(${t.backDte}d)</span></div></div>` : ''}
-        ${isCalendar && t.backIv != null ? `<div><div class="mm-label">Back-Month IV</div><div class="mm-val">${t.backIv}%</div></div>` : ''}
         <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>
         ${t.dailyReturn != null ? `<div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>` : ''}
         <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
@@ -2244,7 +2240,6 @@
         ${volRegimeHtml}
       </div>
       ${t.spotPriceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
-      ${isCalendar ? `<div class="modal-note" style="margin-bottom:14px;">This calendar spread's max profit and breakeven aren't shown on purpose — both depend on what the back-month leg is worth at front-month expiration, which depends on implied volatility at that future date. This EOD pipeline has no honest way to estimate that, so rather than publish a plausible-looking but made-up number, it only shows what's actually knowable today: the net debit paid (also the standard textbook max loss if held to front expiration and unwound worthless). Chart a real payoff diagram before trading one of these.</div>` : ''}
 
       ${hedgeHtml}
 

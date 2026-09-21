@@ -179,11 +179,10 @@
   }
   .mode-group-title{
     font-size:15px; font-weight:800; letter-spacing:-0.01em;
-    color:var(--text-faint); transition:color .12s; white-space:nowrap;
+    color:var(--text); white-space:nowrap;
   }
-  .mode-group.is-active .mode-group-title{ color:var(--text); }
   .mode-group-sub{
-    font-size:12px; line-height:1.35; color:var(--text-faint);
+    font-size:12px; line-height:1.35; font-weight:700; color:var(--text);
     margin-bottom:5px;
   }
   .mode-toggle{
@@ -225,16 +224,17 @@
      normal-sized input and a normal, clearly separate button instead. */
   .lookup-tab-panel{
     max-width:1080px; margin:0 auto; padding:0 18px; box-sizing:border-box;
+    text-align:center;
   }
   .lookup-tab-label{ font-size:17px; font-weight:800; color:var(--text); margin-bottom:4px; }
-  .lookup-tab-sub{ font-size:13px; color:var(--text-dim); line-height:1.5; margin-bottom:16px; max-width:480px; }
-  .lookup-tab-form{ display:flex; gap:10px; max-width:360px; }
+  .lookup-tab-sub{ font-size:13px; color:var(--text-dim); line-height:1.5; margin:0 auto 16px; max-width:480px; }
+  .lookup-tab-form{ display:flex; gap:10px; max-width:360px; margin:0 auto; }
   .lookup-tab-input{
     flex:1; min-width:0; box-sizing:border-box;
     background:var(--surface-2); border:1px solid var(--border-strong);
     color:var(--text); padding:11px 14px; border-radius:var(--radius-sm);
     font-family:var(--mono); font-size:15px; font-weight:700;
-    text-transform:uppercase; letter-spacing:0.02em;
+    text-transform:uppercase; letter-spacing:0.02em; text-align:center;
   }
   .lookup-tab-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
   .lookup-tab-input:disabled{ opacity:0.6; }

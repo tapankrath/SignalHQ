@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T01:22:14.758658+00:00",
+  "generated_at": "2026-09-21T01:34:22.380794+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -2115,9 +2115,15 @@
       "pcVol": 1.0,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.38,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "RKLB Stock Gains Overnight: Rocket Lab\u2019s 97th Electron Is Already On The Pad After Another Mission Success",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-97th-electron-on-pad-after-another-mission-success/cZMbCf0RB4P",
+          "sentiment": 0.73
+        },
         {
           "title": "Is RKLB Stock Paying You Enough For The Swings?",
           "publisher": "Trefis",
@@ -2129,12 +2135,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-stock-tumbles-massive-193427218.html",
           "sentiment": -0.61
-        },
-        {
-          "title": "NASA Hitches Ride with SpaceX for StarBurst Satellite. Is RocketLab the Big Loser?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/nasa-hitches-ride-with-spacex-for-starburst-satellite-is-rocketlab-the-big-loser/",
-          "sentiment": -0.53
         }
       ],
       "volRegime": "Rich",
@@ -2681,6 +2681,1694 @@
           "type": "call",
           "strike": 262.5,
           "action": "sell",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "INTC",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 108.6,
+      "spotPriceStale": false,
+      "strike": "$116 C",
+      "hedge": null,
+      "exp": "Oct 30",
+      "dte": 39,
+      "backExp": null,
+      "backDte": null,
+      "pot": 35,
+      "ap": null,
+      "ivr": 34,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 4.3,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 31,
+      "marginOfSafety": true,
+      "delta": 0.45,
+      "iv": 74.4,
+      "backIv": null,
+      "premium": 7.7,
+      "breakeven": 123.7,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 13.9,
+      "maxLoss": 770.0,
+      "pcOI": 0.18,
+      "pcVol": 0.26,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Intel Can Supply Only About Half of What Its Customers Want. That's a Better Problem Than It Sounds.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/",
+          "sentiment": 0.13
+        },
+        {
+          "title": "Intel Corporation (INTC)\u2019s Terafab Partnership Could Give Its AI Foundry Ambitions a Major Boost",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/intel-corporation-intc-terafab-partnership-081341477.html",
+          "sentiment": 0.46
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.23,
+      "realizedVol": 60.3,
+      "expDate": "2026-10-30",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 116.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "GOOGL",
+      "strat": "Bull Put Spread",
+      "side": "bull",
+      "isETF": false,
+      "spot": 349.54,
+      "spotPriceStale": false,
+      "strike": "$340/335",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 43,
+      "ap": 1642.5,
+      "ivr": 23,
+      "dailyReturn": 22.5,
+      "roc": 18.0,
+      "score": 7.0,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 37,
+      "marginOfSafety": true,
+      "delta": -0.21,
+      "iv": 34.6,
+      "backIv": null,
+      "premium": 0.9,
+      "breakeven": 339.1,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 410.0,
+      "pcOI": 0.68,
+      "pcVol": 0.34,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": -0.17,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "Alphabet (GOOGL)\u2019s Google Bets on Finland\u2019s Cold Weather and Nuclear Power for its Next AI Buildout",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-google-bets-finland-230634716.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Billionaire Bill Ackman Dumps Alphabet and Loads Up On a Mega-Cap Stock Down 15% From Its Peak",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/billionaire-bill-ackman-dumps-alphabet-loads-meta/",
+          "sentiment": -0.4
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.5,
+      "realizedVol": 23.1,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 340.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 335.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "AVGO",
+      "strat": "Long Put",
+      "side": "bear",
+      "isETF": false,
+      "spot": 357.61,
+      "spotPriceStale": false,
+      "strike": "$360 P",
+      "hedge": null,
+      "exp": "Oct 16",
+      "dte": 25,
+      "backExp": null,
+      "backDte": null,
+      "pot": 33,
+      "ap": null,
+      "ivr": 3,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 6.7,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 79,
+      "marginOfSafety": false,
+      "delta": -0.5,
+      "iv": 35.8,
+      "backIv": null,
+      "premium": 14.53,
+      "breakeven": 345.48,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 3.39,
+      "maxLoss": 1452.5,
+      "pcOI": 0.68,
+      "pcVol": 0.56,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.71,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/jim-cramer-just-sent-a-strong-message-to-broadcom-stock-investors-sell-off",
+          "sentiment": 0.73
+        },
+        {
+          "title": "Applied Materials vs. Broadcom: Comparing Sales Growth Trajectories for These Artificial Intelligence Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-broadcom-comparing-sales-growth-trajectories-for-these-artificial-intelligence-companies/",
+          "sentiment": 0.69
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 1.05,
+      "realizedVol": 34.2,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 360.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "LITE",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 930.91,
+      "spotPriceStale": false,
+      "strike": "$1020 C",
+      "hedge": null,
+      "exp": "Nov 20",
+      "dte": 60,
+      "backExp": null,
+      "backDte": null,
+      "pot": 36,
+      "ap": null,
+      "ivr": 21,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 4.0,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 45,
+      "marginOfSafety": true,
+      "delta": 0.46,
+      "iv": 80.2,
+      "backIv": null,
+      "premium": 87.35,
+      "breakeven": 1107.35,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 18.95,
+      "maxLoss": 8735.0,
+      "pcOI": 2.25,
+      "pcVol": 1.2,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.56,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Lumentum Climbs 3% as Optics Buying Extends; Coherent Rises 5%, Corning Jumps 3%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/lumentum-climbs-3-as-optics-buying-extends-coherent-rises-5-corning-jumps-3/",
+          "sentiment": 0.57
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 0.93,
+      "realizedVol": 85.9,
+      "expDate": "2026-11-20",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 1020.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "BE",
+      "strat": "Bull Put Spread",
+      "side": "bull",
+      "isETF": false,
+      "spot": 265.63,
+      "spotPriceStale": false,
+      "strike": "$248/242",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 40,
+      "ap": 1998.4,
+      "ivr": 3,
+      "dailyReturn": 27.38,
+      "roc": 21.9,
+      "score": 6.7,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 36,
+      "marginOfSafety": true,
+      "delta": -0.2,
+      "iv": 85.8,
+      "backIv": null,
+      "premium": 1.1,
+      "breakeven": 246.41,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 390.5,
+      "pcOI": 1.38,
+      "pcVol": 1.04,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Bloom Energy\u2019s \u201cTime-to-Power\u201d Moat",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/bloom-energys-time-to-power-moat/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Bloom Energy (BE) Unveils a New Power Play for the AI Boom",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/bloom-energy-unveils-power-play-164510735.html",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Plug Power vs. Bloom Energy: Which Hydrogen-Adjacent Stock Actually Has a Real Business Model?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/plug-power-vs-bloom-energy-which-hydrogen-adjacent/",
+          "sentiment": 0.27
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.16,
+      "realizedVol": 74.2,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 247.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 242.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "AMAT",
+      "strat": "Bear Call Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 444.57,
+      "spotPriceStale": false,
+      "strike": "$468/472",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 40,
+      "ap": 1633.4,
+      "ivr": 33,
+      "dailyReturn": 22.38,
+      "roc": 17.9,
+      "score": 7.3,
+      "buy": false,
+      "sell": true,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 52,
+      "marginOfSafety": true,
+      "delta": 0.2,
+      "iv": 54.2,
+      "backIv": null,
+      "premium": 0.9,
+      "breakeven": 468.39,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 410.5,
+      "pcOI": 0.98,
+      "pcVol": 0.46,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.61,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Applied Materials vs. Nvidia: Which Tech Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/19/applied-materials-vs-nvidia-which-tech-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "Applied Materials vs. Broadcom: Comparing Sales Growth Trajectories for These Artificial Intelligence Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-broadcom-comparing-sales-growth-trajectories-for-these-artificial-intelligence-companies/",
+          "sentiment": 0.69
+        },
+        {
+          "title": "Applied Materials vs. Intel: Examining Revenue Growth Trajectories of These Artificial Intelligence Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-intel-examining-revenue-growth-trajectories-of-these-artificial-intelligence-companies/",
+          "sentiment": 0.69
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 1.13,
+      "realizedVol": 47.9,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 467.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 472.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "MSTR",
+      "strat": "Bull Put Spread",
+      "side": "bull",
+      "isETF": false,
+      "spot": 153.92,
+      "spotPriceStale": false,
+      "strike": "$144/142",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 40,
+      "ap": 2121.6,
+      "ivr": 91,
+      "dailyReturn": 11.63,
+      "roc": 23.25,
+      "score": 8.4,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 38,
+      "marginOfSafety": true,
+      "delta": -0.2,
+      "iv": 80.1,
+      "backIv": null,
+      "premium": 0.47,
+      "breakeven": 143.53,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 153.5,
+      "pcOI": 1.22,
+      "pcVol": 0.57,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Michael Saylor Hints at More MicroStrategy Bitcoin Buys After \u201cDead Cat Bounce\u201d Debate",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/saylor-hints-microstrategy-bitcoin-buys-dead-cat/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Strategy Is Up 53% in the Past Month. Here's the Bull and Bear Case for One of Wall Street's Most Polarizing Stocks.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/strategy-up-past-month-bull-bear-wall-street-stock/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Strategy Stock\u2019s 16% Jump Yesterday Traces Back to a House Committee Vote.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/strategy-stocks-16-jump-yesterday-traces-back-to-a-house-committee-vote?ref=yahoofinance",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.75,
+      "realizedVol": 107.1,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 144.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 142.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "WDC",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 441.36,
+      "spotPriceStale": false,
+      "strike": "$395/400/500/505",
+      "hedge": null,
+      "exp": "Oct 2",
+      "dte": 11,
+      "backExp": null,
+      "backDte": null,
+      "pot": 39,
+      "ap": 1068.5,
+      "ivr": 4,
+      "dailyReturn": 14.64,
+      "roc": 32.2,
+      "score": 6.7,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 45,
+      "marginOfSafety": true,
+      "delta": -0.01,
+      "iv": 71.5,
+      "backIv": null,
+      "premium": 1.61,
+      "breakeven": 398.39,
+      "breakevenLow": 398.39,
+      "breakevenHigh": 501.61,
+      "breakevenMovePct": null,
+      "maxLoss": 339.0,
+      "pcOI": 1.08,
+      "pcVol": 0.4,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.42,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Western Digital (WDC) Stock May Be Undervalued After Its Huge Three Year Run",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-stock-may-061123057.html",
+          "sentiment": 0.32
+        },
+        {
+          "title": "SanDisk Jumps 6% as Storage Bid Concentrates in One Name; Western Digital Rises 3%, Micron Ticks Up",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/sandisk-jumps-6-as-storage-bid-concentrates-in-one-name-western-digital-rises-3-micron-ticks-up/",
+          "sentiment": 0.49
+        },
+        {
+          "title": "Western Digital vs. Sandisk: Which Storage Stock is the Better Bet?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-vs-sandisk-storage-135400062.html",
+          "sentiment": 0.44
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.42,
+      "realizedVol": 50.3,
+      "expDate": "2026-10-02",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 400.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 395.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 500.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 505.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "LLY",
+      "strat": "Long Put",
+      "side": "bear",
+      "isETF": false,
+      "spot": 1152.93,
+      "spotPriceStale": false,
+      "strike": "$1150 P",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 18,
+      "backExp": null,
+      "backDte": null,
+      "pot": 33,
+      "ap": null,
+      "ivr": 0,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 6.9,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 38,
+      "marginOfSafety": false,
+      "delta": -0.46,
+      "iv": 36.7,
+      "backIv": null,
+      "premium": 32.05,
+      "breakeven": 1117.95,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 3.03,
+      "maxLoss": 3205.0,
+      "pcOI": 1.03,
+      "pcVol": 2.99,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Eli Lilly (LLY) Stock Fair Value Edges Higher As Analysts Back GLP 1 Growth",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-stock-fair-041830693.html",
+          "sentiment": 0.74
+        },
+        {
+          "title": "What Would It Take For Eli Lilly Stock To Keep Climbing?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615857/what-would-it-take-for-eli-lilly-stock-to-keep-climbing/2026-09-18",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Can Eli Lilly\u2019s Two-Drug Obesity Treatment Justify Its $1 Trillion Valuation?",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/can-eli-lillys-two-drug-obesity-treatment-justify-its-1-trillion-valuation/",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.89,
+      "realizedVol": 19.4,
+      "expDate": "2026-10-09",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 1150.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "LRCX",
+      "strat": "Long Put",
+      "side": "bear",
+      "isETF": false,
+      "spot": 288.11,
+      "spotPriceStale": false,
+      "strike": "$290 P",
+      "hedge": null,
+      "exp": "Oct 16",
+      "dte": 25,
+      "backExp": null,
+      "backDte": null,
+      "pot": 31,
+      "ap": null,
+      "ivr": 50,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 4.9,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 30,
+      "marginOfSafety": false,
+      "delta": -0.48,
+      "iv": 56.4,
+      "backIv": null,
+      "premium": 18.3,
+      "breakeven": 271.7,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 5.7,
+      "maxLoss": 1830.0,
+      "pcOI": 1.99,
+      "pcVol": 0.39,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Lam Research Climbs 5% as Chip Equipment Names Outrun the Sector; Applied Materials Rises 4%, KLA Corp. Gains 3%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/lam-research-climbs-5-as-chip-equipment-names-outrun-the-sector-applied-materials-rises-4-kla-corp-gains-3/",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Lam Research (LRCX) Stock Trades At A Premium On Bigger Shareholder Returns",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/lam-research-lrcx-stock-trades-211338151.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "The Zacks Analyst Blog Highlights Cisco, Lam, Thermo Fisher Scientific, Ampco-Pittsburgh and Catalyst",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-cisco-074500027.html",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 0.98,
+      "realizedVol": 57.7,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 290.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "HOOD",
+      "strat": "Calendar Spread",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 119.82,
+      "spotPriceStale": false,
+      "strike": "$120 C",
+      "hedge": null,
+      "exp": "Oct 2",
+      "dte": 11,
+      "backExp": "Oct 23",
+      "backDte": 32,
+      "pot": null,
+      "ap": null,
+      "ivr": 96,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 3.1,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 44,
+      "marginOfSafety": true,
+      "delta": 0.52,
+      "iv": 66.8,
+      "backIv": 64.7,
+      "premium": 3.5,
+      "breakeven": null,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 350.0,
+      "pcOI": 0.69,
+      "pcVol": 0.57,
+      "debitStrategy": true,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
+          "title": "Higher Rates Keep Robinhood Stock And Cash Sweep Platforms In Focus",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/higher-rates-keep-robinhood-stock-211136218.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Robinhood CEO Says Civil Liability May Not Be Enough To Contain Biggest AI Risks",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/robinhood-ceo-says-civil-liability-may-not-be-enough-to-contain-biggest-ai-risks/cZtCOyvRBEC",
+          "sentiment": -0.44
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.7,
+      "realizedVol": 94.8,
+      "expDate": "2026-10-02",
+      "backExpDate": "2026-10-23",
+      "legs": [
+        {
+          "type": "call",
+          "strike": 120.0,
+          "action": "sell",
+          "qty": 1,
+          "exp": "front"
+        },
+        {
+          "type": "call",
+          "strike": 120.0,
+          "action": "buy",
+          "qty": 1,
+          "exp": "back"
+        }
+      ]
+    },
+    {
+      "sym": "WMT",
+      "strat": "Bear Call Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 106.73,
+      "spotPriceStale": false,
+      "strike": "$110/112",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 29,
+      "ap": 821.2,
+      "ivr": 16,
+      "dailyReturn": 4.5,
+      "roc": 9.0,
+      "score": 7.3,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 59,
+      "marginOfSafety": true,
+      "delta": 0.15,
+      "iv": 26.7,
+      "backIv": null,
+      "premium": 0.18,
+      "breakeven": 110.18,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 182.0,
+      "pcOI": 0.33,
+      "pcVol": 0.28,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Walmart (WMT) Debuts Predictive Precision Targeting At Sam's Club",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/media-advertising/articles/walmart-wmt-debuts-predictive-precision-161140696.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Here's Why Walmart Won't Reclaim a $1 Trillion Market Cap Anytime Soon",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/heres-why-walmart-wont-reclaim-a-1-trillion-market/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Walmart Vs Kroger: Jim Cramer Couldn\u2019t Figure Out Why Only One\u2019s Shares Went Up",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-vs-kroger-jim-cramer-231954802.html",
+          "sentiment": 0.3
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.36,
+      "realizedVol": 19.7,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 110.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 112.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "QCOM",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 177.72,
+      "spotPriceStale": false,
+      "strike": "$180 C",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 18,
+      "backExp": null,
+      "backDte": null,
+      "pot": 36,
+      "ap": null,
+      "ivr": 41,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 5.4,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 38,
+      "marginOfSafety": false,
+      "delta": 0.49,
+      "iv": 52.2,
+      "backIv": null,
+      "premium": 6.85,
+      "breakeven": 186.85,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 5.14,
+      "maxLoss": 685.0,
+      "pcOI": 0.74,
+      "pcVol": 0.35,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Astera Labs vs. Qualcomm: Which Semiconductor Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/astera-labs-vs-qualcomm-which-semiconductor-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means for QCOM Stock.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4696893/mediatek-is-stepping-up-competition-against-qualcomm-with-a-new-2-nanometer-chip-what-this-means-for-qcom-stock",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Qualcomm (QCOM) Joins New Edge AI Ecosystem",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-joins-edge-ai-041937210.html",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.39,
+      "realizedVol": 37.6,
+      "expDate": "2026-10-09",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 180.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "MRNA",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 154.04,
+      "spotPriceStale": false,
+      "strike": "$180 C",
+      "hedge": null,
+      "exp": "Dec 18",
+      "dte": 88,
+      "backExp": null,
+      "backDte": null,
+      "pot": 36,
+      "ap": null,
+      "ivr": 78,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 2.1,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 45,
+      "marginOfSafety": true,
+      "delta": 0.44,
+      "iv": 82.8,
+      "backIv": null,
+      "premium": 15.97,
+      "breakeven": 195.97,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 27.22,
+      "maxLoss": 1597.5,
+      "pcOI": 1.24,
+      "pcVol": 0.65,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.35,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
+          "title": "Moderna (MRNA) Dropped, So What Is Behind The Latest Attention?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-dropped-behind-latest-071602863.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Axsome Therapeutics vs. Moderna: Which Healthcare Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/18/axsome-therapeutics-vs-moderna-which-healthcare-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 0.95,
+      "realizedVol": 87.0,
+      "expDate": "2026-12-18",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 180.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "CAT",
+      "strat": "Bear Call Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 808.99,
+      "spotPriceStale": false,
+      "strike": "$840/850",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 38,
+      "ap": 985.5,
+      "ivr": 3,
+      "dailyReturn": 27.0,
+      "roc": 10.8,
+      "score": 6.7,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 38,
+      "marginOfSafety": true,
+      "delta": 0.19,
+      "iv": 39.6,
+      "backIv": null,
+      "premium": 1.08,
+      "breakeven": 841.08,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 892.0,
+      "pcOI": 1.0,
+      "pcVol": 1.18,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": -0.03,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "The Caterpillar Correction Shouldn't Last Much Longer",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/the-caterpillar-correction-shouldnt-last-much-long/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Is Caterpillar\u2019s Growing Quarry Autonomy Footprint Quietly Reshaping Its Competitive Edge (CAT)?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-growing-quarry-autonomy-footprint-031806561.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Should Caterpillar's Tariff Bill Worry You More Than Its Backlog?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615869/should-caterpillars-tariff-bill-worry-you-more-than-its-backlog/2026-09-18",
+          "sentiment": -0.44
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.46,
+      "realizedVol": 27.2,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 840.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 850.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "XOM",
+      "strat": "Covered Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 163.54,
+      "spotPriceStale": false,
+      "strike": "$168 C",
+      "hedge": {
+        "hedgeStrike": 157.5,
+        "hedgeCost": 0.69,
+        "cappedMaxLoss": 575.0
+      },
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 100,
+      "ap": 54.8,
+      "ivr": 48,
+      "dailyReturn": 24.38,
+      "roc": 0.6,
+      "score": 5.5,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 39,
+      "marginOfSafety": true,
+      "delta": 0.25,
+      "iv": 32.6,
+      "backIv": null,
+      "premium": 0.98,
+      "breakeven": 162.56,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 16256.5,
+      "pcOI": 0.45,
+      "pcVol": 0.15,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Exxon (XOM) Eyes a Return to Venezuela After Nearly Two Decades Away",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/exxon-xom-eyes-return-venezuela-164059135.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "ExxonMobil Stock And Oil Majors Facing New Pressure On Global Supply Routes",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/energy/articles/exxonmobil-stock-oil-majors-facing-101123454.html",
+          "sentiment": -0.3
+        },
+        {
+          "title": "ExxonMobil's Advantaged Assets and Refining Strength Drive Outlook",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/energy/articles/exxonmobils-advantaged-assets-refining-strength-170800286.html",
+          "sentiment": 0.74
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.25,
+      "realizedVol": 26.0,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 167.5,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "GEV",
+      "strat": "Bear Call Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 940.33,
+      "spotPriceStale": false,
+      "strike": "$985/995",
+      "hedge": null,
+      "exp": "Sep 25",
+      "dte": 4,
+      "backExp": null,
+      "backDte": null,
+      "pot": 43,
+      "ap": 2098.8,
+      "ivr": 50,
+      "dailyReturn": 57.5,
+      "roc": 23.0,
+      "score": 7.5,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 37,
+      "marginOfSafety": true,
+      "delta": 0.21,
+      "iv": 53.4,
+      "backIv": null,
+      "premium": 2.3,
+      "breakeven": 987.3,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 770.0,
+      "pcOI": 2.42,
+      "pcVol": 2.66,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Eos Energy Enterprises vs. GE Vernova: Which Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/eos-energy-enterprises-vs-ge-vernova-which-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.61
+        },
+        {
+          "title": "GE Vernova\u2019s (GEV) $200 Billion Backlog is Coming Sooner than Expected",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-gev-200-billion-154331999.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Jim Cramer Revealed GE Vernova Inc. (NYSE:GEV)\u2019s Saying There\u2019s An Order Acceleration",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-revealed-ge-vernova-232155534.html",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 1.07,
+      "realizedVol": 50.0,
+      "expDate": "2026-09-25",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 985.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 995.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "BRK-B",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 509.77,
+      "spotPriceStale": false,
+      "strike": "$515 C",
+      "hedge": null,
+      "exp": "Oct 30",
+      "dte": 39,
+      "backExp": null,
+      "backDte": null,
+      "pot": 36,
+      "ap": null,
+      "ivr": 13,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 6.7,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 47,
+      "marginOfSafety": false,
+      "delta": 0.47,
+      "iv": 17.0,
+      "backIv": null,
+      "premium": 8.35,
+      "breakeven": 523.35,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 2.66,
+      "maxLoss": 835.0,
+      "pcOI": 0.75,
+      "pcVol": 0.41,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": -0.18,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "\u2018Even Though It\u2019s Bad for Berkshire\u2019 Billionaire Charlie Munger Said to Skip Insurance Because \u2018You\u2019re Paying for the Other Fellow\u2019s Frauds\u2019",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4701547/even-though-its-bad-for-berkshire-billionaire-charlie-munger-said-to-skip-insurance-because-youre-paying-for-the-other-fellows-frauds",
+          "sentiment": -0.54
+        },
+        {
+          "title": "Warren Buffett Steps Down as Chairman of Berkshire Hathaway. 3 Predictions for What Comes Next Under CEO Greg Abel.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/warren-buffett-steps-down-as-chair-of-berkshire-ha/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Did Warren Buffett\u2019s Shift to Chairman Emeritus Just Reshape Berkshire Hathaway's (BRK.A) Governance Narrative?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/did-warren-buffett-shift-chairman-140823536.html",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.49,
+      "realizedVol": 11.4,
+      "expDate": "2026-10-30",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 515.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "KLAC",
+      "strat": "Bear Call Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 176.99,
+      "spotPriceStale": false,
+      "strike": "$192/198",
+      "hedge": null,
+      "exp": "Oct 2",
+      "dte": 11,
+      "backExp": null,
+      "backDte": null,
+      "pot": 39,
+      "ap": 431.4,
+      "ivr": 36,
+      "dailyReturn": 5.91,
+      "roc": 13.0,
+      "score": 7.4,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 37,
+      "marginOfSafety": true,
+      "delta": 0.19,
+      "iv": 52.3,
+      "backIv": null,
+      "premium": 0.65,
+      "breakeven": 193.15,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 435.0,
+      "pcOI": 0.95,
+      "pcVol": 0.46,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.47,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Better Artificial Intelligence Stock: Aehr Test Systems vs. KLA Corporation",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/19/better-artificial-intelligence-stock-aehr-test-systems-vs-kla-corporation/",
+          "sentiment": 0.72
+        },
+        {
+          "title": "KLAC Gains From AI Infrastructure: Can It Outpace AMAT & ASML?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/klac-gains-ai-infrastructure-outpace-171800151.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Lam Research Climbs 5% as Chip Equipment Names Outrun the Sector; Applied Materials Rises 4%, KLA Corp. Gains 3%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/lam-research-climbs-5-as-chip-equipment-names-outrun-the-sector-applied-materials-rises-4-kla-corp-gains-3/",
+          "sentiment": 0.34
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 1.08,
+      "realizedVol": 48.3,
+      "expDate": "2026-10-02",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 192.5,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 197.5,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "JNJ",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 269.99,
+      "spotPriceStale": false,
+      "strike": "$270 C",
+      "hedge": null,
+      "exp": "Oct 16",
+      "dte": 25,
+      "backExp": null,
+      "backDte": null,
+      "pot": 38,
+      "ap": null,
+      "ivr": 53,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 5.5,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": true,
+      "daysToEarnings": 22,
+      "marginOfSafety": false,
+      "delta": 0.53,
+      "iv": 29.9,
+      "backIv": null,
+      "premium": 8.15,
+      "breakeven": 278.15,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 3.02,
+      "maxLoss": 815.0,
+      "pcOI": 0.89,
+      "pcVol": 0.09,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.01,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Is Johnson & Johnson Stock Expensive, Or Is STELARA Hiding The Real Price?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615892/is-johnson-johnson-stock-expensive-or-is-stelara-hiding-the-real-price/2026-09-18",
+          "sentiment": -0.3
+        },
+        {
+          "title": "Johnson & Johnson (JNJ) Faces A Fresh Valuation Test On DePuy Sale Talk",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-faces-fresh-091546567.html",
+          "sentiment": 0.32
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.69,
+      "realizedVol": 17.7,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 270.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "IBM",
+      "strat": "Long Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 229.55,
+      "spotPriceStale": false,
+      "strike": "$240 C",
+      "hedge": null,
+      "exp": "Nov 20",
+      "dte": 60,
+      "backExp": null,
+      "backDte": null,
+      "pot": 35,
+      "ap": null,
+      "ivr": 50,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 4.5,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 30,
+      "marginOfSafety": true,
+      "delta": 0.45,
+      "iv": 43.6,
+      "backIv": null,
+      "premium": 11.62,
+      "breakeven": 251.62,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 9.62,
+      "maxLoss": 1162.5,
+      "pcOI": 0.59,
+      "pcVol": 0.47,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "I Think IBM Stock Will Be Higher in 5 Years. I Still Wouldn't Buy It Today.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/i-think-ibm-stock-will-be-higher-in-5-years-i-still-wouldn-t-buy-it-today/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "IBM Has Raised Its Dividend for 31 Years. Inflation Is Still Winning",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/19/ibm-has-raised-its-dividend-for-31-years-inflation-is-still-winning/",
+          "sentiment": 0.74
+        },
+        {
+          "title": "IBM Once Held Nvidia's Spot as Tech's Biggest Name. The Stock Just Crashed 25%. Here's the Comeback Case.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4688521/ibm-once-held-nvidia-s-spot-as-tech-s-biggest-name-the-stock-just-crashed-25-here-s-the-comeback-case",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.19,
+      "realizedVol": 36.7,
+      "expDate": "2026-11-20",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "call",
+          "strike": 240.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "TXN",
+      "strat": "Long Put",
+      "side": "bear",
+      "isETF": false,
+      "spot": 266.64,
+      "spotPriceStale": false,
+      "strike": "$270 P",
+      "hedge": null,
+      "exp": "Oct 16",
+      "dte": 25,
+      "backExp": null,
+      "backDte": null,
+      "pot": 35,
+      "ap": null,
+      "ivr": 19,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 6.3,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 36,
+      "marginOfSafety": false,
+      "delta": -0.52,
+      "iv": 39.9,
+      "backIv": null,
+      "premium": 11.93,
+      "breakeven": 258.07,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 3.21,
+      "maxLoss": 1192.5,
+      "pcOI": 0.66,
+      "pcVol": 0.43,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.31,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Texas Instruments (TXN) Faces A Valuation Split, Is The Stock Still Undervalued?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/texas-instruments-txn-faces-valuation-161209996.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "MCHP's Analog AI Deal Gains Momentum: Can It Outpace NXPI & TXN?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mchps-analog-ai-deal-gains-150600954.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Advanced Micro Devices vs. Texas Instruments: Which Tech Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/17/advanced-micro-devices-vs-texas-instruments-which-tech-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.6
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.38,
+      "realizedVol": 29.0,
+      "expDate": "2026-10-16",
+      "backExpDate": null,
+      "legs": [
+        {
+          "type": "put",
+          "strike": 270.0,
+          "action": "buy",
           "qty": 1
         }
       ]
@@ -3461,7 +5149,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2012989751296,
+      "marketCap": 2011830157312,
       "score": 8.2,
       "newsSentiment": -0.01,
       "newsSentimentLabel": "Neutral",
@@ -3780,7 +5468,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 60770516992,
+      "marketCap": 56756400128,
       "score": 6.2,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
@@ -3954,9 +5642,15 @@
       "dividendYield": null,
       "marketCap": 41286766592,
       "score": 2.1,
-      "newsSentiment": -0.38,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "RKLB Stock Gains Overnight: Rocket Lab\u2019s 97th Electron Is Already On The Pad After Another Mission Success",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-97th-electron-on-pad-after-another-mission-success/cZMbCf0RB4P",
+          "sentiment": 0.73
+        },
         {
           "title": "Is RKLB Stock Paying You Enough For The Swings?",
           "publisher": "Trefis",
@@ -3968,12 +5662,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-stock-tumbles-massive-193427218.html",
           "sentiment": -0.61
-        },
-        {
-          "title": "NASA Hitches Ride with SpaceX for StarBurst Satellite. Is RocketLab the Big Loser?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/nasa-hitches-ride-with-spacex-for-starburst-satellite-is-rocketlab-the-big-loser/",
-          "sentiment": -0.53
         }
       ]
     },
@@ -4038,7 +5726,7 @@
       "volRatio": 1.58,
       "peRatio": 68.9,
       "dividendYield": 0.75,
-      "marketCap": 129320239104,
+      "marketCap": 129057431552,
       "score": 4.5,
       "newsSentiment": -0.21,
       "newsSentimentLabel": "Negative",
@@ -4302,6 +5990,977 @@
           "sentiment": 0.0
         }
       ]
+    },
+    {
+      "sym": "INTC",
+      "isETF": false,
+      "price": 108.6,
+      "priceStale": false,
+      "high52wk": 142.35,
+      "low52wk": 28.73,
+      "pctFromHigh": -23.7,
+      "pctFromLow": 278.0,
+      "trend": "Uptrend",
+      "rsi": 61.7,
+      "chg1m": 17.0,
+      "chg3m": -18.9,
+      "chg6m": 135.2,
+      "chg1y": 267.1,
+      "volRatio": 1.7,
+      "peRatio": null,
+      "dividendYield": null,
+      "marketCap": 574070980608,
+      "score": 8.1,
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Intel Can Supply Only About Half of What Its Customers Want. That's a Better Problem Than It Sounds.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/",
+          "sentiment": 0.13
+        },
+        {
+          "title": "Intel Corporation (INTC)\u2019s Terafab Partnership Could Give Its AI Foundry Ambitions a Major Boost",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/intel-corporation-intc-terafab-partnership-081341477.html",
+          "sentiment": 0.46
+        }
+      ]
+    },
+    {
+      "sym": "GOOGL",
+      "isETF": false,
+      "price": 349.54,
+      "priceStale": false,
+      "high52wk": 408.1,
+      "low52wk": 235.23,
+      "pctFromHigh": -14.4,
+      "pctFromLow": 48.6,
+      "trend": "Uptrend",
+      "rsi": 55.1,
+      "chg1m": 1.5,
+      "chg3m": -5.0,
+      "chg6m": 13.9,
+      "chg1y": 37.6,
+      "volRatio": 2.0,
+      "peRatio": 17.5,
+      "dividendYield": 0.25,
+      "marketCap": 4274851676160,
+      "score": 7.7,
+      "newsSentiment": -0.17,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "Alphabet (GOOGL)\u2019s Google Bets on Finland\u2019s Cold Weather and Nuclear Power for its Next AI Buildout",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-google-bets-finland-230634716.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Billionaire Bill Ackman Dumps Alphabet and Loads Up On a Mega-Cap Stock Down 15% From Its Peak",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/billionaire-bill-ackman-dumps-alphabet-loads-meta/",
+          "sentiment": -0.4
+        }
+      ]
+    },
+    {
+      "sym": "AVGO",
+      "isETF": false,
+      "price": 357.61,
+      "priceStale": false,
+      "high52wk": 494.22,
+      "low52wk": 289.5,
+      "pctFromHigh": -27.6,
+      "pctFromLow": 23.5,
+      "trend": "Strong Downtrend",
+      "rsi": 45.5,
+      "chg1m": -1.3,
+      "chg3m": -12.9,
+      "chg6m": 12.2,
+      "chg1y": 4.4,
+      "volRatio": 1.8,
+      "peRatio": 45.7,
+      "dividendYield": 0.73,
+      "marketCap": 1707097718784,
+      "score": 4.4,
+      "newsSentiment": 0.71,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/jim-cramer-just-sent-a-strong-message-to-broadcom-stock-investors-sell-off",
+          "sentiment": 0.73
+        },
+        {
+          "title": "Applied Materials vs. Broadcom: Comparing Sales Growth Trajectories for These Artificial Intelligence Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-broadcom-comparing-sales-growth-trajectories-for-these-artificial-intelligence-companies/",
+          "sentiment": 0.69
+        }
+      ]
+    },
+    {
+      "sym": "LITE",
+      "isETF": false,
+      "price": 930.91,
+      "priceStale": false,
+      "high52wk": 1085.68,
+      "low52wk": 144.52,
+      "pctFromHigh": -14.3,
+      "pctFromLow": 544.1,
+      "trend": "Strong Uptrend",
+      "rsi": 54.0,
+      "chg1m": 12.5,
+      "chg3m": 9.5,
+      "chg6m": 20.6,
+      "chg1y": 451.7,
+      "volRatio": 1.9,
+      "peRatio": null,
+      "dividendYield": null,
+      "marketCap": 83502620672,
+      "score": 9.4,
+      "newsSentiment": 0.56,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Lumentum Climbs 3% as Optics Buying Extends; Coherent Rises 5%, Corning Jumps 3%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/lumentum-climbs-3-as-optics-buying-extends-coherent-rises-5-corning-jumps-3/",
+          "sentiment": 0.57
+        }
+      ]
+    },
+    {
+      "sym": "BE",
+      "isETF": false,
+      "price": 265.63,
+      "priceStale": false,
+      "high52wk": 351.28,
+      "low52wk": 61.37,
+      "pctFromHigh": -24.4,
+      "pctFromLow": 332.8,
+      "trend": "Strong Uptrend",
+      "rsi": 57.5,
+      "chg1m": 28.6,
+      "chg3m": -19.2,
+      "chg6m": 59.4,
+      "chg1y": 212.8,
+      "volRatio": 4.93,
+      "peRatio": 345.0,
+      "dividendYield": null,
+      "marketCap": 78235303936,
+      "score": 9.4,
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Bloom Energy\u2019s \u201cTime-to-Power\u201d Moat",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/bloom-energys-time-to-power-moat/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Bloom Energy (BE) Unveils a New Power Play for the AI Boom",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/bloom-energy-unveils-power-play-164510735.html",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Plug Power vs. Bloom Energy: Which Hydrogen-Adjacent Stock Actually Has a Real Business Model?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/plug-power-vs-bloom-energy-which-hydrogen-adjacent/",
+          "sentiment": 0.27
+        }
+      ]
+    },
+    {
+      "sym": "AMAT",
+      "isETF": false,
+      "price": 444.57,
+      "priceStale": false,
+      "high52wk": 738.88,
+      "low52wk": 187.62,
+      "pctFromHigh": -39.8,
+      "pctFromLow": 136.9,
+      "trend": "Strong Downtrend",
+      "rsi": 43.8,
+      "chg1m": -10.3,
+      "chg3m": -27.9,
+      "chg6m": 24.7,
+      "chg1y": 135.2,
+      "volRatio": 2.01,
+      "peRatio": 38.3,
+      "dividendYield": 0.48,
+      "marketCap": 352809615360,
+      "score": 4.0,
+      "newsSentiment": 0.61,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Applied Materials vs. Nvidia: Which Tech Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/19/applied-materials-vs-nvidia-which-tech-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "Applied Materials vs. Broadcom: Comparing Sales Growth Trajectories for These Artificial Intelligence Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-broadcom-comparing-sales-growth-trajectories-for-these-artificial-intelligence-companies/",
+          "sentiment": 0.69
+        },
+        {
+          "title": "Applied Materials vs. Intel: Examining Revenue Growth Trajectories of These Artificial Intelligence Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-intel-examining-revenue-growth-trajectories-of-these-artificial-intelligence-companies/",
+          "sentiment": 0.69
+        }
+      ]
+    },
+    {
+      "sym": "MSTR",
+      "isETF": false,
+      "price": 153.92,
+      "priceStale": false,
+      "high52wk": 365.21,
+      "low52wk": 81.81,
+      "pctFromHigh": -57.9,
+      "pctFromLow": 88.1,
+      "trend": "Strong Uptrend",
+      "rsi": 66.1,
+      "chg1m": 47.6,
+      "chg3m": 36.8,
+      "chg6m": 11.3,
+      "chg1y": -55.4,
+      "volRatio": 2.06,
+      "peRatio": null,
+      "dividendYield": null,
+      "marketCap": 61149593600,
+      "score": 8.0,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Michael Saylor Hints at More MicroStrategy Bitcoin Buys After \u201cDead Cat Bounce\u201d Debate",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/saylor-hints-microstrategy-bitcoin-buys-dead-cat/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Strategy Is Up 53% in the Past Month. Here's the Bull and Bear Case for One of Wall Street's Most Polarizing Stocks.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/strategy-up-past-month-bull-bear-wall-street-stock/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Strategy Stock\u2019s 16% Jump Yesterday Traces Back to a House Committee Vote.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/strategy-stocks-16-jump-yesterday-traces-back-to-a-house-committee-vote?ref=yahoofinance",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "WDC",
+      "isETF": false,
+      "price": 441.36,
+      "priceStale": false,
+      "high52wk": 799.61,
+      "low52wk": 105.12,
+      "pctFromHigh": -44.8,
+      "pctFromLow": 319.8,
+      "trend": "Strong Downtrend",
+      "rsi": 45.8,
+      "chg1m": -4.5,
+      "chg3m": -40.8,
+      "chg6m": 39.3,
+      "chg1y": 314.7,
+      "volRatio": 1.98,
+      "peRatio": 16.4,
+      "dividendYield": 0.14,
+      "marketCap": 159128338432,
+      "score": 4.9,
+      "newsSentiment": 0.42,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Western Digital (WDC) Stock May Be Undervalued After Its Huge Three Year Run",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-stock-may-061123057.html",
+          "sentiment": 0.32
+        },
+        {
+          "title": "SanDisk Jumps 6% as Storage Bid Concentrates in One Name; Western Digital Rises 3%, Micron Ticks Up",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/sandisk-jumps-6-as-storage-bid-concentrates-in-one-name-western-digital-rises-3-micron-ticks-up/",
+          "sentiment": 0.49
+        },
+        {
+          "title": "Western Digital vs. Sandisk: Which Storage Stock is the Better Bet?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-vs-sandisk-storage-135400062.html",
+          "sentiment": 0.44
+        }
+      ]
+    },
+    {
+      "sym": "LLY",
+      "isETF": false,
+      "price": 1152.93,
+      "priceStale": false,
+      "high52wk": 1292.65,
+      "low52wk": 707.59,
+      "pctFromHigh": -10.8,
+      "pctFromLow": 62.9,
+      "trend": "Strong Downtrend",
+      "rsi": 47.3,
+      "chg1m": -10.0,
+      "chg3m": 5.1,
+      "chg6m": 26.1,
+      "chg1y": 54.3,
+      "volRatio": 1.86,
+      "peRatio": 38.8,
+      "dividendYield": 0.6,
+      "marketCap": 1027672309760,
+      "score": 4.9,
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Eli Lilly (LLY) Stock Fair Value Edges Higher As Analysts Back GLP 1 Growth",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-stock-fair-041830693.html",
+          "sentiment": 0.74
+        },
+        {
+          "title": "What Would It Take For Eli Lilly Stock To Keep Climbing?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615857/what-would-it-take-for-eli-lilly-stock-to-keep-climbing/2026-09-18",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Can Eli Lilly\u2019s Two-Drug Obesity Treatment Justify Its $1 Trillion Valuation?",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/can-eli-lillys-two-drug-obesity-treatment-justify-its-1-trillion-valuation/",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "LRCX",
+      "isETF": false,
+      "price": 288.11,
+      "priceStale": false,
+      "high52wk": 438.5,
+      "low52wk": 124.31,
+      "pctFromHigh": -34.3,
+      "pctFromLow": 131.8,
+      "trend": "Strong Downtrend",
+      "rsi": 45.5,
+      "chg1m": -6.2,
+      "chg3m": -25.9,
+      "chg6m": 23.2,
+      "chg1y": 128.3,
+      "volRatio": 2.34,
+      "peRatio": 50.0,
+      "dividendYield": 0.46,
+      "marketCap": 360518057984,
+      "score": 4.9,
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Lam Research Climbs 5% as Chip Equipment Names Outrun the Sector; Applied Materials Rises 4%, KLA Corp. Gains 3%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/lam-research-climbs-5-as-chip-equipment-names-outrun-the-sector-applied-materials-rises-4-kla-corp-gains-3/",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Lam Research (LRCX) Stock Trades At A Premium On Bigger Shareholder Returns",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/lam-research-lrcx-stock-trades-211338151.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "The Zacks Analyst Blog Highlights Cisco, Lam, Thermo Fisher Scientific, Ampco-Pittsburgh and Catalyst",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-cisco-074500027.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "V",
+      "isETF": false,
+      "price": 368.29,
+      "priceStale": false,
+      "high52wk": 385.57,
+      "low52wk": 292.74,
+      "pctFromHigh": -4.5,
+      "pctFromLow": 25.8,
+      "trend": "Downtrend",
+      "rsi": 47.3,
+      "chg1m": 0.8,
+      "chg3m": 12.8,
+      "chg6m": 23.4,
+      "chg1y": 8.7,
+      "volRatio": 2.98,
+      "peRatio": 31.3,
+      "dividendYield": 0.73,
+      "marketCap": 691411156992,
+      "score": 6.2,
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Visa Moves to Close Meme Coin Credit Card Rewards Loophole",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378697/visa-close-meme-coin-credit-card-rewards-loophole",
+          "sentiment": 0.69
+        },
+        {
+          "title": "Visa Has Quietly Gained 6% in 2026 While the Market Got Distracted: Is V Stock Still a Buy?",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/visa-has-quietly-gained-6-in-2026-while-the-market-got-distracted-is-v-stock-still-a-buy?ref=yahoofinance",
+          "sentiment": 0.05
+        },
+        {
+          "title": "Visa\u2019s Stablecoin Settlements Grew 15 Times in a Year. Is the Stock Still a Buy Near $370?",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/visas-stablecoin-settlements-grew-15-times-in-a-year-is-the-stock-still-a-buy-near-370/",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "HOOD",
+      "isETF": false,
+      "price": 119.82,
+      "priceStale": false,
+      "high52wk": 153.86,
+      "low52wk": 63.51,
+      "pctFromHigh": -22.1,
+      "pctFromLow": 88.6,
+      "trend": "Strong Uptrend",
+      "rsi": 60.0,
+      "chg1m": 25.1,
+      "chg3m": 10.8,
+      "chg6m": 61.6,
+      "chg1y": -4.0,
+      "volRatio": 1.8,
+      "peRatio": 53.0,
+      "dividendYield": null,
+      "marketCap": 107728044032,
+      "score": 9.4,
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
+          "title": "Higher Rates Keep Robinhood Stock And Cash Sweep Platforms In Focus",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/higher-rates-keep-robinhood-stock-211136218.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Robinhood CEO Says Civil Liability May Not Be Enough To Contain Biggest AI Risks",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/robinhood-ceo-says-civil-liability-may-not-be-enough-to-contain-biggest-ai-risks/cZtCOyvRBEC",
+          "sentiment": -0.44
+        }
+      ]
+    },
+    {
+      "sym": "WMT",
+      "isETF": false,
+      "price": 106.73,
+      "priceStale": false,
+      "high52wk": 134.84,
+      "low52wk": 98.05,
+      "pctFromHigh": -20.8,
+      "pctFromLow": 8.8,
+      "trend": "Strong Downtrend",
+      "rsi": 46.0,
+      "chg1m": -6.4,
+      "chg3m": -8.7,
+      "chg6m": -11.3,
+      "chg1y": 5.2,
+      "volRatio": 1.76,
+      "peRatio": 38.7,
+      "dividendYield": 0.93,
+      "marketCap": 846768766976,
+      "score": 2.9,
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Walmart (WMT) Debuts Predictive Precision Targeting At Sam's Club",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/media-advertising/articles/walmart-wmt-debuts-predictive-precision-161140696.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Here's Why Walmart Won't Reclaim a $1 Trillion Market Cap Anytime Soon",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/heres-why-walmart-wont-reclaim-a-1-trillion-market/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Walmart Vs Kroger: Jim Cramer Couldn\u2019t Figure Out Why Only One\u2019s Shares Went Up",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-vs-kroger-jim-cramer-231954802.html",
+          "sentiment": 0.3
+        }
+      ]
+    },
+    {
+      "sym": "QCOM",
+      "isETF": false,
+      "price": 177.72,
+      "priceStale": false,
+      "high52wk": 257.56,
+      "low52wk": 120.88,
+      "pctFromHigh": -31.0,
+      "pctFromLow": 47.0,
+      "trend": "Strong Uptrend",
+      "rsi": 54.4,
+      "chg1m": 10.4,
+      "chg3m": -21.0,
+      "chg6m": 36.6,
+      "chg1y": 8.7,
+      "volRatio": 4.49,
+      "peRatio": 20.3,
+      "dividendYield": 2.07,
+      "marketCap": 189815717888,
+      "score": 9.4,
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Astera Labs vs. Qualcomm: Which Semiconductor Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/astera-labs-vs-qualcomm-which-semiconductor-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means for QCOM Stock.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4696893/mediatek-is-stepping-up-competition-against-qualcomm-with-a-new-2-nanometer-chip-what-this-means-for-qcom-stock",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Qualcomm (QCOM) Joins New Edge AI Ecosystem",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-joins-edge-ai-041937210.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "MRNA",
+      "isETF": false,
+      "price": 154.04,
+      "priceStale": false,
+      "high52wk": 176.66,
+      "low52wk": 22.28,
+      "pctFromHigh": -12.8,
+      "pctFromLow": 591.4,
+      "trend": "Strong Uptrend",
+      "rsi": 63.3,
+      "chg1m": -11.7,
+      "chg3m": 140.8,
+      "chg6m": 194.1,
+      "chg1y": 510.3,
+      "volRatio": 0.77,
+      "peRatio": null,
+      "dividendYield": null,
+      "marketCap": 61498294272,
+      "score": 9.4,
+      "newsSentiment": 0.35,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
+          "sentiment": 0.61
+        },
+        {
+          "title": "Moderna (MRNA) Dropped, So What Is Behind The Latest Attention?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-dropped-behind-latest-071602863.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Axsome Therapeutics vs. Moderna: Which Healthcare Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/18/axsome-therapeutics-vs-moderna-which-healthcare-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        }
+      ]
+    },
+    {
+      "sym": "CAT",
+      "isETF": false,
+      "price": 808.99,
+      "priceStale": false,
+      "high52wk": 1071.47,
+      "low52wk": 455.48,
+      "pctFromHigh": -24.5,
+      "pctFromLow": 77.6,
+      "trend": "Strong Downtrend",
+      "rsi": 47.9,
+      "chg1m": -0.9,
+      "chg3m": -17.8,
+      "chg6m": 17.9,
+      "chg1y": 75.0,
+      "volRatio": 1.95,
+      "peRatio": 34.8,
+      "dividendYield": 0.81,
+      "marketCap": 371872366592,
+      "score": 4.8,
+      "newsSentiment": -0.03,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "The Caterpillar Correction Shouldn't Last Much Longer",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/the-caterpillar-correction-shouldnt-last-much-long/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Is Caterpillar\u2019s Growing Quarry Autonomy Footprint Quietly Reshaping Its Competitive Edge (CAT)?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-growing-quarry-autonomy-footprint-031806561.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Should Caterpillar's Tariff Bill Worry You More Than Its Backlog?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615869/should-caterpillars-tariff-bill-worry-you-more-than-its-backlog/2026-09-18",
+          "sentiment": -0.44
+        }
+      ]
+    },
+    {
+      "sym": "XOM",
+      "isETF": false,
+      "price": 163.54,
+      "priceStale": false,
+      "high52wk": 174.09,
+      "low52wk": 107.28,
+      "pctFromHigh": -6.1,
+      "pctFromLow": 52.4,
+      "trend": "Strong Uptrend",
+      "rsi": 53.9,
+      "chg1m": -0.7,
+      "chg3m": 19.4,
+      "chg6m": 4.8,
+      "chg1y": 49.2,
+      "volRatio": 2.56,
+      "peRatio": 21.0,
+      "dividendYield": 2.52,
+      "marketCap": 672462077952,
+      "score": 8.5,
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Exxon (XOM) Eyes a Return to Venezuela After Nearly Two Decades Away",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/exxon-xom-eyes-return-venezuela-164059135.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "ExxonMobil Stock And Oil Majors Facing New Pressure On Global Supply Routes",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/energy/articles/exxonmobil-stock-oil-majors-facing-101123454.html",
+          "sentiment": -0.3
+        },
+        {
+          "title": "ExxonMobil's Advantaged Assets and Refining Strength Drive Outlook",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/energy/articles/exxonmobils-advantaged-assets-refining-strength-170800286.html",
+          "sentiment": 0.74
+        }
+      ]
+    },
+    {
+      "sym": "GEV",
+      "isETF": false,
+      "price": 940.33,
+      "priceStale": false,
+      "high52wk": 1195.94,
+      "low52wk": 529.18,
+      "pctFromHigh": -21.4,
+      "pctFromLow": 77.7,
+      "trend": "Strong Downtrend",
+      "rsi": 48.7,
+      "chg1m": -4.8,
+      "chg3m": -15.3,
+      "chg6m": 7.2,
+      "chg1y": 51.0,
+      "volRatio": 1.89,
+      "peRatio": 27.0,
+      "dividendYield": 0.21,
+      "marketCap": 250441465856,
+      "score": 4.1,
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Eos Energy Enterprises vs. GE Vernova: Which Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/eos-energy-enterprises-vs-ge-vernova-which-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.61
+        },
+        {
+          "title": "GE Vernova\u2019s (GEV) $200 Billion Backlog is Coming Sooner than Expected",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-gev-200-billion-154331999.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Jim Cramer Revealed GE Vernova Inc. (NYSE:GEV)\u2019s Saying There\u2019s An Order Acceleration",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-revealed-ge-vernova-232155534.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "BRK-B",
+      "isETF": false,
+      "price": 509.77,
+      "priceStale": false,
+      "high52wk": 537.74,
+      "low52wk": 464.01,
+      "pctFromHigh": -5.2,
+      "pctFromLow": 9.9,
+      "trend": "Strong Uptrend",
+      "rsi": 52.3,
+      "chg1m": 2.0,
+      "chg3m": 4.1,
+      "chg6m": 5.9,
+      "chg1y": 3.4,
+      "volRatio": 2.78,
+      "peRatio": 12.8,
+      "dividendYield": null,
+      "marketCap": 1091269558272,
+      "score": 8.5,
+      "newsSentiment": -0.18,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "\u2018Even Though It\u2019s Bad for Berkshire\u2019 Billionaire Charlie Munger Said to Skip Insurance Because \u2018You\u2019re Paying for the Other Fellow\u2019s Frauds\u2019",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4701547/even-though-its-bad-for-berkshire-billionaire-charlie-munger-said-to-skip-insurance-because-youre-paying-for-the-other-fellows-frauds",
+          "sentiment": -0.54
+        },
+        {
+          "title": "Warren Buffett Steps Down as Chairman of Berkshire Hathaway. 3 Predictions for What Comes Next Under CEO Greg Abel.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/20/warren-buffett-steps-down-as-chair-of-berkshire-ha/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Did Warren Buffett\u2019s Shift to Chairman Emeritus Just Reshape Berkshire Hathaway's (BRK.A) Governance Narrative?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/did-warren-buffett-shift-chairman-140823536.html",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "KLAC",
+      "isETF": false,
+      "price": 176.99,
+      "priceStale": false,
+      "high52wk": 307.02,
+      "low52wk": 97.57,
+      "pctFromHigh": -42.4,
+      "pctFromLow": 81.4,
+      "trend": "Strong Downtrend",
+      "rsi": 46.0,
+      "chg1m": -5.5,
+      "chg3m": -31.7,
+      "chg6m": 17.4,
+      "chg1y": 70.3,
+      "volRatio": 2.1,
+      "peRatio": 48.4,
+      "dividendYield": 0.52,
+      "marketCap": 231245725696,
+      "score": 4.7,
+      "newsSentiment": 0.47,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Better Artificial Intelligence Stock: Aehr Test Systems vs. KLA Corporation",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/19/better-artificial-intelligence-stock-aehr-test-systems-vs-kla-corporation/",
+          "sentiment": 0.72
+        },
+        {
+          "title": "KLAC Gains From AI Infrastructure: Can It Outpace AMAT & ASML?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/klac-gains-ai-infrastructure-outpace-171800151.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Lam Research Climbs 5% as Chip Equipment Names Outrun the Sector; Applied Materials Rises 4%, KLA Corp. Gains 3%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/18/lam-research-climbs-5-as-chip-equipment-names-outrun-the-sector-applied-materials-rises-4-kla-corp-gains-3/",
+          "sentiment": 0.34
+        }
+      ]
+    },
+    {
+      "sym": "JNJ",
+      "isETF": false,
+      "price": 269.99,
+      "priceStale": false,
+      "high52wk": 281.07,
+      "low52wk": 169.51,
+      "pctFromHigh": -3.9,
+      "pctFromLow": 59.3,
+      "trend": "Strong Uptrend",
+      "rsi": 55.1,
+      "chg1m": -0.8,
+      "chg3m": 18.8,
+      "chg6m": 14.8,
+      "chg1y": 56.7,
+      "volRatio": 2.54,
+      "peRatio": 31.4,
+      "dividendYield": 1.99,
+      "marketCap": 650648485888,
+      "score": 9.1,
+      "newsSentiment": 0.01,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Is Johnson & Johnson Stock Expensive, Or Is STELARA Hiding The Real Price?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615892/is-johnson-johnson-stock-expensive-or-is-stelara-hiding-the-real-price/2026-09-18",
+          "sentiment": -0.3
+        },
+        {
+          "title": "Johnson & Johnson (JNJ) Faces A Fresh Valuation Test On DePuy Sale Talk",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-faces-fresh-091546567.html",
+          "sentiment": 0.32
+        }
+      ]
+    },
+    {
+      "sym": "IBM",
+      "isETF": false,
+      "price": 229.55,
+      "priceStale": false,
+      "high52wk": 330.09,
+      "low52wk": 197.77,
+      "pctFromHigh": -30.5,
+      "pctFromLow": 16.1,
+      "trend": "Uptrend",
+      "rsi": 44.1,
+      "chg1m": -3.2,
+      "chg3m": -7.2,
+      "chg6m": -7.0,
+      "chg1y": -11.6,
+      "volRatio": 2.5,
+      "peRatio": 20.4,
+      "dividendYield": 2.94,
+      "marketCap": 216266948608,
+      "score": 5.5,
+      "newsSentiment": 0.25,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "I Think IBM Stock Will Be Higher in 5 Years. I Still Wouldn't Buy It Today.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/19/i-think-ibm-stock-will-be-higher-in-5-years-i-still-wouldn-t-buy-it-today/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "IBM Has Raised Its Dividend for 31 Years. Inflation Is Still Winning",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/19/ibm-has-raised-its-dividend-for-31-years-inflation-is-still-winning/",
+          "sentiment": 0.74
+        },
+        {
+          "title": "IBM Once Held Nvidia's Spot as Tech's Biggest Name. The Stock Just Crashed 25%. Here's the Comeback Case.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4688521/ibm-once-held-nvidia-s-spot-as-tech-s-biggest-name-the-stock-just-crashed-25-here-s-the-comeback-case",
+          "sentiment": 0.0
+        }
+      ]
+    },
+    {
+      "sym": "TXN",
+      "isETF": false,
+      "price": 266.64,
+      "priceStale": false,
+      "high52wk": 332.33,
+      "low52wk": 150.2,
+      "pctFromHigh": -19.8,
+      "pctFromLow": 77.5,
+      "trend": "Strong Downtrend",
+      "rsi": 51.2,
+      "chg1m": -0.3,
+      "chg3m": -17.0,
+      "chg6m": 43.1,
+      "chg1y": 52.5,
+      "volRatio": 3.24,
+      "peRatio": 40.5,
+      "dividendYield": 2.28,
+      "marketCap": 243508379648,
+      "score": 4.9,
+      "newsSentiment": 0.31,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Texas Instruments (TXN) Faces A Valuation Split, Is The Stock Still Undervalued?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/texas-instruments-txn-faces-valuation-161209996.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "MCHP's Analog AI Deal Gains Momentum: Can It Outpace NXPI & TXN?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mchps-analog-ai-deal-gains-150600954.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Advanced Micro Devices vs. Texas Instruments: Which Tech Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/17/advanced-micro-devices-vs-texas-instruments-which-tech-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.6
+        }
+      ]
     }
   ],
   "hedge": {
@@ -4316,5 +6975,19 @@
     "iv": 22.7,
     "premium": 4.95,
     "costPerContract": 494.5
+  },
+  "universe": {
+    "generated_at": "2026-09-21T01:30:39.898267+00:00",
+    "size": 50,
+    "criteria": {
+      "min_market_cap": 50000000000,
+      "size": 50,
+      "exchanges": [
+        "NMS",
+        "NYQ"
+      ],
+      "ranked_by": "avg daily dollar volume (3-month)",
+      "candidates_above_min_cap": 322
+    }
   }
 }

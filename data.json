@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T23:37:31.005732+00:00",
+  "generated_at": "2026-09-21T23:45:32.412226+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -1228,6 +1228,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Why ServiceNow Stock Inched Higher on Monday",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/why-servicenow-stock-inched-higher-on-monday/",
+          "sentiment": 0.0
+        },
+        {
           "title": "SNX vs. NOW: Which Stock Is the Better Value Option?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/snx-vs-now-stock-better-154005949.html",
@@ -1238,12 +1244,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/articles/now-rides-strong-workflow-demand-144100921.html",
           "sentiment": 0.42
-        },
-        {
-          "title": "ServiceNow (NOW) Stock Falls Amid Market Uptick: What Investors Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-falls-amid-214503145.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -4501,9 +4501,16 @@
       "pcVol": 0.11,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.5,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Johnson & Johnson May Offload Its Orthopedics Unit for $20 Billion -- and Investors Shouldn't Miss What That Could Signal",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/johnson-johnson-may-offload-its-orthopedics-unit-f/",
+          "sentiment": 0.5
+        }
+      ],
       "volRegime": "Rich",
       "ivRvRatio": 1.66,
       "realizedVol": 17.3,
@@ -5270,6 +5277,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Why ServiceNow Stock Inched Higher on Monday",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/why-servicenow-stock-inched-higher-on-monday/",
+          "sentiment": 0.0
+        },
+        {
           "title": "SNX vs. NOW: Which Stock Is the Better Value Option?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/snx-vs-now-stock-better-154005949.html",
@@ -5280,12 +5293,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/articles/now-rides-strong-workflow-demand-144100921.html",
           "sentiment": 0.42
-        },
-        {
-          "title": "ServiceNow (NOW) Stock Falls Amid Market Uptick: What Investors Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-stock-falls-amid-214503145.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -7034,9 +7041,16 @@
       "dividendYield": 1.99,
       "marketCap": 649395372032,
       "score": 9.1,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsSentiment": 0.5,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Johnson & Johnson May Offload Its Orthopedics Unit for $20 Billion -- and Investors Shouldn't Miss What That Could Signal",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/johnson-johnson-may-offload-its-orthopedics-unit-f/",
+          "sentiment": 0.5
+        }
+      ]
     },
     {
       "sym": "TXN",

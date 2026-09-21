@@ -1,101 +1,101 @@
 [
   {
-    "id": "MRVL|Bull_Put_Spread|2026-09-25|$242/238",
-    "sym": "MRVL",
-    "strat": "Bull Put Spread",
-    "side": "bull",
-    "strike": "$242/238",
-    "exp": "Sep 25",
-    "expDate": "2026-09-25",
-    "backExp": null,
-    "backExpDate": null,
-    "dte": 4,
-    "premium": 1.09,
-    "debitStrategy": false,
-    "legs": [
-      {
-        "type": "put",
-        "strike": 242.5,
-        "action": "sell",
-        "qty": 1
-      },
-      {
-        "type": "put",
-        "strike": 237.5,
-        "action": "buy",
-        "qty": 1
-      }
-    ],
-    "roc": 21.8,
-    "ap": 1989.2,
-    "spot": 255.37,
-    "trackedAt": "2026-09-21T17:09:22.204Z",
-    "entryDate": "2026-09-21"
-  },
-  {
-    "id": "BE|Bull_Put_Spread|2026-09-25|$258/252",
-    "sym": "BE",
-    "strat": "Bull Put Spread",
-    "side": "bull",
-    "strike": "$258/252",
-    "exp": "Sep 25",
-    "expDate": "2026-09-25",
-    "backExp": null,
-    "backExpDate": null,
-    "dte": 4,
-    "premium": 0.95,
-    "debitStrategy": false,
-    "legs": [
-      {
-        "type": "put",
-        "strike": 257.5,
-        "action": "sell",
-        "qty": 1
-      },
-      {
-        "type": "put",
-        "strike": 252.5,
-        "action": "buy",
-        "qty": 1
-      }
-    ],
-    "roc": 19,
-    "ap": 1733.8,
-    "spot": 275.79,
-    "trackedAt": "2026-09-21T17:09:29.304Z",
-    "entryDate": "2026-09-21"
-  },
-  {
-    "id": "MSFT|Bull_Put_Spread|2026-09-25|$485/480",
+    "id": "MSFT|Bull_Put_Spread|2026-09-25|$490/485",
     "sym": "MSFT",
     "strat": "Bull Put Spread",
     "side": "bull",
-    "strike": "$485/480",
+    "strike": "$490/485",
     "exp": "Sep 25",
     "expDate": "2026-09-25",
     "backExp": null,
     "backExpDate": null,
     "dte": 4,
-    "premium": 0.99,
+    "premium": 0.76,
     "debitStrategy": false,
     "legs": [
       {
         "type": "put",
-        "strike": 485,
+        "strike": 490,
         "action": "sell",
         "qty": 1
       },
       {
         "type": "put",
-        "strike": 480,
+        "strike": 485,
         "action": "buy",
         "qty": 1
       }
     ],
-    "roc": 19.8,
-    "ap": 1806.8,
-    "spot": 495.6,
-    "trackedAt": "2026-09-21T17:09:34.838Z",
+    "roc": 15.1,
+    "ap": 1377.9,
+    "spot": 501.61,
+    "trackedAt": "2026-09-21T21:39:18.818Z",
+    "entryDate": "2026-09-21"
+  },
+  {
+    "id": "GOOG|Bull_Put_Spread|2026-09-25|$342/338",
+    "sym": "GOOG",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$342/338",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 4,
+    "premium": 0.87,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 342.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 337.5,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 17.5,
+    "ap": 1596.9,
+    "spot": 350.87,
+    "trackedAt": "2026-09-21T21:39:18.818Z",
+    "entryDate": "2026-09-21"
+  },
+  {
+    "id": "CRM|Bull_Put_Spread|2026-09-25|$230/225",
+    "sym": "CRM",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$230/225",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 4,
+    "premium": 0.89,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 230,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 225,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 17.9,
+    "ap": 1633.4,
+    "spot": 236.42,
+    "trackedAt": "2026-09-21T21:39:18.818Z",
     "entryDate": "2026-09-21"
   },
   {
@@ -109,7 +109,7 @@
     "backExp": null,
     "backExpDate": null,
     "dte": 4,
-    "premium": 0.98,
+    "premium": 1.05,
     "debitStrategy": false,
     "legs": [
       {
@@ -125,10 +125,76 @@
         "qty": 1
       }
     ],
-    "roc": 19.5,
-    "ap": 1779.4,
-    "spot": 371.03,
-    "trackedAt": "2026-09-21T17:10:12.770Z",
+    "roc": 21,
+    "ap": 1916.2,
+    "spot": 371.76,
+    "trackedAt": "2026-09-21T21:39:18.819Z",
+    "entryDate": "2026-09-21"
+  },
+  {
+    "id": "MRVL|Bull_Put_Spread|2026-09-25|$245/240",
+    "sym": "MRVL",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$245/240",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 4,
+    "premium": 1.06,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 245,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 240,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 21.1,
+    "ap": 1925.4,
+    "spot": 257.38,
+    "trackedAt": "2026-09-21T21:39:18.819Z",
+    "entryDate": "2026-09-21"
+  },
+  {
+    "id": "BE|Bull_Put_Spread|2026-09-25|$255/250",
+    "sym": "BE",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$255/250",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 4,
+    "premium": 0.97,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 255,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 250,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 19.4,
+    "ap": 1770.2,
+    "spot": 272.89,
+    "trackedAt": "2026-09-21T21:39:18.819Z",
     "entryDate": "2026-09-21"
   }
 ]

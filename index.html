@@ -161,41 +161,60 @@
     -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     text-rendering:geometricPrecision;
   }
-  /* An "Allocation" label on the left (a plain-language heading for the
-     Cash/Options%/Equity%/Cash-left row directly below it) and the Tickers
-     button on the right — the SPY/QQQ pills and Export button that used to
-     live here are gone (the index quotes were always at least an hour
-     stale, and raw setup export was replaced by the allocation-based
-     summary export in the Portfolio Summary modal instead), so this row is
-     just those two things pushed to the same shared left/right gutter
-     every other row on the page uses. */
-  .header-tools{
-    max-width:1080px; margin:0 auto; width:100%;
-    padding:0 18px;
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:10px; row-gap:8px;
-    box-sizing:border-box;
-  }
-  .header-tools-label{
-    font-size:14px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
-    color:var(--text-dim);
-  }
-  .header-actions{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 
+  /* Two labeled groups instead of one flat row of four tabs (2026-09-21).
+     "Trade ideas" (Options, Stocks & ETFs) are the tabs the allocation bar
+     drives; "Tools" (Ticker Lookup, Backtest) never read it. Each group gets
+     its own title, one-line purpose, and segmented track, and the group that
+     owns the open tab gets full-strength text so it's obvious where you are. */
+  .mode-nav{
+    max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
+    box-sizing:border-box;
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px;
+  }
+  .mode-group{ min-width:0; display:flex; flex-direction:column; gap:3px; }
+  .mode-group-head{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    height:40px; /* fixed so both groups' captions and tab tracks line up */
+  }
+  .mode-group-title{
+    font-size:15px; font-weight:800; letter-spacing:-0.01em;
+    color:var(--text-faint); transition:color .12s; white-space:nowrap;
+  }
+  .mode-group.is-active .mode-group-title{ color:var(--text); }
+  .mode-group-sub{
+    font-size:12px; line-height:1.35; color:var(--text-faint);
+    margin-bottom:5px;
+  }
   .mode-toggle{
-    max-width:1080px; margin:0 auto; padding:0 18px;
-    display:flex; gap:8px;
+    display:flex; gap:3px; padding:3px;
+    background:var(--surface-2); border:1px solid var(--border); border-radius:12px;
     box-sizing:border-box; width:100%;
   }
   .mode-tab{
-    flex:1; min-height:38px; padding:9px 14px;
+    flex:1; min-width:0; min-height:38px; padding:8px 10px;
     font-family:inherit; font-size:13.5px; font-weight:700;
-    background:var(--surface-2); color:var(--text-dim);
-    border:1px solid var(--border); border-radius:9px;
+    background:transparent; color:var(--text-dim);
+    border:1px solid transparent; border-radius:9px;
     cursor:pointer; transition:background .12s, color .12s;
+    white-space:nowrap;
   }
   .mode-tab.active{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
+  .mode-tab:not(.active):hover{ background:var(--surface); }
+  .mode-tab:focus-visible{ outline:2px solid var(--amber); outline-offset:1px; }
   .mode-tab:active{ opacity:0.85; }
+
+  /* One-line explainer shown in the allocation bar's slot while a Tool tab is
+     open, so the header doesn't leave a mystery gap where the bar was. */
+  .tools-note{
+    max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
+    box-sizing:border-box;
+  }
+  .tools-note > div{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:14px;
+    padding:11px 16px; font-size:12.5px; line-height:1.45; color:var(--text-dim);
+  }
+  .tools-note strong{ color:var(--text); font-weight:800; }
 
   /* "Ticker Lookup" tab (added 2026-09-19) — the on-demand single-ticker
      lookup used to be squeezed into the header (first as its own boxed
@@ -830,7 +849,6 @@
     .sticky-top{ gap:8px; padding-top:10px; padding-bottom:6px; }
     header{ gap:12px; }
     .header-top{ padding:0 14px; gap:8px; }
-    .header-tools{ padding:0 14px; }
     .header-top-right{ gap:8px; }
     .data-status{ font-size:10px; padding:5px 9px; gap:4px; max-width:155px; }
     .refresh-btn{ width:30px; height:30px; }
@@ -850,14 +868,20 @@
     #portfolioCapital{ width:68px; height:32px; padding:6px 4px; }
     #portfolioSplit{ width:34px; height:32px; padding:6px 2px; }
     #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
-    .mode-toggle{ padding:0 14px; gap:3px; }
-    .mode-tab{ min-height:34px; padding:7px 2px; font-size:10px; }
+    .mode-nav{ padding:0 14px; gap:10px; }
+    .mode-group-head{ height:30px; }
+    .mode-group-title{ font-size:13.5px; }
+    .mode-group-head .export-btn{ padding:6px 9px; font-size:11px; }
+    .mode-group-head .export-btn svg{ display:none; }
+    .mode-group-sub{ font-size:10.5px; margin-bottom:4px; }
+    .mode-toggle{ padding:2px; gap:2px; border-radius:10px; }
+    .mode-tab{ min-height:34px; padding:6px 2px; font-size:11px; border-radius:8px; }
+    .tools-note{ padding:0 14px; }
+    .tools-note > div{ padding:9px 12px; font-size:12px; }
     .brand{ gap:7px; border-width:1.5px; border-radius:10px; padding:5px 12px 5px 6px; }
     .brand-mark{ width:28px; height:28px; }
     .brand-name{ font-size:21px; }
     .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
-    .header-tools{ gap:6px; row-gap:8px; }
-    .header-actions{ gap:6px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
@@ -961,19 +985,39 @@
     </div>
   </div>
 
-  <div class="header-tools">
-    <div class="header-tools-label">Allocation</div>
-    <div class="header-actions">
+</header>
+
+<nav class="mode-nav" aria-label="Sections">
+  <div class="mode-group is-active" id="groupIdeas" role="group" aria-labelledby="groupIdeasTitle">
+    <div class="mode-group-head">
+      <div class="mode-group-title" id="groupIdeasTitle">Trade ideas</div>
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         My Tickers
       </button>
     </div>
+    <div class="mode-group-sub">Sized to your allocation</div>
+    <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
+      <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
+      <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
+    </div>
   </div>
 
-</header>
+  <div class="mode-group" id="groupTools" role="group" aria-labelledby="groupToolsTitle">
+    <div class="mode-group-head">
+      <div class="mode-group-title" id="groupToolsTitle">Tools</div>
+    </div>
+    <div class="mode-group-sub">No allocation needed</div>
+    <div class="mode-toggle" role="tablist" aria-label="Tools">
+      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
+      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
+    </div>
+  </div>
+</nav>
 
-<div class="portfolio-bar">
+<!-- Allocation only applies to the two "Trade ideas" tabs, so it sits directly
+     under them and is swapped for a one-line note when a Tool tab is open. -->
+<div class="portfolio-bar" id="allocationBar">
   <div class="portfolio-bar-inner">
     <label>
       Cash <span id="cashLabelSym">$</span>
@@ -989,13 +1033,7 @@
     </label>
   </div>
 </div>
-
-<div class="mode-toggle" role="tablist">
-  <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
-  <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-  <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
-  <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
-</div>
+<div class="tools-note" id="toolsNote" style="display:none;" aria-live="polite"></div>
 </div>
 
 <div class="layout" id="optionsView">
@@ -1570,6 +1608,11 @@
   const MODE_VIEWS = { options: 'optionsView', stocks: 'stocksView', lookup: 'lookupView', backtest: 'backtestView' };
   const MODE_TABS = { options: 'tabOptions', stocks: 'tabStocks', lookup: 'tabLookup', backtest: 'tabBacktest' };
 
+  const TOOL_NOTES = {
+    lookup:   '<strong>Ticker Lookup</strong> works on any symbol and doesn\'t use your allocation.',
+    backtest: '<strong>Backtest</strong> follows the P&amp;L of trades you\'ve tracked as their expiry gets closer. It doesn\'t use your allocation.'
+  };
+
   function switchMode(mode){
     for(const key in MODE_VIEWS){
       const isActive = key === mode;
@@ -1577,6 +1620,16 @@
       document.getElementById(MODE_TABS[key]).classList.toggle('active', isActive);
       document.getElementById(MODE_TABS[key]).setAttribute('aria-selected', isActive);
     }
+    // Allocation only sizes Options / Stocks & ETFs picks. On the Tool tabs
+    // it's swapped for a one-line note saying what that tool is for.
+    const isTool = mode === 'lookup' || mode === 'backtest';
+    document.getElementById('groupIdeas').classList.toggle('is-active', !isTool);
+    document.getElementById('groupTools').classList.toggle('is-active', isTool);
+    document.getElementById('allocationBar').style.display = isTool ? 'none' : '';
+    const toolsNote = document.getElementById('toolsNote');
+    toolsNote.style.display = isTool ? '' : 'none';
+    if(isTool) toolsNote.innerHTML = `<div>${TOOL_NOTES[mode]}</div>`;
+
     if(mode === 'stocks'){
       // always re-render (not just the first time) — cheap for ~20 rows, and
       // guarantees correctness if the user switches tabs before loadTrades()

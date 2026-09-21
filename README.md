@@ -130,6 +130,29 @@ Python syntax. `scripts/fetch_data.py` reads this file at the start of every run
 a small built-in fallback list if `tickers.json` is ever missing or malformed, so a bad
 edit there can't break the nightly job entirely.
 
+### The dynamic universe (top 50 above $50B)
+
+On top of the pinned `tickers.json` list, every run also screens a dynamic slice of the
+market: the 50 most liquid US-listed stocks with a market cap above $50B, ranked by average
+daily dollar volume (price x 3-month average volume) as a proxy for how tradeable their
+options are. `scripts/build_universe.py` builds it with yfinance's built-in screener and
+writes `universe.json`; the **Update ticker universe** workflow refreshes it once a day
+before the open (market cap moves slowly, so the hourly data runs just read the cached
+file). Notes:
+
+- **First run:** open the Actions tab, pick **Update ticker universe**, and click
+  **Run workflow** once. Until `universe.json` exists, runs fall back to the pinned list
+  alone (with a log line saying so).
+- **Tuning:** `MIN_MARKET_CAP` and `UNIVERSE_SIZE` at the top of `build_universe.py`.
+- **Safety:** if the screener fails or returns fewer than 20 names, the existing
+  `universe.json` is left untouched, so a bad day never shrinks the list.
+- **Load:** the run list is pinned + dynamic (deduplicated), so more names means more
+  Yahoo calls per run. To go back toward the old size, trim the stocks in `tickers.json`
+  (the dynamic list already covers most large caps).
+- **Strategy assignment:** each ticker's strategy comes from its list position, so pinned
+  tickers keep their positions and dynamic ones get a stable symbol-derived index instead
+  of shifting when the daily ranking changes.
+
 ## Where this goes next
 
 - **Better probability/IV-rank math**: swap the approximations above for a real options

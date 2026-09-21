@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T07:37:15.092543+00:00",
+  "generated_at": "2026-09-21T08:37:24.844791+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,9 +40,15 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.09,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/apple-reportedly-lays-off-some-fitness-division-staff-ahead-of-potential-major-changes/cZMR7yyRB4j",
+          "sentiment": 0.27
+        },
         {
           "title": "Apple Pay to launch in India next month with Axis Bank- report",
           "publisher": "Electronic Payments",
@@ -54,12 +60,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-ceo-bets-big-233948726.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Your iPhone gives Apple an advantage you may not be comfortable with.",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/apples-new-ceo-reveals-how-ai-will-change-your-life",
-          "sentiment": -0.18
         }
       ],
       "volRegime": "Rich",
@@ -206,14 +206,20 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.2,
+      "newsSentiment": -0.17,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
-          "sentiment": -0.2
+          "title": "Nvidia's CEO Huang says there's a \u20180% chance\u2019 AI ends the world \u2014 4 AI giants are sued over an alleged pact to slow it",
+          "publisher": "Moneywise",
+          "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Jensen Huang Isn't 'Afraid' of Paying $8 Billion in California's Billionaire Tax: Nvidia CEO Says This Is What Scares Him Instead",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-isnt-afraid-paying-065437968.html",
+          "sentiment": -0.34
         }
       ],
       "volRegime": "Cheap",
@@ -728,26 +734,26 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.21,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Here\u2019s Why Amazon's $220 Billion in Capital Spending Shouldn\u2019t Worry Investors.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/here-s-why-amazon-usd220-billion-in-capital-spending-shouldn-t-worry-investors/",
+          "sentiment": -0.44
+        },
+        {
+          "title": "Kuehne+Nagel Strikes Deal With Amazon For Supply Chain, Cloud Capabilities",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/tech/kuehne-nagel-strikes-deal-with-amazon-for-supply-chain-cloud-capabilities-407c3bfa?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.2
+        },
         {
           "title": "Amazon.com vs. Uber Technologies: Analyzing Recent Quarterly Revenue Trends Between Two Consumer Companies",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/charts/2026/09/21/amazon-com-vs-uber-technologies-analyzing-recent-quarterly-revenue-trends-between-two-consumer-companies/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Amazon (AMZN) Taps the UK Bond Market for the First Time to Help Fund its AI Buildout",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-taps-uk-bond-212711015.html",
-          "sentiment": 0.53
         }
       ],
       "volRegime": "Cheap",
@@ -1432,9 +1438,15 @@
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.02,
+      "newsSentiment": -0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Wall Street Just Gave Palantir Its Highest-Ever Price Target, Right When Europe Started Saying No",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/wall-street-just-gave-palantir-its-highest-ever-price-target-right-when-europe-started-saying-no?ref=yahoofinance",
+          "sentiment": -0.3
+        },
         {
           "title": "Palantir Technologies (PLTR) Unveils Alliance Push Across AI Supply Chains And Cyber Defense",
           "publisher": "Simply Wall St.",
@@ -1446,12 +1458,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/palantir-nearly-doubled-its-revenue-its-stock-stood-still-is-it-time-to-buy-the-stock/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Why You Should Avoid Palantir and Buy These 2 Defense Stocks Instead",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/why-you-should-avoid-palantir-and-buy-these-2-defe/",
-          "sentiment": -0.18
         }
       ],
       "volRegime": "Cheap",
@@ -4427,9 +4433,15 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": -0.09,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/apple-reportedly-lays-off-some-fitness-division-staff-ahead-of-potential-major-changes/cZMR7yyRB4j",
+          "sentiment": 0.27
+        },
         {
           "title": "Apple Pay to launch in India next month with Axis Bank- report",
           "publisher": "Electronic Payments",
@@ -4441,12 +4453,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-ceo-bets-big-233948726.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Your iPhone gives Apple an advantage you may not be comfortable with.",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/apples-new-ceo-reveals-how-ai-will-change-your-life",
-          "sentiment": -0.18
         }
       ]
     },
@@ -4507,14 +4513,20 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": -0.2,
+      "newsSentiment": -0.17,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
-          "sentiment": -0.2
+          "title": "Nvidia's CEO Huang says there's a \u20180% chance\u2019 AI ends the world \u2014 4 AI giants are sued over an alleged pact to slow it",
+          "publisher": "Moneywise",
+          "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Jensen Huang Isn't 'Afraid' of Paying $8 Billion in California's Billionaire Tax: Nvidia CEO Says This Is What Scares Him Instead",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-isnt-afraid-paying-065437968.html",
+          "sentiment": -0.34
         }
       ]
     },
@@ -4833,26 +4845,26 @@
       "dividendYield": null,
       "marketCap": 2736595664896,
       "score": 6.2,
-      "newsSentiment": 0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.21,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Here\u2019s Why Amazon's $220 Billion in Capital Spending Shouldn\u2019t Worry Investors.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/here-s-why-amazon-usd220-billion-in-capital-spending-shouldn-t-worry-investors/",
+          "sentiment": -0.44
+        },
+        {
+          "title": "Kuehne+Nagel Strikes Deal With Amazon For Supply Chain, Cloud Capabilities",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/tech/kuehne-nagel-strikes-deal-with-amazon-for-supply-chain-cloud-capabilities-407c3bfa?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.2
+        },
         {
           "title": "Amazon.com vs. Uber Technologies: Analyzing Recent Quarterly Revenue Trends Between Two Consumer Companies",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/charts/2026/09/21/amazon-com-vs-uber-technologies-analyzing-recent-quarterly-revenue-trends-between-two-consumer-companies/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Amazon (AMZN) Taps the UK Bond Market for the First Time to Help Fund its AI Buildout",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-taps-uk-bond-212711015.html",
-          "sentiment": 0.53
         }
       ]
     },
@@ -5306,9 +5318,15 @@
       "dividendYield": null,
       "marketCap": 426879287296,
       "score": 9.0,
-      "newsSentiment": -0.02,
+      "newsSentiment": -0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Wall Street Just Gave Palantir Its Highest-Ever Price Target, Right When Europe Started Saying No",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/wall-street-just-gave-palantir-its-highest-ever-price-target-right-when-europe-started-saying-no?ref=yahoofinance",
+          "sentiment": -0.3
+        },
         {
           "title": "Palantir Technologies (PLTR) Unveils Alliance Push Across AI Supply Chains And Cyber Defense",
           "publisher": "Simply Wall St.",
@@ -5320,12 +5338,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/palantir-nearly-doubled-its-revenue-its-stock-stood-still-is-it-time-to-buy-the-stock/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Why You Should Avoid Palantir and Buy These 2 Defense Stocks Instead",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/why-you-should-avoid-palantir-and-buy-these-2-defe/",
-          "sentiment": -0.18
         }
       ]
     },

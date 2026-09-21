@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T04:37:52.833486+00:00",
+  "generated_at": "2026-09-21T05:37:01.532315+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -132,7 +132,7 @@
       "pcVol": 0.39,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.39,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -146,12 +146,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
           "sentiment": 0.49
-        },
-        {
-          "title": "Anthropic Made a \u2018Mistake\u2019 Teaching Claude About Consciousness: Microsoft AI Chief Mustafa Suleyman Warns It\u2019s Now \u2018A Lot Harder to Turn It Off\u2019",
-          "publisher": "Benzinga",
-          "link": "https://tech.yahoo.com/ai/claude/articles/anthropic-made-mistake-teaching-claude-003110200.html",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Cheap",
@@ -212,20 +206,20 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.68,
+      "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
+          "sentiment": -0.2
+        },
         {
           "title": "Nvidia's Jensen Huang Beats Zuckerberg, Bezos for Trump's AI Favor as Stock Climbs",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/jensen-huang-trump-ai-ally-nvidia/",
           "sentiment": 0.77
-        },
-        {
-          "title": "Prediction: Nvidia's Revenue Growth Will Drive Shares to $400 Next Year",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/prediction-nvidias-70-revenue-forecast-will-drive/",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Cheap",
@@ -352,9 +346,15 @@
       "pcVol": 0.79,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here\u2019s How.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/amd-stock-jumped-8-last-week-it-could-bring-325-more-heres-how?ref=yahoofinance",
+          "sentiment": 0.49
+        },
         {
           "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
@@ -366,12 +366,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-climb-ahead-of-key-china-summit-crml-apld-gme-amd-stocks-in-focus/cZMRbIGRB4E",
           "sentiment": 0.0
-        },
-        {
-          "title": "Better Artificial Intelligence Stock: Advanced Micro Devices vs. SK Hynix",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/better-artificial-intelligence-stock-advanced-micro-devices-vs-sk-hynix/",
-          "sentiment": 0.79
         }
       ],
       "volRegime": "Cheap",
@@ -430,9 +424,15 @@
       "pcVol": 0.91,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "China\u2019s CXMT Says It Has Reached Advanced DRAM Mass Production, Challenging Samsung, SK Hynix and Micron in Memory Chips",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/articles/china-cxmt-says-reached-advanced-041453764.html",
+          "sentiment": 0.46
+        },
         {
           "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China\u2019s CXMT Touts Faster Production",
           "publisher": "Stocktwits",
@@ -444,12 +444,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
           "sentiment": 0.49
-        },
-        {
-          "title": "Should You Buy Micron Stock Before Its Next Earnings Report?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/should-you-buy-micron-stock-before-next-earnings/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1733,9 +1727,15 @@
       "pcVol": 0.7,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.65,
+      "newsSentiment": 0.56,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palo Alto Networks Stock Jumped 10% Last Week. One Analyst Isn\u2019t Buying It.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/palo-alto-networks-stock-jumped-10-last-week-one-analyst-isnt-buying-it?ref=yahoofinance",
+          "sentiment": 0.49
+        },
         {
           "title": "The AI Slowdown Trade Has Some Winners: CrowdStrike and Palo Alto Rally While Chips Fall",
           "publisher": "Insider Monkey",
@@ -1747,12 +1747,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/why-crowdstrike-palo-alto-sentinelone-stocks-up/",
           "sentiment": 0.61
-        },
-        {
-          "title": "Palo Alto Networks (PANW) Stock Gets Fair Value Boost After Analyst Target Increases",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-stock-001952926.html",
-          "sentiment": 0.75
         }
       ],
       "volRegime": "Cheap",
@@ -2885,26 +2879,26 @@
       "pcVol": 0.95,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
+          "sentiment": -0.2
+        },
+        {
+          "title": "China\u2019s CXMT Says It Has Reached Advanced DRAM Mass Production, Challenging Samsung, SK Hynix and Micron in Memory Chips",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/articles/china-cxmt-says-reached-advanced-041453764.html",
+          "sentiment": 0.46
+        },
         {
           "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China\u2019s CXMT Touts Faster Production",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-stocks-in-focus-memory-rebound-gains-steam-even-as-china-s-cxmt-touts-faster-production/cZMRGVORB43",
           "sentiment": 0.32
-        },
-        {
-          "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Better Artificial Intelligence Stock: Advanced Micro Devices vs. SK Hynix",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/better-artificial-intelligence-stock-advanced-micro-devices-vs-sk-hynix/",
-          "sentiment": 0.79
         }
       ],
       "volRegime": "Cheap",
@@ -4476,7 +4470,7 @@
       "dividendYield": 0.79,
       "marketCap": 3666585845760,
       "score": 9.4,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.39,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4490,12 +4484,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
           "sentiment": 0.49
-        },
-        {
-          "title": "Anthropic Made a \u2018Mistake\u2019 Teaching Claude About Consciousness: Microsoft AI Chief Mustafa Suleyman Warns It\u2019s Now \u2018A Lot Harder to Turn It Off\u2019",
-          "publisher": "Benzinga",
-          "link": "https://tech.yahoo.com/ai/claude/articles/anthropic-made-mistake-teaching-claude-003110200.html",
-          "sentiment": -0.1
         }
       ]
     },
@@ -4519,20 +4507,20 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.68,
+      "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
+          "sentiment": -0.2
+        },
         {
           "title": "Nvidia's Jensen Huang Beats Zuckerberg, Bezos for Trump's AI Favor as Stock Climbs",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/jensen-huang-trump-ai-ally-nvidia/",
           "sentiment": 0.77
-        },
-        {
-          "title": "Prediction: Nvidia's Revenue Growth Will Drive Shares to $400 Next Year",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/prediction-nvidias-70-revenue-forecast-will-drive/",
-          "sentiment": 0.59
         }
       ]
     },
@@ -4593,9 +4581,15 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Tesla's Free Cash Flow Went Negative. It Still Has a $43.5 Billion Cash Cushion.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/teslas-free-cash-flow-went-negative-it-still-has-a/",
+          "sentiment": -0.1
+        },
         {
           "title": "TSLA Stock Looks \u2018Slightly Undervalued\u2019 To This Analyst \u2014 But The Roadster Is Barely Part Of The Bull Case",
           "publisher": "Stocktwits",
@@ -4607,12 +4601,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/tesla-tsla-autopilot-software-wins-214328537.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "Dear Tesla Stock Fans, Mark Your Calendars for September 30",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4701207/dear-tesla-stock-fans-mark-your-calendars-for-september-30",
-          "sentiment": 0.38
         }
       ]
     },
@@ -4636,9 +4624,15 @@
       "dividendYield": null,
       "marketCap": 913892179968,
       "score": 8.5,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here\u2019s How.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/amd-stock-jumped-8-last-week-it-could-bring-325-more-heres-how?ref=yahoofinance",
+          "sentiment": 0.49
+        },
         {
           "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
@@ -4650,12 +4644,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-climb-ahead-of-key-china-summit-crml-apld-gme-amd-stocks-in-focus/cZMRbIGRB4E",
           "sentiment": 0.0
-        },
-        {
-          "title": "Better Artificial Intelligence Stock: Advanced Micro Devices vs. SK Hynix",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/better-artificial-intelligence-stock-advanced-micro-devices-vs-sk-hynix/",
-          "sentiment": 0.79
         }
       ]
     },
@@ -4679,9 +4667,15 @@
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
       "score": 9.4,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "China\u2019s CXMT Says It Has Reached Advanced DRAM Mass Production, Challenging Samsung, SK Hynix and Micron in Memory Chips",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/articles/china-cxmt-says-reached-advanced-041453764.html",
+          "sentiment": 0.46
+        },
         {
           "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China\u2019s CXMT Touts Faster Production",
           "publisher": "Stocktwits",
@@ -4693,12 +4687,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
           "sentiment": 0.49
-        },
-        {
-          "title": "Should You Buy Micron Stock Before Its Next Earnings Report?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/should-you-buy-micron-stock-before-next-earnings/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5275,9 +5263,15 @@
       "dividendYield": null,
       "marketCap": 243338117120,
       "score": 9.4,
-      "newsSentiment": 0.64,
+      "newsSentiment": 0.56,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CrowdStrike Stock Jumped 15% Last Week. Here\u2019s What Happened.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/crowdstrike-stock-jumped-15-last-week-heres-what-happened?ref=yahoofinance",
+          "sentiment": 0.49
+        },
         {
           "title": "The AI Slowdown Trade Has Some Winners: CrowdStrike and Palo Alto Rally While Chips Fall",
           "publisher": "Insider Monkey",
@@ -5289,12 +5283,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/why-crowdstrike-palo-alto-sentinelone-stocks-up/",
           "sentiment": 0.61
-        },
-        {
-          "title": "CrowdStrike CEO sends strong six-word message on AI cyber safety",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/investing/stocks/crwd-crowdstrike-ceo-ai-safety-genie-out-of-the-bottle",
-          "sentiment": 0.73
         }
       ]
     },
@@ -5465,9 +5453,15 @@
       "dividendYield": null,
       "marketCap": 297408430080,
       "score": 9.4,
-      "newsSentiment": 0.65,
+      "newsSentiment": 0.56,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palo Alto Networks Stock Jumped 10% Last Week. One Analyst Isn\u2019t Buying It.",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/palo-alto-networks-stock-jumped-10-last-week-one-analyst-isnt-buying-it?ref=yahoofinance",
+          "sentiment": 0.49
+        },
         {
           "title": "The AI Slowdown Trade Has Some Winners: CrowdStrike and Palo Alto Rally While Chips Fall",
           "publisher": "Insider Monkey",
@@ -5479,12 +5473,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/why-crowdstrike-palo-alto-sentinelone-stocks-up/",
           "sentiment": 0.61
-        },
-        {
-          "title": "Palo Alto Networks (PANW) Stock Gets Fair Value Boost After Analyst Target Increases",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-stock-001952926.html",
-          "sentiment": 0.75
         }
       ]
     },

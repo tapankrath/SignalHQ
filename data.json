@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:37:34.571182+00:00",
+  "generated_at": "2026-09-21T21:38:06.672099+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -37,8 +37,8 @@
       "pcVol": 0.69,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Apple\u2019s new iPhone Duo: Will consumers bite?",
@@ -47,16 +47,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Google, Apple's new job postings go viral",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/google-apples-new-job-postings-go-viral",
+          "sentiment": 0.0
+        },
+        {
           "title": "Apple Edged Higher as Oura Prices a $15.6 Billion Challenge",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/apple-edged-higher-oura-prices-191453187.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Is Apple Stock's Shrinking Share Count Worth Paying Up For Near The Highs?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616009/is-apple-stocks-shrinking-share-count-worth-paying-up-for-near-the-highs/2026-09-21",
-          "sentiment": 0.48
         }
       ],
       "volRegime": "Fair",
@@ -125,26 +125,26 @@
       "pcVol": 0.47,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.04,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Microsoft (MSFT) Stock Looks Reasonable Despite Its 75% Five Year Run",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-looks-reasonable-211138209.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Microsoft Patent Hints At Contextual In-Game Ads",
+          "publisher": "MediaPost",
+          "link": "https://www.mediapost.com/publications/article/418175/microsoft-patent-hints-at-contextual-in-game-ads.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Microsoft's Nadella Is Joining Trump and Xi and Tech Giants Are Coming Too",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/microsofts-nadella-joining-trump-xi-192151216.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft Stays Flat as Hyderabad Adds AI Capacity Without Water Cooling",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-stays-flat-hyderabad-adds-191137236.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft and Anthropic dominate Nscale's $103B IPO contract backlog",
-          "publisher": "Quartz",
-          "link": "https://qz.com/nscale-ipo-microsoft-anthropic-contract-backlog-092126",
-          "sentiment": -0.13
         }
       ],
       "volRegime": "Rich",
@@ -201,7 +201,7 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.51,
+      "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -211,16 +211,10 @@
           "sentiment": 0.3
         },
         {
-          "title": "Nvidia Stock Can Surge on Trump\u2019s China Talks. Why They Are Crucial.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/nvidia-stock-price-trump-china-xi-ai-chips-3828556a?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.61
-        },
-        {
-          "title": "Jensen Huang Just Gave Nvidia Investors Great News and a Reason Why the Stock May Continue Surging in 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/jensen-huang-just-gave-nvidia-investors-great-news-and-a-reason-why-the-stock-may-continue-surging-in-2027/",
-          "sentiment": 0.62
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         }
       ],
       "volRegime": "Cheap",
@@ -275,7 +269,7 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -285,16 +279,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "META Stock Set For Best Day In 13 Months On Muse Popularity As Amazon Moves to Block It",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-set-for-best-day-in-13-months-on-muse-popularity-as-amazon-moves-to-block-it/cZMRq6LRBIS",
-          "sentiment": 0.73
-        },
-        {
-          "title": "Amazon Just Blocked Meta's AI Agent and It's Not Alone",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-just-blocked-metas-ai-192537732.html",
-          "sentiment": 0.09
+          "title": "Meta Stock Soars as New AI Agent Gathers Steam",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/meta-s-stock-soars-more-than-10-as-new-ai-agent-gathers-steam-XHfjpXIVTQ13gdgdnYdK?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.64
         }
       ],
       "volRegime": "Rich",
@@ -433,25 +421,25 @@
       "pcVol": 0.53,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "AMD Storms Into $1 Trillion Club as Chip Stocks Charge Higher",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-storms-1-trillion-club-192641920.html",
-          "sentiment": 0.0
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         },
         {
-          "title": "AMD Hits $1 Trillion Market Cap: 3 Reasons Nvidia Sat Out the AI Rally",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/amd-1-trillion-market-cap-nvidia/",
-          "sentiment": 0.54
+          "title": "Chip Stocks Rise As Four New Names Join SOX Index. AMD Breaks Out.",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/chip-stocks-amd-stock-four-new-names-join-sox-index/?src=A00220&yptr=yahoo",
+          "sentiment": 0.3
         },
         {
-          "title": "AMD Is About to Become a Trillion-Dollar Stock as It Hikes Chip Prices 10%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/amd-is-about-to-become-a-trillion-dollar-stock-as-it-hikes-chip-prices-10/",
+          "title": "Stock Market Today: Dow Up, Nasdaq Roars To Record As Micron Does This; AMD Hits New High (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-nvidia-stock-nvda-buy-point/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -507,7 +495,7 @@
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.21,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -517,15 +505,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Intel's CEO Just Gave Micron Technology Investors Great News",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/intel-s-ceo-just-gave-micron-technology-investors-great-news/",
-          "sentiment": 0.62
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         },
         {
-          "title": "How Much Of Micron's Revenue Has A Price Ceiling?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616014/how-much-of-microns-revenue-has-a-price-ceiling/2026-09-21",
+          "title": "Micron Stock Is Back Above $1,000. Is a Stock Split Coming?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/micron-stock-is-back-above-usd1-000-is-a-stock-split-coming/",
           "sentiment": 0.0
         }
       ],
@@ -786,9 +774,15 @@
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Has The Price For Amazon Stock Already Peaked?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615981/has-the-price-for-amazon-stock-already-peaked/2026-09-21",
+          "sentiment": 0.18
+        },
         {
           "title": "Amazon Takes Wearable AI Deeper Into Logistics",
           "publisher": "GuruFocus.com",
@@ -800,12 +794,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-set-for-best-day-in-13-months-on-muse-popularity-as-amazon-moves-to-block-it/cZMRq6LRBIS",
           "sentiment": 0.73
-        },
-        {
-          "title": "Amazon Just Blocked Meta's AI Agent and It's Not Alone",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-just-blocked-metas-ai-192537732.html",
-          "sentiment": 0.09
         }
       ],
       "volRegime": "Fair",
@@ -1020,9 +1008,15 @@
       "pcVol": 0.34,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.11,
+      "newsSentiment": -0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Wells Fargo Cuts Netflix (NFLX) to Underweight as its 2026 Slide Deepens",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-cuts-netflix-nflx-205315969.html",
+          "sentiment": -0.2
+        },
         {
           "title": "Paramount Deal Approval Puts Netflix Stock And Media Merger Winners In Focus",
           "publisher": "Simply Wall St.",
@@ -1034,12 +1028,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/research/options/netflix-nflx-stock-bear-put-spread-options/?src=A00220&yptr=yahoo",
           "sentiment": -0.75
-        },
-        {
-          "title": "Ackman Bets $1 Billion on Netflix Redemption After $400 Million 2022 Loss",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/ackman-bets-1-billion-on-netflix-redemption-after-400-million-2022-loss/",
-          "sentiment": -0.32
         }
       ],
       "volRegime": "Cheap",
@@ -1090,25 +1078,25 @@
       "pcVol": 0.9,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.26,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
+        },
+        {
+          "title": "Top Stock Reports for Procter & Gamble, Sandisk & Analog Devices",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-procter-gamble-211000812.html",
+          "sentiment": 0.2
+        },
         {
           "title": "SanDisk Faces a Make-or-Break Test at $1,832",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-faces-break-test-1-191906782.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "SanDisk Falls 2% Despite Memory Rally; Micron Advances 3%, Western Digital Nudges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/sandisk-falls-2-despite-memory-rally-micron-advances-3-western-digital-nudges-higher/",
-          "sentiment": -0.43
-        },
-        {
-          "title": "Should You Buy Sandisk Stock Now or Wait for a Dip?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/should-you-buy-sandisk-stock-now-or-wait-for-a-dip/",
           "sentiment": 0.0
         }
       ],
@@ -1318,9 +1306,15 @@
       "pcVol": 0.47,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.3,
+      "newsSentiment": 0.25,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Adobe CEO Shantanu Narayen Sells $31.3 Million Stock",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/filings/2026/09/21/adobe-ceo-shantanu-narayen-sells-usd31-3-million-stock/",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla, Microsoft and Adobe Forecast: AI Stocks Eye Key Moves",
           "publisher": "FX Empire",
@@ -1332,12 +1326,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
           "sentiment": 0.76
-        },
-        {
-          "title": "A Pause on Advanced AI Is Wishful Thinking, But Adobe Stock Is a Buy Anyway",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4693911/a-pause-on-advanced-ai-is-wishful-thinking-but-adobe-stock-is-a-buy-anyway",
-          "sentiment": 0.13
         }
       ],
       "volRegime": "Fair",
@@ -2646,15 +2634,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Gear Up for Costco (COST) Q4 Earnings: Wall Street Estimates for Key Metrics",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/gear-costco-cost-q4-earnings-131503375.html",
+          "title": "Costco Is Now on DoorDash Nationwide",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/media-advertising/articles/costco-now-doordash-nationwide-193007002.html",
           "sentiment": 0.0
         },
         {
-          "title": "Five Things to Watch in Markets This Week: US-China Talks, AI, Economic Data and Costco Earnings",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36627/five-things-to-watch-in-markets-this-week-us-china-talks-ai-economic-data-and-costco-earnings",
+          "title": "Gear Up for Costco (COST) Q4 Earnings: Wall Street Estimates for Key Metrics",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/gear-costco-cost-q4-earnings-131503375.html",
           "sentiment": 0.0
         }
       ],
@@ -2794,26 +2782,26 @@
       "pcVol": 0.36,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: Here's What a $5,000 Investment in Marvell Could Be Worth by 2030",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/prediction-heres-what-a-5000-investment-in-marvell/",
+          "sentiment": 0.23
+        },
+        {
+          "title": "Marvell just made a move that changes the AI networking story",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/marvell-ai-networking-power-efficiency-shift",
+          "sentiment": 0.0
+        },
         {
           "title": "Marvell Shares Rally After Unveiling 1.6T Optical Technology for AI Networks",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/marvell-shares-rally-unveiling-1-194733178.html",
           "sentiment": 0.69
-        },
-        {
-          "title": "Marvell Rises Over 3.3% as 2-Nanometer Optics Target AI's Copper Wall",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/marvell-rises-over-3-3-190501753.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Marvell Smashes the AI \u2018Power Wall\u2019 with Industry-First 2nm Optical Chips",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/marvell-smashes-the-ai-power-wall-with-industry-first-2nm-optical-chips/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2870,26 +2858,14 @@
       "pcVol": 0.49,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.59,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Intel's CEO Just Gave Micron Technology Investors Great News",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/intel-s-ceo-just-gave-micron-technology-investors-great-news/",
-          "sentiment": 0.62
-        },
-        {
-          "title": "Intel Stock Soars as AI Spending Fears Fade",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/intel-stock-soars-ai-spending-190205655.html",
-          "sentiment": 0.34
-        },
-        {
-          "title": "Intel, AMD, and Arm Stock Are Jumping. Thank Meta\u2019s Muse AI Agent.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.36
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         }
       ],
       "volRegime": "Fair",
@@ -2997,7 +2973,7 @@
       "pcVol": 0.18,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3011,12 +2987,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/21/broadcom-vs-intel-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Broadcom\u2019s AI Opportunity Is Bigger Than Its Stock Price Suggests",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/broadcoms-ai-opportunity-is-bigger-than-its-stock-price-suggests/",
-          "sentiment": 0.42
         }
       ],
       "volRegime": "Fair",
@@ -3609,16 +3579,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Eli Lilly Starts Building Record $6.5B Houston Manufacturing Facility",
+          "publisher": "Bisnow",
+          "link": "https://www.bisnow.com/news/houston/construction-development/eli-lilly-breaks-ground-record-breaking-manufacturing-facility-generation-park",
+          "sentiment": 0.0
+        },
+        {
           "title": "LLY Stock Gains As CEO Says Foundayo Wins One-Third of New GLP-1 Pill Starts, Breaks Ground On $6.5B Houston Plant",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/lly-stock-gains-as-ceo-says-foundayo-wins-one-third-of-new-glp-1-pill-starts-breaks-ground-on-6-5-b-houston-plant/cZMRA28RBIj",
           "sentiment": 0.73
-        },
-        {
-          "title": "Eli Lilly Stock Is On Track to Do Something It Hasn't Done Since 2016",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/eli-lilly-stock-is-on-track-to-do-something-it-hasn-t-done-since-2016/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -4610,13 +4580,13 @@
       "chg3m": 14.2,
       "chg6m": 36.9,
       "chg1y": 32.9,
-      "volRatio": 0.81,
+      "volRatio": 0.82,
       "peRatio": 38.9,
       "dividendYield": 0.32,
       "marketCap": 4947135430656,
       "score": 8.5,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Apple\u2019s new iPhone Duo: Will consumers bite?",
@@ -4625,16 +4595,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Google, Apple's new job postings go viral",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/google-apples-new-job-postings-go-viral",
+          "sentiment": 0.0
+        },
+        {
           "title": "Apple Edged Higher as Oura Prices a $15.6 Billion Challenge",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/apple-edged-higher-oura-prices-191453187.html",
           "sentiment": 0.08
-        },
-        {
-          "title": "Is Apple Stock's Shrinking Share Count Worth Paying Up For Near The Highs?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616009/is-apple-stocks-shrinking-share-count-worth-paying-up-for-near-the-highs/2026-09-21",
-          "sentiment": 0.48
         }
       ]
     },
@@ -4653,31 +4623,31 @@
       "chg3m": 36.8,
       "chg6m": 31.9,
       "chg1y": -1.7,
-      "volRatio": 1.18,
+      "volRatio": 1.19,
       "peRatio": 27.9,
       "dividendYield": 0.79,
       "marketCap": 3724727812096,
       "score": 9.4,
-      "newsSentiment": -0.04,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Microsoft (MSFT) Stock Looks Reasonable Despite Its 75% Five Year Run",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-looks-reasonable-211138209.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Microsoft Patent Hints At Contextual In-Game Ads",
+          "publisher": "MediaPost",
+          "link": "https://www.mediapost.com/publications/article/418175/microsoft-patent-hints-at-contextual-in-game-ads.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Microsoft's Nadella Is Joining Trump and Xi and Tech Giants Are Coming Too",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/microsofts-nadella-joining-trump-xi-192151216.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft Stays Flat as Hyderabad Adds AI Capacity Without Water Cooling",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-stays-flat-hyderabad-adds-191137236.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft and Anthropic dominate Nscale's $103B IPO contract backlog",
-          "publisher": "Quartz",
-          "link": "https://qz.com/nscale-ipo-microsoft-anthropic-contract-backlog-092126",
-          "sentiment": -0.13
         }
       ]
     },
@@ -4696,12 +4666,12 @@
       "chg3m": 9.1,
       "chg6m": 32.0,
       "chg1y": 24.1,
-      "volRatio": 0.88,
+      "volRatio": 0.89,
       "peRatio": 28.7,
       "dividendYield": 0.45,
       "marketCap": 5490544738304,
       "score": 9.4,
-      "newsSentiment": 0.51,
+      "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4711,16 +4681,10 @@
           "sentiment": 0.3
         },
         {
-          "title": "Nvidia Stock Can Surge on Trump\u2019s China Talks. Why They Are Crucial.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/nvidia-stock-price-trump-china-xi-ai-chips-3828556a?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.61
-        },
-        {
-          "title": "Jensen Huang Just Gave Nvidia Investors Great News and a Reason Why the Stock May Continue Surging in 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/jensen-huang-just-gave-nvidia-investors-great-news-and-a-reason-why-the-stock-may-continue-surging-in-2027/",
-          "sentiment": 0.62
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         }
       ]
     },
@@ -4739,12 +4703,12 @@
       "chg3m": 31.5,
       "chg6m": 25.0,
       "chg1y": -2.9,
-      "volRatio": 2.58,
+      "volRatio": 2.59,
       "peRatio": 27.9,
       "dividendYield": 0.32,
       "marketCap": 1888326254592,
       "score": 8.5,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4754,16 +4718,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "META Stock Set For Best Day In 13 Months On Muse Popularity As Amazon Moves to Block It",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-set-for-best-day-in-13-months-on-muse-popularity-as-amazon-moves-to-block-it/cZMRq6LRBIS",
-          "sentiment": 0.73
-        },
-        {
-          "title": "Amazon Just Blocked Meta's AI Agent and It's Not Alone",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-just-blocked-metas-ai-192537732.html",
-          "sentiment": 0.09
+          "title": "Meta Stock Soars as New AI Agent Gathers Steam",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/meta-s-stock-soars-more-than-10-as-new-ai-agent-gathers-steam-XHfjpXIVTQ13gdgdnYdK?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.64
         }
       ]
     },
@@ -4782,7 +4740,7 @@
       "chg3m": -7.3,
       "chg6m": 2.0,
       "chg1y": -13.6,
-      "volRatio": 0.96,
+      "volRatio": 0.97,
       "peRatio": 344.3,
       "dividendYield": null,
       "marketCap": 1482265198592,
@@ -4825,30 +4783,30 @@
       "chg3m": 11.6,
       "chg6m": 205.7,
       "chg1y": 285.2,
-      "volRatio": 2.18,
+      "volRatio": 2.19,
       "peRatio": 157.0,
       "dividendYield": null,
       "marketCap": 1004821020672,
       "score": 8.5,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "AMD Storms Into $1 Trillion Club as Chip Stocks Charge Higher",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-storms-1-trillion-club-192641920.html",
-          "sentiment": 0.0
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         },
         {
-          "title": "AMD Hits $1 Trillion Market Cap: 3 Reasons Nvidia Sat Out the AI Rally",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/amd-1-trillion-market-cap-nvidia/",
-          "sentiment": 0.54
+          "title": "Chip Stocks Rise As Four New Names Join SOX Index. AMD Breaks Out.",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/chip-stocks-amd-stock-four-new-names-join-sox-index/?src=A00220&yptr=yahoo",
+          "sentiment": 0.3
         },
         {
-          "title": "AMD Is About to Become a Trillion-Dollar Stock as It Hikes Chip Prices 10%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/amd-is-about-to-become-a-trillion-dollar-stock-as-it-hikes-chip-prices-10/",
+          "title": "Stock Market Today: Dow Up, Nasdaq Roars To Record As Micron Does This; AMD Hits New High (Live Coverage)",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-nvidia-stock-nvda-buy-point/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
       ]
@@ -4868,12 +4826,12 @@
       "chg3m": -13.8,
       "chg6m": 147.0,
       "chg1y": 535.2,
-      "volRatio": 1.01,
+      "volRatio": 1.02,
       "peRatio": 23.6,
       "dividendYield": 0.05,
       "marketCap": 1179041267712,
       "score": 9.4,
-      "newsSentiment": 0.21,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4883,15 +4841,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Intel's CEO Just Gave Micron Technology Investors Great News",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/intel-s-ceo-just-gave-micron-technology-investors-great-news/",
-          "sentiment": 0.62
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         },
         {
-          "title": "How Much Of Micron's Revenue Has A Price Ceiling?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616014/how-much-of-microns-revenue-has-a-price-ceiling/2026-09-21",
+          "title": "Micron Stock Is Back Above $1,000. Is a Stock Split Coming?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/micron-stock-is-back-above-usd1-000-is-a-stock-split-coming/",
           "sentiment": 0.0
         }
       ]
@@ -4935,7 +4893,7 @@
       "chg3m": 6.7,
       "chg6m": 24.0,
       "chg1y": 14.8,
-      "volRatio": 0.98,
+      "volRatio": 0.99,
       "peRatio": 15.1,
       "dividendYield": 1.89,
       "marketCap": 935787888640,
@@ -5020,9 +4978,15 @@
       "dividendYield": null,
       "marketCap": 2787722657792,
       "score": 6.2,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Has The Price For Amazon Stock Already Peaked?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/615981/has-the-price-for-amazon-stock-already-peaked/2026-09-21",
+          "sentiment": 0.18
+        },
         {
           "title": "Amazon Takes Wearable AI Deeper Into Logistics",
           "publisher": "GuruFocus.com",
@@ -5034,12 +4998,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-set-for-best-day-in-13-months-on-muse-popularity-as-amazon-moves-to-block-it/cZMRq6LRBIS",
           "sentiment": 0.73
-        },
-        {
-          "title": "Amazon Just Blocked Meta's AI Agent and It's Not Alone",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-just-blocked-metas-ai-192537732.html",
-          "sentiment": 0.09
         }
       ]
     },
@@ -5058,7 +5016,7 @@
       "chg3m": -52.8,
       "chg6m": 177.5,
       "chg1y": 312.3,
-      "volRatio": 1.07,
+      "volRatio": 1.08,
       "peRatio": 47.2,
       "dividendYield": 0.01,
       "marketCap": null,
@@ -5144,14 +5102,20 @@
       "chg3m": 0.7,
       "chg6m": -20.1,
       "chg1y": -40.2,
-      "volRatio": 1.19,
+      "volRatio": 1.2,
       "peRatio": 23.1,
       "dividendYield": null,
       "marketCap": 305466605568,
       "score": 1.5,
-      "newsSentiment": -0.11,
+      "newsSentiment": -0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Wells Fargo Cuts Netflix (NFLX) to Underweight as its 2026 Slide Deepens",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-cuts-netflix-nflx-205315969.html",
+          "sentiment": -0.2
+        },
         {
           "title": "Paramount Deal Approval Puts Netflix Stock And Media Merger Winners In Focus",
           "publisher": "Simply Wall St.",
@@ -5163,12 +5127,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/research/options/netflix-nflx-stock-bear-put-spread-options/?src=A00220&yptr=yahoo",
           "sentiment": -0.75
-        },
-        {
-          "title": "Ackman Bets $1 Billion on Netflix Redemption After $400 Million 2022 Loss",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/ackman-bets-1-billion-on-netflix-redemption-after-400-million-2022-loss/",
-          "sentiment": -0.32
         }
       ]
     },
@@ -5192,25 +5150,25 @@
       "dividendYield": null,
       "marketCap": 258669674496,
       "score": 9.4,
-      "newsSentiment": -0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.26,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
+        },
+        {
+          "title": "Top Stock Reports for Procter & Gamble, Sandisk & Analog Devices",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-procter-gamble-211000812.html",
+          "sentiment": 0.2
+        },
         {
           "title": "SanDisk Faces a Make-or-Break Test at $1,832",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-faces-break-test-1-191906782.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "SanDisk Falls 2% Despite Memory Rally; Micron Advances 3%, Western Digital Nudges Higher",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/sandisk-falls-2-despite-memory-rally-micron-advances-3-western-digital-nudges-higher/",
-          "sentiment": -0.43
-        },
-        {
-          "title": "Should You Buy Sandisk Stock Now or Wait for a Dip?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/should-you-buy-sandisk-stock-now-or-wait-for-a-dip/",
           "sentiment": 0.0
         }
       ]
@@ -5321,9 +5279,15 @@
       "dividendYield": null,
       "marketCap": 99184197632,
       "score": 4.1,
-      "newsSentiment": 0.3,
+      "newsSentiment": 0.25,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Adobe CEO Shantanu Narayen Sells $31.3 Million Stock",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/filings/2026/09/21/adobe-ceo-shantanu-narayen-sells-usd31-3-million-stock/",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla, Microsoft and Adobe Forecast: AI Stocks Eye Key Moves",
           "publisher": "FX Empire",
@@ -5335,12 +5299,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
           "sentiment": 0.76
-        },
-        {
-          "title": "A Pause on Advanced AI Is Wishful Thinking, But Adobe Stock Is a Buy Anyway",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4693911/a-pause-on-advanced-ai-is-wishful-thinking-but-adobe-stock-is-a-buy-anyway",
-          "sentiment": 0.13
         }
       ]
     },
@@ -5359,7 +5317,7 @@
       "chg3m": -1.8,
       "chg6m": null,
       "chg1y": -5.7,
-      "volRatio": 0.83,
+      "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 2001653334016,
@@ -5402,7 +5360,7 @@
       "chg3m": 57.8,
       "chg6m": 21.8,
       "chg1y": -4.5,
-      "volRatio": 0.64,
+      "volRatio": 0.65,
       "peRatio": 21.7,
       "dividendYield": 0.74,
       "marketCap": 194573664256,
@@ -5445,7 +5403,7 @@
       "chg3m": 47.7,
       "chg6m": 143.9,
       "chg1y": 102.3,
-      "volRatio": 1.18,
+      "volRatio": 1.19,
       "peRatio": 4987.0,
       "dividendYield": null,
       "marketCap": 255318163456,
@@ -5488,7 +5446,7 @@
       "chg3m": 53.2,
       "chg6m": 21.5,
       "chg1y": 2.1,
-      "volRatio": 0.71,
+      "volRatio": 0.72,
       "peRatio": 156.5,
       "dividendYield": null,
       "marketCap": 439975968768,
@@ -5605,7 +5563,7 @@
       "chg3m": 37.6,
       "chg6m": 266.6,
       "chg1y": 329.4,
-      "volRatio": 0.86,
+      "volRatio": 0.87,
       "peRatio": 33.4,
       "dividendYield": 0.44,
       "marketCap": 365789413376,
@@ -5734,7 +5692,7 @@
       "chg3m": -23.2,
       "chg6m": 4.9,
       "chg1y": -35.9,
-      "volRatio": 1.3,
+      "volRatio": 1.31,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 47117770752,
@@ -5906,7 +5864,7 @@
       "chg3m": -24.1,
       "chg6m": 28.0,
       "chg1y": 102.6,
-      "volRatio": 0.95,
+      "volRatio": 0.96,
       "peRatio": 72.9,
       "dividendYield": 0.75,
       "marketCap": 136943517696,
@@ -5943,7 +5901,7 @@
       "chg3m": 4.2,
       "chg6m": 19.9,
       "chg1y": 17.2,
-      "volRatio": 1.21,
+      "volRatio": 1.23,
       "peRatio": 25.0,
       "dividendYield": 0.98,
       "marketCap": null,
@@ -5967,7 +5925,7 @@
       "chg3m": 0.5,
       "chg6m": 27.7,
       "chg1y": 23.6,
-      "volRatio": 1.44,
+      "volRatio": 1.45,
       "peRatio": 30.2,
       "dividendYield": 0.42,
       "marketCap": null,
@@ -6034,7 +5992,7 @@
       "chg3m": -5.4,
       "chg6m": -7.3,
       "chg1y": -4.2,
-      "volRatio": 1.07,
+      "volRatio": 1.08,
       "peRatio": 45.2,
       "dividendYield": 0.66,
       "marketCap": 398456848384,
@@ -6049,15 +6007,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Gear Up for Costco (COST) Q4 Earnings: Wall Street Estimates for Key Metrics",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/gear-costco-cost-q4-earnings-131503375.html",
+          "title": "Costco Is Now on DoorDash Nationwide",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/media-advertising/articles/costco-now-doordash-nationwide-193007002.html",
           "sentiment": 0.0
         },
         {
-          "title": "Five Things to Watch in Markets This Week: US-China Talks, AI, Economic Data and Costco Earnings",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36627/five-things-to-watch-in-markets-this-week-us-china-talks-ai-economic-data-and-costco-earnings",
+          "title": "Gear Up for Costco (COST) Q4 Earnings: Wall Street Estimates for Key Metrics",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/gear-costco-cost-q4-earnings-131503375.html",
           "sentiment": 0.0
         }
       ]
@@ -6077,7 +6035,7 @@
       "chg3m": -7.9,
       "chg6m": 44.9,
       "chg1y": 67.9,
-      "volRatio": 1.12,
+      "volRatio": 1.13,
       "peRatio": 33.5,
       "dividendYield": 1.53,
       "marketCap": 439440736256,
@@ -6120,31 +6078,31 @@
       "chg3m": -16.4,
       "chg6m": 193.0,
       "chg1y": 241.5,
-      "volRatio": 0.93,
+      "volRatio": 0.94,
       "peRatio": 84.9,
       "dividendYield": 0.1,
       "marketCap": 231308607488,
       "score": 9.4,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: Here's What a $5,000 Investment in Marvell Could Be Worth by 2030",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/prediction-heres-what-a-5000-investment-in-marvell/",
+          "sentiment": 0.23
+        },
+        {
+          "title": "Marvell just made a move that changes the AI networking story",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/marvell-ai-networking-power-efficiency-shift",
+          "sentiment": 0.0
+        },
         {
           "title": "Marvell Shares Rally After Unveiling 1.6T Optical Technology for AI Networks",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/marvell-shares-rally-unveiling-1-194733178.html",
           "sentiment": 0.69
-        },
-        {
-          "title": "Marvell Rises Over 3.3% as 2-Nanometer Optics Target AI's Copper Wall",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/marvell-rises-over-3-3-190501753.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Marvell Smashes the AI \u2018Power Wall\u2019 with Industry-First 2nm Optical Chips",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/marvell-smashes-the-ai-power-wall-with-industry-first-2nm-optical-chips/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6168,26 +6126,14 @@
       "dividendYield": null,
       "marketCap": 643741843456,
       "score": 8.5,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.59,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Intel's CEO Just Gave Micron Technology Investors Great News",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/intel-s-ceo-just-gave-micron-technology-investors-great-news/",
-          "sentiment": 0.62
-        },
-        {
-          "title": "Intel Stock Soars as AI Spending Fears Fade",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/intel-stock-soars-ai-spending-190205655.html",
-          "sentiment": 0.34
-        },
-        {
-          "title": "Intel, AMD, and Arm Stock Are Jumping. Thank Meta\u2019s Muse AI Agent.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.36
+          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
+          "sentiment": 0.59
         }
       ]
     },
@@ -6235,7 +6181,7 @@
       "dividendYield": 0.73,
       "marketCap": 1731204612096,
       "score": 4.7,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -6249,12 +6195,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/21/broadcom-vs-intel-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Broadcom\u2019s AI Opportunity Is Bigger Than Its Stock Price Suggests",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/21/broadcoms-ai-opportunity-is-bigger-than-its-stock-price-suggests/",
-          "sentiment": 0.42
         }
       ]
     },
@@ -6273,7 +6213,7 @@
       "chg3m": 6.8,
       "chg6m": 35.1,
       "chg1y": 479.5,
-      "volRatio": 0.97,
+      "volRatio": 0.98,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 85617754112,
@@ -6316,7 +6256,7 @@
       "chg3m": -21.1,
       "chg6m": 81.8,
       "chg1y": 216.3,
-      "volRatio": 0.97,
+      "volRatio": 0.98,
       "peRatio": 354.4,
       "dividendYield": null,
       "marketCap": 80373571584,
@@ -6359,7 +6299,7 @@
       "chg3m": -27.4,
       "chg6m": 30.3,
       "chg1y": 132.8,
-      "volRatio": 1.26,
+      "volRatio": 1.27,
       "peRatio": 40.0,
       "dividendYield": 0.48,
       "marketCap": 368419667968,
@@ -6402,7 +6342,7 @@
       "chg3m": 53.9,
       "chg6m": 24.2,
       "chg1y": -49.8,
-      "volRatio": 1.53,
+      "volRatio": 1.54,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 66941960192,
@@ -6445,7 +6385,7 @@
       "chg3m": -38.8,
       "chg6m": 53.0,
       "chg1y": 299.4,
-      "volRatio": 1.11,
+      "volRatio": 1.12,
       "peRatio": 16.6,
       "dividendYield": 0.14,
       "marketCap": 161583628288,
@@ -6488,7 +6428,7 @@
       "chg3m": -26.2,
       "chg6m": 32.5,
       "chg1y": 129.9,
-      "volRatio": 1.31,
+      "volRatio": 1.32,
       "peRatio": 52.5,
       "dividendYield": 0.46,
       "marketCap": 378249314304,
@@ -6531,7 +6471,7 @@
       "chg3m": 5.9,
       "chg6m": 28.9,
       "chg1y": 55.3,
-      "volRatio": 0.91,
+      "volRatio": 0.92,
       "peRatio": 39.2,
       "dividendYield": 0.6,
       "marketCap": 1038780596224,
@@ -6540,16 +6480,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Eli Lilly Starts Building Record $6.5B Houston Manufacturing Facility",
+          "publisher": "Bisnow",
+          "link": "https://www.bisnow.com/news/houston/construction-development/eli-lilly-breaks-ground-record-breaking-manufacturing-facility-generation-park",
+          "sentiment": 0.0
+        },
+        {
           "title": "LLY Stock Gains As CEO Says Foundayo Wins One-Third of New GLP-1 Pill Starts, Breaks Ground On $6.5B Houston Plant",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/lly-stock-gains-as-ceo-says-foundayo-wins-one-third-of-new-glp-1-pill-starts-breaks-ground-on-6-5-b-houston-plant/cZMRA28RBIj",
           "sentiment": 0.73
-        },
-        {
-          "title": "Eli Lilly Stock Is On Track to Do Something It Hasn't Done Since 2016",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/eli-lilly-stock-is-on-track-to-do-something-it-hasn-t-done-since-2016/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6568,7 +6508,7 @@
       "chg3m": 16.6,
       "chg6m": 73.9,
       "chg1y": -1.3,
-      "volRatio": 1.24,
+      "volRatio": 1.26,
       "peRatio": 54.6,
       "dividendYield": null,
       "marketCap": 110856847360,
@@ -6611,7 +6551,7 @@
       "chg3m": 13.5,
       "chg6m": 23.1,
       "chg1y": 8.3,
-      "volRatio": 1.02,
+      "volRatio": 1.03,
       "peRatio": 31.5,
       "dividendYield": 0.73,
       "marketCap": 694527590400,
@@ -6697,7 +6637,7 @@
       "chg3m": 191.4,
       "chg6m": 236.6,
       "chg1y": 551.1,
-      "volRatio": 0.78,
+      "volRatio": 0.79,
       "peRatio": null,
       "dividendYield": null,
       "marketCap": 69043855360,
@@ -6740,7 +6680,7 @@
       "chg3m": -8.1,
       "chg6m": -9.3,
       "chg1y": 5.4,
-      "volRatio": 0.87,
+      "volRatio": 0.88,
       "peRatio": 38.9,
       "dividendYield": 0.93,
       "marketCap": 855016013824,
@@ -6826,7 +6766,7 @@
       "chg3m": -16.1,
       "chg6m": 11.2,
       "chg1y": 47.2,
-      "volRatio": 1.16,
+      "volRatio": 1.17,
       "peRatio": 27.1,
       "dividendYield": 0.21,
       "marketCap": 252010151936,
@@ -6912,7 +6852,7 @@
       "chg3m": 2.7,
       "chg6m": 4.4,
       "chg1y": 1.7,
-      "volRatio": 1.03,
+      "volRatio": 1.05,
       "peRatio": 12.6,
       "dividendYield": null,
       "marketCap": 1074657755136,
@@ -6955,7 +6895,7 @@
       "chg3m": -31.6,
       "chg6m": 23.1,
       "chg1y": 72.7,
-      "volRatio": 0.97,
+      "volRatio": 0.99,
       "peRatio": 50.3,
       "dividendYield": 0.52,
       "marketCap": 240365420544,
@@ -6998,7 +6938,7 @@
       "chg3m": -24.4,
       "chg6m": 26.8,
       "chg1y": 180.6,
-      "volRatio": 1.04,
+      "volRatio": 1.05,
       "peRatio": 77.8,
       "dividendYield": null,
       "marketCap": 62963978240,
@@ -7065,7 +7005,7 @@
       "chg3m": -18.1,
       "chg6m": 46.2,
       "chg1y": 54.7,
-      "volRatio": 1.26,
+      "volRatio": 1.28,
       "peRatio": 41.1,
       "dividendYield": 2.28,
       "marketCap": 247371399168,

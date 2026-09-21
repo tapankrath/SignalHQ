@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T05:37:01.532315+00:00",
+  "generated_at": "2026-09-21T06:37:25.505604+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -578,9 +578,15 @@
       "pcVol": 1.38,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": -0.21,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "JPMorgan Sees Dealmaking On Track for Record Year",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/video/jpmorgan-sees-dealmaking-track-record-053126538.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Prediction: The Best-Performing Big Bank Stock of the Next 2 Years Is Not JPMorgan Chase",
           "publisher": "Motley Fool",
@@ -728,9 +734,15 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Amazon.com vs. Uber Technologies: Analyzing Recent Quarterly Revenue Trends Between Two Consumer Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/21/amazon-com-vs-uber-technologies-analyzing-recent-quarterly-revenue-trends-between-two-consumer-companies/",
+          "sentiment": 0.0
+        },
         {
           "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
           "publisher": "Insider Monkey",
@@ -742,12 +754,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-taps-uk-bond-212711015.html",
           "sentiment": 0.53
-        },
-        {
-          "title": "Amazon (AMZN) Sued Again, This Time over How it Treats Pregnant Warehouse Workers",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/healthcare/articles/amazon-amzn-sued-again-time-212413687.html",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Cheap",
@@ -970,7 +976,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 4.2,
       "maxLoss": 5322.5,
-      "pcOI": 1.84,
+      "pcOI": 1.92,
       "pcVol": 0.82,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1193,7 +1199,7 @@
       "breakevenMovePct": 1.88,
       "maxLoss": 18075.0,
       "pcOI": 0.16,
-      "pcVol": 0.59,
+      "pcVol": 0.6,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.04,
@@ -2189,7 +2195,7 @@
       "pcVol": 0.28,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.11,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2197,12 +2203,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/voo-vs-spy-is-there-actually-a-difference/",
           "sentiment": 0.0
-        },
-        {
-          "title": "A $10,000 Investment in SPY at Its 1993 Launch Is Worth This Much Today Without You Adding a Dime",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/etf/2026/09/18/a-10000-investment-in-spy-at-its-1993-launch-is-worth-this-much-today-without-you-adding-a-dime/",
-          "sentiment": 0.23
         }
       ],
       "volRegime": "Cheap",
@@ -4369,9 +4369,15 @@
       "pcVol": 0.43,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.31,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Texas Instruments (TXN) Soars 3.3%: Is Further Upside Left in the Stock?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/texas-instruments-txn-soars-3-053900794.html",
+          "sentiment": 0.64
+        },
         {
           "title": "Texas Instruments (TXN) Faces A Valuation Split, Is The Stock Still Undervalued?",
           "publisher": "Simply Wall St.",
@@ -4383,12 +4389,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/mchps-analog-ai-deal-gains-150600954.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "Advanced Micro Devices vs. Texas Instruments: Which Tech Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/17/advanced-micro-devices-vs-texas-instruments-which-tech-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.6
         }
       ],
       "volRegime": "Rich",
@@ -4753,9 +4753,15 @@
       "dividendYield": 1.89,
       "marketCap": 929488044032,
       "score": 5.3,
-      "newsSentiment": -0.21,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "JPMorgan Sees Dealmaking On Track for Record Year",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/video/jpmorgan-sees-dealmaking-track-record-053126538.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Prediction: The Best-Performing Big Bank Stock of the Next 2 Years Is Not JPMorgan Chase",
           "publisher": "Motley Fool",
@@ -4833,9 +4839,15 @@
       "dividendYield": null,
       "marketCap": 2736595664896,
       "score": 6.2,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Amazon.com vs. Uber Technologies: Analyzing Recent Quarterly Revenue Trends Between Two Consumer Companies",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/charts/2026/09/21/amazon-com-vs-uber-technologies-analyzing-recent-quarterly-revenue-trends-between-two-consumer-companies/",
+          "sentiment": 0.0
+        },
         {
           "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
           "publisher": "Insider Monkey",
@@ -4847,12 +4859,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-taps-uk-bond-212711015.html",
           "sentiment": 0.53
-        },
-        {
-          "title": "Amazon (AMZN) Sued Again, This Time over How it Treats Pregnant Warehouse Workers",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/healthcare/articles/amazon-amzn-sued-again-time-212413687.html",
-          "sentiment": 0.18
         }
       ]
     },
@@ -5175,7 +5181,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2011830157312,
+      "marketCap": 2012989751296,
       "score": 8.2,
       "newsSentiment": -0.01,
       "newsSentimentLabel": "Neutral",
@@ -5494,7 +5500,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 56756400128,
+      "marketCap": 60770516992,
       "score": 6.2,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
@@ -5709,7 +5715,7 @@
       "volRatio": 1.58,
       "peRatio": 68.9,
       "dividendYield": 0.75,
-      "marketCap": 129057431552,
+      "marketCap": 129320239104,
       "score": 4.5,
       "newsSentiment": -0.21,
       "newsSentimentLabel": "Negative",
@@ -5754,7 +5760,7 @@
       "dividendYield": 0.98,
       "marketCap": null,
       "score": 6.0,
-      "newsSentiment": 0.11,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -5762,12 +5768,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/voo-vs-spy-is-there-actually-a-difference/",
           "sentiment": 0.0
-        },
-        {
-          "title": "A $10,000 Investment in SPY at Its 1993 Launch Is Worth This Much Today Without You Adding a Dime",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/etf/2026/09/18/a-10000-investment-in-spy-at-its-1993-launch-is-worth-this-much-today-without-you-adding-a-dime/",
-          "sentiment": 0.23
         }
       ]
     },
@@ -6324,7 +6324,7 @@
       "volRatio": 1.86,
       "peRatio": 38.8,
       "dividendYield": 0.6,
-      "marketCap": 1027672309760,
+      "marketCap": 1028115464192,
       "score": 4.9,
       "newsSentiment": 0.25,
       "newsSentimentLabel": "Positive",
@@ -6496,7 +6496,7 @@
       "volRatio": 1.76,
       "peRatio": 38.7,
       "dividendYield": 0.93,
-      "marketCap": 846768766976,
+      "marketCap": 849365827584,
       "score": 2.9,
       "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
@@ -6922,9 +6922,15 @@
       "dividendYield": 2.28,
       "marketCap": 243508379648,
       "score": 4.9,
-      "newsSentiment": 0.31,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Texas Instruments (TXN) Soars 3.3%: Is Further Upside Left in the Stock?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/texas-instruments-txn-soars-3-053900794.html",
+          "sentiment": 0.64
+        },
         {
           "title": "Texas Instruments (TXN) Faces A Valuation Split, Is The Stock Still Undervalued?",
           "publisher": "Simply Wall St.",
@@ -6936,12 +6942,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/mchps-analog-ai-deal-gains-150600954.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "Advanced Micro Devices vs. Texas Instruments: Which Tech Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/17/advanced-micro-devices-vs-texas-instruments-which-tech-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.6
         }
       ]
     }

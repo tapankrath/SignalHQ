@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:37:05.728636+00:00",
+  "generated_at": "2026-09-21T11:37:18.696708+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -36,13 +36,19 @@
       "breakevenHigh": 510.1,
       "breakevenMovePct": null,
       "maxLoss": 1990.0,
-      "pcOI": 1.63,
+      "pcOI": 0.56,
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.02,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple iPhone 18 Pro Delivery Times Lengthen in Second Week, JPMorgan Says",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36583/apple-iphone-18-pro-delivery-times-lengthen-in-second-week-jpmorgan-says",
+          "sentiment": 0.0
+        },
         {
           "title": "Apple Pay Crypto Hiring Fuels New Stablecoin Speculation",
           "publisher": "Cryptonews",
@@ -54,12 +60,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/apple-reportedly-lays-off-some-fitness-division-staff-ahead-of-potential-major-changes/cZMR7yyRB4j",
           "sentiment": 0.27
-        },
-        {
-          "title": "Apple Pay to launch in India next month with Axis Bank- report",
-          "publisher": "Electronic Payments",
-          "link": "https://www.electronicpaymentsinternational.com/news/apple-pay-to-launch-in-india-next-month-with-axis-bank-report/",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Rich",
@@ -128,7 +128,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 407.0,
-      "pcOI": 0,
+      "pcOI": 0.5,
       "pcVol": 0.39,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -202,18 +202,18 @@
       "breakevenHigh": null,
       "breakevenMovePct": 4.13,
       "maxLoss": 645.0,
-      "pcOI": 62.52,
+      "pcOI": 0.67,
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.61,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Nvidia Has Been the King of AI. This ETF Bets the Next Winners Will Be Somewhere Else.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/nvidia-king-of-ai-this-etf-bets-next-winners-igv/",
-          "sentiment": 0.48
+          "title": "Nvidia Stock Can Surge on Trump\u2019s China Talks. Why They Are Crucial.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/nvidia-stock-price-trump-china-xi-ai-chips-3828556a?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.61
         }
       ],
       "volRegime": "Cheap",
@@ -268,7 +268,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 65205.0,
-      "pcOI": 0,
+      "pcOI": 5.13,
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -282,15 +282,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         },
         {
-          "title": "Stocktwits Tech Watch: Trump-Xi Summit, AI Pacing Debate and Meta And YouTube Events In Focus This Week",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/stocktwits-tech-watch-trump-xi-summit-ai-pacing-debate-and-meta-and-you-tube-events-in-focus-this-week/cZMRIBoRB40",
+          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
           "sentiment": 0.0
         }
       ],
@@ -342,13 +342,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 14.19,
       "maxLoss": 926.0,
-      "pcOI": 0,
+      "pcOI": 0.95,
       "pcVol": 0.79,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here\u2019s How.",
           "publisher": "TIKR",
@@ -360,12 +366,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.61
-        },
-        {
-          "title": "Dow, S&P 500, Nasdaq Futures Climb Ahead Of Key China Summit: CRML, APLD, GME, AMD Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-climb-ahead-of-key-china-summit-crml-apld-gme-amd-stocks-in-focus/cZMRbIGRB4E",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -420,7 +420,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 99670.0,
-      "pcOI": 0,
+      "pcOI": 1.1,
       "pcVol": 0.91,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -494,29 +494,23 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 825.0,
-      "pcOI": 0,
+      "pcOI": 0.78,
       "pcVol": 0.37,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
+          "sentiment": 0.49
+        },
         {
           "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Alphabet (GOOGL)\u2019s Google Bets on Finland\u2019s Cold Weather and Nuclear Power for its Next AI Buildout",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-google-bets-finland-230634716.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
           "sentiment": -0.1
         }
       ],
@@ -574,7 +568,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 422.0,
-      "pcOI": 0,
+      "pcOI": 1.07,
       "pcVol": 1.38,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -656,7 +650,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 8.07,
       "maxLoss": 430.0,
-      "pcOI": 0,
+      "pcOI": 0.79,
       "pcVol": 0.55,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -730,7 +724,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 328.0,
-      "pcOI": 0,
+      "pcOI": 0.61,
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -810,7 +804,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 18.37,
       "maxLoss": 1005.0,
-      "pcOI": 0,
+      "pcOI": 1.66,
       "pcVol": 3.49,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -884,7 +878,7 @@
       "breakevenHigh": 73.28,
       "breakevenMovePct": null,
       "maxLoss": 172.0,
-      "pcOI": 0,
+      "pcOI": 3.5,
       "pcVol": 1.17,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -976,7 +970,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 4.2,
       "maxLoss": 5322.5,
-      "pcOI": 1.84,
+      "pcOI": 1.14,
       "pcVol": 0.82,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1050,7 +1044,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 8.1,
       "maxLoss": 13700.0,
-      "pcOI": 37.33,
+      "pcOI": 1.3,
       "pcVol": 1.04,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1124,7 +1118,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 7.99,
       "maxLoss": 39980.0,
-      "pcOI": 0.51,
+      "pcOI": 0.93,
       "pcVol": 1.0,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1198,7 +1192,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 1.88,
       "maxLoss": 18075.0,
-      "pcOI": 0.16,
+      "pcOI": 0.36,
       "pcVol": 0.59,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1276,29 +1270,29 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 15124.0,
-      "pcOI": 0,
+      "pcOI": 1.1,
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Maye Musk on SpaceX and the grit behind Elon Musk's evolution",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/maye-musk-spacex-grit-behind-105052008.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
+          "sentiment": 0.18
+        },
         {
           "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
           "sentiment": 0.0
         }
       ],
@@ -1350,7 +1344,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 400.0,
-      "pcOI": 0,
+      "pcOI": 1.27,
       "pcVol": 0.86,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1434,7 +1428,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 17437.0,
-      "pcOI": 0,
+      "pcOI": 0.81,
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1508,7 +1502,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 690.0,
-      "pcOI": 0,
+      "pcOI": 1.5,
       "pcVol": 0.86,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1588,7 +1582,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 4.29,
       "maxLoss": 1331.0,
-      "pcOI": 0,
+      "pcOI": 1.54,
       "pcVol": 1.25,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1656,7 +1650,7 @@
       "breakevenHigh": 652.8,
       "breakevenMovePct": null,
       "maxLoss": 1720.0,
-      "pcOI": 0,
+      "pcOI": 1.11,
       "pcVol": 1.76,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1729,13 +1723,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 376.0,
-      "pcOI": 0,
+      "pcOI": 0.69,
       "pcVol": 0.7,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.56,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Morgan Stanley Raises Palo Alto Networks Price Target to $410 on AI Security Demand",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36601/morgan-stanley-raises-palo-alto-networks-price-target-to-410-on-ai-security-demand",
+          "sentiment": 0.57
+        },
         {
           "title": "Palo Alto Networks Stock Jumped 10% Last Week. One Analyst Isn\u2019t Buying It.",
           "publisher": "TIKR",
@@ -1747,12 +1747,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/ai-slowdown-trade-winners-crowdstrike-212311977.html",
           "sentiment": 0.59
-        },
-        {
-          "title": "Why CrowdStrike, Palo Alto Networks, SentinelOne, and Other Cybersecurity Stocks Surged This Week",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/why-crowdstrike-palo-alto-sentinelone-stocks-up/",
-          "sentiment": 0.61
         }
       ],
       "volRegime": "Cheap",
@@ -1809,7 +1803,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 330.0,
-      "pcOI": 0,
+      "pcOI": 1.07,
       "pcVol": 0.76,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -1889,7 +1883,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 10.34,
       "maxLoss": 455.0,
-      "pcOI": 0,
+      "pcOI": 0.74,
       "pcVol": 0.54,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1963,7 +1957,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 16.86,
       "maxLoss": 162.0,
-      "pcOI": 0,
+      "pcOI": 0.98,
       "pcVol": 0.61,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -2037,7 +2031,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 696.0,
-      "pcOI": 0,
+      "pcOI": 0.76,
       "pcVol": 1.0,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2117,7 +2111,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.27,
       "maxLoss": 13477.5,
-      "pcOI": 8.86,
+      "pcOI": 1.17,
       "pcVol": 0.58,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -2191,7 +2185,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 762.0,
-      "pcOI": 0,
+      "pcOI": 1.22,
       "pcVol": 0.28,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -2265,7 +2259,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 71400.0,
-      "pcOI": 0.12,
+      "pcOI": 1.45,
       "pcVol": 1.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2327,7 +2321,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 696.0,
-      "pcOI": 0,
+      "pcOI": 0.56,
       "pcVol": 0.83,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2407,7 +2401,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 35.31,
       "maxLoss": 79.0,
-      "pcOI": 2.29,
+      "pcOI": 0.92,
       "pcVol": 1.01,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -2481,7 +2475,7 @@
       "breakevenHigh": 112.45,
       "breakevenMovePct": null,
       "maxLoss": 755.0,
-      "pcOI": 0.17,
+      "pcOI": 1.01,
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2573,7 +2567,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 393.0,
-      "pcOI": 0,
+      "pcOI": 0.6,
       "pcVol": 0.37,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2653,13 +2647,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 7.73,
       "maxLoss": 700.0,
-      "pcOI": 0,
+      "pcOI": 0.66,
       "pcVol": 0.72,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
           "publisher": "The Wall Street Journal",
@@ -2670,12 +2670,6 @@
           "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/intel-stock-2-ai-infrastructure-071318932.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
           "sentiment": 0.0
         }
       ],
@@ -2727,29 +2721,23 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 380.0,
-      "pcOI": 0,
+      "pcOI": 0.48,
       "pcVol": 0.61,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
+          "sentiment": 0.49
+        },
         {
           "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Alphabet (GOOGL)\u2019s Google Bets on Finland\u2019s Cold Weather and Nuclear Power for its Next AI Buildout",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-google-bets-finland-230634716.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
           "sentiment": -0.1
         }
       ],
@@ -2807,13 +2795,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 21.8,
       "maxLoss": 34.0,
-      "pcOI": 2.0,
+      "pcOI": 0.71,
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.71,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "\u201cOur Targets Haven\u2019t Changed\u201d: Broadcom\u2019s CEO Pushes Back on the AI Slowdown Scare",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/targets-haven-t-changed-broadcom-112507800.html",
+          "sentiment": -0.72
+        },
         {
           "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
           "publisher": "TheStreet",
@@ -2875,7 +2869,7 @@
       "breakevenHigh": 207.98,
       "breakevenMovePct": null,
       "maxLoss": 452.0,
-      "pcOI": 0,
+      "pcOI": 2.06,
       "pcVol": 0.95,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -2967,13 +2961,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 7.54,
       "maxLoss": 6110.0,
-      "pcOI": 0.25,
+      "pcOI": 1.57,
       "pcVol": 1.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.53,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Is Lumentum (LITE) Quietly Rewiring Its AI Data Center Role With New OCI Optics?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/lumentum-lite-quietly-rewiring-ai-111317764.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Lumentum (LITE) Moves 4.2% Higher: Will This Strength Last?",
           "publisher": "Zacks",
@@ -2985,12 +2985,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/filings/2026/09/21/a-lumentum-president-sells-1-500-shares-worth-usd1-4-million-amid-a-soaring-stock-price/",
           "sentiment": 0.48
-        },
-        {
-          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Cheap",
@@ -3041,7 +3035,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 427.0,
-      "pcOI": 0,
+      "pcOI": 0.86,
       "pcVol": 1.24,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -3121,7 +3115,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 327.0,
-      "pcOI": 0,
+      "pcOI": 0.79,
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -3201,29 +3195,29 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 136.0,
-      "pcOI": 0,
+      "pcOI": 0.74,
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.22,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Bitcoin Nears $85K, MSTR, ASST Stocks Rally As Crypto Bulls Return Amid Easing Oil Prices",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-nears-85k-mstr-asst-stocks-rally-as-crypto-bulls-return-easing-oil-prices/cZMRXsARB4A",
+          "sentiment": 0.67
+        },
+        {
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Michael Saylor Hints at More MicroStrategy Bitcoin Buys After \u201cDead Cat Bounce\u201d Debate",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/saylor-hints-microstrategy-bitcoin-buys-dead-cat/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Strategy Is Up 53% in the Past Month. Here's the Bull and Bear Case for One of Wall Street's Most Polarizing Stocks.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/strategy-up-past-month-bull-bear-wall-street-stock/",
           "sentiment": 0.0
         }
       ],
@@ -3281,7 +3275,7 @@
       "breakevenHigh": 443.84,
       "breakevenMovePct": null,
       "maxLoss": 366.0,
-      "pcOI": 0,
+      "pcOI": 1.66,
       "pcVol": 0.99,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -3373,7 +3367,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 46.41,
       "maxLoss": 210.0,
-      "pcOI": 8.69,
+      "pcOI": 1.23,
       "pcVol": 1.18,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -3447,7 +3441,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 47.8,
       "maxLoss": 560.0,
-      "pcOI": 0.56,
+      "pcOI": 1.22,
       "pcVol": 1.25,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -3521,13 +3515,19 @@
       "breakevenHigh": 374.77,
       "breakevenMovePct": null,
       "maxLoss": 523.0,
-      "pcOI": 0,
+      "pcOI": 1.24,
       "pcVol": 1.7,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.19,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Visa, Mastercard, and Ant International Build First Cross-Network Know Your Agent Framework",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/technology/ai/articles/visa-mastercard-ant-international-build-111358124.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
           "publisher": "TIKR",
@@ -3539,12 +3539,6 @@
           "publisher": "Forkast News",
           "link": "https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Visa Moves to Close Meme Coin Credit Card Rewards Loophole",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378697/visa-close-meme-coin-credit-card-rewards-loophole",
-          "sentiment": 0.69
         }
       ],
       "volRegime": "Cheap",
@@ -3607,7 +3601,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 310.0,
-      "pcOI": 0,
+      "pcOI": 0.76,
       "pcVol": 0.57,
       "debitStrategy": true,
       "potIsProfitProb": false,
@@ -3689,7 +3683,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 130.0,
-      "pcOI": 0,
+      "pcOI": 0.31,
       "pcVol": 0.28,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -3769,13 +3763,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 5.9,
       "maxLoss": 820.0,
-      "pcOI": 9.0,
+      "pcOI": 0.69,
       "pcVol": 0.63,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Bear of the Day: Qualcomm (QCOM)",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/bear-day-qualcomm-qcom-110000513.html",
+          "sentiment": 0.0
+        },
         {
           "title": "QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye Snapdragon Summit For Cues",
           "publisher": "Stocktwits",
@@ -3787,12 +3787,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/20/astera-labs-vs-qualcomm-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means for QCOM Stock.",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4696893/mediatek-is-stepping-up-competition-against-qualcomm-with-a-new-2-nanometer-chip-what-this-means-for-qcom-stock",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -3843,13 +3837,19 @@
       "breakevenHigh": null,
       "breakevenMovePct": 7.33,
       "maxLoss": 1033.0,
-      "pcOI": 0.0,
+      "pcOI": 1.09,
       "pcVol": 1.12,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Moderna\u2019s Bob Langer and AI pioneer Yann LeCun join board of Cellular Intelligence, bringing AI into medicine via a Parkinson\u2019s drug",
+          "publisher": "Fortune",
+          "link": "https://finance.yahoo.com/healthcare/articles/moderna-bob-langer-ai-pioneer-070000145.html",
+          "sentiment": 0.65
+        },
         {
           "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
@@ -3861,12 +3861,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-dropped-behind-latest-071602863.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Axsome Therapeutics vs. Moderna: Which Healthcare Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/18/axsome-therapeutics-vs-moderna-which-healthcare-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Cheap",
@@ -3921,7 +3915,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 16251.0,
-      "pcOI": 0,
+      "pcOI": 0.27,
       "pcVol": 0.15,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -3995,7 +3989,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 695.0,
-      "pcOI": 0,
+      "pcOI": 5.97,
       "pcVol": 2.96,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -4075,7 +4069,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.49,
       "maxLoss": 255.0,
-      "pcOI": 0.0,
+      "pcOI": 0.8,
       "pcVol": 0.74,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -4149,7 +4143,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 755.0,
-      "pcOI": 0,
+      "pcOI": 2.61,
       "pcVol": 0.35,
       "debitStrategy": false,
       "potIsProfitProb": false,
@@ -4229,7 +4223,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 29.66,
       "maxLoss": 6.0,
-      "pcOI": 0,
+      "pcOI": 0.9,
       "pcVol": 0.09,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -4297,7 +4291,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.37,
       "maxLoss": 6227.5,
-      "pcOI": 0.31,
+      "pcOI": 0.58,
       "pcVol": 0.47,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -4371,7 +4365,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 3.17,
       "maxLoss": 7182.5,
-      "pcOI": 10.44,
+      "pcOI": 0.61,
       "pcVol": 0.43,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -4433,9 +4427,15 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.02,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple iPhone 18 Pro Delivery Times Lengthen in Second Week, JPMorgan Says",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36583/apple-iphone-18-pro-delivery-times-lengthen-in-second-week-jpmorgan-says",
+          "sentiment": 0.0
+        },
         {
           "title": "Apple Pay Crypto Hiring Fuels New Stablecoin Speculation",
           "publisher": "Cryptonews",
@@ -4447,12 +4447,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/apple-reportedly-lays-off-some-fitness-division-staff-ahead-of-potential-major-changes/cZMR7yyRB4j",
           "sentiment": 0.27
-        },
-        {
-          "title": "Apple Pay to launch in India next month with Axis Bank- report",
-          "publisher": "Electronic Payments",
-          "link": "https://www.electronicpaymentsinternational.com/news/apple-pay-to-launch-in-india-next-month-with-axis-bank-report/",
-          "sentiment": -0.1
         }
       ]
     },
@@ -4513,14 +4507,14 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.61,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Nvidia Has Been the King of AI. This ETF Bets the Next Winners Will Be Somewhere Else.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/nvidia-king-of-ai-this-etf-bets-next-winners-igv/",
-          "sentiment": 0.48
+          "title": "Nvidia Stock Can Surge on Trump\u2019s China Talks. Why They Are Crucial.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/nvidia-stock-price-trump-china-xi-ai-chips-3828556a?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.61
         }
       ]
     },
@@ -4554,15 +4548,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         },
         {
-          "title": "Stocktwits Tech Watch: Trump-Xi Summit, AI Pacing Debate and Meta And YouTube Events In Focus This Week",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/stocktwits-tech-watch-trump-xi-summit-ai-pacing-debate-and-meta-and-you-tube-events-in-focus-this-week/cZMRIBoRB40",
+          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
           "sentiment": 0.0
         }
       ]
@@ -4587,26 +4581,26 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": 0.03,
+      "newsSentiment": -0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Market Chatter: Tesla's Racial Discrimination Trial in California Begins Today",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-tesla-apos-racial-110632807.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
+          "sentiment": 0.18
+        },
         {
           "title": "Tesla faces major trial for alleged bias against Black workers, after years of lawsuits",
           "publisher": "Reuters",
           "link": "https://ca.finance.yahoo.com/news/tesla-faces-major-trial-alleged-100649614.html",
           "sentiment": -0.25
-        },
-        {
-          "title": "500 Tesla Semis Are Joining an Autonomous Trucking Fleet. At 94, an Iowa Trucker Is Still Behind the Wheel, and Social Security Is Still Keeping Score.",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/personal-finance/social-security/2026/09/21/500-tesla-semis-are-joining-an-autonomous-trucking-fleet-at-94-an-iowa-trucker-is-still-behind-the-wheel-and-social-security-is-still-keeping-score/",
-          "sentiment": 0.34
-        },
-        {
-          "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4634,6 +4628,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here\u2019s How.",
           "publisher": "TIKR",
           "link": "https://www.tikr.com/blog/amd-stock-jumped-8-last-week-it-could-bring-325-more-heres-how?ref=yahoofinance",
@@ -4644,12 +4644,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
           "sentiment": 0.61
-        },
-        {
-          "title": "Dow, S&P 500, Nasdaq Futures Climb Ahead Of Key China Summit: CRML, APLD, GME, AMD Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-climb-ahead-of-key-china-summit-crml-apld-gme-amd-stocks-in-focus/cZMRbIGRB4E",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4716,25 +4710,19 @@
       "dividendYield": 0.26,
       "marketCap": 4212111966208,
       "score": 7.6,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
+          "sentiment": 0.49
+        },
         {
           "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Alphabet (GOOGL)\u2019s Google Bets on Finland\u2019s Cold Weather and Nuclear Power for its Next AI Buildout",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-google-bets-finland-230634716.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
           "sentiment": -0.1
         }
       ]
@@ -5189,25 +5177,25 @@
       "dividendYield": null,
       "marketCap": 2011830157312,
       "score": 8.2,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Maye Musk on SpaceX and the grit behind Elon Musk's evolution",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/maye-musk-spacex-grit-behind-105052008.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
+          "sentiment": 0.18
+        },
         {
           "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
           "sentiment": 0.0
         }
       ]
@@ -5465,9 +5453,15 @@
       "dividendYield": null,
       "marketCap": 297408430080,
       "score": 9.4,
-      "newsSentiment": 0.56,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Morgan Stanley Raises Palo Alto Networks Price Target to $410 on AI Security Demand",
+          "publisher": "InvestorsHub",
+          "link": "https://investorshub.advfn.com/market-news/article/36601/morgan-stanley-raises-palo-alto-networks-price-target-to-410-on-ai-security-demand",
+          "sentiment": 0.57
+        },
         {
           "title": "Palo Alto Networks Stock Jumped 10% Last Week. One Analyst Isn\u2019t Buying It.",
           "publisher": "TIKR",
@@ -5479,12 +5473,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/ai-slowdown-trade-winners-crowdstrike-212311977.html",
           "sentiment": 0.59
-        },
-        {
-          "title": "Why CrowdStrike, Palo Alto Networks, SentinelOne, and Other Cybersecurity Stocks Surged This Week",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/why-crowdstrike-palo-alto-sentinelone-stocks-up/",
-          "sentiment": 0.61
         }
       ]
     },
@@ -6004,6 +5992,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
@@ -6013,12 +6007,6 @@
           "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/intel-stock-2-ai-infrastructure-071318932.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
           "sentiment": 0.0
         }
       ]
@@ -6043,25 +6031,19 @@
       "dividendYield": 0.25,
       "marketCap": 4274851676160,
       "score": 7.7,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
+          "sentiment": 0.49
+        },
         {
           "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Alphabet (GOOGL)\u2019s Google Bets on Finland\u2019s Cold Weather and Nuclear Power for its Next AI Buildout",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-googl-google-bets-finland-230634716.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Amazon (AMZN)\u2019s Debut Sterling Bond Sale Prices Bigger, But Demand Cools from Alphabet\u2019s",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-debut-sterling-bond-215111018.html",
           "sentiment": -0.1
         }
       ]
@@ -6086,9 +6068,15 @@
       "dividendYield": 0.73,
       "marketCap": 1707097718784,
       "score": 4.4,
-      "newsSentiment": 0.71,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "\u201cOur Targets Haven\u2019t Changed\u201d: Broadcom\u2019s CEO Pushes Back on the AI Slowdown Scare",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/targets-haven-t-changed-broadcom-112507800.html",
+          "sentiment": -0.72
+        },
         {
           "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
           "publisher": "TheStreet",
@@ -6123,9 +6111,15 @@
       "dividendYield": null,
       "marketCap": 83502620672,
       "score": 9.4,
-      "newsSentiment": 0.53,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Is Lumentum (LITE) Quietly Rewiring Its AI Data Center Role With New OCI Optics?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/lumentum-lite-quietly-rewiring-ai-111317764.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Lumentum (LITE) Moves 4.2% Higher: Will This Strength Last?",
           "publisher": "Zacks",
@@ -6137,12 +6131,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/filings/2026/09/21/a-lumentum-president-sells-1-500-shares-worth-usd1-4-million-amid-a-soaring-stock-price/",
           "sentiment": 0.48
-        },
-        {
-          "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-apple-amd-micron-sandisk/?src=A00220&yptr=yahoo",
-          "sentiment": 0.54
         }
       ]
     },
@@ -6252,25 +6240,25 @@
       "dividendYield": null,
       "marketCap": 61149593600,
       "score": 8.0,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.22,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Bitcoin Nears $85K, MSTR, ASST Stocks Rally As Crypto Bulls Return Amid Easing Oil Prices",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-nears-85k-mstr-asst-stocks-rally-as-crypto-bulls-return-easing-oil-prices/cZMRXsARB4A",
+          "sentiment": 0.67
+        },
+        {
+          "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Michael Saylor Hints at More MicroStrategy Bitcoin Buys After \u201cDead Cat Bounce\u201d Debate",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/saylor-hints-microstrategy-bitcoin-buys-dead-cat/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Strategy Is Up 53% in the Past Month. Here's the Bull and Bear Case for One of Wall Street's Most Polarizing Stocks.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/strategy-up-past-month-bull-bear-wall-street-stock/",
           "sentiment": 0.0
         }
       ]
@@ -6424,9 +6412,15 @@
       "dividendYield": 0.73,
       "marketCap": 691411156992,
       "score": 6.2,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.19,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Visa, Mastercard, and Ant International Build First Cross-Network Know Your Agent Framework",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/technology/ai/articles/visa-mastercard-ant-international-build-111358124.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
           "publisher": "TIKR",
@@ -6438,12 +6432,6 @@
           "publisher": "Forkast News",
           "link": "https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Visa Moves to Close Meme Coin Credit Card Rewards Loophole",
-          "publisher": "decrypt",
-          "link": "https://decrypt.co/378697/visa-close-meme-coin-credit-card-rewards-loophole",
-          "sentiment": 0.69
         }
       ]
     },
@@ -6557,6 +6545,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Bear of the Day: Qualcomm (QCOM)",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/bear-day-qualcomm-qcom-110000513.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye Snapdragon Summit For Cues",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/qcom-stock-inches-higher-after-worst-drop-in-three-months-traders-eye-snapdragon-summit-for-cues/cZMRaUqRB4F",
@@ -6567,12 +6561,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/20/astera-labs-vs-qualcomm-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means for QCOM Stock.",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4696893/mediatek-is-stepping-up-competition-against-qualcomm-with-a-new-2-nanometer-chip-what-this-means-for-qcom-stock",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6596,9 +6584,15 @@
       "dividendYield": null,
       "marketCap": 61498294272,
       "score": 9.4,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Moderna\u2019s Bob Langer and AI pioneer Yann LeCun join board of Cellular Intelligence, bringing AI into medicine via a Parkinson\u2019s drug",
+          "publisher": "Fortune",
+          "link": "https://finance.yahoo.com/healthcare/articles/moderna-bob-langer-ai-pioneer-070000145.html",
+          "sentiment": 0.65
+        },
         {
           "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
@@ -6610,12 +6604,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-dropped-behind-latest-071602863.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Axsome Therapeutics vs. Moderna: Which Healthcare Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/18/axsome-therapeutics-vs-moderna-which-healthcare-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ]
     },

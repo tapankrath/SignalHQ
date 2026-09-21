@@ -447,6 +447,7 @@
      Trend Up included, since they're directionally green too. */
   .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
   .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
+  .check-row input[type="checkbox"][data-strat="Bear Put Spread"]:checked,
   .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
   .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
   .check-row input[type="checkbox"][data-quality="sell"]:checked,
@@ -923,6 +924,7 @@
        a darker, more saturated red for the white checkmark to read clearly. */
     .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
     .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
+    .check-row input[type="checkbox"][data-strat="Bear Put Spread"]:checked,
     .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
     .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
     .check-row input[type="checkbox"][data-quality="sell"]:checked,
@@ -1062,10 +1064,13 @@
       <div class="filter-section-body">
         <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call" checked> <span class="strat-dot bull"></span>Long Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Put" checked> <span class="strat-dot bear"></span>Long Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread" checked> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
@@ -1143,8 +1148,8 @@
           <th>Side</th>
           <th>Exp / DTE</th>
           <th>Prob. of Touch</th>
-          <th>Trade Profit</th>
-          <th>Ann. Profit</th>
+          <th>Return</th>
+          <th>Ann. Return</th>
           <th>IV Rank</th>
           <th>Composite</th>
           <th></th>
@@ -2144,15 +2149,18 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-20: Outlook & Strategy now starts with the five directional
+  // Updated 2026-09-21: Outlook & Strategy now starts with all eight directional
   // strategies selected (Iron Condor stays off),
   // all four P/C boxes start unchecked, and the profit floor moved from 10% to 15%.
   const DEFAULT_CHECKED = [
     '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
+    '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
     '[data-strat="Long Call"]',
+    '[data-strat="Bull Call Spread"]',
     '[data-strat="Long Put"]',
+    '[data-strat="Bear Put Spread"]',
     '[data-quality="buy"]',
     '[data-risk="excludeEarnings"]',
     '[data-risk="lowVol"]',

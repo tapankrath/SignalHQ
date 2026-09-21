@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T21:59:31.178872+00:00",
+  "generated_at": "2026-09-21T22:38:05.740185+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -275,7 +275,7 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.27,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -285,16 +285,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/stock-market-today/2026/09/21/stock-market-today-sept-21-meta-surges-on-excitement-over-muse-personal-ai-agent/",
           "sentiment": 0.8
-        },
-        {
-          "title": "Meta Up 11% as Zuckerberg Bets Muse Will \u201cMake You Money and Save You Money\u201d",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/zuckerberg-bets-muse-will-make-you-money-and-save-you-money?ref=yahoofinance",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Rich",
@@ -433,26 +433,26 @@
       "pcVol": 0.53,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Advanced Micro Devices (AMD) Is Up 24.7% After Expanding Its Role In Regulated AI Infrastructure \u2013 Has The Bull Case Changed?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/advanced-micro-devices-amd-24-221840955.html",
+          "sentiment": 0.25
+        },
+        {
+          "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
+          "sentiment": 0.0
+        },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "Chip Stocks Rise As Four New Names Join SOX Index. AMD Breaks Out.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/technology/chip-stocks-amd-stock-four-new-names-join-sox-index/?src=A00220&yptr=yahoo",
-          "sentiment": 0.3
-        },
-        {
-          "title": "Stock Market Today: Dow Up, Nasdaq Roars To Record As Micron Does This; AMD Hits New High (Live Coverage)",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-nvidia-stock-nvda-buy-point/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -786,9 +786,15 @@
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.12,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
+          "sentiment": 0.0
+        },
         {
           "title": "Amazon (AMZN) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
@@ -799,12 +805,6 @@
           "title": "Amazon kicks out Meta's Muse in split over AI shopping",
           "publisher": "Axios Media",
           "link": "https://www.axios.com/2026/09/21/amazon-meta-muse-ai-agentic-shopping#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-media",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Has The Price For Amazon Stock Already Peaked?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615981/has-the-price-for-amazon-stock-already-peaked/2026-09-21",
           "sentiment": 0.18
         }
       ],
@@ -2300,16 +2300,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Archer Aviation vs. Rocket Lab: Which Aerospace Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/21/archer-aviation-vs-rocket-lab-which-aerospace-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
-        },
-        {
           "title": "Rocket Lab Looks More and More Like a SpaceX Competitor. The Stock Is Up.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/rocket-lab-stock-price-rating-spacex-a520b568?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.47
+        },
+        {
+          "title": "Archer Aviation vs. Rocket Lab: Which Aerospace Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/21/archer-aviation-vs-rocket-lab-which-aerospace-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
         },
         {
           "title": "Rocket Lab Poised to Become \u201cOnly Viable Alternative\u201d to SpaceX, Says Cantor Fitzgerald",
@@ -3213,9 +3213,15 @@
       "pcVol": 0.6,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.61,
+      "newsSentiment": 0.45,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Bloom Energy (BE) Outpaced the Stock Market Today",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-bloom-energy-outpaced-stock-220002455.html",
+          "sentiment": 0.27
+        },
         {
           "title": "Why Did Bloom Energy Stock More Than Triple In A Year?",
           "publisher": "Trefis",
@@ -3227,12 +3233,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/bloom-energy-surges-ai-hyperscalers-141646925.html",
           "sentiment": 0.81
-        },
-        {
-          "title": "BE Stock Jumps Premarket Ahead Of S&P 500 Inclusion: US Army Awards Power Leases To Indelible-Bloom Coalition",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/be-stock-jumps-premarket-ahead-of-s-and-p-500-inclusion-us-army-awards-power-leases-to-indelible-bloom-coalition/cZMR9dBRB4V",
-          "sentiment": 0.74
         }
       ],
       "volRegime": "Fair",
@@ -3441,9 +3441,15 @@
       "pcVol": 0.75,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Western Digital (WDC) Surpasses Market Returns: Some Facts Worth Knowing",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-surpasses-market-215003222.html",
+          "sentiment": 0.23
+        },
         {
           "title": "SanDisk Falls 2% Despite Memory Rally; Micron Advances 3%, Western Digital Nudges Higher",
           "publisher": "24/7 Wall St.",
@@ -3455,12 +3461,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/sovereign-ai-neoclouds-extend-western-150700158.html",
           "sentiment": 0.51
-        },
-        {
-          "title": "Western Digital (WDC) Stock May Be Undervalued After Its Huge Three Year Run",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-stock-may-061123057.html",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Rich",
@@ -4744,7 +4744,7 @@
       "dividendYield": 0.32,
       "marketCap": 1888326254592,
       "score": 8.5,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.27,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4754,16 +4754,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/stock-market-today/2026/09/21/stock-market-today-sept-21-meta-surges-on-excitement-over-muse-personal-ai-agent/",
           "sentiment": 0.8
-        },
-        {
-          "title": "Meta Up 11% as Zuckerberg Bets Muse Will \u201cMake You Money and Save You Money\u201d",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/zuckerberg-bets-muse-will-make-you-money-and-save-you-money?ref=yahoofinance",
-          "sentiment": 0.49
         }
       ]
     },
@@ -4830,26 +4830,26 @@
       "dividendYield": null,
       "marketCap": 1004821020672,
       "score": 8.5,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Advanced Micro Devices (AMD) Is Up 24.7% After Expanding Its Role In Regulated AI Infrastructure \u2013 Has The Bull Case Changed?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/advanced-micro-devices-amd-24-221840955.html",
+          "sentiment": 0.25
+        },
+        {
+          "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
+          "sentiment": 0.0
+        },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Meta\u2019s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.54
         }
       ]
     },
@@ -5020,9 +5020,15 @@
       "dividendYield": null,
       "marketCap": 2787722657792,
       "score": 6.2,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.12,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-ends-nearly-3-higher-as-ai-stocks-pop/cZMRHqjRBIm",
+          "sentiment": 0.0
+        },
         {
           "title": "Amazon (AMZN) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
@@ -5033,12 +5039,6 @@
           "title": "Amazon kicks out Meta's Muse in split over AI shopping",
           "publisher": "Axios Media",
           "link": "https://www.axios.com/2026/09/21/amazon-meta-muse-ai-agentic-shopping#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-media",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Has The Price For Amazon Stock Already Peaked?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615981/has-the-price-for-amazon-stock-already-peaked/2026-09-21",
           "sentiment": 0.18
         }
       ]
@@ -5872,16 +5872,16 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Archer Aviation vs. Rocket Lab: Which Aerospace Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/21/archer-aviation-vs-rocket-lab-which-aerospace-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
-        },
-        {
           "title": "Rocket Lab Looks More and More Like a SpaceX Competitor. The Stock Is Up.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/rocket-lab-stock-price-rating-spacex-a520b568?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.47
+        },
+        {
+          "title": "Archer Aviation vs. Rocket Lab: Which Aerospace Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/21/archer-aviation-vs-rocket-lab-which-aerospace-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
         },
         {
           "title": "Rocket Lab Poised to Become \u201cOnly Viable Alternative\u201d to SpaceX, Says Cantor Fitzgerald",
@@ -6315,9 +6315,15 @@
       "dividendYield": null,
       "marketCap": 80373571584,
       "score": 9.4,
-      "newsSentiment": 0.61,
+      "newsSentiment": 0.45,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Bloom Energy (BE) Outpaced the Stock Market Today",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-bloom-energy-outpaced-stock-220002455.html",
+          "sentiment": 0.27
+        },
         {
           "title": "Why Did Bloom Energy Stock More Than Triple In A Year?",
           "publisher": "Trefis",
@@ -6329,12 +6335,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/bloom-energy-surges-ai-hyperscalers-141646925.html",
           "sentiment": 0.81
-        },
-        {
-          "title": "BE Stock Jumps Premarket Ahead Of S&P 500 Inclusion: US Army Awards Power Leases To Indelible-Bloom Coalition",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/be-stock-jumps-premarket-ahead-of-s-and-p-500-inclusion-us-army-awards-power-leases-to-indelible-bloom-coalition/cZMR9dBRB4V",
-          "sentiment": 0.74
         }
       ]
     },
@@ -6444,9 +6444,15 @@
       "dividendYield": 0.14,
       "marketCap": 161583628288,
       "score": 4.9,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Western Digital (WDC) Surpasses Market Returns: Some Facts Worth Knowing",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-surpasses-market-215003222.html",
+          "sentiment": 0.23
+        },
         {
           "title": "SanDisk Falls 2% Despite Memory Rally; Micron Advances 3%, Western Digital Nudges Higher",
           "publisher": "24/7 Wall St.",
@@ -6458,12 +6464,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/sovereign-ai-neoclouds-extend-western-150700158.html",
           "sentiment": 0.51
-        },
-        {
-          "title": "Western Digital (WDC) Stock May Be Undervalued After Its Huge Three Year Run",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-stock-may-061123057.html",
-          "sentiment": 0.32
         }
       ]
     },

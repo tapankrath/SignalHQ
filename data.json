@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T22:38:05.740185+00:00",
+  "generated_at": "2026-09-21T22:43:47.118325+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -37,7 +37,7 @@
       "pcVol": 0.69,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -51,12 +51,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/google-apples-new-job-postings-go-viral",
           "sentiment": 0.0
-        },
-        {
-          "title": "Apple Edged Higher as Oura Prices a $15.6 Billion Challenge",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/apple-edged-higher-oura-prices-191453187.html",
-          "sentiment": 0.08
         }
       ],
       "volRegime": "Fair",
@@ -349,6 +343,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Tesla Audits Chinese Suppliers as Elon Musk\u2019s Optimus Robot Moves Closer to Mass Production: Report",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/tesla-audits-chinese-suppliers-elon-213014283.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Tesla Gains 3% as Fremont Bias Claims Reach Trial",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-gains-3-fremont-bias-194611833.html",
@@ -359,12 +359,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-rises-major-self-185058890.html",
           "sentiment": 0.62
-        },
-        {
-          "title": "Tesla\u2019s Roadster Is 1 Reason Why October Could Be a Different Story for the Stock",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/tesla-stock-roadster-ev-elon-musk-9dccee60?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -4615,7 +4609,7 @@
       "dividendYield": 0.32,
       "marketCap": 4947135430656,
       "score": 8.5,
-      "newsSentiment": 0.03,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -4629,12 +4623,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/google-apples-new-job-postings-go-viral",
           "sentiment": 0.0
-        },
-        {
-          "title": "Apple Edged Higher as Oura Prices a $15.6 Billion Challenge",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/apple-edged-higher-oura-prices-191453187.html",
-          "sentiment": 0.08
         }
       ]
     },
@@ -4791,6 +4779,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Tesla Audits Chinese Suppliers as Elon Musk\u2019s Optimus Robot Moves Closer to Mass Production: Report",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/tesla-audits-chinese-suppliers-elon-213014283.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Tesla Gains 3% as Fremont Bias Claims Reach Trial",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-gains-3-fremont-bias-194611833.html",
@@ -4801,12 +4795,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-rises-major-self-185058890.html",
           "sentiment": 0.62
-        },
-        {
-          "title": "Tesla\u2019s Roadster Is 1 Reason Why October Could Be a Different Story for the Stock",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/tesla-stock-roadster-ev-elon-musk-9dccee60?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5362,7 +5350,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2001653334016,
+      "marketCap": 2000500424704,
       "score": 8.2,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
@@ -5694,7 +5682,7 @@
       "volRatio": 0.86,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 63287898112,
+      "marketCap": 59107500032,
       "score": 9.4,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -5909,7 +5897,7 @@
       "volRatio": 0.96,
       "peRatio": 72.9,
       "dividendYield": 0.75,
-      "marketCap": 136943517696,
+      "marketCap": 136665219072,
       "score": 4.9,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -6528,7 +6516,7 @@
       "volRatio": 0.92,
       "peRatio": 39.2,
       "dividendYield": 0.6,
-      "marketCap": 1038780596224,
+      "marketCap": 1038332919808,
       "score": 4.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
@@ -6743,7 +6731,7 @@
       "volRatio": 0.88,
       "peRatio": 38.9,
       "dividendYield": 0.93,
-      "marketCap": 855016013824,
+      "marketCap": 852401717248,
       "score": 3.1,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",

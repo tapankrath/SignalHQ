@@ -1035,9 +1035,9 @@
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
       </div>
       <div class="filter-section-body" style="padding-top:0; border-top:1px solid var(--border); margin-top:4px;">
-        <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
         <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
-        <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
         <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
       </div>
     </div>
@@ -2084,16 +2084,14 @@
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
   // Updated 2026-09-20: Outlook & Strategy now starts with the five directional
-  // strategies + both P/C open-interest bands selected (Iron Condor, Butterfly
-  // and Calendar Spread stay off), and the profit floor moved from 10% to 20%.
+  // strategies selected (Iron Condor, Butterfly and Calendar Spread stay off),
+  // all four P/C boxes start unchecked, and the profit floor moved from 10% to 20%.
   const DEFAULT_CHECKED = [
     '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',
     '[data-strat="Long Call"]',
     '[data-strat="Long Put"]',
-    '[data-pcoi="bull"]',
-    '[data-pcoi="bear"]',
     '[data-quality="buy"]',
     '[data-risk="excludeEarnings"]',
     '[data-risk="lowVol"]',

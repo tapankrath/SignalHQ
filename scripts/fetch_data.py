@@ -32,6 +32,7 @@ import math
 import os
 import re
 import sys
+import zlib
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
@@ -81,28 +82,85 @@ _sentiment_analyzer.lexicon.update(FINANCE_LEXICON)
 
 # --- Configuration -----------------------------------------------------------
 
+UNIVERSE_PATH = "universe.json"
+UNIVERSE_STALE_DAYS = 7      # warn (but still use it) past this age
+UNIVERSE_META = None         # set by load_universe(); echoed into data.json
+
+
+def load_universe():
+    """
+    Reads universe.json (written daily by scripts/build_universe.py): the dynamic
+    slice of the watchlist — large US stocks picked by market cap / liquidity
+    rather than typed in by hand. Returns a list of symbols, or [] if the file
+    is missing or unreadable, so a bad or absent universe can never break the
+    run: the pinned tickers.json list is always enough on its own.
+    """
+    global UNIVERSE_META
+    try:
+        with open(UNIVERSE_PATH) as f:
+            cfg = json.load(f)
+        symbols = [t.strip().upper() for t in cfg.get("tickers", []) if isinstance(t, str) and t.strip()]
+        generated = cfg.get("generated_at")
+        UNIVERSE_META = {
+            "generated_at": generated,
+            "size": len(symbols),
+            "criteria": cfg.get("criteria"),
+        }
+        try:
+            age_days = (datetime.now(timezone.utc) - datetime.fromisoformat(generated)).days
+            if age_days > UNIVERSE_STALE_DAYS:
+                print(f"{UNIVERSE_PATH} is {age_days} days old — is the universe workflow still running?", file=sys.stderr)
+        except (TypeError, ValueError):
+            pass
+        return symbols
+    except FileNotFoundError:
+        print(f"{UNIVERSE_PATH} not found — running the pinned tickers.json list only", file=sys.stderr)
+    except (json.JSONDecodeError, AttributeError) as e:
+        print(f"{UNIVERSE_PATH} unreadable ({e}) — running the pinned tickers.json list only", file=sys.stderr)
+    return []
+
+
 def load_tickers():
     """
-    Reads the watchlist from tickers.json (repo root) so it can be edited without
-    touching this script — either by hand on GitHub, or via the "Manage Tickers"
-    panel in the app, which generates ready-to-paste JSON for this file.
-    Falls back to a small built-in default set if the file is missing or invalid,
-    so a bad edit here can't break the nightly run entirely.
+    Builds the run list: the pinned watchlist from tickers.json (repo root — edit
+    by hand on GitHub, or via the "Manage Tickers" panel in the app) FOLLOWED BY
+    the dynamic names from universe.json that aren't already pinned.
+
+    Order matters: build_trade_for_ticker() picks each ticker's strategy from its
+    index, so pinned tickers keep their positions (and therefore their existing
+    strategy assignments) and dynamic names get a stable, symbol-derived index
+    instead of a positional one — otherwise every day's ranking shuffle would
+    flip strategies on names that didn't change.
+
+    Falls back to a small built-in default set if tickers.json is missing or
+    invalid, so a bad edit here can't break the run entirely.
     """
     default_tickers = ["AAPL", "MSFT", "NVDA", "XOM", "JPM", "SPY", "META", "TSLA", "AMD"]
     default_etfs = ["SPY", "QQQ", "IWM", "DIA", "XLF", "XLE", "XLK", "GLD"]
     try:
         with open("tickers.json") as f:
             cfg = json.load(f)
-        tickers = cfg.get("tickers") or default_tickers
+        pinned = cfg.get("tickers") or default_tickers
         etfs = set(cfg.get("etfs") or default_etfs)
-        return [t.strip().upper() for t in tickers if t.strip()], etfs
+        pinned = [t.strip().upper() for t in pinned if t.strip()]
     except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"tickers.json missing or invalid ({e}) — using built-in defaults", file=sys.stderr)
-        return default_tickers, set(default_etfs)
+        pinned, etfs = default_tickers, set(default_etfs)
+
+    strategy_index = {}
+    for i, sym in enumerate(pinned):
+        strategy_index.setdefault(sym, i)
+
+    merged = list(dict.fromkeys(pinned))
+    for sym in load_universe():
+        if sym not in strategy_index:
+            merged.append(sym)
+            strategy_index[sym] = zlib.crc32(sym.encode()) % 1200  # 1200 = multiple of 3, 4 and 2
+    print(f"Run list: {len(pinned)} pinned + {len(merged) - len(set(pinned))} from universe = {len(merged)} tickers")
+    return merged, etfs, strategy_index
 
 
-TICKERS, KNOWN_ETFS = load_tickers()
+TICKERS, KNOWN_ETFS, STRATEGY_INDEX = load_tickers()
 
 TARGET_DTE_MIN = 7          # was 5, then 14 originally — narrowed to 7-45 so the
                              # picker searches a real window and optimizes within it,
@@ -2053,7 +2111,7 @@ def main():
     equities = []
     for i, ticker in enumerate(TICKERS):
         print(f"Fetching {ticker}...")
-        trade = build_trade_for_ticker(ticker, i)
+        trade = build_trade_for_ticker(ticker, STRATEGY_INDEX.get(ticker, i))
         if trade:
             trades.append(trade)
 
@@ -2079,6 +2137,8 @@ def main():
         "equities": equities,
         "hedge": hedge,
     }
+    if UNIVERSE_META:
+        output["universe"] = UNIVERSE_META
 
     with open(OUTPUT_PATH, "w") as f:
         json.dump(output, f, indent=2)

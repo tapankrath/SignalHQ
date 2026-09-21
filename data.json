@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T11:37:18.696708+00:00",
+  "generated_at": "2026-09-21T12:37:47.455391+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,26 +40,26 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Siri settlement claims window now open. How to file for money",
+          "publisher": "USA TODAY",
+          "link": "https://www.usatoday.com/story/money/personal-finance/income/2026/09/21/apple-siri-class-action-settlement-claims-window-file/91869875007/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Apple's $1,999 foldable iPhone creates strange twist for Samsung",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/apples-1999-foldable-iphone-creates-strange-twist-for-samsung",
+          "sentiment": 0.08
+        },
         {
           "title": "Apple iPhone 18 Pro Delivery Times Lengthen in Second Week, JPMorgan Says",
           "publisher": "InvestorsHub",
           "link": "https://investorshub.advfn.com/market-news/article/36583/apple-iphone-18-pro-delivery-times-lengthen-in-second-week-jpmorgan-says",
           "sentiment": 0.0
-        },
-        {
-          "title": "Apple Pay Crypto Hiring Fuels New Stablecoin Speculation",
-          "publisher": "Cryptonews",
-          "link": "https://cryptonews.com/news/crypto-stablecoins-apple-pay-google-roles/",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/apple-reportedly-lays-off-some-fitness-division-staff-ahead-of-potential-major-changes/cZMR7yyRB4j",
-          "sentiment": 0.27
         }
       ],
       "volRegime": "Rich",
@@ -132,20 +132,26 @@
       "pcVol": 0.39,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.15,
+      "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Microsoft AI Chief Sends Stark Warning on AI Safety",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-ai-chief-sends-stark-122657280.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Worried About Hugging Face? Microsoft and Amazon Got Exposed Most Among Hyperscalers",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/worried-about-hugging-face-microsoft-and-amazon-got-exposed-most-among-hyperscalers/",
+          "sentiment": 0.25
+        },
         {
           "title": "Market Chatter: Microsoft-backed OpenAI Seeks Valuation Above $1.2 Trillion Despite Projected $278 Billion Cash Burn",
           "publisher": "MT Newswires",
           "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-backed-openai-090300004.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Bill Ackman Built a $2.4 Billion Stake in Microsoft, Calling It a \"Core Holding\" Bought at a \"Highly Compelling Valuation.\" Here's Why He's Betting Big on Big Tech.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/bill-ackman-built-a-24-billion-stake-in-microsoft/",
-          "sentiment": 0.29
         }
       ],
       "volRegime": "Cheap",
@@ -206,14 +212,20 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.61,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia Stock Can Surge on Trump\u2019s China Talks. Why They Are Crucial.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/nvidia-stock-price-trump-china-xi-ai-chips-3828556a?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.61
+          "title": "3 Reasons to Buy Nvidia in the Fall",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/3-reasons-to-buy-nvidia-in-the-fall/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "I Keep Buying Nvidia Over and Over Despite China Concerns, Despite The Tech Selloff",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/i-keep-buying-nvidia-over-and-over-despite-china-concerns-despite-the-tech-selloff/",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -268,12 +280,12 @@
       "breakevenHigh": null,
       "breakevenMovePct": null,
       "maxLoss": 65205.0,
-      "pcOI": 5.13,
+      "pcOI": 0.63,
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.16,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
@@ -282,15 +294,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "Meta Stock Jumps Despite Another Facebook Outage. Here's Why",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-stock-jumps-despite-another-123046847.html",
+          "sentiment": 0.49
+        },
+        {
           "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
           "sentiment": 0.0
         }
       ],
@@ -346,26 +358,26 @@
       "pcVol": 0.79,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/amd-vs-broadcom-ai-chip-race-better-buy/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "AMD's 8% Surge Hints at Something Bigger",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
+          "sentiment": 0.61
+        },
         {
           "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here\u2019s How.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/amd-stock-jumped-8-last-week-it-could-bring-325-more-heres-how?ref=yahoofinance",
-          "sentiment": 0.49
-        },
-        {
-          "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
-          "sentiment": 0.61
         }
       ],
       "volRegime": "Cheap",
@@ -424,9 +436,15 @@
       "pcVol": 0.91,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.42,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "China's Memory Push Raises a New Question for Micron and SK Hynix",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/articles/chinas-memory-push-raises-micron-121926946.html",
+          "sentiment": 0.42
+        },
         {
           "title": "China\u2019s CXMT Says It Has Reached Advanced DRAM Mass Production, Challenging Samsung, SK Hynix and Micron in Memory Chips",
           "publisher": "Benzinga",
@@ -438,12 +456,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-stocks-in-focus-memory-rebound-gains-steam-even-as-china-s-cxmt-touts-faster-production/cZMRGVORB43",
           "sentiment": 0.32
-        },
-        {
-          "title": "Prediction: Micron Will Earn More Profit Than Microsoft in Fiscal 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Cheap",
@@ -498,20 +510,20 @@
       "pcVol": 0.37,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Alphabet Stock Surges as Google Search Makes a Major Comeback",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stock-surges-google-search-122833154.html",
+          "sentiment": 0.61
+        },
         {
           "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
-        },
-        {
-          "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Cheap",
@@ -728,9 +740,15 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.44,
+      "newsSentiment": -0.29,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Worried About Hugging Face? Microsoft and Amazon Got Exposed Most Among Hyperscalers",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/worried-about-hugging-face-microsoft-and-amazon-got-exposed-most-among-hyperscalers/",
+          "sentiment": 0.25
+        },
         {
           "title": "Jeff Bezos's parents sank $245,573 of their retirement savings into Amazon after he told them they'd probably lose it",
           "publisher": "Moneywise",
@@ -742,12 +760,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/here-s-why-amazon-usd220-billion-in-capital-spending-shouldn-t-worry-investors/",
           "sentiment": -0.44
-        },
-        {
-          "title": "Kuehne+Nagel Strikes Deal With Amazon For Supply Chain, Cloud Capabilities",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/tech/kuehne-nagel-strikes-deal-with-amazon-for-supply-chain-cloud-capabilities-407c3bfa?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.2
         }
       ],
       "volRegime": "Cheap",
@@ -974,26 +986,26 @@
       "pcVol": 0.82,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Netflix Content Chief Shrugs Off YouTube Threat: \u2018Young People Only Watch Short Things\u2019 Isn\u2019t True",
-          "publisher": "Benzinga",
-          "link": "https://finance.yahoo.com/media-advertising/articles/netflix-content-chief-shrugs-off-183118185.html",
-          "sentiment": -0.15
-        },
-        {
-          "title": "Netflix (NFLX) Gets a Bullish $110 Target: What\u2019s Driving the Outlook?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-gets-bullish-110-155252131.html",
-          "sentiment": 0.54
-        },
-        {
-          "title": "Netflix Has $27 Billion Left to Buy Back Its Own Stock -- About 8% of the Whole Company",
+          "title": "Should You Buy Netflix Stock Before Oct. 20?",
           "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/netflix-has-usd27-billion-left-to-buy-back-its-own-stock-about-8-of-the-whole-company/",
+          "link": "https://www.fool.com/investing/2026/09/21/should-you-buy-netflix-stock-before-oct-20/",
           "sentiment": 0.0
+        },
+        {
+          "title": "Netflix, Viewers And Turning Off: What Turns Them On?",
+          "publisher": "MediaPost",
+          "link": "https://www.mediapost.com/publications/article/418121/netflix-viewers-and-turning-off-what-turns-them.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Netflix Stock Declines After Wells Fargo Downgrades Streamer Over Engagement Concerns",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/netflix-stock-falls-wells-fargo-downgrade-engagement?ref=yahoofinance",
+          "sentiment": 0.13
         }
       ],
       "volRegime": "Rich",
@@ -1196,9 +1208,15 @@
       "pcVol": 0.59,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Beat the Market Like Zacks: PBF, Palantir, Adobe in Focus",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
+          "sentiment": 0.76
+        },
         {
           "title": "A Pause on Advanced AI Is Wishful Thinking, But Adobe Stock Is a Buy Anyway",
           "publisher": "Barchart",
@@ -1209,12 +1227,6 @@
           "title": "How Much Upside Is Left In Adobe Stock?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615732/how-much-upside-is-left-in-adobe-stock/2026-09-17",
-          "sentiment": 0.0
-        },
-        {
-          "title": "E-Commerce Update - AI-Powered Student Spaces Revolutionizes Learning With Adobe Acrobat",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/e-commerce-ai-powered-student-123734626.html",
           "sentiment": 0.0
         }
       ],
@@ -1274,7 +1286,7 @@
       "pcVol": 0.56,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -1284,15 +1296,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
-          "sentiment": 0.18
+          "title": "SpaceX's Bigger Nasdaq-100 Weight Is Triggering a Major Market Shift",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/spacexs-bigger-nasdaq-100-weight-120730134.html",
+          "sentiment": 0.0
         },
         {
-          "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+          "title": "\u201cWho Can Imagine What Action One Might Take\u201d: Musk\u2019s Latest Non-Answer Sends Tesla and SpaceX Higher",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/imagine-action-one-might-musk-113510252.html",
           "sentiment": 0.0
         }
       ],
@@ -1432,26 +1444,26 @@
       "pcVol": 0.43,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Beat the Market Like Zacks: PBF, Palantir, Adobe in Focus",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
+          "sentiment": 0.76
+        },
+        {
+          "title": "Palantir CEO Alex Karp Says Only Washington Can Cap AI Liability: 'These Businesses Have to Be Nationalized'",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-ceo-alex-karp-says-104509380.html",
+          "sentiment": -0.2
+        },
         {
           "title": "Michael Burry Doubles Down On Palantir Bear Case: \u2018A Lot Of\u2019 Money Still To Be Made Shorting PLTR",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/michael-burry-doubles-down-on-palantir-bear-case-a-lot-of-money-still-to-be-made-shorting-pltr/cZMR9RVRB4N",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: This Will Be Palantir\u2019s Stock Price in a Year (Hint: It Implies Upside)",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/this-be-palantir-stock-price-in-year-upside/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Wall Street Just Gave Palantir Its Highest-Ever Price Target, Right When Europe Started Saying No",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/wall-street-just-gave-palantir-its-highest-ever-price-target-right-when-europe-started-saying-no?ref=yahoofinance",
-          "sentiment": -0.3
         }
       ],
       "volRegime": "Cheap",
@@ -1654,9 +1666,16 @@
       "pcVol": 1.76,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.42,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Buy Top-Ranked DELL, SMCI & HPE to Form a Powerful AI-Server Portfolio",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/buy-top-ranked-dell-smci-115500323.html",
+          "sentiment": 0.42
+        }
+      ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.15,
       "realizedVol": 85.1,
@@ -1727,9 +1746,15 @@
       "pcVol": 0.7,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.54,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palo Alto Networks' 100% Rally Hits a Valuation Roadblock",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-100-rally-122916941.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Morgan Stanley Raises Palo Alto Networks Price Target to $410 on AI Security Demand",
           "publisher": "InvestorsHub",
@@ -1741,12 +1766,6 @@
           "publisher": "TIKR",
           "link": "https://www.tikr.com/blog/palo-alto-networks-stock-jumped-10-last-week-one-analyst-isnt-buying-it?ref=yahoofinance",
           "sentiment": 0.49
-        },
-        {
-          "title": "The AI Slowdown Trade Has Some Winners: CrowdStrike and Palo Alto Rally While Chips Fall",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/ai-slowdown-trade-winners-crowdstrike-212311977.html",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Cheap",
@@ -1807,26 +1826,26 @@
       "pcVol": 0.76,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CRWV, NBIS Stocks Get \u2018Sell\u2019 Ratings, AI-Pivoting Bitcoin Miners Get \u2018Neutral\u2019 Calls: Rothschild Says Credit Market Is \u2018Sending The More Important Signal\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-corz-wulf-stock-get-sell-ratings-rothschild-credit-market-warning/cZMRLruRB4v",
+          "sentiment": 0.57
+        },
+        {
+          "title": "Nscale, Rival Of CoreWeave And Nebius, Files For IPO",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/nscale-rival-of-coreweave-nebius-files-for-ipo/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Nebius\u2019s Price Hike Suggests Michael Burry Made a Mistake and Is Shorting the Best Neocloud Stock",
           "publisher": "Barchart",
           "link": "https://www.barchart.com/story/news/4701308/nebiuss-price-hike-suggests-michael-burry-made-a-mistake-and-is-shorting-the-best-neocloud-stock",
           "sentiment": 0.42
-        },
-        {
-          "title": "Nebius Offers Fresh Clue About AI's Spending Boom",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nebius-offers-fresh-clue-ais-161936309.html",
-          "sentiment": 0.32
-        },
-        {
-          "title": "Nebius Group (NBIS) Raises AI Cloud Prices As Compute Demand Tests Customer Costs",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nebius-group-nbis-raises-ai-232109046.html",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Cheap",
@@ -1887,25 +1906,25 @@
       "pcVol": 0.54,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CRWV, NBIS Stocks Get \u2018Sell\u2019 Ratings, AI-Pivoting Bitcoin Miners Get \u2018Neutral\u2019 Calls: Rothschild Says Credit Market Is \u2018Sending The More Important Signal\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-corz-wulf-stock-get-sell-ratings-rothschild-credit-market-warning/cZMRLruRB4v",
+          "sentiment": 0.57
+        },
+        {
+          "title": "Nscale, Rival Of CoreWeave And Nebius, Files For IPO",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/nscale-rival-of-coreweave-nebius-files-for-ipo/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Neocloud Boom: Comparing Nebius, CoreWeave, & IREN",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/neocloud-boom-comparing-nebius-coreweave-020300874.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "CoreWeave Rises After Going Live With Vera Rubin Racks. What This Means for CRWV Stock.",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4702590/coreweave-rises-after-going-live-with-vera-rubin-racks-what-this-means-for-crwv-stock",
-          "sentiment": 0.0
-        },
-        {
-          "title": "CoreWeave (CRWV) Is Charging More for AI Compute, and Customers Keep Paying",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/coreweave-crwv-charging-more-ai-193252050.html",
           "sentiment": 0.0
         }
       ],
@@ -2035,9 +2054,15 @@
       "pcVol": 1.0,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Four Launches From 100: Rocket Lab Gets a Bullish New Call, With Iridium and Mynaric Along for the Ride",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/four-launches-100-rocket-lab-115117949.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Rocket Lab (RKLB) Dropped, So What Is Behind Its Latest Move?",
           "publisher": "Simply Wall St.",
@@ -2049,12 +2074,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
           "sentiment": 0.0
-        },
-        {
-          "title": "RKLB Stock Gains Overnight: Rocket Lab\u2019s 97th Electron Is Already On The Pad After Another Mission Success",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-97th-electron-on-pad-after-another-mission-success/cZMbCf0RB4P",
-          "sentiment": 0.73
         }
       ],
       "volRegime": "Cheap",
@@ -2409,6 +2428,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "August housing data & Costco earnings: What to watch this week",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/august-housing-data-costco-earnings-120000940.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Trump-Xi Summit, Costco, Autozone, General Mills, and More to Watch This Week",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/trump-xi-summit-costco-autozone-general-mills-stocks-9394b2ba?siteid=yhoof2&yptr=yahoo",
@@ -2418,12 +2443,6 @@
           "title": "Costco quietly drops brand-new Pepsi soda from its warehouses",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/retail/costco-quietly-drops-brand-new-pepsi-soda-from-its-warehouses",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Costco Stock at $892: Here's What History Says Comes Next",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/costco-stock-892-here-what-history-says-comes-next/",
           "sentiment": 0.0
         }
       ],
@@ -2479,7 +2498,7 @@
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.1,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2492,12 +2511,6 @@
           "title": "Cisco Drops 8% in 3 Months: Should You Buy the Stock on the Dip?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/cisco-drops-8-3-months-165500656.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Cisco Climbs 3.3% as Splunk Takes AI Behind the Firewall",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/cisco-climbs-3-3-splunk-182529645.html",
           "sentiment": 0.0
         }
       ],
@@ -2651,7 +2664,7 @@
       "pcVol": 0.72,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2661,10 +2674,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
+          "title": "Stocks to Watch: Warner Bros., Intel, Strategy, Critical Metals",
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "sentiment": -0.32
         },
         {
           "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
@@ -2725,20 +2738,20 @@
       "pcVol": 0.61,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Alphabet Stock Surges as Google Search Makes a Major Comeback",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stock-surges-google-search-122833154.html",
+          "sentiment": 0.61
+        },
         {
           "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
-        },
-        {
-          "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Cheap",
@@ -2799,9 +2812,15 @@
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.23,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/amd-vs-broadcom-ai-chip-race-better-buy/",
+          "sentiment": 0.44
+        },
         {
           "title": "\u201cOur Targets Haven\u2019t Changed\u201d: Broadcom\u2019s CEO Pushes Back on the AI Slowdown Scare",
           "publisher": "Insider Monkey",
@@ -2813,12 +2832,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/jim-cramer-just-sent-a-strong-message-to-broadcom-stock-investors-sell-off",
           "sentiment": 0.73
-        },
-        {
-          "title": "Applied Materials vs. Broadcom: Comparing Sales Growth Trajectories for These Artificial Intelligence Companies",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-broadcom-comparing-sales-growth-trajectories-for-these-artificial-intelligence-companies/",
-          "sentiment": 0.69
         }
       ],
       "volRegime": "Cheap",
@@ -2873,9 +2886,15 @@
       "pcVol": 0.95,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.19,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "China's Memory Push Raises a New Question for Micron and SK Hynix",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/articles/chinas-memory-push-raises-micron-121926946.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
           "publisher": "Stocktwits",
@@ -2887,12 +2906,6 @@
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/technology/articles/china-cxmt-says-reached-advanced-041453764.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China\u2019s CXMT Touts Faster Production",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-stocks-in-focus-memory-rebound-gains-steam-even-as-china-s-cxmt-touts-faster-production/cZMRGVORB43",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Cheap",
@@ -3199,9 +3212,15 @@
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "MicroStrategy Ends Two-Week Pause With 950 Bitcoin: Is the Buying Engine Stalling?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/strategy-950-bitcoin-buy-strc-buyback/",
+          "sentiment": -0.2
+        },
         {
           "title": "Bitcoin Nears $85K, MSTR, ASST Stocks Rally As Crypto Bulls Return Amid Easing Oil Prices",
           "publisher": "Stocktwits",
@@ -3212,12 +3231,6 @@
           "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -3371,7 +3384,7 @@
       "pcVol": 1.18,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.74,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3379,18 +3392,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-stock-fair-041830693.html",
           "sentiment": 0.74
-        },
-        {
-          "title": "What Would It Take For Eli Lilly Stock To Keep Climbing?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615857/what-would-it-take-for-eli-lilly-stock-to-keep-climbing/2026-09-18",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Can Eli Lilly\u2019s Two-Drug Obesity Treatment Justify Its $1 Trillion Valuation?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/can-eli-lillys-two-drug-obesity-treatment-justify-its-1-trillion-valuation/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -3767,9 +3768,15 @@
       "pcVol": 0.63,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.25,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Cracker Barrel Old Country Store and Qualcomm have been highlighted as Zacks Bull and Bear of the Day",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/cracker-barrel-old-country-store-115300760.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Bear of the Day: Qualcomm (QCOM)",
           "publisher": "Zacks",
@@ -3781,12 +3788,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/qcom-stock-inches-higher-after-worst-drop-in-three-months-traders-eye-snapdragon-summit-for-cues/cZMRaUqRB4F",
           "sentiment": -0.74
-        },
-        {
-          "title": "Astera Labs vs. Qualcomm: Which Semiconductor Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/astera-labs-vs-qualcomm-which-semiconductor-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Cheap",
@@ -4227,20 +4228,14 @@
       "pcVol": 0.09,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.3,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Is Johnson & Johnson Stock Expensive, Or Is STELARA Hiding The Real Price?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615892/is-johnson-johnson-stock-expensive-or-is-stelara-hiding-the-real-price/2026-09-18",
           "sentiment": -0.3
-        },
-        {
-          "title": "Johnson & Johnson (JNJ) Faces A Fresh Valuation Test On DePuy Sale Talk",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-faces-fresh-091546567.html",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Rich",
@@ -4427,26 +4422,26 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Siri settlement claims window now open. How to file for money",
+          "publisher": "USA TODAY",
+          "link": "https://www.usatoday.com/story/money/personal-finance/income/2026/09/21/apple-siri-class-action-settlement-claims-window-file/91869875007/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Apple's $1,999 foldable iPhone creates strange twist for Samsung",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/apples-1999-foldable-iphone-creates-strange-twist-for-samsung",
+          "sentiment": 0.08
+        },
         {
           "title": "Apple iPhone 18 Pro Delivery Times Lengthen in Second Week, JPMorgan Says",
           "publisher": "InvestorsHub",
           "link": "https://investorshub.advfn.com/market-news/article/36583/apple-iphone-18-pro-delivery-times-lengthen-in-second-week-jpmorgan-says",
           "sentiment": 0.0
-        },
-        {
-          "title": "Apple Pay Crypto Hiring Fuels New Stablecoin Speculation",
-          "publisher": "Cryptonews",
-          "link": "https://cryptonews.com/news/crypto-stablecoins-apple-pay-google-roles/",
-          "sentiment": -0.1
-        },
-        {
-          "title": "Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/apple-reportedly-lays-off-some-fitness-division-staff-ahead-of-potential-major-changes/cZMR7yyRB4j",
-          "sentiment": 0.27
         }
       ]
     },
@@ -4470,20 +4465,26 @@
       "dividendYield": 0.79,
       "marketCap": 3666585845760,
       "score": 9.4,
-      "newsSentiment": 0.15,
+      "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Microsoft AI Chief Sends Stark Warning on AI Safety",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-ai-chief-sends-stark-122657280.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Worried About Hugging Face? Microsoft and Amazon Got Exposed Most Among Hyperscalers",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/worried-about-hugging-face-microsoft-and-amazon-got-exposed-most-among-hyperscalers/",
+          "sentiment": 0.25
+        },
         {
           "title": "Market Chatter: Microsoft-backed OpenAI Seeks Valuation Above $1.2 Trillion Despite Projected $278 Billion Cash Burn",
           "publisher": "MT Newswires",
           "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-backed-openai-090300004.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Bill Ackman Built a $2.4 Billion Stake in Microsoft, Calling It a \"Core Holding\" Bought at a \"Highly Compelling Valuation.\" Here's Why He's Betting Big on Big Tech.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/bill-ackman-built-a-24-billion-stake-in-microsoft/",
-          "sentiment": 0.29
         }
       ]
     },
@@ -4507,14 +4508,20 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.61,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Nvidia Stock Can Surge on Trump\u2019s China Talks. Why They Are Crucial.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/nvidia-stock-price-trump-china-xi-ai-chips-3828556a?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.61
+          "title": "3 Reasons to Buy Nvidia in the Fall",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/3-reasons-to-buy-nvidia-in-the-fall/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "I Keep Buying Nvidia Over and Over Despite China Concerns, Despite The Tech Selloff",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/i-keep-buying-nvidia-over-and-over-despite-china-concerns-despite-the-tech-selloff/",
+          "sentiment": 0.0
         }
       ]
     },
@@ -4538,8 +4545,8 @@
       "dividendYield": 0.32,
       "marketCap": 1696002211840,
       "score": 7.9,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.16,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
@@ -4548,15 +4555,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "Meta Stock Jumps Despite Another Facebook Outage. Here's Why",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-stock-jumps-despite-another-123046847.html",
+          "sentiment": 0.49
+        },
+        {
           "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
           "sentiment": 0.0
         }
       ]
@@ -4581,9 +4588,15 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": -0.02,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "\u201cWho Can Imagine What Action One Might Take\u201d: Musk\u2019s Latest Non-Answer Sends Tesla and SpaceX Higher",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/imagine-action-one-might-musk-113510252.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Market Chatter: Tesla's Racial Discrimination Trial in California Begins Today",
           "publisher": "MT Newswires",
@@ -4595,12 +4608,6 @@
           "publisher": "InvestorsHub",
           "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
           "sentiment": 0.18
-        },
-        {
-          "title": "Tesla faces major trial for alleged bias against Black workers, after years of lawsuits",
-          "publisher": "Reuters",
-          "link": "https://ca.finance.yahoo.com/news/tesla-faces-major-trial-alleged-100649614.html",
-          "sentiment": -0.25
         }
       ]
     },
@@ -4624,26 +4631,26 @@
       "dividendYield": null,
       "marketCap": 913892179968,
       "score": 8.5,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/amd-vs-broadcom-ai-chip-race-better-buy/",
+          "sentiment": 0.44
+        },
+        {
+          "title": "AMD's 8% Surge Hints at Something Bigger",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
+          "sentiment": 0.61
+        },
         {
           "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here\u2019s How.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/amd-stock-jumped-8-last-week-it-could-bring-325-more-heres-how?ref=yahoofinance",
-          "sentiment": 0.49
-        },
-        {
-          "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-robinhood-sandisk-amd-moderna-surge-buy-areas/?src=A00220&yptr=yahoo",
-          "sentiment": 0.61
         }
       ]
     },
@@ -4667,9 +4674,15 @@
       "dividendYield": 0.05,
       "marketCap": 1147237564416,
       "score": 9.4,
-      "newsSentiment": 0.42,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "China's Memory Push Raises a New Question for Micron and SK Hynix",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/articles/chinas-memory-push-raises-micron-121926946.html",
+          "sentiment": 0.42
+        },
         {
           "title": "China\u2019s CXMT Says It Has Reached Advanced DRAM Mass Production, Challenging Samsung, SK Hynix and Micron in Memory Chips",
           "publisher": "Benzinga",
@@ -4681,12 +4694,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-stocks-in-focus-memory-rebound-gains-steam-even-as-china-s-cxmt-touts-faster-production/cZMRGVORB43",
           "sentiment": 0.32
-        },
-        {
-          "title": "Prediction: Micron Will Earn More Profit Than Microsoft in Fiscal 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/prediction-micron-will-earn-more-profit-than-microsoft-in-fiscal-2027/",
-          "sentiment": 0.49
         }
       ]
     },
@@ -4710,20 +4717,20 @@
       "dividendYield": 0.26,
       "marketCap": 4212111966208,
       "score": 7.6,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Alphabet Stock Surges as Google Search Makes a Major Comeback",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stock-surges-google-search-122833154.html",
+          "sentiment": 0.61
+        },
         {
           "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
-        },
-        {
-          "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
         }
       ]
     },
@@ -4833,9 +4840,15 @@
       "dividendYield": null,
       "marketCap": 2736595664896,
       "score": 6.2,
-      "newsSentiment": -0.44,
+      "newsSentiment": -0.29,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Worried About Hugging Face? Microsoft and Amazon Got Exposed Most Among Hyperscalers",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/21/worried-about-hugging-face-microsoft-and-amazon-got-exposed-most-among-hyperscalers/",
+          "sentiment": 0.25
+        },
         {
           "title": "Jeff Bezos's parents sank $245,573 of their retirement savings into Amazon after he told them they'd probably lose it",
           "publisher": "Moneywise",
@@ -4847,12 +4860,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/here-s-why-amazon-usd220-billion-in-capital-spending-shouldn-t-worry-investors/",
           "sentiment": -0.44
-        },
-        {
-          "title": "Kuehne+Nagel Strikes Deal With Amazon For Supply Chain, Cloud Capabilities",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/tech/kuehne-nagel-strikes-deal-with-amazon-for-supply-chain-cloud-capabilities-407c3bfa?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.2
         }
       ]
     },
@@ -4962,26 +4969,26 @@
       "dividendYield": null,
       "marketCap": 298929225728,
       "score": 1.5,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Netflix Content Chief Shrugs Off YouTube Threat: \u2018Young People Only Watch Short Things\u2019 Isn\u2019t True",
-          "publisher": "Benzinga",
-          "link": "https://finance.yahoo.com/media-advertising/articles/netflix-content-chief-shrugs-off-183118185.html",
-          "sentiment": -0.15
-        },
-        {
-          "title": "Netflix (NFLX) Gets a Bullish $110 Target: What\u2019s Driving the Outlook?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-gets-bullish-110-155252131.html",
-          "sentiment": 0.54
-        },
-        {
-          "title": "Netflix Has $27 Billion Left to Buy Back Its Own Stock -- About 8% of the Whole Company",
+          "title": "Should You Buy Netflix Stock Before Oct. 20?",
           "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/18/netflix-has-usd27-billion-left-to-buy-back-its-own-stock-about-8-of-the-whole-company/",
+          "link": "https://www.fool.com/investing/2026/09/21/should-you-buy-netflix-stock-before-oct-20/",
           "sentiment": 0.0
+        },
+        {
+          "title": "Netflix, Viewers And Turning Off: What Turns Them On?",
+          "publisher": "MediaPost",
+          "link": "https://www.mediapost.com/publications/article/418121/netflix-viewers-and-turning-off-what-turns-them.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Netflix Stock Declines After Wells Fargo Downgrades Streamer Over Engagement Concerns",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/netflix-stock-falls-wells-fargo-downgrade-engagement?ref=yahoofinance",
+          "sentiment": 0.13
         }
       ]
     },
@@ -5134,9 +5141,15 @@
       "dividendYield": null,
       "marketCap": 98945695744,
       "score": 4.2,
-      "newsSentiment": 0.04,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Beat the Market Like Zacks: PBF, Palantir, Adobe in Focus",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
+          "sentiment": 0.76
+        },
         {
           "title": "A Pause on Advanced AI Is Wishful Thinking, But Adobe Stock Is a Buy Anyway",
           "publisher": "Barchart",
@@ -5147,12 +5160,6 @@
           "title": "How Much Upside Is Left In Adobe Stock?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615732/how-much-upside-is-left-in-adobe-stock/2026-09-17",
-          "sentiment": 0.0
-        },
-        {
-          "title": "E-Commerce Update - AI-Powered Student Spaces Revolutionizes Learning With Adobe Acrobat",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/e-commerce-ai-powered-student-123734626.html",
           "sentiment": 0.0
         }
       ]
@@ -5177,7 +5184,7 @@
       "dividendYield": null,
       "marketCap": 2011830157312,
       "score": 8.2,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -5187,15 +5194,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
-          "publisher": "InvestorsHub",
-          "link": "https://investorshub.advfn.com/market-news/article/36589/morgan-stanley-highlights-growing-ai-collaboration-between-spacex-and-tesla",
-          "sentiment": 0.18
+          "title": "SpaceX's Bigger Nasdaq-100 Weight Is Triggering a Major Market Shift",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/spacexs-bigger-nasdaq-100-weight-120730134.html",
+          "sentiment": 0.0
         },
         {
-          "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+          "title": "\u201cWho Can Imagine What Action One Might Take\u201d: Musk\u2019s Latest Non-Answer Sends Tesla and SpaceX Higher",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/imagine-action-one-might-musk-113510252.html",
           "sentiment": 0.0
         }
       ]
@@ -5306,26 +5313,26 @@
       "dividendYield": null,
       "marketCap": 426879287296,
       "score": 9.0,
-      "newsSentiment": -0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Beat the Market Like Zacks: PBF, Palantir, Adobe in Focus",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/beat-market-zacks-pbf-palantir-121000661.html",
+          "sentiment": 0.76
+        },
+        {
+          "title": "Palantir CEO Alex Karp Says Only Washington Can Cap AI Liability: 'These Businesses Have to Be Nationalized'",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-ceo-alex-karp-says-104509380.html",
+          "sentiment": -0.2
+        },
         {
           "title": "Michael Burry Doubles Down On Palantir Bear Case: \u2018A Lot Of\u2019 Money Still To Be Made Shorting PLTR",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/michael-burry-doubles-down-on-palantir-bear-case-a-lot-of-money-still-to-be-made-shorting-pltr/cZMR9RVRB4N",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: This Will Be Palantir\u2019s Stock Price in a Year (Hint: It Implies Upside)",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/this-be-palantir-stock-price-in-year-upside/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Wall Street Just Gave Palantir Its Highest-Ever Price Target, Right When Europe Started Saying No",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/wall-street-just-gave-palantir-its-highest-ever-price-target-right-when-europe-started-saying-no?ref=yahoofinance",
-          "sentiment": -0.3
         }
       ]
     },
@@ -5429,9 +5436,16 @@
       "dividendYield": 0.44,
       "marketCap": 361179774976,
       "score": 9.4,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsSentiment": 0.42,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Buy Top-Ranked DELL, SMCI & HPE to Form a Powerful AI-Server Portfolio",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/buy-top-ranked-dell-smci-115500323.html",
+          "sentiment": 0.42
+        }
+      ]
     },
     {
       "sym": "PANW",
@@ -5453,9 +5467,15 @@
       "dividendYield": null,
       "marketCap": 297408430080,
       "score": 9.4,
-      "newsSentiment": 0.55,
+      "newsSentiment": 0.54,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palo Alto Networks' 100% Rally Hits a Valuation Roadblock",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-100-rally-122916941.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Morgan Stanley Raises Palo Alto Networks Price Target to $410 on AI Security Demand",
           "publisher": "InvestorsHub",
@@ -5467,12 +5487,6 @@
           "publisher": "TIKR",
           "link": "https://www.tikr.com/blog/palo-alto-networks-stock-jumped-10-last-week-one-analyst-isnt-buying-it?ref=yahoofinance",
           "sentiment": 0.49
-        },
-        {
-          "title": "The AI Slowdown Trade Has Some Winners: CrowdStrike and Palo Alto Rally While Chips Fall",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/ai-slowdown-trade-winners-crowdstrike-212311977.html",
-          "sentiment": 0.59
         }
       ]
     },
@@ -5496,26 +5510,26 @@
       "dividendYield": null,
       "marketCap": 56756400128,
       "score": 6.2,
-      "newsSentiment": 0.35,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CRWV, NBIS Stocks Get \u2018Sell\u2019 Ratings, AI-Pivoting Bitcoin Miners Get \u2018Neutral\u2019 Calls: Rothschild Says Credit Market Is \u2018Sending The More Important Signal\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-corz-wulf-stock-get-sell-ratings-rothschild-credit-market-warning/cZMRLruRB4v",
+          "sentiment": 0.57
+        },
+        {
+          "title": "Nscale, Rival Of CoreWeave And Nebius, Files For IPO",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/nscale-rival-of-coreweave-nebius-files-for-ipo/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Nebius\u2019s Price Hike Suggests Michael Burry Made a Mistake and Is Shorting the Best Neocloud Stock",
           "publisher": "Barchart",
           "link": "https://www.barchart.com/story/news/4701308/nebiuss-price-hike-suggests-michael-burry-made-a-mistake-and-is-shorting-the-best-neocloud-stock",
           "sentiment": 0.42
-        },
-        {
-          "title": "Nebius Offers Fresh Clue About AI's Spending Boom",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nebius-offers-fresh-clue-ais-161936309.html",
-          "sentiment": 0.32
-        },
-        {
-          "title": "Nebius Group (NBIS) Raises AI Cloud Prices As Compute Demand Tests Customer Costs",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/nebius-group-nbis-raises-ai-232109046.html",
-          "sentiment": 0.32
         }
       ]
     },
@@ -5539,25 +5553,25 @@
       "dividendYield": null,
       "marketCap": 44873015296,
       "score": 2.8,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CRWV, NBIS Stocks Get \u2018Sell\u2019 Ratings, AI-Pivoting Bitcoin Miners Get \u2018Neutral\u2019 Calls: Rothschild Says Credit Market Is \u2018Sending The More Important Signal\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/crwv-nbis-corz-wulf-stock-get-sell-ratings-rothschild-credit-market-warning/cZMRLruRB4v",
+          "sentiment": 0.57
+        },
+        {
+          "title": "Nscale, Rival Of CoreWeave And Nebius, Files For IPO",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/nscale-rival-of-coreweave-nebius-files-for-ipo/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Neocloud Boom: Comparing Nebius, CoreWeave, & IREN",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/technology/ai/articles/neocloud-boom-comparing-nebius-coreweave-020300874.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "CoreWeave Rises After Going Live With Vera Rubin Racks. What This Means for CRWV Stock.",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4702590/coreweave-rises-after-going-live-with-vera-rubin-racks-what-this-means-for-crwv-stock",
-          "sentiment": 0.0
-        },
-        {
-          "title": "CoreWeave (CRWV) Is Charging More for AI Compute, and Customers Keep Paying",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/coreweave-crwv-charging-more-ai-193252050.html",
           "sentiment": 0.0
         }
       ]
@@ -5668,9 +5682,15 @@
       "dividendYield": null,
       "marketCap": 41286766592,
       "score": 2.1,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Four Launches From 100: Rocket Lab Gets a Bullish New Call, With Iridium and Mynaric Along for the Ride",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/four-launches-100-rocket-lab-115117949.html",
+          "sentiment": 0.54
+        },
         {
           "title": "Rocket Lab (RKLB) Dropped, So What Is Behind Its Latest Move?",
           "publisher": "Simply Wall St.",
@@ -5682,12 +5702,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
           "sentiment": 0.0
-        },
-        {
-          "title": "RKLB Stock Gains Overnight: Rocket Lab\u2019s 97th Electron Is Already On The Pad After Another Mission Success",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-97th-electron-on-pad-after-another-mission-success/cZMbCf0RB4P",
-          "sentiment": 0.73
         }
       ]
     },
@@ -5863,6 +5877,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "August housing data & Costco earnings: What to watch this week",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/august-housing-data-costco-earnings-120000940.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Trump-Xi Summit, Costco, Autozone, General Mills, and More to Watch This Week",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/trump-xi-summit-costco-autozone-general-mills-stocks-9394b2ba?siteid=yhoof2&yptr=yahoo",
@@ -5872,12 +5892,6 @@
           "title": "Costco quietly drops brand-new Pepsi soda from its warehouses",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/retail/costco-quietly-drops-brand-new-pepsi-soda-from-its-warehouses",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Costco Stock at $892: Here's What History Says Comes Next",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/costco-stock-892-here-what-history-says-comes-next/",
           "sentiment": 0.0
         }
       ]
@@ -5902,7 +5916,7 @@
       "dividendYield": 1.53,
       "marketCap": 431752708096,
       "score": 4.9,
-      "newsSentiment": 0.1,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -5915,12 +5929,6 @@
           "title": "Cisco Drops 8% in 3 Months: Should You Buy the Stock on the Dip?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/cisco-drops-8-3-months-165500656.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Cisco Climbs 3.3% as Splunk Takes AI Behind the Firewall",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/cisco-climbs-3-3-splunk-182529645.html",
           "sentiment": 0.0
         }
       ]
@@ -5988,7 +5996,7 @@
       "dividendYield": null,
       "marketCap": 574070980608,
       "score": 8.1,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -5998,10 +6006,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
+          "title": "Stocks to Watch: Warner Bros., Intel, Strategy, Critical Metals",
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "sentiment": -0.32
         },
         {
           "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
@@ -6031,20 +6039,20 @@
       "dividendYield": 0.25,
       "marketCap": 4274851676160,
       "score": 7.7,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.55,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Alphabet Stock Surges as Google Search Makes a Major Comeback",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stock-surges-google-search-122833154.html",
+          "sentiment": 0.61
+        },
         {
           "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/the-tech-selloff-is-only-strengthening-my-belief-in-alphabet/",
           "sentiment": 0.49
-        },
-        {
-          "title": "What Does Alphabet (GOOGL) Face In This New AI Safety Lawsuit?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
-          "sentiment": -0.1
         }
       ]
     },
@@ -6068,9 +6076,15 @@
       "dividendYield": 0.73,
       "marketCap": 1707097718784,
       "score": 4.4,
-      "newsSentiment": 0.23,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/amd-vs-broadcom-ai-chip-race-better-buy/",
+          "sentiment": 0.44
+        },
         {
           "title": "\u201cOur Targets Haven\u2019t Changed\u201d: Broadcom\u2019s CEO Pushes Back on the AI Slowdown Scare",
           "publisher": "Insider Monkey",
@@ -6082,12 +6096,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/jim-cramer-just-sent-a-strong-message-to-broadcom-stock-investors-sell-off",
           "sentiment": 0.73
-        },
-        {
-          "title": "Applied Materials vs. Broadcom: Comparing Sales Growth Trajectories for These Artificial Intelligence Companies",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/charts/2026/09/19/applied-materials-vs-broadcom-comparing-sales-growth-trajectories-for-these-artificial-intelligence-companies/",
-          "sentiment": 0.69
         }
       ]
     },
@@ -6240,9 +6248,15 @@
       "dividendYield": null,
       "marketCap": 61149593600,
       "score": 8.0,
-      "newsSentiment": 0.22,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "MicroStrategy Ends Two-Week Pause With 950 Bitcoin: Is the Buying Engine Stalling?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/strategy-950-bitcoin-buy-strc-buyback/",
+          "sentiment": -0.2
+        },
         {
           "title": "Bitcoin Nears $85K, MSTR, ASST Stocks Rally As Crypto Bulls Return Amid Easing Oil Prices",
           "publisher": "Stocktwits",
@@ -6253,12 +6267,6 @@
           "title": "Intel, AMD, Strategy, Meta, Warner Bros, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ]
@@ -6326,7 +6334,7 @@
       "dividendYield": 0.6,
       "marketCap": 1027672309760,
       "score": 4.9,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.74,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -6334,18 +6342,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-stock-fair-041830693.html",
           "sentiment": 0.74
-        },
-        {
-          "title": "What Would It Take For Eli Lilly Stock To Keep Climbing?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615857/what-would-it-take-for-eli-lilly-stock-to-keep-climbing/2026-09-18",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Can Eli Lilly\u2019s Two-Drug Obesity Treatment Justify Its $1 Trillion Valuation?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/can-eli-lillys-two-drug-obesity-treatment-justify-its-1-trillion-valuation/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6541,9 +6537,15 @@
       "dividendYield": 2.07,
       "marketCap": 189815717888,
       "score": 9.4,
-      "newsSentiment": -0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.25,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Cracker Barrel Old Country Store and Qualcomm have been highlighted as Zacks Bull and Bear of the Day",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/cracker-barrel-old-country-store-115300760.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Bear of the Day: Qualcomm (QCOM)",
           "publisher": "Zacks",
@@ -6555,12 +6557,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/qcom-stock-inches-higher-after-worst-drop-in-three-months-traders-eye-snapdragon-summit-for-cues/cZMRaUqRB4F",
           "sentiment": -0.74
-        },
-        {
-          "title": "Astera Labs vs. Qualcomm: Which Semiconductor Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/astera-labs-vs-qualcomm-which-semiconductor-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -6842,20 +6838,14 @@
       "dividendYield": 1.99,
       "marketCap": 650648485888,
       "score": 9.1,
-      "newsSentiment": 0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.3,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Is Johnson & Johnson Stock Expensive, Or Is STELARA Hiding The Real Price?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615892/is-johnson-johnson-stock-expensive-or-is-stelara-hiding-the-real-price/2026-09-18",
           "sentiment": -0.3
-        },
-        {
-          "title": "Johnson & Johnson (JNJ) Faces A Fresh Valuation Test On DePuy Sale Talk",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-faces-fresh-091546567.html",
-          "sentiment": 0.32
         }
       ]
     },

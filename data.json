@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T09:37:42.079155+00:00",
+  "generated_at": "2026-09-21T10:37:05.728636+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,9 +40,15 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Pay Crypto Hiring Fuels New Stablecoin Speculation",
+          "publisher": "Cryptonews",
+          "link": "https://cryptonews.com/news/crypto-stablecoins-apple-pay-google-roles/",
+          "sentiment": -0.1
+        },
         {
           "title": "Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes",
           "publisher": "Stocktwits",
@@ -54,12 +60,6 @@
           "publisher": "Electronic Payments",
           "link": "https://www.electronicpaymentsinternational.com/news/apple-pay-to-launch-in-india-next-month-with-axis-bank-report/",
           "sentiment": -0.1
-        },
-        {
-          "title": "Apple (AAPL)\u2019s New CEO Bets Big on a $1,999 Foldable iPhone",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-ceo-bets-big-233948726.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -206,14 +206,14 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.48,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
-          "sentiment": 0.0
+          "title": "Nvidia Has Been the King of AI. This ETF Bets the Next Winners Will Be Somewhere Else.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/nvidia-king-of-ai-this-etf-bets-next-winners-igv/",
+          "sentiment": 0.48
         }
       ],
       "volRegime": "Cheap",
@@ -275,6 +275,12 @@
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/article/trump-and-xi-dine-with-ai-titans-and-meta-takes-the-stage-what-to-watch-this-week-100000383.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Meta Platforms (META) Faces A Privacy Probe In France",
           "publisher": "Simply Wall St.",
@@ -728,9 +734,15 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.21,
+      "newsSentiment": -0.44,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Jeff Bezos's parents sank $245,573 of their retirement savings into Amazon after he told them they'd probably lose it",
+          "publisher": "Moneywise",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezoss-parents-sank-245-100000600.html",
+          "sentiment": -0.67
+        },
         {
           "title": "Here\u2019s Why Amazon's $220 Billion in Capital Spending Shouldn\u2019t Worry Investors.",
           "publisher": "Motley Fool",
@@ -742,12 +754,6 @@
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/tech/kuehne-nagel-strikes-deal-with-amazon-for-supply-chain-cloud-capabilities-407c3bfa?siteid=yhoof2&yptr=yahoo",
           "sentiment": -0.2
-        },
-        {
-          "title": "Amazon.com vs. Uber Technologies: Analyzing Recent Quarterly Revenue Trends Between Two Consumer Companies",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/charts/2026/09/21/amazon-com-vs-uber-technologies-analyzing-recent-quarterly-revenue-trends-between-two-consumer-companies/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -970,7 +976,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 4.2,
       "maxLoss": 5322.5,
-      "pcOI": 1.92,
+      "pcOI": 1.84,
       "pcVol": 0.82,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -1193,7 +1199,7 @@
       "breakevenMovePct": 1.88,
       "maxLoss": 18075.0,
       "pcOI": 0.16,
-      "pcVol": 0.6,
+      "pcVol": 0.59,
       "debitStrategy": true,
       "potIsProfitProb": true,
       "newsSentiment": 0.04,
@@ -2039,6 +2045,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Rocket Lab (RKLB) Dropped, So What Is Behind Its Latest Move?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-dropped-behind-101101471.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
@@ -2049,12 +2061,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-97th-electron-on-pad-after-another-mission-success/cZMbCf0RB4P",
           "sentiment": 0.73
-        },
-        {
-          "title": "Is RKLB Stock Paying You Enough For The Swings?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615858/is-rklb-stock-paying-you-enough-for-the-swings/2026-09-18",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2651,9 +2657,15 @@
       "pcVol": 0.72,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.04,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
           "publisher": "Simply Wall St.",
@@ -2665,12 +2677,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Intel Can Supply Only About Half of What Its Customers Want. That's a Better Problem Than It Sounds.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/",
-          "sentiment": 0.13
         }
       ],
       "volRegime": "Cheap",
@@ -3203,6 +3209,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Michael Saylor Hints at More MicroStrategy Bitcoin Buys After \u201cDead Cat Bounce\u201d Debate",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/saylor-hints-microstrategy-bitcoin-buys-dead-cat/",
@@ -3212,12 +3224,6 @@
           "title": "Strategy Is Up 53% in the Past Month. Here's the Bull and Bear Case for One of Wall Street's Most Polarizing Stocks.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/strategy-up-past-month-bull-bear-wall-street-stock/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Strategy Stock\u2019s 16% Jump Yesterday Traces Back to a House Committee Vote.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/strategy-stocks-16-jump-yesterday-traces-back-to-a-house-committee-vote?ref=yahoofinance",
           "sentiment": 0.0
         }
       ],
@@ -3519,26 +3525,26 @@
       "pcVol": 1.7,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/visa-just-fired-2600-people-heres-where-that-money-is-going?ref=yahoofinance",
+          "sentiment": -0.56
+        },
+        {
+          "title": "Visa\u2019s Stablecoin Settlement Just Hit $20 Billion. The Rail Is Built Before the Rules Are.",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Visa Moves to Close Meme Coin Credit Card Rewards Loophole",
           "publisher": "decrypt",
           "link": "https://decrypt.co/378697/visa-close-meme-coin-credit-card-rewards-loophole",
           "sentiment": 0.69
-        },
-        {
-          "title": "Visa Has Quietly Gained 6% in 2026 While the Market Got Distracted: Is V Stock Still a Buy?",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/visa-has-quietly-gained-6-in-2026-while-the-market-got-distracted-is-v-stock-still-a-buy?ref=yahoofinance",
-          "sentiment": 0.05
-        },
-        {
-          "title": "Visa\u2019s Stablecoin Settlements Grew 15 Times in a Year. Is the Stock Still a Buy Near $370?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/visas-stablecoin-settlements-grew-15-times-in-a-year-is-the-stock-still-a-buy-near-370/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -3919,9 +3925,15 @@
       "pcVol": 0.15,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.15,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Same Conference, Same Day, Same Bet: Chevron and ExxonMobil Double Down on LNG",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/same-conference-same-day-same-094121233.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Exxon (XOM) Eyes a Return to Venezuela After Nearly Two Decades Away",
           "publisher": "Insider Monkey",
@@ -3933,12 +3945,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/energy/articles/exxonmobil-stock-oil-majors-facing-101123454.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "ExxonMobil's Advantaged Assets and Refining Strength Drive Outlook",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/energy/articles/exxonmobils-advantaged-assets-refining-strength-170800286.html",
-          "sentiment": 0.74
         }
       ],
       "volRegime": "Cheap",
@@ -4427,9 +4433,15 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Pay Crypto Hiring Fuels New Stablecoin Speculation",
+          "publisher": "Cryptonews",
+          "link": "https://cryptonews.com/news/crypto-stablecoins-apple-pay-google-roles/",
+          "sentiment": -0.1
+        },
         {
           "title": "Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes",
           "publisher": "Stocktwits",
@@ -4441,12 +4453,6 @@
           "publisher": "Electronic Payments",
           "link": "https://www.electronicpaymentsinternational.com/news/apple-pay-to-launch-in-india-next-month-with-axis-bank-report/",
           "sentiment": -0.1
-        },
-        {
-          "title": "Apple (AAPL)\u2019s New CEO Bets Big on a $1,999 Foldable iPhone",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-ceo-bets-big-233948726.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4507,14 +4513,14 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.48,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
-          "sentiment": 0.0
+          "title": "Nvidia Has Been the King of AI. This ETF Bets the Next Winners Will Be Somewhere Else.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/nvidia-king-of-ai-this-etf-bets-next-winners-igv/",
+          "sentiment": 0.48
         }
       ]
     },
@@ -4541,6 +4547,12 @@
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/article/trump-and-xi-dine-with-ai-titans-and-meta-takes-the-stage-what-to-watch-this-week-100000383.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Meta Platforms (META) Faces A Privacy Probe In France",
           "publisher": "Simply Wall St.",
@@ -4575,26 +4587,26 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": -0.03,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Tesla faces major trial for alleged bias against Black workers, after years of lawsuits",
+          "publisher": "Reuters",
+          "link": "https://ca.finance.yahoo.com/news/tesla-faces-major-trial-alleged-100649614.html",
+          "sentiment": -0.25
+        },
+        {
+          "title": "500 Tesla Semis Are Joining an Autonomous Trucking Fleet. At 94, an Iowa Trucker Is Still Behind the Wheel, and Social Security Is Still Keeping Score.",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/personal-finance/social-security/2026/09/21/500-tesla-semis-are-joining-an-autonomous-trucking-fleet-at-94-an-iowa-trucker-is-still-behind-the-wheel-and-social-security-is-still-keeping-score/",
+          "sentiment": 0.34
+        },
         {
           "title": "SpaceX and Tesla\u2019s AI linkup is getting deeper. Here\u2019s what Morgan Stanley sees",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Tesla's Free Cash Flow Went Negative. It Still Has a $43.5 Billion Cash Cushion.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/teslas-free-cash-flow-went-negative-it-still-has-a/",
-          "sentiment": -0.1
         }
       ]
     },
@@ -4833,9 +4845,15 @@
       "dividendYield": null,
       "marketCap": 2736595664896,
       "score": 6.2,
-      "newsSentiment": -0.21,
+      "newsSentiment": -0.44,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Jeff Bezos's parents sank $245,573 of their retirement savings into Amazon after he told them they'd probably lose it",
+          "publisher": "Moneywise",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezoss-parents-sank-245-100000600.html",
+          "sentiment": -0.67
+        },
         {
           "title": "Here\u2019s Why Amazon's $220 Billion in Capital Spending Shouldn\u2019t Worry Investors.",
           "publisher": "Motley Fool",
@@ -4847,12 +4865,6 @@
           "publisher": "The Wall Street Journal",
           "link": "https://www.wsj.com/tech/kuehne-nagel-strikes-deal-with-amazon-for-supply-chain-cloud-capabilities-407c3bfa?siteid=yhoof2&yptr=yahoo",
           "sentiment": -0.2
-        },
-        {
-          "title": "Amazon.com vs. Uber Technologies: Analyzing Recent Quarterly Revenue Trends Between Two Consumer Companies",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/charts/2026/09/21/amazon-com-vs-uber-technologies-analyzing-recent-quarterly-revenue-trends-between-two-consumer-companies/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5175,7 +5187,7 @@
       "volRatio": 3.27,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2012989751296,
+      "marketCap": 2011830157312,
       "score": 8.2,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -5494,7 +5506,7 @@
       "volRatio": 1.04,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 60770516992,
+      "marketCap": 56756400128,
       "score": 6.2,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
@@ -5672,6 +5684,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Rocket Lab (RKLB) Dropped, So What Is Behind Its Latest Move?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-dropped-behind-101101471.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-dow-futures-rise-ahead-of-trump-xi-summit-this-week-nvda-meta-crml-glnd-spcx-rklb-be-stocks-in-focus/cZMR9EBRB4n",
@@ -5682,12 +5700,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-rocket-lab-97th-electron-on-pad-after-another-mission-success/cZMbCf0RB4P",
           "sentiment": 0.73
-        },
-        {
-          "title": "Is RKLB Stock Paying You Enough For The Swings?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/615858/is-rklb-stock-paying-you-enough-for-the-swings/2026-09-18",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5709,7 +5721,7 @@
       "volRatio": 1.58,
       "peRatio": 68.9,
       "dividendYield": 0.75,
-      "marketCap": 129320239104,
+      "marketCap": 129057431552,
       "score": 4.5,
       "newsSentiment": -0.21,
       "newsSentimentLabel": "Negative",
@@ -5988,9 +6000,15 @@
       "dividendYield": null,
       "marketCap": 574070980608,
       "score": 8.1,
-      "newsSentiment": 0.04,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
           "publisher": "Simply Wall St.",
@@ -6002,12 +6020,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-skhy-intel-ohio-231321870.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Intel Can Supply Only About Half of What Its Customers Want. That's a Better Problem Than It Sounds.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/",
-          "sentiment": 0.13
         }
       ]
     },
@@ -6244,6 +6256,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Stocks to Watch: Warner Bros., Intel, Strategy",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/stocks-to-watch-warner-bros-intel-strategy-VwQlqTeLLc9SL0RAX8qF?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Michael Saylor Hints at More MicroStrategy Bitcoin Buys After \u201cDead Cat Bounce\u201d Debate",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/saylor-hints-microstrategy-bitcoin-buys-dead-cat/",
@@ -6253,12 +6271,6 @@
           "title": "Strategy Is Up 53% in the Past Month. Here's the Bull and Bear Case for One of Wall Street's Most Polarizing Stocks.",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/strategy-up-past-month-bull-bear-wall-street-stock/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Strategy Stock\u2019s 16% Jump Yesterday Traces Back to a House Committee Vote.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/strategy-stocks-16-jump-yesterday-traces-back-to-a-house-committee-vote?ref=yahoofinance",
           "sentiment": 0.0
         }
       ]
@@ -6324,7 +6336,7 @@
       "volRatio": 1.86,
       "peRatio": 38.8,
       "dividendYield": 0.6,
-      "marketCap": 1028115464192,
+      "marketCap": 1027672309760,
       "score": 4.9,
       "newsSentiment": 0.25,
       "newsSentimentLabel": "Positive",
@@ -6412,26 +6424,26 @@
       "dividendYield": 0.73,
       "marketCap": 691411156992,
       "score": 6.2,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Visa Just Fired 2,600 People. Here\u2019s Where That Money Is Going",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/visa-just-fired-2600-people-heres-where-that-money-is-going?ref=yahoofinance",
+          "sentiment": -0.56
+        },
+        {
+          "title": "Visa\u2019s Stablecoin Settlement Just Hit $20 Billion. The Rail Is Built Before the Rules Are.",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Visa Moves to Close Meme Coin Credit Card Rewards Loophole",
           "publisher": "decrypt",
           "link": "https://decrypt.co/378697/visa-close-meme-coin-credit-card-rewards-loophole",
           "sentiment": 0.69
-        },
-        {
-          "title": "Visa Has Quietly Gained 6% in 2026 While the Market Got Distracted: Is V Stock Still a Buy?",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/visa-has-quietly-gained-6-in-2026-while-the-market-got-distracted-is-v-stock-still-a-buy?ref=yahoofinance",
-          "sentiment": 0.05
-        },
-        {
-          "title": "Visa\u2019s Stablecoin Settlements Grew 15 Times in a Year. Is the Stock Still a Buy Near $370?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/visas-stablecoin-settlements-grew-15-times-in-a-year-is-the-stock-still-a-buy-near-370/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6496,7 +6508,7 @@
       "volRatio": 1.76,
       "peRatio": 38.7,
       "dividendYield": 0.93,
-      "marketCap": 849365827584,
+      "marketCap": 846768766976,
       "score": 2.9,
       "newsSentiment": 0.1,
       "newsSentimentLabel": "Neutral",
@@ -6670,9 +6682,15 @@
       "dividendYield": 2.52,
       "marketCap": 672462077952,
       "score": 8.5,
-      "newsSentiment": 0.15,
+      "newsSentiment": -0.1,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Same Conference, Same Day, Same Bet: Chevron and ExxonMobil Double Down on LNG",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/same-conference-same-day-same-094121233.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Exxon (XOM) Eyes a Return to Venezuela After Nearly Two Decades Away",
           "publisher": "Insider Monkey",
@@ -6684,12 +6702,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/energy/articles/exxonmobil-stock-oil-majors-facing-101123454.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "ExxonMobil's Advantaged Assets and Refining Strength Drive Outlook",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/energy/articles/exxonmobils-advantaged-assets-refining-strength-170800286.html",
-          "sentiment": 0.74
         }
       ]
     },

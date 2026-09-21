@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T06:37:25.505604+00:00",
+  "generated_at": "2026-09-21T07:37:15.092543+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,9 +40,15 @@
       "pcVol": 0.9,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.05,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Pay to launch in India next month with Axis Bank- report",
+          "publisher": "Electronic Payments",
+          "link": "https://www.electronicpaymentsinternational.com/news/apple-pay-to-launch-in-india-next-month-with-axis-bank-report/",
+          "sentiment": -0.1
+        },
         {
           "title": "Apple (AAPL)\u2019s New CEO Bets Big on a $1,999 Foldable iPhone",
           "publisher": "Insider Monkey",
@@ -54,12 +60,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/technology/apples-new-ceo-reveals-how-ai-will-change-your-life",
           "sentiment": -0.18
-        },
-        {
-          "title": "Apple Wants to Enter the AI Inference Market. It Will Have to Swallow Its Pride First.",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4702934/apple-wants-to-enter-the-ai-inference-market-it-will-have-to-swallow-its-pride-first",
-          "sentiment": 0.34
         }
       ],
       "volRegime": "Rich",
@@ -206,20 +206,14 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.28,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.2,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
           "sentiment": -0.2
-        },
-        {
-          "title": "Nvidia's Jensen Huang Beats Zuckerberg, Bezos for Trump's AI Favor as Stock Climbs",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/jensen-huang-trump-ai-ally-nvidia/",
-          "sentiment": 0.77
         }
       ],
       "volRegime": "Cheap",
@@ -278,19 +272,19 @@
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.28,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "The AI Agent Wars Just Got Personal: Google\u2019s CC vs. Meta\u2019s Muse",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/20/the-ai-agent-wars-just-got-personal-googles-cc-vs-metas-muse/",
-          "sentiment": -0.56
+          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
+          "sentiment": 0.0
         },
         {
-          "title": "Analyst: Meta Needs Just 115 Million Users to Ignite a $28 Billion AI Gold Rush \u2014 But It\u2019s Not Likely to Happen",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/20/analyst-meta-needs-just-115-million-users-to-ignite-a-28-billion-ai-gold-rush-but-its-not-likely-to-happen/",
+          "title": "Stocktwits Tech Watch: Trump-Xi Summit, AI Pacing Debate and Meta And YouTube Events In Focus This Week",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/stocktwits-tech-watch-trump-xi-summit-ai-pacing-debate-and-meta-and-you-tube-events-in-focus-this-week/cZMRIBoRB40",
           "sentiment": 0.0
         }
       ],
@@ -1284,6 +1278,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
+          "sentiment": 0.0
+        },
+        {
           "title": "One Vanguard ETF Is Betting Big on SpaceX, But Is 20% Too Big a Bet?",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/vanguard-etf-spacex-concentration-risk/",
@@ -1294,12 +1294,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/vanguard-communication-services-etf-buy-spacex/",
           "sentiment": -0.03
-        },
-        {
-          "title": "Should You Buy SpaceX Stock Before Its Next Earnings Report?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/should-you-buy-spacex-stock-before-its-next-earnin/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2657,9 +2651,15 @@
       "pcVol": 0.72,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/intel-stock-2-ai-infrastructure-071318932.html",
+          "sentiment": 0.0
+        },
         {
           "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
           "publisher": "Simply Wall St.",
@@ -2671,12 +2671,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/",
           "sentiment": 0.13
-        },
-        {
-          "title": "Intel Corporation (INTC)\u2019s Terafab Partnership Could Give Its AI Foundry Ambitions a Major Boost",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/intel-corporation-intc-terafab-partnership-081341477.html",
-          "sentiment": 0.46
         }
       ],
       "volRegime": "Cheap",
@@ -2971,9 +2965,15 @@
       "pcVol": 1.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.56,
+      "newsSentiment": 0.53,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "A Lumentum President Sells 1,500 Shares Worth $1.4 Million Amid a Soaring Stock Price",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/filings/2026/09/21/a-lumentum-president-sells-1-500-shares-worth-usd1-4-million-amid-a-soaring-stock-price/",
+          "sentiment": 0.48
+        },
         {
           "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
           "publisher": "Investor's Business Daily",
@@ -3605,9 +3605,15 @@
       "pcVol": 0.57,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "These Recent Moves Are Brilliant. Here's Why Robinhood Is the Most Important Player in Crypto Right Now.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/these-recent-moves-are-brilliant-heres-why-robinho/",
+          "sentiment": 0.71
+        },
         {
           "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
@@ -3618,12 +3624,6 @@
           "title": "Robinhood CEO Says Crypto Event-Contracts Will Overtake Sports Markets",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/robinhood-ceo-crypto-overtake-sports-markets/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Higher Rates Keep Robinhood Stock And Cash Sweep Platforms In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/higher-rates-keep-robinhood-stock-211136218.html",
           "sentiment": 0.0
         }
       ],
@@ -4427,9 +4427,15 @@
       "dividendYield": 0.32,
       "marketCap": 4905541566464,
       "score": 9.4,
-      "newsSentiment": 0.05,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Apple Pay to launch in India next month with Axis Bank- report",
+          "publisher": "Electronic Payments",
+          "link": "https://www.electronicpaymentsinternational.com/news/apple-pay-to-launch-in-india-next-month-with-axis-bank-report/",
+          "sentiment": -0.1
+        },
         {
           "title": "Apple (AAPL)\u2019s New CEO Bets Big on a $1,999 Foldable iPhone",
           "publisher": "Insider Monkey",
@@ -4441,12 +4447,6 @@
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/technology/apples-new-ceo-reveals-how-ai-will-change-your-life",
           "sentiment": -0.18
-        },
-        {
-          "title": "Apple Wants to Enter the AI Inference Market. It Will Have to Swallow Its Pride First.",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4702934/apple-wants-to-enter-the-ai-inference-market-it-will-have-to-swallow-its-pride-first",
-          "sentiment": 0.34
         }
       ]
     },
@@ -4507,20 +4507,14 @@
       "dividendYield": 0.45,
       "marketCap": 5367153557504,
       "score": 9.4,
-      "newsSentiment": 0.28,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.2,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Nvidia CEO Wants To Pay Workers \u2018As Much As Possible,\u2019 Calls $8B In Taxes \u2018A Privilege\u2019 Amid Samsung, SK Hynix Pay Push",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/nvidia-ceo-wants-to-pay-workers-as-much-as-possible-calls-8-b-in-taxes-a-privilege-amid-samsung-sk-hynix-pay-push/cZMR5b9RB4f",
           "sentiment": -0.2
-        },
-        {
-          "title": "Nvidia's Jensen Huang Beats Zuckerberg, Bezos for Trump's AI Favor as Stock Climbs",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/jensen-huang-trump-ai-ally-nvidia/",
-          "sentiment": 0.77
         }
       ]
     },
@@ -4544,19 +4538,19 @@
       "dividendYield": 0.32,
       "marketCap": 1696002211840,
       "score": 7.9,
-      "newsSentiment": -0.28,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "The AI Agent Wars Just Got Personal: Google\u2019s CC vs. Meta\u2019s Muse",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/20/the-ai-agent-wars-just-got-personal-googles-cc-vs-metas-muse/",
-          "sentiment": -0.56
+          "title": "Meta Platforms (META) Faces A Privacy Probe In France",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
+          "sentiment": 0.0
         },
         {
-          "title": "Analyst: Meta Needs Just 115 Million Users to Ignite a $28 Billion AI Gold Rush \u2014 But It\u2019s Not Likely to Happen",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/20/analyst-meta-needs-just-115-million-users-to-ignite-a-28-billion-ai-gold-rush-but-its-not-likely-to-happen/",
+          "title": "Stocktwits Tech Watch: Trump-Xi Summit, AI Pacing Debate and Meta And YouTube Events In Focus This Week",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/stocktwits-tech-watch-trump-xi-summit-ai-pacing-debate-and-meta-and-you-tube-events-in-focus-this-week/cZMRIBoRB40",
           "sentiment": 0.0
         }
       ]
@@ -4581,9 +4575,15 @@
       "dividendYield": null,
       "marketCap": 1438701584384,
       "score": 6.5,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla's Free Cash Flow Went Negative. It Still Has a $43.5 Billion Cash Cushion.",
           "publisher": "Motley Fool",
@@ -4595,12 +4595,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-undervalued-analyst-roadster-barely-bull-case/cZMRTeURB47",
           "sentiment": 0.0
-        },
-        {
-          "title": "Tesla (TSLA)\u2019s Autopilot Software Wins Over a Sixth European Country",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/tesla-tsla-autopilot-software-wins-214328537.html",
-          "sentiment": 0.57
         }
       ]
     },
@@ -5187,6 +5181,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/tesla-spacex-merger-dan-ives-odds/",
+          "sentiment": 0.0
+        },
+        {
           "title": "One Vanguard ETF Is Betting Big on SpaceX, But Is 20% Too Big a Bet?",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/vanguard-etf-spacex-concentration-risk/",
@@ -5197,12 +5197,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/20/vanguard-communication-services-etf-buy-spacex/",
           "sentiment": -0.03
-        },
-        {
-          "title": "Should You Buy SpaceX Stock Before Its Next Earnings Report?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/20/should-you-buy-spacex-stock-before-its-next-earnin/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5994,9 +5988,15 @@
       "dividendYield": null,
       "marketCap": 574070980608,
       "score": 8.1,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Intel Stock And 2 AI Infrastructure Leaders Tied To Chip Policy",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/intel-stock-2-ai-infrastructure-071318932.html",
+          "sentiment": 0.0
+        },
         {
           "title": "SK Hynix (SKHY) Intel Ohio Talks Put Its Cheap Looking Valuation Back In Focus",
           "publisher": "Simply Wall St.",
@@ -6008,12 +6008,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/",
           "sentiment": 0.13
-        },
-        {
-          "title": "Intel Corporation (INTC)\u2019s Terafab Partnership Could Give Its AI Foundry Ambitions a Major Boost",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/intel-corporation-intc-terafab-partnership-081341477.html",
-          "sentiment": 0.46
         }
       ]
     },
@@ -6117,9 +6111,15 @@
       "dividendYield": null,
       "marketCap": 83502620672,
       "score": 9.4,
-      "newsSentiment": 0.56,
+      "newsSentiment": 0.53,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "A Lumentum President Sells 1,500 Shares Worth $1.4 Million Amid a Soaring Stock Price",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/filings/2026/09/21/a-lumentum-president-sells-1-500-shares-worth-usd1-4-million-amid-a-soaring-stock-price/",
+          "sentiment": 0.48
+        },
         {
           "title": "Stock Market Today: Nasdaq, S&P Reverse Slightly Higher; Sandisk, Lumentum Lead This Tech Rally",
           "publisher": "Investor's Business Daily",
@@ -6455,9 +6455,15 @@
       "dividendYield": null,
       "marketCap": 107728044032,
       "score": 9.4,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "These Recent Moves Are Brilliant. Here's Why Robinhood Is the Most Important Player in Crypto Right Now.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/these-recent-moves-are-brilliant-heres-why-robinho/",
+          "sentiment": 0.71
+        },
         {
           "title": "Dow Jones Futures Rise; Can The Market Take Flight? Robinhood, Sandisk, AMD, Moderna Surge Into Buy Areas",
           "publisher": "Investor's Business Daily",
@@ -6468,12 +6474,6 @@
           "title": "Robinhood CEO Says Crypto Event-Contracts Will Overtake Sports Markets",
           "publisher": "BeInCrypto",
           "link": "https://beincrypto.com/robinhood-ceo-crypto-overtake-sports-markets/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Higher Rates Keep Robinhood Stock And Cash Sweep Platforms In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/higher-rates-keep-robinhood-stock-211136218.html",
           "sentiment": 0.0
         }
       ]

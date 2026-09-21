@@ -1448,7 +1448,15 @@
     }
 
     if(wantBuy || wantSell || wantEma){
-      pool = pool.filter(t=> (!wantBuy || t.buy) && (!wantSell || t.sell) && (!wantEma || t.ema));
+      // Buy and Sell are two sides of the same trend flag (t.sell is always
+      // !t.buy), so — like the strategy, P/C and volatility checkboxes above —
+      // they're OR'd: either alone narrows to that side, both together show
+      // both sides. AND-ing them (the old behavior) could never match anything.
+      // EMA support is a separate condition and still AND's with the trend pick.
+      pool = pool.filter(t=>{
+        const trendOk = (!wantBuy && !wantSell) || (wantBuy && t.buy) || (wantSell && t.sell);
+        return trendOk && (!wantEma || t.ema);
+      });
       funnel.push({ label:'After Quality', count: pool.length });
     }
 

@@ -1047,7 +1047,7 @@
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
         <div class="num-row">
           <label for="minTradeProfitInput">Min trade profit %</label>
-          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20">
+          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
         </div>
       </div>
       <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put have no fixed profit figure, so they don't pass this filter.</div>
@@ -1483,7 +1483,7 @@
     // trade-profit pair: annualizing (ap = roc * 365/dte, see fetch_data.py)
     // made short-DTE spreads clear the bar on a tiny raw return (a 2% return
     // at 6 DTE annualizes to 100%+), so filtering on roc directly is both
-    // simpler and closer to what the number actually means. Defaults to 20%.
+    // simpler and closer to what the number actually means. Defaults to 15%.
     //
     // Long Call/Long Put have no "ap"/"roc" at all (both null — see backend
     // notes on breakevenMovePct). An earlier version let those pass through here on a
@@ -2093,7 +2093,7 @@
   // list, since they set the state on first load (this list only drives Reset).
   // Updated 2026-09-20: Outlook & Strategy now starts with the five directional
   // strategies selected (Iron Condor stays off),
-  // all four P/C boxes start unchecked, and the profit floor moved from 10% to 20%.
+  // all four P/C boxes start unchecked, and the profit floor moved from 10% to 15%.
   const DEFAULT_CHECKED = [
     '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
@@ -2105,7 +2105,7 @@
     '[data-risk="lowVol"]',
     '[data-risk="highVol"]',
   ];
-  const DEFAULT_MIN_TRADE_PROFIT = 20;
+  const DEFAULT_MIN_TRADE_PROFIT = 15;
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);

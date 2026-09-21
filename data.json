@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T21:38:06.672099+00:00",
+  "generated_at": "2026-09-21T21:59:31.178872+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -129,6 +129,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Microsoft (MSFT) Laps the Stock Market: Here's Why",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-laps-stock-market-214503698.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Microsoft (MSFT) Stock Looks Reasonable Despite Its 75% Five Year Run",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-looks-reasonable-211138209.html",
@@ -138,12 +144,6 @@
           "title": "Microsoft Patent Hints At Contextual In-Game Ads",
           "publisher": "MediaPost",
           "link": "https://www.mediapost.com/publications/article/418175/microsoft-patent-hints-at-contextual-in-game-ads.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft's Nadella Is Joining Trump and Xi and Tech Giants Are Coming Too",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/microsofts-nadella-joining-trump-xi-192151216.html",
           "sentiment": 0.0
         }
       ],
@@ -201,7 +201,7 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -209,6 +209,12 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/could-nvidias-prospects-china-shift-183517435.html",
           "sentiment": 0.3
+        },
+        {
+          "title": "Should You Forget Nvidia and Buy These 3 Millionaire-Maker AI Infrastructure Stocks Instead?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/should-you-forget-nvidia-and-buy-these-3-millionai/",
+          "sentiment": -0.23
         },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
@@ -269,7 +275,7 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -279,10 +285,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Meta Stock Soars as New AI Agent Gathers Steam",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/meta-s-stock-soars-more-than-10-as-new-ai-agent-gathers-steam-XHfjpXIVTQ13gdgdnYdK?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.64
+          "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/21/stock-market-today-sept-21-meta-surges-on-excitement-over-muse-personal-ai-agent/",
+          "sentiment": 0.8
+        },
+        {
+          "title": "Meta Up 11% as Zuckerberg Bets Muse Will \u201cMake You Money and Save You Money\u201d",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/zuckerberg-bets-muse-will-make-you-money-and-save-you-money?ref=yahoofinance",
+          "sentiment": 0.49
         }
       ],
       "volRegime": "Rich",
@@ -495,7 +507,7 @@
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -505,16 +517,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
+          "sentiment": 0.61
+        },
+        {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "Micron Stock Is Back Above $1,000. Is a Stock Split Coming?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/micron-stock-is-back-above-usd1-000-is-a-stock-split-coming/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -774,26 +786,26 @@
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Amazon (AMZN) Laps the Stock Market: Here's Why",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-laps-stock-market-214505872.html",
+          "sentiment": 0.18
+        },
+        {
+          "title": "Amazon kicks out Meta's Muse in split over AI shopping",
+          "publisher": "Axios Media",
+          "link": "https://www.axios.com/2026/09/21/amazon-meta-muse-ai-agentic-shopping#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-media",
+          "sentiment": 0.18
+        },
         {
           "title": "Has The Price For Amazon Stock Already Peaked?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615981/has-the-price-for-amazon-stock-already-peaked/2026-09-21",
           "sentiment": 0.18
-        },
-        {
-          "title": "Amazon Takes Wearable AI Deeper Into Logistics",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-takes-wearable-ai-deeper-195640618.html",
-          "sentiment": 0.18
-        },
-        {
-          "title": "META Stock Set For Best Day In 13 Months On Muse Popularity As Amazon Moves to Block It",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-set-for-best-day-in-13-months-on-muse-popularity-as-amazon-moves-to-block-it/cZMRq6LRBIS",
-          "sentiment": 0.73
         }
       ],
       "volRegime": "Fair",
@@ -1008,9 +1020,15 @@
       "pcVol": 0.34,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.18,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Netflix (NFLX) Laps the Stock Market: Here's Why",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-laps-stock-market-214503644.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Wells Fargo Cuts Netflix (NFLX) to Underweight as its 2026 Slide Deepens",
           "publisher": "Insider Monkey",
@@ -1022,12 +1040,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/media-advertising/articles/paramount-deal-approval-puts-netflix-201505168.html",
           "sentiment": 0.74
-        },
-        {
-          "title": "This Bearish Netflix Stock Trade Can Cash In On Video Streaming Giant's Woes",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/options/netflix-nflx-stock-bear-put-spread-options/?src=A00220&yptr=yahoo",
-          "sentiment": -0.75
         }
       ],
       "volRegime": "Cheap",
@@ -1618,9 +1630,15 @@
       "pcVol": 0.37,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palantir's Alex Karp says AI's biggest names may never IPO \u2014 the play is telling Washington 'nationalize us, please'",
+          "publisher": "Moneywise",
+          "link": "https://finance.yahoo.com/technology/ai/articles/palantirs-alex-karp-says-ais-213000729.html",
+          "sentiment": 0.57
+        },
         {
           "title": "Palantir Climbs as CEO Sends Blunt Message to AI Industry",
           "publisher": "GuruFocus.com",
@@ -1632,12 +1650,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/options/articles/palantir-stock-gets-bullish-options-191655049.html",
           "sentiment": 0.69
-        },
-        {
-          "title": "OpenAI and Anthropic Weighed Mutual AI Tests. Palantir CEO Says One May Never List",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/openai-anthropic-testing-deal-karp-ipo/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -1688,9 +1700,15 @@
       "pcVol": 0.89,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "ASML (ASML) Surpasses Market Returns: Some Facts Worth Knowing",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/asml-asml-surpasses-market-returns-214505850.html",
+          "sentiment": 0.23
+        },
         {
           "title": "ASML Adds 1% as 110 EUV Tools Test Factory Throughput",
           "publisher": "GuruFocus.com",
@@ -1702,12 +1720,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/asml-holding-enxtam-asml-alliances-161313232.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Better Artificial Intelligence Stock: Arm Holdings vs. ASML",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/better-artificial-intelligence-stock-arm-holdings-vs-asml/",
-          "sentiment": 0.72
         }
       ],
       "volRegime": "Fair",
@@ -1822,8 +1834,8 @@
       "pcVol": 1.14,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Why Micron and Dell stocks may have more juice than Nvidia",
@@ -1832,16 +1844,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Spotting Winners: Dell (NYSE:DELL) And Hardware & Infrastructure Stocks In Q2",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/spotting-winners-dell-nyse-dell-213425249.html",
+          "sentiment": 0.48
+        },
+        {
           "title": "Dell and AppLovin Look Vulnerable. How to Play the Charts.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/dell-applovin-stocks-ai-tech-6cb881bf?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.13
-        },
-        {
-          "title": "DELL Rides on Growing AI Clientele: Can the Stock Outpace SMCI & CSCO?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/dell-rides-growing-ai-clientele-152200998.html",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Cheap",
@@ -2858,7 +2870,7 @@
       "pcVol": 0.49,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.59,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2866,6 +2878,18 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
+        },
+        {
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Meta\u2019s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.54
         }
       ],
       "volRegime": "Fair",
@@ -3345,6 +3369,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Michael Saylor's Strategy restarts buying BTC",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/michael-saylors-strategy-buys-950-bitcoin-now-holds-846000",
@@ -3355,12 +3385,6 @@
           "publisher": "Fortune",
           "link": "https://finance.yahoo.com/markets/crypto/articles/michael-saylor-strategy-buys-bitcoin-170509444.html",
           "sentiment": 0.68
-        },
-        {
-          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -3575,9 +3599,15 @@
       "pcVol": 1.4,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Eli Lilly (LLY) Increases Yet Falls Behind Market: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-increases-yet-214502276.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Eli Lilly Starts Building Record $6.5B Houston Manufacturing Facility",
           "publisher": "Bisnow",
@@ -3639,9 +3669,15 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.14,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Robinhood CEO Says Crypto Will Beat Sports at Prediction Markets' Own Game",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378889/robinhood-ceo-crypto-will-beat-sports-prediction-markets",
+          "sentiment": 0.61
+        },
         {
           "title": "Robinhood\u2019s Vlad Tenev: Trump Accounts Could Become \u201cThe Biggest Element of Long-Term Saving and Investing in This Country Within Possibly Even a Decade\u201d",
           "publisher": "24/7 Wall St.",
@@ -3653,12 +3689,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/robinhood-markets-inc-hood-recently-133502805.html",
           "sentiment": -0.42
-        },
-        {
-          "title": "Prediction: Robinhood Will Launch Tokenized Stock Trading in the U.S. Before the End of 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/prediction-robinhood-will-launch-tokenized-stock-trading-in-the-u-s-before-the-end-of-2027/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -3885,9 +3915,15 @@
       "pcVol": 0.9,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Moderna (MRNA) Soars to Fresh High Ahead of Pipeline Updates This Week",
           "publisher": "Insider Monkey",
@@ -3899,12 +3935,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/moderna-stock-cancer-vaccine-merck-ffc114d6?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.08
-        },
-        {
-          "title": "Moderna To Present Additional Data From Key Melanoma Trial At ESMO Congress \u2013 Retail Says \u2018Breakout Is Getting Hard To Ignore\u2019",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/moderna-to-present-additional-data-from-key-melanoma-trial-at-esmo-congress-mrna-stock-rises/cZMRFFZRBIL",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Fair",
@@ -4187,9 +4217,15 @@
       "pcVol": 0.71,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.13,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Exxon Mobil Holdings (XOM) Stock Drops Despite Market Gains: Important Facts to Note",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-holdings-xom-stock-214507501.html",
+          "sentiment": -0.39
+        },
         {
           "title": "Can ExxonMobil Turn Carbon Capture Into a Major Growth Market?",
           "publisher": "Zacks",
@@ -4201,12 +4237,6 @@
           "publisher": "MT Newswires",
           "link": "https://finance.yahoo.com/energy/articles/exxonmobil-refining-upside-could-offset-152242629.html",
           "sentiment": -0.32
-        },
-        {
-          "title": "This Energy Stock Could Give ExxonMobil a Run: Should You Buy?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/energy/articles/energy-stock-could-exxonmobil-run-151000907.html",
-          "sentiment": 0.27
         }
       ],
       "volRegime": "Fair",
@@ -4632,6 +4662,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Microsoft (MSFT) Laps the Stock Market: Here's Why",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-laps-stock-market-214503698.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Microsoft (MSFT) Stock Looks Reasonable Despite Its 75% Five Year Run",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-looks-reasonable-211138209.html",
@@ -4641,12 +4677,6 @@
           "title": "Microsoft Patent Hints At Contextual In-Game Ads",
           "publisher": "MediaPost",
           "link": "https://www.mediapost.com/publications/article/418175/microsoft-patent-hints-at-contextual-in-game-ads.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft's Nadella Is Joining Trump and Xi and Tech Giants Are Coming Too",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/microsofts-nadella-joining-trump-xi-192151216.html",
           "sentiment": 0.0
         }
       ]
@@ -4671,7 +4701,7 @@
       "dividendYield": 0.45,
       "marketCap": 5490544738304,
       "score": 9.4,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4679,6 +4709,12 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/could-nvidias-prospects-china-shift-183517435.html",
           "sentiment": 0.3
+        },
+        {
+          "title": "Should You Forget Nvidia and Buy These 3 Millionaire-Maker AI Infrastructure Stocks Instead?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/should-you-forget-nvidia-and-buy-these-3-millionai/",
+          "sentiment": -0.23
         },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
@@ -4708,7 +4744,7 @@
       "dividendYield": 0.32,
       "marketCap": 1888326254592,
       "score": 8.5,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4718,10 +4754,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Meta Stock Soars as New AI Agent Gathers Steam",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-21-2026/card/meta-s-stock-soars-more-than-10-as-new-ai-agent-gathers-steam-XHfjpXIVTQ13gdgdnYdK?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.64
+          "title": "Stock Market Today, Sept. 21: Meta Surges on Excitement Over Muse Personal AI Agent",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/21/stock-market-today-sept-21-meta-surges-on-excitement-over-muse-personal-ai-agent/",
+          "sentiment": 0.8
+        },
+        {
+          "title": "Meta Up 11% as Zuckerberg Bets Muse Will \u201cMake You Money and Save You Money\u201d",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/zuckerberg-bets-muse-will-make-you-money-and-save-you-money?ref=yahoofinance",
+          "sentiment": 0.49
         }
       ]
     },
@@ -4788,7 +4830,7 @@
       "dividendYield": null,
       "marketCap": 1004821020672,
       "score": 8.5,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4798,16 +4840,16 @@
           "sentiment": 0.59
         },
         {
-          "title": "Chip Stocks Rise As Four New Names Join SOX Index. AMD Breaks Out.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/technology/chip-stocks-amd-stock-four-new-names-join-sox-index/?src=A00220&yptr=yahoo",
-          "sentiment": 0.3
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
         },
         {
-          "title": "Stock Market Today: Dow Up, Nasdaq Roars To Record As Micron Does This; AMD Hits New High (Live Coverage)",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-nvidia-stock-nvda-buy-point/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Meta\u2019s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.54
         }
       ]
     },
@@ -4831,7 +4873,7 @@
       "dividendYield": 0.05,
       "marketCap": 1179041267712,
       "score": 9.4,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4841,16 +4883,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
+          "sentiment": 0.61
+        },
+        {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "Micron Stock Is Back Above $1,000. Is a Stock Split Coming?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/micron-stock-is-back-above-usd1-000-is-a-stock-split-coming/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4978,26 +5020,26 @@
       "dividendYield": null,
       "marketCap": 2787722657792,
       "score": 6.2,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Amazon (AMZN) Laps the Stock Market: Here's Why",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-laps-stock-market-214505872.html",
+          "sentiment": 0.18
+        },
+        {
+          "title": "Amazon kicks out Meta's Muse in split over AI shopping",
+          "publisher": "Axios Media",
+          "link": "https://www.axios.com/2026/09/21/amazon-meta-muse-ai-agentic-shopping#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-media",
+          "sentiment": 0.18
+        },
         {
           "title": "Has The Price For Amazon Stock Already Peaked?",
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/615981/has-the-price-for-amazon-stock-already-peaked/2026-09-21",
           "sentiment": 0.18
-        },
-        {
-          "title": "Amazon Takes Wearable AI Deeper Into Logistics",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amazon-takes-wearable-ai-deeper-195640618.html",
-          "sentiment": 0.18
-        },
-        {
-          "title": "META Stock Set For Best Day In 13 Months On Muse Popularity As Amazon Moves to Block It",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-set-for-best-day-in-13-months-on-muse-popularity-as-amazon-moves-to-block-it/cZMRq6LRBIS",
-          "sentiment": 0.73
         }
       ]
     },
@@ -5107,9 +5149,15 @@
       "dividendYield": null,
       "marketCap": 305466605568,
       "score": 1.5,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.18,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Netflix (NFLX) Laps the Stock Market: Here's Why",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-laps-stock-market-214503644.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Wells Fargo Cuts Netflix (NFLX) to Underweight as its 2026 Slide Deepens",
           "publisher": "Insider Monkey",
@@ -5121,12 +5169,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/media-advertising/articles/paramount-deal-approval-puts-netflix-201505168.html",
           "sentiment": 0.74
-        },
-        {
-          "title": "This Bearish Netflix Stock Trade Can Cash In On Video Streaming Giant's Woes",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/options/netflix-nflx-stock-bear-put-spread-options/?src=A00220&yptr=yahoo",
-          "sentiment": -0.75
         }
       ]
     },
@@ -5451,9 +5493,15 @@
       "dividendYield": null,
       "marketCap": 439975968768,
       "score": 9.4,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Palantir's Alex Karp says AI's biggest names may never IPO \u2014 the play is telling Washington 'nationalize us, please'",
+          "publisher": "Moneywise",
+          "link": "https://finance.yahoo.com/technology/ai/articles/palantirs-alex-karp-says-ais-213000729.html",
+          "sentiment": 0.57
+        },
         {
           "title": "Palantir Climbs as CEO Sends Blunt Message to AI Industry",
           "publisher": "GuruFocus.com",
@@ -5465,12 +5513,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/options/articles/palantir-stock-gets-bullish-options-191655049.html",
           "sentiment": 0.69
-        },
-        {
-          "title": "OpenAI and Anthropic Weighed Mutual AI Tests. Palantir CEO Says One May Never List",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/openai-anthropic-testing-deal-karp-ipo/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5494,9 +5536,15 @@
       "dividendYield": 0.54,
       "marketCap": 657318019072,
       "score": 4.9,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "ASML (ASML) Surpasses Market Returns: Some Facts Worth Knowing",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/asml-asml-surpasses-market-returns-214505850.html",
+          "sentiment": 0.23
+        },
         {
           "title": "ASML Adds 1% as 110 EUV Tools Test Factory Throughput",
           "publisher": "GuruFocus.com",
@@ -5508,12 +5556,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/asml-holding-enxtam-asml-alliances-161313232.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Better Artificial Intelligence Stock: Arm Holdings vs. ASML",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/20/better-artificial-intelligence-stock-arm-holdings-vs-asml/",
-          "sentiment": 0.72
         }
       ]
     },
@@ -5568,8 +5610,8 @@
       "dividendYield": 0.44,
       "marketCap": 365789413376,
       "score": 9.4,
-      "newsSentiment": 0.1,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Why Micron and Dell stocks may have more juice than Nvidia",
@@ -5578,16 +5620,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Spotting Winners: Dell (NYSE:DELL) And Hardware & Infrastructure Stocks In Q2",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/spotting-winners-dell-nyse-dell-213425249.html",
+          "sentiment": 0.48
+        },
+        {
           "title": "Dell and AppLovin Look Vulnerable. How to Play the Charts.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/dell-applovin-stocks-ai-tech-6cb881bf?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.13
-        },
-        {
-          "title": "DELL Rides on Growing AI Clientele: Can the Stock Outpace SMCI & CSCO?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/dell-rides-growing-ai-clientele-152200998.html",
-          "sentiment": 0.18
         }
       ]
     },
@@ -6126,7 +6168,7 @@
       "dividendYield": null,
       "marketCap": 643741843456,
       "score": 8.5,
-      "newsSentiment": 0.59,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -6134,6 +6176,18 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
+        },
+        {
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Meta\u2019s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/intel-stock-price-arm-meta-muse-2a81cacf?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.54
         }
       ]
     },
@@ -6351,6 +6405,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Michael Saylor's Strategy restarts buying BTC",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/michael-saylors-strategy-buys-950-bitcoin-now-holds-846000",
@@ -6361,12 +6421,6 @@
           "publisher": "Fortune",
           "link": "https://finance.yahoo.com/markets/crypto/articles/michael-saylor-strategy-buys-bitcoin-170509444.html",
           "sentiment": 0.68
-        },
-        {
-          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6476,9 +6530,15 @@
       "dividendYield": 0.6,
       "marketCap": 1038780596224,
       "score": 4.9,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Eli Lilly (LLY) Increases Yet Falls Behind Market: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-increases-yet-214502276.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Eli Lilly Starts Building Record $6.5B Houston Manufacturing Facility",
           "publisher": "Bisnow",
@@ -6513,9 +6573,15 @@
       "dividendYield": null,
       "marketCap": 110856847360,
       "score": 9.4,
-      "newsSentiment": -0.14,
+      "newsSentiment": 0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Robinhood CEO Says Crypto Will Beat Sports at Prediction Markets' Own Game",
+          "publisher": "decrypt",
+          "link": "https://decrypt.co/378889/robinhood-ceo-crypto-will-beat-sports-prediction-markets",
+          "sentiment": 0.61
+        },
         {
           "title": "Robinhood\u2019s Vlad Tenev: Trump Accounts Could Become \u201cThe Biggest Element of Long-Term Saving and Investing in This Country Within Possibly Even a Decade\u201d",
           "publisher": "24/7 Wall St.",
@@ -6527,12 +6593,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/robinhood-markets-inc-hood-recently-133502805.html",
           "sentiment": -0.42
-        },
-        {
-          "title": "Prediction: Robinhood Will Launch Tokenized Stock Trading in the U.S. Before the End of 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/prediction-robinhood-will-launch-tokenized-stock-trading-in-the-u-s-before-the-end-of-2027/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6642,9 +6702,15 @@
       "dividendYield": null,
       "marketCap": 69043855360,
       "score": 8.5,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Moderna (MRNA) Soars to Fresh High Ahead of Pipeline Updates This Week",
           "publisher": "Insider Monkey",
@@ -6656,12 +6722,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/moderna-stock-cancer-vaccine-merck-ffc114d6?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.08
-        },
-        {
-          "title": "Moderna To Present Additional Data From Key Melanoma Trial At ESMO Congress \u2013 Retail Says \u2018Breakout Is Getting Hard To Ignore\u2019",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/moderna-to-present-additional-data-from-key-melanoma-trial-at-esmo-congress-mrna-stock-rises/cZMRFFZRBIL",
-          "sentiment": -0.1
         }
       ]
     },
@@ -6814,9 +6874,15 @@
       "dividendYield": 2.52,
       "marketCap": 650915676160,
       "score": 7.3,
-      "newsSentiment": 0.13,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Exxon Mobil Holdings (XOM) Stock Drops Despite Market Gains: Important Facts to Note",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-holdings-xom-stock-214507501.html",
+          "sentiment": -0.39
+        },
         {
           "title": "Can ExxonMobil Turn Carbon Capture Into a Major Growth Market?",
           "publisher": "Zacks",
@@ -6828,12 +6894,6 @@
           "publisher": "MT Newswires",
           "link": "https://finance.yahoo.com/energy/articles/exxonmobil-refining-upside-could-offset-152242629.html",
           "sentiment": -0.32
-        },
-        {
-          "title": "This Energy Stock Could Give ExxonMobil a Run: Should You Buy?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/energy/articles/energy-stock-could-exxonmobil-run-151000907.html",
-          "sentiment": 0.27
         }
       ]
     },

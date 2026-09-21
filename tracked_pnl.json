@@ -1,57 +1,57 @@
 {
-  "generated_at": "2026-09-21T21:38:07.554677+00:00",
+  "generated_at": "2026-09-21T21:59:32.390050+00:00",
   "positions": [
     {
-      "id": "MRVL|Bull_Put_Spread|2026-09-25|$242/238",
+      "id": "MSFT|Bull_Put_Spread|2026-09-25|$490/485",
       "status": "open",
       "dteRemaining": 4,
-      "lastUpdated": "2026-09-21T21:38:06.880796+00:00",
-      "currentPremium": 0.88,
-      "pnlDollars": 21.0,
-      "pnlPct": 19.27,
+      "lastUpdated": "2026-09-21T21:59:31.625224+00:00",
+      "currentPremium": 0.76,
+      "pnlDollars": 0.5,
+      "pnlPct": 0.66,
       "history": [
         {
           "date": "2026-09-21",
           "dte": 4,
-          "premium": 1.03,
-          "pnlDollars": 5.5,
-          "pnlPct": 5.05
+          "premium": 0.76,
+          "pnlDollars": 0.5,
+          "pnlPct": 0.66
         }
       ]
     },
     {
-      "id": "BE|Bull_Put_Spread|2026-09-25|$258/252",
+      "id": "GOOG|Bull_Put_Spread|2026-09-25|$342/338",
       "status": "open",
       "dteRemaining": 4,
-      "lastUpdated": "2026-09-21T21:38:07.088196+00:00",
-      "currentPremium": 1.19,
-      "pnlDollars": -23.5,
-      "pnlPct": -24.74,
+      "lastUpdated": "2026-09-21T21:59:31.744094+00:00",
+      "currentPremium": 0.87,
+      "pnlDollars": -0.5,
+      "pnlPct": -0.57,
       "history": [
         {
           "date": "2026-09-21",
           "dte": 4,
-          "premium": 1.1,
-          "pnlDollars": -15.5,
-          "pnlPct": -16.32
+          "premium": 0.87,
+          "pnlDollars": -0.5,
+          "pnlPct": -0.57
         }
       ]
     },
     {
-      "id": "MSFT|Bull_Put_Spread|2026-09-25|$485/480",
+      "id": "CRM|Bull_Put_Spread|2026-09-25|$230/225",
       "status": "open",
       "dteRemaining": 4,
-      "lastUpdated": "2026-09-21T21:38:07.318434+00:00",
-      "currentPremium": 0.42,
-      "pnlDollars": 57.5,
-      "pnlPct": 58.08,
+      "lastUpdated": "2026-09-21T21:59:31.892862+00:00",
+      "currentPremium": 0.89,
+      "pnlDollars": -0.5,
+      "pnlPct": -0.56,
       "history": [
         {
           "date": "2026-09-21",
           "dte": 4,
-          "premium": 0.65,
-          "pnlDollars": 34.0,
-          "pnlPct": 34.34
+          "premium": 0.89,
+          "pnlDollars": -0.5,
+          "pnlPct": -0.56
         }
       ]
     },
@@ -59,10 +59,10 @@
       "id": "PANW|Bull_Put_Spread|2026-09-25|$355/350",
       "status": "open",
       "dteRemaining": 4,
-      "lastUpdated": "2026-09-21T21:38:07.554666+00:00",
+      "lastUpdated": "2026-09-21T21:59:32.117698+00:00",
       "currentPremium": 1.05,
-      "pnlDollars": -7.0,
-      "pnlPct": -7.14,
+      "pnlDollars": 0.0,
+      "pnlPct": 0.0,
       "history": [
         {
           "date": "2026-09-21",
@@ -70,6 +70,42 @@
           "premium": 1.1,
           "pnlDollars": -12.0,
           "pnlPct": -12.24
+        }
+      ]
+    },
+    {
+      "id": "MRVL|Bull_Put_Spread|2026-09-25|$245/240",
+      "status": "open",
+      "dteRemaining": 4,
+      "lastUpdated": "2026-09-21T21:59:32.264193+00:00",
+      "currentPremium": 1.06,
+      "pnlDollars": 0.5,
+      "pnlPct": 0.47,
+      "history": [
+        {
+          "date": "2026-09-21",
+          "dte": 4,
+          "premium": 1.06,
+          "pnlDollars": 0.5,
+          "pnlPct": 0.47
+        }
+      ]
+    },
+    {
+      "id": "BE|Bull_Put_Spread|2026-09-25|$255/250",
+      "status": "open",
+      "dteRemaining": 4,
+      "lastUpdated": "2026-09-21T21:59:32.390040+00:00",
+      "currentPremium": 0.97,
+      "pnlDollars": -0.0,
+      "pnlPct": -0.0,
+      "history": [
+        {
+          "date": "2026-09-21",
+          "dte": 4,
+          "premium": 0.97,
+          "pnlDollars": -0.0,
+          "pnlPct": -0.0
         }
       ]
     }

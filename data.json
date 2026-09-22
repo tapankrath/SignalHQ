@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T01:37:58.141645+00:00",
+  "generated_at": "2026-09-22T02:37:56.253047+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -123,6 +123,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Microsoft\u2019s Higher Dividend Comes with a Modest Yield and Heavy AI Spending",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-higher-dividend-comes-modest-015210981.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Microsoft (MSFT) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-laps-stock-market-214503698.html",
@@ -132,12 +138,6 @@
           "title": "Microsoft (MSFT) Stock Looks Reasonable Despite Its 75% Five Year Run",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-looks-reasonable-211138209.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft Patent Hints At Contextual In-Game Ads",
-          "publisher": "MediaPost",
-          "link": "https://www.mediapost.com/publications/article/418175/microsoft-patent-hints-at-contextual-in-game-ads.html",
           "sentiment": 0.0
         }
       ],
@@ -195,7 +195,7 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -205,16 +205,16 @@
           "sentiment": 0.3
         },
         {
+          "title": "Snap\u2019s Specs Get an Enterprise Boost from Salesforce and Nvidia",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/snap-specs-enterprise-boost-salesforce-014301685.html",
+          "sentiment": 0.4
+        },
+        {
           "title": "Why Rackspace Technology (RXT) Is Up 15.8% After Joining NVIDIA\u2019s Cloud Partner Program",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/why-rackspace-technology-rxt-15-011428011.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "TSLA Stock Hits Nearly 3-Week High: Nvidia Win Adds Muscle To \u2018Physical AI\u2019 Pivot Despite Optimus Delays",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-nvidia-physical-ai-pivot-optimus-delays/cZMPEiwRBI8",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Cheap",
@@ -269,7 +269,7 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -279,16 +279,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
+          "sentiment": 0.86
+        },
+        {
           "title": "Should Investors Chase the AI-Fueled Rally in AMD or META Stock?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/investors-chase-ai-fueled-rally-000500929.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Meta (META) Stock Trades Up, Here Is Why",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-meta-stock-trades-why-235025743.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -339,7 +339,7 @@
       "pcVol": 0.51,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -349,16 +349,16 @@
           "sentiment": 0.59
         },
         {
+          "title": "Elon Musk Agrees Viral Robot Moves Were \u2018Essentially Remote Controlled\u2019 \u2014 Tesla AI Chief Warns Robot Safety is a Bigger Challenge Than AI Safety",
+          "publisher": "Benzinga",
+          "link": "https://tech.yahoo.com/ai/meta-ai/articles/elon-musk-agrees-viral-robot-003012374.html",
+          "sentiment": 0.74
+        },
+        {
           "title": "Tesla Audits Chinese Suppliers as Elon Musk\u2019s Optimus Robot Moves Closer to Mass Production: Report",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/technology/ai/articles/tesla-audits-chinese-suppliers-elon-213014283.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Tesla Gains 3% as Fremont Bias Claims Reach Trial",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-gains-3-fremont-bias-194611833.html",
-          "sentiment": 0.27
         }
       ],
       "volRegime": "Fair",
@@ -427,9 +427,15 @@
       "pcVol": 0.53,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.58,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
+          "sentiment": 0.86
+        },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
@@ -441,12 +447,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-qualcomm-shares-skyrocket-002225901.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Should Investors Chase the AI-Fueled Rally in AMD or META Stock?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-chase-ai-fueled-rally-000500929.html",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Fair",
@@ -628,9 +628,15 @@
       "pcVol": 1.21,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.07,
+      "newsSentiment": -0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "JPMorgan Raises its Dividend: A Look at Yield, Capital, and Shareholder Returns",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-raises-dividend-look-yield-015332265.html",
+          "sentiment": 0.42
+        },
         {
           "title": "T-Mobile Stock Slips To More Than Two-Year Low \u2014 JPMorgan Cuts Target Ahead Of Q3 Citing Softer Service Revenue Outlook",
           "publisher": "Stocktwits",
@@ -642,12 +648,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-slips-fed-smooths-stress-153223598.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Roblox shares rise as JPMorgan notes surge in weekend platform engagement",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/roblox-shares-rise-jpmorgan-notes-140904933.html",
-          "sentiment": 0.85
         }
       ],
       "volRegime": "Rich",
@@ -780,9 +780,15 @@
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.12,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.29,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Amazon (AMZN) Bets Higher Pay Can Support its Next Phase of Growth",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-bets-higher-pay-020006947.html",
+          "sentiment": 0.68
+        },
         {
           "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
           "publisher": "Stocktwits",
@@ -793,12 +799,6 @@
           "title": "Amazon (AMZN) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-laps-stock-market-214505872.html",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Amazon kicks out Meta's Muse in split over AI shopping",
-          "publisher": "Axios Media",
-          "link": "https://www.axios.com/2026/09/21/amazon-meta-muse-ai-agentic-shopping#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-media",
           "sentiment": 0.18
         }
       ],
@@ -1014,9 +1014,15 @@
       "pcVol": 0.34,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Paramount Could Acquire Warner Bros. Discovery Sooner Than Expected. Here\u2019s What That Means for Netflix Investors.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/paramount-could-acquire-warner-bros-discovery-sooner-than-expected-heres-what-that-means-for-netflix-investors/",
+          "sentiment": 0.0
+        },
         {
           "title": "Netflix (NFLX) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
@@ -1028,12 +1034,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-cuts-netflix-nflx-205315969.html",
           "sentiment": -0.2
-        },
-        {
-          "title": "Paramount Deal Approval Puts Netflix Stock And Media Merger Winners In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/media-advertising/articles/paramount-deal-approval-puts-netflix-201505168.html",
-          "sentiment": 0.74
         }
       ],
       "volRegime": "Cheap",
@@ -1386,8 +1386,8 @@
       "pcVol": 0.49,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Maye Musk on SpaceX and the grit behind Elon Musk's evolution",
@@ -1396,15 +1396,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "A Rocket Supply Crunch Is Making It Harder to Hitch a Ride to Space",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/business/a-rocket-supply-crunch-is-making-it-harder-to-hitch-a-ride-to-space-883f5e53?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Prediction: Here's What a $1,000 Investment in SpaceX Stock Could Be Worth in 2031",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/prediction-heres-what-a-1000-investment-in-spacex/",
-          "sentiment": 0.23
-        },
-        {
-          "title": "What Could A Space Exploration Technologies (SPCX) Merger Mean For Investors?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/could-space-exploration-technologies-spcx-011536511.html",
           "sentiment": 0.23
         }
       ],
@@ -1456,9 +1456,15 @@
       "pcVol": 0.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Snap\u2019s Specs Get an Enterprise Boost from Salesforce and Nvidia",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/snap-specs-enterprise-boost-salesforce-014301685.html",
+          "sentiment": 0.4
+        },
         {
           "title": "NOW Rides on Strong Workflow Demand: Can It Outpace CRM & MSFT?",
           "publisher": "Zacks",
@@ -1470,12 +1476,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-vs-twilio-customer-engagement-130000980.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "Salesforce AIforce Makes the Agent the Enterprise UI \u2014 and Forces a Pricing Question",
-          "publisher": "Forkast News",
-          "link": "https://finance.yahoo.com/technology/ai/articles/salesforce-aiforce-makes-agent-enterprise-211006919.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -2366,9 +2366,15 @@
       "pcVol": 0.86,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.08,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Corning (GLW) Stock Is Trading Up Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-corning-glw-stock-trading-014225854.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Corning Climbs 6% as AI Optical Interconnect Demo Highlights Its Fiber; Lumentum, Coherent and Applied Optoelectronics Rise 4%",
           "publisher": "24/7 Wall St.",
@@ -2864,9 +2870,15 @@
       "pcVol": 0.49,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.51,
+      "newsSentiment": 0.69,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
+          "sentiment": 0.86
+        },
         {
           "title": "Why Intel, Arm, and Other AI Chip Stocks Soared Today",
           "publisher": "Motley Fool",
@@ -2878,12 +2890,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "AMD, Intel, and Qualcomm Shares Skyrocket, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-qualcomm-shares-skyrocket-002225901.html",
-          "sentiment": 0.3
         }
       ],
       "volRegime": "Fair",
@@ -3283,9 +3289,15 @@
       "pcVol": 0.53,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Applied Materials Commits $5 Billion to India as Chip Manufacturing Expands",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/applied-materials-commits-5-billion-014025894.html",
+          "sentiment": 0.13
+        },
         {
           "title": "Applied Materials Stock Jumped Nearly 7% in a Chip-Equipment Rally. Its $5 Billion India Plan Is the Longer Story",
           "publisher": "TIKR",
@@ -3297,12 +3309,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-stock-may-201323016.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "Applied Materials Jumps 3.6% Behind a $5 Billion India Bet",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/applied-materials-jumps-3-6-185847270.html",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Fair",
@@ -4131,9 +4137,15 @@
       "pcVol": 1.23,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.05,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "After $176 billion backlog, GE Vernova sends investors wakeup call",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/gev-ge-vernova-ceo-strazik-says-200b-backlog-target-on-track-very-early-2027",
+          "sentiment": 0.0
+        },
         {
           "title": "GE Vernova vs. Oklo: Which Industrials Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -4145,12 +4157,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/wall-street-can-t-agree-on-ge-vernova-price-targets-range-from-usd470-to-usd1-450-here-s-why-the-gap-is-so-wide/",
           "sentiment": -0.28
-        },
-        {
-          "title": "Wall Street Just Got More Bullish on GE Vernova. Consensus Now Puts the Target at $1,237.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/wall-street-just-got-more-bullish-on-ge-vernova-consensus-now-puts-the-target-at-1237?ref=yahoofinance",
-          "sentiment": 0.58
         }
       ],
       "volRegime": "Fair",
@@ -4657,6 +4663,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Microsoft\u2019s Higher Dividend Comes with a Modest Yield and Heavy AI Spending",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-higher-dividend-comes-modest-015210981.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Microsoft (MSFT) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-laps-stock-market-214503698.html",
@@ -4666,12 +4678,6 @@
           "title": "Microsoft (MSFT) Stock Looks Reasonable Despite Its 75% Five Year Run",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-stock-looks-reasonable-211138209.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft Patent Hints At Contextual In-Game Ads",
-          "publisher": "MediaPost",
-          "link": "https://www.mediapost.com/publications/article/418175/microsoft-patent-hints-at-contextual-in-game-ads.html",
           "sentiment": 0.0
         }
       ]
@@ -4696,7 +4702,7 @@
       "dividendYield": 0.45,
       "marketCap": 5490544738304,
       "score": 9.4,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4706,16 +4712,16 @@
           "sentiment": 0.3
         },
         {
+          "title": "Snap\u2019s Specs Get an Enterprise Boost from Salesforce and Nvidia",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/snap-specs-enterprise-boost-salesforce-014301685.html",
+          "sentiment": 0.4
+        },
+        {
           "title": "Why Rackspace Technology (RXT) Is Up 15.8% After Joining NVIDIA\u2019s Cloud Partner Program",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/why-rackspace-technology-rxt-15-011428011.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "TSLA Stock Hits Nearly 3-Week High: Nvidia Win Adds Muscle To \u2018Physical AI\u2019 Pivot Despite Optimus Delays",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-nvidia-physical-ai-pivot-optimus-delays/cZMPEiwRBI8",
-          "sentiment": 0.59
         }
       ]
     },
@@ -4739,7 +4745,7 @@
       "dividendYield": 0.32,
       "marketCap": 1888326254592,
       "score": 8.5,
-      "newsSentiment": 0.18,
+      "newsSentiment": 0.47,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4749,16 +4755,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
+          "sentiment": 0.86
+        },
+        {
           "title": "Should Investors Chase the AI-Fueled Rally in AMD or META Stock?",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/investors-chase-ai-fueled-rally-000500929.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Meta (META) Stock Trades Up, Here Is Why",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-meta-stock-trades-why-235025743.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4782,7 +4788,7 @@
       "dividendYield": null,
       "marketCap": 1482265198592,
       "score": 6.9,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.44,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4792,16 +4798,16 @@
           "sentiment": 0.59
         },
         {
+          "title": "Elon Musk Agrees Viral Robot Moves Were \u2018Essentially Remote Controlled\u2019 \u2014 Tesla AI Chief Warns Robot Safety is a Bigger Challenge Than AI Safety",
+          "publisher": "Benzinga",
+          "link": "https://tech.yahoo.com/ai/meta-ai/articles/elon-musk-agrees-viral-robot-003012374.html",
+          "sentiment": 0.74
+        },
+        {
           "title": "Tesla Audits Chinese Suppliers as Elon Musk\u2019s Optimus Robot Moves Closer to Mass Production: Report",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/technology/ai/articles/tesla-audits-chinese-suppliers-elon-213014283.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Tesla Gains 3% as Fremont Bias Claims Reach Trial",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-gains-3-fremont-bias-194611833.html",
-          "sentiment": 0.27
         }
       ]
     },
@@ -4825,9 +4831,15 @@
       "dividendYield": null,
       "marketCap": 1004821020672,
       "score": 8.5,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.58,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
+          "sentiment": 0.86
+        },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
@@ -4839,12 +4851,6 @@
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-qualcomm-shares-skyrocket-002225901.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Should Investors Chase the AI-Fueled Rally in AMD or META Stock?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-chase-ai-fueled-rally-000500929.html",
-          "sentiment": 0.54
         }
       ]
     },
@@ -4935,9 +4941,15 @@
       "dividendYield": 1.89,
       "marketCap": 935787888640,
       "score": 6.2,
-      "newsSentiment": 0.07,
+      "newsSentiment": -0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "JPMorgan Raises its Dividend: A Look at Yield, Capital, and Shareholder Returns",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-raises-dividend-look-yield-015332265.html",
+          "sentiment": 0.42
+        },
         {
           "title": "T-Mobile Stock Slips To More Than Two-Year Low \u2014 JPMorgan Cuts Target Ahead Of Q3 Citing Softer Service Revenue Outlook",
           "publisher": "Stocktwits",
@@ -4949,12 +4961,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-slips-fed-smooths-stress-153223598.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Roblox shares rise as JPMorgan notes surge in weekend platform engagement",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/roblox-shares-rise-jpmorgan-notes-140904933.html",
-          "sentiment": 0.85
         }
       ]
     },
@@ -5015,9 +5021,15 @@
       "dividendYield": null,
       "marketCap": 2787722657792,
       "score": 6.2,
-      "newsSentiment": 0.12,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.29,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Amazon (AMZN) Bets Higher Pay Can Support its Next Phase of Growth",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-bets-higher-pay-020006947.html",
+          "sentiment": 0.68
+        },
         {
           "title": "Nasdaq Ends Nearly 3% Higher As AI Stocks Pop, AMD Enters $1 Trillion Club \u2014  AMD, ARM, META, AMZN, PSKY In Focus",
           "publisher": "Stocktwits",
@@ -5028,12 +5040,6 @@
           "title": "Amazon (AMZN) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-laps-stock-market-214505872.html",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Amazon kicks out Meta's Muse in split over AI shopping",
-          "publisher": "Axios Media",
-          "link": "https://www.axios.com/2026/09/21/amazon-meta-muse-ai-agentic-shopping#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-media",
           "sentiment": 0.18
         }
       ]
@@ -5144,9 +5150,15 @@
       "dividendYield": null,
       "marketCap": 305466605568,
       "score": 1.5,
-      "newsSentiment": 0.18,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Paramount Could Acquire Warner Bros. Discovery Sooner Than Expected. Here\u2019s What That Means for Netflix Investors.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/paramount-could-acquire-warner-bros-discovery-sooner-than-expected-heres-what-that-means-for-netflix-investors/",
+          "sentiment": 0.0
+        },
         {
           "title": "Netflix (NFLX) Laps the Stock Market: Here's Why",
           "publisher": "Zacks",
@@ -5158,12 +5170,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/wells-fargo-cuts-netflix-nflx-205315969.html",
           "sentiment": -0.2
-        },
-        {
-          "title": "Paramount Deal Approval Puts Netflix Stock And Media Merger Winners In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/media-advertising/articles/paramount-deal-approval-puts-netflix-201505168.html",
-          "sentiment": 0.74
         }
       ]
     },
@@ -5357,10 +5363,10 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2000500424704,
+      "marketCap": 2001653334016,
       "score": 8.2,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Maye Musk on SpaceX and the grit behind Elon Musk's evolution",
@@ -5369,15 +5375,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "A Rocket Supply Crunch Is Making It Harder to Hitch a Ride to Space",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/business/a-rocket-supply-crunch-is-making-it-harder-to-hitch-a-ride-to-space-883f5e53?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "Prediction: Here's What a $1,000 Investment in SpaceX Stock Could Be Worth in 2031",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/prediction-heres-what-a-1000-investment-in-spacex/",
-          "sentiment": 0.23
-        },
-        {
-          "title": "What Could A Space Exploration Technologies (SPCX) Merger Mean For Investors?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/could-space-exploration-technologies-spcx-011536511.html",
           "sentiment": 0.23
         }
       ]
@@ -5402,9 +5408,15 @@
       "dividendYield": 0.74,
       "marketCap": 194573664256,
       "score": 9.4,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Snap\u2019s Specs Get an Enterprise Boost from Salesforce and Nvidia",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/snap-specs-enterprise-boost-salesforce-014301685.html",
+          "sentiment": 0.4
+        },
         {
           "title": "NOW Rides on Strong Workflow Demand: Can It Outpace CRM & MSFT?",
           "publisher": "Zacks",
@@ -5416,12 +5428,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-vs-twilio-customer-engagement-130000980.html",
           "sentiment": 0.46
-        },
-        {
-          "title": "Salesforce AIforce Makes the Agent the Enterprise UI \u2014 and Forces a Pricing Question",
-          "publisher": "Forkast News",
-          "link": "https://finance.yahoo.com/technology/ai/articles/salesforce-aiforce-makes-agent-enterprise-211006919.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5689,7 +5695,7 @@
       "volRatio": 0.86,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 59107500032,
+      "marketCap": 63287898112,
       "score": 9.4,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -5904,11 +5910,17 @@
       "volRatio": 1.01,
       "peRatio": 72.9,
       "dividendYield": 0.75,
-      "marketCap": 136665219072,
+      "marketCap": 136943517696,
       "score": 4.9,
-      "newsSentiment": -0.08,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Corning (GLW) Stock Is Trading Up Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-corning-glw-stock-trading-014225854.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Corning Climbs 6% as AI Optical Interconnect Demo Highlights Its Fiber; Lumentum, Coherent and Applied Optoelectronics Rise 4%",
           "publisher": "24/7 Wall St.",
@@ -6163,9 +6175,15 @@
       "dividendYield": null,
       "marketCap": 643741843456,
       "score": 8.5,
-      "newsSentiment": 0.51,
+      "newsSentiment": 0.69,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
+          "sentiment": 0.86
+        },
         {
           "title": "Why Intel, Arm, and Other AI Chip Stocks Soared Today",
           "publisher": "Motley Fool",
@@ -6177,12 +6195,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "AMD, Intel, and Qualcomm Shares Skyrocket, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-qualcomm-shares-skyrocket-002225901.html",
-          "sentiment": 0.3
         }
       ]
     },
@@ -6353,9 +6365,15 @@
       "dividendYield": 0.48,
       "marketCap": 368419667968,
       "score": 4.9,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Applied Materials Commits $5 Billion to India as Chip Manufacturing Expands",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/applied-materials-commits-5-billion-014025894.html",
+          "sentiment": 0.13
+        },
         {
           "title": "Applied Materials Stock Jumped Nearly 7% in a Chip-Equipment Rally. Its $5 Billion India Plan Is the Longer Story",
           "publisher": "TIKR",
@@ -6367,12 +6385,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-stock-may-201323016.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "Applied Materials Jumps 3.6% Behind a $5 Billion India Bet",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/articles/applied-materials-jumps-3-6-185847270.html",
-          "sentiment": 0.49
         }
       ]
     },
@@ -6523,7 +6535,7 @@
       "volRatio": 1.02,
       "peRatio": 39.2,
       "dividendYield": 0.6,
-      "marketCap": 1038332919808,
+      "marketCap": 1038780596224,
       "score": 4.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
@@ -6738,7 +6750,7 @@
       "volRatio": 0.92,
       "peRatio": 38.9,
       "dividendYield": 0.93,
-      "marketCap": 852401717248,
+      "marketCap": 855016013824,
       "score": 3.1,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
@@ -6826,9 +6838,15 @@
       "dividendYield": 0.21,
       "marketCap": 252010151936,
       "score": 4.4,
-      "newsSentiment": 0.25,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.05,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "After $176 billion backlog, GE Vernova sends investors wakeup call",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/gev-ge-vernova-ceo-strazik-says-200b-backlog-target-on-track-very-early-2027",
+          "sentiment": 0.0
+        },
         {
           "title": "GE Vernova vs. Oklo: Which Industrials Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -6840,12 +6858,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/21/wall-street-can-t-agree-on-ge-vernova-price-targets-range-from-usd470-to-usd1-450-here-s-why-the-gap-is-so-wide/",
           "sentiment": -0.28
-        },
-        {
-          "title": "Wall Street Just Got More Bullish on GE Vernova. Consensus Now Puts the Target at $1,237.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/wall-street-just-got-more-bullish-on-ge-vernova-consensus-now-puts-the-target-at-1237?ref=yahoofinance",
-          "sentiment": 0.58
         }
       ]
     },

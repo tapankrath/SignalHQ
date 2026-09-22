@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T03:36:51.494031+00:00",
+  "generated_at": "2026-09-22T04:22:50.342205+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -433,9 +433,15 @@
       "pcVol": 0.53,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.66,
+      "newsSentiment": 0.67,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AMD, WBD, MRNA Stocks Surge To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-amd-wbd-mrna-stocks-surge-to-52-week-highs-today/cZMPBXGRBIy",
+          "sentiment": 0.61
+        },
         {
           "title": "Dow Futures Slip While S&P 500, Nasdaq Futures Climb After AI Rally: GME, IBRX, AMD, PSKY Stocks In Focus",
           "publisher": "Stocktwits",
@@ -447,12 +453,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
           "sentiment": 0.86
-        },
-        {
-          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Fair",
@@ -507,7 +507,7 @@
       "pcVol": 0.57,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -523,10 +523,10 @@
           "sentiment": 0.59
         },
         {
-          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
-          "sentiment": 0.61
+          "title": "A $2.75 Billion Reason to Buy Micron Stock",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4719996/a-2-75-billion-reason-to-buy-micron-stock",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2296,9 +2296,15 @@
       "pcVol": 0.35,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.46,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "RKLB Stock Extends Rally Overnight: CEO Says Iridium Deal Will Forge A Self-Launching \u2018Tier-1 Space Power\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-ceo-iridium-deal-self-launching-tier-1-space-power/cZMPBHLRBIz",
+          "sentiment": 0.61
+        },
         {
           "title": "Why Are Rocket Lab (RKLB) Shares Soaring Today",
           "publisher": "StockStory",
@@ -2310,12 +2316,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/rocket-lab-stock-price-rating-spacex-a520b568?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.47
-        },
-        {
-          "title": "Archer Aviation vs. Rocket Lab: Which Aerospace Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/21/archer-aviation-vs-rocket-lab-which-aerospace-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Rich",
@@ -3921,9 +3921,15 @@
       "pcVol": 0.9,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AMD, WBD, MRNA Stocks Surge To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-amd-wbd-mrna-stocks-surge-to-52-week-highs-today/cZMPBXGRBIy",
+          "sentiment": 0.61
+        },
         {
           "title": "Moderna (MRNA) Stock Trades Up, Here Is Why",
           "publisher": "StockStory",
@@ -3935,12 +3941,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Moderna (MRNA) Soars to Fresh High Ahead of Pipeline Updates This Week",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-soars-fresh-high-191331309.html",
-          "sentiment": 0.76
         }
       ],
       "volRegime": "Fair",
@@ -4293,9 +4293,15 @@
       "pcVol": 1.18,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.07,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Warren Buffett Steps Down as Chairman of Berkshire Hathaway",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/berkshire-hathaway-stock-warren-buffett-steps-down-chairman?ref=yahoofinance",
+          "sentiment": 0.0
+        },
         {
           "title": "Prediction: This Is What Will Happen With Berkshire Hathaway Stock in the Next 12 Months",
           "publisher": "Motley Fool",
@@ -4307,12 +4313,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-buffett-continue-endure-compound-171100938.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: Berkshire Hathaway's Operating Earnings Will Top $48 Billion in 2026",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/prediction-berkshire-hathaways-operating-earnings/",
-          "sentiment": 0.2
         }
       ],
       "volRegime": "Rich",
@@ -4843,9 +4843,15 @@
       "dividendYield": null,
       "marketCap": 1004821020672,
       "score": 8.5,
-      "newsSentiment": 0.66,
+      "newsSentiment": 0.67,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AMD, WBD, MRNA Stocks Surge To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-amd-wbd-mrna-stocks-surge-to-52-week-highs-today/cZMPBXGRBIy",
+          "sentiment": 0.61
+        },
         {
           "title": "Dow Futures Slip While S&P 500, Nasdaq Futures Climb After AI Rally: GME, IBRX, AMD, PSKY Stocks In Focus",
           "publisher": "Stocktwits",
@@ -4857,12 +4863,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
           "sentiment": 0.86
-        },
-        {
-          "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
-          "sentiment": 0.59
         }
       ]
     },
@@ -4886,7 +4886,7 @@
       "dividendYield": 0.05,
       "marketCap": 1179041267712,
       "score": 9.4,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4902,10 +4902,10 @@
           "sentiment": 0.59
         },
         {
-          "title": "Micron (MU) Beats Stock Market Upswing: What Investors Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-beats-stock-market-214506765.html",
-          "sentiment": 0.61
+          "title": "A $2.75 Billion Reason to Buy Micron Stock",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4719996/a-2-75-billion-reason-to-buy-micron-stock",
+          "sentiment": 0.0
         }
       ]
     },
@@ -5375,7 +5375,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2000500424704,
+      "marketCap": 2001653334016,
       "score": 8.2,
       "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
@@ -5707,7 +5707,7 @@
       "volRatio": 0.86,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 59107500032,
+      "marketCap": 63287898112,
       "score": 9.4,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -5881,9 +5881,15 @@
       "dividendYield": null,
       "marketCap": 44688433152,
       "score": 3.9,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.46,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "RKLB Stock Extends Rally Overnight: CEO Says Iridium Deal Will Forge A Self-Launching \u2018Tier-1 Space Power\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-ceo-iridium-deal-self-launching-tier-1-space-power/cZMPBHLRBIz",
+          "sentiment": 0.61
+        },
         {
           "title": "Why Are Rocket Lab (RKLB) Shares Soaring Today",
           "publisher": "StockStory",
@@ -5895,12 +5901,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/rocket-lab-stock-price-rating-spacex-a520b568?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.47
-        },
-        {
-          "title": "Archer Aviation vs. Rocket Lab: Which Aerospace Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/21/archer-aviation-vs-rocket-lab-which-aerospace-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -5922,7 +5922,7 @@
       "volRatio": 1.01,
       "peRatio": 72.9,
       "dividendYield": 0.75,
-      "marketCap": 136665219072,
+      "marketCap": 136943517696,
       "score": 4.9,
       "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
@@ -6547,7 +6547,7 @@
       "volRatio": 1.02,
       "peRatio": 39.2,
       "dividendYield": 0.6,
-      "marketCap": 1038332919808,
+      "marketCap": 1038780596224,
       "score": 4.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
@@ -6721,9 +6721,15 @@
       "dividendYield": null,
       "marketCap": 69043855360,
       "score": 8.5,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AMD, WBD, MRNA Stocks Surge To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-amd-wbd-mrna-stocks-surge-to-52-week-highs-today/cZMPBXGRBIy",
+          "sentiment": 0.61
+        },
         {
           "title": "Moderna (MRNA) Stock Trades Up, Here Is Why",
           "publisher": "StockStory",
@@ -6735,12 +6741,6 @@
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Moderna (MRNA) Soars to Fresh High Ahead of Pipeline Updates This Week",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-soars-fresh-high-191331309.html",
-          "sentiment": 0.76
         }
       ]
     },
@@ -6762,7 +6762,7 @@
       "volRatio": 0.92,
       "peRatio": 38.9,
       "dividendYield": 0.93,
-      "marketCap": 852401717248,
+      "marketCap": 855016013824,
       "score": 3.1,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
@@ -6936,9 +6936,15 @@
       "dividendYield": null,
       "marketCap": 1074657755136,
       "score": 7.5,
-      "newsSentiment": 0.07,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Warren Buffett Steps Down as Chairman of Berkshire Hathaway",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/berkshire-hathaway-stock-warren-buffett-steps-down-chairman?ref=yahoofinance",
+          "sentiment": 0.0
+        },
         {
           "title": "Prediction: This Is What Will Happen With Berkshire Hathaway Stock in the Next 12 Months",
           "publisher": "Motley Fool",
@@ -6950,12 +6956,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/berkshire-buffett-continue-endure-compound-171100938.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: Berkshire Hathaway's Operating Earnings Will Top $48 Billion in 2026",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/prediction-berkshire-hathaways-operating-earnings/",
-          "sentiment": 0.2
         }
       ]
     },

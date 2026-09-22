@@ -1062,11 +1062,11 @@
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put"> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
@@ -1090,7 +1090,7 @@
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
         <div class="num-row">
           <label for="minTradeProfitInput">Min trade profit %</label>
-          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
+          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20">
         </div>
       </div>
       <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put have no fixed profit figure, so they don't pass this filter.</div>
@@ -2333,26 +2333,22 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-21 (again): Outlook & Strategy now runs 7 of 9 — every
-  // credit/defined-risk strategy including Iron Condor, but NOT the two
-  // uncapped debit strategies (Long Call/Long Put, which don't pass the min
-  // trade profit filter anyway since they have no fixed profit figure).
-  // Quality now takes both Buy and Sell signals (was Buy only). Risk dropped
-  // the IV Rank split (lowVol/highVol) down to just excludeEarnings, so the
-  // screen isn't pre-filtered to one volatility regime by default.
+  // Updated 2026-09-22: Outlook & Strategy narrowed to just the 4 defined-risk
+  // SPREADS (Bull Put, Bear Call, Bull Call, Bear Put) — drops the single-leg
+  // credit strategies (Covered Call, Cash-Secured Put), Iron Condor, and the
+  // two uncapped debit strategies (Long Call/Long Put). Quality still takes
+  // both Buy and Sell signals. Risk still just excludeEarnings. Min trade
+  // profit floor raised from 15% to 20%.
   const DEFAULT_CHECKED = [
-    '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
-    '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-strat="Iron Condor"]',
     '[data-strat="Bull Call Spread"]',
     '[data-strat="Bear Put Spread"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',
   ];
-  const DEFAULT_MIN_TRADE_PROFIT = 15;
+  const DEFAULT_MIN_TRADE_PROFIT = 20;
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);

@@ -1066,10 +1066,10 @@
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row"><input type="checkbox" data-strat="Long Call" checked> <span class="strat-dot bull"></span>Long Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Long Put" checked> <span class="strat-dot bear"></span>Long Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread" checked> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
@@ -1086,7 +1086,7 @@
     <div class="filter-section" id="qualitySection" style="display:none;">
       <div class="filter-section-body">
         <label class="check-row"><input type="checkbox" data-quality="buy" checked> Buy signal</label>
-        <label class="check-row"><input type="checkbox" data-quality="sell"> Sell signal</label>
+        <label class="check-row"><input type="checkbox" data-quality="sell" checked> Sell signal</label>
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
         <div class="num-row">
           <label for="minTradeProfitInput">Min trade profit %</label>
@@ -1100,8 +1100,8 @@
       <div class="filter-section-body">
         <label class="check-row"><input type="checkbox" data-risk="excludeEarnings" checked> Exclude earnings within DTE</label>
         <label class="check-row"><input type="checkbox" data-risk="earningsWithin3wk"> Earnings within 3 weeks</label>
-        <label class="check-row"><input type="checkbox" data-risk="lowVol" checked> Low volatility (IV Rank &lt; 50)</label>
-        <label class="check-row"><input type="checkbox" data-risk="highVol" checked> High volatility (IV Rank &gt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="lowVol"> Low volatility (IV Rank &lt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="highVol"> High volatility (IV Rank &gt; 50)</label>
         <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
         <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
       </div>
@@ -1295,6 +1295,17 @@
       ? `<span class="stale-mark" title="Price may be lagging the live market — Yahoo's free data can still show the prior close for a while after hours. Screen for a live/delayed quote before trading.">†</span>`
       : '';
   }
+  // Surfaces ivRankLimited (computed in fetch_data.py's iv_rank_proxy(), see
+  // IV_RANK_MIN_HISTORY_DAYS there) — a recent IPO doesn't have a year of
+  // price history yet, so its IV Rank is ranked against whatever shorter,
+  // more recent-biased sample actually exists instead of the usual ~1-year
+  // window every other ticker gets. A distinct mark (not †) since the two
+  // flags mean different things and can both apply to the same trade.
+  function limitedHistoryMark(isLimited){
+    return isLimited
+      ? `<span class="stale-mark" title="Less than ~9-10 months of price history (likely a recent IPO), so IV Rank is ranked against a shorter, more recent sample than the usual ~1-year window.">‡</span>`
+      : '';
+  }
   function fmtMarketCap(value){
     if(value == null) return '—';
     return '$' + (value / 1e9).toFixed(1) + 'B';
@@ -1416,7 +1427,7 @@
           <td class="num">${t.pot != null ? t.pot + '%' : '—'}</td>
           <td class="num ${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}</td>
           <td class="num ${t.ap != null ? 'val-pos' : ''}">${fmtPct(t.ap)}</td>
-          <td class="num">${t.ivr}</td>
+          <td class="num">${t.ivr}${limitedHistoryMark(t.ivRankLimited)}</td>
           <td>${meterHtml(t.score)}</td>
           <td><button class="row-action" data-idx="${idx}">View</button></td>
         </tr>`;
@@ -2149,22 +2160,24 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-21: Outlook & Strategy now starts with all eight directional
-  // strategies selected (Iron Condor stays off),
-  // all four P/C boxes start unchecked, and the profit floor moved from 10% to 15%.
+  // Updated 2026-09-21 (again): Outlook & Strategy now runs 7 of 9 — every
+  // credit/defined-risk strategy including Iron Condor, but NOT the two
+  // uncapped debit strategies (Long Call/Long Put, which don't pass the min
+  // trade profit filter anyway since they have no fixed profit figure).
+  // Quality now takes both Buy and Sell signals (was Buy only). Risk dropped
+  // the IV Rank split (lowVol/highVol) down to just excludeEarnings, so the
+  // screen isn't pre-filtered to one volatility regime by default.
   const DEFAULT_CHECKED = [
     '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-strat="Long Call"]',
+    '[data-strat="Iron Condor"]',
     '[data-strat="Bull Call Spread"]',
-    '[data-strat="Long Put"]',
     '[data-strat="Bear Put Spread"]',
     '[data-quality="buy"]',
+    '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',
-    '[data-risk="lowVol"]',
-    '[data-risk="highVol"]',
   ];
   const DEFAULT_MIN_TRADE_PROFIT = 15;
 
@@ -2299,7 +2312,7 @@
         }
         <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
         <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
-        <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>
+        <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}${limitedHistoryMark(t.ivRankLimited)}</div></div>
         ${t.dailyReturn != null ? `<div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>` : ''}
         <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
         <div><div class="mm-label">Put/Call Volume</div><div class="mm-val">${t.pcVol.toFixed(2)}</div></div>
@@ -2309,6 +2322,7 @@
         ${volRegimeHtml}
       </div>
       ${t.spotPriceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
+      ${t.ivRankLimited ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">‡ This ticker has less than ~9-10 months of price history (likely a recent IPO), so IV Rank above is ranked against that shorter, more recent-biased sample instead of the usual ~1-year window every other ticker gets — treat it as a rougher read.</div>` : ''}
 
       ${hedgeHtml}
 

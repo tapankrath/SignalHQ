@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T21:07:30.569888+00:00",
+  "generated_at": "2026-09-22T21:35:41.732325+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -37,8 +37,8 @@
       "pcVol": 0.61,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.22,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Apple doesn't need to be in first place for AI. Here's why.",
@@ -47,15 +47,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Stock Market Today: Dow Skids But Apple Eyes A Buy Point; Report Says Trump Makes These Trades",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-hopes-oil-prices-treasury-yields/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
+          "sentiment": 0.67
         },
         {
-          "title": "Apple Takes Aim at Nvidia\u2019s AI Economics: New Macs Have \u2018No Cost per Token,\u2019 Hardware Chief Says",
-          "publisher": "Benzinga Prediction Markets",
-          "link": "https://www.benzinga.com/markets/prediction-markets/26/09/61932828/apple-macs-ai-no-cost-per-token-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+          "title": "Stock Market Today: Dow Skids But Apple Eyes A Buy Point; Filing Says Trump Makes These Trades",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-hopes-oil-prices-treasury-yields/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -125,9 +125,15 @@
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.41,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
+          "sentiment": 0.67
+        },
         {
           "title": "Microsoft Scores Positive Reviews On AI Momentum",
           "publisher": "Investor's Business Daily",
@@ -139,12 +145,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-facing-ai-partner-201538509.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft Azure, M365 Commercial Can Sustain Acceleration in Fiscal 2027 Despite Some Risks, Oppenheimer Says",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-azure-m365-commercial-sustain-185544407.html",
-          "sentiment": 0.21
         }
       ],
       "volRegime": "Fair",
@@ -201,7 +201,7 @@
       "pcVol": 0.45,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.21,
+      "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -215,12 +215,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/amd-stock-has-blown-past-nvidia-this-year-is-it-still-the-better-buy/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Apple Takes Aim at Nvidia\u2019s AI Economics: New Macs Have \u2018No Cost per Token,\u2019 Hardware Chief Says",
-          "publisher": "Benzinga Prediction Markets",
-          "link": "https://www.benzinga.com/markets/prediction-markets/26/09/61932828/apple-macs-ai-no-cost-per-token-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -275,8 +269,8 @@
       "pcVol": 0.73,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.05,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Meta's Muse AI teams up with Shopify, lifting its stock",
@@ -291,10 +285,10 @@
           "sentiment": -0.59
         },
         {
-          "title": "Shopify Just Gave Meta's AI Agent a Major Boost",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/shopify-just-gave-metas-ai-185623345.html",
-          "sentiment": 0.46
+          "title": "Wells Fargo, Other Bank Stocks Fall as Meta\u2019s Muse Adds Fuel to AI Fears",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/bank-stocks-ai-meta-muse-wells-fargo-02d3c504?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.2
         }
       ],
       "volRegime": "Rich",
@@ -552,26 +546,14 @@
       "pcVol": 0.34,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Amazon fires a warning shot at Prime members",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/retail/amazon-prime-is-overdue-for-a-price-increase",
           "sentiment": -0.27
-        },
-        {
-          "title": "Meta Platforms Just Hit an Amazon Roadblock",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-just-hit-amazon-180758747.html",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Trump disclosed $25M Microsoft and Amazon stock sales in July",
-          "publisher": "Quartz",
-          "link": "https://qz.com/trump-july-financial-disclosure-microsoft-amazon-stock-sales-092226",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Fair",
@@ -1018,9 +1000,15 @@
       "pcVol": 0.6,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "How Far Could CRM Stock Swing In A Year?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616138/how-far-could-crm-stock-swing-in-a-year/2026-09-22",
+          "sentiment": 0.0
+        },
         {
           "title": "Salesforce vs. ServiceNow: Which Technology Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -1032,12 +1020,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/salesforce-crm-deepens-ai-partner-141359262.html",
           "sentiment": 0.51
-        },
-        {
-          "title": "Salesforce, Inc. (CRM) is Attracting Investor Attention: Here is What You Should Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-inc-crm-attracting-investor-130003279.html",
-          "sentiment": 0.48
         }
       ],
       "volRegime": "Cheap",
@@ -1607,20 +1589,14 @@
       "pcVol": 2.08,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.11,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.6,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "BlackRock Just Declared War on QQQ. Here\u2019s How You Can Collect the Spoils.",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/22/blackrock-just-declared-war-on-qqq-heres-how-you-can-collect-the-spoils/",
           "sentiment": -0.6
-        },
-        {
-          "title": "Where Will QQQ Be in 20 Years? Here's What the Nasdaq-100's Historical Growth Rate Suggests.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/where-will-qqq-be-in-20-years-historical-growth/",
-          "sentiment": 0.38
         }
       ],
       "volRegime": "Fair",
@@ -1981,8 +1957,8 @@
       "pcVol": 0.35,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: Nasdaq Hits New High; Sandisk, Micron Trigger Buy Signals",
@@ -1991,16 +1967,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Micron vs. SanDisk: Comparing Two Red-Hot AI Memory Stocks",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-comparing-two-205700744.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Micron, IBD Stock Of The Day, Surges Past Early Buy Point With Earnings Ahead",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/research/ibd-stock-of-the-day/micron-stock-mu-buy-point-earnings/?src=A00220&yptr=yahoo",
           "sentiment": 0.61
-        },
-        {
-          "title": "Micron Stock Climbs Despite $25 Billion Plant Labor Dispute",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-climbs-despite-25-192100309.html",
-          "sentiment": -0.4
         }
       ],
       "volRegime": "Fair",
@@ -2073,8 +2049,8 @@
       "pcVol": 0.54,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: Nasdaq Hits New High; Sandisk, Micron Trigger Buy Signals",
@@ -2083,15 +2059,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Sandisk Jumps 6.6% as $2,400 Target Prices AI Storage Scarcity",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-jumps-6-6-2-192348327.html",
-          "sentiment": 0.49
+          "title": "Micron vs. SanDisk: Comparing Two Red-Hot AI Memory Stocks",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-comparing-two-205700744.html",
+          "sentiment": 0.0
         },
         {
-          "title": "What Are You Really Paying For SanDisk's AI Flash Boom?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616144/what-are-you-really-paying-for-sandisks-ai-flash-boom/2026-09-22",
+          "title": "Sandisk, Lennar, Viking Therapeutics, Shopify, GameStop, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-328a306e?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -2305,20 +2281,20 @@
       "pcVol": 0.53,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
+          "sentiment": 0.67
+        },
         {
           "title": "Trump discloses July trades in SpaceX",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/trump-discloses-july-trades-spacex-200734574.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "SPCX Stock Gains 1% \u2014 SpaceXAI's Grok AI Agent Tops 400K Users As Meta's Muse Gains Popularity",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-gains-1-space-xai-s-grok-ai-agent-tops-400-k-users-as-meta-s-muse-gains-popularity/cZMPMFdRB7T",
-          "sentiment": 0.88
         }
       ],
       "volRegime": "Rich",
@@ -2808,12 +2784,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/corning-climbs-6-as-ai-optical-interconnect-demo-highlights-its-fiber-lumentum-coherent-and-applied-optoelectronics-rise-4/",
           "sentiment": 0.0
-        },
-        {
-          "title": "How Is Lumentum's Stock Performance Compared to Other Technology Stocks?",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4712034/how-is-lumentum-s-stock-performance-compared-to-other-technology-stocks",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -3250,26 +3220,20 @@
       "pcVol": 1.91,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Viking Therapeutics Stock Surges 32%. It Could Challenge Lilly and Novo\u2019s Obesity Empire.",
+          "title": "Beyond Eli Lilly and Novo Nordisk: Rising Obesity Drug Stocks to Watch",
           "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/viking-therapeutics-stock-weight-loss-lilly-novo-bee2ded3?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.65
+          "link": "https://www.barrons.com/articles/viking-therapeutics-stock-weight-loss-drug-trial-lilly-novo-bee2ded3?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
         },
         {
           "title": "Should Dividend Investors Buy Pfizer Stock for Its High Yield or Invest in Eli Lilly for Its Dividend Growth?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/should-dividend-investors-buy-pfizer-stock-for-its-high-yield-or-invest-in-eli-lilly-for-its-dividend-growth/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Eli Lilly Breaks Ground on $6.5B Generation Park Facility",
-          "publisher": "CRE Daily",
-          "link": "https://www.credaily.com/briefs/eli-lilly-breaks-ground-on-6-5b-generation-park-facility/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -3558,9 +3522,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Qualcomm reveals 2 new smartphone chips focusing on agentic AI",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/article/qualcomm-reveals-2-new-smartphone-chips-focusing-on-agentic-ai-200000608.html",
+          "title": "Qualcomm CFO on agentic AI and the race to the edge",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/qualcomm-cfo-on-agentic-ai-and-the-race-to-the-edge-212500658.html",
           "sentiment": 0.0
         },
         {
@@ -3624,9 +3588,28 @@
       "pcVol": 0.93,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsHeadlines": [
+        {
+          "title": "Can Visa Stock Keep Climbing After The World Cup?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616164/can-visa-stock-keep-climbing-after-the-world-cup/2026-09-22",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Visa Settled $20B in Stablecoins. Now It\u2019s Running the Blockchain.",
+          "publisher": "Forkast News",
+          "link": "https://finance.yahoo.com/markets/crypto/articles/visa-settled-20b-stablecoins-now-105108793.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Circle Just Launched Arc With BlackRock and Visa. Here\u2019s What It Means for the Stock in 2026",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/circle-just-launched-arc-with-blackrock-and-visa-heres-what-it-means-for-the-stock-in-2026?ref=yahoofinance",
+          "sentiment": 0.13
+        }
+      ],
       "volRegime": "Rich",
       "ivRvRatio": 1.3,
       "realizedVol": 16.0,
@@ -4203,9 +4186,15 @@
       "pcVol": 0.28,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Can This Number Push IBM Stock Higher?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616158/can-this-number-push-ibm-stock-higher/2026-09-22",
+          "sentiment": 0.08
+        },
         {
           "title": "IBM Holds Flat as z17 Moves Into an AI Classroom",
           "publisher": "GuruFocus.com",
@@ -4216,12 +4205,6 @@
           "title": "What Do IBM (IBM) Lunar AI And Quantum Hub Moves Mean For Investors?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/ibm-ibm-lunar-ai-quantum-171218241.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "IBM Drops as $2 Billion Builds a Quantum Manufacturing Platform",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/ibm-drops-2-billion-builds-184232750.html",
           "sentiment": 0.0
         }
       ],
@@ -4330,8 +4313,8 @@
       "dividendYield": 0.32,
       "marketCap": 4958372495360,
       "score": 8.5,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.22,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Apple doesn't need to be in first place for AI. Here's why.",
@@ -4340,15 +4323,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Stock Market Today: Dow Skids But Apple Eyes A Buy Point; Report Says Trump Makes These Trades",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-hopes-oil-prices-treasury-yields/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
+          "sentiment": 0.67
         },
         {
-          "title": "Apple Takes Aim at Nvidia\u2019s AI Economics: New Macs Have \u2018No Cost per Token,\u2019 Hardware Chief Says",
-          "publisher": "Benzinga Prediction Markets",
-          "link": "https://www.benzinga.com/markets/prediction-markets/26/09/61932828/apple-macs-ai-no-cost-per-token-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+          "title": "Stock Market Today: Dow Skids But Apple Eyes A Buy Point; Filing Says Trump Makes These Trades",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-peace-hopes-oil-prices-treasury-yields/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
       ]
@@ -4373,9 +4356,15 @@
       "dividendYield": 0.78,
       "marketCap": 3697921753088,
       "score": 9.4,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.41,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
+          "sentiment": 0.67
+        },
         {
           "title": "Microsoft Scores Positive Reviews On AI Momentum",
           "publisher": "Investor's Business Daily",
@@ -4387,12 +4376,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-facing-ai-partner-201538509.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Microsoft Azure, M365 Commercial Can Sustain Acceleration in Fiscal 2027 Despite Some Risks, Oppenheimer Says",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-azure-m365-commercial-sustain-185544407.html",
-          "sentiment": 0.21
         }
       ]
     },
@@ -4416,7 +4399,7 @@
       "dividendYield": 0.44,
       "marketCap": 5526523478016,
       "score": 9.4,
-      "newsSentiment": 0.21,
+      "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4430,12 +4413,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/amd-stock-has-blown-past-nvidia-this-year-is-it-still-the-better-buy/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Apple Takes Aim at Nvidia\u2019s AI Economics: New Macs Have \u2018No Cost per Token,\u2019 Hardware Chief Says",
-          "publisher": "Benzinga Prediction Markets",
-          "link": "https://www.benzinga.com/markets/prediction-markets/26/09/61932828/apple-macs-ai-no-cost-per-token-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4459,8 +4436,8 @@
       "dividendYield": 0.28,
       "marketCap": 1876480229376,
       "score": 8.5,
-      "newsSentiment": -0.05,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Meta's Muse AI teams up with Shopify, lifting its stock",
@@ -4475,10 +4452,10 @@
           "sentiment": -0.59
         },
         {
-          "title": "Shopify Just Gave Meta's AI Agent a Major Boost",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/shopify-just-gave-metas-ai-185623345.html",
-          "sentiment": 0.46
+          "title": "Wells Fargo, Other Bank Stocks Fall as Meta\u2019s Muse Adds Fuel to AI Fears",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/bank-stocks-ai-meta-muse-wells-fargo-02d3c504?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.2
         }
       ]
     },
@@ -4606,26 +4583,14 @@
       "dividendYield": null,
       "marketCap": 2750293999616,
       "score": 6.2,
-      "newsSentiment": 0.03,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Amazon fires a warning shot at Prime members",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/retail/amazon-prime-is-overdue-for-a-price-increase",
           "sentiment": -0.27
-        },
-        {
-          "title": "Meta Platforms Just Hit an Amazon Roadblock",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-just-hit-amazon-180758747.html",
-          "sentiment": 0.18
-        },
-        {
-          "title": "Trump disclosed $25M Microsoft and Amazon stock sales in July",
-          "publisher": "Quartz",
-          "link": "https://qz.com/trump-july-financial-disclosure-microsoft-amazon-stock-sales-092226",
-          "sentiment": 0.18
         }
       ]
     },
@@ -4864,9 +4829,15 @@
       "dividendYield": 0.74,
       "marketCap": 191989432320,
       "score": 9.4,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "How Far Could CRM Stock Swing In A Year?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616138/how-far-could-crm-stock-swing-in-a-year/2026-09-22",
+          "sentiment": 0.0
+        },
         {
           "title": "Salesforce vs. ServiceNow: Which Technology Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -4878,12 +4849,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/salesforce-crm-deepens-ai-partner-141359262.html",
           "sentiment": 0.51
-        },
-        {
-          "title": "Salesforce, Inc. (CRM) is Attracting Investor Attention: Here is What You Should Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/salesforce-inc-crm-attracting-investor-130003279.html",
-          "sentiment": 0.48
         }
       ]
     },
@@ -5177,20 +5142,14 @@
       "dividendYield": 0.42,
       "marketCap": null,
       "score": 8.5,
-      "newsSentiment": -0.11,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.6,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "BlackRock Just Declared War on QQQ. Here\u2019s How You Can Collect the Spoils.",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/22/blackrock-just-declared-war-on-qqq-heres-how-you-can-collect-the-spoils/",
           "sentiment": -0.6
-        },
-        {
-          "title": "Where Will QQQ Be in 20 Years? Here's What the Nasdaq-100's Historical Growth Rate Suggests.",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/where-will-qqq-be-in-20-years-historical-growth/",
-          "sentiment": 0.38
         }
       ]
     },
@@ -5386,8 +5345,8 @@
       "dividendYield": 0.05,
       "marketCap": 1237995618304,
       "score": 8.5,
-      "newsSentiment": 0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.2,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: Nasdaq Hits New High; Sandisk, Micron Trigger Buy Signals",
@@ -5396,16 +5355,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Micron vs. SanDisk: Comparing Two Red-Hot AI Memory Stocks",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-comparing-two-205700744.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Micron, IBD Stock Of The Day, Surges Past Early Buy Point With Earnings Ahead",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/research/ibd-stock-of-the-day/micron-stock-mu-buy-point-earnings/?src=A00220&yptr=yahoo",
           "sentiment": 0.61
-        },
-        {
-          "title": "Micron Stock Climbs Despite $25 Billion Plant Labor Dispute",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-climbs-despite-25-192100309.html",
-          "sentiment": -0.4
         }
       ]
     },
@@ -5429,8 +5388,8 @@
       "dividendYield": null,
       "marketCap": 276298530816,
       "score": 9.4,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Dow Jones Futures: Nasdaq Hits New High; Sandisk, Micron Trigger Buy Signals",
@@ -5439,15 +5398,15 @@
           "sentiment": 0.0
         },
         {
-          "title": "Sandisk Jumps 6.6% as $2,400 Target Prices AI Storage Scarcity",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-jumps-6-6-2-192348327.html",
-          "sentiment": 0.49
+          "title": "Micron vs. SanDisk: Comparing Two Red-Hot AI Memory Stocks",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-comparing-two-205700744.html",
+          "sentiment": 0.0
         },
         {
-          "title": "What Are You Really Paying For SanDisk's AI Flash Boom?",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616144/what-are-you-really-paying-for-sandisks-ai-flash-boom/2026-09-22",
+          "title": "Sandisk, Lennar, Viking Therapeutics, Shopify, GameStop, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-328a306e?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ]
@@ -5558,20 +5517,20 @@
       "dividendYield": null,
       "marketCap": 2039485038592,
       "score": 8.2,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
+          "sentiment": 0.67
+        },
         {
           "title": "Trump discloses July trades in SpaceX",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/trump-discloses-july-trades-spacex-200734574.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "SPCX Stock Gains 1% \u2014 SpaceXAI's Grok AI Agent Tops 400K Users As Meta's Muse Gains Popularity",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-gains-1-space-xai-s-grok-ai-agent-tops-400-k-users-as-meta-s-muse-gains-popularity/cZMPMFdRB7T",
-          "sentiment": 0.88
         }
       ]
     },
@@ -5793,12 +5752,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/corning-climbs-6-as-ai-optical-interconnect-demo-highlights-its-fiber-lumentum-coherent-and-applied-optoelectronics-rise-4/",
           "sentiment": 0.0
-        },
-        {
-          "title": "How Is Lumentum's Stock Performance Compared to Other Technology Stocks?",
-          "publisher": "Barchart",
-          "link": "https://www.barchart.com/story/news/4712034/how-is-lumentum-s-stock-performance-compared-to-other-technology-stocks",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5947,7 +5900,7 @@
       "chg6m": 57.7,
       "chg1y": 322.2,
       "volRatio": 1.25,
-      "peRatio": 17.3,
+      "peRatio": 17.2,
       "dividendYield": 0.13,
       "marketCap": 167507312640,
       "score": 4.9,
@@ -6037,26 +5990,20 @@
       "dividendYield": 0.59,
       "marketCap": 1043462291456,
       "score": 4.9,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Viking Therapeutics Stock Surges 32%. It Could Challenge Lilly and Novo\u2019s Obesity Empire.",
+          "title": "Beyond Eli Lilly and Novo Nordisk: Rising Obesity Drug Stocks to Watch",
           "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/viking-therapeutics-stock-weight-loss-lilly-novo-bee2ded3?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.65
+          "link": "https://www.barrons.com/articles/viking-therapeutics-stock-weight-loss-drug-trial-lilly-novo-bee2ded3?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
         },
         {
           "title": "Should Dividend Investors Buy Pfizer Stock for Its High Yield or Invest in Eli Lilly for Its Dividend Growth?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/should-dividend-investors-buy-pfizer-stock-for-its-high-yield-or-invest-in-eli-lilly-for-its-dividend-growth/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Eli Lilly Breaks Ground on $6.5B Generation Park Facility",
-          "publisher": "CRE Daily",
-          "link": "https://www.credaily.com/briefs/eli-lilly-breaks-ground-on-6-5b-generation-park-facility/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6213,9 +6160,9 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Qualcomm reveals 2 new smartphone chips focusing on agentic AI",
-          "publisher": "Yahoo Finance",
-          "link": "https://finance.yahoo.com/technology/article/qualcomm-reveals-2-new-smartphone-chips-focusing-on-agentic-ai-200000608.html",
+          "title": "Qualcomm CFO on agentic AI and the race to the edge",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/qualcomm-cfo-on-agentic-ai-and-the-race-to-the-edge-212500658.html",
           "sentiment": 0.0
         },
         {
@@ -6590,9 +6537,15 @@
       "dividendYield": 2.91,
       "marketCap": 217991069696,
       "score": 3.3,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Can This Number Push IBM Stock Higher?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616158/can-this-number-push-ibm-stock-higher/2026-09-22",
+          "sentiment": 0.08
+        },
         {
           "title": "IBM Holds Flat as z17 Moves Into an AI Classroom",
           "publisher": "GuruFocus.com",
@@ -6603,12 +6556,6 @@
           "title": "What Do IBM (IBM) Lunar AI And Quantum Hub Moves Mean For Investors?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/technology/ai/articles/ibm-ibm-lunar-ai-quantum-171218241.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "IBM Drops as $2 Billion Builds a Quantum Manufacturing Platform",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/ibm-drops-2-billion-builds-184232750.html",
           "sentiment": 0.0
         }
       ]

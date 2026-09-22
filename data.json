@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T02:37:56.253047+00:00",
+  "generated_at": "2026-09-22T03:36:51.494031+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -37,7 +37,7 @@
       "pcVol": 0.69,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.05,
+      "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -47,10 +47,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Apple (AAPL) Eyes India Payments With Apple Pay Debut Next Month",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-eyes-india-payments-002925640.html",
-          "sentiment": -0.1
+          "title": "Apple Launches New Products in Time for New CEO",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/apple-launches-new-products-in-time-for-new-ceo/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "How Tim Cook Set Up Apple Stock's Next Growth Era, Explains Jim Cramer",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/tim-cook-apple-stock-growth-cramer/",
+          "sentiment": 0.38
         }
       ],
       "volRegime": "Rich",
@@ -195,8 +201,8 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.23,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.22,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Could Nvidia's prospects in China shift following the Trump and Xi's meeting?",
@@ -205,16 +211,16 @@
           "sentiment": 0.3
         },
         {
-          "title": "Snap\u2019s Specs Get an Enterprise Boost from Salesforce and Nvidia",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/snap-specs-enterprise-boost-salesforce-014301685.html",
-          "sentiment": 0.4
+          "title": "Nvidia's Forecast Assumes No Data Center Chip Sales to China. The Sept. 24 U.S.-China Summit Could Change That.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that/",
+          "sentiment": -0.3
         },
         {
-          "title": "Why Rackspace Technology (RXT) Is Up 15.8% After Joining NVIDIA\u2019s Cloud Partner Program",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/why-rackspace-technology-rxt-15-011428011.html",
-          "sentiment": 0.0
+          "title": "Nvidia-Backed AI Drug Discovery Company Iambic Therapeutics Files for Nasdaq IPO, to Use Proceeds for Cancer Drug Development",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/healthcare/articles/nvidia-backed-ai-drug-discovery-020043923.html",
+          "sentiment": -0.66
         }
       ],
       "volRegime": "Cheap",
@@ -269,7 +275,7 @@
       "pcVol": 0.55,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.57,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -279,16 +285,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "META Stock Rallies As Muse AI Tops App Charts \u2014 Exec Admits It\u2019s \u2018Heavily Inspired\u2019 By OpenClaw",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-rallies-as-muse-ai-tops-app-charts-exec-admits-it-s-heavily-inspired-by-open-claw/cZMPJD5RBIv",
+          "sentiment": 0.84
+        },
+        {
           "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
           "sentiment": 0.86
-        },
-        {
-          "title": "Should Investors Chase the AI-Fueled Rally in AMD or META Stock?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-chase-ai-fueled-rally-000500929.html",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Rich",
@@ -427,9 +433,15 @@
       "pcVol": 0.53,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.58,
+      "newsSentiment": 0.66,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Dow Futures Slip While S&P 500, Nasdaq Futures Climb After AI Rally: GME, IBRX, AMD, PSKY Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/dow-futures-slip-while-s-and-p-500-nasdaq-futures-climb-after-ai-rally-gme-ibrx-amd-psky-stocks-in-focus/cZMPewURBIH",
+          "sentiment": 0.54
+        },
         {
           "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
           "publisher": "Stocktwits",
@@ -441,12 +453,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "AMD, Intel, and Qualcomm Shares Skyrocket, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-qualcomm-shares-skyrocket-002225901.html",
-          "sentiment": 0.3
         }
       ],
       "volRegime": "Fair",
@@ -628,9 +634,15 @@
       "pcVol": 1.21,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.25,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Jamie Dimon Just Said 8 Words Warning the American Dream Is \"Slipping Out of Reach for Too Many People.\" Here's the Retirement Wave Behind His Warning and What It Means for the Economy JPMorgan Serves.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/jamie-dimon-just-said-8-words-warning-the-american/",
+          "sentiment": -0.54
+        },
         {
           "title": "JPMorgan Raises its Dividend: A Look at Yield, Capital, and Shareholder Returns",
           "publisher": "Insider Monkey",
@@ -642,12 +654,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/t-mobile-stock-slips-to-more-than-two-year-low-jp-morgan-cuts-target-ahead-of-q3-citing-softer-service-revenue-outlook/cZMRNKzRBIJ",
           "sentiment": -0.63
-        },
-        {
-          "title": "JPMorgan Slips as Fed Smooths Stress-Capital Volatility",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-slips-fed-smooths-stress-153223598.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -1084,9 +1090,15 @@
       "pcVol": 0.9,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.26,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Sandisk has $93.9 billion in deals: Now comes the hard part",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/sandisk-93-billion-in-deals-nand-cost-competition",
+          "sentiment": -0.1
+        },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
@@ -1098,12 +1110,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-procter-gamble-211000812.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "SanDisk Faces a Make-or-Break Test at $1,832",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-faces-break-test-1-191906782.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -1532,7 +1538,7 @@
       "pcVol": 1.12,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.42,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1542,16 +1548,16 @@
           "sentiment": 0.3
         },
         {
+          "title": "How to Play CrowdStrike Stock at All-Time Highs",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4718907/how-to-play-crowdstrike-stock-at-all-time-highs",
+          "sentiment": 0.34
+        },
+        {
           "title": "Cybersecurity Stocks Extend Gains on AI Safety Warnings: CrowdStrike and Okta Rise 4%, Palo Alto Ticks Up",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/cybersecurity-stocks-extend-gains-on-ai-safety-warnings-crowdstrike-and-okta-rise-4-palo-alto-ticks-up/",
           "sentiment": 0.57
-        },
-        {
-          "title": "Can Falcon Flex Momentum Keep Driving CrowdStrike's ARR Growth?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/falcon-flex-momentum-keep-driving-142300818.html",
-          "sentiment": 0.38
         }
       ],
       "volRegime": "Cheap",
@@ -4622,7 +4628,7 @@
       "dividendYield": 0.32,
       "marketCap": 4947135430656,
       "score": 8.5,
-      "newsSentiment": -0.05,
+      "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -4632,10 +4638,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Apple (AAPL) Eyes India Payments With Apple Pay Debut Next Month",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-eyes-india-payments-002925640.html",
-          "sentiment": -0.1
+          "title": "Apple Launches New Products in Time for New CEO",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/apple-launches-new-products-in-time-for-new-ceo/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "How Tim Cook Set Up Apple Stock's Next Growth Era, Explains Jim Cramer",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/tim-cook-apple-stock-growth-cramer/",
+          "sentiment": 0.38
         }
       ]
     },
@@ -4702,8 +4714,8 @@
       "dividendYield": 0.45,
       "marketCap": 5490544738304,
       "score": 9.4,
-      "newsSentiment": 0.23,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.22,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Could Nvidia's prospects in China shift following the Trump and Xi's meeting?",
@@ -4712,16 +4724,16 @@
           "sentiment": 0.3
         },
         {
-          "title": "Snap\u2019s Specs Get an Enterprise Boost from Salesforce and Nvidia",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/technology/ai/articles/snap-specs-enterprise-boost-salesforce-014301685.html",
-          "sentiment": 0.4
+          "title": "Nvidia's Forecast Assumes No Data Center Chip Sales to China. The Sept. 24 U.S.-China Summit Could Change That.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/nvidia-s-forecast-assumes-no-data-center-chip-sales-to-china-the-sept-24-u-s-china-summit-could-change-that/",
+          "sentiment": -0.3
         },
         {
-          "title": "Why Rackspace Technology (RXT) Is Up 15.8% After Joining NVIDIA\u2019s Cloud Partner Program",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/why-rackspace-technology-rxt-15-011428011.html",
-          "sentiment": 0.0
+          "title": "Nvidia-Backed AI Drug Discovery Company Iambic Therapeutics Files for Nasdaq IPO, to Use Proceeds for Cancer Drug Development",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/healthcare/articles/nvidia-backed-ai-drug-discovery-020043923.html",
+          "sentiment": -0.66
         }
       ]
     },
@@ -4745,7 +4757,7 @@
       "dividendYield": 0.32,
       "marketCap": 1888326254592,
       "score": 8.5,
-      "newsSentiment": 0.47,
+      "newsSentiment": 0.57,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4755,16 +4767,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "META Stock Rallies As Muse AI Tops App Charts \u2014 Exec Admits It\u2019s \u2018Heavily Inspired\u2019 By OpenClaw",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/meta-stock-rallies-as-muse-ai-tops-app-charts-exec-admits-it-s-heavily-inspired-by-open-claw/cZMPJD5RBIv",
+          "sentiment": 0.84
+        },
+        {
           "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/arm-intel-amd-surge-as-meta-s-muse-ai-fuels-fresh-chip-demand-bets-retail-turns-extremely-bullish/cZMP4iNRBIq",
           "sentiment": 0.86
-        },
-        {
-          "title": "Should Investors Chase the AI-Fueled Rally in AMD or META Stock?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-chase-ai-fueled-rally-000500929.html",
-          "sentiment": 0.54
         }
       ]
     },
@@ -4831,9 +4843,15 @@
       "dividendYield": null,
       "marketCap": 1004821020672,
       "score": 8.5,
-      "newsSentiment": 0.58,
+      "newsSentiment": 0.66,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Dow Futures Slip While S&P 500, Nasdaq Futures Climb After AI Rally: GME, IBRX, AMD, PSKY Stocks In Focus",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/dow-futures-slip-while-s-and-p-500-nasdaq-futures-climb-after-ai-rally-gme-ibrx-amd-psky-stocks-in-focus/cZMPewURBIH",
+          "sentiment": 0.54
+        },
         {
           "title": "ARM, Intel, AMD Surge As Meta\u2019s Muse AI Fuels Fresh Chip Demand Bets: Retail Turns Extremely Bullish",
           "publisher": "Stocktwits",
@@ -4845,12 +4863,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-treasury-yields-amd-intel-micron-nvidia-sandisk/?src=A00220&yptr=yahoo",
           "sentiment": 0.59
-        },
-        {
-          "title": "AMD, Intel, and Qualcomm Shares Skyrocket, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-qualcomm-shares-skyrocket-002225901.html",
-          "sentiment": 0.3
         }
       ]
     },
@@ -4941,9 +4953,15 @@
       "dividendYield": 1.89,
       "marketCap": 935787888640,
       "score": 6.2,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.25,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Jamie Dimon Just Said 8 Words Warning the American Dream Is \"Slipping Out of Reach for Too Many People.\" Here's the Retirement Wave Behind His Warning and What It Means for the Economy JPMorgan Serves.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/21/jamie-dimon-just-said-8-words-warning-the-american/",
+          "sentiment": -0.54
+        },
         {
           "title": "JPMorgan Raises its Dividend: A Look at Yield, Capital, and Shareholder Returns",
           "publisher": "Insider Monkey",
@@ -4955,12 +4973,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/t-mobile-stock-slips-to-more-than-two-year-low-jp-morgan-cuts-target-ahead-of-q3-citing-softer-service-revenue-outlook/cZMRNKzRBIJ",
           "sentiment": -0.63
-        },
-        {
-          "title": "JPMorgan Slips as Fed Smooths Stress-Capital Volatility",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-slips-fed-smooths-stress-153223598.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5193,9 +5205,15 @@
       "dividendYield": null,
       "marketCap": 258669674496,
       "score": 9.4,
-      "newsSentiment": 0.26,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Sandisk has $93.9 billion in deals: Now comes the hard part",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/sandisk-93-billion-in-deals-nand-cost-competition",
+          "sentiment": -0.1
+        },
         {
           "title": "Dow Jones Futures: Falling Oil Prices, Yields Spark Market Rally; AMD, Intel, Micron, Nvidia, Sandisk Are Key Movers",
           "publisher": "Investor's Business Daily",
@@ -5207,12 +5225,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-procter-gamble-211000812.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "SanDisk Faces a Make-or-Break Test at $1,832",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-faces-break-test-1-191906782.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5363,7 +5375,7 @@
       "volRatio": 0.84,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2001653334016,
+      "marketCap": 2000500424704,
       "score": 8.2,
       "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
@@ -5451,7 +5463,7 @@
       "dividendYield": null,
       "marketCap": 255318163456,
       "score": 9.4,
-      "newsSentiment": 0.42,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -5461,16 +5473,16 @@
           "sentiment": 0.3
         },
         {
+          "title": "How to Play CrowdStrike Stock at All-Time Highs",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4718907/how-to-play-crowdstrike-stock-at-all-time-highs",
+          "sentiment": 0.34
+        },
+        {
           "title": "Cybersecurity Stocks Extend Gains on AI Safety Warnings: CrowdStrike and Okta Rise 4%, Palo Alto Ticks Up",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/cybersecurity-stocks-extend-gains-on-ai-safety-warnings-crowdstrike-and-okta-rise-4-palo-alto-ticks-up/",
           "sentiment": 0.57
-        },
-        {
-          "title": "Can Falcon Flex Momentum Keep Driving CrowdStrike's ARR Growth?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/falcon-flex-momentum-keep-driving-142300818.html",
-          "sentiment": 0.38
         }
       ]
     },
@@ -5695,7 +5707,7 @@
       "volRatio": 0.86,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 63287898112,
+      "marketCap": 59107500032,
       "score": 9.4,
       "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
@@ -5910,7 +5922,7 @@
       "volRatio": 1.01,
       "peRatio": 72.9,
       "dividendYield": 0.75,
-      "marketCap": 136943517696,
+      "marketCap": 136665219072,
       "score": 4.9,
       "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
@@ -6535,7 +6547,7 @@
       "volRatio": 1.02,
       "peRatio": 39.2,
       "dividendYield": 0.6,
-      "marketCap": 1038780596224,
+      "marketCap": 1038332919808,
       "score": 4.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
@@ -6750,7 +6762,7 @@
       "volRatio": 0.92,
       "peRatio": 38.9,
       "dividendYield": 0.93,
-      "marketCap": 855016013824,
+      "marketCap": 852401717248,
       "score": 3.1,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",

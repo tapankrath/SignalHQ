@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T00:37:27.111958+00:00",
+  "generated_at": "2026-09-22T00:51:01.136141+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -37,7 +37,7 @@
       "pcVol": 0.18,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -45,6 +45,12 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/apple-iphone-duo-consumers-bite-174100022.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Apple (AAPL) Eyes India Payments With Apple Pay Debut Next Month",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-eyes-india-payments-002925640.html",
+          "sentiment": -0.1
         }
       ],
       "volRegime": "Fair",
@@ -1212,9 +1218,15 @@
       "pcVol": 0.84,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Why ServiceNow Stock Inched Higher on Monday",
           "publisher": "Motley Fool",
@@ -1226,12 +1238,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/snx-vs-now-stock-better-154005949.html",
           "sentiment": 0.65
-        },
-        {
-          "title": "NOW Rides on Strong Workflow Demand: Can It Outpace CRM & MSFT?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/articles/now-rides-strong-workflow-demand-144100921.html",
-          "sentiment": 0.42
         }
       ],
       "volRegime": "Fair",
@@ -1300,9 +1306,15 @@
       "pcVol": 0.47,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.02,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Adobe (ADBE) Could Be 22% Undervalued As Acrobat AI Push Expands Its Platform",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-adbe-could-22-undervalued-002940227.html",
+          "sentiment": 0.1
+        },
         {
           "title": "Adobe (ADBE) Stock Still Looks Like A Bargain Following A 59% Slump",
           "publisher": "Simply Wall St.",
@@ -1313,12 +1325,6 @@
           "title": "Adobe CEO Shantanu Narayen Sells $31.3 Million Stock",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/filings/2026/09/21/adobe-ceo-shantanu-narayen-sells-usd31-3-million-stock/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Tesla, Microsoft and Adobe Forecast: AI Stocks Eye Key Moves",
-          "publisher": "FX Empire",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-microsoft-adobe-forecast-ai-132829225.html",
           "sentiment": 0.0
         }
       ],
@@ -1520,9 +1526,15 @@
       "pcVol": 1.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Cybersecurity Stocks Extend Gains on AI Safety Warnings: CrowdStrike and Okta Rise 4%, Palo Alto Ticks Up",
           "publisher": "24/7 Wall St.",
@@ -1534,12 +1546,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/falcon-flex-momentum-keep-driving-142300818.html",
           "sentiment": 0.38
-        },
-        {
-          "title": "CrowdStrike Stock Jumped 15% Last Week. Here\u2019s What Happened.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/crowdstrike-stock-jumped-15-last-week-heres-what-happened?ref=yahoofinance",
-          "sentiment": 0.49
         }
       ],
       "volRegime": "Cheap",
@@ -3284,9 +3290,15 @@
       "pcVol": 0.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.3,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Why Strategy Stock Surged Today",
           "publisher": "Motley Fool",
@@ -3297,12 +3309,6 @@
           "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Michael Saylor's Strategy restarts buying BTC",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/michael-saylors-strategy-buys-950-bitcoin-now-holds-846000",
           "sentiment": 0.0
         }
       ],
@@ -4541,7 +4547,7 @@
       "dividendYield": 0.32,
       "marketCap": 4947135430656,
       "score": 9.4,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -4549,6 +4555,12 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/apple-iphone-duo-consumers-bite-174100022.html",
           "sentiment": 0.0
+        },
+        {
+          "title": "Apple (AAPL) Eyes India Payments With Apple Pay Debut Next Month",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-eyes-india-payments-002925640.html",
+          "sentiment": -0.1
         }
       ]
     },
@@ -5186,9 +5198,15 @@
       "dividendYield": null,
       "marketCap": 142342111232,
       "score": 9.4,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Why ServiceNow Stock Inched Higher on Monday",
           "publisher": "Motley Fool",
@@ -5200,12 +5218,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/snx-vs-now-stock-better-154005949.html",
           "sentiment": 0.65
-        },
-        {
-          "title": "NOW Rides on Strong Workflow Demand: Can It Outpace CRM & MSFT?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/articles/now-rides-strong-workflow-demand-144100921.html",
-          "sentiment": 0.42
         }
       ]
     },
@@ -5229,9 +5241,15 @@
       "dividendYield": null,
       "marketCap": 99184197632,
       "score": 4.1,
-      "newsSentiment": -0.02,
+      "newsSentiment": 0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Adobe (ADBE) Could Be 22% Undervalued As Acrobat AI Push Expands Its Platform",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-adbe-could-22-undervalued-002940227.html",
+          "sentiment": 0.1
+        },
         {
           "title": "Adobe (ADBE) Stock Still Looks Like A Bargain Following A 59% Slump",
           "publisher": "Simply Wall St.",
@@ -5242,12 +5260,6 @@
           "title": "Adobe CEO Shantanu Narayen Sells $31.3 Million Stock",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/filings/2026/09/21/adobe-ceo-shantanu-narayen-sells-usd31-3-million-stock/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Tesla, Microsoft and Adobe Forecast: AI Stocks Eye Key Moves",
-          "publisher": "FX Empire",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-microsoft-adobe-forecast-ai-132829225.html",
           "sentiment": 0.0
         }
       ]
@@ -5358,9 +5370,15 @@
       "dividendYield": null,
       "marketCap": 255318163456,
       "score": 9.4,
-      "newsSentiment": 0.48,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Cybersecurity Stocks Extend Gains on AI Safety Warnings: CrowdStrike and Okta Rise 4%, Palo Alto Ticks Up",
           "publisher": "24/7 Wall St.",
@@ -5372,12 +5390,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/falcon-flex-momentum-keep-driving-142300818.html",
           "sentiment": 0.38
-        },
-        {
-          "title": "CrowdStrike Stock Jumped 15% Last Week. Here\u2019s What Happened.",
-          "publisher": "TIKR",
-          "link": "https://www.tikr.com/blog/crowdstrike-stock-jumped-15-last-week-heres-what-happened?ref=yahoofinance",
-          "sentiment": 0.49
         }
       ]
     },
@@ -6309,9 +6321,15 @@
       "dividendYield": null,
       "marketCap": 66941960192,
       "score": 8.1,
-      "newsSentiment": 0.2,
+      "newsSentiment": 0.3,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Strategy, CrowdStrike, MongoDB, ServiceNow, and Okta Shares Are Soaring, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-crowdstrike-mongodb-servicenow-okta-003025037.html",
+          "sentiment": 0.3
+        },
         {
           "title": "Why Strategy Stock Surged Today",
           "publisher": "Motley Fool",
@@ -6322,12 +6340,6 @@
           "title": "AMD, Intel, Meta, Warner Bros., Moderna, Grail, Strategy, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-7769c3ad?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Michael Saylor's Strategy restarts buying BTC",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/michael-saylors-strategy-buys-950-bitcoin-now-holds-846000",
           "sentiment": 0.0
         }
       ]

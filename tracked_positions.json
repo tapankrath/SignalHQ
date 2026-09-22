@@ -1,5 +1,50 @@
 [
   {
+    "id": "AAPL|Iron_Condor|2026-09-25|$328/332/345/350",
+    "sym": "AAPL",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$328/332/345/350",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 3,
+    "premium": 1.62,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 332.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 327.5,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 345,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 350,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 32.4,
+    "ap": 3942,
+    "spot": 338.98,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
     "id": "MSFT|Bull_Put_Spread|2026-09-25|$490/485",
     "sym": "MSFT",
     "strat": "Bull Put Spread",
@@ -9,7 +54,7 @@
     "expDate": "2026-09-25",
     "backExp": null,
     "backExpDate": null,
-    "dte": 4,
+    "dte": 3,
     "premium": 0.76,
     "debitStrategy": false,
     "legs": [
@@ -27,43 +72,100 @@
       }
     ],
     "roc": 15.1,
-    "ap": 1377.9,
+    "ap": 1837.2,
     "spot": 501.61,
-    "trackedAt": "2026-09-21T21:39:18.818Z",
-    "entryDate": "2026-09-21"
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
   },
   {
-    "id": "GOOG|Bull_Put_Spread|2026-09-25|$342/338",
-    "sym": "GOOG",
-    "strat": "Bull Put Spread",
-    "side": "bull",
-    "strike": "$342/338",
+    "id": "JPM|Iron_Condor|2026-09-25|$340/345/358/362",
+    "sym": "JPM",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$340/345/358/362",
     "exp": "Sep 25",
     "expDate": "2026-09-25",
     "backExp": null,
     "backExpDate": null,
-    "dte": 4,
-    "premium": 0.87,
+    "dte": 3,
+    "premium": 1.6,
     "debitStrategy": false,
     "legs": [
       {
         "type": "put",
-        "strike": 342.5,
+        "strike": 345,
         "action": "sell",
         "qty": 1
       },
       {
         "type": "put",
-        "strike": 337.5,
+        "strike": 340,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 357.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 362.5,
         "action": "buy",
         "qty": 1
       }
     ],
-    "roc": 17.5,
-    "ap": 1596.9,
-    "spot": 350.87,
-    "trackedAt": "2026-09-21T21:39:18.818Z",
-    "entryDate": "2026-09-21"
+    "roc": 32,
+    "ap": 3893.3,
+    "spot": 352.04,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "NOW|Iron_Condor|2026-10-02|$126/128/150/155",
+    "sym": "NOW",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$126/128/150/155",
+    "exp": "Oct 2",
+    "expDate": "2026-10-02",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 10,
+    "premium": 1.07,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 128,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 126,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 150,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 155,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 21.4,
+    "ap": 781.1,
+    "spot": 137.68,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
   },
   {
     "id": "CRM|Bull_Put_Spread|2026-09-25|$230/225",
@@ -75,7 +177,7 @@
     "expDate": "2026-09-25",
     "backExp": null,
     "backExpDate": null,
-    "dte": 4,
+    "dte": 3,
     "premium": 0.89,
     "debitStrategy": false,
     "legs": [
@@ -93,43 +195,223 @@
       }
     ],
     "roc": 17.9,
-    "ap": 1633.4,
+    "ap": 2177.8,
     "spot": 236.42,
-    "trackedAt": "2026-09-21T21:39:18.818Z",
-    "entryDate": "2026-09-21"
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
   },
   {
-    "id": "PANW|Bull_Put_Spread|2026-09-25|$355/350",
-    "sym": "PANW",
-    "strat": "Bull Put Spread",
-    "side": "bull",
-    "strike": "$355/350",
-    "exp": "Sep 25",
-    "expDate": "2026-09-25",
+    "id": "CRWD|Iron_Condor|2026-10-02|$228/232/270/275",
+    "sym": "CRWD",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$228/232/270/275",
+    "exp": "Oct 2",
+    "expDate": "2026-10-02",
     "backExp": null,
     "backExpDate": null,
-    "dte": 4,
-    "premium": 1.05,
+    "dte": 10,
+    "premium": 1.74,
     "debitStrategy": false,
     "legs": [
       {
         "type": "put",
-        "strike": 355,
+        "strike": 232.5,
         "action": "sell",
         "qty": 1
       },
       {
         "type": "put",
-        "strike": 350,
+        "strike": 227.5,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 270,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 275,
         "action": "buy",
         "qty": 1
       }
     ],
-    "roc": 21,
-    "ap": 1916.2,
+    "roc": 34.8,
+    "ap": 1270.2,
+    "spot": 249.35,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "DELL|Iron_Condor|2026-10-16|$490/510/670/690",
+    "sym": "DELL",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$490/510/670/690",
+    "exp": "Oct 16",
+    "expDate": "2026-10-16",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 24,
+    "premium": 6.45,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 510,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 490,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 670,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 690,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 32.25,
+    "ap": 490.5,
+    "spot": 575.31,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "PANW|Bull_Put_Spread|2026-09-25|$358/352",
+    "sym": "PANW",
+    "strat": "Bull Put Spread",
+    "side": "bull",
+    "strike": "$358/352",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 3,
+    "premium": 1.02,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 357.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 352.5,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 20.5,
+    "ap": 2494.2,
     "spot": 371.76,
-    "trackedAt": "2026-09-21T21:39:18.819Z",
-    "entryDate": "2026-09-21"
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "SPY|Iron_Condor|2026-09-29|$762/764/783/785",
+    "sym": "SPY",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$762/764/783/785",
+    "exp": "Sep 29",
+    "expDate": "2026-09-29",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 7,
+    "premium": 0.63,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 764,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 762,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 783,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 785,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 31.5,
+    "ap": 1642.5,
+    "spot": 773.5,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "CSCO|Iron_Condor|2026-09-25|$106/108/115/117",
+    "sym": "CSCO",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$106/108/115/117",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 3,
+    "premium": 0.46,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 108,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 106,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 115,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 117,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 23,
+    "ap": 2798.3,
+    "spot": 111.46,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
   },
   {
     "id": "MRVL|Bull_Put_Spread|2026-09-25|$245/240",
@@ -141,7 +423,7 @@
     "expDate": "2026-09-25",
     "backExp": null,
     "backExpDate": null,
-    "dte": 4,
+    "dte": 3,
     "premium": 1.06,
     "debitStrategy": false,
     "legs": [
@@ -159,42 +441,165 @@
       }
     ],
     "roc": 21.1,
-    "ap": 1925.4,
+    "ap": 2567.2,
     "spot": 257.38,
-    "trackedAt": "2026-09-21T21:39:18.819Z",
-    "entryDate": "2026-09-21"
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
   },
   {
-    "id": "BE|Bull_Put_Spread|2026-09-25|$255/250",
+    "id": "BE|Bull_Put_Spread|2026-09-25|$258/252",
     "sym": "BE",
     "strat": "Bull Put Spread",
     "side": "bull",
-    "strike": "$255/250",
+    "strike": "$258/252",
     "exp": "Sep 25",
     "expDate": "2026-09-25",
     "backExp": null,
     "backExpDate": null,
-    "dte": 4,
-    "premium": 0.97,
+    "dte": 3,
+    "premium": 1.19,
     "debitStrategy": false,
     "legs": [
       {
         "type": "put",
-        "strike": 255,
+        "strike": 257.5,
         "action": "sell",
         "qty": 1
       },
       {
         "type": "put",
-        "strike": 250,
+        "strike": 252.5,
         "action": "buy",
         "qty": 1
       }
     ],
-    "roc": 19.4,
-    "ap": 1770.2,
+    "roc": 23.7,
+    "ap": 2883.5,
     "spot": 272.89,
-    "trackedAt": "2026-09-21T21:39:18.819Z",
-    "entryDate": "2026-09-21"
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "AMAT|Bear_Call_Spread|2026-09-25|$485/490",
+    "sym": "AMAT",
+    "strat": "Bear Call Spread",
+    "side": "bear",
+    "strike": "$485/490",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 3,
+    "premium": 0.96,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "call",
+        "strike": 485,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 490,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 19.1,
+    "ap": 2323.8,
+    "spot": 464.24,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "WDC|Iron_Condor|2026-10-16|$370/390/530/550",
+    "sym": "WDC",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$370/390/530/550",
+    "exp": "Oct 16",
+    "expDate": "2026-10-16",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 24,
+    "premium": 6.47,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 390,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 370,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 530,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 550,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 32.37,
+    "ap": 492.3,
+    "spot": 448.17,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
+  },
+  {
+    "id": "V|Iron_Condor|2026-09-25|$358/362/378/382",
+    "sym": "V",
+    "strat": "Iron Condor",
+    "side": "neutral",
+    "strike": "$358/362/378/382",
+    "exp": "Sep 25",
+    "expDate": "2026-09-25",
+    "backExp": null,
+    "backExpDate": null,
+    "dte": 3,
+    "premium": 1.06,
+    "debitStrategy": false,
+    "legs": [
+      {
+        "type": "put",
+        "strike": 362.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "put",
+        "strike": 357.5,
+        "action": "buy",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 377.5,
+        "action": "sell",
+        "qty": 1
+      },
+      {
+        "type": "call",
+        "strike": 382.5,
+        "action": "buy",
+        "qty": 1
+      }
+    ],
+    "roc": 21.3,
+    "ap": 2591.5,
+    "spot": 369.95,
+    "trackedAt": "2026-09-22T03:52:35.340Z",
+    "entryDate": "2026-09-22"
   }
 ]

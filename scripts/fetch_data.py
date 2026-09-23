@@ -672,9 +672,7 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     elif is_debit_spread:
         roc = round((fields["max_profit"] / premium) * 100, 2)
         ann_profit = round(roc * (365 / cand_dte), 1)
-        _ceiling = debit_spread_roc_ceiling(cand_dte)
-        print(f"    [DEBUG ceiling check] {strat} {cand_exp} dte={cand_dte} roc={roc}% ceiling={_ceiling}% -> {'REJECT' if roc > _ceiling else 'ALLOW'}")
-        if roc > _ceiling:
+        if roc > debit_spread_roc_ceiling(cand_dte):
             return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
     else:
         roc = round((premium / collateral) * 100, 2)
@@ -1512,6 +1510,8 @@ def build_trade_for_ticker(ticker_symbol, index):
 
         if strat in ("Long Call", "Long Put"):
             score = composite_score_long_option(best["pot"], ivr, best["breakevenMovePct"])
+        elif strat == "Double Diagonal":
+            score = composite_score_double_diagonal(best["pot"], ivr)
         else:
             score = composite_score(best["ap"], best["pot"], ivr)
         vol_regime, iv_rv_ratio = classify_vol_regime(best["iv"], realized_vol)
@@ -1693,6 +1693,8 @@ def build_lookup_trade(ticker_symbol):
 
         if strat in ("Long Call", "Long Put"):
             score = composite_score_long_option(best["pot"], ivr, best["breakevenMovePct"])
+        elif strat == "Double Diagonal":
+            score = composite_score_double_diagonal(best["pot"], ivr)
         else:
             score = composite_score(best["ap"], best["pot"], ivr)
         vol_regime, iv_rv_ratio = classify_vol_regime(best["iv"], realized_vol)

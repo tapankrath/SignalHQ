@@ -460,16 +460,123 @@ def classify_vol_regime(iv_pct, realized_vol_pct):
     return "Fair", ratio
 
 
-def composite_score(ann_profit, pot, ivr):
-    """Illustrative 0-10 blend — adjust weights to match your priorities."""
+MIN_SECTOR_PEERS_FOR_VALUATION = 3  # need at least this many same-sector
+    # tickers in THIS run's universe before comparing one against the others
+    # means anything — see compute_sector_valuations() below. Below this,
+    # a ticker gets no valuation rather than a "peer" comparison against 1-2
+    # names that happens to be misleading.
+VALUATION_RICH_CHEAP_THRESHOLD_PCT = 15  # growth-adjusted P/E must be at
+    # least this far from the sector median (either direction) to earn a
+    # Cheap/Rich label instead of Fair — a small gap is noise, not a signal.
+
+
+def compute_sector_valuations(equities):
+    """
+    Peer-relative valuation — added 2026-09-24. Requires NO additional
+    yfinance calls: sector and P/E were already pulled inside
+    build_equity_snapshot's existing tk.info fetch, just unused until now.
+
+    IMPORTANT — this compares each ticker only against the OTHER tickers in
+    THIS run's ~50-90 name universe that share its sector, not the whole
+    market. A "Cheap" label means "cheaper than its peers currently being
+    screened," not "cheap by any market-wide standard" — the frontend
+    surfaces the peer count alongside the label specifically so this reads
+    as what it is, not as a market-wide valuation call.
+
+    P/E alone conflates "expensive" with "fast-growing," so this also pulls
+    in pegRatio when available (P/E ÷ expected earnings growth) to soften
+    the raw P/E signal for names where the multiple is arguably justified —
+    a rough, deliberately mild adjustment, not a full growth-adjusted model.
+
+    Returns {ticker_symbol: {valuationLabel, peVsSectorPct, sectorMedianPE,
+    sectorPeerCount, sector}} for every ticker with a usable P/E, a reported
+    sector, and enough same-sector peers in this run (see
+    MIN_SECTOR_PEERS_FOR_VALUATION). Tickers that don't qualify are simply
+    absent from the returned dict — callers treat a missing entry as "no
+    valuation available," same as any other optional field in this file.
+    """
+    by_sector = {}
+    for e in equities:
+        sector = e.get("sector")
+        pe = e.get("peRatio")
+        if sector and isinstance(pe, (int, float)) and pe > 0:
+            by_sector.setdefault(sector, []).append(e)
+
+    out = {}
+    for sector, members in by_sector.items():
+        if len(members) < MIN_SECTOR_PEERS_FOR_VALUATION:
+            continue
+        pes = sorted(m["peRatio"] for m in members)
+        mid = len(pes) // 2
+        sector_median_pe = pes[mid] if len(pes) % 2 else (pes[mid - 1] + pes[mid]) / 2
+
+        for m in members:
+            pe_vs_sector_pct = round((m["peRatio"] - sector_median_pe) / sector_median_pe * 100, 1)
+            growth_adjusted_pct = pe_vs_sector_pct
+            peg = m.get("pegRatio")
+            if isinstance(peg, (int, float)) and peg > 0:
+                # A rich-looking P/E backed by strong expected growth (low
+                # PEG) shouldn't be flagged "Rich" the same as one that
+                # isn't — soften, don't cancel out, the raw P/E signal.
+                if peg < 1.5:
+                    growth_adjusted_pct -= 15
+                elif peg < 2.0:
+                    growth_adjusted_pct -= 7
+
+            if growth_adjusted_pct <= -VALUATION_RICH_CHEAP_THRESHOLD_PCT:
+                label = "Cheap"
+            elif growth_adjusted_pct >= VALUATION_RICH_CHEAP_THRESHOLD_PCT:
+                label = "Rich"
+            else:
+                label = "Fair"
+
+            out[m["sym"]] = {
+                "valuationLabel": label,
+                "peVsSectorPct": pe_vs_sector_pct,
+                "sectorMedianPE": round(sector_median_pe, 1),
+                "sectorPeerCount": len(members),
+                "sector": sector,
+            }
+    return out
+
+
+def valuation_score_component(valuation_info, side):
+    """
+    Direction-aware scoring input for composite_score()/equity_composite_score()
+    below — a "Cheap" stock supports a BULLISH thesis (upside room) but
+    argues AGAINST a bearish one (why bet against something already priced
+    below peers?), and vice versa for "Rich." A neutral-side trade (Iron
+    Condor, Double Diagonal, or a plain equity view) doesn't lean either way
+    on valuation direction, so it gets the same neutral component regardless
+    of label. Returns 5 (neutral, a no-op on the blended score) when there's
+    no valuation available for this ticker — same "don't let a missing
+    optional input silently zero out the score" pattern already used for
+    ivr/pot elsewhere in this file.
+    """
+    if not valuation_info:
+        return 5
+    label = valuation_info.get("valuationLabel")
+    if side == "bull":
+        return {"Cheap": 8, "Fair": 5, "Rich": 2}.get(label, 5)
+    if side == "bear":
+        return {"Cheap": 2, "Fair": 5, "Rich": 8}.get(label, 5)
+    return 5  # neutral side (or a plain equity view) — valuation doesn't favor a direction
+
+
+def composite_score(ann_profit, pot, ivr, valuation_component=5):
+    """Illustrative 0-10 blend — adjust weights to match your priorities.
+    valuation_component (0-10, direction-aware — see valuation_score_component())
+    defaults to 5 (neutral/no-op) when no peer valuation is available for
+    this ticker, so this stays backward-compatible with every existing caller."""
     profit_component = min(10, max(0, ann_profit / 5))      # ~50% ann. profit -> 10
     safety_component = min(10, max(0, (100 - pot) / 10))     # lower POT -> higher score
     ivr_component = min(10, max(0, ivr / 10))
-    score = 0.45 * profit_component + 0.35 * safety_component + 0.20 * ivr_component
+    score = (0.35 * profit_component + 0.28 * safety_component
+             + 0.17 * ivr_component + 0.20 * valuation_component)
     return round(min(10, max(1, score)), 1)
 
 
-def composite_score_long_option(pot_profit, ivr, breakeven_move_pct):
+def composite_score_long_option(pot_profit, ivr, breakeven_move_pct, valuation_component=5):
     """
     Illustrative 0-10 blend for Long Call/Long Put — scored differently from
     composite_score() above because none of its inputs carry over cleanly:
@@ -485,7 +592,8 @@ def composite_score_long_option(pot_profit, ivr, breakeven_move_pct):
     move_component = min(10, max(0, 10 - (breakeven_move_pct or 0) / 2))  # smaller
                                                                             # required
                                                                             # move -> higher
-    score = 0.40 * profit_prob_component + 0.30 * cheap_iv_component + 0.30 * move_component
+    score = (0.32 * profit_prob_component + 0.24 * cheap_iv_component
+             + 0.24 * move_component + 0.20 * valuation_component)
     return round(min(10, max(1, score)), 1)
 
 
@@ -1873,10 +1981,15 @@ def classify_trend(ema8, ema20, ema50):
     return "Neutral"
 
 
-def equity_composite_score(trend, rsi, chg_6m):
+def equity_composite_score(trend, rsi, chg_6m, valuation_component=5):
     """Illustrative 0-10 blend for a plain stock/ETF buy-candidate view — same
     honesty caveat as the options side's composite_score: this is a heuristic
-    blend I picked, not a validated signal. Adjust the weights to your taste."""
+    blend I picked, not a validated signal. Adjust the weights to your taste.
+    valuation_component (0-10 — see valuation_score_component()) is passed
+    with side="bull" for this function specifically: a plain equity view is
+    implicitly "would I want to own this," which is a bullish framing, unlike
+    an options trade whose side varies with the strategy picked. Defaults to
+    5 (neutral/no-op) when no peer valuation is available for this ticker."""
     trend_map = {"Strong Uptrend": 10, "Uptrend": 7, "Neutral": 5, "Downtrend": 3, "Strong Downtrend": 0}
     trend_component = trend_map.get(trend, 5)
 
@@ -1892,7 +2005,8 @@ def equity_composite_score(trend, rsi, chg_6m):
 
     momentum_component = min(10, max(0, 5 + (chg_6m or 0) / 4))  # +20% over 6mo -> 10
 
-    score = 0.45 * trend_component + 0.30 * rsi_component + 0.25 * momentum_component
+    score = (0.35 * trend_component + 0.23 * rsi_component
+             + 0.22 * momentum_component + 0.20 * valuation_component)
     return round(min(10, max(0, score)), 1)
 
 
@@ -1974,6 +2088,7 @@ def build_equity_snapshot(ticker_symbol, is_etf):
 
         # best-effort fundamentals — often missing, especially for ETFs
         pe_ratio, dividend_yield, market_cap = None, None, None
+        sector, industry, peg_ratio = None, None, None
         try:
             info = tk.info or {}
             raw_pe = info.get("trailingPE")
@@ -1989,6 +2104,15 @@ def build_equity_snapshot(ticker_symbol, is_etf):
             if isinstance(raw_dy, (int, float)) and 0 <= raw_dy <= 20:
                 dividend_yield = round(raw_dy, 2)
             market_cap = info.get("marketCap")
+            # sector/industry/pegRatio, added for compute_sector_valuations()
+            # (2026-09-24) — same tk.info call as the fields above, so this
+            # costs nothing extra. ETFs generally don't report a sector, which
+            # is fine: they just won't get a peer valuation (no basis to pick
+            # peers for one anyway).
+            sector = info.get("sector") or None
+            industry = info.get("industry") or None
+            raw_peg = info.get("pegRatio") or info.get("trailingPegRatio")
+            peg_ratio = round(raw_peg, 2) if isinstance(raw_peg, (int, float)) else None
         except Exception:
             pass  # fundamentals unavailable — leave as None, not zero
 
@@ -2015,6 +2139,9 @@ def build_equity_snapshot(ticker_symbol, is_etf):
             "chg1y": chg_1y,
             "volRatio": vol_ratio,
             "peRatio": pe_ratio,
+            "sector": sector,
+            "industry": industry,
+            "pegRatio": peg_ratio,
             "dividendYield": dividend_yield,
             "marketCap": market_cap,
             "score": score,
@@ -2320,6 +2447,41 @@ def main():
     if not trades and not equities:
         print("No trades or equities were built — leaving existing data.json untouched.", file=sys.stderr)
         sys.exit(1)
+
+    # --- Peer-relative valuation (added 2026-09-24) ---------------------
+    # Second pass, pure in-memory — no additional yfinance calls. Sector
+    # medians can't be known until every equity in the run has been built
+    # (see compute_sector_valuations' docstring), so trades/equities above
+    # were built with composite scores that hadn't seen valuation yet
+    # (valuation_component defaults to 5/neutral in every scoring function).
+    # This recomputes each score now that peer data is available, using
+    # only fields already sitting on the built dicts — no re-fetching.
+    valuations = compute_sector_valuations(equities)
+    print(f"  valuation: {len(valuations)} of {len(equities)} equities got a peer comparison "
+          f"(need >= {MIN_SECTOR_PEERS_FOR_VALUATION} same-sector tickers in this run)")
+
+    for e in equities:
+        v = valuations.get(e["sym"])
+        if v:
+            e.update(v)
+        val_component = valuation_score_component(v, "bull")  # see equity_composite_score's
+        e["score"] = equity_composite_score(e["trend"], e["rsi"], e["chg6m"], val_component)
+
+    for t in trades:
+        v = valuations.get(t["sym"])
+        if v:
+            t["valuationLabel"] = v["valuationLabel"]
+            t["peVsSectorPct"] = v["peVsSectorPct"]
+            t["sectorMedianPE"] = v["sectorMedianPE"]
+            t["sectorPeerCount"] = v["sectorPeerCount"]
+            t["sector"] = v["sector"]
+        val_component = valuation_score_component(v, t["side"])
+        if t["strat"] in ("Long Call", "Long Put"):
+            t["score"] = composite_score_long_option(t["pot"], t["ivr"], t["breakevenMovePct"], val_component)
+        elif t["strat"] == "Double Diagonal":
+            pass  # always-neutral side, see composite_score_double_diagonal's docstring — score unchanged
+        else:
+            t["score"] = composite_score(t["ap"], t["pot"], t["ivr"], val_component)
 
     print(f"Fetching hedge candidate ({HEDGE_TICKER})...")
     hedge = build_hedge_candidate()

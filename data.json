@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T02:17:21.056032+00:00",
+  "generated_at": "2026-09-23T03:17:11.090161+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,9 +40,15 @@
       "pcVol": 0.61,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AAPL, OKTA, AMD Stocks Jump To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-aapl-okta-amd-stocks-jump-to-52-week-highs-today/cZMEiVhRB78",
+          "sentiment": 0.0
+        },
         {
           "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
           "publisher": "Stocktwits",
@@ -125,26 +131,26 @@
       "pcVol": 0.27,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.22,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.01,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "MSFT Ticks Up Overnight: Analyst Upgrades To \u2018Buy\u2019 And Sees 15% Upside On AI Growth, Cost Discipline",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/msft-ticks-up-overnight-analyst-upgrades-to-buy-and-sees-15-upside-on-ai-growth-cost-discipline/cZMELQhRB7F",
+          "sentiment": 0.73
+        },
+        {
+          "title": "Marc Benioff Says Microsoft Shut Salesforce Out Of OpenAI \u2014 So He Bet On Anthropic Instead, And It Could Pay 'Tens Of Billions'",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/marc-benioff-says-microsoft-shut-salesforce-out-of-open-ai-so-he-bet-on-anthropic-instead-and-it-could-pay-tens-of-billions/cZMEh53RB7Z",
+          "sentiment": -0.1
+        },
         {
           "title": "Microsoft is killing an Office app you've used for decades",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/technology/microsoft-kills-35-year-old-office-app-publisher-oct-1",
           "sentiment": -0.66
-        },
-        {
-          "title": "Oppenheimer Revamps Microsoft Stock Price Target For 2027",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oppenheimer-revamps-microsoft-stock-price-220908722.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "$223 Billion Back To Shareholders: Inside The MSFT Machine",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616107/223-billion-back-to-shareholders-inside-the-msft-machine/2026-09-22",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -206,7 +212,14 @@
       "potIsProfitProb": true,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsHeadlines": [
+        {
+          "title": "Nvidia (NVDA) Targets 22,000 GPUs For New Southeast Asia AI Factory Hubs",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-nvda-targets-22-000-021206548.html",
+          "sentiment": 0.0
+        }
+      ],
       "volRegime": "Cheap",
       "ivRvRatio": 0.72,
       "realizedVol": 46.2,
@@ -410,9 +423,15 @@
       "pcVol": 0.25,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.32,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Is Oracle (ORCL) Pushing Deeper Into Drug Safety Cloud Services?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/healthcare/articles/why-oracle-orcl-pushing-deeper-021423662.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Oracle Edged Higher While AI Borrowers Pay 37 Extra Basis Points",
           "publisher": "GuruFocus.com",
@@ -483,9 +502,15 @@
       "pcVol": 0.37,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.18,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.12,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Rocket Lab CEO Puts Iridium Deal Alongside SpaceX And Amazon\u2019s Spectrum Bets: \u2018You Can\u2019t Just Magic Up Spectrum\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rocket-lab-ceo-iridium-deal-spacex-amazon-spectrum-bets/cZMEhNCRB7n",
+          "sentiment": 0.0
+        },
         {
           "title": "VGT Holders Bought \u2018Tech\u2019 and Own No Google, Meta, or Amazon: The Sector Rule That Decides What\u2019s Inside",
           "publisher": "24/7 Wall St.",
@@ -517,7 +542,7 @@
       "strat": "Iron Condor",
       "side": "neutral",
       "isETF": true,
-      "spot": 141.93,
+      "spot": 141.84,
       "spotPriceStale": true,
       "strike": "$130/132/152/153",
       "hedge": null,
@@ -525,20 +550,20 @@
       "dte": 2,
       "backExp": null,
       "backExpDate": null,
-      "pot": 44,
+      "pot": 43,
       "ap": 5611.9,
       "ivr": 54,
       "ivRankLimited": false,
       "dailyReturn": 30.75,
       "roc": 30.75,
-      "score": 7.5,
+      "score": 7.6,
       "buy": true,
       "sell": false,
       "ema": false,
       "earningsSoon": false,
       "daysToEarnings": null,
       "marginOfSafety": false,
-      "delta": 0.01,
+      "delta": 0.0,
       "iv": 113.0,
       "premium": 0.62,
       "breakeven": 131.38,
@@ -872,9 +897,15 @@
       "pcVol": 0.6,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Marc Benioff Says Microsoft Shut Salesforce Out Of OpenAI \u2014 So He Bet On Anthropic Instead, And It Could Pay 'Tens Of Billions'",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/marc-benioff-says-microsoft-shut-salesforce-out-of-open-ai-so-he-bet-on-anthropic-instead-and-it-could-pay-tens-of-billions/cZMEh53RB7Z",
+          "sentiment": -0.1
+        },
         {
           "title": "How Far Could CRM Stock Swing In A Year?",
           "publisher": "Trefis",
@@ -1464,6 +1495,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "How Walmart, Home Depot, Lowe\u2019s tariff refunds affect shoppers",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/walmart-home-depot-lowes-tjx-williams-sonoma-tariff-refunds-consumer-prices",
+          "sentiment": 0.0
+        },
+        {
           "title": "Home Depot issues dire warning about squeezed American shoppers",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/retail/home-depot-says-squeezed-shoppers-are-axing-big-projects-to-fix-only-whats-broken",
@@ -1474,12 +1511,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-tp-tapo-221321932.html",
           "sentiment": 0.4
-        },
-        {
-          "title": "His Bet On Home Depot Made Ken Langone A Billionaire. Now He Sees Eli Lilly Stock Hitting $2,000",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/22/his-bet-on-home-depot-made-ken-langone-a-billionaire-now-he-sees-eli-lilly-stock-hitting-2000/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -1711,6 +1742,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Should You Sell Your Marvell Stock Now That Higher Forecasts Are Not Enough?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616152/should-you-sell-your-marvell-stock-now-that-higher-forecasts-are-not-enough/2026-09-22",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stocks making big moves yesterday: Xponential Fitness, Meta, Marvell Technology, Titan International, and Cloudflare",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-making-big-moves-yesterday-182946944.html",
@@ -1721,12 +1758,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/22/price-prediction-marvell-amd-broadcom-our-bold-price-predictions-for-2027/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Marvell Technology (MRVL) Debuts Industry First 2nm Optical Interconnects",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/articles/marvell-technology-mrvl-debuts-industry-111533825.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -1934,26 +1965,26 @@
       "pcVol": 0.53,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Is SpaceX Actually Worth $10 Trillion?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/22/is-spacex-actually-worth-10-trillion/",
+          "sentiment": 0.23
+        },
+        {
+          "title": "Rocket Lab CEO Puts Iridium Deal Alongside SpaceX And Amazon\u2019s Spectrum Bets: \u2018You Can\u2019t Just Magic Up Spectrum\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rocket-lab-ceo-iridium-deal-spacex-amazon-spectrum-bets/cZMEhNCRB7n",
+          "sentiment": 0.0
+        },
         {
           "title": "What $3,000 Invested in SpaceX Stock Could Grow to by September 2027",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/what-3000-invested-in-spacex-stock-could-grow-to-b/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Firefly Aerospace vs. SpaceX: Which Space Stock Can Put Your Portfolio Into Orbit in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/22/firefly-aerospace-vs-spacex-which-space-stock-can-put-your-portfolio-into-orbit-in-2026/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
-          "sentiment": 0.67
         }
       ],
       "volRegime": "Rich",
@@ -2167,9 +2198,15 @@
       "pcVol": 0.39,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Broadcom (AVGO) Is Up 7.4% After Massive Buybacks And AI Chip Deals With Hyperscalers - Has The Bull Case Changed?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-7-4-massive-021343094.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Price Prediction: Marvell, AMD & Broadcom- Our Bold Price Predictions for 2027",
           "publisher": "24/7 Wall St.",
@@ -2455,9 +2492,15 @@
       "pcVol": 0.93,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "FormFactor, Kulicke and Soffa, Monolithic Power Systems, Micron, and Seagate Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/formfactor-kulicke-soffa-monolithic-power-205346034.html",
+          "sentiment": 0.0
+        },
         {
           "title": "SanDisk Jumps 6% as Rosenblatt Starts Coverage at Buy With $2,400 Target; Micron Rises 3%, Seagate Ticks Up",
           "publisher": "24/7 Wall St.",
@@ -2469,12 +2512,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/22/seagate-went-from-207-to-1144-where-does-it-go-next/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: Seagate Could Be\u00a0a Surprisingly Big\u00a0Winner From the\u00a0AI Boom",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/prediction-seagate-could-be-a-surprisingly-big-winner-from-the-ai-boom/",
-          "sentiment": 0.72
         }
       ],
       "volRegime": "Rich",
@@ -2759,9 +2796,15 @@
       "pcVol": 0.4,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.28,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "VKTX Stock On Track To Beat LLY, NVO This Month After Obesity Drug Data \u2014 Can Viking Win Over Wegovy And Zepbound Users?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/vktx-stock-beat-lly-nvo-this-month-obesity-drug-data-can-viking-win-over-wegovy-zepbound-users/cZMEh0VRB7V",
+          "sentiment": 0.83
+        },
         {
           "title": "Eli Lilly CEO reveals astonishing shift in GLP-1 pill market",
           "publisher": "TheStreet",
@@ -2772,12 +2815,6 @@
           "title": "Should Eli Lilly (LLY) Investors Watch Its $6.5 Billion Houston GLP 1 Buildout?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/eli-lilly-lly-investors-watch-211523509.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Beyond Eli Lilly and Novo Nordisk: Rising Obesity Drug Stocks to Watch",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/viking-therapeutics-stock-weight-loss-drug-trial-lilly-novo-bee2ded3?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -2838,9 +2875,15 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.22,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Moderna (MRNA) Stock Looks Very Expensive As Shares Surge Over 1 Year",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-stock-looks-very-021254435.html",
+          "sentiment": 0.76
+        },
         {
           "title": "Was Moderna Stock's Cancer Vaccine Run Visible In Advance?",
           "publisher": "Trefis",
@@ -2851,12 +2894,6 @@
           "title": "Should You Buy Moderna Stock? Why Many Wall Street Analysts Say \"No.\"",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/should-you-buy-moderna-stock-why-many-wall-street/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Moderna Adds Another 5% and Is Up 500% in 2026. Can MRNA Stock Continue the Melt-Up?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/22/moderna-adds-another-5-and-is-up-500-in-2026-can-mrna-stock-continue-the-melt-up/",
           "sentiment": 0.0
         }
       ],
@@ -3160,25 +3197,25 @@
       "pcVol": 0.65,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.08,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "How Walmart, Home Depot, Lowe\u2019s tariff refunds affect shoppers",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/walmart-home-depot-lowes-tjx-williams-sonoma-tariff-refunds-consumer-prices",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Two years after a costly retreat, Walmart tries health again",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/two-years-after-a-costly-retreat-walmart-tries-health-again",
+          "sentiment": 0.1
+        },
         {
           "title": "Walmart (WMT) Reverses Course On In Store Digital Wallet Payments",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-reverses-course-store-181451764.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Walmart\u2019s new pricing patents spark fears of surveillance: \u2018Are they going to charge you a different price if they know who you are?\u2019",
-          "publisher": "Fortune",
-          "link": "https://finance.yahoo.com/media-advertising/articles/walmart-pricing-patents-spark-fears-161239305.html",
-          "sentiment": -0.23
-        },
-        {
-          "title": "Walmart, Target and Costco Forecast: Retail Stocks Face Key Tests",
-          "publisher": "FX Empire",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-costco-forecast-retail-134747501.html",
           "sentiment": 0.0
         }
       ],
@@ -3462,8 +3499,8 @@
       "pcVol": 0.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.26,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Can Berkshire Hathaway (BRK.A) Stay Below Fair Value After Buffett\u2019s Exit?",
@@ -3478,10 +3515,10 @@
           "sentiment": 0.2
         },
         {
-          "title": "Berkshire Now Owns About 10% of Lennar",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-22-2026/card/berkshire-now-owns-about-10-of-lennar-HMnBJCGwiMtKOs4we7DL?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Lennar Stock Is Depressed. Why Berkshire Hathaway Is Piling In.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/berkshire-buys-lennar-stock-6bad1928?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.51
         }
       ],
       "volRegime": "Rich",
@@ -3829,9 +3866,15 @@
       "dividendYield": 0.32,
       "marketCap": 4958372495360,
       "score": 8.5,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AAPL, OKTA, AMD Stocks Jump To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-aapl-okta-amd-stocks-jump-to-52-week-highs-today/cZMEiVhRB78",
+          "sentiment": 0.0
+        },
         {
           "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
           "publisher": "Stocktwits",
@@ -3866,26 +3909,26 @@
       "dividendYield": 0.78,
       "marketCap": 3697921753088,
       "score": 9.4,
-      "newsSentiment": -0.22,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.01,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "MSFT Ticks Up Overnight: Analyst Upgrades To \u2018Buy\u2019 And Sees 15% Upside On AI Growth, Cost Discipline",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/msft-ticks-up-overnight-analyst-upgrades-to-buy-and-sees-15-upside-on-ai-growth-cost-discipline/cZMELQhRB7F",
+          "sentiment": 0.73
+        },
+        {
+          "title": "Marc Benioff Says Microsoft Shut Salesforce Out Of OpenAI \u2014 So He Bet On Anthropic Instead, And It Could Pay 'Tens Of Billions'",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/marc-benioff-says-microsoft-shut-salesforce-out-of-open-ai-so-he-bet-on-anthropic-instead-and-it-could-pay-tens-of-billions/cZMEh53RB7Z",
+          "sentiment": -0.1
+        },
         {
           "title": "Microsoft is killing an Office app you've used for decades",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/technology/microsoft-kills-35-year-old-office-app-publisher-oct-1",
           "sentiment": -0.66
-        },
-        {
-          "title": "Oppenheimer Revamps Microsoft Stock Price Target For 2027",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/oppenheimer-revamps-microsoft-stock-price-220908722.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "$223 Billion Back To Shareholders: Inside The MSFT Machine",
-          "publisher": "Trefis",
-          "link": "https://www.trefis.com/articles/616107/223-billion-back-to-shareholders-inside-the-msft-machine/2026-09-22",
-          "sentiment": 0.0
         }
       ]
     },
@@ -3911,7 +3954,14 @@
       "score": 9.4,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": []
+      "newsHeadlines": [
+        {
+          "title": "Nvidia (NVDA) Targets 22,000 GPUs For New Southeast Asia AI Factory Hubs",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-nvda-targets-22-000-021206548.html",
+          "sentiment": 0.0
+        }
+      ]
     },
     {
       "sym": "META",
@@ -4050,9 +4100,15 @@
       "dividendYield": 1.35,
       "marketCap": 451141402624,
       "score": 3.5,
-      "newsSentiment": -0.32,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Why Is Oracle (ORCL) Pushing Deeper Into Drug Safety Cloud Services?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/healthcare/articles/why-oracle-orcl-pushing-deeper-021423662.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Oracle Edged Higher While AI Borrowers Pay 37 Extra Basis Points",
           "publisher": "GuruFocus.com",
@@ -4087,9 +4143,15 @@
       "dividendYield": null,
       "marketCap": 2750293999616,
       "score": 6.2,
-      "newsSentiment": -0.18,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.12,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Rocket Lab CEO Puts Iridium Deal Alongside SpaceX And Amazon\u2019s Spectrum Bets: \u2018You Can\u2019t Just Magic Up Spectrum\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rocket-lab-ceo-iridium-deal-spacex-amazon-spectrum-bets/cZMEhNCRB7n",
+          "sentiment": 0.0
+        },
         {
           "title": "VGT Holders Bought \u2018Tech\u2019 and Own No Google, Meta, or Amazon: The Sector Rule That Decides What\u2019s Inside",
           "publisher": "24/7 Wall St.",
@@ -4107,10 +4169,10 @@
     {
       "sym": "SOXL",
       "isETF": true,
-      "price": 141.93,
+      "price": 141.84,
       "priceStale": true,
-      "high52wk": 302.0,
-      "low52wk": 28.12,
+      "high52wk": 301.8,
+      "low52wk": 28.1,
       "pctFromHigh": -53.0,
       "pctFromLow": 404.7,
       "trend": "Uptrend",
@@ -4339,9 +4401,15 @@
       "dividendYield": 0.74,
       "marketCap": 191989432320,
       "score": 9.4,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Marc Benioff Says Microsoft Shut Salesforce Out Of OpenAI \u2014 So He Bet On Anthropic Instead, And It Could Pay 'Tens Of Billions'",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/marc-benioff-says-microsoft-shut-salesforce-out-of-open-ai-so-he-bet-on-anthropic-instead-and-it-could-pay-tens-of-billions/cZMEh53RB7Z",
+          "sentiment": -0.1
+        },
         {
           "title": "How Far Could CRM Stock Swing In A Year?",
           "publisher": "Trefis",
@@ -4577,7 +4645,7 @@
       "volRatio": 0.74,
       "peRatio": 73.9,
       "dividendYield": 0.7,
-      "marketCap": 137555116032,
+      "marketCap": 137275564032,
       "score": 4.9,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -4681,6 +4749,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "How Walmart, Home Depot, Lowe\u2019s tariff refunds affect shoppers",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/walmart-home-depot-lowes-tjx-williams-sonoma-tariff-refunds-consumer-prices",
+          "sentiment": 0.0
+        },
+        {
           "title": "Home Depot issues dire warning about squeezed American shoppers",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/retail/home-depot-says-squeezed-shoppers-are-axing-big-projects-to-fix-only-whats-broken",
@@ -4691,12 +4765,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-tp-tapo-221321932.html",
           "sentiment": 0.4
-        },
-        {
-          "title": "His Bet On Home Depot Made Ken Langone A Billionaire. Now He Sees Eli Lilly Stock Hitting $2,000",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/22/his-bet-on-home-depot-made-ken-langone-a-billionaire-now-he-sees-eli-lilly-stock-hitting-2000/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4810,6 +4878,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Should You Sell Your Marvell Stock Now That Higher Forecasts Are Not Enough?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616152/should-you-sell-your-marvell-stock-now-that-higher-forecasts-are-not-enough/2026-09-22",
+          "sentiment": 0.0
+        },
+        {
           "title": "Stocks making big moves yesterday: Xponential Fitness, Meta, Marvell Technology, Titan International, and Cloudflare",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-making-big-moves-yesterday-182946944.html",
@@ -4820,12 +4894,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/22/price-prediction-marvell-amd-broadcom-our-bold-price-predictions-for-2027/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Marvell Technology (MRVL) Debuts Industry First 2nm Optical Interconnects",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/articles/marvell-technology-mrvl-debuts-industry-111533825.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4935,9 +5003,15 @@
       "dividendYield": null,
       "marketCap": 1018288996352,
       "score": 8.5,
-      "newsSentiment": 0.34,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Did AAPL, OKTA, AMD Stocks Jump To 52-Week Highs Today?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/why-did-aapl-okta-amd-stocks-jump-to-52-week-highs-today/cZMEiVhRB78",
+          "sentiment": 0.0
+        },
         {
           "title": "Advanced Micro Devices (AMD) Stock Moves 1.34%: What You Should Know",
           "publisher": "Zacks",
@@ -4949,12 +5023,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/amd-stock-has-blown-past-nvidia-this-year-is-it-still-the-better-buy/",
           "sentiment": 0.44
-        },
-        {
-          "title": "AMD Stock Just Sent a Huge AI Signal",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amd-stock-just-sent-huge-190755384.html",
-          "sentiment": 0.32
         }
       ]
     },
@@ -5019,28 +5087,28 @@
       "volRatio": 0.62,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2039485038592,
+      "marketCap": 2038310240256,
       "score": 8.2,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.08,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Is SpaceX Actually Worth $10 Trillion?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/22/is-spacex-actually-worth-10-trillion/",
+          "sentiment": 0.23
+        },
+        {
+          "title": "Rocket Lab CEO Puts Iridium Deal Alongside SpaceX And Amazon\u2019s Spectrum Bets: \u2018You Can\u2019t Just Magic Up Spectrum\u2019",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/rocket-lab-ceo-iridium-deal-spacex-amazon-spectrum-bets/cZMEhNCRB7n",
+          "sentiment": 0.0
+        },
         {
           "title": "What $3,000 Invested in SpaceX Stock Could Grow to by September 2027",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/what-3000-invested-in-spacex-stock-could-grow-to-b/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Firefly Aerospace vs. SpaceX: Which Space Stock Can Put Your Portfolio Into Orbit in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/22/firefly-aerospace-vs-spacex-which-space-stock-can-put-your-portfolio-into-orbit-in-2026/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Nasdaq Jumps To Close At Record As Chipmakers Climb, Oil Prices Cool \u2014 AAPL, META, SPCX, MSFT, VKTX In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/nasdaq-jumps-to-close-at-record-as-chipmakers-climb-oil-prices-cool-aapl-meta-spcx-msft-vktx-in-focus/cZM5GHbRB7L",
-          "sentiment": 0.67
         }
       ]
     },
@@ -5138,9 +5206,15 @@
       "dividendYield": 0.72,
       "marketCap": 1740179111936,
       "score": 4.4,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Broadcom (AVGO) Is Up 7.4% After Massive Buybacks And AI Chip Deals With Hyperscalers - Has The Bull Case Changed?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-7-4-massive-021343094.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Price Prediction: Marvell, AMD & Broadcom- Our Bold Price Predictions for 2027",
           "publisher": "24/7 Wall St.",
@@ -5167,7 +5241,7 @@
       "volRatio": 0.76,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 64190455808,
+      "marketCap": 59950440448,
       "score": 9.4,
       "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
@@ -5292,9 +5366,15 @@
       "dividendYield": 0.34,
       "marketCap": 209165189120,
       "score": 4.9,
-      "newsSentiment": 0.4,
+      "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "FormFactor, Kulicke and Soffa, Monolithic Power Systems, Micron, and Seagate Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/formfactor-kulicke-soffa-monolithic-power-205346034.html",
+          "sentiment": 0.0
+        },
         {
           "title": "SanDisk Jumps 6% as Rosenblatt Starts Coverage at Buy With $2,400 Target; Micron Rises 3%, Seagate Ticks Up",
           "publisher": "24/7 Wall St.",
@@ -5306,12 +5386,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/22/seagate-went-from-207-to-1144-where-does-it-go-next/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Prediction: Seagate Could Be\u00a0a Surprisingly Big\u00a0Winner From the\u00a0AI Boom",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/18/prediction-seagate-could-be-a-surprisingly-big-winner-from-the-ai-boom/",
-          "sentiment": 0.72
         }
       ]
     },
@@ -5505,11 +5579,17 @@
       "volRatio": 1.01,
       "peRatio": 39.2,
       "dividendYield": 0.59,
-      "marketCap": 1043462291456,
+      "marketCap": 1043012583424,
       "score": 4.9,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.28,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "VKTX Stock On Track To Beat LLY, NVO This Month After Obesity Drug Data \u2014 Can Viking Win Over Wegovy And Zepbound Users?",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/vktx-stock-beat-lly-nvo-this-month-obesity-drug-data-can-viking-win-over-wegovy-zepbound-users/cZMEh0VRB7V",
+          "sentiment": 0.83
+        },
         {
           "title": "Eli Lilly CEO reveals astonishing shift in GLP-1 pill market",
           "publisher": "TheStreet",
@@ -5520,12 +5600,6 @@
           "title": "Should Eli Lilly (LLY) Investors Watch Its $6.5 Billion Houston GLP 1 Buildout?",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/eli-lilly-lly-investors-watch-211523509.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Beyond Eli Lilly and Novo Nordisk: Rising Obesity Drug Stocks to Watch",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/viking-therapeutics-stock-weight-loss-drug-trial-lilly-novo-bee2ded3?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ]
@@ -5550,9 +5624,15 @@
       "dividendYield": null,
       "marketCap": 72884502528,
       "score": 8.5,
-      "newsSentiment": -0.22,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Moderna (MRNA) Stock Looks Very Expensive As Shares Surge Over 1 Year",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-stock-looks-very-021254435.html",
+          "sentiment": 0.76
+        },
         {
           "title": "Was Moderna Stock's Cancer Vaccine Run Visible In Advance?",
           "publisher": "Trefis",
@@ -5563,12 +5643,6 @@
           "title": "Should You Buy Moderna Stock? Why Many Wall Street Analysts Say \"No.\"",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/should-you-buy-moderna-stock-why-many-wall-street/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Moderna Adds Another 5% and Is Up 500% in 2026. Can MRNA Stock Continue the Melt-Up?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/22/moderna-adds-another-5-and-is-up-500-in-2026-can-mrna-stock-continue-the-melt-up/",
           "sentiment": 0.0
         }
       ]
@@ -5763,27 +5837,27 @@
       "volRatio": 0.75,
       "peRatio": 39.9,
       "dividendYield": 0.92,
-      "marketCap": 876343656448,
+      "marketCap": 873664151552,
       "score": 3.0,
-      "newsSentiment": -0.08,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "How Walmart, Home Depot, Lowe\u2019s tariff refunds affect shoppers",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/walmart-home-depot-lowes-tjx-williams-sonoma-tariff-refunds-consumer-prices",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Two years after a costly retreat, Walmart tries health again",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/two-years-after-a-costly-retreat-walmart-tries-health-again",
+          "sentiment": 0.1
+        },
         {
           "title": "Walmart (WMT) Reverses Course On In Store Digital Wallet Payments",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-reverses-course-store-181451764.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Walmart\u2019s new pricing patents spark fears of surveillance: \u2018Are they going to charge you a different price if they know who you are?\u2019",
-          "publisher": "Fortune",
-          "link": "https://finance.yahoo.com/media-advertising/articles/walmart-pricing-patents-spark-fears-161239305.html",
-          "sentiment": -0.23
-        },
-        {
-          "title": "Walmart, Target and Costco Forecast: Retail Stocks Face Key Tests",
-          "publisher": "FX Empire",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-costco-forecast-retail-134747501.html",
           "sentiment": 0.0
         }
       ]
@@ -5931,8 +6005,8 @@
       "dividendYield": null,
       "marketCap": 1077825961984,
       "score": 7.5,
-      "newsSentiment": 0.26,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Can Berkshire Hathaway (BRK.A) Stay Below Fair Value After Buffett\u2019s Exit?",
@@ -5947,10 +6021,10 @@
           "sentiment": 0.2
         },
         {
-          "title": "Berkshire Now Owns About 10% of Lennar",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-22-2026/card/berkshire-now-owns-about-10-of-lennar-HMnBJCGwiMtKOs4we7DL?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Lennar Stock Is Depressed. Why Berkshire Hathaway Is Piling In.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/berkshire-buys-lennar-stock-6bad1928?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.51
         }
       ]
     },

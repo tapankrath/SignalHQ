@@ -1427,11 +1427,24 @@ def build_trade_for_ticker(ticker_symbol, index):
         # converging on "whichever Friday is closest to 30 days out": each ticker's
         # own IV term structure and chain liquidity determines its own best pick.
         #
-        # Long Call/Long Put have no "ap" at all (see evaluate_expiration_candidate)
-        # — for those two, rank candidates by probability of profit instead, the
-        # only comparable-across-candidates number they do produce.
+        # Ranks by RAW roc, not annualized ap (changed 2026-09-23 — see the
+        # MAX_PLAUSIBLE_ROC/debit_spread_roc_ceiling comments elsewhere in this
+        # file for why raw ROC, not ap, is the number that's actually
+        # comparable across different DTEs). Annualizing multiplies by
+        # 365/dte, which grows as dte shrinks — so ranking BY ap systematically
+        # favors whichever surviving candidate has the shortest DTE, even
+        # when a longer-dated one has a strictly better raw return. That bias
+        # doesn't require an extreme, easily-flagged DTE to bite: it applies
+        # at any DTE differential, just more visibly at the extremes — which
+        # is exactly why capping ROC at short DTE (debit_spread_roc_ceiling)
+        # alone wasn't enough; every ticker just piled onto the next-shortest
+        # surviving candidate instead of actually being compared fairly.
+        # Long Call/Long Put have no "roc"/"ap" at all (see
+        # evaluate_expiration_candidate) — for those two, rank by probability
+        # of profit instead, the only comparable-across-candidates number
+        # they do produce.
         def _rank_key(result):
-            return result["ap"] if result["ap"] is not None else result["pot"]
+            return result["roc"] if result["roc"] is not None else result["pot"]
 
         best = None
         failure_reasons = []
@@ -1644,8 +1657,9 @@ def build_lookup_trade(ticker_symbol):
         strat, side = pick_lookup_strategy(uptrend, near_ema)
         is_etf = ticker_symbol in KNOWN_ETFS
 
+        # See the main pipeline's _rank_key for why this ranks by raw roc, not ap.
         def _rank_key(result):
-            return result["ap"] if result["ap"] is not None else result["pot"]
+            return result["roc"] if result["roc"] is not None else result["pot"]
 
         best = None
         failure_reasons = []

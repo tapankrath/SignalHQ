@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T03:17:11.090161+00:00",
+  "generated_at": "2026-09-23T04:05:24.775453+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -970,9 +970,15 @@
       "pcVol": 0.74,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.02,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CrowdStrike Stock Rallies as AI Security Fears Create a Major Opportunity. How to Play CRWD Here.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4743230/crowdstrike-stock-rallies-as-ai-security-fears-create-a-major-opportunity-how-to-play-crwd-here",
+          "sentiment": 0.87
+        },
         {
           "title": "Is CrowdStrike Stock A Buy Today As AI Threats Lift Demand?",
           "publisher": "Trefis",
@@ -984,12 +990,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/22/crowdstrike-vs-palantir-technologies-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Investors Heavily Search CrowdStrike (CRWD): Here is What You Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-crowdstrike-crwd-130005047.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -1564,9 +1564,15 @@
       "pcVol": 0.89,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "What To Expect From Costco\u2019s (COST) Q3 Earnings",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/expect-costco-cost-q3-earnings-031650079.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Here\u2019s How Much Costco Stock Is Expected to Move After Earnings",
           "publisher": "Investopedia",
@@ -1578,12 +1584,6 @@
           "publisher": "FX Empire",
           "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-costco-forecast-retail-134747501.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Here's What the Fed's Interest Rate Hike Means for Costco, Walmart, and Target (and My Top Pick to Buy Now)",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/heres-what-the-feds-interest-rate-hike-means-for-c/",
-          "sentiment": 0.59
         }
       ],
       "volRegime": "Rich",
@@ -4444,9 +4444,15 @@
       "dividendYield": null,
       "marketCap": 256045137920,
       "score": 9.4,
-      "newsSentiment": -0.02,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.27,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "CrowdStrike Stock Rallies as AI Security Fears Create a Major Opportunity. How to Play CRWD Here.",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4743230/crowdstrike-stock-rallies-as-ai-security-fears-create-a-major-opportunity-how-to-play-crwd-here",
+          "sentiment": 0.87
+        },
         {
           "title": "Is CrowdStrike Stock A Buy Today As AI Threats Lift Demand?",
           "publisher": "Trefis",
@@ -4458,12 +4464,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/22/crowdstrike-vs-palantir-technologies-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Investors Heavily Search CrowdStrike (CRWD): Here is What You Need to Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-crowdstrike-crwd-130005047.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -4645,7 +4645,7 @@
       "volRatio": 0.74,
       "peRatio": 73.9,
       "dividendYield": 0.7,
-      "marketCap": 137275564032,
+      "marketCap": 137555116032,
       "score": 4.9,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -4788,9 +4788,15 @@
       "dividendYield": 0.65,
       "marketCap": 398869266432,
       "score": 2.3,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "What To Expect From Costco\u2019s (COST) Q3 Earnings",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/expect-costco-cost-q3-earnings-031650079.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Here\u2019s How Much Costco Stock Is Expected to Move After Earnings",
           "publisher": "Investopedia",
@@ -4802,12 +4808,6 @@
           "publisher": "FX Empire",
           "link": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-costco-forecast-retail-134747501.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Here's What the Fed's Interest Rate Hike Means for Costco, Walmart, and Target (and My Top Pick to Buy Now)",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/heres-what-the-feds-interest-rate-hike-means-for-c/",
-          "sentiment": 0.59
         }
       ]
     },
@@ -4917,9 +4917,15 @@
       "dividendYield": 0.05,
       "marketCap": 1237995618304,
       "score": 9.4,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Should You Buy Micron Before Sept. 30? 1 Number Could Send the Stock Soaring",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/22/should-you-buy-micron-before-sept-30-1-number-could-send-the-stock-soaring/",
+          "sentiment": 0.08
+        },
         {
           "title": "Dow Jones Futures: Nasdaq Hits New High; Sandisk, Micron Trigger Buy Signals",
           "publisher": "Investor's Business Daily",
@@ -4930,12 +4936,6 @@
           "title": "Micron's Memory Boom Is Facing a New Test",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/articles/microns-memory-boom-facing-test-222431132.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Micron vs. SanDisk: Comparing Two Red-Hot AI Memory Stocks",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-comparing-two-205700744.html",
           "sentiment": 0.0
         }
       ]
@@ -5087,7 +5087,7 @@
       "volRatio": 0.62,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2038310240256,
+      "marketCap": 2039485038592,
       "score": 8.2,
       "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
@@ -5241,7 +5241,7 @@
       "volRatio": 0.76,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 59950440448,
+      "marketCap": 64190455808,
       "score": 9.4,
       "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
@@ -5495,9 +5495,15 @@
       "dividendYield": 0.13,
       "marketCap": 167507312640,
       "score": 4.9,
-      "newsSentiment": 0.1,
+      "newsSentiment": -0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Western Digital (WDC) Could Be 41% Overvalued Ahead Of Earnings",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-could-41-032155491.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Western Digital (WDC) Surpasses Market Returns: Some Facts Worth Knowing",
           "publisher": "Zacks",
@@ -5509,12 +5515,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/21/sandisk-falls-2-despite-memory-rally-micron-advances-3-western-digital-nudges-higher/",
           "sentiment": -0.43
-        },
-        {
-          "title": "Can Sovereign AI and Neoclouds Extend Western Digital's Growth Run?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/technology/ai/articles/sovereign-ai-neoclouds-extend-western-150700158.html",
-          "sentiment": 0.51
         }
       ]
     },
@@ -5579,7 +5579,7 @@
       "volRatio": 1.01,
       "peRatio": 39.2,
       "dividendYield": 0.59,
-      "marketCap": 1043012583424,
+      "marketCap": 1043462291456,
       "score": 4.9,
       "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
@@ -5837,7 +5837,7 @@
       "volRatio": 0.75,
       "peRatio": 39.9,
       "dividendYield": 0.92,
-      "marketCap": 873664151552,
+      "marketCap": 876343656448,
       "score": 3.0,
       "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",

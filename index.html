@@ -1062,14 +1062,15 @@
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put"> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row"><input type="checkbox" data-strat="Long Call" checked> <span class="strat-dot bull"></span>Long Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Double Diagonal" checked> <span class="strat-dot neutral"></span>Double Diagonal</label>
+        <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Long Put" checked> <span class="strat-dot bear"></span>Long Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread" checked> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
@@ -1086,22 +1087,22 @@
     <div class="filter-section" id="qualitySection" style="display:none;">
       <div class="filter-section-body">
         <label class="check-row"><input type="checkbox" data-quality="buy" checked> Buy signal</label>
-        <label class="check-row"><input type="checkbox" data-quality="sell"> Sell signal</label>
+        <label class="check-row"><input type="checkbox" data-quality="sell" checked> Sell signal</label>
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
         <div class="num-row">
           <label for="minTradeProfitInput">Min trade profit %</label>
-          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
+          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20">
         </div>
       </div>
-      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put have no fixed profit figure, so they don't pass this filter.</div>
+      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put/Double Diagonal have no fixed profit figure, so they don't pass this filter.</div>
     </div>
 
     <div class="filter-section" id="riskSection" style="display:none;">
       <div class="filter-section-body">
         <label class="check-row"><input type="checkbox" data-risk="excludeEarnings" checked> Exclude earnings within DTE</label>
         <label class="check-row"><input type="checkbox" data-risk="earningsWithin3wk"> Earnings within 3 weeks</label>
-        <label class="check-row"><input type="checkbox" data-risk="lowVol" checked> Low volatility (IV Rank &lt; 50)</label>
-        <label class="check-row"><input type="checkbox" data-risk="highVol" checked> High volatility (IV Rank &gt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="lowVol"> Low volatility (IV Rank &lt; 50)</label>
+        <label class="check-row"><input type="checkbox" data-risk="highVol"> High volatility (IV Rank &gt; 50)</label>
         <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
         <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
       </div>
@@ -1295,6 +1296,17 @@
       ? `<span class="stale-mark" title="Price may be lagging the live market — Yahoo's free data can still show the prior close for a while after hours. Screen for a live/delayed quote before trading.">†</span>`
       : '';
   }
+  // Surfaces ivRankLimited (computed in fetch_data.py's iv_rank_proxy(), see
+  // IV_RANK_MIN_HISTORY_DAYS there) — a recent IPO doesn't have a year of
+  // price history yet, so its IV Rank is ranked against whatever shorter,
+  // more recent-biased sample actually exists instead of the usual ~1-year
+  // window every other ticker gets. A distinct mark (not †) since the two
+  // flags mean different things and can both apply to the same trade.
+  function limitedHistoryMark(isLimited){
+    return isLimited
+      ? `<span class="stale-mark" title="Less than ~9-10 months of price history (likely a recent IPO), so IV Rank is ranked against a shorter, more recent sample than the usual ~1-year window.">‡</span>`
+      : '';
+  }
   function fmtMarketCap(value){
     if(value == null) return '—';
     return '$' + (value / 1e9).toFixed(1) + 'B';
@@ -1416,7 +1428,7 @@
           <td class="num">${t.pot != null ? t.pot + '%' : '—'}</td>
           <td class="num ${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}</td>
           <td class="num ${t.ap != null ? 'val-pos' : ''}">${fmtPct(t.ap)}</td>
-          <td class="num">${t.ivr}</td>
+          <td class="num">${t.ivr}${limitedHistoryMark(t.ivRankLimited)}</td>
           <td>${meterHtml(t.score)}</td>
           <td><button class="row-action" data-idx="${idx}">View</button></td>
         </tr>`;
@@ -1528,18 +1540,24 @@
     // at 6 DTE annualizes to 100%+), so filtering on roc directly is both
     // simpler and closer to what the number actually means. Defaults to 15%.
     //
-    // Long Call/Long Put have no "ap"/"roc" at all (both null — see backend
-    // notes on breakevenMovePct). An earlier version let those pass through here on a
-    // probability-based fallback instead of a profit check, but that meant
+    // Long Call/Long Put — and now Double Diagonal too — have no "ap"/"roc"
+    // at all (all null — see backend notes on breakevenMovePct, and
+    // build_double_diagonal's docstring for why a diagonal's max profit
+    // isn't closed-form). An earlier version let those pass through here on
+    // a probability-based fallback instead of a profit check, but that meant
     // "Min Trade Profit" — a filter named and framed as a profit floor —
     // could still surface rows with a bare "–" in Trade Profit, which read
     // as broken rather than intentional. Decided (2026-09-18) to filter
-    // strictly on the number the control is named after: since these two
+    // strictly on the number the control is named after: since these
     // strategies never have one, they're excluded here unconditionally.
     // This is a real behavior change worth knowing about, not just a
-    // formatting tweak — Long Call and Long Put will not
+    // formatting tweak — Long Call, Long Put, and Double Diagonal will not
     // appear in results at all (this stage always runs, at any threshold,
-    // including 0), regardless of the Outlook & Strategy checkboxes.
+    // including 0), regardless of the Outlook & Strategy checkboxes. Double
+    // Diagonal is checked by default (see DEFAULT_CHECKED below) but won't
+    // actually surface unless Min Trade Profit is lowered to 0 — same
+    // standing tradeoff Long Call/Long Put already live with, just now also
+    // true for a strategy that starts out checked.
     const minTradeProfitInput = document.getElementById('minTradeProfitInput');
     const minTradeProfit = Math.max(0, Number(minTradeProfitInput.value) || 0);
     pool = pool.filter(t=> t.roc != null && t.roc > minTradeProfit);
@@ -1914,6 +1932,11 @@
       const trackBtn = selectedTrades.length > 0
         ? `<button class="modal-copy-btn" id="trackFromSummaryBtn" style="background:var(--green-soft); color:var(--green); border:1px solid transparent; margin-top:10px;">Track ${selectedTrades.length} Option${selectedTrades.length === 1 ? '' : 's'} for Backtest</button>`
         : '';
+      const exportImportBtns = `
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          ${totalSelected > 0 ? `<button class="modal-copy-btn" id="exportSelectionBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Export Selection</button>` : ''}
+          <button class="modal-copy-btn" id="importSelectionBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Import Selection</button>
+        </div>`;
       tradeModal.innerHTML = `
         <div class="modal-top">
           <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
@@ -1921,7 +1944,8 @@
         </div>
         <div class="modal-note" style="margin-top:12px;">Enter a capital amount in the bar at the top of the page to see position sizing.</div>
         ${trackBtn}
-        ${clearBtn}`;
+        ${clearBtn}
+        ${exportImportBtns}`;
       modalScrim.classList.add('show');
       document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
       if(totalSelected > 0){
@@ -1930,6 +1954,7 @@
           closeTradeModal();
           showToast('Selections cleared');
         });
+        document.getElementById('exportSelectionBtn').addEventListener('click', showExportDialog);
       }
       if(selectedTrades.length > 0){
         document.getElementById('trackFromSummaryBtn').addEventListener('click', ()=>{
@@ -1937,6 +1962,7 @@
           closeTradeModal();
         });
       }
+      document.getElementById('importSelectionBtn').addEventListener('click', showImportDialog);
       return;
     }
 
@@ -1946,9 +1972,11 @@
           <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
-        <div class="modal-note" style="margin-top:12px;">Check at least one trade or ticker (in either tab) to build a position-sizing summary.</div>`;
+        <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">Check at least one trade or ticker (in either tab) to build a position-sizing summary.</div>
+        <button class="modal-copy-btn" id="importSelectionBtn" style="background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Import Selection</button>`;
       modalScrim.classList.add('show');
       document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+      document.getElementById('importSelectionBtn').addEventListener('click', showImportDialog);
       return;
     }
 
@@ -2040,7 +2068,11 @@
         <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-bottom:12px;">Clear all selections (${totalSelected})</button>
+      <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-bottom:8px;">Clear all selections (${totalSelected})</button>
+      <div style="display:flex; gap:8px; margin-bottom:14px;">
+        <button class="modal-copy-btn" id="exportSelectionBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Export Selection</button>
+        <button class="modal-copy-btn" id="importSelectionBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Import Selection</button>
+      </div>
       <div class="modal-metrics">
         <div><div class="mm-label">Total Capital</div><div class="mm-val">${curSym()}${capital.toLocaleString()}</div></div>
         <div><div class="mm-label">Split</div><div class="mm-val" style="${isOverAllocated ? 'color:var(--red);' : ''}">${equityPct}% Equity / ${optionsPct}% Options / ${cashLeftPct}% Cash</div></div>
@@ -2076,6 +2108,8 @@
       closeTradeModal();
       showToast('Selections cleared');
     });
+    document.getElementById('exportSelectionBtn').addEventListener('click', showExportDialog);
+    document.getElementById('importSelectionBtn').addEventListener('click', showImportDialog);
     document.getElementById('downloadSummaryBtn').addEventListener('click', ()=>{
       const dateLabel = new Date().toISOString().slice(0,10);
       downloadFile(`signalhq-portfolio-summary-${dateLabel}.txt`, summaryText, 'text/plain');
@@ -2094,6 +2128,163 @@
     selectedEquityIds.clear();
     document.querySelectorAll('.row-checkbox, .card-checkbox').forEach(cb => { cb.checked = false; });
     updatePortfolioCount();
+  }
+
+  // --- Export/Import a selection between browsers ---
+  // Selections + tracked positions both live only in THIS browser (in-memory
+  // Set / localStorage respectively — see selectedOptionIds/selectedEquityIds
+  // above and TRACKED_KEY below), so there's no server anywhere to sync them
+  // through. This carries a selection across as a self-contained code/file
+  // instead: it snapshots the full selected trade/equity objects (not just
+  // ids), so the summary renders identically on the other end even if that
+  // browser's data.json is a different day's run and no longer has that
+  // ticker/strategy combination live. newsHeadlines is the one field
+  // deliberately stripped — it's display-only and the single biggest
+  // contributor to payload size.
+  function buildExportPayload(){
+    const strip = (obj) => { const { newsHeadlines, ...rest } = obj; return rest; };
+    return {
+      v: 1,
+      exportedAt: new Date().toISOString(),
+      capital: document.getElementById('portfolioCapital').value,
+      optionsPct: document.getElementById('portfolioSplit').value,
+      equityPct: document.getElementById('portfolioEquitySplit').value,
+      options: trades.filter(t => selectedOptionIds.has(optionId(t))).map(strip),
+      equities: currentEquitiesSource().filter(e => selectedEquityIds.has(equityId(e))).map(strip),
+    };
+  }
+  // Classic UTF-8-safe base64 idiom — plain btoa() chokes on non-Latin1
+  // characters (a ticker's company name, a strategy label with a special
+  // character, etc.), this handles both directions of that correctly.
+  function encodePayload(payload){
+    return btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+  }
+  function decodePayload(code){
+    return JSON.parse(decodeURIComponent(escape(atob(code.trim()))));
+  }
+
+  function showExportDialog(){
+    const payload = buildExportPayload();
+    const code = encodePayload(payload);
+    const n = payload.options.length + payload.equities.length;
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:19px;">Export Selection</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">${n} selected, plus your capital and split. Copy the code (or download it as a file) and use "Import Selection" on the other browser — its summary will match this one.</div>
+      <textarea id="exportCodeOutput" rows="6" readonly style="width:100%; box-sizing:border-box; font-family:var(--mono); font-size:11px; line-height:1.4; padding:10px; border-radius:10px; border:1px solid var(--border-strong); background:var(--surface-2); color:var(--text); resize:vertical;">${code}</textarea>
+      <div style="display:flex; gap:8px; margin-top:10px;">
+        <button class="modal-copy-btn" id="copyExportBtn" style="flex:1;">Copy Code</button>
+        <button class="modal-copy-btn" id="downloadExportBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Download File</button>
+      </div>
+      <button class="modal-copy-btn" id="backToSummaryBtn" style="margin-top:10px; background:transparent; color:var(--text-dim); border:1px solid var(--border-strong);">← Back to Summary</button>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    document.getElementById('backToSummaryBtn').addEventListener('click', openPortfolioSummary);
+    document.getElementById('copyExportBtn').addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(code);
+        showToast('Code copied');
+      }catch(e){
+        const box = document.getElementById('exportCodeOutput');
+        box.focus(); box.select();
+        showToast('Clipboard blocked — code is selected, copy it manually');
+      }
+    });
+    document.getElementById('downloadExportBtn').addEventListener('click', ()=>{
+      const dateLabel = new Date().toISOString().slice(0,10);
+      downloadFile(`vantedgeai-selection-${dateLabel}.json`, JSON.stringify(payload, null, 2), 'application/json');
+      showToast('Selection downloaded');
+    });
+  }
+
+  // Merges an imported selection into the LIVE trades/equities arrays rather
+  // than replacing them — an imported trade only gets pushed in if this
+  // browser doesn't already have that exact sym/strat/exp combination, so a
+  // still-live match keeps using this browser's fresher pricing instead of
+  // the stale imported snapshot. Either way its id gets added to the
+  // selection, which is all the summary actually reads.
+  function applyImportedSelection(payload){
+    let added = 0, skipped = 0;
+    (Array.isArray(payload.options) ? payload.options : []).forEach(t => {
+      if(!t || !t.sym || !t.strat || !t.exp) return;
+      const id = optionId(t);
+      if(!trades.some(x => optionId(x) === id)) trades.push(t);
+      if(selectedOptionIds.has(id)) skipped++; else { selectedOptionIds.add(id); added++; }
+    });
+    (Array.isArray(payload.equities) ? payload.equities : []).forEach(e => {
+      if(!e || !e.sym) return;
+      const id = equityId(e);
+      if(!equities.some(x => equityId(x) === id)) equities.push(e);
+      if(selectedEquityIds.has(id)) skipped++; else { selectedEquityIds.add(id); added++; }
+    });
+    if(payload.capital)          document.getElementById('portfolioCapital').value = payload.capital;
+    if(payload.optionsPct != null) document.getElementById('portfolioSplit').value = payload.optionsPct;
+    if(payload.equityPct != null)  document.getElementById('portfolioEquitySplit').value = payload.equityPct;
+    updatePortfolioCount();
+    return { added, skipped };
+  }
+
+  function showImportDialog(){
+    tradeModal.innerHTML = `
+      <div class="modal-top">
+        <div class="ticker-sym" style="font-size:19px;">Import Selection</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">Paste the code from "Export Selection" on the other browser, or choose the .json file it downloaded. This adds to whatever's already checked here rather than replacing it.</div>
+      <textarea id="importCodeInput" rows="6" placeholder="Paste export code here" style="width:100%; box-sizing:border-box; font-family:var(--mono); font-size:11px; line-height:1.4; padding:10px; border-radius:10px; border:1px solid var(--border-strong); background:var(--surface-2); color:var(--text); resize:vertical;"></textarea>
+      <div style="display:flex; gap:8px; align-items:center; margin-top:10px;">
+        <label class="modal-copy-btn" style="flex:none; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong); cursor:pointer; margin:0;">
+          Choose File
+          <input type="file" id="importFileInput" accept="application/json,.json" style="display:none;">
+        </label>
+        <span id="importFileName" style="font-size:12px; color:var(--text-faint); min-width:0; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"></span>
+      </div>
+      <div id="importError" style="display:none; color:var(--red); font-size:12.5px; margin-top:10px;"></div>
+      <button class="modal-copy-btn" id="doImportBtn" style="margin-top:14px;">Import</button>
+    `;
+    modalScrim.classList.add('show');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
+    const fileInput = document.getElementById('importFileInput');
+    fileInput.addEventListener('change', ()=>{
+      const f = fileInput.files[0];
+      document.getElementById('importFileName').textContent = f ? f.name : '';
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = ()=>{ document.getElementById('importCodeInput').value = String(reader.result || ''); };
+      reader.readAsText(f);
+    });
+    document.getElementById('doImportBtn').addEventListener('click', ()=>{
+      const raw = document.getElementById('importCodeInput').value.trim();
+      const errEl = document.getElementById('importError');
+      errEl.style.display = 'none';
+      if(!raw){
+        errEl.textContent = 'Paste a code or choose a file first.';
+        errEl.style.display = '';
+        return;
+      }
+      let payload;
+      try{
+        payload = raw.startsWith('{') ? JSON.parse(raw) : decodePayload(raw);
+      }catch(e){
+        errEl.textContent = "Couldn't read that — check you copied the whole code, or chose the right file.";
+        errEl.style.display = '';
+        return;
+      }
+      if(!payload || typeof payload !== 'object' || (!Array.isArray(payload.options) && !Array.isArray(payload.equities))){
+        errEl.textContent = "That doesn't look like a VantEdgeAI selection export.";
+        errEl.style.display = '';
+        return;
+      }
+      const result = applyImportedSelection(payload);
+      const parts = [];
+      if(result.added) parts.push(`${result.added} added`);
+      if(result.skipped) parts.push(`${result.skipped} already selected`);
+      showToast(parts.length ? parts.join(', ') : 'Nothing new to import');
+      openPortfolioSummary();
+    });
   }
 
   document.getElementById('portfolioSummaryBtn').addEventListener('click', openPortfolioSummary);
@@ -2149,24 +2340,25 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-21: Outlook & Strategy now starts with all eight directional
-  // strategies selected (Iron Condor stays off),
-  // all four P/C boxes start unchecked, and the profit floor moved from 10% to 15%.
+  // Updated 2026-09-22 (again): added Double Diagonal to the default-checked
+  // set alongside the 4 spreads. Known tradeoff, decided deliberately: it has
+  // no roc/ap (see build_double_diagonal's docstring), and the Min Trade
+  // Profit filter hard-excludes any roc-less trade at any floor (2026-09-18
+  // decision, same reason Long Call/Long Put don't surface either) — so as
+  // shipped, Double Diagonal is checked by default but won't actually appear
+  // in results unless Min Trade Profit is lowered. Left checked anyway on
+  // request; lower the floor (or drop this line) to actually see it.
   const DEFAULT_CHECKED = [
-    '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
-    '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-strat="Long Call"]',
     '[data-strat="Bull Call Spread"]',
-    '[data-strat="Long Put"]',
     '[data-strat="Bear Put Spread"]',
+    '[data-strat="Double Diagonal"]',
     '[data-quality="buy"]',
+    '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',
-    '[data-risk="lowVol"]',
-    '[data-risk="highVol"]',
   ];
-  const DEFAULT_MIN_TRADE_PROFIT = 15;
+  const DEFAULT_MIN_TRADE_PROFIT = 20;
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);
@@ -2283,7 +2475,7 @@
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
-      <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days</div>
+      <div class="modal-strat">${t.strat} · expires ${t.exp} · ${t.dte} days${t.backExp ? ` <span style="color:var(--text-faint);">(short legs)</span> · long legs to ${t.backExp}` : ''}</div>
       <div class="modal-metrics">
         ${t.spot != null ? `<div><div class="mm-label">Current Price</div><div class="mm-val">$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)}</div></div>` : ''}
         ${t.pot != null ? `<div><div class="mm-label">${potLabel}</div><div class="mm-val">${t.pot}%</div></div>` : ''}
@@ -2299,7 +2491,7 @@
         }
         <div><div class="mm-label">Delta</div><div class="mm-val">${t.delta}</div></div>
         <div><div class="mm-label">Implied Volatility</div><div class="mm-val">${t.iv}%</div></div>
-        <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}</div></div>
+        <div><div class="mm-label">IV Rank</div><div class="mm-val">${t.ivr}${limitedHistoryMark(t.ivRankLimited)}</div></div>
         ${t.dailyReturn != null ? `<div><div class="mm-label">Daily Return</div><div class="mm-val">$${t.dailyReturn.toFixed(2)}</div></div>` : ''}
         <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
         <div><div class="mm-label">Put/Call Volume</div><div class="mm-val">${t.pcVol.toFixed(2)}</div></div>
@@ -2309,6 +2501,7 @@
         ${volRegimeHtml}
       </div>
       ${t.spotPriceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
+      ${t.ivRankLimited ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">‡ This ticker has less than ~9-10 months of price history (likely a recent IPO), so IV Rank above is ranked against that shorter, more recent-biased sample instead of the usual ~1-year window every other ticker gets — treat it as a rougher read.</div>` : ''}
 
       ${hedgeHtml}
 

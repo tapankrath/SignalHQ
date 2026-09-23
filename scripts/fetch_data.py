@@ -219,10 +219,10 @@ HEDGE_TARGET_DELTA = 0.15    # further OTM than the 0.20-delta short-strike
                              # matters since this is meant to cost a small,
                              # known amount, not be a large directional bet.
 MAX_PLAUSIBLE_ROC = 35      # raw period ROC (%) sanity ceiling — deliberately NOT applied to
-MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # separate, much higher ceiling for Bull Call
-                                        # Spread/Bear Put Spread's "max profit / net
-                                        # debit paid" ROI — a cheap, far-OTM debit
-                                        # spread can legitimately return several
+MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # ceiling at/above a ~21-day debit spread; see
+                                        # debit_spread_roc_ceiling() below for how this
+                                        # scales down at shorter DTE — a cheap, far-OTM
+                                        # debit spread can legitimately return several
                                         # hundred percent if the stock gets there,
                                         # unlike a credit strategy's premium/collateral
                                         # ratio, which the tighter MAX_PLAUSIBLE_ROC
@@ -230,6 +230,13 @@ MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # separate, much higher ceiling for Bull 
                                         # so a near-zero premium from a broken/wide
                                         # quote can't silently win the expiration-
                                         # candidate ranking on a bogus number.
+DEBIT_SPREAD_ROC_CEILING_FLOOR = 80    # scaled ceiling never drops below this even at
+                                        # the shortest DTE this reaches (see
+                                        # debit_spread_roc_ceiling()) — a legitimately
+                                        # cheap, deep-OTM short-dated spread can still
+                                        # post a real (if unusual) triple-digit return;
+                                        # the floor keeps the scaling from rejecting
+                                        # everything at the 7-day edge of the window.
                              # the annualized figure, since annualizing amplifies short-DTE
                              # trades by up to 365/DTE (60x+ at 6 DTE), which used to make
                              # legitimate short-dated premium look "implausible" and get
@@ -559,11 +566,22 @@ def mid_price(row):
 
 def rank_expirations(expirations, today):
     """
-    Returns expiration candidates as (exp_str, dte) tuples, closest-to-target-window
-    first. A list rather than a single pick, because a chosen expiration's chain can
-    turn out to be unusable (e.g. every relevant strike has NaN IV that day — this
-    happens on real Yahoo data more often than you'd expect) — the caller can then
-    fall back to the next-best expiration instead of giving up on the ticker entirely.
+    Returns (in_window, outside_window) — each a list of (exp_str, dte) tuples,
+    closest-to-target-window first. Returned as two SEPARATE lists rather than
+    one pre-concatenated one (changed 2026-09-23): outside_window exists so a
+    ticker with fewer than MAX_CANDIDATES_TO_EVALUATE in-window expirations
+    (common for names without a full weekly cycle) still has somewhere to fall
+    back to if EVERY in-window candidate turns out unusable (e.g. every
+    relevant strike has NaN IV that day) — a true last resort, not a routine
+    top-up. A single concatenated list couldn't tell those apart: the caller
+    would slice the first MAX_CANDIDATES_TO_EVALUATE regardless of how many
+    were in-window, silently mixing in a sub-7-day candidate whenever a
+    ticker's in-window count ran short — and since annualizing (ap = roc *
+    365/dte) inflates short-DTE returns by 100x+, that candidate would then
+    win the ranking almost automatically over every legitimate 7-45d
+    alternative, not because it was a better trade but because it was
+    shorter-dated. Keeping the buckets separate lets the caller exhaust
+    in_window on its own merits first.
     """
     target_mid = (TARGET_DTE_MIN + TARGET_DTE_MAX) / 2
     in_window, outside_window = [], []
@@ -576,7 +594,7 @@ def rank_expirations(expirations, today):
         (in_window if TARGET_DTE_MIN <= dte <= TARGET_DTE_MAX else outside_window).append((diff, exp_str, dte))
     in_window.sort(key=lambda x: x[0])
     outside_window.sort(key=lambda x: x[0])
-    return [(exp_str, dte) for _, exp_str, dte in (in_window + outside_window)]
+    return [(exp_str, dte) for _, exp_str, dte in in_window], [(exp_str, dte) for _, exp_str, dte in outside_window]
 
 
 MAX_CANDIDATES_TO_EVALUATE = 8  # how many expirations within the target window to
@@ -584,6 +602,31 @@ MAX_CANDIDATES_TO_EVALUATE = 8  # how many expirations within the target window 
                                  # produces the best annualized profit. Bounded so a
                                  # name with unusually many listed expirations doesn't
                                  # blow up the number of chain fetches per ticker.
+
+
+def debit_spread_roc_ceiling(dte):
+    """
+    Scaled version of MAX_PLAUSIBLE_DEBIT_SPREAD_ROC (added 2026-09-23, after
+    a near-miss: a real 2-DTE Bear Put Spread posted a 488% raw ROC, just
+    under the flat 500% ceiling, and — because outside-window fallback used
+    to mix short-DTE candidates into the same evaluated pool as legitimate
+    7-45d ones — very nearly won a ranking it had no business winning once
+    annualized). The flat 500% ceiling was calibrated with ~21-45 day debit
+    spreads in mind, where a rich max-profit/premium ratio is normal for a
+    cheap, far-OTM spread. At very short DTE, thin extrinsic value across the
+    ENTIRE chain (not just the strikes picked) can produce that same raw
+    ratio from a fundamentally different, less legitimate cause — a thin or
+    wide-market quote, not a genuinely cheap spread. Scales linearly down to
+    DEBIT_SPREAD_ROC_CEILING_FLOOR at TARGET_DTE_MIN (the 7-day edge of the
+    normal target window — see rank_expirations for why anything shorter
+    than that should now only ever appear as a last-resort fallback anyway),
+    full value at 21+ days.
+    """
+    if dte >= 21:
+        return MAX_PLAUSIBLE_DEBIT_SPREAD_ROC
+    span = max(1, 21 - TARGET_DTE_MIN)
+    frac = max(0.0, dte - TARGET_DTE_MIN) / span
+    return DEBIT_SPREAD_ROC_CEILING_FLOOR + frac * (MAX_PLAUSIBLE_DEBIT_SPREAD_ROC - DEBIT_SPREAD_ROC_CEILING_FLOOR)
 
 
 def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr):
@@ -629,7 +672,9 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     elif is_debit_spread:
         roc = round((fields["max_profit"] / premium) * 100, 2)
         ann_profit = round(roc * (365 / cand_dte), 1)
-        if roc > MAX_PLAUSIBLE_DEBIT_SPREAD_ROC:
+        _ceiling = debit_spread_roc_ceiling(cand_dte)
+        print(f"    [DEBUG ceiling check] {strat} {cand_exp} dte={cand_dte} roc={roc}% ceiling={_ceiling}% -> {'REJECT' if roc > _ceiling else 'ALLOW'}")
+        if roc > _ceiling:
             return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
     else:
         roc = round((premium / collateral) * 100, 2)
@@ -1347,8 +1392,8 @@ def build_trade_for_ticker(ticker_symbol, index):
             print(f"  skip {ticker_symbol}: no options listed")
             return None
 
-        expiration_candidates = rank_expirations(expirations, today)
-        if not expiration_candidates:
+        in_window_candidates, outside_window_candidates = rank_expirations(expirations, today)
+        if not in_window_candidates and not outside_window_candidates:
             print(f"  skip {ticker_symbol}: no usable expiration (all listed dates are in the past or unparsable)")
             return None
 
@@ -1407,7 +1452,7 @@ def build_trade_for_ticker(ticker_symbol, index):
                                  # needed to see WHY a ticker keeps landing on the same
                                  # expiration: genuinely winning on merit vs. every
                                  # alternative failing validation outright.
-            for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+            for cand_exp, cand_dte in in_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
                 result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
                 if result:
                     log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
@@ -1417,6 +1462,24 @@ def build_trade_for_ticker(ticker_symbol, index):
                 else:
                     evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
                     failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
+
+            # Only reach outside the 7-45d window if NOTHING in-window priced —
+            # a true last resort (see rank_expirations' docstring for why this
+            # can't just be "whichever 8 candidates come first regardless of
+            # bucket": a short-DTE candidate's annualized profit would win the
+            # ranking almost automatically against legitimate longer-dated
+            # ones, not on merit, just because it's short-dated.
+            if not best and in_window_candidates:
+                for cand_exp, cand_dte in outside_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                    result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                    if result:
+                        log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
+                        evaluated_log.append(f"{cand_exp}({cand_dte}d,outside-window)={log_val}")
+                        if best is None or _rank_key(result) > _rank_key(best):
+                            best = result
+                    else:
+                        evaluated_log.append(f"{cand_exp}({cand_dte}d,outside-window)=FAILED:{reason}")
+                        failure_reasons.append(f"{cand_exp} ({cand_dte}d, outside window): {reason}")
 
             print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
 
@@ -1574,8 +1637,8 @@ def build_lookup_trade(ticker_symbol):
         if not expirations:
             return None, "This symbol doesn't have listed options."
 
-        expiration_candidates = rank_expirations(expirations, today)
-        if not expiration_candidates:
+        in_window_candidates, outside_window_candidates = rank_expirations(expirations, today)
+        if not in_window_candidates and not outside_window_candidates:
             return None, "No usable (future-dated) options expiration is listed for this symbol."
 
         strat, side = pick_lookup_strategy(uptrend, near_ema)
@@ -1586,13 +1649,25 @@ def build_lookup_trade(ticker_symbol):
 
         best = None
         failure_reasons = []
-        for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+        for cand_exp, cand_dte in in_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
             result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
             if result:
                 if best is None or _rank_key(result) > _rank_key(best):
                     best = result
             else:
                 failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
+
+        # Same true-last-resort fallback as the main pipeline (see
+        # rank_expirations' docstring) — only reach outside the window if
+        # nothing in-window could be priced at all.
+        if not best and in_window_candidates:
+            for cand_exp, cand_dte in outside_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                if result:
+                    if best is None or _rank_key(result) > _rank_key(best):
+                        best = result
+                else:
+                    failure_reasons.append(f"{cand_exp} ({cand_dte}d, outside window): {reason}")
 
         if not best:
             reasons = "; ".join(failure_reasons[:3]) if failure_reasons else "no usable expirations"

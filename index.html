@@ -451,7 +451,8 @@
   .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
   .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
   .check-row input[type="checkbox"][data-quality="sell"]:checked,
-  #trendDownFilter:checked{
+  #trendDownFilter:checked,
+  #valRichFilter:checked{
     background:var(--red); border-color:var(--red);
   }
   .check-row input[type="checkbox"]:checked::after{
@@ -928,7 +929,8 @@
     .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
     .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
     .check-row input[type="checkbox"][data-quality="sell"]:checked,
-    #trendDownFilter:checked{
+    #trendDownFilter:checked,
+    #valRichFilter:checked{
       background:#DC2626; border-color:#DC2626;
     }
     /* --surface equals --bg in dark mode (mirrors the light-mode design,
@@ -1089,6 +1091,8 @@
         <label class="check-row"><input type="checkbox" data-quality="buy" checked> Buy signal</label>
         <label class="check-row"><input type="checkbox" data-quality="sell" checked> Sell signal</label>
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
+        <label class="check-row"><input type="checkbox" data-quality="valCheap"> Underlying is Cheap vs. sector peers</label>
+        <label class="check-row"><input type="checkbox" data-quality="valRich"> Underlying is Rich vs. sector peers</label>
         <div class="num-row">
           <label for="minTradeProfitInput">Min trade profit %</label>
           <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
@@ -1193,6 +1197,15 @@
       Trend
       <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
       <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
+    </div>
+    <!-- Valuation filter — same "check any, neither checked = no filter"
+         pattern as Trend above. A ticker with no valuationLabel (too few
+         same-sector peers in this run — see MIN_SECTOR_PEERS_FOR_VALUATION)
+         never passes either box, same as any other optional field. -->
+    <div class="sort-wrap" style="margin-top:12px; gap:16px;">
+      Valuation
+      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="valCheapFilter"><span class="strat-dot bull"></span>Cheap</label>
+      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="valRichFilter"><span class="strat-dot bear"></span>Rich</label>
     </div>
   </div>
 
@@ -1397,6 +1410,22 @@
     return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${score}.0</span></div>`;
   }
 
+  // Shared between trade cards/table/modal AND equity cards/table/modal —
+  // both carry the same valuationLabel/peVsSectorPct/sectorPeerCount/sector
+  // fields (see compute_sector_valuations() in fetch_data.py). Text badge,
+  // not a pill, deliberately: a pill shape next to the existing Bullish/
+  // Bearish side-pill would read as another direction claim, when this is
+  // a peer-relative valuation, not a side. Absent entirely (not a "no data"
+  // badge) when the ticker didn't have enough same-sector peers in this
+  // run to compare against — see MIN_SECTOR_PEERS_FOR_VALUATION.
+  function valuationBadge(obj){
+    if(!obj.valuationLabel) return '';
+    const color = obj.valuationLabel === 'Cheap' ? 'var(--green)' : obj.valuationLabel === 'Rich' ? 'var(--red)' : 'var(--text-faint)';
+    const pct = obj.peVsSectorPct != null ? `${obj.peVsSectorPct >= 0 ? '+' : ''}${obj.peVsSectorPct}%` : '';
+    const title = `P/E ${pct} vs. the median of ${obj.sectorPeerCount} ${obj.sector || ''} peers in THIS screen's universe — not a market-wide valuation.`;
+    return ` <span style="color:${color}; font-weight:700; font-size:10.5px; cursor:help;" title="${title}">${obj.valuationLabel}</span>`;
+  }
+
   function render(list){
     currentList = list;
     tbody.innerHTML = '';
@@ -1421,7 +1450,7 @@
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
             <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
-            <div class="strat-name">${t.strat}</div>
+            <div class="strat-name">${t.strat}${valuationBadge(t)}</div>
           </td>
           <td>${pill}</td>
           <td class="num">${t.exp} <span style="color:var(--text-faint);">· ${t.dte}d</span></td>
@@ -1453,7 +1482,7 @@
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
             <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
-              <span class="${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}/${fmtPct(t.ap)}</span> · ${t.exp}·${t.dte}d
+              <span class="${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}/${fmtPct(t.ap)}</span> · ${t.exp}·${t.dte}d${valuationBadge(t)}
             </span>
             ${meterHtml(t.score)}
           </div>
@@ -1474,6 +1503,8 @@
     const wantBuy    = document.querySelector('[data-quality="buy"]').checked;
     const wantSell   = document.querySelector('[data-quality="sell"]').checked;
     const wantEma    = document.querySelector('[data-quality="ema"]').checked;
+    const wantValCheap = document.querySelector('[data-quality="valCheap"]').checked;
+    const wantValRich  = document.querySelector('[data-quality="valRich"]').checked;
     const excludeEarnings = document.querySelector('[data-risk="excludeEarnings"]').checked;
     const earningsWithin3wk = document.querySelector('[data-risk="earningsWithin3wk"]').checked;
     const wantLowVol = document.querySelector('[data-risk="lowVol"]').checked;
@@ -1502,15 +1533,22 @@
       funnel.push({ label:'After Outlook & Strategy', count: pool.length });
     }
 
-    if(wantBuy || wantSell || wantEma){
+    if(wantBuy || wantSell || wantEma || wantValCheap || wantValRich){
       // Buy and Sell are two sides of the same trend flag (t.sell is always
       // !t.buy), so — like the strategy, P/C and volatility checkboxes above —
       // they're OR'd: either alone narrows to that side, both together show
-      // both sides. AND-ing them (the old behavior) could never match anything.
-      // EMA support is a separate condition and still AND's with the trend pick.
+      // both sides. EMA support and valuation are separate conditions and
+      // still AND with the trend pick. Cheap/Rich are OR'd with each other
+      // (same "either side narrows, both shows both" pattern as buy/sell) —
+      // a trade whose ticker has no valuation at all (didn't clear
+      // MIN_SECTOR_PEERS_FOR_VALUATION) never passes either checkbox, same
+      // as any other optional field elsewhere in this app.
       pool = pool.filter(t=>{
         const trendOk = (!wantBuy && !wantSell) || (wantBuy && t.buy) || (wantSell && t.sell);
-        return trendOk && (!wantEma || t.ema);
+        const valOk = (!wantValCheap && !wantValRich)
+          || (wantValCheap && t.valuationLabel === 'Cheap')
+          || (wantValRich && t.valuationLabel === 'Rich');
+        return trendOk && (!wantEma || t.ema) && valOk;
       });
       funnel.push({ label:'After Quality', count: pool.length });
     }
@@ -1690,11 +1728,21 @@
     });
   }
 
-  // Single spot for the type + trend filter chain, so every call site below
-  // stays in sync automatically instead of each one needing its own update
-  // whenever a new equity filter gets added.
+  // Same pattern as filterEquitiesByTrend above — a ticker with no
+  // valuationLabel at all (too few same-sector peers in this run) never
+  // passes either box, same as any other optional field elsewhere.
+  function filterEquitiesByValuation(list){
+    const wantCheap = document.getElementById('valCheapFilter').checked;
+    const wantRich = document.getElementById('valRichFilter').checked;
+    if(!wantCheap && !wantRich) return list;
+    return list.filter(e => (wantCheap && e.valuationLabel === 'Cheap') || (wantRich && e.valuationLabel === 'Rich'));
+  }
+
+  // Single spot for the type + trend + valuation filter chain, so every call
+  // site below stays in sync automatically instead of each one needing its
+  // own update whenever a new equity filter gets added.
   function filteredEquities(){
-    return filterEquitiesByTrend(filterEquitiesByType(currentEquitiesSource()));
+    return filterEquitiesByValuation(filterEquitiesByTrend(filterEquitiesByType(currentEquitiesSource())));
   }
 
   function sortEquities(list){
@@ -1743,7 +1791,7 @@
       equityTbody.innerHTML += `
         <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label></td>
-          <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}</td>
+          <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}${valuationBadge(e)}</td>
           <td class="num">${fmtPrice(e.price)}${staleMark(e.priceStale)}</td>
           <td>${trendPill(e.trend)}</td>
           <td class="num">${e.rsi ?? '—'}</td>
@@ -1755,7 +1803,7 @@
         <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}</div>
+            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}${valuationBadge(e)}</div>
             ${trendPill(e.trend)}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
@@ -1776,6 +1824,12 @@
     renderEquities(sortEquities(filteredEquities()));
   });
   document.getElementById('trendDownFilter').addEventListener('change', ()=>{
+    renderEquities(sortEquities(filteredEquities()));
+  });
+  document.getElementById('valCheapFilter').addEventListener('change', ()=>{
+    renderEquities(sortEquities(filteredEquities()));
+  });
+  document.getElementById('valRichFilter').addEventListener('change', ()=>{
     renderEquities(sortEquities(filteredEquities()));
   });
 
@@ -1831,6 +1885,7 @@
         <div><div class="mm-label">52-Week High</div><div class="mm-val">${fmtPrice(e.high52wk)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromHigh)})</span></div></div>
         <div><div class="mm-label">52-Week Low</div><div class="mm-val">${fmtPrice(e.low52wk)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromLow)})</span></div></div>
         <div><div class="mm-label">P/E Ratio</div><div class="mm-val">${e.peRatio ?? '—'}</div></div>
+        ${e.valuationLabel ? `<div><div class="mm-label">Valuation vs. Sector Peers</div><div class="mm-val" style="color:${e.valuationLabel === 'Cheap' ? 'var(--green)' : e.valuationLabel === 'Rich' ? 'var(--red)' : 'var(--text-faint)'};">${e.valuationLabel} (${e.peVsSectorPct >= 0 ? '+' : ''}${e.peVsSectorPct}%, ${e.sectorPeerCount} peers)</div></div>` : ''}
         <div><div class="mm-label">Dividend Yield</div><div class="mm-val">${e.dividendYield != null ? e.dividendYield + '%' : '—'}</div></div>
         <div><div class="mm-label">Market Cap</div><div class="mm-val">${fmtMarketCap(e.marketCap)}</div></div>
         <div><div class="mm-label">Volume vs 30-day Avg</div><div class="mm-val">${e.volRatio != null ? e.volRatio + '×' : '—'}</div></div>
@@ -1846,7 +1901,7 @@
         </span>
       </div>
       <div class="news-list">${headlinesHtml}</div>
-      <div class="modal-note">"Trend" is a moving-average-alignment heuristic (8/20/50-day EMA) — it describes the current shape of the average, not a prediction. RSI is a standard 14-day momentum indicator. P/E, dividend yield, and market cap come from Yahoo's fundamentals data, which is frequently incomplete, especially for ETFs. Sentiment is a lexicon-based score of headline text only, not full-article analysis. Figures are computed from the prior session's EOD close — for research purposes only, not a recommendation to buy or sell.</div>
+      <div class="modal-note">"Trend" is a moving-average-alignment heuristic (8/20/50-day EMA) — it describes the current shape of the average, not a prediction. RSI is a standard 14-day momentum indicator. P/E, dividend yield, and market cap come from Yahoo's fundamentals data, which is frequently incomplete, especially for ETFs. "Valuation vs. Sector Peers" compares P/E only against other tickers in the SAME sector currently in this screen's ~50-90 name universe, not the whole market — a small peer count means less confidence in the comparison; ETFs generally don't get one at all (no sector reported). Sentiment is a lexicon-based score of headline text only, not full-article analysis. Figures are computed from the prior session's EOD close — for research purposes only, not a recommendation to buy or sell.</div>
       <button class="modal-copy-btn" id="modalCopyBtn">Copy summary</button>
     `;
     modalScrim.classList.add('show');
@@ -2445,6 +2500,12 @@
       ? `<div><div class="mm-label" style="margin-top:2px;">IV vs Realized Vol</div><div class="mm-val" style="color:${volRegimeColor};">${t.volRegime}${t.ivRvRatio != null ? ` (${t.ivRvRatio}×)` : ''}</div></div>`
       : '';
 
+    const hasValuation = !!t.valuationLabel;
+    const valuationColor = t.valuationLabel === 'Cheap' ? 'var(--green)' : t.valuationLabel === 'Rich' ? 'var(--red)' : 'var(--text-faint)';
+    const valuationHtml = hasValuation
+      ? `<div><div class="mm-label" style="margin-top:2px;">Valuation vs. Sector Peers</div><div class="mm-val" style="color:${valuationColor};">${t.valuationLabel} (${t.peVsSectorPct >= 0 ? '+' : ''}${t.peVsSectorPct}% P/E, ${t.sectorPeerCount} peers)</div></div>`
+      : '';
+
     const hedgeHtml = t.hedge ? `
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Hedge Suggestion</span></div>
       <div class="modal-metrics" style="margin-bottom:14px;">
@@ -2501,6 +2562,7 @@
         <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${t.score}.0 / 10</div></div>
         ${earningsHtml}
         ${volRegimeHtml}
+        ${valuationHtml}
       </div>
       ${t.spotPriceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
       ${t.ivRankLimited ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">‡ This ticker has less than ~9-10 months of price history (likely a recent IPO), so IV Rank above is ranked against that shorter, more recent-biased sample instead of the usual ~1-year window every other ticker gets — treat it as a rougher read.</div>` : ''}
@@ -2514,7 +2576,7 @@
         </span>
       </div>
       <div class="news-list">${headlinesHtml}</div>
-      <div class="modal-note">"IV vs Realized Vol" compares this option's implied volatility to the stock's own recent 20-day realized volatility — "Rich" means the market is paying more for this option than recent price action alone would suggest, which favors premium-selling strategies (everything VantEdgeAI screens for); "Cheap" means less edge for a seller. Sentiment is a lexicon-based score of headline text only (not full articles, not an LLM reading the story) — treat it as a rough gauge of recent press tone, not analysis. Figures are computed from the prior session's EOD close and are for research purposes only — not a recommendation to enter this trade. Verify live pricing before placing an order.</div>
+      <div class="modal-note">"IV vs Realized Vol" compares this option's implied volatility to the stock's own recent 20-day realized volatility — "Rich" means the market is paying more for this option than recent price action alone would suggest, which favors premium-selling strategies (everything VantEdgeAI screens for); "Cheap" means less edge for a seller. "Valuation vs. Sector Peers" compares this stock's P/E only against other tickers in the SAME sector currently in this screen's ~50-90 name universe, not the whole market — a small peer count means less confidence in the comparison. Sentiment is a lexicon-based score of headline text only (not full articles, not an LLM reading the story) — treat it as a rough gauge of recent press tone, not analysis. Figures are computed from the prior session's EOD close and are for research purposes only — not a recommendation to enter this trade. Verify live pricing before placing an order.</div>
       <div class="ticker-action-row">
         <button class="modal-copy-btn" id="modalCopyBtn">Copy trade summary</button>
         <button class="modal-copy-btn-secondary" id="modalTrackBtn"></button>

@@ -1062,12 +1062,12 @@
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put"> <span class="strat-dot bull"></span>Cash-Secured Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row"><input type="checkbox" data-strat="Double Diagonal" checked> <span class="strat-dot neutral"></span>Double Diagonal</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row"><input type="checkbox" data-strat="Double Diagonal"> <span class="strat-dot neutral"></span>Double Diagonal</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
@@ -1091,7 +1091,7 @@
         <label class="check-row"><input type="checkbox" data-quality="ema"> Finds support at EMA 8/20</label>
         <div class="num-row">
           <label for="minTradeProfitInput">Min trade profit %</label>
-          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20">
+          <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
         </div>
       </div>
       <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put/Double Diagonal have no fixed profit figure, so they don't pass this filter.</div>
@@ -2340,26 +2340,27 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-23: Bull Call Spread and Bear Put Spread dropped from the
-  // default set. Not a numbers/ceiling issue (those were separately tightened
-  // this same day — see MIN_DEBIT_SPREAD_PREMIUM_PCT_OF_WIDTH in fetch_data.py)
-  // — the actual problem was the strategy SHAPE: both are directional bets
-  // that need a specific move within a specific window (strikes struck past
-  // spot, PoP commonly 40-45%), structurally unlike Bull Put Spread/Bear Call
-  // Spread (premium-selling, time decay works FOR you) sitting right next to
-  // them in this same default set. Speculative-by-design strategies don't
-  // belong in a "sensible defaults" list next to that, regardless of how
-  // moderate their numbers look. Still in the filter list for anyone who
-  // wants that kind of catalyst-driven, directional trade on purpose.
+  // Updated 2026-09-23 (again): default set is now every single-leg/defined-
+  // risk PREMIUM-SELLING credit strategy — Covered Call, Bull Put Spread,
+  // Cash-Secured Put, Bear Call Spread, Iron Condor — all the same trade
+  // shape (time decay works for you, no specific move required to profit).
+  // Double Diagonal dropped too: not for the same directional-bet reason as
+  // Bull Call Spread/Bear Put Spread earlier, but because it has no roc/ap
+  // and the Min Trade Profit floor below always excludes roc-less trades
+  // (see build_double_diagonal's docstring) — it was checked-but-invisible
+  // by default either way, so simpler to just leave it off. Min Trade Profit
+  // floor lowered from 20% to 15%.
   const DEFAULT_CHECKED = [
+    '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
+    '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-strat="Double Diagonal"]',
+    '[data-strat="Iron Condor"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',
   ];
-  const DEFAULT_MIN_TRADE_PROFIT = 20;
+  const DEFAULT_MIN_TRADE_PROFIT = 15;
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);

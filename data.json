@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T23:18:28.915671+00:00",
+  "generated_at": "2026-09-23T23:57:38.745033+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -214,7 +214,7 @@
       "pcVol": 0.45,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.51,
+      "newsSentiment": -0.15,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -222,6 +222,12 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/ai-panic-tech-concentration-nvidia-100000476.html",
           "sentiment": -0.51
+        },
+        {
+          "title": "Why IonQ (IONQ) Is Up 15.5% After NVIDIA Deal And Real-Time Error Correction Breakthrough",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ionq-ionq-15-5-231619206.html",
+          "sentiment": 0.2
         }
       ],
       "volRegime": "Cheap",
@@ -280,26 +286,26 @@
       "pcVol": 0.7,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "How Meta's Muse was a total game changer for the AI narrative",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/metas-muse-total-game-changer-192805011.html",
+          "title": "Meta's Zuckerberg says Muse AI agent will take a small fee from transactions",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/metas-zuckerberg-says-muse-ai-agent-will-take-a-small-fee-from-transactions-234639802.html",
           "sentiment": 0.0
         },
         {
-          "title": "Meta's Muse raises bigger question: Can consumers trust AI with our money?",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/metas-muse-raises-bigger-consumers-173209487.html",
-          "sentiment": 0.73
+          "title": "Meta's Muse is an impressively capable AI agent, despite some hiccups",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/metas-muse-is-an-impressively-capable-ai-agent-despite-some-hiccups-173310662.html",
+          "sentiment": 0.68
         },
         {
-          "title": "Meta Platforms (META) Gains As Market Dips: What You Should Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-gains-market-214504431.html",
-          "sentiment": 0.34
+          "title": "How Meta's Muse is driving a magic moment for the stock market",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/metas-muse-driving-magic-moment-144433013.html",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -540,9 +546,15 @@
       "pcVol": 0.39,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.12,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.17,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "3 Reasons ORCL is Risky and 1 Stock to Buy Instead",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-orcl-risky-1-231622744.html",
+          "sentiment": -0.2
+        },
         {
           "title": "Oracle layoffs top 2,500 workers as AI spending surges",
           "publisher": "TheStreet",
@@ -554,12 +566,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-just-hit-1-trillion-184727280.html",
           "sentiment": 0.4
-        },
-        {
-          "title": "Oracle Drops as AI Debt Carries a 37-Basis-Point Premium",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/oracle-drops-ai-debt-carries-183307030.html",
-          "sentiment": -0.36
         }
       ],
       "volRegime": "Fair",
@@ -1376,7 +1382,7 @@
       "pcVol": 1.73,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -1384,6 +1390,12 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/23/arm-vs-taiwan-semiconductor-manufacturing-which-chip-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
+        },
+        {
+          "title": "Institutional Investors Invest in Long-Dated Taiwan Semiconductor Call Options - A Bullish Signal on TSM",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4761339/institutional-investors-invest-in-long-dated-taiwan-semiconductor-call-options-a-bullish-signal-on-tsm",
+          "sentiment": 0.54
         },
         {
           "title": "Wall Street Bulls Look Optimistic About TSMC (TSM): Should You Buy?",
@@ -2461,6 +2473,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Is Tesla (TSLA) Quietly Shifting From Automaker To Physical AI Platform With FSD Subscriptions?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/tesla-tsla-quietly-shifting-automaker-231422962.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Tesla makes $122M on Bitcoin without buying a single coin",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/tesla-gains-122m-on-bitcoin-without-buying-a-single-coin",
@@ -2471,12 +2489,6 @@
           "publisher": "FreightWaves",
           "link": "https://finance.yahoo.com/energy/articles/tesla-wins-lead-role-2-200751940.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "3 Things You Need to Know Before Buying Tesla",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/23/3-things-you-need-to-know-before-buying-tesla/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -4919,7 +4931,7 @@
       "dividendYield": 0.44,
       "marketCap": 5445389910016,
       "score": 9.1,
-      "newsSentiment": -0.51,
+      "newsSentiment": -0.15,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
@@ -4927,6 +4939,12 @@
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/ai-panic-tech-concentration-nvidia-100000476.html",
           "sentiment": -0.51
+        },
+        {
+          "title": "Why IonQ (IONQ) Is Up 15.5% After NVIDIA Deal And Real-Time Error Correction Breakthrough",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ionq-ionq-15-5-231619206.html",
+          "sentiment": 0.2
         }
       ],
       "valuationLabel": "Cheap",
@@ -4957,26 +4975,26 @@
       "dividendYield": 0.29,
       "marketCap": 1895599308800,
       "score": 7.3,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "How Meta's Muse was a total game changer for the AI narrative",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/metas-muse-total-game-changer-192805011.html",
+          "title": "Meta's Zuckerberg says Muse AI agent will take a small fee from transactions",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/metas-zuckerberg-says-muse-ai-agent-will-take-a-small-fee-from-transactions-234639802.html",
           "sentiment": 0.0
         },
         {
-          "title": "Meta's Muse raises bigger question: Can consumers trust AI with our money?",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/metas-muse-raises-bigger-consumers-173209487.html",
-          "sentiment": 0.73
+          "title": "Meta's Muse is an impressively capable AI agent, despite some hiccups",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/metas-muse-is-an-impressively-capable-ai-agent-despite-some-hiccups-173310662.html",
+          "sentiment": 0.68
         },
         {
-          "title": "Meta Platforms (META) Gains As Market Dips: What You Should Know",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-gains-market-214504431.html",
-          "sentiment": 0.34
+          "title": "How Meta's Muse is driving a magic moment for the stock market",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/metas-muse-driving-magic-moment-144433013.html",
+          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
@@ -5107,9 +5125,15 @@
       "dividendYield": 1.34,
       "marketCap": 437111291904,
       "score": 4.5,
-      "newsSentiment": 0.12,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.17,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "3 Reasons ORCL is Risky and 1 Stock to Buy Instead",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-orcl-risky-1-231622744.html",
+          "sentiment": -0.2
+        },
         {
           "title": "Oracle layoffs top 2,500 workers as AI spending surges",
           "publisher": "TheStreet",
@@ -5121,12 +5145,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-just-hit-1-trillion-184727280.html",
           "sentiment": 0.4
-        },
-        {
-          "title": "Oracle Drops as AI Debt Carries a 37-Basis-Point Premium",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/oracle-drops-ai-debt-carries-183307030.html",
-          "sentiment": -0.36
         }
       ],
       "valuationLabel": "Cheap",
@@ -5599,7 +5617,7 @@
       "dividendYield": 0.9,
       "marketCap": 2316123766784,
       "score": 9.1,
-      "newsSentiment": 0.38,
+      "newsSentiment": 0.43,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -5607,6 +5625,12 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/23/arm-vs-taiwan-semiconductor-manufacturing-which-chip-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
+        },
+        {
+          "title": "Institutional Investors Invest in Long-Dated Taiwan Semiconductor Call Options - A Bullish Signal on TSM",
+          "publisher": "Barchart",
+          "link": "https://www.barchart.com/story/news/4761339/institutional-investors-invest-in-long-dated-taiwan-semiconductor-call-options-a-bullish-signal-on-tsm",
+          "sentiment": 0.54
         },
         {
           "title": "Wall Street Bulls Look Optimistic About TSMC (TSM): Should You Buy?",
@@ -6197,6 +6221,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Is Tesla (TSLA) Quietly Shifting From Automaker To Physical AI Platform With FSD Subscriptions?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/tesla-tsla-quietly-shifting-automaker-231422962.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Tesla makes $122M on Bitcoin without buying a single coin",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/markets/tesla-gains-122m-on-bitcoin-without-buying-a-single-coin",
@@ -6207,12 +6237,6 @@
           "publisher": "FreightWaves",
           "link": "https://finance.yahoo.com/energy/articles/tesla-wins-lead-role-2-200751940.html",
           "sentiment": 0.57
-        },
-        {
-          "title": "3 Things You Need to Know Before Buying Tesla",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/23/3-things-you-need-to-know-before-buying-tesla/",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
@@ -7530,7 +7554,7 @@
     "generated_at": "2026-09-23T15:15:52.226046+00:00",
     "size": 50,
     "criteria": {
-      "min_market_cap": 50000000000,
+      "min_market_cap": 100000000000,
       "size": 50,
       "exchanges": [
         "NMS",

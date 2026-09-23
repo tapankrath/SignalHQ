@@ -219,10 +219,10 @@ HEDGE_TARGET_DELTA = 0.15    # further OTM than the 0.20-delta short-strike
                              # matters since this is meant to cost a small,
                              # known amount, not be a large directional bet.
 MAX_PLAUSIBLE_ROC = 35      # raw period ROC (%) sanity ceiling — deliberately NOT applied to
-MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # separate, much higher ceiling for Bull Call
-                                        # Spread/Bear Put Spread's "max profit / net
-                                        # debit paid" ROI — a cheap, far-OTM debit
-                                        # spread can legitimately return several
+MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # ceiling at/above a ~21-day debit spread; see
+                                        # debit_spread_roc_ceiling() below for how this
+                                        # scales down at shorter DTE — a cheap, far-OTM
+                                        # debit spread can legitimately return several
                                         # hundred percent if the stock gets there,
                                         # unlike a credit strategy's premium/collateral
                                         # ratio, which the tighter MAX_PLAUSIBLE_ROC
@@ -230,6 +230,13 @@ MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # separate, much higher ceiling for Bull 
                                         # so a near-zero premium from a broken/wide
                                         # quote can't silently win the expiration-
                                         # candidate ranking on a bogus number.
+DEBIT_SPREAD_ROC_CEILING_FLOOR = 80    # scaled ceiling never drops below this even at
+                                        # the shortest DTE this reaches (see
+                                        # debit_spread_roc_ceiling()) — a legitimately
+                                        # cheap, deep-OTM short-dated spread can still
+                                        # post a real (if unusual) triple-digit return;
+                                        # the floor keeps the scaling from rejecting
+                                        # everything at the 7-day edge of the window.
                              # the annualized figure, since annualizing amplifies short-DTE
                              # trades by up to 365/DTE (60x+ at 6 DTE), which used to make
                              # legitimate short-dated premium look "implausible" and get
@@ -597,6 +604,31 @@ MAX_CANDIDATES_TO_EVALUATE = 8  # how many expirations within the target window 
                                  # blow up the number of chain fetches per ticker.
 
 
+def debit_spread_roc_ceiling(dte):
+    """
+    Scaled version of MAX_PLAUSIBLE_DEBIT_SPREAD_ROC (added 2026-09-23, after
+    a near-miss: a real 2-DTE Bear Put Spread posted a 488% raw ROC, just
+    under the flat 500% ceiling, and — because outside-window fallback used
+    to mix short-DTE candidates into the same evaluated pool as legitimate
+    7-45d ones — very nearly won a ranking it had no business winning once
+    annualized). The flat 500% ceiling was calibrated with ~21-45 day debit
+    spreads in mind, where a rich max-profit/premium ratio is normal for a
+    cheap, far-OTM spread. At very short DTE, thin extrinsic value across the
+    ENTIRE chain (not just the strikes picked) can produce that same raw
+    ratio from a fundamentally different, less legitimate cause — a thin or
+    wide-market quote, not a genuinely cheap spread. Scales linearly down to
+    DEBIT_SPREAD_ROC_CEILING_FLOOR at TARGET_DTE_MIN (the 7-day edge of the
+    normal target window — see rank_expirations for why anything shorter
+    than that should now only ever appear as a last-resort fallback anyway),
+    full value at 21+ days.
+    """
+    if dte >= 21:
+        return MAX_PLAUSIBLE_DEBIT_SPREAD_ROC
+    span = max(1, 21 - TARGET_DTE_MIN)
+    frac = max(0.0, dte - TARGET_DTE_MIN) / span
+    return DEBIT_SPREAD_ROC_CEILING_FLOOR + frac * (MAX_PLAUSIBLE_DEBIT_SPREAD_ROC - DEBIT_SPREAD_ROC_CEILING_FLOOR)
+
+
 def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr):
     """
     Builds a complete, fully-priced trade for ONE specific expiration, so multiple
@@ -640,7 +672,7 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     elif is_debit_spread:
         roc = round((fields["max_profit"] / premium) * 100, 2)
         ann_profit = round(roc * (365 / cand_dte), 1)
-        if roc > MAX_PLAUSIBLE_DEBIT_SPREAD_ROC:
+        if roc > debit_spread_roc_ceiling(cand_dte):
             return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
     else:
         roc = round((premium / collateral) * 100, 2)

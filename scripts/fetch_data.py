@@ -172,6 +172,32 @@ TARGET_LONG_DELTA = 0.45    # long call/put target delta — near-the-money; bal
                              # cost against probability of profit, instead of either
                              # a cheap far-OTM "lottery ticket" or an expensive
                              # deep-ITM stock-replacement play
+
+# --- Double Diagonal (added 2026-09-22) -------------------------------------
+# The one strategy in this file that spans TWO expirations, so it can't go
+# through try_strategy_pick/evaluate_expiration_candidate's single-chain
+# signature — see build_double_diagonal() below for its own dedicated
+# expiration-selection + chain-fetch logic instead.
+DIAGONAL_NEAR_DTE_MIN = 7    # short legs: same near-dated window the rest of the
+DIAGONAL_NEAR_DTE_MAX = 21   # screen's short strikes already live in, just capped
+                             # tighter at the top end (21d) so the near legs are
+                             # genuinely the faster-decaying side of the trade.
+DIAGONAL_FAR_DTE_MIN = 35    # long legs: comfortably past the near window so
+DIAGONAL_FAR_DTE_MAX = 60    # there's real calendar spread to the structure —
+                             # same range HEDGE_TARGET_DTE_MIN/MAX already uses
+                             # for the same "slower-decaying, longer horizon" reason.
+DIAGONAL_MIN_GAP_DAYS = 14   # reject a near/far pairing that ends up too close
+                             # together to behave like a real diagonal.
+DIAGONAL_LONG_DELTA = 0.12   # further OTM than the near legs' 0.20-delta shorts —
+                             # standard "double diagonal" shape: the bought wings
+                             # are wider than the sold ones, not the same strikes
+                             # (same strikes would make it a double CALENDAR, a
+                             # different, not-yet-supported structure).
+MAX_DIAGONAL_NEAR_CANDIDATES = 3   # how many near-expiration candidates to try
+MAX_DIAGONAL_FAR_CANDIDATES = 3    # ...times how many far-expiration candidates,
+                                    # per near candidate, before giving up on the
+                                    # ticker — bounded so a name with unusually many
+                                    # listed expirations doesn't blow up chain fetches.
 RISK_FREE_RATE = 0.045      # flat approximation; update periodically
 OUTPUT_PATH = "data.json"
 
@@ -193,6 +219,17 @@ HEDGE_TARGET_DELTA = 0.15    # further OTM than the 0.20-delta short-strike
                              # matters since this is meant to cost a small,
                              # known amount, not be a large directional bet.
 MAX_PLAUSIBLE_ROC = 35      # raw period ROC (%) sanity ceiling — deliberately NOT applied to
+MAX_PLAUSIBLE_DEBIT_SPREAD_ROC = 500   # separate, much higher ceiling for Bull Call
+                                        # Spread/Bear Put Spread's "max profit / net
+                                        # debit paid" ROI — a cheap, far-OTM debit
+                                        # spread can legitimately return several
+                                        # hundred percent if the stock gets there,
+                                        # unlike a credit strategy's premium/collateral
+                                        # ratio, which the tighter MAX_PLAUSIBLE_ROC
+                                        # above is actually calibrated for. Still finite
+                                        # so a near-zero premium from a broken/wide
+                                        # quote can't silently win the expiration-
+                                        # candidate ranking on a bogus number.
                              # the annualized figure, since annualizing amplifies short-DTE
                              # trades by up to 365/DTE (60x+ at 6 DTE), which used to make
                              # legitimate short-dated premium look "implausible" and get
@@ -346,23 +383,39 @@ def compute_atr(history, period=14):
     return tr.rolling(period).mean().iloc[-1]
 
 
+IV_RANK_MIN_HISTORY_DAYS = 200   # ~9-10 months of trading days. Below this, the
+                                  # percentile below is ranked against a materially
+                                  # shorter, more recent-biased sample than the
+                                  # ~1-year window it's meant to cover — typically
+                                  # a recent IPO (tk.history(period="1y") just
+                                  # returns however much history actually exists,
+                                  # it doesn't pad a young listing out to a year).
+                                  # Flagged via the returned `limited_history` bool
+                                  # instead of silently shown as an equally-
+                                  # confident number next to every other ticker's.
+
+
 def iv_rank_proxy(history, window=252, vol_window=20):
     """
     Proxy for IV rank using realized volatility percentile, since a year of
     historical *implied* volatility isn't freely available. Correlated with
     real IV rank but not equivalent to it.
-    Returns (percentile, current_realized_vol_pct) — the second value is used
-    separately to compare against the option's actual IV (see classify_vol_regime).
+    Returns (percentile, current_realized_vol_pct, limited_history) — the second
+    value is used separately to compare against the option's actual IV (see
+    classify_vol_regime); the third flags a too-short price history (see
+    IV_RANK_MIN_HISTORY_DAYS above).
     """
     closes = history["Close"].tail(window + vol_window)
+    limited_history = len(closes) < IV_RANK_MIN_HISTORY_DAYS
     log_returns = np.log(closes / closes.shift(1)).dropna()
     realized_vol = log_returns.rolling(vol_window).std() * math.sqrt(252)
     realized_vol = realized_vol.dropna()
     if len(realized_vol) < 20:
-        return 50, None  # not enough history yet — neutral fallback
+        return 50, None, True  # not enough history yet — neutral fallback, and
+                                # definitionally a limited-history case too
     current = realized_vol.iloc[-1]
     percentile = (realized_vol < current).sum() / len(realized_vol) * 100
-    return round(percentile), round(current * 100, 1)
+    return round(percentile), round(current * 100, 1), limited_history
 
 
 def classify_vol_regime(iv_pct, realized_vol_pct):
@@ -411,6 +464,26 @@ def composite_score_long_option(pot_profit, ivr, breakeven_move_pct):
                                                                             # required
                                                                             # move -> higher
     score = 0.40 * profit_prob_component + 0.30 * cheap_iv_component + 0.30 * move_component
+    return round(min(10, max(1, score)), 1)
+
+
+def composite_score_double_diagonal(pot_touch, ivr):
+    """
+    Illustrative 0-10 blend for Double Diagonal — no ap (see build_double_diagonal's
+    docstring for why a clean profit figure isn't computed there), and pot here
+    is touch probability of either short strike like Iron Condor's (higher =
+    worse), NOT Long Call/Put's profit-probability reading (higher = better) —
+    don't reuse composite_score_long_option, its pot/ivr directions are both
+    inverted from what this needs. A double diagonal's real edge comes from
+    near-term IV being rich RELATIVE TO far-term IV (term-structure skew), not
+    absolute IV level the way a simple premium-seller's does — that comparison
+    isn't computed here, so ivr is weighted lightly, as a loose "is there
+    premium worth collecting in this name at all" signal rather than the main
+    driver the way it is in composite_score().
+    """
+    safety_component = min(10, max(0, (100 - pot_touch) / 10))
+    ivr_component = min(10, max(0, ivr / 10))
+    score = 0.70 * safety_component + 0.30 * ivr_component
     return round(min(10, max(1, score)), 1)
 
 
@@ -543,11 +616,21 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     # made-up price target, so these two skip roc/ap entirely. breakevenMovePct
     # (below) is the honest substitute: the % move actually required to profit.
     is_uncapped_debit = strat in ("Long Call", "Long Put")
+    # Bull Call Spread/Bear Put Spread ARE defined-risk (capped profit, capped
+    # loss) despite being debit strategies, so unlike Long Call/Long Put they
+    # DO get a real roc/ap — just measured against the net debit paid instead
+    # of a credit collected (see try_strategy_pick's "max_profit" field).
+    is_debit_spread = strat in ("Bull Call Spread", "Bear Put Spread")
     if is_uncapped_debit:
         if premium >= spot:
             return None, f"premium (${premium:.2f}) implausibly >= spot (${spot:.2f}), likely a thin/wide-market quote"
         roc = None
         ann_profit = None
+    elif is_debit_spread:
+        roc = round((fields["max_profit"] / premium) * 100, 2)
+        ann_profit = round(roc * (365 / cand_dte), 1)
+        if roc > MAX_PLAUSIBLE_DEBIT_SPREAD_ROC:
+            return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
     else:
         roc = round((premium / collateral) * 100, 2)
         ann_profit = round(roc * (365 / cand_dte), 1)
@@ -570,7 +653,7 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     # $/day only means "income per day" for a credit strategy — for a debit
     # strategy premium is money PAID, so this is left unset rather than
     # published under a label that implies the opposite of what it means.
-    daily_return = None if is_uncapped_debit else round(premium * 100 / cand_dte, 2)
+    daily_return = None if (is_uncapped_debit or is_debit_spread) else round(premium * 100 / cand_dte, 2)
 
     if strat == "Iron Condor":
         # Two strikes at risk instead of one — use the WORSE (higher) of the
@@ -597,6 +680,22 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         breakeven_high_out = None
         move = (fields["breakeven"] - spot) if strat == "Long Call" else (spot - fields["breakeven"])
         breakeven_move_pct_out = round(move / spot * 100, 2)
+        pot_is_profit_prob = True
+    elif is_debit_spread:
+        # Same probability-of-profit math as Long Call/Long Put (breakeven
+        # delta), since these are still bought positions that need the stock
+        # to clear a breakeven — just with a capped profit above it instead
+        # of running unbounded, so roc/ap are populated above where Long
+        # Call/Long Put's aren't. breakevenMovePct is skipped here (unlike
+        # the uncapped branch) since roc/ap already give an honest number.
+        option_type = "call" if strat == "Bull Call Spread" else "put"
+        breakeven_delta = bs_delta(spot, fields["breakeven"], cand_dte, iv / 100 if iv else 0.3, option_type)
+        pot = probability_of_profit(breakeven_delta)
+        margin_of_safety = bool(atr and abs(spot - fields["strike_for_pot"]) >= atr)
+        breakeven_out = round(fields["breakeven"], 2)
+        breakeven_low_out = None
+        breakeven_high_out = None
+        breakeven_move_pct_out = None
         pot_is_profit_prob = True
     else:
         pot = probability_of_touch(bs_delta(spot, fields["strike_for_pot"], cand_dte, iv / 100 if iv else 0.3, "put" if side == "bull" else "call"))
@@ -629,7 +728,7 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "pcVol": pc_vol,
         "strike": fields["strike_label"],
         "hedge": fields.get("hedge"),
-        "debitStrategy": strat in ("Long Call", "Long Put"),
+        "debitStrategy": strat in ("Long Call", "Long Put", "Bull Call Spread", "Bear Put Spread"),
         "potIsProfitProb": pot_is_profit_prob,
         # Raw ISO expiration + per-leg strike/type/action data — not used by
         # the recommendation display at all, only carried through so a
@@ -638,6 +737,168 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "expDate": cand_exp,
         "legs": fields.get("legs"),
     }, None
+
+
+def _rank_diagonal_expirations(expirations, today, dte_min, dte_max):
+    """Same closest-to-target-window ranking as rank_expirations(), parameterized
+    for the near/far windows a double diagonal needs instead of the single
+    7-45d window every other strategy shares."""
+    target_mid = (dte_min + dte_max) / 2
+    in_window, outside_window = [], []
+    for exp_str in expirations:
+        exp_date = datetime.strptime(exp_str, "%Y-%m-%d").date()
+        dte = (exp_date - today).days
+        if dte <= 0:
+            continue
+        diff = abs(dte - target_mid)
+        (in_window if dte_min <= dte <= dte_max else outside_window).append((diff, exp_str, dte))
+    in_window.sort(key=lambda x: x[0])
+    outside_window.sort(key=lambda x: x[0])
+    return [(exp_str, dte) for _, exp_str, dte in (in_window + outside_window)]
+
+
+def build_double_diagonal(tk, spot, expirations, today, atr):
+    """
+    The only strategy here that spans two expirations — sell a near-dated
+    20-delta strangle, buy a further-OTM (12-delta) far-dated strangle as its
+    defined-risk wings. Bypasses evaluate_expiration_candidate/try_strategy_pick
+    entirely (both assume one chain/one expiration) with its own near+far
+    candidate search instead. Tries the first near/far pairing that prices
+    successfully rather than exhaustively ranking every combination — keeps
+    the chain-fetch count bounded the same way MAX_CANDIDATES_TO_EVALUATE does
+    for every other strategy.
+
+    Deliberately does NOT compute roc/ap (see the "no roc/ap" note below) —
+    same honest omission Long Call/Long Put already make for a different
+    reason. Returns a dict shaped like evaluate_expiration_candidate's,
+    plus backExp/backExpDate (the far leg's expiration — see the existing
+    "exp": "back" convention _reprice_position()/the frontend already handle
+    for tracked positions), or (None, reason) on failure.
+    """
+    near_candidates = _rank_diagonal_expirations(expirations, today, DIAGONAL_NEAR_DTE_MIN, DIAGONAL_NEAR_DTE_MAX)
+    far_candidates = _rank_diagonal_expirations(expirations, today, DIAGONAL_FAR_DTE_MIN, DIAGONAL_FAR_DTE_MAX)
+    if not near_candidates or not far_candidates:
+        return None, "no usable near+far expiration pairing (chain doesn't list enough distinct expirations)"
+
+    chain_cache = {}
+    def get_chain(exp_str):
+        if exp_str not in chain_cache:
+            try:
+                chain_cache[exp_str] = tk.option_chain(exp_str)
+            except Exception as e:
+                chain_cache[exp_str] = None
+                print(f"    double diagonal chain fetch failed for {exp_str}: {e}")
+        return chain_cache[exp_str]
+
+    failure_reasons = []
+    for near_exp, near_dte in near_candidates[:MAX_DIAGONAL_NEAR_CANDIDATES]:
+        near_chain = get_chain(near_exp)
+        if near_chain is None or near_chain.calls.empty or near_chain.puts.empty:
+            failure_reasons.append(f"{near_exp} (near, {near_dte}d): chain unusable")
+            continue
+        near_calls, near_puts = near_chain.calls, near_chain.puts
+
+        near_short_call = pick_strike_by_delta(near_calls, spot, near_dte, TARGET_SHORT_DELTA, "call")
+        near_short_put = pick_strike_by_delta(near_puts, spot, near_dte, TARGET_SHORT_DELTA, "put")
+        if not near_short_call or not near_short_put:
+            failure_reasons.append(f"{near_exp} (near, {near_dte}d): no strike near target delta on one side — {chain_diagnostics(near_calls, spot)}")
+            continue
+        nc_row, nc_delta = near_short_call
+        np_row, np_delta = near_short_put
+        near_call_strike = float(nc_row["strike"])
+        near_put_strike = float(np_row["strike"])
+        near_credit = mid_price(nc_row) + mid_price(np_row)
+
+        tried_far_this_near = 0
+        for far_exp, far_dte in far_candidates[:MAX_DIAGONAL_FAR_CANDIDATES]:
+            if far_dte - near_dte < DIAGONAL_MIN_GAP_DAYS:
+                continue
+            tried_far_this_near += 1
+            far_chain = get_chain(far_exp)
+            if far_chain is None or far_chain.calls.empty or far_chain.puts.empty:
+                failure_reasons.append(f"{far_exp} (far, {far_dte}d): chain unusable")
+                continue
+            far_calls, far_puts = far_chain.calls, far_chain.puts
+
+            far_long_call = pick_strike_by_delta(far_calls, spot, far_dte, DIAGONAL_LONG_DELTA, "call")
+            far_long_put = pick_strike_by_delta(far_puts, spot, far_dte, DIAGONAL_LONG_DELTA, "put")
+            if not far_long_call or not far_long_put:
+                failure_reasons.append(f"{far_exp} (far, {far_dte}d): no strike near target delta on one side — {chain_diagnostics(far_calls, spot)}")
+                continue
+            fc_row, _ = far_long_call
+            fp_row, _ = far_long_put
+            far_call_strike = float(fc_row["strike"])
+            far_put_strike = float(fp_row["strike"])
+
+            # The defined-risk shape requires the bought wings to sit OUTSIDE
+            # the sold ones — normally guaranteed by targeting a lower delta
+            # on the far legs, but a thin/unusual chain can still invert this.
+            if not (far_call_strike >= near_call_strike and far_put_strike <= near_put_strike):
+                failure_reasons.append(f"{near_exp}/{far_exp}: far strikes aren't wider than near strikes, skipping")
+                continue
+
+            far_debit = mid_price(fc_row) + mid_price(fp_row)
+            net_debit = far_debit - near_credit
+            if net_debit <= 0:
+                failure_reasons.append(f"{near_exp}/{far_exp}: net debit isn't positive (${net_debit:.2f}), unusable quote")
+                continue
+
+            avg_iv = (safe_float(nc_row.get("impliedVolatility")) + safe_float(np_row.get("impliedVolatility"))) / 2 * 100
+
+            # No roc/ap: a double diagonal's max profit is reached somewhere
+            # between the short strikes at NEAR expiration and depends on the
+            # far legs' remaining time value there — not closed-form the way
+            # a vertical spread's width-minus-debit is. Rather than publish a
+            # number built on an unstated pricing-model assumption, this
+            # follows Long Call/Long Put's precedent: no roc/ap, pot (below)
+            # carries the quality signal instead. maxLoss uses net debit paid
+            # as a conservative upper bound — actual worst case is usually
+            # somewhat less, since the far legs retain some value even then.
+            pot_put = probability_of_touch(bs_delta(spot, near_put_strike, near_dte, avg_iv / 100 if avg_iv else 0.3, "put"))
+            pot_call = probability_of_touch(bs_delta(spot, near_call_strike, near_dte, avg_iv / 100 if avg_iv else 0.3, "call"))
+            pot = max(pot_put, pot_call)
+            margin_of_safety = bool(atr and min(abs(spot - near_put_strike), abs(spot - near_call_strike)) >= atr)
+
+            total_call_oi = near_calls["openInterest"].fillna(0).sum()
+            total_put_oi = near_puts["openInterest"].fillna(0).sum()
+            total_call_vol = near_calls["volume"].fillna(0).sum()
+            total_put_vol = near_puts["volume"].fillna(0).sum()
+
+            near_exp_label = (datetime.strptime(near_exp, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32"
+                               else datetime.strptime(near_exp, "%Y-%m-%d").strftime("%b %d").replace(" 0", " "))
+            far_exp_label = (datetime.strptime(far_exp, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32"
+                              else datetime.strptime(far_exp, "%Y-%m-%d").strftime("%b %d").replace(" 0", " "))
+
+            return {
+                "exp": near_exp_label, "expDate": near_exp, "dte": near_dte,
+                "backExp": far_exp_label, "backExpDate": far_exp,
+                "pot": pot, "potIsProfitProb": False,
+                "ap": None, "roc": None, "dailyReturn": None,
+                "marginOfSafety": margin_of_safety,
+                "delta": round(nc_delta + np_delta, 2),  # net delta -- roughly market-neutral by construction
+                "iv": round(avg_iv, 1),
+                "premium": round(net_debit, 2),
+                "breakeven": round(near_put_strike, 2),  # single-field fallback; Low/High carry the real range
+                "breakevenLow": round(near_put_strike, 2),
+                "breakevenHigh": round(near_call_strike, 2),
+                "breakevenMovePct": None,
+                "maxLoss": round(net_debit * 100, 2),
+                "pcOI": round(total_put_oi / total_call_oi, 2) if total_call_oi else 0,
+                "pcVol": round(total_put_vol / total_call_vol, 2) if total_call_vol else 0,
+                "strike": f"${far_put_strike:.0f}/{near_put_strike:.0f}/{near_call_strike:.0f}/{far_call_strike:.0f}",
+                "hedge": None,
+                "debitStrategy": True,
+                "legs": [
+                    {"type": "call", "strike": near_call_strike, "action": "sell", "qty": 1},
+                    {"type": "put",  "strike": near_put_strike,  "action": "sell", "qty": 1},
+                    {"type": "call", "strike": far_call_strike,  "action": "buy",  "qty": 1, "exp": "back"},
+                    {"type": "put",  "strike": far_put_strike,   "action": "buy",  "qty": 1, "exp": "back"},
+                ],
+            }, None
+        if tried_far_this_near == 0:
+            failure_reasons.append(f"{near_exp} (near, {near_dte}d): no far expiration far enough past it")
+
+    return None, "; ".join(failure_reasons) if failure_reasons else "no usable near/far expiration pairing"
 
 
 MAX_NEWS_HEADLINES = 3       # how many recent headlines to pull and score per ticker
@@ -831,6 +1092,24 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "legs": [{"type": "call", "strike": strike, "action": "sell", "qty": 1}],
         }, None
 
+    if strat == "Cash-Secured Put":
+        # The naked mirror of Covered Call above: same 20-delta target strike,
+        # but no underlying shares — collateral is the cash needed to buy 100
+        # shares at the strike if assigned, not the stock's own price.
+        picked_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
+        if not picked_row:
+            return None, f"no put near target delta — {chain_diagnostics(puts, spot)}"
+        row, delta = picked_row
+        premium = mid_price(row)
+        strike = float(row["strike"])
+        return {
+            "premium": premium, "strike_for_pot": strike, "collateral": strike,
+            "breakeven": strike - premium, "max_loss": round((strike - premium) * 100, 2),
+            "strike_label": f"${strike:.0f} P", "iv": safe_float(row.get("impliedVolatility")) * 100,
+            "delta_for_output": delta,
+            "legs": [{"type": "put", "strike": strike, "action": "sell", "qty": 1}],
+        }, None
+
     if strat == "Bull Put Spread":
         short_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
         if not short_row:
@@ -967,6 +1246,68 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
             "legs": [{"type": "put", "strike": strike, "action": "buy", "qty": 1}],
         }, None
 
+    if strat == "Bull Call Spread":
+        # Defined-risk, cheaper alternative to Long Call: buy near the same
+        # target delta Long Call uses, sell the 2nd-next further-OTM strike
+        # to fund part of it — the same "further-OTM short leg" convention
+        # Bull Put Spread/Bear Call Spread already use, just on the debit side.
+        long_picked = pick_strike_by_delta(calls, spot, dte, TARGET_LONG_DELTA, "call")
+        if not long_picked:
+            return None, f"no call near target delta for long leg — {chain_diagnostics(calls, spot)}"
+        l_row, l_delta = long_picked
+        long_strike = float(l_row["strike"])
+        higher_strikes = calls[calls["strike"] > long_strike].sort_values("strike")
+        if higher_strikes.empty:
+            return None, "no further-OTM strike available for the short leg"
+        short_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
+        short_strike = float(short_row["strike"])
+        premium = mid_price(l_row) - mid_price(short_row)  # net debit paid
+        width = short_strike - long_strike
+        max_profit = width - premium
+        if max_profit <= 0:
+            return None, "no positive max profit (net debit exceeds spread width)"
+        return {
+            "premium": premium, "strike_for_pot": long_strike, "collateral": premium,
+            "breakeven": long_strike + premium, "max_loss": round(premium * 100, 2),
+            "max_profit": round(max_profit, 2),
+            "strike_label": f"${long_strike:.0f}/{short_strike:.0f}", "iv": safe_float(l_row.get("impliedVolatility")) * 100,
+            "delta_for_output": l_delta,
+            "legs": [
+                {"type": "call", "strike": long_strike, "action": "buy", "qty": 1},
+                {"type": "call", "strike": short_strike, "action": "sell", "qty": 1},
+            ],
+        }, None
+
+    if strat == "Bear Put Spread":
+        # Mirror of Bull Call Spread, with puts: buy near Long Put's target
+        # delta, sell the 2nd-next further-OTM (lower) strike to fund it.
+        long_picked = pick_strike_by_delta(puts, spot, dte, TARGET_LONG_DELTA, "put")
+        if not long_picked:
+            return None, f"no put near target delta for long leg — {chain_diagnostics(puts, spot)}"
+        l_row, l_delta = long_picked
+        long_strike = float(l_row["strike"])
+        lower_strikes = puts[puts["strike"] < long_strike].sort_values("strike", ascending=False)
+        if lower_strikes.empty:
+            return None, "no further-OTM strike available for the short leg"
+        short_row = lower_strikes.iloc[min(1, len(lower_strikes) - 1)]
+        short_strike = float(short_row["strike"])
+        premium = mid_price(l_row) - mid_price(short_row)  # net debit paid
+        width = long_strike - short_strike
+        max_profit = width - premium
+        if max_profit <= 0:
+            return None, "no positive max profit (net debit exceeds spread width)"
+        return {
+            "premium": premium, "strike_for_pot": long_strike, "collateral": premium,
+            "breakeven": long_strike - premium, "max_loss": round(premium * 100, 2),
+            "max_profit": round(max_profit, 2),
+            "strike_label": f"${long_strike:.0f}/{short_strike:.0f}", "iv": safe_float(l_row.get("impliedVolatility")) * 100,
+            "delta_for_output": l_delta,
+            "legs": [
+                {"type": "put", "strike": long_strike, "action": "buy", "qty": 1},
+                {"type": "put", "strike": short_strike, "action": "sell", "qty": 1},
+            ],
+        }, None
+
     return None, f"unknown strategy '{strat}'"
 
 
@@ -998,7 +1339,7 @@ def build_trade_for_ticker(ticker_symbol, index):
         uptrend = ema8 > ema20
         near_ema = (abs(spot - ema8) / spot < 0.015) or (abs(spot - ema20) / spot < 0.015)
         atr = compute_atr(history)
-        ivr, realized_vol = iv_rank_proxy(history)
+        ivr, realized_vol, ivr_limited = iv_rank_proxy(history)
 
         today = datetime.now(timezone.utc).date()
         expirations = tk.options
@@ -1016,18 +1357,24 @@ def build_trade_for_ticker(ticker_symbol, index):
         # strategy selection: 1-in-4 tickers try a neutral, range-bound bet
         # (Iron Condor) regardless of trend, since it isn't directional the way
         # the rest are. The remaining tickers still split by trend: uptrend ->
-        # bullish rotation (now including Long Call), downtrend -> bearish
-        # rotation (now including Long Put). Butterfly and Calendar Spread were
-        # removed 2026-09-20 — their payoff shape didn't fit the profit-target
-        # intent of this screen.
+        # bullish rotation, downtrend -> bearish rotation. Butterfly and
+        # Calendar Spread were removed 2026-09-20 — their payoff shape didn't
+        # fit the profit-target intent of this screen. Cash-Secured Put, Bull
+        # Call Spread and Bear Put Spread added 2026-09-21 to round out each
+        # side with a defined-risk debit alternative (Bull/Bear ... Spread)
+        # and the naked mirror of Covered Call (Cash-Secured Put) — all three
+        # reuse the exact same delta-targeted strike-picking as their siblings.
         if index % 4 == 0:
-            strat = "Iron Condor"
+            # Split the neutral slot itself between the two neutral strategies
+            # rather than adding a 5th bucket — still 1-in-4 tickers overall
+            # go neutral, just alternating which neutral structure they get.
+            strat = "Double Diagonal" if (index // 4) % 2 == 1 else "Iron Condor"
             side = "neutral"
         elif uptrend:
-            strat = ["Covered Call", "Bull Put Spread", "Long Call"][index % 3]
+            strat = ["Covered Call", "Bull Put Spread", "Long Call", "Cash-Secured Put", "Bull Call Spread"][index % 5]
             side = "bull"
         else:
-            strat = ["Bear Call Spread", "Long Put"][index % 2]
+            strat = ["Bear Call Spread", "Long Put", "Bear Put Spread"][index % 3]
             side = "bear"
 
         # Evaluate every expiration candidate within the target window (up to the
@@ -1045,27 +1392,38 @@ def build_trade_for_ticker(ticker_symbol, index):
 
         best = None
         failure_reasons = []
-        evaluated_log = []  # every candidate's outcome, logged regardless of win/loss —
-                             # needed to see WHY a ticker keeps landing on the same
-                             # expiration: genuinely winning on merit vs. every
-                             # alternative failing validation outright.
-        for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
-            result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
-            if result:
-                log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
-                evaluated_log.append(f"{cand_exp}({cand_dte}d)={log_val}")
-                if best is None or _rank_key(result) > _rank_key(best):
-                    best = result
-            else:
-                evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
-                failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
 
-        print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
+        if strat == "Double Diagonal":
+            # Spans two expirations — needs its own near+far candidate search,
+            # not the single-expiration loop below (see build_double_diagonal's
+            # docstring for why this can't go through evaluate_expiration_candidate).
+            best, reason = build_double_diagonal(tk, spot, expirations, today, atr)
+            if not best:
+                print(f"  skip {ticker_symbol}: Double Diagonal unusable — {reason}")
+                return None
+            print(f"    {ticker_symbol} [Double Diagonal] {best['exp']}({best['dte']}d)/{best['backExp']}({(datetime.strptime(best['backExpDate'], '%Y-%m-%d').date() - today).days}d): pot:{best['pot']}%")
+        else:
+            evaluated_log = []  # every candidate's outcome, logged regardless of win/loss —
+                                 # needed to see WHY a ticker keeps landing on the same
+                                 # expiration: genuinely winning on merit vs. every
+                                 # alternative failing validation outright.
+            for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                if result:
+                    log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
+                    evaluated_log.append(f"{cand_exp}({cand_dte}d)={log_val}")
+                    if best is None or _rank_key(result) > _rank_key(best):
+                        best = result
+                else:
+                    evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
+                    failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
 
-        if not best:
-            tried = len(failure_reasons)
-            print(f"  skip {ticker_symbol}: {strat} unusable across {tried} expiration(s) tried — {'; '.join(failure_reasons)}")
-            return None
+            print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
+
+            if not best:
+                tried = len(failure_reasons)
+                print(f"  skip {ticker_symbol}: {strat} unusable across {tried} expiration(s) tried — {'; '.join(failure_reasons)}")
+                return None
 
         dte = best["dte"]
 
@@ -1106,9 +1464,12 @@ def build_trade_for_ticker(ticker_symbol, index):
             "hedge": best["hedge"],
             "exp": best["exp"],
             "dte": best["dte"],
+            "backExp": best.get("backExp"),
+            "backExpDate": best.get("backExpDate"),
             "pot": best["pot"],
             "ap": best["ap"],
             "ivr": ivr,
+            "ivRankLimited": ivr_limited,
             "dailyReturn": best["dailyReturn"],
             "roc": best["roc"],
             "score": score,
@@ -1206,7 +1567,7 @@ def build_lookup_trade(ticker_symbol):
         uptrend = bool(ema8 > ema20)
         near_ema = bool((abs(spot - ema8) / spot < 0.015) or (abs(spot - ema20) / spot < 0.015))
         atr = compute_atr(history)
-        ivr, realized_vol = iv_rank_proxy(history)
+        ivr, realized_vol, ivr_limited = iv_rank_proxy(history)
 
         today = datetime.now(timezone.utc).date()
         expirations = tk.options
@@ -1272,9 +1633,12 @@ def build_lookup_trade(ticker_symbol):
             "hedge": best["hedge"],
             "exp": best["exp"],
             "dte": best["dte"],
+            "backExp": best.get("backExp"),
+            "backExpDate": best.get("backExpDate"),
             "pot": best["pot"],
             "ap": best["ap"],
             "ivr": ivr,
+            "ivRankLimited": ivr_limited,
             "dailyReturn": best["dailyReturn"],
             "roc": best["roc"],
             "score": score,

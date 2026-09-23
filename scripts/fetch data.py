@@ -172,6 +172,32 @@ TARGET_LONG_DELTA = 0.45    # long call/put target delta — near-the-money; bal
                              # cost against probability of profit, instead of either
                              # a cheap far-OTM "lottery ticket" or an expensive
                              # deep-ITM stock-replacement play
+
+# --- Double Diagonal (added 2026-09-22) -------------------------------------
+# The one strategy in this file that spans TWO expirations, so it can't go
+# through try_strategy_pick/evaluate_expiration_candidate's single-chain
+# signature — see build_double_diagonal() below for its own dedicated
+# expiration-selection + chain-fetch logic instead.
+DIAGONAL_NEAR_DTE_MIN = 7    # short legs: same near-dated window the rest of the
+DIAGONAL_NEAR_DTE_MAX = 21   # screen's short strikes already live in, just capped
+                             # tighter at the top end (21d) so the near legs are
+                             # genuinely the faster-decaying side of the trade.
+DIAGONAL_FAR_DTE_MIN = 35    # long legs: comfortably past the near window so
+DIAGONAL_FAR_DTE_MAX = 60    # there's real calendar spread to the structure —
+                             # same range HEDGE_TARGET_DTE_MIN/MAX already uses
+                             # for the same "slower-decaying, longer horizon" reason.
+DIAGONAL_MIN_GAP_DAYS = 14   # reject a near/far pairing that ends up too close
+                             # together to behave like a real diagonal.
+DIAGONAL_LONG_DELTA = 0.12   # further OTM than the near legs' 0.20-delta shorts —
+                             # standard "double diagonal" shape: the bought wings
+                             # are wider than the sold ones, not the same strikes
+                             # (same strikes would make it a double CALENDAR, a
+                             # different, not-yet-supported structure).
+MAX_DIAGONAL_NEAR_CANDIDATES = 3   # how many near-expiration candidates to try
+MAX_DIAGONAL_FAR_CANDIDATES = 3    # ...times how many far-expiration candidates,
+                                    # per near candidate, before giving up on the
+                                    # ticker — bounded so a name with unusually many
+                                    # listed expirations doesn't blow up chain fetches.
 RISK_FREE_RATE = 0.045      # flat approximation; update periodically
 OUTPUT_PATH = "data.json"
 
@@ -357,23 +383,39 @@ def compute_atr(history, period=14):
     return tr.rolling(period).mean().iloc[-1]
 
 
+IV_RANK_MIN_HISTORY_DAYS = 200   # ~9-10 months of trading days. Below this, the
+                                  # percentile below is ranked against a materially
+                                  # shorter, more recent-biased sample than the
+                                  # ~1-year window it's meant to cover — typically
+                                  # a recent IPO (tk.history(period="1y") just
+                                  # returns however much history actually exists,
+                                  # it doesn't pad a young listing out to a year).
+                                  # Flagged via the returned `limited_history` bool
+                                  # instead of silently shown as an equally-
+                                  # confident number next to every other ticker's.
+
+
 def iv_rank_proxy(history, window=252, vol_window=20):
     """
     Proxy for IV rank using realized volatility percentile, since a year of
     historical *implied* volatility isn't freely available. Correlated with
     real IV rank but not equivalent to it.
-    Returns (percentile, current_realized_vol_pct) — the second value is used
-    separately to compare against the option's actual IV (see classify_vol_regime).
+    Returns (percentile, current_realized_vol_pct, limited_history) — the second
+    value is used separately to compare against the option's actual IV (see
+    classify_vol_regime); the third flags a too-short price history (see
+    IV_RANK_MIN_HISTORY_DAYS above).
     """
     closes = history["Close"].tail(window + vol_window)
+    limited_history = len(closes) < IV_RANK_MIN_HISTORY_DAYS
     log_returns = np.log(closes / closes.shift(1)).dropna()
     realized_vol = log_returns.rolling(vol_window).std() * math.sqrt(252)
     realized_vol = realized_vol.dropna()
     if len(realized_vol) < 20:
-        return 50, None  # not enough history yet — neutral fallback
+        return 50, None, True  # not enough history yet — neutral fallback, and
+                                # definitionally a limited-history case too
     current = realized_vol.iloc[-1]
     percentile = (realized_vol < current).sum() / len(realized_vol) * 100
-    return round(percentile), round(current * 100, 1)
+    return round(percentile), round(current * 100, 1), limited_history
 
 
 def classify_vol_regime(iv_pct, realized_vol_pct):
@@ -422,6 +464,26 @@ def composite_score_long_option(pot_profit, ivr, breakeven_move_pct):
                                                                             # required
                                                                             # move -> higher
     score = 0.40 * profit_prob_component + 0.30 * cheap_iv_component + 0.30 * move_component
+    return round(min(10, max(1, score)), 1)
+
+
+def composite_score_double_diagonal(pot_touch, ivr):
+    """
+    Illustrative 0-10 blend for Double Diagonal — no ap (see build_double_diagonal's
+    docstring for why a clean profit figure isn't computed there), and pot here
+    is touch probability of either short strike like Iron Condor's (higher =
+    worse), NOT Long Call/Put's profit-probability reading (higher = better) —
+    don't reuse composite_score_long_option, its pot/ivr directions are both
+    inverted from what this needs. A double diagonal's real edge comes from
+    near-term IV being rich RELATIVE TO far-term IV (term-structure skew), not
+    absolute IV level the way a simple premium-seller's does — that comparison
+    isn't computed here, so ivr is weighted lightly, as a loose "is there
+    premium worth collecting in this name at all" signal rather than the main
+    driver the way it is in composite_score().
+    """
+    safety_component = min(10, max(0, (100 - pot_touch) / 10))
+    ivr_component = min(10, max(0, ivr / 10))
+    score = 0.70 * safety_component + 0.30 * ivr_component
     return round(min(10, max(1, score)), 1)
 
 
@@ -497,11 +559,22 @@ def mid_price(row):
 
 def rank_expirations(expirations, today):
     """
-    Returns expiration candidates as (exp_str, dte) tuples, closest-to-target-window
-    first. A list rather than a single pick, because a chosen expiration's chain can
-    turn out to be unusable (e.g. every relevant strike has NaN IV that day — this
-    happens on real Yahoo data more often than you'd expect) — the caller can then
-    fall back to the next-best expiration instead of giving up on the ticker entirely.
+    Returns (in_window, outside_window) — each a list of (exp_str, dte) tuples,
+    closest-to-target-window first. Returned as two SEPARATE lists rather than
+    one pre-concatenated one (changed 2026-09-23): outside_window exists so a
+    ticker with fewer than MAX_CANDIDATES_TO_EVALUATE in-window expirations
+    (common for names without a full weekly cycle) still has somewhere to fall
+    back to if EVERY in-window candidate turns out unusable (e.g. every
+    relevant strike has NaN IV that day) — a true last resort, not a routine
+    top-up. A single concatenated list couldn't tell those apart: the caller
+    would slice the first MAX_CANDIDATES_TO_EVALUATE regardless of how many
+    were in-window, silently mixing in a sub-7-day candidate whenever a
+    ticker's in-window count ran short — and since annualizing (ap = roc *
+    365/dte) inflates short-DTE returns by 100x+, that candidate would then
+    win the ranking almost automatically over every legitimate 7-45d
+    alternative, not because it was a better trade but because it was
+    shorter-dated. Keeping the buckets separate lets the caller exhaust
+    in_window on its own merits first.
     """
     target_mid = (TARGET_DTE_MIN + TARGET_DTE_MAX) / 2
     in_window, outside_window = [], []
@@ -514,7 +587,7 @@ def rank_expirations(expirations, today):
         (in_window if TARGET_DTE_MIN <= dte <= TARGET_DTE_MAX else outside_window).append((diff, exp_str, dte))
     in_window.sort(key=lambda x: x[0])
     outside_window.sort(key=lambda x: x[0])
-    return [(exp_str, dte) for _, exp_str, dte in (in_window + outside_window)]
+    return [(exp_str, dte) for _, exp_str, dte in in_window], [(exp_str, dte) for _, exp_str, dte in outside_window]
 
 
 MAX_CANDIDATES_TO_EVALUATE = 8  # how many expirations within the target window to
@@ -675,6 +748,168 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         "expDate": cand_exp,
         "legs": fields.get("legs"),
     }, None
+
+
+def _rank_diagonal_expirations(expirations, today, dte_min, dte_max):
+    """Same closest-to-target-window ranking as rank_expirations(), parameterized
+    for the near/far windows a double diagonal needs instead of the single
+    7-45d window every other strategy shares."""
+    target_mid = (dte_min + dte_max) / 2
+    in_window, outside_window = [], []
+    for exp_str in expirations:
+        exp_date = datetime.strptime(exp_str, "%Y-%m-%d").date()
+        dte = (exp_date - today).days
+        if dte <= 0:
+            continue
+        diff = abs(dte - target_mid)
+        (in_window if dte_min <= dte <= dte_max else outside_window).append((diff, exp_str, dte))
+    in_window.sort(key=lambda x: x[0])
+    outside_window.sort(key=lambda x: x[0])
+    return [(exp_str, dte) for _, exp_str, dte in (in_window + outside_window)]
+
+
+def build_double_diagonal(tk, spot, expirations, today, atr):
+    """
+    The only strategy here that spans two expirations — sell a near-dated
+    20-delta strangle, buy a further-OTM (12-delta) far-dated strangle as its
+    defined-risk wings. Bypasses evaluate_expiration_candidate/try_strategy_pick
+    entirely (both assume one chain/one expiration) with its own near+far
+    candidate search instead. Tries the first near/far pairing that prices
+    successfully rather than exhaustively ranking every combination — keeps
+    the chain-fetch count bounded the same way MAX_CANDIDATES_TO_EVALUATE does
+    for every other strategy.
+
+    Deliberately does NOT compute roc/ap (see the "no roc/ap" note below) —
+    same honest omission Long Call/Long Put already make for a different
+    reason. Returns a dict shaped like evaluate_expiration_candidate's,
+    plus backExp/backExpDate (the far leg's expiration — see the existing
+    "exp": "back" convention _reprice_position()/the frontend already handle
+    for tracked positions), or (None, reason) on failure.
+    """
+    near_candidates = _rank_diagonal_expirations(expirations, today, DIAGONAL_NEAR_DTE_MIN, DIAGONAL_NEAR_DTE_MAX)
+    far_candidates = _rank_diagonal_expirations(expirations, today, DIAGONAL_FAR_DTE_MIN, DIAGONAL_FAR_DTE_MAX)
+    if not near_candidates or not far_candidates:
+        return None, "no usable near+far expiration pairing (chain doesn't list enough distinct expirations)"
+
+    chain_cache = {}
+    def get_chain(exp_str):
+        if exp_str not in chain_cache:
+            try:
+                chain_cache[exp_str] = tk.option_chain(exp_str)
+            except Exception as e:
+                chain_cache[exp_str] = None
+                print(f"    double diagonal chain fetch failed for {exp_str}: {e}")
+        return chain_cache[exp_str]
+
+    failure_reasons = []
+    for near_exp, near_dte in near_candidates[:MAX_DIAGONAL_NEAR_CANDIDATES]:
+        near_chain = get_chain(near_exp)
+        if near_chain is None or near_chain.calls.empty or near_chain.puts.empty:
+            failure_reasons.append(f"{near_exp} (near, {near_dte}d): chain unusable")
+            continue
+        near_calls, near_puts = near_chain.calls, near_chain.puts
+
+        near_short_call = pick_strike_by_delta(near_calls, spot, near_dte, TARGET_SHORT_DELTA, "call")
+        near_short_put = pick_strike_by_delta(near_puts, spot, near_dte, TARGET_SHORT_DELTA, "put")
+        if not near_short_call or not near_short_put:
+            failure_reasons.append(f"{near_exp} (near, {near_dte}d): no strike near target delta on one side — {chain_diagnostics(near_calls, spot)}")
+            continue
+        nc_row, nc_delta = near_short_call
+        np_row, np_delta = near_short_put
+        near_call_strike = float(nc_row["strike"])
+        near_put_strike = float(np_row["strike"])
+        near_credit = mid_price(nc_row) + mid_price(np_row)
+
+        tried_far_this_near = 0
+        for far_exp, far_dte in far_candidates[:MAX_DIAGONAL_FAR_CANDIDATES]:
+            if far_dte - near_dte < DIAGONAL_MIN_GAP_DAYS:
+                continue
+            tried_far_this_near += 1
+            far_chain = get_chain(far_exp)
+            if far_chain is None or far_chain.calls.empty or far_chain.puts.empty:
+                failure_reasons.append(f"{far_exp} (far, {far_dte}d): chain unusable")
+                continue
+            far_calls, far_puts = far_chain.calls, far_chain.puts
+
+            far_long_call = pick_strike_by_delta(far_calls, spot, far_dte, DIAGONAL_LONG_DELTA, "call")
+            far_long_put = pick_strike_by_delta(far_puts, spot, far_dte, DIAGONAL_LONG_DELTA, "put")
+            if not far_long_call or not far_long_put:
+                failure_reasons.append(f"{far_exp} (far, {far_dte}d): no strike near target delta on one side — {chain_diagnostics(far_calls, spot)}")
+                continue
+            fc_row, _ = far_long_call
+            fp_row, _ = far_long_put
+            far_call_strike = float(fc_row["strike"])
+            far_put_strike = float(fp_row["strike"])
+
+            # The defined-risk shape requires the bought wings to sit OUTSIDE
+            # the sold ones — normally guaranteed by targeting a lower delta
+            # on the far legs, but a thin/unusual chain can still invert this.
+            if not (far_call_strike >= near_call_strike and far_put_strike <= near_put_strike):
+                failure_reasons.append(f"{near_exp}/{far_exp}: far strikes aren't wider than near strikes, skipping")
+                continue
+
+            far_debit = mid_price(fc_row) + mid_price(fp_row)
+            net_debit = far_debit - near_credit
+            if net_debit <= 0:
+                failure_reasons.append(f"{near_exp}/{far_exp}: net debit isn't positive (${net_debit:.2f}), unusable quote")
+                continue
+
+            avg_iv = (safe_float(nc_row.get("impliedVolatility")) + safe_float(np_row.get("impliedVolatility"))) / 2 * 100
+
+            # No roc/ap: a double diagonal's max profit is reached somewhere
+            # between the short strikes at NEAR expiration and depends on the
+            # far legs' remaining time value there — not closed-form the way
+            # a vertical spread's width-minus-debit is. Rather than publish a
+            # number built on an unstated pricing-model assumption, this
+            # follows Long Call/Long Put's precedent: no roc/ap, pot (below)
+            # carries the quality signal instead. maxLoss uses net debit paid
+            # as a conservative upper bound — actual worst case is usually
+            # somewhat less, since the far legs retain some value even then.
+            pot_put = probability_of_touch(bs_delta(spot, near_put_strike, near_dte, avg_iv / 100 if avg_iv else 0.3, "put"))
+            pot_call = probability_of_touch(bs_delta(spot, near_call_strike, near_dte, avg_iv / 100 if avg_iv else 0.3, "call"))
+            pot = max(pot_put, pot_call)
+            margin_of_safety = bool(atr and min(abs(spot - near_put_strike), abs(spot - near_call_strike)) >= atr)
+
+            total_call_oi = near_calls["openInterest"].fillna(0).sum()
+            total_put_oi = near_puts["openInterest"].fillna(0).sum()
+            total_call_vol = near_calls["volume"].fillna(0).sum()
+            total_put_vol = near_puts["volume"].fillna(0).sum()
+
+            near_exp_label = (datetime.strptime(near_exp, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32"
+                               else datetime.strptime(near_exp, "%Y-%m-%d").strftime("%b %d").replace(" 0", " "))
+            far_exp_label = (datetime.strptime(far_exp, "%Y-%m-%d").strftime("%b %-d") if sys.platform != "win32"
+                              else datetime.strptime(far_exp, "%Y-%m-%d").strftime("%b %d").replace(" 0", " "))
+
+            return {
+                "exp": near_exp_label, "expDate": near_exp, "dte": near_dte,
+                "backExp": far_exp_label, "backExpDate": far_exp,
+                "pot": pot, "potIsProfitProb": False,
+                "ap": None, "roc": None, "dailyReturn": None,
+                "marginOfSafety": margin_of_safety,
+                "delta": round(nc_delta + np_delta, 2),  # net delta -- roughly market-neutral by construction
+                "iv": round(avg_iv, 1),
+                "premium": round(net_debit, 2),
+                "breakeven": round(near_put_strike, 2),  # single-field fallback; Low/High carry the real range
+                "breakevenLow": round(near_put_strike, 2),
+                "breakevenHigh": round(near_call_strike, 2),
+                "breakevenMovePct": None,
+                "maxLoss": round(net_debit * 100, 2),
+                "pcOI": round(total_put_oi / total_call_oi, 2) if total_call_oi else 0,
+                "pcVol": round(total_put_vol / total_call_vol, 2) if total_call_vol else 0,
+                "strike": f"${far_put_strike:.0f}/{near_put_strike:.0f}/{near_call_strike:.0f}/{far_call_strike:.0f}",
+                "hedge": None,
+                "debitStrategy": True,
+                "legs": [
+                    {"type": "call", "strike": near_call_strike, "action": "sell", "qty": 1},
+                    {"type": "put",  "strike": near_put_strike,  "action": "sell", "qty": 1},
+                    {"type": "call", "strike": far_call_strike,  "action": "buy",  "qty": 1, "exp": "back"},
+                    {"type": "put",  "strike": far_put_strike,   "action": "buy",  "qty": 1, "exp": "back"},
+                ],
+            }, None
+        if tried_far_this_near == 0:
+            failure_reasons.append(f"{near_exp} (near, {near_dte}d): no far expiration far enough past it")
+
+    return None, "; ".join(failure_reasons) if failure_reasons else "no usable near/far expiration pairing"
 
 
 MAX_NEWS_HEADLINES = 3       # how many recent headlines to pull and score per ticker
@@ -1115,7 +1350,7 @@ def build_trade_for_ticker(ticker_symbol, index):
         uptrend = ema8 > ema20
         near_ema = (abs(spot - ema8) / spot < 0.015) or (abs(spot - ema20) / spot < 0.015)
         atr = compute_atr(history)
-        ivr, realized_vol = iv_rank_proxy(history)
+        ivr, realized_vol, ivr_limited = iv_rank_proxy(history)
 
         today = datetime.now(timezone.utc).date()
         expirations = tk.options
@@ -1123,8 +1358,8 @@ def build_trade_for_ticker(ticker_symbol, index):
             print(f"  skip {ticker_symbol}: no options listed")
             return None
 
-        expiration_candidates = rank_expirations(expirations, today)
-        if not expiration_candidates:
+        in_window_candidates, outside_window_candidates = rank_expirations(expirations, today)
+        if not in_window_candidates and not outside_window_candidates:
             print(f"  skip {ticker_symbol}: no usable expiration (all listed dates are in the past or unparsable)")
             return None
 
@@ -1141,7 +1376,10 @@ def build_trade_for_ticker(ticker_symbol, index):
         # and the naked mirror of Covered Call (Cash-Secured Put) — all three
         # reuse the exact same delta-targeted strike-picking as their siblings.
         if index % 4 == 0:
-            strat = "Iron Condor"
+            # Split the neutral slot itself between the two neutral strategies
+            # rather than adding a 5th bucket — still 1-in-4 tickers overall
+            # go neutral, just alternating which neutral structure they get.
+            strat = "Double Diagonal" if (index // 4) % 2 == 1 else "Iron Condor"
             side = "neutral"
         elif uptrend:
             strat = ["Covered Call", "Bull Put Spread", "Long Call", "Cash-Secured Put", "Bull Call Spread"][index % 5]
@@ -1165,27 +1403,56 @@ def build_trade_for_ticker(ticker_symbol, index):
 
         best = None
         failure_reasons = []
-        evaluated_log = []  # every candidate's outcome, logged regardless of win/loss —
-                             # needed to see WHY a ticker keeps landing on the same
-                             # expiration: genuinely winning on merit vs. every
-                             # alternative failing validation outright.
-        for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
-            result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
-            if result:
-                log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
-                evaluated_log.append(f"{cand_exp}({cand_dte}d)={log_val}")
-                if best is None or _rank_key(result) > _rank_key(best):
-                    best = result
-            else:
-                evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
-                failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
 
-        print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
+        if strat == "Double Diagonal":
+            # Spans two expirations — needs its own near+far candidate search,
+            # not the single-expiration loop below (see build_double_diagonal's
+            # docstring for why this can't go through evaluate_expiration_candidate).
+            best, reason = build_double_diagonal(tk, spot, expirations, today, atr)
+            if not best:
+                print(f"  skip {ticker_symbol}: Double Diagonal unusable — {reason}")
+                return None
+            print(f"    {ticker_symbol} [Double Diagonal] {best['exp']}({best['dte']}d)/{best['backExp']}({(datetime.strptime(best['backExpDate'], '%Y-%m-%d').date() - today).days}d): pot:{best['pot']}%")
+        else:
+            evaluated_log = []  # every candidate's outcome, logged regardless of win/loss —
+                                 # needed to see WHY a ticker keeps landing on the same
+                                 # expiration: genuinely winning on merit vs. every
+                                 # alternative failing validation outright.
+            for cand_exp, cand_dte in in_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                if result:
+                    log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
+                    evaluated_log.append(f"{cand_exp}({cand_dte}d)={log_val}")
+                    if best is None or _rank_key(result) > _rank_key(best):
+                        best = result
+                else:
+                    evaluated_log.append(f"{cand_exp}({cand_dte}d)=FAILED:{reason}")
+                    failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
 
-        if not best:
-            tried = len(failure_reasons)
-            print(f"  skip {ticker_symbol}: {strat} unusable across {tried} expiration(s) tried — {'; '.join(failure_reasons)}")
-            return None
+            # Only reach outside the 7-45d window if NOTHING in-window priced —
+            # a true last resort (see rank_expirations' docstring for why this
+            # can't just be "whichever 8 candidates come first regardless of
+            # bucket": a short-DTE candidate's annualized profit would win the
+            # ranking almost automatically against legitimate longer-dated
+            # ones, not on merit, just because it's short-dated.
+            if not best and in_window_candidates:
+                for cand_exp, cand_dte in outside_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                    result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                    if result:
+                        log_val = f"ap:{result['ap']}%" if result['ap'] is not None else f"potProfit:{result['pot']}%"
+                        evaluated_log.append(f"{cand_exp}({cand_dte}d,outside-window)={log_val}")
+                        if best is None or _rank_key(result) > _rank_key(best):
+                            best = result
+                    else:
+                        evaluated_log.append(f"{cand_exp}({cand_dte}d,outside-window)=FAILED:{reason}")
+                        failure_reasons.append(f"{cand_exp} ({cand_dte}d, outside window): {reason}")
+
+            print(f"    {ticker_symbol} [{strat}] evaluated {len(evaluated_log)} candidate(s): {' | '.join(evaluated_log)}")
+
+            if not best:
+                tried = len(failure_reasons)
+                print(f"  skip {ticker_symbol}: {strat} unusable across {tried} expiration(s) tried — {'; '.join(failure_reasons)}")
+                return None
 
         dte = best["dte"]
 
@@ -1226,9 +1493,12 @@ def build_trade_for_ticker(ticker_symbol, index):
             "hedge": best["hedge"],
             "exp": best["exp"],
             "dte": best["dte"],
+            "backExp": best.get("backExp"),
+            "backExpDate": best.get("backExpDate"),
             "pot": best["pot"],
             "ap": best["ap"],
             "ivr": ivr,
+            "ivRankLimited": ivr_limited,
             "dailyReturn": best["dailyReturn"],
             "roc": best["roc"],
             "score": score,
@@ -1326,15 +1596,15 @@ def build_lookup_trade(ticker_symbol):
         uptrend = bool(ema8 > ema20)
         near_ema = bool((abs(spot - ema8) / spot < 0.015) or (abs(spot - ema20) / spot < 0.015))
         atr = compute_atr(history)
-        ivr, realized_vol = iv_rank_proxy(history)
+        ivr, realized_vol, ivr_limited = iv_rank_proxy(history)
 
         today = datetime.now(timezone.utc).date()
         expirations = tk.options
         if not expirations:
             return None, "This symbol doesn't have listed options."
 
-        expiration_candidates = rank_expirations(expirations, today)
-        if not expiration_candidates:
+        in_window_candidates, outside_window_candidates = rank_expirations(expirations, today)
+        if not in_window_candidates and not outside_window_candidates:
             return None, "No usable (future-dated) options expiration is listed for this symbol."
 
         strat, side = pick_lookup_strategy(uptrend, near_ema)
@@ -1345,13 +1615,25 @@ def build_lookup_trade(ticker_symbol):
 
         best = None
         failure_reasons = []
-        for cand_exp, cand_dte in expiration_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+        for cand_exp, cand_dte in in_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
             result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
             if result:
                 if best is None or _rank_key(result) > _rank_key(best):
                     best = result
             else:
                 failure_reasons.append(f"{cand_exp} ({cand_dte}d): {reason}")
+
+        # Same true-last-resort fallback as the main pipeline (see
+        # rank_expirations' docstring) — only reach outside the window if
+        # nothing in-window could be priced at all.
+        if not best and in_window_candidates:
+            for cand_exp, cand_dte in outside_window_candidates[:MAX_CANDIDATES_TO_EVALUATE]:
+                result, reason = evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr)
+                if result:
+                    if best is None or _rank_key(result) > _rank_key(best):
+                        best = result
+                else:
+                    failure_reasons.append(f"{cand_exp} ({cand_dte}d, outside window): {reason}")
 
         if not best:
             reasons = "; ".join(failure_reasons[:3]) if failure_reasons else "no usable expirations"
@@ -1392,9 +1674,12 @@ def build_lookup_trade(ticker_symbol):
             "hedge": best["hedge"],
             "exp": best["exp"],
             "dte": best["dte"],
+            "backExp": best.get("backExp"),
+            "backExpDate": best.get("backExpDate"),
             "pot": best["pot"],
             "ap": best["ap"],
             "ivr": ivr,
+            "ivRankLimited": ivr_limited,
             "dailyReturn": best["dailyReturn"],
             "roc": best["roc"],
             "score": score,

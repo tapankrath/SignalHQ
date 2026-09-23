@@ -1069,9 +1069,9 @@
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Double Diagonal" checked> <span class="strat-dot neutral"></span>Double Diagonal</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread" checked> <span class="strat-dot bear"></span>Bear Put Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread"> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
@@ -2340,19 +2340,20 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-22 (again): added Double Diagonal to the default-checked
-  // set alongside the 4 spreads. Known tradeoff, decided deliberately: it has
-  // no roc/ap (see build_double_diagonal's docstring), and the Min Trade
-  // Profit filter hard-excludes any roc-less trade at any floor (2026-09-18
-  // decision, same reason Long Call/Long Put don't surface either) — so as
-  // shipped, Double Diagonal is checked by default but won't actually appear
-  // in results unless Min Trade Profit is lowered. Left checked anyway on
-  // request; lower the floor (or drop this line) to actually see it.
+  // Updated 2026-09-23: Bull Call Spread and Bear Put Spread dropped from the
+  // default set. Not a numbers/ceiling issue (those were separately tightened
+  // this same day — see MIN_DEBIT_SPREAD_PREMIUM_PCT_OF_WIDTH in fetch_data.py)
+  // — the actual problem was the strategy SHAPE: both are directional bets
+  // that need a specific move within a specific window (strikes struck past
+  // spot, PoP commonly 40-45%), structurally unlike Bull Put Spread/Bear Call
+  // Spread (premium-selling, time decay works FOR you) sitting right next to
+  // them in this same default set. Speculative-by-design strategies don't
+  // belong in a "sensible defaults" list next to that, regardless of how
+  // moderate their numbers look. Still in the filter list for anyone who
+  // wants that kind of catalyst-driven, directional trade on purpose.
   const DEFAULT_CHECKED = [
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-strat="Bull Call Spread"]',
-    '[data-strat="Bear Put Spread"]',
     '[data-strat="Double Diagonal"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',

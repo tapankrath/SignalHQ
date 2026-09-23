@@ -237,6 +237,21 @@ DEBIT_SPREAD_ROC_CEILING_FLOOR = 80    # scaled ceiling never drops below this e
                                         # post a real (if unusual) triple-digit return;
                                         # the floor keeps the scaling from rejecting
                                         # everything at the 7-day edge of the window.
+MIN_DEBIT_SPREAD_PREMIUM_PCT_OF_WIDTH = 0.30  # separate from debit_spread_roc_ceiling
+                                        # above (added 2026-09-23) — that ceiling exists
+                                        # to catch thin/wide-market DATA QUALITY problems
+                                        # at short DTE and is deliberately loose (up to
+                                        # 500%) at normal DTE, so it never caught a
+                                        # perfectly legitimate but lottery-ticket-shaped
+                                        # spread: long leg near the money, short leg far
+                                        # enough out that the premium paid is a small
+                                        # sliver of the width. That's not bad data, just
+                                        # a structural shape this screen shouldn't
+                                        # surface by default. Requiring the premium be at
+                                        # least 30% of the width caps "Return" at roughly
+                                        # 233% (width/premium - 1) regardless of DTE —
+                                        # a moneyness/quality bar, not a data-quality one,
+                                        # so it applies at every DTE, not just short ones.
                              # the annualized figure, since annualizing amplifies short-DTE
                              # trades by up to 365/DTE (60x+ at 6 DTE), which used to make
                              # legitimate short-dated premium look "implausible" and get
@@ -674,6 +689,12 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
         ann_profit = round(roc * (365 / cand_dte), 1)
         if roc > debit_spread_roc_ceiling(cand_dte):
             return None, f"implausible raw ROC ({roc}%), likely a thin/wide-market quote"
+        _width = premium + fields["max_profit"]
+        _premium_pct_of_width = premium / _width if _width > 0 else 0
+        if _premium_pct_of_width < MIN_DEBIT_SPREAD_PREMIUM_PCT_OF_WIDTH:
+            return None, (f"premium (${premium:.2f}) is only {_premium_pct_of_width*100:.0f}% of the "
+                           f"${_width:.2f} spread width — too cheap/wide relative to width for a "
+                           f"moderate return profile (min {MIN_DEBIT_SPREAD_PREMIUM_PCT_OF_WIDTH*100:.0f}%)")
     else:
         roc = round((premium / collateral) * 100, 2)
         ann_profit = round(roc * (365 / cand_dte), 1)

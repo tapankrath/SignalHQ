@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T04:46:53.922379+00:00",
+  "generated_at": "2026-09-23T05:01:09.944559+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -131,9 +131,15 @@
       "pcVol": 0.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.23,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "\u201cThe New Clippy\u201d: Benioff Uses Salesforce\u2019s Biggest Product Launch in Years to Challenge Microsoft",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/clippy-benioff-uses-salesforce-biggest-044653952.html",
+          "sentiment": 0.08
+        },
         {
           "title": "MSFT Ticks Up Overnight: Analyst Upgrades To \u2018Buy\u2019 And Sees 15% Upside On AI Growth, Cost Discipline",
           "publisher": "Stocktwits",
@@ -145,12 +151,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/marc-benioff-says-microsoft-shut-salesforce-out-of-open-ai-so-he-bet-on-anthropic-instead-and-it-could-pay-tens-of-billions/cZMEh53RB7Z",
           "sentiment": -0.1
-        },
-        {
-          "title": "Microsoft is killing an Office app you've used for decades",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/microsoft-kills-35-year-old-office-app-publisher-oct-1",
-          "sentiment": -0.66
         }
       ],
       "volRegime": "Cheap",
@@ -674,7 +674,7 @@
       "breakevenHigh": null,
       "breakevenMovePct": 6.25,
       "maxLoss": 5322.5,
-      "pcOI": 1.97,
+      "pcOI": 1.89,
       "pcVol": 0.76,
       "debitStrategy": true,
       "potIsProfitProb": true,
@@ -830,9 +830,15 @@
       "pcVol": 0.98,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.01,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "\u201cThe New Clippy\u201d: Benioff Uses Salesforce\u2019s Biggest Product Launch in Years to Challenge Microsoft",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/clippy-benioff-uses-salesforce-biggest-044653952.html",
+          "sentiment": 0.08
+        },
         {
           "title": "Marc Benioff Says Microsoft Shut Salesforce Out Of OpenAI \u2014 So He Bet On Anthropic Instead, And It Could Pay 'Tens Of Billions'",
           "publisher": "Stocktwits",
@@ -844,12 +850,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/616138/how-far-could-crm-stock-swing-in-a-year/2026-09-22",
           "sentiment": 0.0
-        },
-        {
-          "title": "Salesforce vs. ServiceNow: Which Technology Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/22/salesforce-vs-servicenow-which-technology-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Cheap",
@@ -1902,6 +1902,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "SpaceX's First 100 Days Are in the Books. Here's the Report Card.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/23/spacex-s-first-100-days-are-in-the-books-here-s-the-report-card/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Is SpaceX Actually Worth $10 Trillion?",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/22/is-spacex-actually-worth-10-trillion/",
@@ -1911,12 +1917,6 @@
           "title": "Rocket Lab CEO Puts Iridium Deal Alongside SpaceX And Amazon\u2019s Spectrum Bets: \u2018You Can\u2019t Just Magic Up Spectrum\u2019",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rocket-lab-ceo-iridium-deal-spacex-amazon-spectrum-bets/cZMEhNCRB7n",
-          "sentiment": 0.0
-        },
-        {
-          "title": "What $3,000 Invested in SpaceX Stock Could Grow to by September 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/what-3000-invested-in-spacex-stock-could-grow-to-b/",
           "sentiment": 0.0
         }
       ],
@@ -2818,6 +2818,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Moderna (MRNA) Tied To AI Drug Push As Bob Langer Takes New Advisory Role",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-tied-ai-drug-043342399.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Moderna (MRNA) Stock Looks Very Expensive As Shares Surge Over 1 Year",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-stock-looks-very-021254435.html",
@@ -2828,12 +2834,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/616141/was-moderna-stocks-cancer-vaccine-run-visible-in-advance/2026-09-22",
           "sentiment": -0.66
-        },
-        {
-          "title": "Should You Buy Moderna Stock? Why Many Wall Street Analysts Say \"No.\"",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/should-you-buy-moderna-stock-why-many-wall-street/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -3769,9 +3769,15 @@
       "dividendYield": 0.78,
       "marketCap": 3697921753088,
       "score": 9.4,
-      "newsSentiment": -0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.23,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "\u201cThe New Clippy\u201d: Benioff Uses Salesforce\u2019s Biggest Product Launch in Years to Challenge Microsoft",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/clippy-benioff-uses-salesforce-biggest-044653952.html",
+          "sentiment": 0.08
+        },
         {
           "title": "MSFT Ticks Up Overnight: Analyst Upgrades To \u2018Buy\u2019 And Sees 15% Upside On AI Growth, Cost Discipline",
           "publisher": "Stocktwits",
@@ -3783,12 +3789,6 @@
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/marc-benioff-says-microsoft-shut-salesforce-out-of-open-ai-so-he-bet-on-anthropic-instead-and-it-could-pay-tens-of-billions/cZMEh53RB7Z",
           "sentiment": -0.1
-        },
-        {
-          "title": "Microsoft is killing an Office app you've used for decades",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/technology/microsoft-kills-35-year-old-office-app-publisher-oct-1",
-          "sentiment": -0.66
         }
       ]
     },
@@ -4273,9 +4273,15 @@
       "dividendYield": 0.74,
       "marketCap": 191989432320,
       "score": 9.4,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.01,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "\u201cThe New Clippy\u201d: Benioff Uses Salesforce\u2019s Biggest Product Launch in Years to Challenge Microsoft",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/clippy-benioff-uses-salesforce-biggest-044653952.html",
+          "sentiment": 0.08
+        },
         {
           "title": "Marc Benioff Says Microsoft Shut Salesforce Out Of OpenAI \u2014 So He Bet On Anthropic Instead, And It Could Pay 'Tens Of Billions'",
           "publisher": "Stocktwits",
@@ -4287,12 +4293,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/616138/how-far-could-crm-stock-swing-in-a-year/2026-09-22",
           "sentiment": 0.0
-        },
-        {
-          "title": "Salesforce vs. ServiceNow: Which Technology Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/22/salesforce-vs-servicenow-which-technology-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -4517,7 +4517,7 @@
       "volRatio": 0.74,
       "peRatio": 73.9,
       "dividendYield": 0.7,
-      "marketCap": 137555116032,
+      "marketCap": 137275564032,
       "score": 4.9,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
@@ -4959,11 +4959,17 @@
       "volRatio": 0.62,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 2039485038592,
+      "marketCap": 2038310240256,
       "score": 8.2,
       "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX's First 100 Days Are in the Books. Here's the Report Card.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/23/spacex-s-first-100-days-are-in-the-books-here-s-the-report-card/",
+          "sentiment": 0.0
+        },
         {
           "title": "Is SpaceX Actually Worth $10 Trillion?",
           "publisher": "Motley Fool",
@@ -4974,12 +4980,6 @@
           "title": "Rocket Lab CEO Puts Iridium Deal Alongside SpaceX And Amazon\u2019s Spectrum Bets: \u2018You Can\u2019t Just Magic Up Spectrum\u2019",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/rocket-lab-ceo-iridium-deal-spacex-amazon-spectrum-bets/cZMEhNCRB7n",
-          "sentiment": 0.0
-        },
-        {
-          "title": "What $3,000 Invested in SpaceX Stock Could Grow to by September 2027",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/what-3000-invested-in-spacex-stock-could-grow-to-b/",
           "sentiment": 0.0
         }
       ]
@@ -5119,7 +5119,7 @@
       "volRatio": 0.76,
       "peRatio": null,
       "dividendYield": null,
-      "marketCap": 64190455808,
+      "marketCap": 59950440448,
       "score": 9.4,
       "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
@@ -5457,7 +5457,7 @@
       "volRatio": 1.01,
       "peRatio": 39.2,
       "dividendYield": 0.59,
-      "marketCap": 1043462291456,
+      "marketCap": 1043012583424,
       "score": 4.9,
       "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
@@ -5506,6 +5506,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Moderna (MRNA) Tied To AI Drug Push As Bob Langer Takes New Advisory Role",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/healthcare/articles/moderna-mrna-tied-ai-drug-043342399.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Moderna (MRNA) Stock Looks Very Expensive As Shares Surge Over 1 Year",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/moderna-mrna-stock-looks-very-021254435.html",
@@ -5516,12 +5522,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/616141/was-moderna-stocks-cancer-vaccine-run-visible-in-advance/2026-09-22",
           "sentiment": -0.66
-        },
-        {
-          "title": "Should You Buy Moderna Stock? Why Many Wall Street Analysts Say \"No.\"",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/22/should-you-buy-moderna-stock-why-many-wall-street/",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5715,7 +5715,7 @@
       "volRatio": 0.75,
       "peRatio": 39.9,
       "dividendYield": 0.92,
-      "marketCap": 876343656448,
+      "marketCap": 873664151552,
       "score": 3.0,
       "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",

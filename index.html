@@ -1148,7 +1148,7 @@
           <th>Symbol / Strategy</th>
           <th>Side</th>
           <th>Exp / DTE</th>
-          <th>Prob. of Touch</th>
+          <th>Prob.</th>
           <th>Return</th>
           <th>Ann. Return</th>
           <th>IV Rank</th>
@@ -1425,7 +1425,7 @@
           </td>
           <td>${pill}</td>
           <td class="num">${t.exp} <span style="color:var(--text-faint);">· ${t.dte}d</span></td>
-          <td class="num">${t.pot != null ? t.pot + '%' : '—'}</td>
+          <td class="num">${t.pot != null ? t.pot + '%' : '—'}${t.potIsProfitProb ? '<span class="stale-mark" style="color:var(--text-faint);" title="Probability of Profit, not probability of touching a strike — this trade\'s only meaningful risk number isn\'t touch-based (see the modal for why).">POP</span>' : ''}</td>
           <td class="num ${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}</td>
           <td class="num ${t.ap != null ? 'val-pos' : ''}">${fmtPct(t.ap)}</td>
           <td class="num">${t.ivr}${limitedHistoryMark(t.ivRankLimited)}</td>

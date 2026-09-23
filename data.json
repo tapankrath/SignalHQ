@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T23:04:06.819075+00:00",
+  "generated_at": "2026-09-23T23:18:28.915671+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -21,7 +21,7 @@
       "ivRankLimited": false,
       "dailyReturn": 6.67,
       "roc": 30.7,
-      "score": 7.4,
+      "score": 6.9,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -85,7 +85,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": -3.0,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "MSFT",
@@ -106,7 +111,7 @@
       "ivRankLimited": false,
       "dailyReturn": 10.78,
       "roc": 19.4,
-      "score": 7.2,
+      "score": 7.3,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -164,7 +169,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -29.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "NVDA",
@@ -185,7 +195,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 4.1,
+      "score": 4.9,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -225,7 +235,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -28.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "META",
@@ -246,7 +261,7 @@
       "ivRankLimited": false,
       "dailyReturn": 40.07,
       "roc": 2.23,
-      "score": 5.3,
+      "score": 4.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -298,7 +313,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 42.5,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4,
+      "sector": "Communication Services"
     },
     {
       "sym": "GOOG",
@@ -391,7 +411,12 @@
           "qty": 1,
           "exp": "back"
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -14.5,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4,
+      "sector": "Communication Services"
     },
     {
       "sym": "JPM",
@@ -412,7 +437,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 168.59,
-      "score": 6.9,
+      "score": 5.9,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -470,7 +495,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -35.8,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4,
+      "sector": "Financial Services"
     },
     {
       "sym": "ORCL",
@@ -491,7 +521,7 @@
       "ivRankLimited": false,
       "dailyReturn": 1.65,
       "roc": 12.2,
-      "score": 7.5,
+      "score": 6.3,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -549,7 +579,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -43.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "AMZN",
@@ -570,7 +605,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 5.5,
+      "score": 5.4,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -622,7 +657,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": -2.9,
+      "sectorMedianPE": 20.7,
+      "sectorPeerCount": 3,
+      "sector": "Consumer Cyclical"
     },
     {
       "sym": "SOXL",
@@ -643,7 +683,7 @@
       "ivRankLimited": false,
       "dailyReturn": 11.65,
       "roc": 26.8,
-      "score": 7.5,
+      "score": 7.0,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -734,7 +774,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 181.69,
-      "score": 7.1,
+      "score": 6.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -865,7 +905,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 14.0,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4,
+      "sector": "Communication Services"
     },
     {
       "sym": "NOW",
@@ -886,7 +931,7 @@
       "ivRankLimited": false,
       "dailyReturn": 1.35,
       "roc": 25.0,
-      "score": 7.9,
+      "score": 6.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -944,7 +989,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 122.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "ADBE",
@@ -981,7 +1031,7 @@
       "breakevenMovePct": null,
       "maxLoss": 52.5,
       "pcOI": 1.03,
-      "pcVol": 0.79,
+      "pcVol": 0.78,
       "debitStrategy": true,
       "potIsProfitProb": false,
       "newsSentiment": 0.24,
@@ -1037,7 +1087,12 @@
           "qty": 1,
           "exp": "back"
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -66.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "CRM",
@@ -1058,7 +1113,7 @@
       "ivRankLimited": false,
       "dailyReturn": 12.83,
       "roc": 1.75,
-      "score": 5.8,
+      "score": 6.3,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -1077,9 +1132,15 @@
       "pcVol": 0.59,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.46,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Salesforce vs. UiPath: Which Technology Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/23/salesforce-vs-uipath-which-technology-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
         {
           "title": "Wells Fargo Raises Salesforce\u2019s Price Target. Can $1.5 Billion Agentforce ARR Drive Growth?",
           "publisher": "Insider Monkey",
@@ -1091,12 +1152,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/23/enterprise-software-stocks-rally-as-tech-tape-slides-atlassian-corporation-monday-com-and-salesforce-climb-3-servicenow-nudges-higher/",
           "sentiment": 0.18
-        },
-        {
-          "title": "The Street is Finally Going Bullish on Salesforce and I Keep Buying",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/23/the-street-is-finally-going-bullish-on-salesforce-and-i-keep-buying/",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Cheap",
@@ -1110,7 +1165,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -44.7,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "CRWD",
@@ -1131,7 +1191,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 214.8,
-      "score": 8.5,
+      "score": 7.2,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -1189,7 +1249,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 21884.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "PLTR",
@@ -1266,7 +1331,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 311.8,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "TSM",
@@ -1287,7 +1357,7 @@
       "ivRankLimited": false,
       "dailyReturn": 9.46,
       "roc": 35.0,
-      "score": 6.7,
+      "score": 6.3,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -1351,7 +1421,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -16.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "DELL",
@@ -1372,7 +1447,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 3.6,
+      "score": 4.5,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -1424,7 +1499,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -19.6,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "PANW",
@@ -1445,7 +1525,7 @@
       "ivRankLimited": false,
       "dailyReturn": 24.39,
       "roc": 2.58,
-      "score": 6.3,
+      "score": 5.5,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -1497,7 +1577,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 2310.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "GLW",
@@ -1518,7 +1603,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 194.12,
-      "score": 7.6,
+      "score": 6.4,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -1576,7 +1661,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 78.9,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "SPY",
@@ -1671,7 +1761,7 @@
       "ivRankLimited": false,
       "dailyReturn": 4.31,
       "roc": 17.25,
-      "score": 7.2,
+      "score": 6.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -1731,7 +1821,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 6.6,
+      "score": 6.3,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -1783,7 +1873,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 20.7,
+      "sectorPeerCount": 3,
+      "sector": "Consumer Cyclical"
     },
     {
       "sym": "COST",
@@ -1804,7 +1899,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 145.28,
-      "score": 6.7,
+      "score": 6.2,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -1883,7 +1978,7 @@
       "ivRankLimited": false,
       "dailyReturn": 4.03,
       "roc": 32.25,
-      "score": 7.7,
+      "score": 7.1,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -1953,7 +2048,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -19.6,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "MRVL",
@@ -1978,7 +2078,7 @@
       "ivRankLimited": false,
       "dailyReturn": 18.25,
       "roc": 2.1,
-      "score": 3.3,
+      "score": 3.1,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -2030,7 +2130,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 113.6,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "MU",
@@ -2123,7 +2228,12 @@
           "qty": 1,
           "exp": "back"
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -39.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "SNDK",
@@ -2148,7 +2258,7 @@
       "ivRankLimited": false,
       "dailyReturn": 124.32,
       "roc": 2.53,
-      "score": 2.3,
+      "score": 3.4,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -2200,7 +2310,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -38.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "AMD",
@@ -2293,7 +2408,12 @@
           "qty": 1,
           "exp": "back"
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 286.9,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "TSLA",
@@ -2318,7 +2438,7 @@
       "ivRankLimited": false,
       "dailyReturn": 16.15,
       "roc": 1.57,
-      "score": 2.5,
+      "score": 2.4,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -2341,6 +2461,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "Tesla makes $122M on Bitcoin without buying a single coin",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/tesla-gains-122m-on-bitcoin-without-buying-a-single-coin",
+          "sentiment": 0.0
+        },
+        {
           "title": "Tesla wins lead role in 2,500-truck electric Class 8 order",
           "publisher": "FreightWaves",
           "link": "https://finance.yahoo.com/energy/articles/tesla-wins-lead-role-2-200751940.html",
@@ -2350,12 +2476,6 @@
           "title": "3 Things You Need to Know Before Buying Tesla",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/23/3-things-you-need-to-know-before-buying-tesla/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Trump's stock accounts quietly loaded up on Strategy and Tesla, filing shows",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/trumps-stock-accounts-quietly-loaded-up-on-strategy-and-tesla-filing-shows",
           "sentiment": 0.0
         }
       ],
@@ -2370,7 +2490,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 1584.5,
+      "sectorMedianPE": 20.7,
+      "sectorPeerCount": 3,
+      "sector": "Consumer Cyclical"
     },
     {
       "sym": "SPCX",
@@ -2391,7 +2516,7 @@
       "ivRankLimited": true,
       "dailyReturn": 7.09,
       "roc": 29.17,
-      "score": 6.7,
+      "score": 6.3,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -2486,7 +2611,7 @@
       "ivRankLimited": false,
       "dailyReturn": 9.05,
       "roc": 2.73,
-      "score": 3.3,
+      "score": 3.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -2563,7 +2688,7 @@
       "ivRankLimited": false,
       "dailyReturn": 11.35,
       "roc": 1.24,
-      "score": 1.9,
+      "score": 3.1,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -2615,7 +2740,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -14.0,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4,
+      "sector": "Communication Services"
     },
     {
       "sym": "AVGO",
@@ -2636,7 +2766,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 6.7,
+      "score": 6.4,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -2676,7 +2806,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 13.8,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "SKHY",
@@ -2794,7 +2929,7 @@
       "ivRankLimited": false,
       "dailyReturn": 19.58,
       "roc": 2.59,
-      "score": 2.8,
+      "score": 3.2,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -2871,7 +3006,7 @@
       "ivRankLimited": false,
       "dailyReturn": 59.19,
       "roc": 2.34,
-      "score": 2.3,
+      "score": 2.8,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -2944,7 +3079,7 @@
       "ivRankLimited": false,
       "dailyReturn": 6.22,
       "roc": 23.0,
-      "score": 6.7,
+      "score": 5.6,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -3002,7 +3137,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 934.6,
+      "sectorMedianPE": 35.0,
+      "sectorPeerCount": 3,
+      "sector": "Industrials"
     },
     {
       "sym": "STX",
@@ -3023,7 +3163,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 217.46,
-      "score": 6.7,
+      "score": 5.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -3081,7 +3221,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 67.1,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "AMAT",
@@ -3154,7 +3299,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 3.0,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "MSTR",
@@ -3175,7 +3325,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 217.78,
-      "score": 8.3,
+      "score": 7.7,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -3320,7 +3470,12 @@
           "qty": 1,
           "exp": "back"
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -55.8,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "LRCX",
@@ -3341,7 +3496,7 @@
       "ivRankLimited": false,
       "dailyReturn": 8.28,
       "roc": 14.9,
-      "score": 7.7,
+      "score": 7.1,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -3399,7 +3554,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 29.9,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "LLY",
@@ -3420,7 +3580,7 @@
       "ivRankLimited": false,
       "dailyReturn": 21.41,
       "roc": 12.31,
-      "score": 6.5,
+      "score": 6.1,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -3499,7 +3659,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 225.04,
-      "score": 7.8,
+      "score": 7.2,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -3578,7 +3738,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 5.4,
+      "score": 6.0,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -3630,7 +3790,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 50.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "HOOD",
@@ -3651,7 +3816,7 @@
       "ivRankLimited": false,
       "dailyReturn": 5.23,
       "roc": 15.7,
-      "score": 7.8,
+      "score": 7.2,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -3721,7 +3886,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 140.3,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4,
+      "sector": "Financial Services"
     },
     {
       "sym": "QCOM",
@@ -3761,8 +3931,8 @@
       "pcVol": 0.45,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "How Qualcomm is transforming the car into a 'digital computer on wheels': CEO explains",
@@ -3771,16 +3941,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Qualcomm Unveils Personal AI Push With Snapdragon-Powered Glasses, Hearables and PCs",
+          "publisher": "MarketBeat",
+          "link": "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/?utm_source=yahoofinance&utm_medium=yahoofinance",
+          "sentiment": 0.0
+        },
+        {
           "title": "Qualcomm Takes AI To The Edge With New Mobile Chips",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/qualcomm-stock-qcom-edge-ai-snapdragon-summit-2026/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "QUALCOMM (QCOM) Draws Fresh AI Focus As Valuation Looks Close To Fair Value",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-draws-fresh-ai-181553059.html",
-          "sentiment": 0.72
         }
       ],
       "volRegime": "Fair",
@@ -3800,7 +3970,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -43.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "V",
@@ -3893,7 +4068,12 @@
           "qty": 1,
           "exp": "back"
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 35.8,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4,
+      "sector": "Financial Services"
     },
     {
       "sym": "WMT",
@@ -3914,7 +4094,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 209.3,
-      "score": 7.0,
+      "score": 6.5,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -3933,9 +4113,15 @@
       "pcVol": 0.25,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.08,
+      "newsSentiment": 0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Walmart expands into key market",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/walmart-expansion-7-stores-in-canada",
+          "sentiment": 0.1
+        },
         {
           "title": "Walmart has big plans for holiday bargain hunters",
           "publisher": "TheStreet",
@@ -3987,7 +4173,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 6.6,
+      "score": 5.7,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -4039,7 +4225,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 35.0,
+      "sectorPeerCount": 3,
+      "sector": "Industrials"
     },
     {
       "sym": "GEV",
@@ -4060,7 +4251,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 124.72,
-      "score": 7.4,
+      "score": 6.3,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -4118,7 +4309,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -22.0,
+      "sectorMedianPE": 35.0,
+      "sectorPeerCount": 3,
+      "sector": "Industrials"
     },
     {
       "sym": "XOM",
@@ -4139,7 +4335,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 4.7,
+      "score": 4.8,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -4216,7 +4412,7 @@
       "ivRankLimited": false,
       "dailyReturn": 6.11,
       "roc": 0.45,
-      "score": 1,
+      "score": 2.2,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -4268,7 +4464,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -43.8,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4,
+      "sector": "Financial Services"
     },
     {
       "sym": "KLAC",
@@ -4347,7 +4548,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 29.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "TXN",
@@ -4372,7 +4578,7 @@
       "ivRankLimited": false,
       "dailyReturn": 10.88,
       "roc": 1.2,
-      "score": 1.7,
+      "score": 2.3,
       "buy": true,
       "sell": false,
       "ema": false,
@@ -4424,7 +4630,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 4.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "IBM",
@@ -4445,7 +4656,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 143.9,
-      "score": 7.5,
+      "score": 6.3,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -4503,7 +4714,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -48.0,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "JNJ",
@@ -4524,7 +4740,7 @@
       "ivRankLimited": false,
       "dailyReturn": 5.47,
       "roc": 17.5,
-      "score": 7.3,
+      "score": 6.8,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -4603,9 +4819,12 @@
       "chg1y": 34.1,
       "volRatio": 0.74,
       "peRatio": 38.6,
+      "sector": "Technology",
+      "industry": "Consumer Electronics",
+      "pegRatio": 2.73,
       "dividendYield": 0.32,
       "marketCap": 4918530277376,
-      "score": 9.4,
+      "score": 8.5,
       "newsSentiment": 0.28,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -4621,7 +4840,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/apple-slips-20-000-macs-172022585.html",
           "sentiment": 0.08
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": -3.0,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MSFT",
@@ -4640,9 +4863,12 @@
       "chg1y": -1.1,
       "volRatio": 0.89,
       "peRatio": 28.1,
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "pegRatio": 1.62,
       "dividendYield": 0.79,
       "marketCap": 3717153947648,
-      "score": 9.4,
+      "score": 9.1,
       "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -4664,7 +4890,11 @@
           "link": "https://www.investors.com/news/technology/microsoft-stock-gets-another-upgrade-price-target-hike/?src=A00220&yptr=yahoo",
           "sentiment": 0.54
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -29.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "NVDA",
@@ -4683,9 +4913,12 @@
       "chg1y": 27.7,
       "volRatio": 0.71,
       "peRatio": 28.5,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.49,
       "dividendYield": 0.44,
       "marketCap": 5445389910016,
-      "score": 9.4,
+      "score": 9.1,
       "newsSentiment": -0.51,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
@@ -4695,7 +4928,11 @@
           "link": "https://finance.yahoo.com/video/ai-panic-tech-concentration-nvidia-100000476.html",
           "sentiment": -0.51
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -28.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "META",
@@ -4713,10 +4950,13 @@
       "chg6m": 25.7,
       "chg1y": -1.8,
       "volRatio": 1.53,
-      "peRatio": 28.1,
+      "peRatio": 28.0,
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information",
+      "pegRatio": 0.97,
       "dividendYield": 0.29,
       "marketCap": 1895599308800,
-      "score": 8.5,
+      "score": 7.3,
       "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -4738,7 +4978,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-gains-market-214504431.html",
           "sentiment": 0.34
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 42.5,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "GOOG",
@@ -4757,9 +5001,12 @@
       "chg1y": 35.5,
       "volRatio": 1.39,
       "peRatio": 16.8,
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information",
+      "pegRatio": 1.24,
       "dividendYield": 0.25,
       "marketCap": 4096783810560,
-      "score": 7.8,
+      "score": 7.9,
       "newsSentiment": 0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -4781,7 +5028,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/why-alphabet-googl-stock-down-212205277.html",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -14.5,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "JPM",
@@ -4800,9 +5051,12 @@
       "chg1y": 9.8,
       "volRatio": 1.05,
       "peRatio": 14.5,
+      "sector": "Financial Services",
+      "industry": "Banks - Diversified",
+      "pegRatio": 1.58,
       "dividendYield": 1.94,
       "marketCap": 897217593344,
-      "score": 5.1,
+      "score": 5.8,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -4824,7 +5078,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/4-j-p-morgan-mutual-121600371.html",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -35.8,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "ORCL",
@@ -4843,9 +5101,12 @@
       "chg1y": -52.6,
       "volRatio": 0.78,
       "peRatio": 22.6,
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "pegRatio": 0.83,
       "dividendYield": 1.34,
       "marketCap": 437111291904,
-      "score": 3.6,
+      "score": 4.5,
       "newsSentiment": 0.12,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -4867,7 +5128,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/oracle-drops-ai-debt-carries-183307030.html",
           "sentiment": -0.36
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -43.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "AMZN",
@@ -4886,9 +5151,12 @@
       "chg1y": 13.2,
       "volRatio": 1.29,
       "peRatio": 20.1,
+      "sector": "Consumer Cyclical",
+      "industry": "Internet Retail",
+      "pegRatio": 1.51,
       "dividendYield": null,
       "marketCap": 2688704315392,
-      "score": 4.0,
+      "score": 4.4,
       "newsSentiment": -0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -4910,7 +5178,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/amazon-doesn-t-know-eliminate-212133915.html",
           "sentiment": 0.18
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": -2.9,
+      "sectorMedianPE": 20.7,
+      "sectorPeerCount": 3
     },
     {
       "sym": "SOXL",
@@ -4929,9 +5201,12 @@
       "chg1y": null,
       "volRatio": 1.06,
       "peRatio": 48.7,
+      "sector": null,
+      "industry": null,
+      "pegRatio": null,
       "dividendYield": 0.01,
       "marketCap": null,
-      "score": 8.1,
+      "score": 7.5,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -4972,9 +5247,12 @@
       "chg1y": 56.0,
       "volRatio": 1.08,
       "peRatio": 32.0,
+      "sector": null,
+      "industry": null,
+      "pegRatio": null,
       "dividendYield": 0.52,
       "marketCap": null,
-      "score": 9.4,
+      "score": 8.5,
       "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5015,9 +5293,12 @@
       "chg1y": -40.7,
       "volRatio": 1.05,
       "peRatio": 22.4,
+      "sector": "Communication Services",
+      "industry": "Entertainment",
+      "pegRatio": 1.23,
       "dividendYield": null,
       "marketCap": 297138716672,
-      "score": 1.5,
+      "score": 2.2,
       "newsSentiment": -0.25,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
@@ -5039,7 +5320,11 @@
           "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-dow-nasdaq-drop-as-yields-spike-amid-calls-for-more-rate-hikes-amzn-googl-nflx-spcx-rklb-in-focus/cZM4IxjRBB9",
           "sentiment": -0.27
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 14.0,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "NOW",
@@ -5058,9 +5343,12 @@
       "chg1y": -24.6,
       "volRatio": 0.68,
       "peRatio": 88.5,
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "pegRatio": 0.99,
       "dividendYield": null,
       "marketCap": 145547100160,
-      "score": 9.4,
+      "score": 7.9,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5082,7 +5370,11 @@
           "link": "https://www.fool.com/coverage/better-buy/2026/09/22/salesforce-vs-servicenow-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 122.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "ADBE",
@@ -5101,9 +5393,12 @@
       "chg1y": -31.9,
       "volRatio": 0.74,
       "peRatio": 13.4,
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "pegRatio": 0.58,
       "dividendYield": null,
       "marketCap": 95674277888,
-      "score": 4.2,
+      "score": 4.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5125,7 +5420,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/adbe-expands-ai-customer-experience-161400513.html",
           "sentiment": 0.1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -66.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "CRM",
@@ -5144,12 +5443,21 @@
       "chg1y": -2.6,
       "volRatio": 0.75,
       "peRatio": 22.0,
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "pegRatio": 0.78,
       "dividendYield": 0.75,
       "marketCap": 195528343552,
-      "score": 9.4,
-      "newsSentiment": 0.49,
+      "score": 9.1,
+      "newsSentiment": 0.46,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Salesforce vs. UiPath: Which Technology Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/23/salesforce-vs-uipath-which-technology-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.44
+        },
         {
           "title": "Wells Fargo Raises Salesforce\u2019s Price Target. Can $1.5 Billion Agentforce ARR Drive Growth?",
           "publisher": "Insider Monkey",
@@ -5161,14 +5469,12 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/23/enterprise-software-stocks-rally-as-tech-tape-slides-atlassian-corporation-monday-com-and-salesforce-climb-3-servicenow-nudges-higher/",
           "sentiment": 0.18
-        },
-        {
-          "title": "The Street is Finally Going Bullish on Salesforce and I Keep Buying",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/23/the-street-is-finally-going-bullish-on-salesforce-and-i-keep-buying/",
-          "sentiment": 0.54
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -44.7,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "CRWD",
@@ -5187,9 +5493,12 @@
       "chg1y": 120.4,
       "volRatio": 1.17,
       "peRatio": 8749.7,
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "pegRatio": 8.0,
       "dividendYield": null,
       "marketCap": 268772655104,
-      "score": 8.5,
+      "score": 7.3,
       "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5211,7 +5520,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-buy-wall-street-133003564.html",
           "sentiment": 0.32
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 21884.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "PLTR",
@@ -5230,9 +5543,12 @@
       "chg1y": 6.8,
       "volRatio": 1.21,
       "peRatio": 163.9,
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "pegRatio": 1.78,
       "dividendYield": null,
       "marketCap": 460882575360,
-      "score": 8.5,
+      "score": 7.3,
       "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5254,7 +5570,11 @@
           "link": "https://www.investors.com/research/ibd-stock-of-the-day/palantir-stock-buy-signal-earnings-ai-momentum/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 311.8,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "TSM",
@@ -5273,9 +5593,12 @@
       "chg1y": 60.8,
       "volRatio": 1.04,
       "peRatio": 33.3,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.86,
       "dividendYield": 0.9,
       "marketCap": 2316123766784,
-      "score": 9.4,
+      "score": 9.1,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5291,7 +5614,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-bulls-look-optimistic-133004211.html",
           "sentiment": 0.32
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -16.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "DELL",
@@ -5310,9 +5637,12 @@
       "chg1y": 321.6,
       "volRatio": 0.91,
       "peRatio": 32.0,
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "pegRatio": 0.64,
       "dividendYield": 0.46,
       "marketCap": 349588914176,
-      "score": 9.4,
+      "score": 9.1,
       "newsSentiment": 0.48,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5334,7 +5664,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/dell-technologies-dell-reasonable-cash-181423244.html",
           "sentiment": 0.54
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -19.6,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "PANW",
@@ -5353,9 +5687,12 @@
       "chg1y": 96.0,
       "volRatio": 0.96,
       "peRatio": 959.3,
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "pegRatio": 1.91,
       "dividendYield": null,
       "marketCap": 321719402496,
-      "score": 9.4,
+      "score": 7.9,
       "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5377,7 +5714,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/palo-alto-jumps-3-5-181732515.html",
           "sentiment": 0.49
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 2310.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "GLW",
@@ -5396,9 +5737,12 @@
       "chg1y": 95.0,
       "volRatio": 0.61,
       "peRatio": 71.2,
+      "sector": "Technology",
+      "industry": "Electronic Components",
+      "pegRatio": 0.95,
       "dividendYield": 0.7,
-      "marketCap": 133067268096,
-      "score": 7.4,
+      "marketCap": 132796850176,
+      "score": 6.3,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5420,7 +5764,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/corning-glw-show-high-density-181452808.html",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 78.9,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "SPY",
@@ -5439,9 +5787,12 @@
       "chg1y": 17.4,
       "volRatio": 1.35,
       "peRatio": 24.8,
+      "sector": null,
+      "industry": null,
+      "pegRatio": null,
       "dividendYield": 0.98,
       "marketCap": null,
-      "score": 9.3,
+      "score": 8.4,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": []
@@ -5463,9 +5814,12 @@
       "chg1y": 24.9,
       "volRatio": 1.01,
       "peRatio": 30.2,
+      "sector": null,
+      "industry": null,
+      "pegRatio": null,
       "dividendYield": 0.42,
       "marketCap": null,
-      "score": 9.4,
+      "score": 8.5,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": []
@@ -5487,9 +5841,12 @@
       "chg1y": -25.5,
       "volRatio": 1.15,
       "peRatio": 20.7,
+      "sector": "Consumer Cyclical",
+      "industry": "Home Improvement Retail",
+      "pegRatio": 2.58,
       "dividendYield": 3.05,
       "marketCap": 296034467840,
-      "score": 2.2,
+      "score": 2.8,
       "newsSentiment": 0.15,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5511,7 +5868,11 @@
           "link": "https://www.thestreet.com/retail/walmart-home-depot-lowes-tjx-williams-sonoma-tariff-refunds-consumer-prices",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 20.7,
+      "sectorPeerCount": 3
     },
     {
       "sym": "COST",
@@ -5530,9 +5891,12 @@
       "chg1y": -3.7,
       "volRatio": 1.16,
       "peRatio": 45.5,
+      "sector": "Consumer Defensive",
+      "industry": "Discount Stores",
+      "pegRatio": 4.41,
       "dividendYield": 0.65,
       "marketCap": 401215291392,
-      "score": 2.4,
+      "score": 2.9,
       "newsSentiment": 0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5573,9 +5937,12 @@
       "chg1y": 61.4,
       "volRatio": 0.91,
       "peRatio": 32.0,
+      "sector": "Technology",
+      "industry": "Communication Equipment",
+      "pegRatio": 0.98,
       "dividendYield": 1.58,
       "marketCap": 419609509888,
-      "score": 4.0,
+      "score": 5.0,
       "newsSentiment": -0.15,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
@@ -5597,7 +5964,11 @@
           "link": "https://qz.com/cisco-stock-piper-sandler-price-target-cut-092326",
           "sentiment": -0.46
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -19.6,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MRVL",
@@ -5615,10 +5986,13 @@
       "chg6m": 182.7,
       "chg1y": 226.5,
       "volRatio": 0.6,
-      "peRatio": 86.4,
+      "peRatio": 85.0,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 1.39,
       "dividendYield": 0.09,
       "marketCap": 234472030208,
-      "score": 9.4,
+      "score": 7.9,
       "newsSentiment": 0.24,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5640,7 +6014,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/marvells-ai-infrastructure-bet-gets-170826901.html",
           "sentiment": 0.32
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 113.6,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MU",
@@ -5659,9 +6037,12 @@
       "chg1y": 563.9,
       "volRatio": 0.8,
       "peRatio": 24.2,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.16,
       "dividendYield": 0.05,
       "marketCap": 1210573914112,
-      "score": 9.4,
+      "score": 9.1,
       "newsSentiment": 0.21,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5683,7 +6064,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-vs-western-digital-194115071.html",
           "sentiment": 0.44
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -39.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "SNDK",
@@ -5702,9 +6087,12 @@
       "chg1y": 1719.7,
       "volRatio": 0.63,
       "peRatio": 24.6,
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "pegRatio": null,
       "dividendYield": null,
       "marketCap": 265980362752,
-      "score": 9.4,
+      "score": 9.1,
       "newsSentiment": -0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5726,7 +6114,11 @@
           "link": "https://247wallst.com/investing/2026/09/23/a-2400-price-target-on-sandisk-just-lit-a-fire-under-every-memory-stock/",
           "sentiment": -0.34
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -38.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "AMD",
@@ -5744,10 +6136,13 @@
       "chg6m": 199.3,
       "chg1y": 282.0,
       "volRatio": 0.8,
-      "peRatio": 156.4,
+      "peRatio": 154.0,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.64,
       "dividendYield": null,
       "marketCap": 1003335450624,
-      "score": 8.5,
+      "score": 7.3,
       "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5769,7 +6164,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/amd-falls-2-ai-carries-172827401.html",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 286.9,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "TSLA",
@@ -5787,13 +6186,22 @@
       "chg6m": -0.8,
       "chg1y": -14.2,
       "volRatio": 0.87,
-      "peRatio": 345.6,
+      "peRatio": 348.7,
+      "sector": "Consumer Cyclical",
+      "industry": "Auto Manufacturers",
+      "pegRatio": 4.53,
       "dividendYield": null,
       "marketCap": 1501301964800,
-      "score": 8.1,
+      "score": 6.8,
       "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Tesla makes $122M on Bitcoin without buying a single coin",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/crypto/markets/tesla-gains-122m-on-bitcoin-without-buying-a-single-coin",
+          "sentiment": 0.0
+        },
         {
           "title": "Tesla wins lead role in 2,500-truck electric Class 8 order",
           "publisher": "FreightWaves",
@@ -5805,14 +6213,12 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/23/3-things-you-need-to-know-before-buying-tesla/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Trump's stock accounts quietly loaded up on Strategy and Tesla, filing shows",
-          "publisher": "TheStreet",
-          "link": "https://www.thestreet.com/crypto/markets/trumps-stock-accounts-quietly-loaded-up-on-strategy-and-tesla-filing-shows",
-          "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 1584.5,
+      "sectorMedianPE": 20.7,
+      "sectorPeerCount": 3
     },
     {
       "sym": "SPCX",
@@ -5831,9 +6237,12 @@
       "chg1y": -7.8,
       "volRatio": 0.65,
       "peRatio": null,
+      "sector": "Industrials",
+      "industry": "Aerospace & Defense",
+      "pegRatio": null,
       "dividendYield": null,
-      "marketCap": 1955648897024,
-      "score": 8.2,
+      "marketCap": 1954522333184,
+      "score": 7.4,
       "newsSentiment": -0.12,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5874,9 +6283,12 @@
       "chg1y": 292.7,
       "volRatio": 0.82,
       "peRatio": null,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 1.36,
       "dividendYield": null,
       "marketCap": 648076460032,
-      "score": 8.5,
+      "score": 7.9,
       "newsSentiment": -0.32,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
@@ -5917,9 +6329,12 @@
       "chg1y": 37.1,
       "volRatio": 1.43,
       "peRatio": 16.9,
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information",
+      "pegRatio": 1.25,
       "dividendYield": 0.25,
       "marketCap": 4131638738944,
-      "score": 7.8,
+      "score": 7.9,
       "newsSentiment": -0.02,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5941,7 +6356,11 @@
           "link": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-dow-nasdaq-drop-as-yields-spike-amid-calls-for-more-rate-hikes-amzn-googl-nflx-spcx-rklb-in-focus/cZM4IxjRBB9",
           "sentiment": -0.27
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -14.0,
+      "sectorMedianPE": 19.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "AVGO",
@@ -5960,9 +6379,12 @@
       "chg1y": 5.4,
       "volRatio": 0.88,
       "peRatio": 45.3,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.36,
       "dividendYield": 0.71,
       "marketCap": 1694590828544,
-      "score": 3.5,
+      "score": 3.9,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5972,7 +6394,11 @@
           "link": "https://247wallst.com/investing/2026/09/23/broadcom-just-made-a-move-that-further-solidifies-my-decision-to-buy-on-repeat/",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 13.8,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "NBIS",
@@ -5991,9 +6417,12 @@
       "chg1y": 100.1,
       "volRatio": 0.55,
       "peRatio": null,
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information",
+      "pegRatio": 0.55,
       "dividendYield": null,
-      "marketCap": 61605113856,
-      "score": 9.4,
+      "marketCap": 57535868928,
+      "score": 8.5,
       "newsSentiment": 0.32,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6034,9 +6463,12 @@
       "chg1y": 513.4,
       "volRatio": 0.7,
       "peRatio": null,
+      "sector": "Technology",
+      "industry": "Communication Equipment",
+      "pegRatio": 0.63,
       "dividendYield": null,
       "marketCap": 84048896000,
-      "score": 9.2,
+      "score": 8.4,
       "newsSentiment": 0.12,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6076,10 +6508,13 @@
       "chg6m": 88.6,
       "chg1y": 297.8,
       "volRatio": 0.55,
-      "peRatio": 357.4,
+      "peRatio": 362.1,
+      "sector": "Industrials",
+      "industry": "Electrical Equipment & Parts",
+      "pegRatio": 0.62,
       "dividendYield": null,
       "marketCap": 81050984448,
-      "score": 9.4,
+      "score": 7.9,
       "newsSentiment": 0.67,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6101,7 +6536,11 @@
           "link": "https://finance.yahoo.com/energy/articles/flnc-alternative-energy-stock-worth-152500924.html",
           "sentiment": 0.46
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 934.6,
+      "sectorMedianPE": 35.0,
+      "sectorPeerCount": 3
     },
     {
       "sym": "STX",
@@ -6120,9 +6559,12 @@
       "chg1y": 316.4,
       "volRatio": 0.84,
       "peRatio": 66.5,
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "pegRatio": 0.53,
       "dividendYield": 0.32,
       "marketCap": 210079301632,
-      "score": 9.4,
+      "score": 7.9,
       "newsSentiment": -0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6144,7 +6586,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/formfactor-kulicke-soffa-monolithic-power-205346034.html",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 67.1,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "AMAT",
@@ -6163,9 +6609,12 @@
       "chg1y": 136.8,
       "volRatio": 0.64,
       "peRatio": 41.0,
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "pegRatio": 0.94,
       "dividendYield": 0.45,
       "marketCap": 376466767872,
-      "score": 4.9,
+      "score": 5.0,
       "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6187,7 +6636,11 @@
           "link": "https://www.barchart.com/story/news/4751640/nvidia-and-amd-get-the-headlines-the-real-ai-winners-might-be-applied-materials-and-lam-research",
           "sentiment": 0.48
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 3.0,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MSTR",
@@ -6206,9 +6659,12 @@
       "chg1y": -49.8,
       "volRatio": 0.76,
       "peRatio": null,
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "pegRatio": 2.85,
       "dividendYield": null,
       "marketCap": 64439083008,
-      "score": 8.4,
+      "score": 7.8,
       "newsSentiment": 0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6249,9 +6705,12 @@
       "chg1y": 332.6,
       "volRatio": 0.75,
       "peRatio": 17.6,
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "pegRatio": 0.88,
       "dividendYield": 0.13,
       "marketCap": 170784636928,
-      "score": 4.9,
+      "score": 5.6,
       "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6267,7 +6726,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/western-digital-wdc-could-41-032155491.html",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -55.8,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "LRCX",
@@ -6286,9 +6749,12 @@
       "chg1y": 140.3,
       "volRatio": 1.05,
       "peRatio": 51.7,
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "pegRatio": 1.45,
       "dividendYield": 0.42,
       "marketCap": 384505905152,
-      "score": 4.9,
+      "score": 5.0,
       "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6310,7 +6776,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/lrcx-eyes-mid-40s-operating-123700792.html",
           "sentiment": 0.32
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 29.9,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "LLY",
@@ -6329,9 +6799,12 @@
       "chg1y": 56.1,
       "volRatio": 0.9,
       "peRatio": 38.6,
+      "sector": "Healthcare",
+      "industry": "Drug Manufacturers - General",
+      "pegRatio": 1.16,
       "dividendYield": 0.59,
-      "marketCap": 1026385379328,
-      "score": 4.9,
+      "marketCap": 1025943076864,
+      "score": 5.0,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6372,9 +6845,12 @@
       "chg1y": 603.7,
       "volRatio": 0.64,
       "peRatio": null,
+      "sector": "Healthcare",
+      "industry": "Biotechnology",
+      "pegRatio": null,
       "dividendYield": null,
       "marketCap": 72704851968,
-      "score": 8.5,
+      "score": 7.9,
       "newsSentiment": -0.2,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
@@ -6415,9 +6891,12 @@
       "chg1y": 85.5,
       "volRatio": 0.99,
       "peRatio": 59.8,
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "pegRatio": 1.58,
       "dividendYield": 0.52,
       "marketCap": 670104682496,
-      "score": 4.9,
+      "score": 4.4,
       "newsSentiment": 0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6439,7 +6918,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/asml-asml-surpasses-market-returns-214505850.html",
           "sentiment": 0.23
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 50.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "HOOD",
@@ -6458,9 +6941,12 @@
       "chg1y": -3.2,
       "volRatio": 0.84,
       "peRatio": 54.3,
+      "sector": "Financial Services",
+      "industry": "Capital Markets",
+      "pegRatio": 2.17,
       "dividendYield": null,
       "marketCap": 110317395968,
-      "score": 9.4,
+      "score": 7.9,
       "newsSentiment": 0.15,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6482,7 +6968,11 @@
           "link": "https://finance.yahoo.com/markets/options/articles/robinhoods-prediction-markets-move-beyond-141700660.html",
           "sentiment": 0.03
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 140.3,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "QCOM",
@@ -6501,11 +6991,14 @@
       "chg1y": 16.0,
       "volRatio": 0.77,
       "peRatio": 22.6,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.88,
       "dividendYield": 1.86,
       "marketCap": 210664259584,
       "score": 8.5,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "How Qualcomm is transforming the car into a 'digital computer on wheels': CEO explains",
@@ -6514,18 +7007,22 @@
           "sentiment": 0.0
         },
         {
+          "title": "Qualcomm Unveils Personal AI Push With Snapdragon-Powered Glasses, Hearables and PCs",
+          "publisher": "MarketBeat",
+          "link": "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/?utm_source=yahoofinance&utm_medium=yahoofinance",
+          "sentiment": 0.0
+        },
+        {
           "title": "Qualcomm Takes AI To The Edge With New Mobile Chips",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/qualcomm-stock-qcom-edge-ai-snapdragon-summit-2026/?src=A00220&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "QUALCOMM (QCOM) Draws Fresh AI Focus As Valuation Looks Close To Fair Value",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-draws-fresh-ai-181553059.html",
-          "sentiment": 0.72
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -43.2,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "V",
@@ -6544,9 +7041,12 @@
       "chg1y": 7.6,
       "volRatio": 0.78,
       "peRatio": 30.7,
+      "sector": "Financial Services",
+      "industry": "Credit Services",
+      "pegRatio": 1.64,
       "dividendYield": 0.74,
       "marketCap": 678701432832,
-      "score": 5.3,
+      "score": 4.8,
       "newsSentiment": 0.01,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6568,7 +7068,11 @@
           "link": "https://decrypt.co/379073/americans-stablecoins-bank-protections-visa",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 35.8,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "WMT",
@@ -6587,12 +7091,21 @@
       "chg1y": 8.5,
       "volRatio": 0.77,
       "peRatio": 40.0,
+      "sector": "Consumer Defensive",
+      "industry": "Discount Stores",
+      "pegRatio": 4.2,
       "dividendYield": 0.9,
-      "marketCap": 879606431744,
-      "score": 6.2,
-      "newsSentiment": 0.08,
+      "marketCap": 876916965376,
+      "score": 5.9,
+      "newsSentiment": 0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Walmart expands into key market",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/retail/walmart-expansion-7-stores-in-canada",
+          "sentiment": 0.1
+        },
         {
           "title": "Walmart has big plans for holiday bargain hunters",
           "publisher": "TheStreet",
@@ -6624,9 +7137,12 @@
       "chg1y": 74.4,
       "volRatio": 1.1,
       "peRatio": 35.0,
+      "sector": "Industrials",
+      "industry": "Farm & Heavy Construction Machinery",
+      "pegRatio": 1.41,
       "dividendYield": 0.81,
       "marketCap": 373265203200,
-      "score": 4.7,
+      "score": 5.4,
       "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6648,7 +7164,11 @@
           "link": "https://www.fool.com/investing/2026/09/21/interest-rates-caterpillar-ge-vernova-vertiv/",
           "sentiment": 0.46
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 35.0,
+      "sectorPeerCount": 3
     },
     {
       "sym": "GEV",
@@ -6667,9 +7187,12 @@
       "chg1y": 51.7,
       "volRatio": 0.77,
       "peRatio": 27.3,
+      "sector": "Industrials",
+      "industry": "Specialty Industrial Machinery",
+      "pegRatio": 1.86,
       "dividendYield": 0.21,
       "marketCap": 253501636608,
-      "score": 4.1,
+      "score": 5.0,
       "newsSentiment": 0.05,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6691,7 +7214,11 @@
           "link": "https://investorshub.advfn.com/market-news/article/36753/ge-vernova-signs-services-deal-for-five-gas-turbines-in-egypt",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -22.0,
+      "sectorMedianPE": 35.0,
+      "sectorPeerCount": 3
     },
     {
       "sym": "XOM",
@@ -6710,9 +7237,12 @@
       "chg1y": 44.8,
       "volRatio": 0.87,
       "peRatio": 20.7,
+      "sector": "Energy",
+      "industry": "Oil & Gas Integrated",
+      "pegRatio": 1.36,
       "dividendYield": 2.6,
       "marketCap": 662963552256,
-      "score": 8.2,
+      "score": 7.5,
       "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6753,9 +7283,12 @@
       "chg1y": 2.0,
       "volRatio": 1.19,
       "peRatio": 12.7,
+      "sector": "Financial Services",
+      "industry": "Insurance - Diversified",
+      "pegRatio": 10.06,
       "dividendYield": null,
       "marketCap": 1085703782400,
-      "score": 8.5,
+      "score": 8.4,
       "newsSentiment": -0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -6777,7 +7310,11 @@
           "link": "https://www.thestreet.com/investing/stocks/berkshire-hathaway-buys-212-million-lennar-len-stock",
           "sentiment": 0.0
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -43.8,
+      "sectorMedianPE": 22.6,
+      "sectorPeerCount": 4
     },
     {
       "sym": "KLAC",
@@ -6796,9 +7333,12 @@
       "chg1y": 76.7,
       "volRatio": 0.93,
       "peRatio": 51.5,
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment & Materials",
+      "pegRatio": 1.8,
       "dividendYield": 0.49,
       "marketCap": 245447884800,
-      "score": 4.9,
+      "score": 4.4,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6820,7 +7360,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/klac-gains-ai-infrastructure-outpace-171800151.html",
           "sentiment": 0.34
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 29.4,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "TXN",
@@ -6839,9 +7383,12 @@
       "chg1y": 51.6,
       "volRatio": 0.93,
       "peRatio": 41.5,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.97,
       "dividendYield": 2.24,
       "marketCap": 248969576448,
-      "score": 8.1,
+      "score": 7.5,
       "newsSentiment": 0.54,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6863,7 +7410,11 @@
           "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-bulls-look-optimistic-133003582.html",
           "sentiment": 0.32
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 4.3,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "IBM",
@@ -6882,9 +7433,12 @@
       "chg1y": -10.7,
       "volRatio": 0.84,
       "peRatio": 20.7,
+      "sector": "Technology",
+      "industry": "Information Technology Services",
+      "pegRatio": 2.19,
       "dividendYield": 2.92,
       "marketCap": 219291205632,
-      "score": 3.3,
+      "score": 4.3,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6906,7 +7460,11 @@
           "link": "https://finance.yahoo.com/technology/ai/articles/ibm-gains-2-2-z17-182101536.html",
           "sentiment": 0.34
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -48.0,
+      "sectorMedianPE": 39.8,
+      "sectorPeerCount": 28
     },
     {
       "sym": "JNJ",
@@ -6925,9 +7483,12 @@
       "chg1y": 55.8,
       "volRatio": 1.01,
       "peRatio": 31.3,
+      "sector": "Healthcare",
+      "industry": "Drug Manufacturers - General",
+      "pegRatio": 2.82,
       "dividendYield": 1.99,
       "marketCap": 648672378880,
-      "score": 9.1,
+      "score": 8.3,
       "newsSentiment": 0.15,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [

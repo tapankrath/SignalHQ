@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T21:07:02.774111+00:00",
+  "generated_at": "2026-09-24T21:40:42.491586+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -364,9 +364,16 @@
       "pcVol": 0.22,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.4,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Alphabet Reportedly Values Its Anthropic Stake at $124 Billion. A $2 Trillion IPO Could Double It -- on Paper.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/alphabet-values-its-anthropic-stake-at-usd124-billion-a-usd2-trillion-ipo-could-double-it-on-paper/",
+          "sentiment": 0.4
+        }
+      ],
       "volRegime": "Rich",
       "ivRvRatio": 1.15,
       "realizedVol": 26.0,
@@ -527,7 +534,7 @@
       "pcVol": 0.48,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.02,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -537,16 +544,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Oracle moves to shield itself from AI buildout risks",
+          "publisher": "Axios",
+          "link": "https://www.axios.com/2026/09/24/oracle-force-majeure-blue-owl-openai#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI",
+          "sentiment": -0.27
+        },
+        {
           "title": "Oracle, Qualcomm, Meta, Everpure, BlackBerry, MGM, Nebius, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-45e41551?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Oracle's AI Bet Just Sent a Warning Signal to Credit Markets",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/oracles-ai-bet-just-sent-202854124.html",
-          "sentiment": -0.05
         }
       ],
       "volRegime": "Fair",
@@ -592,7 +599,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 5.4,
+      "score": 4.8,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -645,7 +652,7 @@
           "qty": 1
         }
       ],
-      "valuationLabel": "Fair",
+      "valuationLabel": "Cheap",
       "peVsSectorPct": -2.0,
       "sectorMedianPE": 20.4,
       "sectorPeerCount": 3,
@@ -1285,9 +1292,15 @@
       "pcVol": 0.58,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.06,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Does Palantir (PLTR) Have a Moat Strong Enough to Protect Its AI Dominance?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/does-palantir-pltr-moat-strong-211858600.html",
+          "sentiment": 0.77
+        },
         {
           "title": "Rosenblatt Has Message For Palantir Stock Investors",
           "publisher": "GuruFocus.com",
@@ -1299,12 +1312,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/palantir-slips-karp-puts-liability-191214673.html",
           "sentiment": -0.2
-        },
-        {
-          "title": "Palantir Technologies (PLTR) Ties Aviation AI Push To Fresh Short Seller Pressure",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-ties-aviation-181214201.html",
-          "sentiment": 0.03
         }
       ],
       "volRegime": "Fair",
@@ -1363,9 +1370,15 @@
       "pcVol": 0.66,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.3,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Is Taiwan Semiconductor (TSM) Stock a Better Bet than ASML Holding (ASML) as Advanced Chipmaking Accelerates?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-tsm-stock-better-210504814.html",
+          "sentiment": 0.6
+        },
         {
           "title": "AMD and Micron Get New Price Targets as Taiwan Chip Exports Hit Record $30.8B",
           "publisher": "BeInCrypto",
@@ -1377,12 +1390,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/taiwan-semiconductor-tsm-key-enabler-143557399.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Arm vs. Taiwan Semiconductor Manufacturing: Which Chip Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/23/arm-vs-taiwan-semiconductor-manufacturing-which-chip-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Fair",
@@ -1924,9 +1931,15 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.2,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Costco tops Q4 estimates: Revenue hits $95.7B on massive e-commerce surge",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-tops-q4-estimates-revenue-210534397.html",
+          "sentiment": 0.81
+        },
         {
           "title": "Costco Wholesale Misses Quarterly Revenue Estimates",
           "publisher": "Barrons.com",
@@ -1937,12 +1950,6 @@
           "title": "Costco (NASDAQ:COST) Posts Better-Than-Expected Sales In Q3 CY2026",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-nasdaq-cost-posts-better-202634108.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Costco Stock Keeps Defying Expectations. Here\u2019s My 2027 Price Prediction",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/24/costco-stock-keeps-defying-expectations-heres-my-2027-price-prediction/",
           "sentiment": 0.0
         }
       ],
@@ -2181,25 +2188,25 @@
       "pcVol": 0.65,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Micron vs. Sandisk: Which AI Memory Stock Is the Better Buy?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-ai-memory-203109541.html",
-          "sentiment": 0.44
+          "title": "Forget Betting on Micron Alone: The $26B Memory ETF Owns MU, SK Hynix, and Samsung at a September Discount",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/24/forget-betting-on-micron-alone-the-26b-memory-etf-owns-mu-sk-hynix-and-samsung-at-a-september-discount/",
+          "sentiment": -0.44
         },
         {
-          "title": "AMD and Micron Get New Price Targets as Taiwan Chip Exports Hit Record $30.8B",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/taiwan-chip-exports-amd-micron-stock-price-impact/",
-          "sentiment": 0.0
+          "title": "3 Reasons Why Micron and Sandisk Investors Can Ignore What History Says Will Happen",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/3-reasons-micron-and-sandisk-can-ignore-history/",
+          "sentiment": -0.36
         },
         {
-          "title": "How Micron Stock Could Rise Another 50%",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-stock-price-rise-50-per-cent-39518b23?siteid=yhoof2&yptr=yahoo",
+          "title": "5-star analyst resets Micron stock price target by 8%",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/mu-micron-stock-price-target-before-q4-earnings-wells-fargo",
           "sentiment": 0.0
         }
       ],
@@ -2463,26 +2470,26 @@
       "pcVol": 0.31,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.13,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.17,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Is Tesla (TSLA) Priced For Too Much Sales Growth After Recent Expansion Bets?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-priced-too-much-191120947.html",
-          "sentiment": 0.38
-        },
-        {
-          "title": "Elon Musk Has Left the Door Open to a Tesla-SpaceX Merger. Here's What Shareholders of Both Stocks Should Do.",
+          "title": "Tesla's Roadster Reveal Is Oct. 1. The Real Story Is Optimus.",
           "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/24/elon-musk-tesla-spacex-merger-stocks/",
+          "link": "https://www.fool.com/investing/2026/09/24/teslas-roadster-reveal-oct-1-real-optimus/",
           "sentiment": 0.0
         },
         {
-          "title": "UBS Has a Stark Message for Tesla Stock Ahead of Oct. 2",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/ubs-stark-message-tesla-stock-181004317.html",
-          "sentiment": 0.0
+          "title": "Dow Jones Futures: Market Rally Resilient As Yields, Oil Prices Keep Rising; Tesla Event On Deck",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-rally-resilient-yields-oil-prices-rising-tesla-semi-event/?src=A00220&yptr=yahoo",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Elon Musk Touts Grok in Tesla Vehicles: Here\u2019s What It Can Do",
+          "publisher": "Benzinga",
+          "link": "https://autos.yahoo.com/ev-and-future-tech/articles/elon-musk-touts-grok-tesla-203018465.html",
+          "sentiment": -0.03
         }
       ],
       "volRegime": "Fair",
@@ -2713,9 +2720,16 @@
       "pcVol": 0.81,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.4,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Alphabet Reportedly Values Its Anthropic Stake at $124 Billion. A $2 Trillion IPO Could Double It -- on Paper.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/alphabet-values-its-anthropic-stake-at-usd124-billion-a-usd2-trillion-ipo-could-double-it-on-paper/",
+          "sentiment": 0.4
+        }
+      ],
       "volRegime": "Rich",
       "ivRvRatio": 1.41,
       "realizedVol": 27.4,
@@ -2772,9 +2786,15 @@
       "pcVol": 0.42,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Broadcom (AVGO) Stock May Be 24% Undervalued Following Fresh AI Demand Fears",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-avgo-stock-may-24-211644898.html",
+          "sentiment": -0.25
+        },
         {
           "title": "Broadcom's Latest Prediction Makes the Stock a No-Brainer Buy Right Now",
           "publisher": "Motley Fool",
@@ -2785,12 +2805,6 @@
           "title": "Broadcom Falls 2% as $230 Billion AI Target Doubles the Delivery Test",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-falls-2-230-billion-192033958.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Where Will Broadcom Stock Be in 5 Years?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/24/where-will-broadcom-stock-be-in-5-years/",
           "sentiment": 0.0
         }
       ],
@@ -2850,9 +2864,15 @@
       "pcVol": 1.42,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": -0.04,
+      "newsSentiment": -0.07,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Forget Betting on Micron Alone: The $26B Memory ETF Owns MU, SK Hynix, and Samsung at a September Discount",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/24/forget-betting-on-micron-alone-the-26b-memory-etf-owns-mu-sk-hynix-and-samsung-at-a-september-discount/",
+          "sentiment": -0.44
+        },
         {
           "title": "SK Hynix (NasdaqGS:SKHY) Stock Still Looks Cheap As Shares Jumped 22%",
           "publisher": "Simply Wall St.",
@@ -2864,12 +2884,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/23/sk-hynix-falls-3-despite-wolfe-research-lifting-its-target-to-250-sandisk-drops-3-micron-slides-2/",
           "sentiment": -0.42
-        },
-        {
-          "title": "SKHY Stock Sees Price Target Hike From Wolfe On Memory Cash Flow Becoming \u2018Difficult To Ignore'",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/skhy-stock-price-target-hike-memory-cash-flow-becoming-difficult-to-ignore/cZM4bzFRBJy",
-          "sentiment": -0.36
         }
       ],
       "volRegime": "Fair",
@@ -3359,9 +3373,15 @@
       "pcVol": 0.78,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.02,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.36,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Is Taiwan Semiconductor (TSM) Stock a Better Bet than ASML Holding (ASML) as Advanced Chipmaking Accelerates?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-tsm-stock-better-210504814.html",
+          "sentiment": 0.6
+        },
         {
           "title": "ASML Drops 1.8% as $400 Million High-NA Tools Reach More Fabs",
           "publisher": "GuruFocus.com",
@@ -3373,12 +3393,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/22/asml-vs-intel-ai-chip-stock-better-buy-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Market Chatter: ASML Executive Warns Europe Will Fall Behind in Chip Development Due to Lack of Investment",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/technology/articles/market-chatter-asml-executive-warns-140937923.html",
-          "sentiment": -0.4
         }
       ],
       "volRegime": "Fair",
@@ -3441,12 +3455,6 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "How Qualcomm is transforming the car into a 'digital computer on wheels': CEO explains",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/qualcomm-transforming-car-digital-computer-212321363.html",
-          "sentiment": 0.0
-        },
-        {
           "title": "Chip Stocks Retreat. Qualcomm Secures Apple Licensing Deal.",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/chip-stocks-retreat-qualcomm-secures-apple-licensing-deal/?src=A00220&yptr=yahoo",
@@ -3456,6 +3464,12 @@
           "title": "Qualcomm Renews Deal With Apple. Why the Stock Is Dropping Anyway.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/qualcomm-apple-stock-iphone-7432cf78?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Oracle, Qualcomm, Meta, Everpure, BlackBerry, MGM, Nebius, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-45e41551?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -3521,9 +3535,15 @@
       "pcVol": 0.76,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Mastercard\u2019s Faster Services Growth Could Reshape its Rivalry with Visa",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mastercard-faster-services-growth-could-211243924.html",
+          "sentiment": 0.38
+        },
         {
           "title": "Visa Share Rises as Payment Networks Standardize AI-Agent Identity",
           "publisher": "GuruFocus.com",
@@ -3535,12 +3555,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-high-margin-company-141757986.html",
           "sentiment": 0.38
-        },
-        {
-          "title": "Can Visa's Klook Deal Expand Its Travel Ecosystem in Southeast Asia?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/visas-klook-deal-expand-travel-140600003.html",
-          "sentiment": 0.32
         }
       ],
       "volRegime": "Rich",
@@ -3794,9 +3808,15 @@
       "pcVol": 1.67,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Could TotalEnergies (TTE)\u2019 LNG Growth Give it an Edge Over ExxonMobil (XOM)?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/could-totalenergies-tte-lng-growth-210805612.html",
+          "sentiment": 0.38
+        },
         {
           "title": "Did ExxonMobil\u2019s (XOM) 2076 Floating\u2011Rate Notes Just Quietly Redefine Its Long\u2011Term Funding Playbook?",
           "publisher": "Simply Wall St.",
@@ -4321,9 +4341,15 @@
       "pcVol": 0.56,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "IBM's New Swift Connection Is One More Headache for XRP Investors",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/ibm-s-new-swift-connection-is-one-more-headache-for-xrp-investors/",
+          "sentiment": 0.2
+        },
         {
           "title": "Is IBM Stock's Upside Built On Growth It Is Not Guiding To?",
           "publisher": "Trefis",
@@ -4335,12 +4361,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-falls-over-2-4-174054182.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "IBM Expands Digital Asset Platform With Swift Ledger Integration",
-          "publisher": "CryptoProwl",
-          "link": "https://www.cryptoprowl.com/releases/ibm-expands-digital-asset-platform-with-swift-ledger-integration-7136",
-          "sentiment": 0.57
         }
       ],
       "volRegime": "Cheap",
@@ -4501,9 +4521,15 @@
       "pcVol": 0.8,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.21,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Top Stock Reports for Tesla, Bank of America & Coca-Cola",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-tesla-bank-195500282.html",
+          "sentiment": 0.2
+        },
         {
           "title": "Bank of America hiring 1,000 apprentices, investing $150M in workforce training",
           "publisher": "Quartz",
@@ -4515,12 +4541,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/24/bank-of-america-just-told-investors-to-sell-ups-and-the-reason-has-nothing-to-do-with-package-volume/",
           "sentiment": 0.0
-        },
-        {
-          "title": "BofA battles for talent as business banker hiring surges",
-          "publisher": "Banking Dive",
-          "link": "https://www.bankingdive.com/news/bofa-small-business-banker-talent-battle-sharon-miller/831272/",
-          "sentiment": 0.64
         }
       ],
       "volRegime": "Fair",
@@ -4730,7 +4750,7 @@
       "peRatio": 38.5,
       "sector": "Technology",
       "industry": "Consumer Electronics",
-      "pegRatio": 2.73,
+      "pegRatio": 2.71,
       "dividendYield": 0.32,
       "marketCap": 4902477103104,
       "score": 8.5,
@@ -4780,7 +4800,7 @@
       "peRatio": 27.7,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
-      "pegRatio": 1.62,
+      "pegRatio": 1.63,
       "dividendYield": 0.78,
       "marketCap": 3697401921536,
       "score": 9.1,
@@ -4868,7 +4888,7 @@
       "peRatio": 29.3,
       "sector": "Communication Services",
       "industry": "Internet Content & Information",
-      "pegRatio": 0.97,
+      "pegRatio": 0.98,
       "dividendYield": 0.28,
       "marketCap": 1980915384320,
       "score": 7.2,
@@ -4922,9 +4942,16 @@
       "dividendYield": 0.26,
       "marketCap": 4146070290432,
       "score": 7.9,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.4,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Alphabet Reportedly Values Its Anthropic Stake at $124 Billion. A $2 Trillion IPO Could Double It -- on Paper.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/alphabet-values-its-anthropic-stake-at-usd124-billion-a-usd2-trillion-ipo-could-double-it-on-paper/",
+          "sentiment": 0.4
+        }
+      ],
       "valuationLabel": "Cheap",
       "peVsSectorPct": -24.8,
       "sectorMedianPE": 22.6,
@@ -4949,7 +4976,7 @@
       "peRatio": 14.5,
       "sector": "Financial Services",
       "industry": "Banks - Diversified",
-      "pegRatio": 1.58,
+      "pegRatio": 1.57,
       "dividendYield": 1.96,
       "marketCap": 899955556352,
       "score": 5.2,
@@ -4999,11 +5026,11 @@
       "peRatio": 21.9,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
-      "pegRatio": 0.83,
+      "pegRatio": 0.81,
       "dividendYield": 1.38,
       "marketCap": 421932105728,
       "score": 3.6,
-      "newsSentiment": -0.02,
+      "newsSentiment": -0.09,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -5013,16 +5040,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Oracle moves to shield itself from AI buildout risks",
+          "publisher": "Axios",
+          "link": "https://www.axios.com/2026/09/24/oracle-force-majeure-blue-owl-openai#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI",
+          "sentiment": -0.27
+        },
+        {
           "title": "Oracle, Qualcomm, Meta, Everpure, BlackBerry, MGM, Nebius, and More Stocks That Explain Today\u2019s Market",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/stock-movers-45e41551?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
-        },
-        {
-          "title": "Oracle's AI Bet Just Sent a Warning Signal to Credit Markets",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/oracles-ai-bet-just-sent-202854124.html",
-          "sentiment": -0.05
         }
       ],
       "valuationLabel": "Cheap",
@@ -5049,10 +5076,10 @@
       "peRatio": 20.0,
       "sector": "Consumer Cyclical",
       "industry": "Internet Retail",
-      "pegRatio": 1.51,
+      "pegRatio": 1.48,
       "dividendYield": null,
       "marketCap": 2689890779136,
-      "score": 4.2,
+      "score": 4.8,
       "newsSentiment": 0.04,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
@@ -5075,7 +5102,7 @@
           "sentiment": -0.23
         }
       ],
-      "valuationLabel": "Fair",
+      "valuationLabel": "Cheap",
       "peVsSectorPct": -2.0,
       "sectorMedianPE": 20.4,
       "sectorPeerCount": 3
@@ -5191,7 +5218,7 @@
       "peRatio": 22.6,
       "sector": "Communication Services",
       "industry": "Entertainment",
-      "pegRatio": 1.23,
+      "pegRatio": 1.22,
       "dividendYield": null,
       "marketCap": 298637754368,
       "score": 2.8,
@@ -5341,7 +5368,7 @@
       "peRatio": 21.8,
       "sector": "Technology",
       "industry": "Software - Application",
-      "pegRatio": 0.78,
+      "pegRatio": 0.79,
       "dividendYield": 0.74,
       "marketCap": 196055056384,
       "score": 9.1,
@@ -5445,9 +5472,15 @@
       "dividendYield": null,
       "marketCap": 462805008384,
       "score": 7.3,
-      "newsSentiment": -0.06,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Does Palantir (PLTR) Have a Moat Strong Enough to Protect Its AI Dominance?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/does-palantir-pltr-moat-strong-211858600.html",
+          "sentiment": 0.77
+        },
         {
           "title": "Rosenblatt Has Message For Palantir Stock Investors",
           "publisher": "GuruFocus.com",
@@ -5459,12 +5492,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/palantir-slips-karp-puts-liability-191214673.html",
           "sentiment": -0.2
-        },
-        {
-          "title": "Palantir Technologies (PLTR) Ties Aviation AI Push To Fresh Short Seller Pressure",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-ties-aviation-181214201.html",
-          "sentiment": 0.03
         }
       ],
       "valuationLabel": "Rich",
@@ -5491,13 +5518,19 @@
       "peRatio": 33.6,
       "sector": "Technology",
       "industry": "Semiconductors",
-      "pegRatio": 0.86,
+      "pegRatio": 0.85,
       "dividendYield": 0.91,
       "marketCap": 2339877683200,
       "score": 9.1,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.3,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Is Taiwan Semiconductor (TSM) Stock a Better Bet than ASML Holding (ASML) as Advanced Chipmaking Accelerates?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-tsm-stock-better-210504814.html",
+          "sentiment": 0.6
+        },
         {
           "title": "AMD and Micron Get New Price Targets as Taiwan Chip Exports Hit Record $30.8B",
           "publisher": "BeInCrypto",
@@ -5509,12 +5542,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/technology/ai/articles/taiwan-semiconductor-tsm-key-enabler-143557399.html",
           "sentiment": 0.3
-        },
-        {
-          "title": "Arm vs. Taiwan Semiconductor Manufacturing: Which Chip Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/23/arm-vs-taiwan-semiconductor-manufacturing-which-chip-stock-is-a-better-buy-in-2026/",
-          "sentiment": 0.44
         }
       ],
       "valuationLabel": "Cheap",
@@ -5641,7 +5668,7 @@
       "peRatio": 71.4,
       "sector": "Technology",
       "industry": "Electronic Components",
-      "pegRatio": 0.95,
+      "pegRatio": 0.92,
       "dividendYield": 0.73,
       "marketCap": 132783005696,
       "score": 6.1,
@@ -5758,7 +5785,7 @@
       "peRatio": 20.4,
       "sector": "Consumer Cyclical",
       "industry": "Home Improvement Retail",
-      "pegRatio": 2.58,
+      "pegRatio": 2.5,
       "dividendYield": 3.14,
       "marketCap": 291504947200,
       "score": 2.7,
@@ -5812,9 +5839,15 @@
       "dividendYield": 0.65,
       "marketCap": 397569884160,
       "score": 2.8,
-      "newsSentiment": -0.2,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Costco tops Q4 estimates: Revenue hits $95.7B on massive e-commerce surge",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-tops-q4-estimates-revenue-210534397.html",
+          "sentiment": 0.81
+        },
         {
           "title": "Costco Wholesale Misses Quarterly Revenue Estimates",
           "publisher": "Barrons.com",
@@ -5825,12 +5858,6 @@
           "title": "Costco (NASDAQ:COST) Posts Better-Than-Expected Sales In Q3 CY2026",
           "publisher": "StockStory",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-nasdaq-cost-posts-better-202634108.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Costco Stock Keeps Defying Expectations. Here\u2019s My 2027 Price Prediction",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/24/costco-stock-keeps-defying-expectations-heres-my-2027-price-prediction/",
           "sentiment": 0.0
         }
       ]
@@ -5958,25 +5985,25 @@
       "dividendYield": 0.05,
       "marketCap": 1220343234560,
       "score": 9.1,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.27,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Micron vs. Sandisk: Which AI Memory Stock Is the Better Buy?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-ai-memory-203109541.html",
-          "sentiment": 0.44
+          "title": "Forget Betting on Micron Alone: The $26B Memory ETF Owns MU, SK Hynix, and Samsung at a September Discount",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/24/forget-betting-on-micron-alone-the-26b-memory-etf-owns-mu-sk-hynix-and-samsung-at-a-september-discount/",
+          "sentiment": -0.44
         },
         {
-          "title": "AMD and Micron Get New Price Targets as Taiwan Chip Exports Hit Record $30.8B",
-          "publisher": "BeInCrypto",
-          "link": "https://beincrypto.com/taiwan-chip-exports-amd-micron-stock-price-impact/",
-          "sentiment": 0.0
+          "title": "3 Reasons Why Micron and Sandisk Investors Can Ignore What History Says Will Happen",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/3-reasons-micron-and-sandisk-can-ignore-history/",
+          "sentiment": -0.36
         },
         {
-          "title": "How Micron Stock Could Rise Another 50%",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-stock-price-rise-50-per-cent-39518b23?siteid=yhoof2&yptr=yahoo",
+          "title": "5-star analyst resets Micron stock price target by 8%",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/mu-micron-stock-price-target-before-q4-earnings-wells-fargo",
           "sentiment": 0.0
         }
       ],
@@ -6104,30 +6131,30 @@
       "peRatio": 356.5,
       "sector": "Consumer Cyclical",
       "industry": "Auto Manufacturers",
-      "pegRatio": 4.53,
+      "pegRatio": 4.54,
       "dividendYield": null,
       "marketCap": 1492691976192,
       "score": 6.7,
-      "newsSentiment": 0.13,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.17,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Is Tesla (TSLA) Priced For Too Much Sales Growth After Recent Expansion Bets?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-priced-too-much-191120947.html",
-          "sentiment": 0.38
-        },
-        {
-          "title": "Elon Musk Has Left the Door Open to a Tesla-SpaceX Merger. Here's What Shareholders of Both Stocks Should Do.",
+          "title": "Tesla's Roadster Reveal Is Oct. 1. The Real Story Is Optimus.",
           "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/24/elon-musk-tesla-spacex-merger-stocks/",
+          "link": "https://www.fool.com/investing/2026/09/24/teslas-roadster-reveal-oct-1-real-optimus/",
           "sentiment": 0.0
         },
         {
-          "title": "UBS Has a Stark Message for Tesla Stock Ahead of Oct. 2",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/ubs-stark-message-tesla-stock-181004317.html",
-          "sentiment": 0.0
+          "title": "Dow Jones Futures: Market Rally Resilient As Yields, Oil Prices Keep Rising; Tesla Event On Deck",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-rally-resilient-yields-oil-prices-rising-tesla-semi-event/?src=A00220&yptr=yahoo",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Elon Musk Touts Grok in Tesla Vehicles: Here\u2019s What It Can Do",
+          "publisher": "Benzinga",
+          "link": "https://autos.yahoo.com/ev-and-future-tech/articles/elon-musk-touts-grok-tesla-203018465.html",
+          "sentiment": -0.03
         }
       ],
       "valuationLabel": "Rich",
@@ -6250,9 +6277,16 @@
       "dividendYield": 0.26,
       "marketCap": 4187040514048,
       "score": 8.0,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.4,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Alphabet Reportedly Values Its Anthropic Stake at $124 Billion. A $2 Trillion IPO Could Double It -- on Paper.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/alphabet-values-its-anthropic-stake-at-usd124-billion-a-usd2-trillion-ipo-could-double-it-on-paper/",
+          "sentiment": 0.4
+        }
+      ],
       "valuationLabel": "Cheap",
       "peVsSectorPct": -23.9,
       "sectorMedianPE": 22.6,
@@ -6277,13 +6311,19 @@
       "peRatio": 44.7,
       "sector": "Technology",
       "industry": "Semiconductors",
-      "pegRatio": 0.36,
+      "pegRatio": 0.35,
       "dividendYield": 0.73,
       "marketCap": 1672488943616,
       "score": 3.8,
-      "newsSentiment": 0.0,
+      "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Broadcom (AVGO) Stock May Be 24% Undervalued Following Fresh AI Demand Fears",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-avgo-stock-may-24-211644898.html",
+          "sentiment": -0.25
+        },
         {
           "title": "Broadcom's Latest Prediction Makes the Stock a No-Brainer Buy Right Now",
           "publisher": "Motley Fool",
@@ -6294,12 +6334,6 @@
           "title": "Broadcom Falls 2% as $230 Billion AI Target Doubles the Delivery Test",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-falls-2-230-billion-192033958.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Where Will Broadcom Stock Be in 5 Years?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/24/where-will-broadcom-stock-be-in-5-years/",
           "sentiment": 0.0
         }
       ],
@@ -6427,7 +6461,7 @@
       "peRatio": 16.7,
       "sector": "Technology",
       "industry": "Computer Hardware",
-      "pegRatio": 0.88,
+      "pegRatio": 0.9,
       "dividendYield": 0.13,
       "marketCap": 162355183616,
       "score": 5.6,
@@ -6569,9 +6603,15 @@
       "dividendYield": 0.52,
       "marketCap": 661612265472,
       "score": 4.4,
-      "newsSentiment": 0.02,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.36,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Is Taiwan Semiconductor (TSM) Stock a Better Bet than ASML Holding (ASML) as Advanced Chipmaking Accelerates?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-tsm-stock-better-210504814.html",
+          "sentiment": 0.6
+        },
         {
           "title": "ASML Drops 1.8% as $400 Million High-NA Tools Reach More Fabs",
           "publisher": "GuruFocus.com",
@@ -6583,12 +6623,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/22/asml-vs-intel-ai-chip-stock-better-buy-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Market Chatter: ASML Executive Warns Europe Will Fall Behind in Chip Development Due to Lack of Investment",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/technology/articles/market-chatter-asml-executive-warns-140937923.html",
-          "sentiment": -0.4
         }
       ],
       "valuationLabel": "Rich",
@@ -6623,12 +6657,6 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "How Qualcomm is transforming the car into a 'digital computer on wheels': CEO explains",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/qualcomm-transforming-car-digital-computer-212321363.html",
-          "sentiment": 0.0
-        },
-        {
           "title": "Chip Stocks Retreat. Qualcomm Secures Apple Licensing Deal.",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/chip-stocks-retreat-qualcomm-secures-apple-licensing-deal/?src=A00220&yptr=yahoo",
@@ -6638,6 +6666,12 @@
           "title": "Qualcomm Renews Deal With Apple. Why the Stock Is Dropping Anyway.",
           "publisher": "Barrons.com",
           "link": "https://www.barrons.com/articles/qualcomm-apple-stock-iphone-7432cf78?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Oracle, Qualcomm, Meta, Everpure, BlackBerry, MGM, Nebius, and More Stocks That Explain Today\u2019s Market",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/stock-movers-45e41551?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -6669,9 +6703,15 @@
       "dividendYield": 0.74,
       "marketCap": 690829197312,
       "score": 5.5,
-      "newsSentiment": 0.33,
+      "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Mastercard\u2019s Faster Services Growth Could Reshape its Rivalry with Visa",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mastercard-faster-services-growth-could-211243924.html",
+          "sentiment": 0.38
+        },
         {
           "title": "Visa Share Rises as Payment Networks Standardize AI-Agent Identity",
           "publisher": "GuruFocus.com",
@@ -6683,12 +6723,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-high-margin-company-141757986.html",
           "sentiment": 0.38
-        },
-        {
-          "title": "Can Visa's Klook Deal Expand Its Travel Ecosystem in Southeast Asia?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/visas-klook-deal-expand-travel-140600003.html",
-          "sentiment": 0.32
         }
       ],
       "valuationLabel": "Rich",
@@ -6765,7 +6799,7 @@
       "peRatio": 39.0,
       "sector": "Consumer Defensive",
       "industry": "Discount Stores",
-      "pegRatio": 4.2,
+      "pegRatio": 4.22,
       "dividendYield": 0.9,
       "marketCap": 856209686528,
       "score": 5.7,
@@ -6811,13 +6845,19 @@
       "peRatio": 20.9,
       "sector": "Energy",
       "industry": "Oil & Gas Integrated",
-      "pegRatio": 1.36,
+      "pegRatio": 1.38,
       "dividendYield": 2.56,
       "marketCap": 666705395712,
       "score": 7.4,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.19,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Could TotalEnergies (TTE)\u2019 LNG Growth Give it an Edge Over ExxonMobil (XOM)?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/could-totalenergies-tte-lng-growth-210805612.html",
+          "sentiment": 0.38
+        },
         {
           "title": "Did ExxonMobil\u2019s (XOM) 2076 Floating\u2011Rate Notes Just Quietly Redefine Its Long\u2011Term Funding Playbook?",
           "publisher": "Simply Wall St.",
@@ -7123,9 +7163,15 @@
       "dividendYield": 2.9,
       "marketCap": 213921038336,
       "score": 3.6,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.19,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "IBM's New Swift Connection Is One More Headache for XRP Investors",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/24/ibm-s-new-swift-connection-is-one-more-headache-for-xrp-investors/",
+          "sentiment": 0.2
+        },
         {
           "title": "Is IBM Stock's Upside Built On Growth It Is Not Guiding To?",
           "publisher": "Trefis",
@@ -7137,12 +7183,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/ibm-falls-over-2-4-174054182.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "IBM Expands Digital Asset Platform With Swift Ledger Integration",
-          "publisher": "CryptoProwl",
-          "link": "https://www.cryptoprowl.com/releases/ibm-expands-digital-asset-platform-with-swift-ledger-integration-7136",
-          "sentiment": 0.57
         }
       ],
       "valuationLabel": "Cheap",
@@ -7223,9 +7263,15 @@
       "dividendYield": 2.29,
       "marketCap": 391803699200,
       "score": 4.7,
-      "newsSentiment": 0.21,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.07,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Top Stock Reports for Tesla, Bank of America & Coca-Cola",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-tesla-bank-195500282.html",
+          "sentiment": 0.2
+        },
         {
           "title": "Bank of America hiring 1,000 apprentices, investing $150M in workforce training",
           "publisher": "Quartz",
@@ -7237,12 +7283,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/24/bank-of-america-just-told-investors-to-sell-ups-and-the-reason-has-nothing-to-do-with-package-volume/",
           "sentiment": 0.0
-        },
-        {
-          "title": "BofA battles for talent as business banker hiring surges",
-          "publisher": "Banking Dive",
-          "link": "https://www.bankingdive.com/news/bofa-small-business-banker-talent-battle-sharon-miller/831272/",
-          "sentiment": 0.64
         }
       ],
       "valuationLabel": "Cheap",
@@ -7269,7 +7309,7 @@
       "peRatio": 14.2,
       "sector": "Financial Services",
       "industry": "Capital Markets",
-      "pegRatio": 1.17,
+      "pegRatio": 1.16,
       "dividendYield": 2.14,
       "marketCap": 268835635200,
       "score": 4.5,

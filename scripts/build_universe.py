@@ -40,11 +40,11 @@ except ImportError:
     raise
 
 # --- Configuration -----------------------------------------------------------
-MIN_MARKET_CAP = 50_000_000_000   # $50B
+MIN_MARKET_CAP = 100_000_000_000   # $100B
 UNIVERSE_SIZE = 50                # how many dynamic names to keep
 EXCHANGES = ("NMS", "NYQ")        # Yahoo codes for NASDAQ and NYSE
 PAGE_SIZE = 250                   # Yahoo's screener page cap
-MAX_PAGES = 4                     # safety stop; >$50B is only a few hundred names
+MAX_PAGES = 4                     # safety stop; >$100B is only a few hundred names
 MIN_ACCEPTABLE_RESULTS = 20       # fewer than this = treat the screen as broken
 OUTPUT_PATH = "universe.json"
 

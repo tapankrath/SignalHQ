@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-23T15:15:52.226046+00:00",
+  "generated_at": "2026-09-24T00:02:59.843332+00:00",
   "source": "yfinance screener (unofficial, free)",
   "criteria": {
-    "min_market_cap":100000000000,
+    "min_market_cap": 100000000000,
     "size": 50,
     "exchanges": [
       "NMS",
       "NYQ"
     ],
     "ranked_by": "avg daily dollar volume (3-month)",
-    "candidates_above_min_cap": 322
+    "candidates_above_min_cap": 163
   },
   "tickers": [
     "MU",
@@ -30,339 +30,339 @@
     "SKHY",
     "TSM",
     "ORCL",
-    "NBIS",
-    "LITE",
-    "BE",
-    "DELL",
     "STX",
+    "DELL",
     "AMAT",
-    "MSTR",
     "WDC",
     "CRM",
     "LRCX",
     "LLY",
-    "MRNA",
     "ASML",
-    "NFLX",
-    "HOOD",
     "QCOM",
+    "NFLX",
     "NOW",
+    "HOOD",
+    "WMT",
     "V",
     "JPM",
-    "WMT",
     "CRWD",
     "PANW",
     "CAT",
-    "GEV",
     "XOM",
+    "GEV",
     "BRK-B",
     "CSCO",
     "KLAC",
     "TXN",
     "IBM",
+    "COST",
     "JNJ",
-    "GLW"
+    "GLW",
+    "UNH",
+    "GS",
+    "BAC",
+    "APP"
   ],
   "details": [
     {
       "symbol": "MU",
       "name": "Micron Technology, Inc.",
-      "marketCap": 1219648684032.0,
-      "avgDollarVolume": 41239754063.145
+      "marketCap": 1210573914112.0,
+      "avgDollarVolume": 40932913780.44
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "marketCap": 5454686584832.0,
-      "avgDollarVolume": 28955671308.735
+      "marketCap": 5445389910016.0,
+      "avgDollarVolume": 28906321241.43
     },
     {
       "symbol": "SNDK",
       "name": "Sandisk Corporation",
-      "marketCap": 269875134464.0,
-      "avgDollarVolume": 25527839989.05
+      "marketCap": 265980362752.0,
+      "avgDollarVolume": 25159430920.05
     },
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "marketCap": 4931519512576.0,
-      "avgDollarVolume": 17948088974.18
+      "marketCap": 4918530277376.0,
+      "avgDollarVolume": 17900816625.96
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "marketCap": 3694839988224.0,
-      "avgDollarVolume": 16672566165.035
+      "marketCap": 3717153947648.0,
+      "avgDollarVolume": 16773254612.89
     },
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "marketCap": 1005170393088.0,
-      "avgDollarVolume": 15525093062.374
+      "marketCap": 1003335450624.0,
+      "avgDollarVolume": 15496752570.210001
     },
     {
       "symbol": "TSLA",
       "name": "Tesla, Inc.",
-      "marketCap": 1500867592192.0,
-      "avgDollarVolume": 14925950697.84
+      "marketCap": 1501301964800.0,
+      "avgDollarVolume": 14930271254.08
     },
     {
       "symbol": "META",
       "name": "Meta Platforms, Inc.",
-      "marketCap": 1911521148928.0,
-      "avgDollarVolume": 14315656773.65
+      "marketCap": 1895599308800.0,
+      "avgDollarVolume": 14196415279.9
     },
     {
       "symbol": "SPCX",
       "name": "Space Exploration Technologies ",
-      "marketCap": 2005440659456.0,
-      "avgDollarVolume": 14300300551.85
+      "marketCap": 1955648897024.0,
+      "avgDollarVolume": 13937215239.760002
     },
     {
       "symbol": "INTC",
       "name": "Intel Corporation",
-      "marketCap": 639883018240.0,
-      "avgDollarVolume": 13236441276.6
+      "marketCap": 648076460032.0,
+      "avgDollarVolume": 13405928959.199999
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "marketCap": 2702079164416.0,
-      "avgDollarVolume": 11387679571.84
+      "marketCap": 2688704315392.0,
+      "avgDollarVolume": 11331311671.68
     },
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "marketCap": 4178540756992.0,
-      "avgDollarVolume": 10012040802.205
+      "marketCap": 4131638738944.0,
+      "avgDollarVolume": 9899661200.91
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc.",
-      "marketCap": 1702467469312.0,
-      "avgDollarVolume": 8277764902.08
+      "marketCap": 1694590828544.0,
+      "avgDollarVolume": 8239467705.780001
     },
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
-      "marketCap": 459356635136.0,
-      "avgDollarVolume": 7347787164.88
+      "marketCap": 460882575360.0,
+      "avgDollarVolume": 7372195863.84
     },
     {
       "symbol": "MRVL",
       "name": "Marvell Technology, Inc.",
-      "marketCap": 232998174720.0,
-      "avgDollarVolume": 6432955639.08
+      "marketCap": 234472030208.0,
+      "avgDollarVolume": 6473648562.2
     },
     {
       "symbol": "SKHY",
       "name": "SK hynix Inc.",
-      "marketCap": 1354598842368.0,
-      "avgDollarVolume": 6053429346.0
+      "marketCap": 1345923710976.0,
+      "avgDollarVolume": 6014661976.96
     },
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufactur",
-      "marketCap": 2334743068672.0,
-      "avgDollarVolume": 5541644262.08
+      "marketCap": 2316123766784.0,
+      "avgDollarVolume": 5497449969.16
     },
     {
       "symbol": "ORCL",
       "name": "Oracle Corporation",
-      "marketCap": 444126363648.0,
-      "avgDollarVolume": 4879861951.68
-    },
-    {
-      "symbol": "NBIS",
-      "name": "Nebius Group N.V.",
-      "marketCap": 59414716416.0,
-      "avgDollarVolume": 4805873198.42
-    },
-    {
-      "symbol": "LITE",
-      "name": "Lumentum Holdings Inc.",
-      "marketCap": 85713731584.0,
-      "avgDollarVolume": 4508857638.0
-    },
-    {
-      "symbol": "BE",
-      "name": "Bloom Energy Corporation",
-      "marketCap": 81495728128.0,
-      "avgDollarVolume": 4497363649.099999
-    },
-    {
-      "symbol": "DELL",
-      "name": "Dell Technologies Inc.",
-      "marketCap": 350517198848.0,
-      "avgDollarVolume": 4316232989.57
+      "marketCap": 437111291904.0,
+      "avgDollarVolume": 4802783522.16
     },
     {
       "symbol": "STX",
       "name": "Seagate Technology Holdings PLC",
-      "marketCap": 208981000192.0,
-      "avgDollarVolume": 4312995842.61
+      "marketCap": 210079301632.0,
+      "avgDollarVolume": 4335662969.82
+    },
+    {
+      "symbol": "DELL",
+      "name": "Dell Technologies Inc.",
+      "marketCap": 349588914176.0,
+      "avgDollarVolume": 4304802163.39
     },
     {
       "symbol": "AMAT",
       "name": "Applied Materials, Inc.",
-      "marketCap": 375954341888.0,
-      "avgDollarVolume": 4047451792.3931003
-    },
-    {
-      "symbol": "MSTR",
-      "name": "Strategy Inc",
-      "marketCap": 65813680128.0,
-      "avgDollarVolume": 3984250723.86
+      "marketCap": 376466767872.0,
+      "avgDollarVolume": 4052968470.46
     },
     {
       "symbol": "WDC",
       "name": "Western Digital Corporation",
-      "marketCap": 168778219520.0,
-      "avgDollarVolume": 3675207711.875
+      "marketCap": 170784636928.0,
+      "avgDollarVolume": 3718898031.59
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
-      "marketCap": 195470721024.0,
-      "avgDollarVolume": 3331919485.44
+      "marketCap": 195528343552.0,
+      "avgDollarVolume": 3332901483.52
     },
     {
       "symbol": "LRCX",
       "name": "Lam Research Corporation",
-      "marketCap": 383911526400.0,
-      "avgDollarVolume": 3248444283.485
+      "marketCap": 384505905152.0,
+      "avgDollarVolume": 3253473572.56
     },
     {
       "symbol": "LLY",
       "name": "Eli Lilly and Company",
-      "marketCap": 1035213209600.0,
-      "avgDollarVolume": 3112093162.92
-    },
-    {
-      "symbol": "MRNA",
-      "name": "Moderna, Inc.",
-      "marketCap": 73271762944.0,
-      "avgDollarVolume": 3061097420.59
+      "marketCap": 1026385379328.0,
+      "avgDollarVolume": 3084225031.72
     },
     {
       "symbol": "ASML",
       "name": "ASML Holding N.V. - New York Re",
-      "marketCap": 665860440064.0,
-      "avgDollarVolume": 2815336111.2
-    },
-    {
-      "symbol": "NFLX",
-      "name": "Netflix, Inc.",
-      "marketCap": 298408738816.0,
-      "avgDollarVolume": 2795292751.6800003
-    },
-    {
-      "symbol": "HOOD",
-      "name": "Robinhood Markets, Inc.",
-      "marketCap": 112704462848.0,
-      "avgDollarVolume": 2786644157.1
+      "marketCap": 670104682496.0,
+      "avgDollarVolume": 2833281532.2
     },
     {
       "symbol": "QCOM",
       "name": "QUALCOMM Incorporated",
-      "marketCap": 208827187200.0,
-      "avgDollarVolume": 2765935020.1600003
+      "marketCap": 210664259584.0,
+      "avgDollarVolume": 2790267099.92
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix, Inc.",
+      "marketCap": 297138716672.0,
+      "avgDollarVolume": 2783396229.12
     },
     {
       "symbol": "NOW",
       "name": "ServiceNow, Inc.",
-      "marketCap": 143675703296.0,
-      "avgDollarVolume": 2747287475.9361
+      "marketCap": 145547100160.0,
+      "avgDollarVolume": 2783071232.42
     },
     {
-      "symbol": "V",
-      "name": "Visa Inc.",
-      "marketCap": 681235906560.0,
-      "avgDollarVolume": 2683725920.71
-    },
-    {
-      "symbol": "JPM",
-      "name": "JP Morgan Chase & Co.",
-      "marketCap": 899995467776.0,
-      "avgDollarVolume": 2678757999.5
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "marketCap": 110317395968.0,
+      "avgDollarVolume": 2727623454.0
     },
     {
       "symbol": "WMT",
       "name": "Walmart Inc.",
-      "marketCap": 870728663040.0,
-      "avgDollarVolume": 2660857690.75
+      "marketCap": 879606431744.0,
+      "avgDollarVolume": 2679768570.01
+    },
+    {
+      "symbol": "V",
+      "name": "Visa Inc.",
+      "marketCap": 678701432832.0,
+      "avgDollarVolume": 2673741546.16
+    },
+    {
+      "symbol": "JPM",
+      "name": "JP Morgan Chase & Co.",
+      "marketCap": 897217593344.0,
+      "avgDollarVolume": 2670490105.7999997
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings, Inc.",
-      "marketCap": 264390115328.0,
-      "avgDollarVolume": 2619077497.9889
+      "marketCap": 268772655104.0,
+      "avgDollarVolume": 2662491455.39
     },
     {
       "symbol": "PANW",
       "name": "Palo Alto Networks, Inc.",
-      "marketCap": 315649851392.0,
-      "avgDollarVolume": 2577211485.2
+      "marketCap": 321719402496.0,
+      "avgDollarVolume": 2626768107.0
     },
     {
       "symbol": "CAT",
       "name": "Caterpillar, Inc.",
-      "marketCap": 372104527872.0,
-      "avgDollarVolume": 2429597246.13
-    },
-    {
-      "symbol": "GEV",
-      "name": "GE Vernova Inc.",
-      "marketCap": 253925097472.0,
-      "avgDollarVolume": 2395111791.73
+      "marketCap": 373265203200.0,
+      "avgDollarVolume": 2437175715.48
     },
     {
       "symbol": "XOM",
       "name": "ExxonMobil Holdings Corporation",
-      "marketCap": 663374790656.0,
-      "avgDollarVolume": 2394563433.86
+      "marketCap": 662963552256.0,
+      "avgDollarVolume": 2393079169.66
+    },
+    {
+      "symbol": "GEV",
+      "name": "GE Vernova Inc.",
+      "marketCap": 253501636608.0,
+      "avgDollarVolume": 2391117468.46
     },
     {
       "symbol": "BRK-B",
       "name": "Berkshire Hathaway Inc. New",
-      "marketCap": 1089385791488.0,
-      "avgDollarVolume": 2274225338.88
+      "marketCap": 1085703782400.0,
+      "avgDollarVolume": 2266538672.64
     },
     {
       "symbol": "CSCO",
       "name": "Cisco Systems, Inc.",
-      "marketCap": 418781593600.0,
-      "avgDollarVolume": 2219524152.58
+      "marketCap": 419609509888.0,
+      "avgDollarVolume": 2223912215.77
     },
     {
       "symbol": "KLAC",
       "name": "KLA Corporation",
-      "marketCap": 245082046464.0,
-      "avgDollarVolume": 2174024625.7400002
+      "marketCap": 245447884800.0,
+      "avgDollarVolume": 2177269784.58
     },
     {
       "symbol": "TXN",
       "name": "Texas Instruments Incorporated",
-      "marketCap": 247764090880.0,
-      "avgDollarVolume": 2028524478.9
+      "marketCap": 248969576448.0,
+      "avgDollarVolume": 2038394188.8600001
     },
     {
       "symbol": "IBM",
       "name": "International Business Machines",
-      "marketCap": 222032805888.0,
-      "avgDollarVolume": 2016654349.37
+      "marketCap": 219291205632.0,
+      "avgDollarVolume": 1991753156.36
+    },
+    {
+      "symbol": "COST",
+      "name": "Costco Wholesale Corporation",
+      "marketCap": 401215291392.0,
+      "avgDollarVolume": 1985491712.7
     },
     {
       "symbol": "JNJ",
       "name": "Johnson & Johnson",
-      "marketCap": 650154475520.0,
-      "avgDollarVolume": 1975615590.91
+      "marketCap": 648672378880.0,
+      "avgDollarVolume": 1971111991.42
     },
     {
       "symbol": "GLW",
       "name": "Corning Incorporated",
-      "marketCap": 133716664320.0,
-      "avgDollarVolume": 1972302602.5500002
+      "marketCap": 133067268096.0,
+      "avgDollarVolume": 1958735493.6799998
+    },
+    {
+      "symbol": "UNH",
+      "name": "UnitedHealth Group Incorporated",
+      "marketCap": 333267992576.0,
+      "avgDollarVolume": 1912235208.63
+    },
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs Group, Inc. (The)",
+      "marketCap": 272641245184.0,
+      "avgDollarVolume": 1888924646.16
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "marketCap": 391593918464.0,
+      "avgDollarVolume": 1857905280.0
+    },
+    {
+      "symbol": "APP",
+      "name": "Applovin Corporation",
+      "marketCap": 105904930816.0,
+      "avgDollarVolume": 1837385446.0
     }
   ]
 }

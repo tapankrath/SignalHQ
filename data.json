@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T00:22:11.057677+00:00",
+  "generated_at": "2026-09-24T00:31:19.396495+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -214,14 +214,20 @@
       "pcVol": 0.23,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.15,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "The AI panic, tech concentration, and Nvidia windfalls",
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/ai-panic-tech-concentration-nvidia-100000476.html",
           "sentiment": -0.51
+        },
+        {
+          "title": "AMD Is Up 187% This Year and Nvidia Is Up 22%. Prediction: Nvidia Wins the Next 12 Months.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/23/amd-is-up-187-this-year-and-nvidia-is-up-22-prediction-nvidia-wins-the-next-12-months/",
+          "sentiment": -0.1
         },
         {
           "title": "Why IonQ (IONQ) Is Up 15.5% After NVIDIA Deal And Real-Time Error Correction Breakthrough",
@@ -321,7 +327,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 25.4,
+      "peVsSectorPct": 25.0,
       "sectorMedianPE": 22.4,
       "sectorPeerCount": 5,
       "sector": "Communication Services"
@@ -405,8 +411,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 0.0,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": -0.3,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -1216,16 +1222,16 @@
           "sentiment": 0.38
         },
         {
+          "title": "Palantir Stock Hits Yearly High at $190. What\u2019s Driving the Price?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/palantir-stock-yearly-high-price-catalysts/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Palantir's CEO just sent a message Silicon Valley won't ignore",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/palantirs-ceo-just-sent-a-message-silicon-valley-wont-ignore",
           "sentiment": 0.28
-        },
-        {
-          "title": "Palantir, IBD Stock Of The Day, Flashes Buy Signal Amid Earnings, AI Momentum",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/ibd-stock-of-the-day/palantir-stock-buy-signal-earnings-ai-momentum/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -1458,9 +1464,15 @@
       "pcVol": 0.18,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Has Palo Alto Networks (PANW) Become Fully Priced After AI Security Gains?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-become-001345999.html",
+          "sentiment": 0.59
+        },
         {
           "title": "Why Palo Alto Networks (PANW) Stock Is Trading Up Today",
           "publisher": "StockStory",
@@ -1472,12 +1484,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/palo-alto-jumps-3-5-181732515.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Cybersecurity Stocks Rally While Large-Cap Tech Slides: CrowdStrike, Palo Alto, Okta, and Palantir Each Gain 4%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/23/cybersecurity-stocks-rally-while-large-cap-tech-slides-crowdstrike-palo-alto-okta-and-palantir-each-gain-4/",
-          "sentiment": 0.62
         }
       ],
       "volRegime": "Cheap",
@@ -1962,7 +1968,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 117.1,
+      "peVsSectorPct": 113.6,
       "sectorMedianPE": 39.8,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2185,9 +2191,15 @@
       "pcVol": 1.3,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.04,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "AMD Is Up 187% This Year and Nvidia Is Up 22%. Prediction: Nvidia Wins the Next 12 Months.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/23/amd-is-up-187-this-year-and-nvidia-is-up-22-prediction-nvidia-wins-the-next-12-months/",
+          "sentiment": -0.1
+        },
         {
           "title": "AMD Is Up 187% This Year: Take Profits, or Buy More?",
           "publisher": "24/7 Wall St.",
@@ -2199,12 +2211,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-just-hit-1-trillion-184727280.html",
           "sentiment": 0.4
-        },
-        {
-          "title": "AMD Falls 2% After AI Carries It Past $1 Trillion",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amd-falls-2-ai-carries-172827401.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2240,7 +2246,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 293.0,
+      "peVsSectorPct": 286.9,
       "sectorMedianPE": 39.8,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2322,7 +2328,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 1569.6,
+      "peVsSectorPct": 1584.5,
       "sectorMedianPE": 20.7,
       "sectorPeerCount": 3,
       "sector": "Consumer Cyclical"
@@ -3405,8 +3411,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 274.5,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": 273.2,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -3582,8 +3588,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 111.7,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": 111.0,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -3889,8 +3895,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -12.4,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": -12.7,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -4339,7 +4345,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": 78.57,
-      "score": 6.2,
+      "score": 6.8,
       "buy": false,
       "sell": true,
       "ema": true,
@@ -4398,9 +4404,9 @@
           "qty": 1
         }
       ],
-      "valuationLabel": "Cheap",
-      "peVsSectorPct": 0.0,
-      "sectorMedianPE": 14.5,
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.3,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -4483,8 +4489,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -11.0,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": -11.3,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -4685,14 +4691,20 @@
       "dividendYield": 0.44,
       "marketCap": 5445389910016,
       "score": 9.1,
-      "newsSentiment": -0.15,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.14,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "The AI panic, tech concentration, and Nvidia windfalls",
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/ai-panic-tech-concentration-nvidia-100000476.html",
           "sentiment": -0.51
+        },
+        {
+          "title": "AMD Is Up 187% This Year and Nvidia Is Up 22%. Prediction: Nvidia Wins the Next 12 Months.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/23/amd-is-up-187-this-year-and-nvidia-is-up-22-prediction-nvidia-wins-the-next-12-months/",
+          "sentiment": -0.1
         },
         {
           "title": "Why IonQ (IONQ) Is Up 15.5% After NVIDIA Deal And Real-Time Error Correction Breakthrough",
@@ -4722,7 +4734,7 @@
       "chg6m": 24.4,
       "chg1y": -2.8,
       "volRatio": 1.53,
-      "peRatio": 28.1,
+      "peRatio": 28.0,
       "sector": "Communication Services",
       "industry": "Internet Content & Information",
       "pegRatio": 0.97,
@@ -4752,7 +4764,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 25.4,
+      "peVsSectorPct": 25.0,
       "sectorMedianPE": 22.4,
       "sectorPeerCount": 5
     },
@@ -4852,8 +4864,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 0.0,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": -0.3,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
     {
@@ -5331,16 +5343,16 @@
           "sentiment": 0.38
         },
         {
+          "title": "Palantir Stock Hits Yearly High at $190. What\u2019s Driving the Price?",
+          "publisher": "BeInCrypto",
+          "link": "https://beincrypto.com/palantir-stock-yearly-high-price-catalysts/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Palantir's CEO just sent a message Silicon Valley won't ignore",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/palantirs-ceo-just-sent-a-message-silicon-valley-wont-ignore",
           "sentiment": 0.28
-        },
-        {
-          "title": "Palantir, IBD Stock Of The Day, Flashes Buy Signal Amid Earnings, AI Momentum",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/ibd-stock-of-the-day/palantir-stock-buy-signal-earnings-ai-momentum/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
@@ -5471,9 +5483,15 @@
       "dividendYield": null,
       "marketCap": 321719402496,
       "score": 7.9,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Has Palo Alto Networks (PANW) Become Fully Priced After AI Security Gains?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-become-001345999.html",
+          "sentiment": 0.59
+        },
         {
           "title": "Why Palo Alto Networks (PANW) Stock Is Trading Up Today",
           "publisher": "StockStory",
@@ -5485,12 +5503,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/palo-alto-jumps-3-5-181732515.html",
           "sentiment": 0.49
-        },
-        {
-          "title": "Cybersecurity Stocks Rally While Large-Cap Tech Slides: CrowdStrike, Palo Alto, Okta, and Palantir Each Gain 4%",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/23/cybersecurity-stocks-rally-while-large-cap-tech-slides-crowdstrike-palo-alto-okta-and-palantir-each-gain-4/",
-          "sentiment": 0.62
         }
       ],
       "valuationLabel": "Rich",
@@ -5519,7 +5531,7 @@
       "industry": "Electronic Components",
       "pegRatio": 0.95,
       "dividendYield": 0.7,
-      "marketCap": 133067268096,
+      "marketCap": 132796850176,
       "score": 6.5,
       "newsSentiment": 0.16,
       "newsSentimentLabel": "Positive",
@@ -5764,7 +5776,7 @@
       "chg6m": 184.3,
       "chg1y": 228.3,
       "volRatio": 0.6,
-      "peRatio": 86.4,
+      "peRatio": 85.0,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 1.39,
@@ -5794,7 +5806,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 117.1,
+      "peVsSectorPct": 113.6,
       "sectorMedianPE": 39.8,
       "sectorPeerCount": 28
     },
@@ -5914,16 +5926,22 @@
       "chg6m": 203.7,
       "chg1y": 287.7,
       "volRatio": 0.8,
-      "peRatio": 156.4,
+      "peRatio": 154.0,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 0.64,
       "dividendYield": null,
       "marketCap": 1003335450624,
       "score": 7.3,
-      "newsSentiment": 0.04,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "AMD Is Up 187% This Year and Nvidia Is Up 22%. Prediction: Nvidia Wins the Next 12 Months.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/23/amd-is-up-187-this-year-and-nvidia-is-up-22-prediction-nvidia-wins-the-next-12-months/",
+          "sentiment": -0.1
+        },
         {
           "title": "AMD Is Up 187% This Year: Take Profits, or Buy More?",
           "publisher": "24/7 Wall St.",
@@ -5935,16 +5953,10 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/amd-just-hit-1-trillion-184727280.html",
           "sentiment": 0.4
-        },
-        {
-          "title": "AMD Falls 2% After AI Carries It Past $1 Trillion",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/amd-falls-2-ai-carries-172827401.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 293.0,
+      "peVsSectorPct": 286.9,
       "sectorMedianPE": 39.8,
       "sectorPeerCount": 28
     },
@@ -5964,7 +5976,7 @@
       "chg6m": -1.1,
       "chg1y": -14.4,
       "volRatio": 0.87,
-      "peRatio": 345.6,
+      "peRatio": 348.7,
       "sector": "Consumer Cyclical",
       "industry": "Auto Manufacturers",
       "pegRatio": 4.53,
@@ -5994,7 +6006,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 1569.6,
+      "peVsSectorPct": 1584.5,
       "sectorMedianPE": 20.7,
       "sectorPeerCount": 3
     },
@@ -6019,7 +6031,7 @@
       "industry": "Aerospace & Defense",
       "pegRatio": null,
       "dividendYield": null,
-      "marketCap": 1955648897024,
+      "marketCap": 1954522333184,
       "score": 7.4,
       "newsSentiment": -0.12,
       "newsSentimentLabel": "Neutral",
@@ -6393,7 +6405,7 @@
       "industry": "Drug Manufacturers - General",
       "pegRatio": 1.16,
       "dividendYield": 0.59,
-      "marketCap": 1026385379328,
+      "marketCap": 1025943076864,
       "score": 5.0,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
@@ -6568,8 +6580,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 274.5,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": 273.2,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
     {
@@ -6593,7 +6605,7 @@
       "industry": "Discount Stores",
       "pegRatio": 4.2,
       "dividendYield": 0.9,
-      "marketCap": 879606431744,
+      "marketCap": 876916965376,
       "score": 5.9,
       "newsSentiment": 0.09,
       "newsSentimentLabel": "Neutral",
@@ -6664,8 +6676,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 111.7,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": 111.0,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
     {
@@ -6852,8 +6864,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -12.4,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": -12.7,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
     {
@@ -6877,7 +6889,7 @@
       "industry": "Semiconductor Equipment & Materials",
       "pegRatio": 1.8,
       "dividendYield": 0.49,
-      "marketCap": 245447884800,
+      "marketCap": 245158510592,
       "score": 4.4,
       "newsSentiment": 0.35,
       "newsSentimentLabel": "Positive",
@@ -7122,13 +7134,13 @@
       "chg6m": 16.5,
       "chg1y": 23.5,
       "volRatio": 1.05,
-      "peRatio": 14.5,
+      "peRatio": 14.6,
       "sector": "Financial Services",
       "industry": "Capital Markets",
       "pegRatio": 1.17,
       "dividendYield": 2.11,
       "marketCap": 272641245184,
-      "score": 4.8,
+      "score": 4.2,
       "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -7151,9 +7163,9 @@
           "sentiment": 0.66
         }
       ],
-      "valuationLabel": "Cheap",
-      "peVsSectorPct": 0.0,
-      "sectorMedianPE": 14.5,
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.3,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
     {
@@ -7202,8 +7214,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -11.0,
-      "sectorMedianPE": 14.5,
+      "peVsSectorPct": -11.3,
+      "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
     {
@@ -7227,7 +7239,7 @@
       "industry": "Advertising Agencies",
       "pegRatio": 0.71,
       "dividendYield": null,
-      "marketCap": 105904930816,
+      "marketCap": 105498583040,
       "score": 2.8,
       "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",

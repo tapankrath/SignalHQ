@@ -1068,7 +1068,7 @@
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Double Diagonal"> <span class="strat-dot neutral"></span>Double Diagonal</label>
         <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
@@ -2405,12 +2405,16 @@
   // (see build_double_diagonal's docstring) — it was checked-but-invisible
   // by default either way, so simpler to just leave it off. Min Trade Profit
   // floor lowered from 20% to 15%.
+  // Updated 2026-09-24: Iron Condor dropped from the default set — down to
+  // the 4 single-leg/two-leg credit strategies (Covered Call, Bull Put
+  // Spread, Cash-Secured Put, Bear Call Spread). Still one tap away in the
+  // filter list for anyone who wants the neutral, defined-risk structure by
+  // default too.
   const DEFAULT_CHECKED = [
     '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
-    '[data-strat="Iron Condor"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',

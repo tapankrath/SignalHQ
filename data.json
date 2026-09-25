@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T21:07:02.207393+00:00",
+  "generated_at": "2026-09-25T21:46:09.023322+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,7 +40,7 @@
       "pcVol": 0.77,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.19,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -54,12 +54,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/25/apple-just-gained-10-in-a-month-what-will-it-take-for-aapl-stock-to-finally-hit-350/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Qualcomm Stocks Jump as Apple Extends the Royalty Bridge",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-stocks-jump-apple-extends-175240580.html",
-          "sentiment": 0.13
         }
       ],
       "volRegime": "Fair",
@@ -220,20 +214,14 @@
       "pcVol": 0.67,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Meet the Magnificent Semiconductor Stock Crushing Nvidia in 2026",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/25/meet-the-magnificent-semiconductor-stock-crushing/",
-          "sentiment": 0.34
-        },
-        {
-          "title": "Nvidia, AMD Love This High-Tech Facilitator. So Does Wall Street.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/ibd-stock-analysis/ase-technology-rides-ai-boom-alongside-amd-apple-nvidia-tsmc/?src=A00220&yptr=yahoo",
-          "sentiment": 0.64
+          "title": "Does IonQ's NVIDIA Quantum Tie-Up Reframe the Long-Term Hardware Opportunity for Rigetti Computing (RGTI)?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/does-ionqs-nvidia-quantum-tie-210735580.html",
+          "sentiment": 0.42
         }
       ],
       "volRegime": "Fair",
@@ -292,8 +280,8 @@
       "pcVol": 0.63,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "'Meta is having its moment' as stock's monster rally vindicates the bulls: Chart of the Day",
@@ -308,10 +296,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Market Chatter: Meta Platforms Loses New Mexico Jury Trial Over Cambridge Analytica Data Scandal",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-meta-platforms-loses-201559546.html",
-          "sentiment": -0.74
+          "title": "Meta misled users about Facebook data practices, New Mexico jury finds",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/media-advertising/articles/meta-misled-consumers-case-over-173420626.html",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -540,26 +528,26 @@
       "pcVol": 0.52,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Don't worry about Oracle \u2014 every technological advancement in history had its setbacks",
+          "title": "How to make sense of 7% mortgage rates and Oracle's AI data center disruption",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/dont-worry-oracle-every-technological-190000281.html",
-          "sentiment": 0.34
+          "link": "https://finance.yahoo.com/video/sense-7-mortgage-rates-oracles-190311760.html",
+          "sentiment": -0.36
         },
         {
-          "title": "Why Oracle stock's pullback should've been even 'deeper'",
+          "title": "AI financing fears are mounting, sparked by Oracle's force majeure notice",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/why-oracle-stocks-pullback-shouldve-120000997.html",
-          "sentiment": 0.0
+          "link": "https://finance.yahoo.com/video/ai-financing-fears-mounting-sparked-143411405.html",
+          "sentiment": -0.42
         },
         {
-          "title": "Cipher Digital\u2019s $5.2B Fluidstack Extension, Nscale\u2019s $35B IPO, Oracle\u2019s \u201cHell or High Water\u201d Project Jupiter",
-          "publisher": "Blockspace",
-          "link": "https://blockspace.media/podcast/cipher-digitals-5-2b-fluidstack-extension-nscales-35b-ipo-oracles-hell-or-high-water-project-jupiter/",
-          "sentiment": 0.0
+          "title": "Bloom Energy Stock Is Today\u2019s Top S&P 500 Performer. It Has a Lot to Do With Oracle.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/bloom-energy-stock-oracle-ai-50802d99?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.44
         }
       ],
       "volRegime": "Fair",
@@ -1142,7 +1130,7 @@
       "pcVol": 0.67,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -1152,15 +1140,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "Palantir vs. Snowflake: Which Enterprise AI Stock Better Justifies Its Valuation?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-vs-snowflake-enterprise-ai-205926979.html",
+          "sentiment": 0.44
+        },
+        {
           "title": "Why Is a Stock Down 97% This Year Paying to Appear Next to Palantir?",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/25/why-is-a-stock-down-97-this-year-paying-to-appear-next-to-palantir/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Palantir's Latest $250 Target Comes With a Catch",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/palantirs-latest-250-target-comes-183851496.html",
           "sentiment": 0.0
         }
       ],
@@ -1780,9 +1768,15 @@
       "pcVol": 0.55,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures: Growth Stocks Shrug Off Surging Yields; Micron, SpaceX, Tesla, Key Economic Data Due",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-growth-stocks-shrug-off-surging-yields-micron-spacex-tesla-economic-data/?src=A00220&yptr=yahoo",
+          "sentiment": 0.38
+        },
         {
           "title": "Stock Market Today: Dow Surges 450 Points On U.S.-Iran Peace Hopes; Micron Rises",
           "publisher": "Investor's Business Daily",
@@ -1793,12 +1787,6 @@
           "title": "Micron Technology Stock Wavers Ahead Of Fiscal Q4 Earnings Report",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/micron-technology-mu-stock-fiscal-q4-earnings-preview/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Two Numbers to Watch in Micron\u2019s Earnings Report Next Week",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-earnings-stock-price-ed735c79?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -2015,6 +2003,174 @@
       "sector": "Technology"
     },
     {
+      "sym": "TSLA",
+      "strat": "Covered Call",
+      "side": "bull",
+      "isETF": false,
+      "spot": 372.11,
+      "spotPriceStale": false,
+      "strike": "$425 C",
+      "hedge": {
+        "hedgeStrike": 335.0,
+        "hedgeCost": 5.92,
+        "cappedMaxLoss": 3781.0
+      },
+      "exp": "Oct 30",
+      "dte": 35,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 100,
+      "ap": 14.6,
+      "ivr": 53,
+      "ivRankLimited": false,
+      "dailyReturn": 14.93,
+      "roc": 1.4,
+      "score": 2.9,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": true,
+      "daysToEarnings": 26,
+      "marginOfSafety": true,
+      "delta": 0.2,
+      "iv": 45.2,
+      "premium": 5.22,
+      "breakeven": 366.88,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 36688.5,
+      "pcOI": 0.65,
+      "pcVol": 0.44,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.16,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Tesla Semi: Diesel's surge gives the electric truck an opening as high prices improve the math for fleets",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/stocks/article/tesla-semi-diesels-surge-gives-the-electric-truck-an-opening-as-high-prices-improve-the-math-for-fleets-161104233.html",
+          "sentiment": 0.78
+        },
+        {
+          "title": "Tesla's big semi truck bet is officially in motion",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/teslas-big-semi-truck-bet-143500697.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Stock Market Today, Sept. 25: Tesla Stock Under Pressure Despite Plans to Ramp Semi Truck Production",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/25/stock-market-today-sept-25-tesla-stock-under-pressure-despite-plans-to-ramp-semi-truck-production/",
+          "sentiment": -0.3
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 1.03,
+      "realizedVol": 43.9,
+      "expDate": "2026-10-30",
+      "legs": [
+        {
+          "type": "call",
+          "strike": 425.0,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "SPCX",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 148.68,
+      "spotPriceStale": false,
+      "strike": "$125/134/170/175",
+      "hedge": null,
+      "exp": "Oct 30",
+      "dte": 35,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 41,
+      "ap": 250.9,
+      "ivr": 11,
+      "ivRankLimited": true,
+      "dailyReturn": 6.19,
+      "roc": 24.06,
+      "score": 6.3,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 39,
+      "marginOfSafety": true,
+      "delta": 0.01,
+      "iv": 46.3,
+      "premium": 2.17,
+      "breakeven": 131.84,
+      "breakevenLow": 131.84,
+      "breakevenHigh": 172.16,
+      "breakevenMovePct": null,
+      "maxLoss": 683.5,
+      "pcOI": 1.65,
+      "pcVol": 0.69,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Google throws a satellite into the ring as the AI space race heats up",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/google-throws-a-satellite-into-the-ring-as-the-ai-space-race-heats-up-100000242.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "SpaceX\u2019s Falcon 9 Wind Down: Rocket Lab Is Set To Gain, Here\u2019s How",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-falcon-9-wind-down-211841411.html",
+          "sentiment": 0.53
+        },
+        {
+          "title": "Dow Jones Futures: Growth Stocks Shrug Off Surging Yields; Micron, SpaceX, Tesla, Key Economic Data Due",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-growth-stocks-shrug-off-surging-yields-micron-spacex-tesla-economic-data/?src=A00220&yptr=yahoo",
+          "sentiment": 0.38
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 1.05,
+      "realizedVol": 44.1,
+      "expDate": "2026-10-30",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 134.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 125.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 170.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 175.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
       "sym": "INTC",
       "strat": "Covered Call",
       "side": "bull",
@@ -2056,9 +2212,15 @@
       "pcVol": 0.46,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.59,
+      "newsSentiment": 0.56,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "What Is Intel (INTC) Doing In Edge AI And Brain Inspired Computing?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/intel-intc-doing-edge-ai-210701740.html",
+          "sentiment": 0.49
+        },
         {
           "title": "ARM vs. Intel: What Revenue Growth Trends Reveal About These Artificial Intelligence Companies",
           "publisher": "Motley Fool",
@@ -2256,6 +2418,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "SK Hynix\u2019s Solidigm Weighs IPO That Could Raise $15 Billion, Report Says",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/sk-hynix-solidigm-ipo-stock-eaf639af?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "SK Hynix\u2019s Solidigm said to mull IPO that could value unit at $150B",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-solidigm-said-mull-182850478.html",
@@ -2265,12 +2433,6 @@
           "title": "SK Hynix\u2019s U.S.-Based Solidigm Unit Reportedly Weighs IPO \u2013 Offering Expected Next Year At A Valuation Near $150B",
           "publisher": "Stocktwits",
           "link": "https://stocktwits.com/news-articles/markets/equity/sk-hynix-s-u-s-based-solidigm-unit-reportedly-weighs-ipo-offering-expected-next-year-at-a-valuation-near-150-b/cZMOiYuRBOK",
-          "sentiment": 0.0
-        },
-        {
-          "title": "SK Hynix (KOSE:A000660) Stock May Be Undervalued As Earnings Stay In Focus",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-kose-a000660-stock-131105402.html",
           "sentiment": 0.0
         }
       ],
@@ -3124,9 +3286,15 @@
       "pcVol": 0.54,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.17,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Top Analyst Reports for ExxonMobil, Automatic Data Processing & Cadence",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-exxonmobil-automatic-202000021.html",
+          "sentiment": 0.2
+        },
         {
           "title": "What Happens To ExxonMobil Stock If Refining Profits Fade?",
           "publisher": "Trefis",
@@ -3138,12 +3306,6 @@
           "publisher": "Offshore Technology",
           "link": "https://www.offshore-technology.com/news/bsr-crude-supply-agreement-exxonmobil/",
           "sentiment": -0.13
-        },
-        {
-          "title": "Could TotalEnergies (TTE)\u2019 LNG Growth Give it an Edge Over ExxonMobil (XOM)?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/energy/articles/could-totalenergies-tte-lng-growth-210805612.html",
-          "sentiment": 0.38
         }
       ],
       "volRegime": "Fair",
@@ -3616,26 +3778,26 @@
       "pcVol": 0.54,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.07,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Bank of America Says Stocks Are Overdue for a Pullback. These 2 Financial Stocks Are Built for One.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/25/bank-of-america-says-stocks-are-overdue-for-a-pull/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "\u2018Risks Are Rising\u2019 for Nike and It\u2019s Time to Sell the Stock, Says Bank of America",
+          "publisher": "Investopedia",
+          "link": "https://www.investopedia.com/market-update-risks-are-rising-for-nike-and-its-time-to-sell-the-stock-says-bank-of-america-nke-12140905",
+          "sentiment": 0.0
+        },
         {
           "title": "Bank of America Harshly Resets Nike Stock Target For 2026",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-harshly-resets-nike-182849210.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Major Banks Face Lack of Catalysts Through Upcoming Earnings, But Strong Medium-Term Outlook, Morgan Stanley Says",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/major-banks-face-lack-catalysts-170012219.html",
-          "sentiment": 0.57
-        },
-        {
-          "title": "Bank of America Warns Stock Market Faces Deleveraging Risk",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-warns-stock-market-164724157.html",
-          "sentiment": -0.36
         }
       ],
       "volRegime": "Fair",
@@ -3849,7 +4011,7 @@
       "dividendYield": 0.32,
       "marketCap": 4977636933632,
       "score": 7.9,
-      "newsSentiment": 0.19,
+      "newsSentiment": 0.22,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -3863,12 +4025,6 @@
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/25/apple-just-gained-10-in-a-month-what-will-it-take-for-aapl-stock-to-finally-hit-350/",
           "sentiment": 0.38
-        },
-        {
-          "title": "Qualcomm Stocks Jump as Apple Extends the Royalty Bridge",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-stocks-jump-apple-extends-175240580.html",
-          "sentiment": 0.13
         }
       ],
       "valuationLabel": "Fair",
@@ -3949,20 +4105,14 @@
       "dividendYield": 0.45,
       "marketCap": 5434765213696,
       "score": 9.1,
-      "newsSentiment": 0.49,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Meet the Magnificent Semiconductor Stock Crushing Nvidia in 2026",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/25/meet-the-magnificent-semiconductor-stock-crushing/",
-          "sentiment": 0.34
-        },
-        {
-          "title": "Nvidia, AMD Love This High-Tech Facilitator. So Does Wall Street.",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/research/ibd-stock-analysis/ase-technology-rides-ai-boom-alongside-amd-apple-nvidia-tsmc/?src=A00220&yptr=yahoo",
-          "sentiment": 0.64
+          "title": "Does IonQ's NVIDIA Quantum Tie-Up Reframe the Long-Term Hardware Opportunity for Rigetti Computing (RGTI)?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/does-ionqs-nvidia-quantum-tie-210735580.html",
+          "sentiment": 0.42
         }
       ],
       "valuationLabel": "Cheap",
@@ -3993,8 +4143,8 @@
       "dividendYield": 0.27,
       "marketCap": 1914858373120,
       "score": 7.3,
-      "newsSentiment": -0.01,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
           "title": "'Meta is having its moment' as stock's monster rally vindicates the bulls: Chart of the Day",
@@ -4009,10 +4159,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "Market Chatter: Meta Platforms Loses New Mexico Jury Trial Over Cambridge Analytica Data Scandal",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-meta-platforms-loses-201559546.html",
-          "sentiment": -0.74
+          "title": "Meta misled users about Facebook data practices, New Mexico jury finds",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/media-advertising/articles/meta-misled-consumers-case-over-173420626.html",
+          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
@@ -4131,26 +4281,26 @@
       "dividendYield": 1.43,
       "marketCap": 414554226688,
       "score": 3.7,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.11,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Don't worry about Oracle \u2014 every technological advancement in history had its setbacks",
+          "title": "How to make sense of 7% mortgage rates and Oracle's AI data center disruption",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/dont-worry-oracle-every-technological-190000281.html",
-          "sentiment": 0.34
+          "link": "https://finance.yahoo.com/video/sense-7-mortgage-rates-oracles-190311760.html",
+          "sentiment": -0.36
         },
         {
-          "title": "Why Oracle stock's pullback should've been even 'deeper'",
+          "title": "AI financing fears are mounting, sparked by Oracle's force majeure notice",
           "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/why-oracle-stocks-pullback-shouldve-120000997.html",
-          "sentiment": 0.0
+          "link": "https://finance.yahoo.com/video/ai-financing-fears-mounting-sparked-143411405.html",
+          "sentiment": -0.42
         },
         {
-          "title": "Cipher Digital\u2019s $5.2B Fluidstack Extension, Nscale\u2019s $35B IPO, Oracle\u2019s \u201cHell or High Water\u201d Project Jupiter",
-          "publisher": "Blockspace",
-          "link": "https://blockspace.media/podcast/cipher-digitals-5-2b-fluidstack-extension-nscales-35b-ipo-oracles-hell-or-high-water-project-jupiter/",
-          "sentiment": 0.0
+          "title": "Bloom Energy Stock Is Today\u2019s Top S&P 500 Performer. It Has a Lot to Do With Oracle.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/bloom-energy-stock-oracle-ai-50802d99?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.44
         }
       ],
       "valuationLabel": "Cheap",
@@ -4183,26 +4333,7 @@
       "score": 7.5,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Why Direxion Daily Semiconductor Bull 3X ETF Just Popped",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/21/why-direxion-daily-semiconductor-bull-3x-etf-just/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Why Direxion Daily Semiconductor Bull 3X ETF Dropped Today",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/14/direxion-daily-semiconductor-bull-3x-etf-dropped/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Daily ETF Flows: SOXL Inflows Total $520M",
-          "publisher": "etf.com",
-          "link": "http://www.etf.com/sections/daily-etf-flows/daily-etf-flows-soxl-inflows-total-520m?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
-          "sentiment": 0.0
-        }
-      ]
+      "newsHeadlines": []
     },
     {
       "sym": "TQQQ",
@@ -4473,7 +4604,7 @@
       "dividendYield": null,
       "marketCap": 455788101632,
       "score": 7.9,
-      "newsSentiment": 0.0,
+      "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -4483,15 +4614,15 @@
           "sentiment": 0.0
         },
         {
+          "title": "Palantir vs. Snowflake: Which Enterprise AI Stock Better Justifies Its Valuation?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/palantir-vs-snowflake-enterprise-ai-205926979.html",
+          "sentiment": 0.44
+        },
+        {
           "title": "Why Is a Stock Down 97% This Year Paying to Appear Next to Palantir?",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/25/why-is-a-stock-down-97-this-year-paying-to-appear-next-to-palantir/",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Palantir's Latest $250 Target Comes With a Catch",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/palantirs-latest-250-target-comes-183851496.html",
           "sentiment": 0.0
         }
       ],
@@ -4830,9 +4961,15 @@
       "dividendYield": 0.05,
       "marketCap": 1222319669248,
       "score": 9.1,
-      "newsSentiment": 0.29,
+      "newsSentiment": 0.42,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures: Growth Stocks Shrug Off Surging Yields; Micron, SpaceX, Tesla, Key Economic Data Due",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-growth-stocks-shrug-off-surging-yields-micron-spacex-tesla-economic-data/?src=A00220&yptr=yahoo",
+          "sentiment": 0.38
+        },
         {
           "title": "Stock Market Today: Dow Surges 450 Points On U.S.-Iran Peace Hopes; Micron Rises",
           "publisher": "Investor's Business Daily",
@@ -4843,12 +4980,6 @@
           "title": "Micron Technology Stock Wavers Ahead Of Fiscal Q4 Earnings Report",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/technology/micron-technology-mu-stock-fiscal-q4-earnings-preview/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Two Numbers to Watch in Micron\u2019s Earnings Report Next Week",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/micron-earnings-stock-price-ed735c79?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -4952,6 +5083,98 @@
       "sectorPeerCount": 25
     },
     {
+      "sym": "TSLA",
+      "isETF": false,
+      "price": 372.11,
+      "priceStale": false,
+      "high52wk": 498.83,
+      "low52wk": 297.38,
+      "pctFromHigh": -25.4,
+      "pctFromLow": 25.1,
+      "trend": "Strong Uptrend",
+      "rsi": 55.3,
+      "chg1m": 7.6,
+      "chg3m": -2.0,
+      "chg6m": 0.0,
+      "chg1y": -15.5,
+      "volRatio": 1.17,
+      "peRatio": 338.3,
+      "sector": "Consumer Cyclical",
+      "industry": "Auto Manufacturers",
+      "pegRatio": 4.52,
+      "dividendYield": null,
+      "marketCap": 1469666033664,
+      "score": 7.4,
+      "newsSentiment": 0.16,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Tesla Semi: Diesel's surge gives the electric truck an opening as high prices improve the math for fleets",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/stocks/article/tesla-semi-diesels-surge-gives-the-electric-truck-an-opening-as-high-prices-improve-the-math-for-fleets-161104233.html",
+          "sentiment": 0.78
+        },
+        {
+          "title": "Tesla's big semi truck bet is officially in motion",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/teslas-big-semi-truck-bet-143500697.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Stock Market Today, Sept. 25: Tesla Stock Under Pressure Despite Plans to Ramp Semi Truck Production",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/25/stock-market-today-sept-25-tesla-stock-under-pressure-despite-plans-to-ramp-semi-truck-production/",
+          "sentiment": -0.3
+        }
+      ]
+    },
+    {
+      "sym": "SPCX",
+      "isETF": false,
+      "price": 148.68,
+      "priceStale": false,
+      "high52wk": 225.64,
+      "low52wk": 104.83,
+      "pctFromHigh": -34.1,
+      "pctFromLow": 41.8,
+      "trend": "Strong Uptrend",
+      "rsi": 54.8,
+      "chg1m": 6.5,
+      "chg3m": -3.0,
+      "chg6m": null,
+      "chg1y": -7.6,
+      "volRatio": 0.63,
+      "peRatio": null,
+      "sector": "Industrials",
+      "industry": "Aerospace & Defense",
+      "pegRatio": null,
+      "dividendYield": null,
+      "marketCap": 1959866925056,
+      "score": 7.4,
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Google throws a satellite into the ring as the AI space race heats up",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/google-throws-a-satellite-into-the-ring-as-the-ai-space-race-heats-up-100000242.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "SpaceX\u2019s Falcon 9 Wind Down: Rocket Lab Is Set To Gain, Here\u2019s How",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-falcon-9-wind-down-211841411.html",
+          "sentiment": 0.53
+        },
+        {
+          "title": "Dow Jones Futures: Growth Stocks Shrug Off Surging Yields; Micron, SpaceX, Tesla, Key Economic Data Due",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-growth-stocks-shrug-off-surging-yields-micron-spacex-tesla-economic-data/?src=A00220&yptr=yahoo",
+          "sentiment": 0.38
+        }
+      ]
+    },
+    {
       "sym": "INTC",
       "isETF": false,
       "price": 123.0,
@@ -4974,9 +5197,15 @@
       "dividendYield": null,
       "marketCap": 650190913536,
       "score": 7.9,
-      "newsSentiment": 0.59,
+      "newsSentiment": 0.56,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "What Is Intel (INTC) Doing In Edge AI And Brain Inspired Computing?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/technology/ai/articles/intel-intc-doing-edge-ai-210701740.html",
+          "sentiment": 0.49
+        },
         {
           "title": "ARM vs. Intel: What Revenue Growth Trends Reveal About These Artificial Intelligence Companies",
           "publisher": "Motley Fool",
@@ -5466,7 +5695,7 @@
       "price": 821.58,
       "priceStale": false,
       "high52wk": 1071.47,
-      "low52wk": 458.26,
+      "low52wk": 458.25,
       "pctFromHigh": -23.3,
       "pctFromLow": 79.3,
       "trend": "Strong Downtrend",
@@ -5529,9 +5758,15 @@
       "dividendYield": 2.54,
       "marketCap": 660331954176,
       "score": 4.9,
-      "newsSentiment": 0.23,
+      "newsSentiment": 0.17,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Top Analyst Reports for ExxonMobil, Automatic Data Processing & Cadence",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-exxonmobil-automatic-202000021.html",
+          "sentiment": 0.2
+        },
         {
           "title": "What Happens To ExxonMobil Stock If Refining Profits Fade?",
           "publisher": "Trefis",
@@ -5543,12 +5778,6 @@
           "publisher": "Offshore Technology",
           "link": "https://www.offshore-technology.com/news/bsr-crude-supply-agreement-exxonmobil/",
           "sentiment": -0.13
-        },
-        {
-          "title": "Could TotalEnergies (TTE)\u2019 LNG Growth Give it an Edge Over ExxonMobil (XOM)?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/energy/articles/could-totalenergies-tte-lng-growth-210805612.html",
-          "sentiment": 0.38
         }
       ]
     },
@@ -5813,26 +6042,26 @@
       "dividendYield": 2.28,
       "marketCap": 396488835072,
       "score": 4.9,
-      "newsSentiment": 0.07,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Bank of America Says Stocks Are Overdue for a Pullback. These 2 Financial Stocks Are Built for One.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/25/bank-of-america-says-stocks-are-overdue-for-a-pull/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "\u2018Risks Are Rising\u2019 for Nike and It\u2019s Time to Sell the Stock, Says Bank of America",
+          "publisher": "Investopedia",
+          "link": "https://www.investopedia.com/market-update-risks-are-rising-for-nike-and-its-time-to-sell-the-stock-says-bank-of-america-nke-12140905",
+          "sentiment": 0.0
+        },
         {
           "title": "Bank of America Harshly Resets Nike Stock Target For 2026",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-harshly-resets-nike-182849210.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Major Banks Face Lack of Catalysts Through Upcoming Earnings, But Strong Medium-Term Outlook, Morgan Stanley Says",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/major-banks-face-lack-catalysts-170012219.html",
-          "sentiment": 0.57
-        },
-        {
-          "title": "Bank of America Warns Stock Market Faces Deleveraging Risk",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-warns-stock-market-164724157.html",
-          "sentiment": -0.36
         }
       ],
       "valuationLabel": "Cheap",

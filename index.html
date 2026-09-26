@@ -1113,10 +1113,9 @@
          becomes a fixed bottom bar on mobile (see its mobile CSS), so
          anything nested inside it would permanently grow that pinned bar on
          every screen instead of just scrolling past like this row does. -->
-    <div class="num-row" style="border-top:1px solid var(--border); margin-top:12px; padding-top:12px; flex-wrap:wrap;">
+    <div class="num-row" style="border-top:1px solid var(--border); margin-top:12px; padding-top:12px;">
       <label for="minTradeProfitInput">Min trade profit %</label>
       <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
-      <span style="flex-basis:100%; font-size:11px; font-weight:500; color:var(--text-faint); margin-top:-2px;">Updates the list instantly — no need to hit Apply filters</span>
     </div>
 
     <div class="apply-bar">

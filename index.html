@@ -1104,20 +1104,6 @@
       </div>
     </div>
 
-    <!-- Still outside the collapsible Outlook/Quality/Risk sections (always
-         visible, not hidden behind a tap) and still updates on every
-         keystroke rather than waiting for "Apply filters" — but merged
-         2026-09-26 into this same outer .filter-card instead of its own
-         separate box, to save vertical space. Deliberately placed OUTSIDE
-         .apply-bar below (a sibling row, not nested inside it): .apply-bar
-         becomes a fixed bottom bar on mobile (see its mobile CSS), so
-         anything nested inside it would permanently grow that pinned bar on
-         every screen instead of just scrolling past like this row does. -->
-    <div class="num-row" style="border-top:1px solid var(--border); margin-top:12px; padding-top:12px;">
-      <label for="minTradeProfitInput">Min trade profit %</label>
-      <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
-    </div>
-
     <div class="apply-bar">
       <div class="apply-bar-row">
         <button class="reset-btn" id="resetFilters">Reset to defaults</button>
@@ -1136,7 +1122,7 @@
         <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
         <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
-      <div class="sort-wrap">
+      <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
         Sort by
         <select id="sortSelect">
           <option value="score">Composite rating</option>
@@ -1145,9 +1131,14 @@
           <option value="pot">Probability of touch</option>
           <option value="dte">Days to expiration</option>
         </select>
+        <!-- Moved here from the filter card 2026-09-26, alongside the other
+             sort/display control on this same bar — still updates on every
+             keystroke (see liveApplyMinProfit), still the same
+             #minTradeProfitInput id everything else already refers to. -->
+        <span style="margin-left:4px;">Min trade profit %</span>
+        <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15" style="width:60px; background:var(--surface); border:1px solid var(--border-strong); color:var(--text); font-family:var(--mono); font-size:13px; font-weight:700; padding:6px 7px; border-radius:7px; text-align:center;">
       </div>
     </div>
-    <div class="funnel-note" id="funnelNote"></div>
   </div>
 
   <div class="table-wrap">
@@ -1604,9 +1595,12 @@
   }
 
   function renderFunnel(){
-    const el = document.getElementById('funnelNote');
-    if(!lastFunnel || lastFunnel.length <= 1){ el.textContent = ''; return; }
-    el.textContent = lastFunnel.map(f => `${f.label}: ${f.count}`).join('  →  ');
+    // Removed 2026-09-26 — the step-by-step filter breakdown was diagnostic
+    // detail nobody needed day-to-day; the result count + visible list
+    // already answer "how many, and which ones." Left as a safe no-op
+    // (rather than hunting down every call site) since renderFunnel() is
+    // called from several places alongside the actual re-render.
+    return;
   }
 
   const FILTER_CHECKBOX_SELECTOR = '[data-strat], [data-quality], [data-risk], [data-pcoi], [data-pcvol]';

@@ -1536,17 +1536,21 @@ def build_trade_for_ticker(ticker_symbol, index):
         # side with a defined-risk debit alternative (Bull/Bear ... Spread)
         # and the naked mirror of Covered Call (Cash-Secured Put) — all three
         # reuse the exact same delta-targeted strike-picking as their siblings.
+        #
+        # Updated 2026-09-26: Long Call, Long Put, and Double Diagonal removed
+        # from rotation entirely (not just unchecked by default) — dropped
+        # from the Outlook & Strategy filter list on the frontend, so a
+        # trade with one of these strat values could never surface there no
+        # matter how someone set their filters. Generating them here would
+        # just waste chain-fetch calls on strategies with nowhere to appear.
         if index % 4 == 0:
-            # Split the neutral slot itself between the two neutral strategies
-            # rather than adding a 5th bucket — still 1-in-4 tickers overall
-            # go neutral, just alternating which neutral structure they get.
-            strat = "Double Diagonal" if (index // 4) % 2 == 1 else "Iron Condor"
+            strat = "Iron Condor"
             side = "neutral"
         elif uptrend:
-            strat = ["Covered Call", "Bull Put Spread", "Long Call", "Cash-Secured Put", "Bull Call Spread"][index % 5]
+            strat = ["Covered Call", "Bull Put Spread", "Cash-Secured Put", "Bull Call Spread"][index % 4]
             side = "bull"
         else:
-            strat = ["Bear Call Spread", "Long Put", "Bear Put Spread"][index % 3]
+            strat = ["Bear Call Spread", "Bear Put Spread"][index % 2]
             side = "bear"
 
         # Evaluate every expiration candidate within the target window (up to the

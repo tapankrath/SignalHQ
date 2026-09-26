@@ -499,6 +499,14 @@
   }
   .apply-btn:hover{ filter:brightness(1.08); }
   .apply-btn:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
+  .apply-btn-compact{
+    width:100%; background:var(--surface-2); color:var(--amber-strong);
+    border:1px solid var(--amber-border); padding:8px; border-radius:8px;
+    font-weight:700; font-size:12.5px; margin-bottom:8px;
+    transition:background .12s;
+  }
+  .apply-btn-compact:hover{ background:var(--amber-soft); }
+  .apply-btn-compact:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
   .reset-btn{
     flex:1; background:var(--surface); border:1px solid var(--border-strong); color:var(--text-dim);
     padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:600;
@@ -1074,6 +1082,14 @@
         <span class="filter-chevron">›</span>
       </button>
     </div>
+
+    <!-- Compact Apply, right next to the 3 category boxes above (added
+         2026-09-26) — the full-size Apply filters button at the bottom of
+         .filter-card is still there for whenever you're scrolled deep into
+         an open section's checkboxes, but it's a real reach back up to the
+         top-of-card boxes otherwise. Same applyFilters() as that one; just
+         a second, closer entry point to it, not a replacement. -->
+    <button class="apply-btn-compact" type="button" id="applyFiltersTop">Apply filters</button>
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
@@ -2433,6 +2449,7 @@
   }
 
   document.getElementById('applyFilters').addEventListener('click', applyFilters);
+  document.getElementById('applyFiltersTop').addEventListener('click', applyFilters);
 
   // Min trade profit's own live update — deliberately lighter than
   // applyFilters() above: just recompute/re-render/update the funnel and

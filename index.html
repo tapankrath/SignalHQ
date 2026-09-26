@@ -1069,10 +1069,7 @@
         <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row"><input type="checkbox" data-strat="Double Diagonal"> <span class="strat-dot neutral"></span>Double Diagonal</label>
-        <label class="check-row"><input type="checkbox" data-strat="Long Call"> <span class="strat-dot bull"></span>Long Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Long Put"> <span class="strat-dot bear"></span>Long Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread"> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
@@ -1098,7 +1095,7 @@
           <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
         </div>
       </div>
-      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this. Long Call/Long Put/Double Diagonal have no fixed profit figure, so they don't pass this filter.</div>
+      <div class="filter-hint">Filters out setups whose raw (non-annualized) trade profit is below this.</div>
     </div>
 
     <div class="filter-section" id="riskSection" style="display:none;">
@@ -1578,24 +1575,16 @@
     // at 6 DTE annualizes to 100%+), so filtering on roc directly is both
     // simpler and closer to what the number actually means. Defaults to 15%.
     //
-    // Long Call/Long Put — and now Double Diagonal too — have no "ap"/"roc"
-    // at all (all null — see backend notes on breakevenMovePct, and
-    // build_double_diagonal's docstring for why a diagonal's max profit
-    // isn't closed-form). An earlier version let those pass through here on
-    // a probability-based fallback instead of a profit check, but that meant
-    // "Min Trade Profit" — a filter named and framed as a profit floor —
-    // could still surface rows with a bare "–" in Trade Profit, which read
-    // as broken rather than intentional. Decided (2026-09-18) to filter
-    // strictly on the number the control is named after: since these
-    // strategies never have one, they're excluded here unconditionally.
-    // This is a real behavior change worth knowing about, not just a
-    // formatting tweak — Long Call, Long Put, and Double Diagonal will not
-    // appear in results at all (this stage always runs, at any threshold,
-    // including 0), regardless of the Outlook & Strategy checkboxes. Double
-    // Diagonal is checked by default (see DEFAULT_CHECKED below) but won't
-    // actually surface unless Min Trade Profit is lowered to 0 — same
-    // standing tradeoff Long Call/Long Put already live with, just now also
-    // true for a strategy that starts out checked.
+    // Any strategy with no "roc" at all (null — a handful of past additions
+    // had this, e.g. an uncapped debit position or a two-expiration spread
+    // whose max profit isn't closed-form) is excluded here unconditionally
+    // rather than let through on a fallback: "Min Trade Profit" is framed as
+    // a profit floor, and a bare "–" in that column reads as broken, not
+    // intentional. Decided 2026-09-18. As of 2026-09-26 nothing currently in
+    // rotation actually hits this case (Long Call/Long Put/Double Diagonal,
+    // the three strategies this affected, were removed from the Outlook &
+    // Strategy list and from generation entirely) — left in place as a
+    // guard for if a future strategy addition has the same "no roc" shape.
     const minTradeProfitInput = document.getElementById('minTradeProfitInput');
     const minTradeProfit = Math.max(0, Number(minTradeProfitInput.value) || 0);
     pool = pool.filter(t=> t.roc != null && t.roc > minTradeProfit);

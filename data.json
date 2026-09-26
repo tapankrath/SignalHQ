@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T00:38:30.162834+00:00",
+  "generated_at": "2026-09-26T01:18:03.055084+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,26 +40,26 @@
       "pcVol": 0.77,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.17,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Apple (AAPL) Rises Higher Than Market: Key Facts",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-rises-higher-market-204501112.html",
+          "title": "Apple (AAPL) Eyes an Apple Pay Launch in India. How Much can it Grow Without UPI?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/apple-aapl-eyes-apple-pay-005634655.html",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Qualcomm (QCOM) Renews its Global Patent License With Apple (AAPL)",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-renews-global-patent-005320827.html",
           "sentiment": 0.0
         },
         {
-          "title": "Apple (AAPL) Reaches $250 Million Siri Settlement Over Recent iPhone Claims",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-reaches-250-million-190827546.html",
-          "sentiment": 0.05
-        },
-        {
-          "title": "Apple Just Gained 10% in a Month. What Will It Take for AAPL Stock to Finally Hit $350?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/25/apple-just-gained-10-in-a-month-what-will-it-take-for-aapl-stock-to-finally-hit-350/",
-          "sentiment": 0.38
+          "title": "Italy\u2019s Labor Dispute Added a Twist to Apple (AAPL)\u2019s iPhone Launch",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/italy-labor-dispute-added-twist-002836230.html",
+          "sentiment": -0.4
         }
       ],
       "volRegime": "Fair",
@@ -93,9 +93,9 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -6.7,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -3.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -152,9 +152,9 @@
           "sentiment": 0.0
         },
         {
-          "title": "Microsoft CEO: Autopilot is the 'next generation' of enterprise AI",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/microsoft-ceo-autopilot-is-the-next-generation-of-enterprise-ai-135710848.html",
+          "title": "Should You Buy Microsoft Stock Now That It's Back Within 6% of Its Record?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/25/should-you-buy-microsoft-stock-now-that-it-s-back-within-6-of-its-record/",
           "sentiment": 0.0
         }
       ],
@@ -177,9 +177,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -31.3,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -29.1,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -243,9 +243,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -32.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -29.6,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -286,7 +286,7 @@
       "pcVol": 0.63,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.5,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -296,16 +296,16 @@
           "sentiment": 0.73
         },
         {
-          "title": "Meta's Muse says it can manage your money. Should you let it?",
-          "publisher": "Yahoo Personal Finance",
-          "link": "https://finance.yahoo.com/personal-finance/banking/article/metas-muse-says-it-can-manage-your-money-should-you-let-it-141040045.html",
+          "title": "What Meta's Muse event reveals about Mark Zuckerberg's mindset right now",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/what-metas-muse-event-reveals-about-mark-zuckerbergs-mindset-right-now-142402785.html",
           "sentiment": 0.0
         },
         {
-          "title": "AutoZone Is Still a Buy, Analyst Says. Plus, Meta and 5 More Stocks.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/autozone-is-still-a-buy-analyst-says-plus-meta-and-5-more-stocks-ad576e31?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Meta is banking its future on its Muse AI agent \u2014 and winning user trust",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/meta-is-banking-its-future-on-its-muse-ai-agent--and-winning-user-trust-182927585.html",
+          "sentiment": 0.77
         }
       ],
       "volRegime": "Fair",
@@ -364,14 +364,14 @@
       "pcVol": 0.33,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.64,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Sundar Pichai Reported Alphabet's Cloud Backlog Hit $514 Billion After 82% Revenue Growth Last Quarter, With Nearly 90% of the Fortune 100 Using Gemini Enterprise. Is Google Cloud Becoming a Bigger Growth Driver Than Search?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/25/sundar-pichai-reported-alphabets-cloud-backlog-hit/",
-          "sentiment": 0.64
+          "title": "Alphabet (GOOGL) Plans Waymo\u2019s Singapore Launch for 2028. Can Robotaxis Scale Abroad?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/alphabet-googl-plans-waymo-singapore-005319808.html",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -491,7 +491,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 0.7,
+      "peVsSectorPct": 1.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -534,8 +534,8 @@
       "pcVol": 0.61,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.26,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "How to make sense of 7% mortgage rates and Oracle's AI data center disruption",
@@ -550,10 +550,10 @@
           "sentiment": -0.42
         },
         {
-          "title": "Bloom Energy (BE) Is Up 8.7% After Oracle Reaffirms 2.4 GW AI Fuel Cell Deal Commitment \u2013 Has The Bull Case Changed?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-8-7-oracle-220801648.html",
-          "sentiment": 0.57
+          "title": "Why Oracle stock's pullback should've been even 'deeper'",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/why-oracle-stocks-pullback-shouldve-120000997.html",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -575,10 +575,88 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.7,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -46.9,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
+    },
+    {
+      "sym": "AMZN",
+      "strat": "Long Put",
+      "side": "bear",
+      "isETF": false,
+      "spot": 249.38,
+      "spotPriceStale": true,
+      "strike": "$250 P",
+      "hedge": null,
+      "exp": "Oct 23",
+      "dte": 27,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 32,
+      "ap": null,
+      "ivr": 44,
+      "ivRankLimited": false,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 4.8,
+      "buy": false,
+      "sell": true,
+      "ema": true,
+      "earningsSoon": false,
+      "daysToEarnings": 33,
+      "marginOfSafety": false,
+      "delta": -0.48,
+      "iv": 27.7,
+      "premium": 7.65,
+      "breakeven": 242.35,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 2.82,
+      "maxLoss": 765.0,
+      "pcOI": 0.61,
+      "pcVol": 0.35,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Let\u2019s Take a Closer Look at Amazon\u2019s (AMZN) Debt-Fueled AI Buildout",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/let-closer-look-amazon-amzn-232034177.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Amazon Stocks Move Lower as Anthropic Commits $11.6 Billion Elsewhere",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-move-lower-anthropic-181534479.html",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Quantum Is a $850 Billion Dream. Microsoft and Amazon Are Betting Big on It.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/microsoft-amazon-quantum-computing-536512fd?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.4
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 0.99,
+      "realizedVol": 27.9,
+      "expDate": "2026-10-23",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 250.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -2.0,
+      "sectorMedianPE": 20.5,
+      "sectorPeerCount": 3,
+      "sector": "Consumer Cyclical"
     },
     {
       "sym": "SOXL",
@@ -907,9 +985,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 106.2,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 109.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1005,9 +1083,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -68.7,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -67.7,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1083,9 +1161,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -47.2,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1167,9 +1245,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 19958.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 20651.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1249,9 +1327,99 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 286.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 300.2,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
+    },
+    {
+      "sym": "TSM",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 451.15,
+      "spotPriceStale": true,
+      "strike": "$410/420/495/505",
+      "hedge": null,
+      "exp": "Oct 30",
+      "dte": 34,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 42,
+      "ap": 338.2,
+      "ivr": 15,
+      "ivRankLimited": false,
+      "dailyReturn": 9.26,
+      "roc": 31.5,
+      "score": 6.4,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 19,
+      "marginOfSafety": false,
+      "delta": 0.01,
+      "iv": 33.1,
+      "premium": 3.15,
+      "breakeven": 416.85,
+      "breakevenLow": 416.85,
+      "breakevenHigh": 498.15,
+      "breakevenMovePct": null,
+      "maxLoss": 685.0,
+      "pcOI": 2.08,
+      "pcVol": 0.96,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Advanced Micro Devices vs. Taiwan Semiconductor Manufacturing: Which Technology Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/25/advanced-micro-devices-vs-taiwan-semiconductor-manufacturing-which-technology-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.6
+        },
+        {
+          "title": "Dow Jones Futures Signal Rebound For Resilient Market; Tesla, Akamai, Taiwan Semi In Focus",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-rally-resilient-yields-oil-prices-rising-tesla-semi-event/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.15,
+      "realizedVol": 28.7,
+      "expDate": "2026-10-30",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 420.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 410.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 495.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 505.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -17.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1327,9 +1495,87 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -22.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -19.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
+    },
+    {
+      "sym": "PANW",
+      "strat": "Cash-Secured Put",
+      "side": "bull",
+      "isETF": false,
+      "spot": 389.92,
+      "spotPriceStale": true,
+      "strike": "$350 P",
+      "hedge": null,
+      "exp": "Oct 30",
+      "dte": 34,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 43,
+      "ap": 37.0,
+      "ivr": 98,
+      "ivRankLimited": false,
+      "dailyReturn": 35.51,
+      "roc": 3.45,
+      "score": 6.3,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 54,
+      "marginOfSafety": false,
+      "delta": -0.21,
+      "iv": 51.7,
+      "premium": 12.07,
+      "breakeven": 337.93,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 33792.5,
+      "pcOI": 0.59,
+      "pcVol": 0.74,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": -0.15,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "Palo Alto Networks CEO drops blunt take on AI slowdown calls",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/palo-alto-ceo-ai-slowdown-unrealistic",
+          "sentiment": -0.42
+        },
+        {
+          "title": "Palo Alto Networks (PANW): Can Platformization Keep Driving Growth?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/palo-alto-networks-panw-platformization-215609637.html",
+          "sentiment": 0.38
+        },
+        {
+          "title": "Palo Alto Networks (PANW) Stock Slides as Market Rises: Facts to Know Before You Trade",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-stock-204506912.html",
+          "sentiment": -0.42
+        }
+      ],
+      "volRegime": "Cheap",
+      "ivRvRatio": 0.65,
+      "realizedVol": 79.6,
+      "expDate": "2026-10-30",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 350.0,
+          "action": "sell",
+          "qty": 1
+        }
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 2272.6,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1411,9 +1657,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 72.3,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 78.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1558,6 +1804,84 @@
       ]
     },
     {
+      "sym": "HD",
+      "strat": "Long Put",
+      "side": "bear",
+      "isETF": false,
+      "spot": 292.18,
+      "spotPriceStale": true,
+      "strike": "$290 P",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 13,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 32,
+      "ap": null,
+      "ivr": 25,
+      "ivRankLimited": false,
+      "dailyReturn": null,
+      "roc": null,
+      "score": 6.0,
+      "buy": false,
+      "sell": true,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 52,
+      "marginOfSafety": false,
+      "delta": -0.42,
+      "iv": 26.4,
+      "premium": 3.8,
+      "breakeven": 286.2,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": 2.05,
+      "maxLoss": 380.0,
+      "pcOI": 0.7,
+      "pcVol": 0.99,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.43,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "What mortgage rate surges mean for home improvement stocks",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/mortgage-rate-surges-mean-home-143052293.html",
+          "sentiment": 0.79
+        },
+        {
+          "title": "Is Home Depot's Next Big Thing Already In Its Stores?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616649/is-home-depots-next-big-thing-already-in-its-stores/2026-09-25",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Home Depot vs. Floor & Decor: Which Stock Looks More Attractive?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-vs-floor-decor-134300014.html",
+          "sentiment": 0.49
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.18,
+      "realizedVol": 22.3,
+      "expDate": "2026-10-09",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 290.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 20.5,
+      "sectorPeerCount": 3,
+      "sector": "Consumer Cyclical"
+    },
+    {
       "sym": "COST",
       "strat": "Bear Put Spread",
       "side": "bear",
@@ -1605,16 +1929,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Costco tops Q4 estimates, boosted by tariff refunds",
-          "publisher": "Yahoo Finance Video",
-          "link": "",
-          "sentiment": 0.7
+          "title": "Costco is getting squeezed by the AI boom",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/article/costco-is-getting-squeezed-by-the-ai-boom-133927696.html",
+          "sentiment": 0.0
         },
         {
-          "title": "Stocks to Watch Recap: Costco, Akamai Technologies, People",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-25-2026/card/stocks-to-watch-akamai-technologies-nanexa-people-3BXdLxg0RsSEfbXGMCCe?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Costco tops Q4 estimates, boosted by tariff refunds",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/costco-tops-q4-estimates-boosted-by-tariff-refunds-131941959.html",
+          "sentiment": 0.7
         }
       ],
       "volRegime": "Rich",
@@ -1727,9 +2051,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -23.6,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -21.0,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1809,9 +2133,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 106.2,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 113.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1907,9 +2231,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -41.5,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -39.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -1989,9 +2313,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -42.5,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -40.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -2081,9 +2405,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 285.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 299.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -2109,7 +2433,7 @@
       "ivRankLimited": false,
       "dailyReturn": 13.38,
       "roc": 1.2,
-      "score": 2.8,
+      "score": 2.2,
       "buy": true,
       "sell": false,
       "ema": true,
@@ -2128,7 +2452,7 @@
       "pcVol": 0.44,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.39,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -2138,16 +2462,16 @@
           "sentiment": 0.78
         },
         {
-          "title": "Tesla's big semi truck bet is officially in motion",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/teslas-big-semi-truck-bet-143500697.html",
-          "sentiment": 0.0
-        },
-        {
           "title": "Tesla (TSLA), Ford (F), and GM (GM) Face a Weaker EV Market. Who Can Protect Profits?",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-ford-f-gm-234737136.html",
           "sentiment": 0.38
+        },
+        {
+          "title": "Stock Market Today, Sept. 25: Tesla Stock Under Pressure Despite Plans to Ramp Semi Truck Production",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/25/stock-market-today-sept-25-tesla-stock-under-pressure-despite-plans-to-ramp-semi-truck-production/",
+          "sentiment": -0.3
         }
       ],
       "volRegime": "Fair",
@@ -2161,7 +2485,12 @@
           "action": "sell",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 1550.2,
+      "sectorMedianPE": 20.5,
+      "sectorPeerCount": 3,
+      "sector": "Consumer Cyclical"
     },
     {
       "sym": "SPCX",
@@ -2373,14 +2702,14 @@
       "pcVol": 0.99,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.64,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Sundar Pichai Reported Alphabet's Cloud Backlog Hit $514 Billion After 82% Revenue Growth Last Quarter, With Nearly 90% of the Fortune 100 Using Gemini Enterprise. Is Google Cloud Becoming a Bigger Growth Driver Than Search?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/25/sundar-pichai-reported-alphabets-cloud-backlog-hit/",
-          "sentiment": 0.64
+          "title": "Alphabet (GOOGL) Plans Waymo\u2019s Singapore Launch for 2028. Can Robotaxis Scale Abroad?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/alphabet-googl-plans-waymo-singapore-005319808.html",
+          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -2462,9 +2791,9 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 8.8,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 10.9,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -2505,9 +2834,15 @@
       "pcVol": 0.67,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.06,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SK Hynix (SKHY) Weighs a U.S. NAND Plant. Would Lower China Risk Justify the Cost?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/sk-hynix-skhy-weighs-u-003823844.html",
+          "sentiment": -0.51
+        },
         {
           "title": "SK Hynix\u2019s Solidigm Weighs IPO That Could Raise $15 Billion, Report Says",
           "publisher": "Barrons.com",
@@ -2519,12 +2854,6 @@
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-solidigm-said-mull-182850478.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "SK Hynix\u2019s U.S.-Based Solidigm Unit Reportedly Weighs IPO \u2013 Offering Expected Next Year At A Valuation Near $150B",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/sk-hynix-s-u-s-based-solidigm-unit-reportedly-weighs-ipo-offering-expected-next-year-at-a-valuation-near-150-b/cZMOiYuRBOK",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2639,9 +2968,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 57.8,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 63.2,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -2663,7 +2992,7 @@
       "ivRankLimited": false,
       "dailyReturn": null,
       "roc": null,
-      "score": 4.7,
+      "score": 5.3,
       "buy": false,
       "sell": true,
       "ema": false,
@@ -2716,10 +3045,10 @@
           "qty": 1
         }
       ],
-      "valuationLabel": "Cheap",
-      "peVsSectorPct": 0.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 3.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -2815,9 +3144,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -59.4,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -58.0,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -2899,10 +3228,94 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 31.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 35.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
+    },
+    {
+      "sym": "LLY",
+      "strat": "Bear Call Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 1181.89,
+      "spotPriceStale": true,
+      "strike": "$1250/1260",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 13,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 43,
+      "ap": 772.1,
+      "ivr": 0,
+      "ivRankLimited": false,
+      "dailyReturn": 21.15,
+      "roc": 27.5,
+      "score": 6.1,
+      "buy": false,
+      "sell": true,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 33,
+      "marginOfSafety": false,
+      "delta": 0.22,
+      "iv": 35.1,
+      "premium": 2.75,
+      "breakeven": 1252.75,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 725.0,
+      "pcOI": 1.09,
+      "pcVol": 1.0,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Biotech Deal Week: Lilly, Novo And Novartis Pay Up For Platforms, Not Pipelines",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/biotech-deal-week-lilly-novo-and-novartis-pay-up-for-platforms-not-pipelines/cZMXysORBOn",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Is LLY Stock Cheaper Than It Looks?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616604/is-lly-stock-cheaper-than-it-looks/2026-09-25",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Top Midday Stories: Akamai's $11.6 Billion Anthropic Deal; Scholastic Q1 Loss Widens; Nektar Awarded $90 Million in Eli Lilly Case",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-midday-stories-akamai-apos-160532676.html",
+          "sentiment": 0.3
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.87,
+      "realizedVol": 18.8,
+      "expDate": "2026-10-09",
+      "legs": [
+        {
+          "type": "call",
+          "strike": 1250.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 1260.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 26.0,
+      "sectorMedianPE": 31.5,
+      "sectorPeerCount": 3,
+      "sector": "Healthcare"
     },
     {
       "sym": "ASML",
@@ -2977,9 +3390,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 43.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 47.9,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -3020,26 +3433,26 @@
       "pcVol": 0.34,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Qualcomm's CMO reveals the secret behind Snapdragon's rise",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/qualcomms-cmo-reveals-secret-behind-140705053.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Qualcomm (QCOM) Renews its Global Patent License With Apple (AAPL)",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-renews-global-patent-005320827.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Qualcomm Stocks Jump as Apple Extends the Royalty Bridge",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-stocks-jump-apple-extends-175240580.html",
           "sentiment": 0.13
-        },
-        {
-          "title": "Qualcomm Rallies 6% as Buyers Reverse Apple Renewal Selloff; Apple Stock Ticks Up",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/25/qualcomm-rallies-6-as-buyers-reverse-apple-renewal-selloff-apple-stock-ticks-up/",
-          "sentiment": 0.54
-        },
-        {
-          "title": "Qualcomm Renews Apple Patent Deal: Can QTL Regain Momentum?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-renews-apple-patent-deal-161100620.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -3061,9 +3474,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -44.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": -43.0,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -3159,7 +3572,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 114.4,
+      "peVsSectorPct": 115.1,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -3281,9 +3694,15 @@
       "pcVol": 0.85,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.17,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction Markets Just Got Another Legal Setback. Robinhood and Sports-Betting Stocks Are in Focus.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/kalshi-ruling-prediction-markets-robinhood-sports-betting-stocks-f80bd837?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.13
+        },
         {
           "title": "Robinhood and Coinbase Are Changing How Investors Buy IPO Stocks",
           "publisher": "Barrons.com",
@@ -3295,12 +3714,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/hood-5-mark-diversification-fuel-135900653.html",
           "sentiment": 0.38
-        },
-        {
-          "title": "DraftKings Dips as Adjusted Data Narrows Kalshi\u2019s 76% Prediction-Market Lead; Robinhood and Flutter Entertainment Slip",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/25/draftkings-dips-as-adjusted-data-narrows-kalshis-76-prediction-market-lead-robinhood-and-flutter-entertainment-slip/",
-          "sentiment": 0.42
         }
       ],
       "volRegime": "Cheap",
@@ -3334,7 +3747,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 261.6,
+      "peVsSectorPct": 262.9,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -3649,7 +4062,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -13.0,
+      "peVsSectorPct": -12.7,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -3731,9 +4144,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 22.2,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 26.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -3813,9 +4226,9 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 1.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25,
+      "peVsSectorPct": 4.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
       "sector": "Technology"
     },
     {
@@ -3895,7 +4308,12 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 31.5,
+      "sectorPeerCount": 3,
+      "sector": "Healthcare"
     },
     {
       "sym": "UNH",
@@ -3986,7 +4404,96 @@
           "action": "buy",
           "qty": 1
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -23.2,
+      "sectorMedianPE": 31.5,
+      "sectorPeerCount": 3,
+      "sector": "Healthcare"
+    },
+    {
+      "sym": "IBM",
+      "strat": "Bear Put Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 227.06,
+      "spotPriceStale": true,
+      "strike": "$225/220",
+      "hedge": null,
+      "exp": "Oct 9",
+      "dte": 13,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 36,
+      "ap": 3730.6,
+      "ivr": 49,
+      "ivRankLimited": false,
+      "dailyReturn": null,
+      "roc": 132.87,
+      "score": 6.5,
+      "buy": false,
+      "sell": true,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 25,
+      "marginOfSafety": false,
+      "delta": -0.42,
+      "iv": 32.1,
+      "premium": 2.15,
+      "breakeven": 222.85,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 214.5,
+      "pcOI": 0.66,
+      "pcVol": 0.52,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "International Business Machines (IBM) Faces Probe Over Z Mainframe Disclosure Risks",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/international-business-machines-ibm-faces-210812743.html",
+          "sentiment": -0.27
+        },
+        {
+          "title": "IBM Stock Gains as z17 Enters an AI Classroom",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/ibm-stock-gains-z17-enters-162708257.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Chevron or IBM: One of These Dividends Costs $17 Billion a Year to Protect",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/25/chevron-or-ibm-one-of-these-dividends-costs-17-billion-a-year-to-protect/",
+          "sentiment": 0.38
+        }
+      ],
+      "volRegime": "Fair",
+      "ivRvRatio": 0.88,
+      "realizedVol": 36.3,
+      "expDate": "2026-10-09",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 225.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 220.0,
+          "action": "sell",
+          "qty": 1
+        }
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -50.6,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28,
+      "sector": "Technology"
     },
     {
       "sym": "BAC",
@@ -4067,7 +4574,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -10.3,
+      "peVsSectorPct": -10.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -4151,7 +4658,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -0.7,
+      "peVsSectorPct": -1.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -4259,32 +4766,32 @@
       "dividendYield": 0.32,
       "marketCap": 4977636933632,
       "score": 8.5,
-      "newsSentiment": 0.14,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.17,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
-          "title": "Apple (AAPL) Rises Higher Than Market: Key Facts",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-rises-higher-market-204501112.html",
+          "title": "Apple (AAPL) Eyes an Apple Pay Launch in India. How Much can it Grow Without UPI?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/apple-aapl-eyes-apple-pay-005634655.html",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Qualcomm (QCOM) Renews its Global Patent License With Apple (AAPL)",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-renews-global-patent-005320827.html",
           "sentiment": 0.0
         },
         {
-          "title": "Apple (AAPL) Reaches $250 Million Siri Settlement Over Recent iPhone Claims",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-reaches-250-million-190827546.html",
-          "sentiment": 0.05
-        },
-        {
-          "title": "Apple Just Gained 10% in a Month. What Will It Take for AAPL Stock to Finally Hit $350?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/25/apple-just-gained-10-in-a-month-what-will-it-take-for-aapl-stock-to-finally-hit-350/",
-          "sentiment": 0.38
+          "title": "Italy\u2019s Labor Dispute Added a Twist to Apple (AAPL)\u2019s iPhone Launch",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/italy-labor-dispute-added-twist-002836230.html",
+          "sentiment": -0.4
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -6.7,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -3.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MSFT",
@@ -4302,7 +4809,7 @@
       "chg6m": 36.6,
       "chg1y": -1.8,
       "volRatio": 1.74,
-      "peRatio": 28.8,
+      "peRatio": 28.7,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
       "pegRatio": 1.62,
@@ -4325,16 +4832,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Microsoft CEO: Autopilot is the 'next generation' of enterprise AI",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/microsoft-ceo-autopilot-is-the-next-generation-of-enterprise-ai-135710848.html",
+          "title": "Should You Buy Microsoft Stock Now That It's Back Within 6% of Its Record?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/25/should-you-buy-microsoft-stock-now-that-it-s-back-within-6-of-its-record/",
           "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -31.3,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -29.1,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "NVDA",
@@ -4370,9 +4877,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -32.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -29.6,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "META",
@@ -4397,7 +4904,7 @@
       "dividendYield": 0.27,
       "marketCap": 1914858373120,
       "score": 7.2,
-      "newsSentiment": 0.24,
+      "newsSentiment": 0.5,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4407,16 +4914,16 @@
           "sentiment": 0.73
         },
         {
-          "title": "Meta's Muse says it can manage your money. Should you let it?",
-          "publisher": "Yahoo Personal Finance",
-          "link": "https://finance.yahoo.com/personal-finance/banking/article/metas-muse-says-it-can-manage-your-money-should-you-let-it-141040045.html",
+          "title": "What Meta's Muse event reveals about Mark Zuckerberg's mindset right now",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/what-metas-muse-event-reveals-about-mark-zuckerbergs-mindset-right-now-142402785.html",
           "sentiment": 0.0
         },
         {
-          "title": "AutoZone Is Still a Buy, Analyst Says. Plus, Meta and 5 More Stocks.",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/autozone-is-still-a-buy-analyst-says-plus-meta-and-5-more-stocks-ad576e31?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Meta is banking its future on its Muse AI agent \u2014 and winning user trust",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/technology/article/meta-is-banking-its-future-on-its-muse-ai-agent--and-winning-user-trust-182927585.html",
+          "sentiment": 0.77
         }
       ],
       "valuationLabel": "Fair",
@@ -4447,14 +4954,14 @@
       "dividendYield": 0.26,
       "marketCap": 4171386060800,
       "score": 8.1,
-      "newsSentiment": 0.64,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Sundar Pichai Reported Alphabet's Cloud Backlog Hit $514 Billion After 82% Revenue Growth Last Quarter, With Nearly 90% of the Fortune 100 Using Gemini Enterprise. Is Google Cloud Becoming a Bigger Growth Driver Than Search?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/25/sundar-pichai-reported-alphabets-cloud-backlog-hit/",
-          "sentiment": 0.64
+          "title": "Alphabet (GOOGL) Plans Waymo\u2019s Singapore Launch for 2028. Can Robotaxis Scale Abroad?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/alphabet-googl-plans-waymo-singapore-005319808.html",
+          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -4508,7 +5015,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 0.7,
+      "peVsSectorPct": 1.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -4535,8 +5042,8 @@
       "dividendYield": 1.43,
       "marketCap": 414554226688,
       "score": 3.8,
-      "newsSentiment": -0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": -0.26,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "How to make sense of 7% mortgage rates and Oracle's AI data center disruption",
@@ -4551,16 +5058,66 @@
           "sentiment": -0.42
         },
         {
-          "title": "Bloom Energy (BE) Is Up 8.7% After Oracle Reaffirms 2.4 GW AI Fuel Cell Deal Commitment \u2013 Has The Bull Case Changed?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-8-7-oracle-220801648.html",
-          "sentiment": 0.57
+          "title": "Why Oracle stock's pullback should've been even 'deeper'",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/why-oracle-stocks-pullback-shouldve-120000997.html",
+          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.7,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -46.9,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
+    },
+    {
+      "sym": "AMZN",
+      "isETF": false,
+      "price": 249.38,
+      "priceStale": true,
+      "high52wk": 287.2,
+      "low52wk": 196.0,
+      "pctFromHigh": -13.2,
+      "pctFromLow": 27.2,
+      "trend": "Strong Downtrend",
+      "rsi": 44.2,
+      "chg1m": -4.2,
+      "chg3m": 7.2,
+      "chg6m": 20.2,
+      "chg1y": 13.5,
+      "volRatio": 0.97,
+      "peRatio": 20.1,
+      "sector": "Consumer Cyclical",
+      "industry": "Internet Retail",
+      "pegRatio": 1.48,
+      "dividendYield": null,
+      "marketCap": 2693018681344,
+      "score": 5.0,
+      "newsSentiment": 0.1,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Let\u2019s Take a Closer Look at Amazon\u2019s (AMZN) Debt-Fueled AI Buildout",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/ai/articles/let-closer-look-amazon-amzn-232034177.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Amazon Stocks Move Lower as Anthropic Commits $11.6 Billion Elsewhere",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-move-lower-anthropic-181534479.html",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Quantum Is a $850 Billion Dream. Microsoft and Amazon Are Betting Big on It.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/microsoft-amazon-quantum-computing-536512fd?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.4
+        }
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -2.0,
+      "sectorMedianPE": 20.5,
+      "sectorPeerCount": 3
     },
     {
       "sym": "SOXL",
@@ -4720,7 +5277,7 @@
       "chg6m": 32.9,
       "chg1y": -26.4,
       "volRatio": 0.49,
-      "peRatio": 86.4,
+      "peRatio": 84.8,
       "sector": "Technology",
       "industry": "Software - Application",
       "pegRatio": 0.99,
@@ -4750,9 +5307,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 106.2,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 109.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "ADBE",
@@ -4800,9 +5357,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -68.7,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -67.7,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "CRM",
@@ -4850,9 +5407,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -47.2,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "CRWD",
@@ -4900,9 +5457,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 19958.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 20651.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "PLTR",
@@ -4950,9 +5507,53 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 286.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 300.2,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
+    },
+    {
+      "sym": "TSM",
+      "isETF": false,
+      "price": 451.15,
+      "priceStale": true,
+      "high52wk": 477.72,
+      "low52wk": 264.03,
+      "pctFromHigh": -5.6,
+      "pctFromLow": 70.9,
+      "trend": "Strong Uptrend",
+      "rsi": 62.9,
+      "chg1m": 8.3,
+      "chg3m": 4.6,
+      "chg6m": 39.0,
+      "chg1y": 66.8,
+      "volRatio": 0.8,
+      "peRatio": 33.4,
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "pegRatio": 0.85,
+      "dividendYield": 0.9,
+      "marketCap": 2337076936704,
+      "score": 9.1,
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Advanced Micro Devices vs. Taiwan Semiconductor Manufacturing: Which Technology Stock Is a Better Buy in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/better-buy/2026/09/25/advanced-micro-devices-vs-taiwan-semiconductor-manufacturing-which-technology-stock-is-a-better-buy-in-2026/",
+          "sentiment": 0.6
+        },
+        {
+          "title": "Dow Jones Futures Signal Rebound For Resilient Market; Tesla, Akamai, Taiwan Semi In Focus",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-rally-resilient-yields-oil-prices-rising-tesla-semi-event/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        }
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -17.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "DELL",
@@ -5000,9 +5601,59 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -22.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -19.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
+    },
+    {
+      "sym": "PANW",
+      "isETF": false,
+      "price": 389.92,
+      "priceStale": true,
+      "high52wk": 398.88,
+      "low52wk": 139.57,
+      "pctFromHigh": -2.2,
+      "pctFromLow": 179.4,
+      "trend": "Strong Uptrend",
+      "rsi": 61.1,
+      "chg1m": 14.9,
+      "chg3m": 28.2,
+      "chg6m": 149.4,
+      "chg1y": 92.7,
+      "volRatio": 0.75,
+      "peRatio": 960.9,
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "pegRatio": 1.99,
+      "dividendYield": null,
+      "marketCap": 306537299968,
+      "score": 7.9,
+      "newsSentiment": -0.15,
+      "newsSentimentLabel": "Negative",
+      "newsHeadlines": [
+        {
+          "title": "Palo Alto Networks CEO drops blunt take on AI slowdown calls",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/technology/palo-alto-ceo-ai-slowdown-unrealistic",
+          "sentiment": -0.42
+        },
+        {
+          "title": "Palo Alto Networks (PANW): Can Platformization Keep Driving Growth?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/palo-alto-networks-panw-platformization-215609637.html",
+          "sentiment": 0.38
+        },
+        {
+          "title": "Palo Alto Networks (PANW) Stock Slides as Market Rises: Facts to Know Before You Trade",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-stock-204506912.html",
+          "sentiment": -0.42
+        }
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 2272.6,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "GLW",
@@ -5025,7 +5676,7 @@
       "industry": "Electronic Components",
       "pegRatio": 0.92,
       "dividendYield": 0.73,
-      "marketCap": 135014014976,
+      "marketCap": 134739640320,
       "score": 6.6,
       "newsSentiment": 0.39,
       "newsSentimentLabel": "Positive",
@@ -5050,9 +5701,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 72.3,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 78.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "SPY",
@@ -5116,6 +5767,56 @@
       ]
     },
     {
+      "sym": "HD",
+      "isETF": false,
+      "price": 292.18,
+      "priceStale": true,
+      "high52wk": 400.08,
+      "low52wk": 284.85,
+      "pctFromHigh": -27.0,
+      "pctFromLow": 2.6,
+      "trend": "Strong Downtrend",
+      "rsi": 30.6,
+      "chg1m": -12.1,
+      "chg3m": -15.6,
+      "chg6m": -9.7,
+      "chg1y": -26.7,
+      "volRatio": 1.35,
+      "peRatio": 20.5,
+      "sector": "Consumer Cyclical",
+      "industry": "Home Improvement Retail",
+      "pegRatio": 2.47,
+      "dividendYield": 3.19,
+      "marketCap": 292522590208,
+      "score": 2.7,
+      "newsSentiment": 0.43,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "What mortgage rate surges mean for home improvement stocks",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/mortgage-rate-surges-mean-home-143052293.html",
+          "sentiment": 0.79
+        },
+        {
+          "title": "Is Home Depot's Next Big Thing Already In Its Stores?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616649/is-home-depots-next-big-thing-already-in-its-stores/2026-09-25",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Home Depot vs. Floor & Decor: Which Stock Looks More Attractive?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-vs-floor-decor-134300014.html",
+          "sentiment": 0.49
+        }
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 20.5,
+      "sectorPeerCount": 3
+    },
+    {
       "sym": "COST",
       "isETF": false,
       "price": 896.48,
@@ -5136,7 +5837,7 @@
       "industry": "Discount Stores",
       "pegRatio": 4.39,
       "dividendYield": 0.66,
-      "marketCap": 409226739712,
+      "marketCap": 409030328320,
       "score": 2.8,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
@@ -5148,16 +5849,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Costco tops Q4 estimates, boosted by tariff refunds",
-          "publisher": "Yahoo Finance Video",
-          "link": "",
-          "sentiment": 0.7
+          "title": "Costco is getting squeezed by the AI boom",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/article/costco-is-getting-squeezed-by-the-ai-boom-133927696.html",
+          "sentiment": 0.0
         },
         {
-          "title": "Stocks to Watch Recap: Costco, Akamai Technologies, People",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-25-2026/card/stocks-to-watch-akamai-technologies-nanexa-people-3BXdLxg0RsSEfbXGMCCe?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
+          "title": "Costco tops Q4 estimates, boosted by tariff refunds",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/costco-tops-q4-estimates-boosted-by-tariff-refunds-131941959.html",
+          "sentiment": 0.7
         }
       ]
     },
@@ -5207,9 +5908,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -23.6,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -21.0,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MRVL",
@@ -5257,9 +5958,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 106.2,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 113.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "MU",
@@ -5307,9 +6008,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -41.5,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -39.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "SNDK",
@@ -5357,9 +6058,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -42.5,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -40.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "AMD",
@@ -5401,9 +6102,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 285.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 299.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "TSLA",
@@ -5427,8 +6128,8 @@
       "pegRatio": 4.52,
       "dividendYield": null,
       "marketCap": 1469666033664,
-      "score": 7.5,
-      "newsSentiment": 0.39,
+      "score": 6.9,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -5438,18 +6139,22 @@
           "sentiment": 0.78
         },
         {
-          "title": "Tesla's big semi truck bet is officially in motion",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/teslas-big-semi-truck-bet-143500697.html",
-          "sentiment": 0.0
-        },
-        {
           "title": "Tesla (TSLA), Ford (F), and GM (GM) Face a Weaker EV Market. Who Can Protect Profits?",
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-ford-f-gm-234737136.html",
           "sentiment": 0.38
+        },
+        {
+          "title": "Stock Market Today, Sept. 25: Tesla Stock Under Pressure Despite Plans to Ramp Semi Truck Production",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/coverage/stock-market-today/2026/09/25/stock-market-today-sept-25-tesla-stock-under-pressure-despite-plans-to-ramp-semi-truck-production/",
+          "sentiment": -0.3
         }
-      ]
+      ],
+      "valuationLabel": "Rich",
+      "peVsSectorPct": 1550.2,
+      "sectorMedianPE": 20.5,
+      "sectorPeerCount": 3
     },
     {
       "sym": "SPCX",
@@ -5472,7 +6177,7 @@
       "industry": "Aerospace & Defense",
       "pegRatio": null,
       "dividendYield": null,
-      "marketCap": 1959866925056,
+      "marketCap": 1958738001920,
       "score": 7.4,
       "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
@@ -5566,14 +6271,14 @@
       "dividendYield": 0.26,
       "marketCap": 4206119354368,
       "score": 8.1,
-      "newsSentiment": 0.64,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Sundar Pichai Reported Alphabet's Cloud Backlog Hit $514 Billion After 82% Revenue Growth Last Quarter, With Nearly 90% of the Fortune 100 Using Gemini Enterprise. Is Google Cloud Becoming a Bigger Growth Driver Than Search?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/25/sundar-pichai-reported-alphabets-cloud-backlog-hit/",
-          "sentiment": 0.64
+          "title": "Alphabet (GOOGL) Plans Waymo\u2019s Singapore Launch for 2028. Can Robotaxis Scale Abroad?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/alphabet-googl-plans-waymo-singapore-005319808.html",
+          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -5597,7 +6302,7 @@
       "chg6m": 13.6,
       "chg1y": 5.5,
       "volRatio": 0.61,
-      "peRatio": 45.6,
+      "peRatio": 44.9,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 0.35,
@@ -5615,9 +6320,9 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 8.8,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 10.9,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "STX",
@@ -5665,9 +6370,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 57.8,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 63.2,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "AMAT",
@@ -5691,7 +6396,7 @@
       "pegRatio": 0.94,
       "dividendYield": 0.45,
       "marketCap": 384894763008,
-      "score": 5.6,
+      "score": 5.0,
       "newsSentiment": 0.37,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -5714,10 +6419,10 @@
           "sentiment": 0.36
         }
       ],
-      "valuationLabel": "Cheap",
-      "peVsSectorPct": 0.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 3.5,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "WDC",
@@ -5765,9 +6470,9 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -59.4,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -58.0,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "LRCX",
@@ -5785,12 +6490,12 @@
       "chg6m": 45.4,
       "chg1y": 140.5,
       "volRatio": 0.88,
-      "peRatio": 54.9,
+      "peRatio": 54.8,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
       "pegRatio": 1.43,
       "dividendYield": 0.43,
-      "marketCap": 394428874752,
+      "marketCap": 394461478912,
       "score": 6.9,
       "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
@@ -5815,9 +6520,59 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 31.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 35.3,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
+    },
+    {
+      "sym": "LLY",
+      "isETF": false,
+      "price": 1181.89,
+      "priceStale": true,
+      "high52wk": 1292.65,
+      "low52wk": 711.59,
+      "pctFromHigh": -8.6,
+      "pctFromLow": 66.1,
+      "trend": "Strong Downtrend",
+      "rsi": 55.4,
+      "chg1m": -0.6,
+      "chg3m": -2.0,
+      "chg6m": 32.2,
+      "chg1y": 64.2,
+      "volRatio": 0.79,
+      "peRatio": 39.7,
+      "sector": "Healthcare",
+      "industry": "Drug Manufacturers - General",
+      "pegRatio": 1.17,
+      "dividendYield": 0.59,
+      "marketCap": 1054885412864,
+      "score": 5.0,
+      "newsSentiment": 0.06,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Biotech Deal Week: Lilly, Novo And Novartis Pay Up For Platforms, Not Pipelines",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/biotech-deal-week-lilly-novo-and-novartis-pay-up-for-platforms-not-pipelines/cZMXysORBOn",
+          "sentiment": -0.1
+        },
+        {
+          "title": "Is LLY Stock Cheaper Than It Looks?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616604/is-lly-stock-cheaper-than-it-looks/2026-09-25",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Top Midday Stories: Akamai's $11.6 Billion Anthropic Deal; Scholastic Q1 Loss Widens; Nektar Awarded $90 Million in Eli Lilly Case",
+          "publisher": "MT Newswires",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/top-midday-stories-akamai-apos-160532676.html",
+          "sentiment": 0.3
+        }
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 26.0,
+      "sectorMedianPE": 31.5,
+      "sectorPeerCount": 3
     },
     {
       "sym": "ASML",
@@ -5865,9 +6620,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 43.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 47.9,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "QCOM",
@@ -5892,32 +6647,32 @@
       "dividendYield": 1.89,
       "marketCap": 215716184064,
       "score": 9.1,
-      "newsSentiment": 0.22,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.04,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Qualcomm's CMO reveals the secret behind Snapdragon's rise",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/qualcomms-cmo-reveals-secret-behind-140705053.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Qualcomm (QCOM) Renews its Global Patent License With Apple (AAPL)",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-qcom-renews-global-patent-005320827.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Qualcomm Stocks Jump as Apple Extends the Royalty Bridge",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-stocks-jump-apple-extends-175240580.html",
           "sentiment": 0.13
-        },
-        {
-          "title": "Qualcomm Rallies 6% as Buyers Reverse Apple Renewal Selloff; Apple Stock Ticks Up",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/25/qualcomm-rallies-6-as-buyers-reverse-apple-renewal-selloff-apple-stock-ticks-up/",
-          "sentiment": 0.54
-        },
-        {
-          "title": "Qualcomm Renews Apple Patent Deal: Can QTL Regain Momentum?",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-renews-apple-patent-deal-161100620.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -44.9,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": -43.0,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "V",
@@ -5965,7 +6720,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 114.4,
+      "peVsSectorPct": 115.1,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -5985,12 +6740,12 @@
       "chg6m": -11.6,
       "chg1y": 5.2,
       "volRatio": 0.71,
-      "peRatio": 39.0,
+      "peRatio": 39.1,
       "sector": "Consumer Defensive",
       "industry": "Discount Stores",
       "pegRatio": 4.13,
       "dividendYield": 0.92,
-      "marketCap": 859313405952,
+      "marketCap": 856685936640,
       "score": 5.8,
       "newsSentiment": 0.2,
       "newsSentimentLabel": "Positive",
@@ -6038,30 +6793,11 @@
       "dividendYield": null,
       "marketCap": 107350425600,
       "score": 7.9,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "Robinhood and Coinbase Are Changing How Investors Buy IPO Stocks",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/oura-ipo-coinbase-robinhood-retail-investors-c6863040?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "HOOD at the 5-Year Mark: Diversification to Fuel the Next Growth Phase",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/hood-5-mark-diversification-fuel-135900653.html",
-          "sentiment": 0.38
-        },
-        {
-          "title": "DraftKings Dips as Adjusted Data Narrows Kalshi\u2019s 76% Prediction-Market Lead; Robinhood and Flutter Entertainment Slip",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/25/draftkings-dips-as-adjusted-data-narrows-kalshis-76-prediction-market-lead-robinhood-and-flutter-entertainment-slip/",
-          "sentiment": 0.42
-        }
-      ],
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 261.6,
+      "peVsSectorPct": 262.9,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -6249,7 +6985,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -13.0,
+      "peVsSectorPct": -12.7,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -6299,9 +7035,9 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 22.2,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 26.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "TXN",
@@ -6349,9 +7085,9 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 1.0,
-      "sectorMedianPE": 41.9,
-      "sectorPeerCount": 25
+      "peVsSectorPct": 4.4,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "JNJ",
@@ -6397,7 +7133,11 @@
           "link": "https://www.proactiveinvestors.com/companies/news/1099148/johnson-johnson-says-tremfya-eases-spinal-pain-in-phase-4-psoriatic-arthritis-study-1099148.html",
           "sentiment": -0.25
         }
-      ]
+      ],
+      "valuationLabel": "Fair",
+      "peVsSectorPct": 0.0,
+      "sectorMedianPE": 31.5,
+      "sectorPeerCount": 3
     },
     {
       "sym": "UNH",
@@ -6421,7 +7161,7 @@
       "pegRatio": 1.02,
       "dividendYield": 2.47,
       "marketCap": 338025218048,
-      "score": 4.4,
+      "score": 5.0,
       "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
@@ -6443,7 +7183,61 @@
           "link": "https://finance.yahoo.com/healthcare/articles/does-unitedhealth-cao-hire-reveal-231234809.html",
           "sentiment": 0.36
         }
-      ]
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -23.2,
+      "sectorMedianPE": 31.5,
+      "sectorPeerCount": 3
+    },
+    {
+      "sym": "IBM",
+      "isETF": false,
+      "price": 227.06,
+      "priceStale": true,
+      "high52wk": 330.09,
+      "low52wk": 197.77,
+      "pctFromHigh": -31.2,
+      "pctFromLow": 14.8,
+      "trend": "Strong Downtrend",
+      "rsi": 42.5,
+      "chg1m": -1.2,
+      "chg3m": -15.8,
+      "chg6m": -4.7,
+      "chg1y": -18.1,
+      "volRatio": 0.77,
+      "peRatio": 20.0,
+      "sector": "Technology",
+      "industry": "Information Technology Services",
+      "pegRatio": 2.15,
+      "dividendYield": 2.98,
+      "marketCap": 212460716032,
+      "score": 3.6,
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "International Business Machines (IBM) Faces Probe Over Z Mainframe Disclosure Risks",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/international-business-machines-ibm-faces-210812743.html",
+          "sentiment": -0.27
+        },
+        {
+          "title": "IBM Stock Gains as z17 Enters an AI Classroom",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/ibm-stock-gains-z17-enters-162708257.html",
+          "sentiment": 0.34
+        },
+        {
+          "title": "Chevron or IBM: One of These Dividends Costs $17 Billion a Year to Protect",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/25/chevron-or-ibm-one-of-these-dividends-costs-17-billion-a-year-to-protect/",
+          "sentiment": 0.38
+        }
+      ],
+      "valuationLabel": "Cheap",
+      "peVsSectorPct": -50.6,
+      "sectorMedianPE": 40.5,
+      "sectorPeerCount": 28
     },
     {
       "sym": "BAC",
@@ -6491,7 +7285,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -10.3,
+      "peVsSectorPct": -10.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -6511,7 +7305,7 @@
       "chg6m": 13.3,
       "chg1y": 17.3,
       "volRatio": 0.94,
-      "peRatio": 14.5,
+      "peRatio": 14.4,
       "sector": "Financial Services",
       "industry": "Capital Markets",
       "pegRatio": 1.14,
@@ -6541,7 +7335,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -0.7,
+      "peVsSectorPct": -1.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -6566,7 +7360,7 @@
       "industry": "Advertising Agencies",
       "pegRatio": 0.68,
       "dividendYield": null,
-      "marketCap": 104393203712,
+      "marketCap": 103992647680,
       "score": 2.2,
       "newsSentiment": 0.15,
       "newsSentimentLabel": "Neutral",

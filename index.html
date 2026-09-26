@@ -1104,6 +1104,21 @@
       </div>
     </div>
 
+    <!-- Still outside the collapsible Outlook/Quality/Risk sections (always
+         visible, not hidden behind a tap) and still updates on every
+         keystroke rather than waiting for "Apply filters" — but merged
+         2026-09-26 into this same outer .filter-card instead of its own
+         separate box, to save vertical space. Deliberately placed OUTSIDE
+         .apply-bar below (a sibling row, not nested inside it): .apply-bar
+         becomes a fixed bottom bar on mobile (see its mobile CSS), so
+         anything nested inside it would permanently grow that pinned bar on
+         every screen instead of just scrolling past like this row does. -->
+    <div class="num-row" style="border-top:1px solid var(--border); margin-top:12px; padding-top:12px; flex-wrap:wrap;">
+      <label for="minTradeProfitInput">Min trade profit %</label>
+      <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15">
+      <span style="flex-basis:100%; font-size:11px; font-weight:500; color:var(--text-faint); margin-top:-2px;">Updates the list instantly — no need to hit Apply filters</span>
+    </div>
+
     <div class="apply-bar">
       <div class="apply-bar-row">
         <button class="reset-btn" id="resetFilters">Reset to defaults</button>
@@ -1113,21 +1128,6 @@
         <span class="active-count" id="activeCountLabel">2 filters active</span>
         <button class="apply-btn" id="applyFilters">Apply filters</button>
       </div>
-    </div>
-  </div>
-
-  <!-- Standalone, always-visible — moved out of the Quality filter card
-       2026-09-26 so it's not hidden behind a collapsed section, and wired
-       to update the list on every keystroke (see the 'input' listener
-       below) instead of waiting for "Apply filters" like the checkbox
-       filters still do. Same #minTradeProfitInput id as before, so every
-       existing reference (computeFiltered, updateActiveCount, Reset to
-       defaults) keeps working unchanged regardless of where it now sits. -->
-  <div class="portfolio-bar" style="margin-bottom:12px;">
-    <div class="portfolio-bar-inner" style="justify-content:flex-start; gap:12px;">
-      <label for="minTradeProfitInput">Min trade profit %</label>
-      <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15" style="width:64px; text-align:center;">
-      <span style="font-size:11.5px; font-weight:600; color:var(--text-faint);">Updates the list instantly — no need to hit Apply filters</span>
     </div>
   </div>
 

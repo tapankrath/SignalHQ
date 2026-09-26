@@ -848,6 +848,19 @@
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
     .layout{ padding:8px 14px 155px; }
+    /* Shrinks the sort dropdown enough that it and Min Trade Profit's
+       label+input fit on one line at phone width now that "Sort by" (the
+       text label) is gone — the full-size 16px select alone was already
+       wide enough to force Min Trade Profit onto its own row below. */
+    .sort-wrap{ gap:5px; }
+    /* Never truncates the select's own text (a clipped "Composite ratin…"
+       is worse than just wrapping to a second line) — only font-size
+       shrinks, no max-width cap, so its width still fits whichever option
+       is selected in full. Room for Min Trade Profit on the same row comes
+       from shortening ITS label instead (see the JS-set text below) and
+       narrowing its input. */
+    .sort-wrap select{ font-size:12.5px; padding:6px 5px; }
+    .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
     .sticky-top{ gap:8px; padding-top:10px; padding-bottom:6px; }
     header{ gap:12px; }
     .header-top{ padding:0 14px; gap:8px; }
@@ -1123,7 +1136,6 @@
         <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
       <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
-        Sort by
         <select id="sortSelect">
           <option value="score">Composite rating</option>
           <option value="ap">Annualized profit</option>
@@ -1135,7 +1147,7 @@
              sort/display control on this same bar — still updates on every
              keystroke (see liveApplyMinProfit), still the same
              #minTradeProfitInput id everything else already refers to. -->
-        <span style="margin-left:4px;">Min trade profit %</span>
+        <span style="margin-left:4px;">Min profit %</span>
         <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="15" style="width:60px; background:var(--surface); border:1px solid var(--border-strong); color:var(--text); font-family:var(--mono); font-size:13px; font-weight:700; padding:6px 7px; border-radius:7px; text-align:center;">
       </div>
     </div>

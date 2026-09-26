@@ -1,6 +1,6 @@
 // SignalHQ — minimal app-shell cache.
 // Bump CACHE_NAME whenever you ship a change, so old clients pick up the new files.
-const CACHE_NAME = 'signalhq-v7';
+const CACHE_NAME = 'signalhq-v8';
 const APP_SHELL = [
   './',
   './index.html',

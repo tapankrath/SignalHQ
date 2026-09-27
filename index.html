@@ -500,19 +500,31 @@
   .apply-btn:hover{ filter:brightness(1.08); }
   .apply-btn:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
   .apply-btn-compact{
-    width:100%; background:var(--surface-2); color:var(--amber-strong);
-    border:1px solid var(--amber-border); padding:8px; border-radius:8px;
+    width:100%; background:var(--amber-strong); color:#fff;
+    border:1px solid var(--amber-strong); padding:8px; border-radius:8px;
     font-weight:700; font-size:12.5px; margin-bottom:8px;
-    transition:background .12s;
+    box-shadow:0 2px 8px rgba(22,163,74,0.25);
+    transition:filter .12s, box-shadow .12s;
   }
-  .apply-btn-compact:hover{ background:var(--amber-soft); }
+  .apply-btn-compact:hover{ filter:brightness(1.08); }
   .apply-btn-compact:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
-  .reset-btn{
-    flex:1; background:var(--surface); border:1px solid var(--border-strong); color:var(--text-dim);
-    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:600;
-    transition:border-color .12s, color .12s;
+
+  /* Apply + Reset side by side, right under the 3 filter category boxes
+     (moved 2026-09-27). Both now share the same solid, bold green look and
+     equal width (2026-09-27b) — previously Apply was outlined/light while
+     Reset was solid, so hovering one looked "bold" and the other "light"
+     next to it; matching them removes that mismatch. */
+  .apply-reset-row{ display:flex; gap:8px; margin-bottom:8px; }
+  .apply-reset-row .apply-btn-compact{ flex:1; margin-bottom:0; }
+  .reset-btn-bold{
+    flex:1; background:var(--amber-strong); color:#fff; border:1px solid var(--amber-strong);
+    padding:8px; border-radius:8px; font-weight:700; font-size:12.5px;
+    box-shadow:0 2px 8px rgba(22,163,74,0.25);
+    transition:filter .12s, box-shadow .12s;
   }
-  .reset-btn:hover{ border-color:var(--text-dim); color:var(--text); }
+  .reset-btn-bold:hover{ filter:brightness(1.08); }
+  .reset-btn-bold:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
+
   .copy-btn{
     flex:1; background:var(--amber-soft); border:1px solid var(--amber-border); color:var(--amber-strong);
     padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:700;
@@ -1090,8 +1102,17 @@
          .filter-card is still there for whenever you're scrolled deep into
          an open section's checkboxes, but it's a real reach back up to the
          top-of-card boxes otherwise. Same applyFilters() as that one; just
-         a second, closer entry point to it, not a replacement. -->
-    <button class="apply-btn-compact" type="button" id="applyFiltersTop">Apply filters</button>
+         a second, closer entry point to it, not a replacement.
+
+         Reset to defaults sits right next to it (moved here 2026-09-27 from
+         the bottom apply-bar, alongside View Summary, where it didn't
+         really belong — resetting is part of the same filtering action as
+         applying, not a portfolio action) and is styled as a solid, bold
+         green button so it's not missed next to Apply. -->
+    <div class="apply-reset-row">
+      <button class="apply-btn-compact" type="button" id="applyFiltersTop">Apply filters</button>
+      <button class="reset-btn-bold" id="resetFilters">Reset to defaults</button>
+    </div>
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
@@ -1136,18 +1157,13 @@
     </div>
 
     <div class="apply-bar">
+      <!-- Reset to defaults moved up next to Apply filters (2026-09-27) —
+           it's a filtering action, not a portfolio one, so it belongs by
+           Apply rather than by View Summary. This row is now just View
+           Summary on its own. -->
       <div class="apply-bar-row">
-        <button class="reset-btn" id="resetFilters">Reset to defaults</button>
-        <button class="copy-btn" id="portfolioSummaryBtn">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
+        <button class="copy-btn" id="portfolioSummaryBtn" style="flex:1;">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
       </div>
-      <!-- The Apply button that used to live here was redundant with the
-           compact one right above the 3 category boxes (added 2026-09-26) —
-           that one's always in view above whichever section is expanded,
-           so having a second, identical button pinned at the bottom too
-           just meant two "Apply filters" buttons on screen at once for no
-           real benefit. Kept the active-count text (re-shown on mobile
-           below, where it used to be hidden specifically to make room for
-           this now-removed button) so the row isn't left empty. -->
       <div class="apply-bar-row2">
         <span class="active-count" id="activeCountLabel">2 filters active</span>
       </div>

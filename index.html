@@ -924,7 +924,9 @@
       margin-top:0;
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);
     }
-    .active-count{ display:none; }
+    /* Was hidden here to make room for the Apply button that used to share
+       this row (removed 2026-09-26, see apply-bar-row2's HTML comment) —
+       now the only thing in that row, so it's shown again. */
   }
 
   /* Dark mode component overrides — kept at the very end of the stylesheet
@@ -1138,9 +1140,16 @@
         <button class="reset-btn" id="resetFilters">Reset to defaults</button>
         <button class="copy-btn" id="portfolioSummaryBtn">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
       </div>
+      <!-- The Apply button that used to live here was redundant with the
+           compact one right above the 3 category boxes (added 2026-09-26) —
+           that one's always in view above whichever section is expanded,
+           so having a second, identical button pinned at the bottom too
+           just meant two "Apply filters" buttons on screen at once for no
+           real benefit. Kept the active-count text (re-shown on mobile
+           below, where it used to be hidden specifically to make room for
+           this now-removed button) so the row isn't left empty. -->
       <div class="apply-bar-row2">
         <span class="active-count" id="activeCountLabel">2 filters active</span>
-        <button class="apply-btn" id="applyFilters">Apply filters</button>
       </div>
     </div>
   </div>
@@ -2448,7 +2457,6 @@
     applyFilters();
   }
 
-  document.getElementById('applyFilters').addEventListener('click', applyFilters);
   document.getElementById('applyFiltersTop').addEventListener('click', applyFilters);
 
   // Min trade profit's own live update — deliberately lighter than

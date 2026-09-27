@@ -1116,11 +1116,11 @@
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put"> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread"> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
@@ -1128,10 +1128,10 @@
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
       </div>
       <div class="filter-section-body" style="padding-top:0; border-top:1px solid var(--border); margin-top:4px;">
-        <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
-        <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
-        <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
-        <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcvol="bull" checked> P/C Vol &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcvol="bear" checked> P/C Vol &gt; 1.4</label>
       </div>
     </div>
 
@@ -2440,26 +2440,19 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-23 (again): default set is now every single-leg/defined-
-  // risk PREMIUM-SELLING credit strategy — Covered Call, Bull Put Spread,
-  // Cash-Secured Put, Bear Call Spread, Iron Condor — all the same trade
-  // shape (time decay works for you, no specific move required to profit).
-  // Double Diagonal dropped too: not for the same directional-bet reason as
-  // Bull Call Spread/Bear Put Spread earlier, but because it has no roc/ap
-  // and the Min Trade Profit floor below always excludes roc-less trades
-  // (see build_double_diagonal's docstring) — it was checked-but-invisible
-  // by default either way, so simpler to just leave it off. Min Trade Profit
-  // floor lowered from 20% to 15%.
-  // Updated 2026-09-24: Iron Condor dropped from the default set — down to
-  // the 4 single-leg/two-leg credit strategies (Covered Call, Bull Put
-  // Spread, Cash-Secured Put, Bear Call Spread). Still one tap away in the
-  // filter list for anyone who wants the neutral, defined-risk structure by
-  // default too.
+  // Updated 2026-09-27: default Outlook & Strategy set is now Bull Put
+  // Spread, Bear Call Spread, and Iron Condor, plus all 4 P/C ratio
+  // checkboxes (OI/Vol, both the bullish <0.7 and bearish >1.4 sides) —
+  // Covered Call, Cash-Secured Put, Bull Call Spread, and Bear Put Spread
+  // are no longer checked by default.
   const DEFAULT_CHECKED = [
-    '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
-    '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
+    '[data-strat="Iron Condor"]',
+    '[data-pcoi="bull"]',
+    '[data-pcvol="bull"]',
+    '[data-pcoi="bear"]',
+    '[data-pcvol="bear"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',

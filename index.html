@@ -1575,6 +1575,32 @@
     #tickersBtn{ font-size:14px; gap:8px; padding:0 12px; width:auto; }
   }
   .tools-group.is-active .tools-caret{ color:inherit; opacity:0.8; }
+
+  /* Backtest shortcut in the bottom bar */
+  .apply-bar-row2{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .apply-bar-row2:not(:has(.bt-link:not([style*="none"]))){ justify-content:center; }
+  .bt-link{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:var(--sans); font-size:13px; font-weight:600;
+    color:var(--amber-strong); background:var(--amber-soft);
+    border:1px solid var(--amber-border); border-radius:999px;
+    padding:4px 8px 4px 12px; cursor:pointer; min-height:30px;
+  }
+  .bt-link:hover{ border-color:var(--amber); }
+  .bt-link:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  .bt-link-count{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:20px; height:20px; padding:0 6px; border-radius:10px;
+    background:var(--amber); color:#fff; font-size:12px; font-weight:600;
+  }
+  .bt-link-arrow{ font-size:16px; line-height:1; margin-left:-1px; }
+  @keyframes btPulse{
+    0%{ box-shadow:0 0 0 0 rgba(139,90,43,0.45); transform:scale(1); }
+    35%{ transform:scale(1.06); }
+    100%{ box-shadow:0 0 0 10px rgba(139,90,43,0); transform:scale(1); }
+  }
+  .bt-link.bt-pulse{ animation:btPulse .9s ease-out 2; }
+  @media (prefers-color-scheme: dark){ .bt-link-count{ color:#1C1916; } }
 </style>
 </head>
 <body>
@@ -1751,6 +1777,11 @@
       </div>
       <div class="apply-bar-row2">
         <span class="active-count" id="activeCountLabel">2 filters active</span>
+        <!-- Backtest shortcut (2026-09-28): Backtest used to be reachable only
+             through the Tools menu, which is awkward right after tracking
+             trades from this bar. Shows once at least one trade is tracked;
+             the count mirrors the Tools-menu badge (updateTrackedBadge). -->
+        <button class="bt-link" id="backtestShortcut" type="button" style="display:none;" onclick="switchMode('backtest')">Backtest <span class="bt-link-count" id="backtestShortcutCount">0</span><span class="bt-link-arrow" aria-hidden="true">›</span></button>
       </div>
     </div>
   </div>
@@ -3104,11 +3135,15 @@
   // elements (the bottom .apply-bar) can stay parked where the keyboard top
   // was, floating mid-screen. Hide the bar while a field is focused, then
   // nudge the scroll on blur so iOS re-lays out fixed elements.
+  // Only fields that raise the on-screen keyboard — checkboxes, radios and
+  // selects must not hide the bar (tapping a trade's checkbox focuses it in
+  // some browsers, which used to hide Review Picks / Track while selecting).
+  const KB_FIELDS = 'textarea, input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]):not([type=range]):not([type=color]):not([type=file])';
   document.addEventListener('focusin', e => {
-    if (e.target.matches('input, select, textarea')) document.body.classList.add('kb-open');
+    if (e.target.matches(KB_FIELDS)) document.body.classList.add('kb-open');
   });
   document.addEventListener('focusout', e => {
-    if (!e.target.matches('input, select, textarea')) return;
+    if (!e.target.matches(KB_FIELDS)) return;
     document.body.classList.remove('kb-open');
     setTimeout(() => { window.scrollBy(0, 1); window.scrollBy(0, -1); }, 60);
   });
@@ -3399,6 +3434,11 @@
     showToast(msg);
     renderBacktestView();
     updateTrackedBadge();
+    // Draw the eye to the Backtest shortcut that just appeared/updated.
+    if(added > 0){
+      const sc = document.getElementById('backtestShortcut');
+      if(sc){ sc.classList.remove('bt-pulse'); void sc.offsetWidth; sc.classList.add('bt-pulse'); }
+    }
   }
 
   function refreshModalTrackBtn(t){
@@ -3415,6 +3455,12 @@
     if(!badge) return;
     badge.textContent = n;
     badge.style.display = n > 0 ? '' : 'none';
+    const shortcut = document.getElementById('backtestShortcut');
+    if(shortcut){
+      document.getElementById('backtestShortcutCount').textContent = n;
+      shortcut.style.display = n > 0 ? '' : 'none';
+      shortcut.setAttribute('aria-label', `Open Backtest — ${n} tracked trade${n === 1 ? '' : 's'}`);
+    }
   }
 
   async function loadTrackedPnl(){

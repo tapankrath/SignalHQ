@@ -964,6 +964,9 @@
       margin-top:0;
       box-shadow:0 -4px 16px rgba(16,24,40,0.06);
     }
+    /* iOS keeps a fixed bar stuck where the keyboard was after it closes —
+       hide it while a field is focused (see focusin/focusout in the JS). */
+    body.kb-open .apply-bar{ display:none; }
     /* Was hidden here to make room for the Apply button that used to share
        this row (removed 2026-09-26, see apply-bar-row2's HTML comment) —
        now the only thing in that row, so it's shown again. */
@@ -1493,7 +1496,7 @@
   function meterHtml(score){
     let ticks = '';
     for(let i=1;i<=10;i++){ ticks += `<span class="${i<=score?'on':''}"></span>`; }
-    return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${score}.0</span></div>`;
+    return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${Number(score).toFixed(1)}</span></div>`;
   }
 
   // Shared between trade cards/table/modal AND equity cards/table/modal —
@@ -1987,7 +1990,7 @@
         <div><div class="mm-label">Dividend Yield</div><div class="mm-val">${e.dividendYield != null ? e.dividendYield + '%' : '—'}</div></div>
         <div><div class="mm-label">Market Cap</div><div class="mm-val">${fmtMarketCap(e.marketCap)}</div></div>
         <div><div class="mm-label">Volume vs 30-day Avg</div><div class="mm-val">${e.volRatio != null ? e.volRatio + '×' : '—'}</div></div>
-        <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${e.score}.0 / 10</div></div>
+        <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${Number(e.score).toFixed(1)} / 10</div></div>
       </div>
 
       ${e.priceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
@@ -2005,7 +2008,7 @@
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
     document.getElementById('modalCopyBtn').addEventListener('click', async ()=>{
-      const summary = `${e.sym} ${fmtPrice(e.price)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${e.score}.0`;
+      const summary = `${e.sym} ${fmtPrice(e.price)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${Number(e.score).toFixed(1)}`;
       const ok = await copyText(summary);
       showToast(ok ? 'Summary copied' : 'Copy blocked — select the text manually');
     });
@@ -2533,6 +2536,19 @@
     updateActiveCount();
   }
   document.getElementById('minTradeProfitInput').addEventListener('input', liveApplyMinProfit);
+
+  // iOS Safari/PWA bug: after the on-screen keyboard closes, position:fixed
+  // elements (the bottom .apply-bar) can stay parked where the keyboard top
+  // was, floating mid-screen. Hide the bar while a field is focused, then
+  // nudge the scroll on blur so iOS re-lays out fixed elements.
+  document.addEventListener('focusin', e => {
+    if (e.target.matches('input, select, textarea')) document.body.classList.add('kb-open');
+  });
+  document.addEventListener('focusout', e => {
+    if (!e.target.matches('input, select, textarea')) return;
+    document.body.classList.remove('kb-open');
+    setTimeout(() => { window.scrollBy(0, 1); window.scrollBy(0, -1); }, 60);
+  });
   document.getElementById('resetFilters').addEventListener('click', resetFilters);
 
   // sort takes effect immediately on the currently-filtered list, no need to hit Apply
@@ -2667,7 +2683,7 @@
         <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
         <div><div class="mm-label">Put/Call Volume</div><div class="mm-val">${t.pcVol.toFixed(2)}</div></div>
         <div><div class="mm-label">Max Loss (est.)</div><div class="mm-val val-neg">$${t.maxLoss.toLocaleString()}</div></div>
-        <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${t.score}.0 / 10</div></div>
+        <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${Number(t.score).toFixed(1)} / 10</div></div>
         ${earningsHtml}
         ${volRegimeHtml}
         ${valuationHtml}
@@ -2697,7 +2713,7 @@
       const roiPart = t.roc != null ? `${roiLabel} +${t.roc}%` : '';
       const annPart = t.ap != null ? `${annRoiLabel} +${t.ap}%` : '';
       const movePart = t.breakevenMovePct != null ? `Move to Breakeven ${t.breakevenMovePct >= 0 ? '+' : ''}${t.breakevenMovePct}%` : '';
-      const parts = [`${t.sym} ${t.strat} ${t.strike}`, `exp ${t.exp} (${t.dte}d)`, potPart, roiPart, annPart, movePart, `IV Rank ${t.ivr}`, `News: ${sentimentLabel}`, `Composite ${t.score}.0`].filter(Boolean);
+      const parts = [`${t.sym} ${t.strat} ${t.strike}`, `exp ${t.exp} (${t.dte}d)`, potPart, roiPart, annPart, movePart, `IV Rank ${t.ivr}`, `News: ${sentimentLabel}`, `Composite ${Number(t.score).toFixed(1)}`].filter(Boolean);
       const summary = parts.join(' · ');
       const ok = await copyText(summary);
       showToast(ok ? 'Trade summary copied' : 'Copy blocked — select the text manually');

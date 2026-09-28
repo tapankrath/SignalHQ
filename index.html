@@ -1160,9 +1160,9 @@
       </div>
       <div class="filter-section-body" style="padding-top:0; border-top:1px solid var(--border); margin-top:4px;">
         <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
-        <label class="check-row"><input type="checkbox" data-pcvol="bull" checked> P/C Vol &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
         <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
-        <label class="check-row"><input type="checkbox" data-pcvol="bear" checked> P/C Vol &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
       </div>
     </div>
 
@@ -2497,8 +2497,9 @@
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
   // Updated 2026-09-27: default Outlook & Strategy set is now Bull Put
-  // Spread, Bear Call Spread, and Iron Condor, plus all 4 P/C ratio
-  // checkboxes (OI/Vol, both the bullish <0.7 and bearish >1.4 sides) —
+  // Spread, Bear Call Spread, and Iron Condor, plus the two P/C OI
+  // checkboxes (bullish <0.7 and bearish >1.4; the P/C Vol pair is off by
+  // default as of 2026-09-28) —
   // Covered Call, Cash-Secured Put, Bull Call Spread, and Bear Put Spread
   // are no longer checked by default.
   const DEFAULT_CHECKED = [
@@ -2506,9 +2507,7 @@
     '[data-strat="Bear Call Spread"]',
     '[data-strat="Iron Condor"]',
     '[data-pcoi="bull"]',
-    '[data-pcvol="bull"]',
     '[data-pcoi="bear"]',
-    '[data-pcvol="bear"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',

@@ -1525,6 +1525,56 @@
     .eq-chip .strat-dot{ width:6px; height:6px; }
     .eq-chip-sep{ margin:0 1px; flex:0 0 1px; }
   }
+
+  /* 2026-09-28e: denser phone layout.
+     - Tools and My Tickers move onto the same row as the Options / Stocks
+       switch (via CSS grid + display:contents — no DOM change, so every
+       existing handler keeps working). Saves a full row in the pinned header.
+     - My Tickers shows as an icon on narrow phones (label is kept for screen
+       readers via aria-label), full label from 440px up.
+     - Tighter gaps/padding in the filter card and between page sections. */
+  @media (max-width: 720px){
+    .sticky-top{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto auto;
+      grid-template-areas:
+        "head  head  head"
+        "alloc alloc alloc"
+        "mode  tools tick"
+        "note  note  note";
+      column-gap:6px; row-gap:8px;
+      padding-left:14px; padding-right:14px; padding-bottom:10px;
+    }
+    .sticky-top > header{ grid-area:head; }
+    .sticky-top .header-top{ padding:0; margin-bottom:4px; }
+    .top-actions{ display:contents; }
+    #groupTools{ grid-area:tools; }
+    #tickersBtn{ grid-area:tick; }
+    .portfolio-bar{ grid-area:alloc; padding:0; }
+    .mode-nav{ grid-area:mode; padding:0; min-width:0; }
+    .mode-group{ max-width:none; }
+    .tools-note{ grid-area:note; padding:0; }
+    .tools-note:empty{ display:none; }
+
+    .top-actions .export-btn{ min-height:42px; height:100%; padding:0 12px; }
+    #tickersBtn{ font-size:0; gap:0; padding:0; width:42px; justify-content:center; }
+    #tickersBtn svg{ width:20px; height:20px; }
+    .tools-group{ height:100%; }
+    .tools-menu{ right:0; left:auto; }
+    .mode-tab{ min-height:34px; padding:5px 6px; font-size:14px; }
+
+    .layout{ padding-top:10px; }
+    .filter-card, .results-panel{ padding:10px; margin-bottom:10px; }
+    .filter-headers-row{ margin-bottom:8px; gap:6px; }
+    .filter-header-btn{ min-height:38px; padding:6px; }
+    .apply-reset-row{ gap:6px; }
+    .apply-btn-compact, .reset-btn-bold{ min-height:40px; padding:8px; }
+    .card-list{ gap:8px; }
+  }
+  @media (min-width: 440px) and (max-width: 720px){
+    #tickersBtn{ font-size:14px; gap:8px; padding:0 12px; width:auto; }
+  }
+  .tools-group.is-active .tools-caret{ color:inherit; opacity:0.8; }
 </style>
 </head>
 <body>
@@ -1572,7 +1622,7 @@
       <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
     </div>
   </div>
-  <button class="export-btn" id="tickersBtn">
+  <button class="export-btn" id="tickersBtn" aria-label="My Tickers" title="My Tickers">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
     My Tickers
   </button>

@@ -1468,6 +1468,23 @@
     .summary-count{ color:#1C1916; }
     .copy-btn .portfolio-fab-count{ background:rgba(255,255,255,0.22); }
   }
+
+  /* 2026-09-28c: larger logo + wordmark. Sized so the header row stays the
+     same height as the refresh button / status pill beside it on phones. */
+  .brand-mark{ width:38px; height:38px; }
+  .brand-name{ font-size:25px; }
+  @media (max-width: 720px){
+    .brand{ gap:9px; }
+    .brand-mark{ width:32px; height:32px; }
+    .brand-name{ font-size:23px; }
+  }
+  /* Narrow phones (e.g. 360px Androids): step down a notch so the
+     "Updated" pill beside it still shows the full time. */
+  @media (max-width: 375px){
+    .brand{ gap:7px; }
+    .brand-mark{ width:30px; height:30px; }
+    .brand-name{ font-size:20px; }
+  }
 </style>
 </head>
 <body>

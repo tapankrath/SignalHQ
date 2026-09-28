@@ -170,9 +170,23 @@
   .mode-nav{
     max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
     box-sizing:border-box;
-    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px;
+    display:flex; flex-direction:column; gap:8px;
   }
-  .mode-group{ min-width:0; display:flex; flex-direction:column; gap:6px; }
+  .mode-group{ min-width:0; max-width:520px; display:flex; flex-direction:column; gap:6px; }
+  /* Tools (Ticker Lookup, Backtest) — deliberately smaller and lighter than
+     the Options / Stocks & ETFs toggle: they never use the allocation, so
+     they read as secondary. Same .mode-tab buttons underneath, so
+     switchMode()'s active/aria-selected toggling works unchanged. */
+  .tools-row{ display:flex; align-items:center; gap:6px; }
+  .tools-label{
+    font-size:11px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--text-dim); margin-right:2px;
+  }
+  .tools-row .mode-tab{
+    flex:0 0 auto; min-height:30px; padding:5px 12px; font-size:12px;
+    background:var(--surface-2); border:1px solid var(--border-strong); border-radius:999px;
+  }
+  .tools-row .mode-tab.active{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
   .mode-group-head{
     display:flex; align-items:center; justify-content:space-between; gap:8px;
     height:40px; /* fixed so both groups' captions and tab tracks line up */
@@ -903,7 +917,7 @@
     #portfolioCapital{ width:68px; height:32px; padding:6px 4px; }
     #portfolioSplit{ width:34px; height:32px; padding:6px 2px; }
     #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
-    .mode-nav{ padding:0 14px; gap:10px; }
+    .mode-nav{ padding:0 14px; gap:8px; }
     .mode-group-head{ height:30px; }
     .mode-group-title{ font-size:13.5px; }
     .mode-group-head .export-btn{ padding:6px 9px; font-size:11px; }
@@ -1026,36 +1040,13 @@
 
 </header>
 
-<nav class="mode-nav" aria-label="Sections">
-  <div class="mode-group is-active" id="groupIdeas" role="group" aria-labelledby="groupIdeasTitle">
-    <div class="mode-group-head">
-      <div class="mode-group-title" id="groupIdeasTitle">Trade ideas</div>
-      <button class="export-btn" id="tickersBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        My Tickers
-      </button>
-    </div>
-    <div class="mode-group-sub">Sized to your allocation</div>
-    <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
-      <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
-      <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-    </div>
-  </div>
-
-  <div class="mode-group" id="groupTools" role="group" aria-labelledby="groupToolsTitle">
-    <div class="mode-group-head">
-      <div class="mode-group-title" id="groupToolsTitle">Tools</div>
-    </div>
-    <div class="mode-group-sub">No allocation needed</div>
-    <div class="mode-toggle" role="tablist" aria-label="Tools">
-      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
-      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
-    </div>
-  </div>
-</nav>
-
-<!-- Allocation only applies to the two "Trade ideas" tabs, so it sits directly
-     under them and is swapped for a one-line note when a Tool tab is open. -->
+<!-- Page flow (reordered 2026-09-27): 1) capital + split, 2) pick Options or
+     Stocks & ETFs, then filters -> sort -> pick trades -> Review Picks below.
+     Allocation comes first because it's shared by both trade-idea tabs.
+     Ticker Lookup and Backtest are tools that never read it, so they're a
+     small secondary row instead of a peer group. While a tool is open the
+     allocation card is hidden and the tool's one-line note shows under the
+     tabs instead. -->
 <div class="portfolio-bar" id="allocationBar">
   <div class="portfolio-bar-inner">
     <label>
@@ -1072,6 +1063,30 @@
     </label>
   </div>
 </div>
+
+<nav class="mode-nav" aria-label="Sections">
+  <div class="mode-group is-active" id="groupIdeas" role="group" aria-labelledby="groupIdeasTitle">
+    <div class="mode-group-head">
+      <div class="mode-group-title" id="groupIdeasTitle">Trade ideas</div>
+      <button class="export-btn" id="tickersBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        My Tickers
+      </button>
+    </div>
+    <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
+      <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
+      <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
+    </div>
+  </div>
+
+  <div class="mode-group tools-group" id="groupTools" role="group" aria-labelledby="groupToolsTitle">
+    <div class="tools-row" role="tablist" aria-label="Tools">
+      <span class="tools-label" id="groupToolsTitle">Tools</span>
+      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
+      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
+    </div>
+  </div>
+</nav>
 <div class="tools-note" id="toolsNote" style="display:none;" aria-live="polite"></div>
 </div>
 

@@ -2942,7 +2942,25 @@
     } else {
       showToast(`Filters applied — ${filtered.length} setup${filtered.length===1?'':'s'} found`);
     }
-    document.querySelector('.results-bar').scrollIntoView({ behavior:'smooth', block:'start' });
+    scrollResultsToTop();
+  }
+
+  // Bring the results (sort row + first card) to just below the sticky
+  // header. scrollIntoView({block:'start'}) aligned the results to the very
+  // top of the viewport, which is *under* the tall sticky header — so the
+  // sort row and first card ended up hidden behind it and the page looked
+  // like it had scrolled to a random spot. Measured after the filter
+  // sections have collapsed (next frame), so the target doesn't move out
+  // from under the scroll mid-animation.
+  function scrollResultsToTop(){
+    requestAnimationFrame(() => {
+      const panel = document.querySelector('#optionsView .results-panel');
+      if(!panel) return;
+      const sticky = document.querySelector('.sticky-top');
+      const headerH = sticky ? sticky.getBoundingClientRect().height : 0;
+      const target = window.scrollY + panel.getBoundingClientRect().top - headerH - 10;
+      window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+    });
   }
 
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.

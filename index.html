@@ -1485,6 +1485,46 @@
     .brand-mark{ width:30px; height:30px; }
     .brand-name{ font-size:20px; }
   }
+
+  /* 2026-09-28d: tighter header + compact Stocks & ETFs controls */
+  .eq-panel{ display:flex; flex-direction:column; gap:10px; }
+  .eq-panel .results-count{ font-size:13px; color:var(--text-dim); }
+  .eq-selects{ display:flex; gap:8px; }
+  .eq-selects select{
+    flex:1 1 0; min-width:0; font-family:var(--sans); font-size:14px; font-weight:500;
+    color:var(--text); background:var(--surface-2); border:1px solid var(--border);
+    border-radius:8px; padding:8px 10px; min-height:38px;
+  }
+  .eq-chips{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+  .eq-chip-sep{ width:1px; height:20px; background:var(--border-strong); margin:0 2px; }
+  .eq-chip{
+    position:relative; display:inline-flex; align-items:center; gap:6px;
+    padding:7px 11px; border-radius:999px; cursor:pointer; user-select:none;
+    border:1px solid var(--border-strong); background:var(--surface);
+    font-size:13.5px; font-weight:500; color:var(--text-dim);
+    transition:background .12s, border-color .12s, color .12s;
+  }
+  .eq-chip input{ position:absolute; opacity:0; width:1px; height:1px; pointer-events:none; }
+  .eq-chip .strat-dot{ width:7px; height:7px; margin:0; }
+  .eq-chip.bull:has(input:checked){ background:var(--green-soft); border-color:var(--green); color:var(--green-strong); font-weight:600; }
+  .eq-chip.bear:has(input:checked){ background:var(--red-soft); border-color:var(--red); color:var(--red); font-weight:600; }
+  .eq-chip:has(input:focus-visible){ outline:2px solid var(--amber); outline-offset:2px; }
+
+  @media (max-width: 720px){
+    /* Header: a little more air under the logo, less padding everywhere else */
+    .sticky-top{ gap:8px; }
+    .header-top{ margin-bottom:6px; }
+    .top-actions .export-btn{ min-height:36px; padding:6px 12px; }
+    .portfolio-bar-inner{ padding:5px 10px; }
+    .portfolio-bar input{ padding-top:4px; padding-bottom:4px; }
+    .mode-tab{ min-height:34px; padding:5px 4px; }
+    .eq-panel{ margin-top:0 !important; }
+    /* All four chips on one line at phone width */
+    .eq-chips{ flex-wrap:nowrap; gap:5px; }
+    .eq-chip{ flex:1 1 auto; justify-content:center; min-width:0; padding:7px 6px; gap:5px; font-size:13px; white-space:nowrap; }
+    .eq-chip .strat-dot{ width:6px; height:6px; }
+    .eq-chip-sep{ margin:0 1px; flex:0 0 1px; }
+  }
 </style>
 </head>
 <body>
@@ -1718,43 +1758,30 @@
 
 <div class="layout" id="stocksView" style="display:none;">
 
-  <div class="results-panel" style="margin-top:14px;">
-    <div class="results-bar">
-      <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
-      <div class="sort-wrap">
-        Sort by
-        <select id="equitySortSelect">
-          <option value="score">Composite score</option>
-          <option value="chg1y">1-year change</option>
-        </select>
-      </div>
-    </div>
-    <div class="sort-wrap" style="margin-top:12px;">
-      Show
-      <select id="equityTypeSelect" style="flex:1;">
-        <option value="all">All</option>
+  <!-- 2026-09-28: compacted from five stacked rows to three — count,
+       two selects side by side, then Trend + Valuation as one row of
+       toggle chips. IDs are unchanged, so the filter/sort JS is untouched.
+       Chip rule stays the same: check any; none checked in a pair = no
+       filter for that pair. -->
+  <div class="results-panel eq-panel" style="margin-top:14px;">
+    <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
+    <div class="eq-selects">
+      <select id="equityTypeSelect" aria-label="Show">
+        <option value="all">All tickers</option>
         <option value="stocks">Stocks only</option>
         <option value="etfs">ETFs only</option>
       </select>
+      <select id="equitySortSelect" aria-label="Sort by">
+        <option value="score">Sort: Score</option>
+        <option value="chg1y">Sort: 1Y change</option>
+      </select>
     </div>
-    <!-- Trend filter — same "check any, neither checked = no filter" pattern
-         as the Options tab's Outlook & Strategy checkboxes. Matches on
-         e.trend via .includes() so "Uptrend" also catches "Strong Uptrend" and
-         "Downtrend" also catches "Strong Downtrend" — Neutral only shows up
-         when neither box is checked. -->
-    <div class="sort-wrap" style="margin-top:12px; gap:16px;">
-      Trend
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
-    </div>
-    <!-- Valuation filter — same "check any, neither checked = no filter"
-         pattern as Trend above. A ticker with no valuationLabel (too few
-         same-sector peers in this run — see MIN_SECTOR_PEERS_FOR_VALUATION)
-         never passes either box, same as any other optional field. -->
-    <div class="sort-wrap" style="margin-top:12px; gap:16px;">
-      Valuation
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="valCheapFilter"><span class="strat-dot bull"></span>Cheap</label>
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="valRichFilter"><span class="strat-dot bear"></span>Rich</label>
+    <div class="eq-chips" role="group" aria-label="Trend and valuation filters">
+      <label class="eq-chip bull" title="Trend: Uptrend (includes Strong Uptrend)"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
+      <label class="eq-chip bear" title="Trend: Downtrend (includes Strong Downtrend)"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
+      <span class="eq-chip-sep" aria-hidden="true"></span>
+      <label class="eq-chip bull" title="Valuation: Cheap vs sector peers"><input type="checkbox" id="valCheapFilter"><span class="strat-dot bull"></span>Cheap</label>
+      <label class="eq-chip bear" title="Valuation: Rich vs sector peers"><input type="checkbox" id="valRichFilter"><span class="strat-dot bear"></span>Rich</label>
     </div>
   </div>
 

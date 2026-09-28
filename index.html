@@ -130,7 +130,7 @@
   .sticky-top{
     position:sticky; top:0; z-index:40;
     background:var(--surface);
-    display:flex; flex-direction:column; gap:10px;
+    display:flex; flex-direction:column; gap:12px;
     padding-top:10px; padding-bottom:6px;
   }
   header{ display:flex; flex-direction:column; gap:16px; }
@@ -172,7 +172,7 @@
     box-sizing:border-box;
     display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px;
   }
-  .mode-group{ min-width:0; display:flex; flex-direction:column; gap:3px; }
+  .mode-group{ min-width:0; display:flex; flex-direction:column; gap:6px; }
   .mode-group-head{
     display:flex; align-items:center; justify-content:space-between; gap:8px;
     height:40px; /* fixed so both groups' captions and tab tracks line up */
@@ -183,7 +183,7 @@
   }
   .mode-group-sub{
     font-size:12px; line-height:1.35; font-weight:700; color:var(--text);
-    margin-bottom:5px;
+    margin-bottom:0;
   }
   .mode-toggle{
     display:flex; gap:3px; padding:3px;
@@ -380,13 +380,13 @@
      top of that made the gap to the mode tabs look larger than the gaps
      used everywhere else on the page. Left/right/bottom unchanged (bottom
      stays tall to clear the fixed apply-bar on mobile). */
-  .layout{ max-width:1080px; margin:0 auto; padding:10px 18px 100px; }
+  .layout{ max-width:1080px; margin:0 auto; padding:6px 18px 100px; }
 
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:12px;
-    margin-bottom:16px;
+    margin-bottom:12px;
     box-shadow:var(--shadow-sm);
   }
 
@@ -414,7 +414,7 @@
   .filter-header-btn[aria-expanded="true"] .filter-chevron{ transform:rotate(-90deg); }
   .filter-section{
     border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    margin-bottom:8px;
+    margin-top:8px;
   }
   .filter-section-body{ padding:12px 14px; }
   .summary-count{
@@ -514,7 +514,7 @@
      equal width (2026-09-27b) — previously Apply was outlined/light while
      Reset was solid, so hovering one looked "bold" and the other "light"
      next to it; matching them removes that mismatch. */
-  .apply-reset-row{ display:flex; gap:8px; margin-bottom:8px; }
+  .apply-reset-row{ display:flex; gap:8px; margin-bottom:0; }
   .apply-reset-row .apply-btn-compact{ flex:1; margin-bottom:0; }
   .reset-btn-bold{
     flex:1; background:var(--amber-strong); color:#fff; border:1px solid var(--amber-strong);
@@ -553,8 +553,8 @@
      DOM edges lined up exactly. This gives it the same visual gutter. */
   .results-panel{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:14px 18px;
-    margin-bottom:16px;
+    border-radius:var(--radius); padding:12px;
+    margin-bottom:12px;
     box-shadow:var(--shadow-sm);
   }
   .results-bar{
@@ -648,9 +648,9 @@
   .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
 
   .card-list{
-    display:none; flex-direction:column; gap:10px;
+    display:none; flex-direction:column; gap:8px;
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:10px;
+    border-radius:var(--radius); padding:12px;
     box-shadow:var(--shadow-sm);
   }
   .trade-card{
@@ -867,7 +867,7 @@
        purpose so the SPY/QQQ pills, "EOD data" pill, mode tabs, cash inputs
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
-    .layout{ padding:8px 14px 155px; }
+    .layout{ padding:6px 14px 155px; }
     /* Shrinks the sort dropdown enough that it and Min Trade Profit's
        label+input fit on one line at phone width now that "Sort by" (the
        text label) is gone — the full-size 16px select alone was already
@@ -881,7 +881,7 @@
        narrowing its input. */
     .sort-wrap select{ font-size:12.5px; padding:6px 5px; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
-    .sticky-top{ gap:8px; padding-top:10px; padding-bottom:6px; }
+    .sticky-top{ gap:12px; padding-top:10px; padding-bottom:6px; }
     header{ gap:12px; }
     .header-top{ padding:0 14px; gap:8px; }
     .header-top-right{ gap:8px; }
@@ -908,7 +908,7 @@
     .mode-group-title{ font-size:13.5px; }
     .mode-group-head .export-btn{ padding:6px 9px; font-size:11px; }
     .mode-group-head .export-btn svg{ display:none; }
-    .mode-group-sub{ font-size:10.5px; margin-bottom:4px; }
+    .mode-group-sub{ font-size:10.5px; margin-bottom:0; }
     .mode-toggle{ padding:2px; gap:2px; border-radius:10px; }
     .mode-tab{ min-height:34px; padding:6px 2px; font-size:11px; border-radius:8px; }
     .tools-note{ padding:0 14px; }

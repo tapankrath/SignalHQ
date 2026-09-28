@@ -173,20 +173,25 @@
     display:flex; flex-direction:column; gap:8px;
   }
   .mode-group{ min-width:0; max-width:520px; display:flex; flex-direction:column; gap:6px; }
-  /* Tools (Ticker Lookup, Backtest) — deliberately smaller and lighter than
-     the Options / Stocks & ETFs toggle: they never use the allocation, so
-     they read as secondary. Same .mode-tab buttons underneath, so
-     switchMode()'s active/aria-selected toggling works unchanged. */
-  .tools-row{ display:flex; align-items:center; gap:6px; }
-  .tools-label{
-    font-size:11px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
-    color:var(--text-dim); margin-right:2px;
+  /* Tools menu (2026-09-27): Ticker Lookup / Backtest sit in a small popover
+     opened from a "Tools" button next to My Tickers, instead of a row between
+     the Options/Stocks toggle and the filters. The buttons are still
+     .mode-tab elements so switchMode() toggles .active / aria-selected. */
+  .mode-head-actions{ display:flex; align-items:center; gap:6px; }
+  .tools-group{ position:relative; }
+  .tools-caret{ font-size:10px; margin-left:2px; }
+  .tools-group.is-active .tools-menu-btn{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
+  .tools-menu{
+    position:absolute; right:0; top:calc(100% + 6px); z-index:80; min-width:170px;
+    display:flex; flex-direction:column; gap:2px; padding:4px;
+    background:var(--surface); border:1px solid var(--border-strong); border-radius:12px;
+    box-shadow:0 10px 28px -8px rgba(11,14,19,0.35);
   }
-  .tools-row .mode-tab{
-    flex:0 0 auto; min-height:30px; padding:5px 12px; font-size:12px;
-    background:var(--surface-2); border:1px solid var(--border-strong); border-radius:999px;
+  .tools-menu[hidden]{ display:none; }
+  .tools-menu .mode-tab{
+    flex:none; width:100%; text-align:left; min-height:38px; padding:8px 12px;
+    font-size:13px; border-radius:8px;
   }
-  .tools-row .mode-tab.active{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
   .mode-group-head{
     display:flex; align-items:center; justify-content:space-between; gap:8px;
     height:40px; /* fixed so both groups' captions and tab tracks line up */
@@ -1068,22 +1073,28 @@
   <div class="mode-group is-active" id="groupIdeas" role="group" aria-labelledby="groupIdeasTitle">
     <div class="mode-group-head">
       <div class="mode-group-title" id="groupIdeasTitle">Trade ideas</div>
-      <button class="export-btn" id="tickersBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        My Tickers
-      </button>
+      <div class="mode-head-actions">
+        <!-- Tools (Ticker Lookup, Backtest) live in a small menu up here, out
+             of the Options/Stocks -> filters flow (2026-09-27): they never
+             use the allocation, so they shouldn't sit between the toggle and
+             the filters. Same #tabLookup / #tabBacktest buttons as before,
+             so switchMode()'s active/aria-selected toggling is unchanged. -->
+        <div class="tools-group" id="groupTools">
+          <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
+          <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
+            <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
+            <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
+          </div>
+        </div>
+        <button class="export-btn" id="tickersBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          My Tickers
+        </button>
+      </div>
     </div>
     <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
       <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
       <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-    </div>
-  </div>
-
-  <div class="mode-group tools-group" id="groupTools" role="group" aria-labelledby="groupToolsTitle">
-    <div class="tools-row" role="tablist" aria-label="Tools">
-      <span class="tools-label" id="groupToolsTitle">Tools</span>
-      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
-      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
     </div>
   </div>
 </nav>
@@ -1739,6 +1750,23 @@
     lookup:   '<strong>Ticker Lookup</strong> works on any symbol and doesn\'t use your allocation.',
     backtest: '<strong>Backtest</strong> follows the P&amp;L of trades you\'ve tracked as their expiry gets closer. It doesn\'t use your allocation.'
   };
+
+  // Tools popover (Ticker Lookup / Backtest) open/close.
+  function closeToolsMenu(){
+    const m = document.getElementById('toolsMenu'), b = document.getElementById('toolsMenuBtn');
+    if(m) m.hidden = true;
+    if(b) b.setAttribute('aria-expanded', 'false');
+  }
+  document.getElementById('toolsMenuBtn').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const m = document.getElementById('toolsMenu');
+    m.hidden = !m.hidden;
+    e.currentTarget.setAttribute('aria-expanded', String(!m.hidden));
+  });
+  document.addEventListener('click', (e)=>{
+    if(!e.target.closest('#groupTools')) closeToolsMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeToolsMenu(); });
 
   function switchMode(mode){
     for(const key in MODE_VIEWS){

@@ -1172,8 +1172,14 @@
 
   <div class="results-panel">
     <div class="results-bar">
-      <div class="results-count-row">
-        <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
+      <!-- The "N setups match your filters" sentence was removed from view
+           2026-09-27 (it cost a whole extra line on mobile). The element and
+           its ids stay in the DOM, hidden, so the JS that updates the count
+           doesn't need to change. The row itself only shows while the
+           "Track N for Backtest" button does (see updateSelectionUI), so an
+           empty row never leaves a stray gap. -->
+      <div class="results-count-row" id="resultsCountRow" style="display:none;">
+        <div class="results-count" style="display:none;"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
         <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
       <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
@@ -3177,6 +3183,8 @@
     const trackBtn = document.getElementById('trackSelectedBtn');
     if(trackBtn){
       trackBtn.style.display = selectedOptionIds.size ? '' : 'none';
+      const countRow = document.getElementById('resultsCountRow');
+      if(countRow) countRow.style.display = selectedOptionIds.size ? '' : 'none';
       document.getElementById('trackSelectedCount').textContent = selectedOptionIds.size;
     }
   }

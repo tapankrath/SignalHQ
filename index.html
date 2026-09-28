@@ -1601,6 +1601,15 @@
   }
   .bt-link.bt-pulse{ animation:btPulse .9s ease-out 2; }
   @media (prefers-color-scheme: dark){ .bt-link-count{ color:#1C1916; } }
+
+  /* 2026-09-28f spacing tweaks (phone): more air between the logo row and
+     the Cash row; less dead space between the pinned header and the
+     filter card below it. */
+  @media (max-width: 720px){
+    .sticky-top .header-top{ margin-bottom:10px; }
+    .sticky-top{ padding-bottom:8px; }
+    .layout{ padding-top:8px; }
+  }
 </style>
 </head>
 <body>

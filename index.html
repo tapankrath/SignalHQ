@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141A23" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1C1916" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VantEdgeAI">
@@ -1327,6 +1327,147 @@
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; }
   }
+
+  /* =====================================================================
+     2026-09-28b color layer — warms the redesign up with the brand's
+     three working colors, each with one job:
+       green  = bullish / profit / the "go" action (Review Picks)
+       red    = bearish / loss
+       brown  = the brand accent: neutral setups, filter controls, focus
+     Tokens are redefined here (later :root wins) so every rule above picks
+     them up; the component rules below only add color where it carries
+     meaning.
+     ===================================================================== */
+  :root{
+    --bg:#F6F4F0;
+    --surface:#FFFFFF;
+    --surface-2:#F9F7F3;
+    --border:#E7E1D8;
+    --border-strong:#D3C9BB;
+    --text:#1F1A15;
+    --text-dim:#574D43;
+    --text-faint:#8A7F73;
+    --amber:#8B5A2B;
+    --amber-strong:#6E4520;
+    --amber-soft:#F5ECE0;
+    --amber-border:#E2CDB3;
+    --green:#11845A;
+    --green-strong:#0D5E40;
+    --green-soft:#E4F3EB;
+    --red:#C73A2E;
+    --red-soft:#FBE9E6;
+    --invert-bg:#1F1A15;
+    --invert-text:#FFFFFF;
+    --primary:#6E4520;
+    --on-primary:#FFFFFF;
+    --go:#11845A;
+    --on-go:#FFFFFF;
+    --check-bg:#8B5A2B;
+    --check-bull:#11845A;
+    --check-bear:#C73A2E;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#13110F;
+      --surface:#1C1916;
+      --surface-2:#24201C;
+      --border:#332D27;
+      --border-strong:#4A4239;
+      --text:#EFE9E1;
+      --text-dim:#C2B8AC;
+      --text-faint:#8F857A;
+      --amber:#D19A62;
+      --amber-strong:#E0B07E;
+      --amber-soft:#2E2319;
+      --amber-border:#4E3A27;
+      --green:#3CC48A;
+      --green-strong:#6FDCAA;
+      --green-soft:#13291E;
+      --red:#F0766B;
+      --red-soft:#33191A;
+      --invert-bg:#EFE9E1;
+      --invert-text:#13110F;
+      --primary:#9A6634;
+      --on-primary:#FFFFFF;
+      --go:#1A9464;
+      --on-go:#FFFFFF;
+      --check-bg:#A56E37;
+      --check-bull:#1A9464;
+      --check-bear:#C73A2E;
+    }
+  }
+
+  /* Brand */
+  .brand-mark .bm-bg{ fill:#0D5E40; }
+  .brand-mark .bm-v{ stroke:#F3E3CC; }
+  .brand-mark .bm-up{ stroke:#6FDCAA; }
+  .brand-mark .bm-tip{ fill:#6FDCAA; }
+  .brand-name{ color:var(--green-strong); }
+  .brand-ai{ color:var(--amber); font-weight:600; }
+
+  .data-status{ background:var(--green-soft); border-color:transparent; }
+  #dataStatusText{ color:var(--green-strong); }
+  .pulse-dot{ box-shadow:0 0 0 3px rgba(17,132,90,0.18); }
+  .refresh-btn{ color:var(--amber); }
+  .export-btn svg, .tools-caret{ color:var(--amber); }
+
+  /* Allocation tray in a warm tint */
+  .portfolio-bar-inner{ background:var(--amber-soft); border-color:var(--amber-border); }
+  .portfolio-bar label{ color:var(--amber-strong); }
+  .portfolio-bar input{ border-color:var(--amber-border); }
+
+  .mode-tab.active{ color:var(--green-strong); box-shadow:inset 0 -2px 0 var(--green), 0 1px 2px rgba(31,26,21,0.08); }
+
+  /* Filters */
+  .filter-header-btn[aria-expanded="true"]{ border-color:var(--amber); background:var(--amber-soft); color:var(--amber-strong); }
+  .summary-count{ background:var(--amber); color:#fff; }
+  .check-row input[type="checkbox"][data-strat="Covered Call"]:checked,
+  .check-row input[type="checkbox"][data-strat="Bull Put Spread"]:checked,
+  .check-row input[type="checkbox"][data-strat="Cash-Secured Put"]:checked,
+  .check-row input[type="checkbox"][data-strat="Bull Call Spread"]:checked,
+  .check-row input[type="checkbox"][data-pcoi="bull"]:checked,
+  .check-row input[type="checkbox"][data-pcvol="bull"]:checked,
+  .check-row input[type="checkbox"][data-quality="buy"]:checked,
+  .check-row input[type="checkbox"][data-quality="valCheap"]:checked,
+  #trendUpFilter:checked,
+  #valCheapFilter:checked{ background:var(--check-bull); border-color:var(--check-bull); }
+  .check-row input[type="checkbox"][data-quality="valRich"]:checked{ background:var(--check-bear); border-color:var(--check-bear); }
+  .strat-dot.neutral{ background:var(--amber); }
+
+  /* Actions: brown = filter controls, green = go */
+  .reset-btn-bold{ color:var(--amber-strong); border-color:var(--amber-border); }
+  .reset-btn-bold:hover{ background:var(--amber-soft); }
+  .copy-btn{ background:var(--go); border-color:var(--go); color:var(--on-go); }
+  .copy-btn .portfolio-fab-count{ background:rgba(255,255,255,0.22); color:#fff; }
+
+  /* Cards: a side-colored edge so direction reads at a glance */
+  .trade-card.side-bull{ box-shadow:inset 3px 0 0 var(--green); }
+  .trade-card.side-bear{ box-shadow:inset 3px 0 0 var(--red); }
+  .trade-card.side-neutral{ box-shadow:inset 3px 0 0 var(--amber); }
+  .trade-card:hover{ border-color:var(--border-strong); }
+  .tc-strat{ color:var(--amber-strong); }
+  .side-pill.neutral, .val-tag{ background:var(--amber-soft); color:var(--amber-strong); }
+  .val-tag.cheap{ background:var(--green-soft); color:var(--green); }
+  .val-tag.rich{ background:var(--red-soft); color:var(--red); }
+  .tc-v.val-neg{ color:var(--red); }
+
+  /* Score meter colored by band */
+  .meter-hi .meter-ticks span.on{ background:var(--green); }
+  .meter-hi .meter-score{ color:var(--green-strong); }
+  .meter-mid .meter-ticks span.on{ background:var(--amber); }
+  .meter-mid .meter-score{ color:var(--amber-strong); }
+  .meter-lo .meter-ticks span.on{ background:var(--red); }
+  .meter-lo .meter-score{ color:var(--red); }
+
+  thead th{ background:var(--amber-soft); color:var(--amber-strong); }
+
+  @media (prefers-color-scheme: dark){
+    .brand-mark .bm-bg{ fill:#0D5E40; }
+    .brand-mark .bm-v{ stroke:#F3E3CC; }
+    .mode-tab.active{ background:var(--surface-2); border-color:var(--border-strong); box-shadow:inset 0 -2px 0 var(--green); }
+    .summary-count{ color:#1C1916; }
+    .copy-btn .portfolio-fab-count{ background:rgba(255,255,255,0.22); }
+  }
 </style>
 </head>
 <body>
@@ -1798,7 +1939,8 @@
   function meterHtml(score){
     let ticks = '';
     for(let i=1;i<=10;i++){ ticks += `<span class="${i<=score?'on':''}"></span>`; }
-    return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${Number(score).toFixed(1)}</span></div>`;
+    const band = score >= 7 ? 'hi' : score >= 5 ? 'mid' : 'lo';
+    return `<div class="meter meter-${band}"><div class="meter-ticks">${ticks}</div><span class="meter-score">${Number(score).toFixed(1)}</span></div>`;
   }
 
   // Shared between trade cards/table/modal AND equity cards/table/modal —
@@ -1867,7 +2009,7 @@
       const cardPrice = t.spot != null ? `$${Math.round(t.spot)}${staleMark(t.spotPriceStale)}→` : '';
       const spotTxt = t.spot != null ? `$${Math.round(t.spot)}${staleMark(t.spotPriceStale)} → ` : '';
       cardList.innerHTML += `
-        <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
+        <div class="trade-card side-${t.side === 'bull' || t.side === 'bear' ? t.side : 'neutral'}" data-idx="${idx}" role="button" tabindex="0">
           <div class="tc-head">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
             <div class="tc-id">
@@ -2208,7 +2350,7 @@
         </tr>`;
 
       equityCardList.innerHTML += `
-        <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
+        <div class="trade-card side-${e.trend.includes('Uptrend') ? 'bull' : e.trend.includes('Downtrend') ? 'bear' : 'neutral'}" data-eidx="${idx}" role="button" tabindex="0">
           <div class="tc-head">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label>
             <div class="tc-id">

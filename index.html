@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#141A23" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VantEdgeAI">
@@ -17,53 +17,50 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Sora:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Note: --amber* variable names are historical — they hold the green accent
        color now. Kept the names to avoid touching every var(--amber...) usage
        site; only the values changed. */
-    --bg:#FFFFFF;
+    /* 2026-09-28 redesign: cool neutral canvas with white surfaces, a
+       single ink color for primary actions, and green/red reserved for
+       direction and P&L only (they used to double as the button color,
+       which diluted what "green" meant). --amber* now holds a steel-navy
+       accent (checkboxes, meter, focus rings) — names kept for history. */
+    --bg:#F3F4F6;
     --surface:#FFFFFF;
-    --surface-2:#F3F4F7;
-    --border:#E1E4EA;
-    /* Was pure black — every pill/input/button using this token (SPY/QQQ
-       chips, Tickers/Export, the Cash/Opt%/Eq% inputs, Idle pill, etc.) read
-       as a hard-edged wireframe rather than a polished card. Softened to a
-       mid gray so shadows (added alongside, on chips/buttons that didn't
-       have one) carry the visual weight instead, matching the "hairline
-       under a shadow" intent this file's own shadow-scale comment states. */
-    --border-strong:#AFB5C2;
-    --text:#000000;
-    --text-dim:#374151;
-    --text-faint:#6B7280;
-    --amber:#16A34A;
-    --amber-strong:#0D8A3F;
-    --amber-soft:#DCFCE7;
-    --amber-border:#22C55E;
-    --green:#16A34A;
-    --green-soft:#DCFCE7;
-    --red:#DC2626;
-    --red-soft:#FEE2E2;
-    /* "Inverted" chip color — a black chip with white text (the toast, the
-       active mode tab) that's meant to read as strong/high-contrast against
-       the page regardless of theme. Kept as its own token, separate from
-       --text, specifically so dark mode (below) can flip it to a light chip
-       on dark text instead of quietly inheriting --text's flip and ending
-       up as a white-on-white chip. */
-    --invert-bg:#000000;
+    --surface-2:#F6F7F9;
+    --border:#E3E6EB;
+    --border-strong:#CBD1DA;
+    --text:#111B2E;
+    --text-dim:#4A5568;
+    --text-faint:#7A8494;
+    --amber:#2A5A9E;
+    --amber-strong:#1F477F;
+    --amber-soft:#E9EFF8;
+    --amber-border:#BCCBE2;
+    --green:#0B8A5A;
+    --green-soft:#E3F4EC;
+    --red:#C8372D;
+    --red-soft:#FBEAE8;
+    --invert-bg:#111B2E;
     --invert-text:#FFFFFF;
-    --radius:16px;
+    --primary:#111B2E;
+    --on-primary:#FFFFFF;
+    --check-bg:#111B2E;
+    --check-bear:#C8372D;
+    --radius:14px;
     --radius-sm:10px;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --mono: 'IBM Plex Mono', 'SF Mono', monospace;
-    /* Soft elevation scale — used on card-level containers instead of (or
-       alongside) hairline borders, for a more "raised" fintech-card feel.
-       --border itself is lightened below so borders read as a hairline
-       under the shadow rather than competing with it. */
-    --shadow-sm:0 1px 2px rgba(16,24,40,0.05), 0 1px 3px rgba(16,24,40,0.04);
-    --shadow-md:0 2px 6px rgba(16,24,40,0.06), 0 8px 20px rgba(16,24,40,0.07);
-    --shadow-lg:0 12px 40px rgba(16,24,40,0.16);
+    --sans:'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+    /* Figures use the sans face with tabular numerals (set on body) rather
+       than a monospace — --mono is kept as a name so every existing
+       var(--mono) usage picks this up without touching each rule. */
+    --mono:'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+    --code:'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+    --shadow-sm:0 1px 2px rgba(17,27,46,0.04);
+    --shadow-md:0 1px 2px rgba(17,27,46,0.04), 0 6px 16px rgba(17,27,46,0.06);
+    --shadow-lg:0 16px 48px rgba(17,27,46,0.18);
   }
 
   /* Dark mode — follows the device/browser's system appearance automatically
@@ -77,27 +74,31 @@
      active. */
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#0B0C0E;
-      --surface:#0B0C0E;
-      --surface-2:#1C1F25;
-      --border:#2B2F36;
-      --border-strong:#4B525C;
-      --text:#F2F3F5;
-      --text-dim:#B9BEC7;
-      --text-faint:#868C96;
-      --amber:#16A34A;
-      --amber-strong:#4ADE80;
-      --amber-soft:#123321;
-      --amber-border:#1F7A44;
-      --green:#34D399;
-      --green-soft:#123321;
-      --red:#F87171;
-      --red-soft:#3A1518;
-      --invert-bg:#F2F3F5;
-      --invert-text:#0B0C0E;
-      --shadow-sm:0 1px 2px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
-      --shadow-md:0 2px 6px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.45);
-      --shadow-lg:0 12px 40px rgba(0,0,0,0.6);
+      --bg:#0C1017;
+      --surface:#141A23;
+      --surface-2:#1B222D;
+      --border:#262E3A;
+      --border-strong:#3A4452;
+      --text:#E7EBF1;
+      --text-dim:#A9B2C0;
+      --text-faint:#7C8696;
+      --amber:#7FA6E6;
+      --amber-strong:#9DBBF0;
+      --amber-soft:#1A2638;
+      --amber-border:#2E4466;
+      --green:#3CC48A;
+      --green-soft:#12291F;
+      --red:#F0766B;
+      --red-soft:#2E1715;
+      --invert-bg:#E7EBF1;
+      --invert-text:#0C1017;
+      --primary:#E7EBF1;
+      --on-primary:#0C1017;
+      --check-bg:#3B67B0;
+      --check-bear:#C8372D;
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.4);
+      --shadow-md:0 1px 2px rgba(0,0,0,0.4), 0 6px 16px rgba(0,0,0,0.35);
+      --shadow-lg:0 16px 48px rgba(0,0,0,0.6);
     }
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -1023,6 +1024,309 @@
        same in both. */
   }
 
+
+  /* =====================================================================
+     2026-09-28 redesign layer. Kept as one block at the very end of the
+     stylesheet so it wins the cascade over the older component rules
+     (same specificity, later source order) in both themes and at every
+     width. Principles: one ink color for primary actions; green/red only
+     for direction and P&L; a single sans family with tabular figures;
+     hairline borders instead of stacked shadows; a clear radius scale
+     (14 containers / 12 cards / 10 controls / 6 tags).
+     ===================================================================== */
+  html,body{ letter-spacing:0; font-feature-settings:'tnum' 1; font-variant-numeric:tabular-nums; }
+  body{ background:var(--bg); }
+  .ticker-json-box{ font-family:var(--code); font-size:14px; }
+
+  /* Header */
+  .sticky-top{
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+    padding-top:calc(10px + env(safe-area-inset-top, 0px));
+    padding-bottom:12px; gap:12px;
+  }
+  .brand{
+    background:none; border:0; box-shadow:none; padding:0; gap:10px; border-radius:0;
+  }
+  .brand-mark{ width:32px; height:32px; }
+  .brand-mark .bm-bg{ fill:var(--primary); }
+  .brand-mark .bm-v{ stroke:var(--on-primary); stroke-width:3; stroke-linecap:round; fill:none; }
+  .brand-mark .bm-up{ stroke:#3CC48A; stroke-width:3; stroke-linecap:round; fill:none; }
+  .brand-mark .bm-tip{ fill:#3CC48A; }
+  .brand-name{
+    font-family:var(--sans); font-weight:700; font-size:20px; line-height:1;
+    letter-spacing:-0.02em; color:var(--text);
+  }
+  .brand-ai{ color:var(--text-faint); font-weight:500; margin-left:1px; }
+  .brand:focus-visible{ outline:2px solid var(--amber); outline-offset:4px; border-radius:8px; }
+
+  .data-status{
+    font-family:var(--sans); font-size:12px; font-weight:500; color:var(--text-dim);
+    background:transparent; border:1px solid var(--border); border-radius:8px;
+    padding:6px 10px; gap:7px;
+  }
+  #dataStatusText{ font-weight:500; color:var(--text-dim); }
+  .pulse-dot{ width:7px; height:7px; box-shadow:0 0 0 3px var(--green-soft); }
+  .refresh-btn{
+    width:34px; height:34px; border-radius:8px;
+    background:var(--surface); border:1px solid var(--border); color:var(--text-dim);
+  }
+  .refresh-btn svg{ width:15px; height:15px; stroke-width:2.2; }
+
+  /* Utility row */
+  .export-btn{
+    background:var(--surface); border:1px solid var(--border); box-shadow:none;
+    color:var(--text); border-radius:10px; font-size:14px; font-weight:500;
+    padding:9px 14px; gap:8px;
+  }
+  .export-btn:hover{ background:var(--surface-2); border-color:var(--border-strong); }
+  .export-btn svg{ color:var(--text-faint); }
+  .top-actions .export-btn{ min-height:40px; }
+  .tools-caret{ color:var(--text-faint); font-size:10px; }
+  .tools-menu{ border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow-lg); }
+
+  /* Allocation */
+  .portfolio-bar-inner{
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:12px; box-shadow:none; padding:10px 14px;
+  }
+  .portfolio-bar label{ font-size:13px; font-weight:500; color:var(--text-faint); gap:8px; }
+  .portfolio-bar input{
+    background:var(--surface); border:1px solid var(--border-strong);
+    border-radius:8px; box-shadow:none; font-weight:500; color:var(--text);
+  }
+  .portfolio-bar input:focus{ border-color:var(--amber); box-shadow:0 0 0 3px var(--amber-soft); }
+
+  /* Options / Stocks segmented control */
+  .mode-toggle{ background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:3px; gap:3px; }
+  .mode-tab{ font-size:14px; font-weight:500; color:var(--text-faint); border-radius:8px; min-height:36px; }
+  .mode-tab.active{
+    background:var(--surface); color:var(--text); font-weight:600;
+    border-color:var(--border); box-shadow:0 1px 2px rgba(17,27,46,0.08);
+  }
+  .tools-menu .mode-tab.active{ background:var(--surface-2); }
+  .tools-group.is-active .tools-menu-btn{ background:var(--primary); color:var(--on-primary); border-color:var(--primary); }
+
+  /* Page body */
+  .layout{ padding-top:14px; }
+  .filter-card, .results-panel{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); box-shadow:none; padding:12px; margin-bottom:12px;
+  }
+
+  /* Filter category headers: one line each — label, count, chevron */
+  .filter-headers-row{ gap:8px; margin-bottom:10px; }
+  .filter-header-btn{
+    flex-direction:row; gap:6px; min-height:42px; padding:8px 10px;
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    font-size:14px; font-weight:500; color:var(--text);
+  }
+  .filter-header-btn:hover{ border-color:var(--border-strong); }
+  .filter-header-btn[aria-expanded="true"]{ border-color:var(--text); background:var(--surface); }
+  .filter-header-btn .filter-chevron{ font-size:14px; color:var(--text-faint); }
+  .summary-count{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:20px; height:20px; padding:0 6px; border-radius:10px; border:0;
+    background:var(--amber-soft); color:var(--amber-strong);
+    font-family:var(--sans); font-size:12px; font-weight:600;
+  }
+  .filter-section{ background:var(--surface-2); border:1px solid var(--border); border-radius:10px; }
+  .filter-hint{ font-size:12px; line-height:1.5; }
+  .check-row{ font-size:14px; font-weight:500; padding:8px 4px; }
+  .check-row input[type="checkbox"],
+  .card-checkbox, .row-checkbox{
+    appearance:none; -webkit-appearance:none; position:relative; flex-shrink:0; cursor:pointer;
+    width:20px; height:20px; border-radius:6px; margin:0;
+    border:1.5px solid var(--border-strong); background:var(--surface);
+    transition:background .12s, border-color .12s;
+  }
+  .check-row input[type="checkbox"]:checked,
+  .card-checkbox:checked, .row-checkbox:checked{ background:var(--check-bg); border-color:var(--check-bg); }
+  .check-row input[type="checkbox"][data-strat="Bear Call Spread"]:checked,
+  .check-row input[type="checkbox"][data-strat="Long Put"]:checked,
+  .check-row input[type="checkbox"][data-strat="Bear Put Spread"]:checked,
+  .check-row input[type="checkbox"][data-pcoi="bear"]:checked,
+  .check-row input[type="checkbox"][data-pcvol="bear"]:checked,
+  .check-row input[type="checkbox"][data-quality="sell"]:checked,
+  #trendDownFilter:checked,
+  #valRichFilter:checked{ background:var(--check-bear); border-color:var(--check-bear); }
+  .check-row input[type="checkbox"]:checked::after,
+  .card-checkbox:checked::after, .row-checkbox:checked::after{
+    content:""; position:absolute; left:5.5px; top:2px;
+    width:5px; height:10px; border:solid #fff; border-width:0 2px 2px 0;
+    transform:rotate(45deg);
+  }
+  .card-checkbox:focus-visible, .row-checkbox:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  .num-row input[type="number"], .expiry-row select, .expiry-row input{
+    border:1px solid var(--border-strong); border-radius:8px; background:var(--surface);
+  }
+
+  /* Apply (primary) + Reset (secondary) */
+  .apply-reset-row{ gap:8px; }
+  .apply-btn-compact, .apply-btn, .modal-copy-btn, .lookup-tab-submit, .ticker-add-row button{
+    background:var(--primary); color:var(--on-primary); border:1px solid var(--primary);
+    box-shadow:none; font-weight:600; border-radius:10px;
+  }
+  .apply-btn-compact{ min-height:42px; font-size:14px; padding:10px; }
+  .reset-btn-bold{
+    background:var(--surface); color:var(--text); border:1px solid var(--border-strong);
+    box-shadow:none; min-height:42px; font-size:14px; font-weight:500; border-radius:10px; padding:10px;
+  }
+  .reset-btn-bold:hover{ background:var(--surface-2); filter:none; }
+  .apply-btn-compact:hover, .apply-btn:hover, .modal-copy-btn:hover{ filter:none; opacity:0.92; }
+  .apply-btn-compact:focus-visible, .apply-btn:focus-visible, .reset-btn-bold:focus-visible{
+    outline:2px solid var(--amber); outline-offset:2px;
+  }
+
+  /* Sort + min profit row */
+  .sort-wrap{ font-size:13px; font-weight:500; color:var(--text-faint); }
+  .sort-wrap select, .sort-wrap input{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:8px; color:var(--text);
+  }
+  .sort-wrap #minTradeProfitInput{ font-weight:600; text-align:center; }
+  .funnel-note{ font-size:12px; font-weight:500; }
+
+  /* Result cards: a plain stack, no box-inside-a-box */
+  .card-list{ background:transparent; border:0; box-shadow:none; padding:0; gap:10px; }
+  .trade-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:14px; box-shadow:none;
+  }
+  .trade-card:hover{ border-color:var(--border-strong); box-shadow:none; }
+  .trade-card:active{ transform:none; background:var(--surface-2); box-shadow:none; }
+  .tc-head{ display:flex; align-items:flex-start; gap:12px; }
+  .tc-head .checkbox-wrap{ margin:-12px -4px -12px -12px; }
+  .tc-id{ flex:1; min-width:0; }
+  .tc-sym{
+    display:flex; align-items:baseline; flex-wrap:wrap; column-gap:8px; row-gap:2px;
+    font-size:17px; font-weight:700; line-height:1.2; color:var(--text); letter-spacing:-0.005em;
+  }
+  .tc-strat{ font-size:13.5px; font-weight:500; color:var(--text-dim); }
+  .tc-sub{ margin-top:4px; font-size:13px; color:var(--text-faint); line-height:1.4; }
+  .tc-sub b{ color:var(--text); font-weight:600; }
+  .tc-metrics{
+    display:grid; grid-template-columns:1fr 1fr 0.8fr auto; gap:8px;
+    margin-top:12px; padding-top:12px; border-top:1px solid var(--border);
+    align-items:end;
+  }
+  .tc-metrics-eq{ grid-template-columns:1fr 1fr auto; }
+  .tc-k{ display:block; font-size:11.5px; font-weight:500; color:var(--text-faint); margin-bottom:3px; }
+  .tc-v{ display:block; font-size:15px; font-weight:600; color:var(--text); white-space:nowrap; }
+  .tc-v.val-pos{ color:var(--green); }
+  .tc-score .meter{ gap:6px; }
+  .tc-score .meter-ticks span{ width:3px; height:13px; }
+
+  .val-tag{
+    display:inline-flex; align-items:center; margin-left:6px; vertical-align:1px;
+    font-size:11.5px; font-weight:600; line-height:1; padding:3px 6px; border-radius:5px;
+    background:var(--surface-2); color:var(--text-faint); cursor:help; letter-spacing:0;
+  }
+  .val-tag.cheap{ background:var(--green-soft); color:var(--green); }
+  .val-tag.rich{ background:var(--red-soft); color:var(--red); }
+  .tc-sym .val-tag{ margin-left:0; align-self:center; }
+
+  .side-pill{ border-radius:6px; font-size:12px; font-weight:600; padding:4px 8px; gap:6px; white-space:nowrap; }
+  .side-pill .dot{ width:6px; height:6px; }
+
+  .meter-ticks{ gap:2px; }
+  .meter-ticks span{ background:var(--border); border-radius:1px; }
+  .meter-ticks span.on{ background:var(--amber); }
+  .meter-score{ font-family:var(--sans); font-size:15px; font-weight:700; color:var(--text); min-width:0; }
+
+  .ticker-sym{ font-family:var(--sans); font-weight:700; }
+  .num{ font-family:var(--sans); }
+
+  /* Desktop table */
+  .table-wrap{ box-shadow:none; border-radius:12px; }
+  thead th{ font-size:12px; font-weight:600; color:var(--text-faint); background:var(--surface-2); }
+  tbody td{ font-weight:500; font-size:13.5px; }
+  .row-action{ border:1px solid var(--border-strong); border-radius:8px; color:var(--text); font-weight:500; }
+  .row-action:hover{ background:var(--surface-2); border-color:var(--text-faint); color:var(--text); }
+
+  /* Bottom bar: Review Picks is the page's one primary action */
+  .copy-btn{
+    background:var(--primary); color:var(--on-primary); border:1px solid var(--primary);
+    border-radius:12px; font-size:15px; font-weight:600; padding:12px 16px; min-height:48px;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .copy-btn:hover{ filter:none; opacity:0.92; }
+  .portfolio-fab-count{
+    background:rgba(255,255,255,0.16); color:inherit; margin-left:0;
+    font-family:var(--sans); font-size:13px; font-weight:600;
+    min-width:24px; height:24px; padding:0 7px; border-radius:12px;
+    display:inline-flex; align-items:center; justify-content:center;
+  }
+  .track-selected-btn, .apply-bar-row .track-selected-btn{
+    background:var(--surface); color:var(--text); border:1px solid var(--border-strong);
+    border-radius:12px; font-size:14px; font-weight:600; min-height:48px;
+  }
+  .active-count{ font-family:var(--sans); font-size:12px; font-weight:500; color:var(--text-faint); }
+  .apply-bar-row2{ justify-content:center; }
+
+  /* Modal + toast */
+  .modal-scrim{ background:rgba(12,16,23,0.5); }
+  .trade-modal{ border-radius:16px; border:1px solid var(--border); }
+  .modal-close{ border-radius:8px; background:var(--surface); }
+  .mm-label{ font-size:12px; color:var(--text-faint); font-weight:500; }
+  .mm-val{ font-size:15px; font-weight:600; }
+  .modal-copy-btn-secondary{ border-radius:10px; font-weight:600; border-color:var(--border-strong); color:var(--text); }
+  .news-headline{ border-radius:10px; }
+  .toast{ font-family:var(--sans); font-size:13px; font-weight:500; border-radius:10px; }
+  .tracked-card, .tracked-empty-state, .tracked-export-box{ box-shadow:none; border-radius:12px; }
+  .tracked-stat-label, .tracked-status-pill, .news-section-header .mm-label{
+    text-transform:none; letter-spacing:0; font-size:11.5px; font-weight:600;
+  }
+  .ticker-chip{ font-family:var(--sans); border-radius:8px; border-color:var(--border); }
+  .ticker-chip.etf{ background:var(--amber-soft); border-color:var(--amber-border); color:var(--amber-strong); }
+  .lookup-tab-input{ font-family:var(--sans); border-radius:10px; }
+  .ticker-add-row input{ font-family:var(--sans); }
+  footer{ font-size:12px; }
+
+  @media (max-width: 720px){
+    .sticky-top{ gap:10px; padding-bottom:10px; }
+    .brand-mark{ width:28px; height:28px; }
+    .brand-name{ font-size:19px; }
+    .brand{ gap:8px; padding:0; }
+    .data-status{ font-size:11.5px; padding:5px 9px; max-width:160px; }
+    .refresh-btn{ width:32px; height:32px; }
+    .export-btn{ font-size:14px; padding:8px 12px; }
+    .portfolio-bar-inner{ padding:8px 10px; gap:6px 4px; }
+    .portfolio-bar label{ font-size:12.5px; gap:5px; }
+    .mode-tab{ font-size:14px; min-height:36px; padding:6px 4px; }
+    .filter-header-btn{ font-size:13.5px; padding:8px 6px; gap:5px; }
+    .layout{ padding-top:14px; }
+    .apply-bar{
+      background:var(--surface); border-top:1px solid var(--border);
+      box-shadow:none; gap:6px; padding-top:10px;
+    }
+    .sort-wrap select{ font-size:14px; padding:7px 8px; }
+    .sort-wrap #minTradeProfitInput{ font-size:14px; }
+    .portfolio-bar-inner{ justify-content:space-between; flex-wrap:nowrap; }
+    #portfolioCapital{ width:76px; padding:6px 6px; }
+    #portfolioSplit, #portfolioEquitySplit{ width:40px; padding:6px 4px; text-align:center; }
+    /* Sort + Min trade profit on one line: the select takes what's left */
+    .results-bar .sort-wrap{ flex-wrap:nowrap !important; width:100%; gap:8px; }
+    #sortSelect{ flex:1 1 auto; min-width:0; }
+    .results-bar .sort-wrap > span{ white-space:nowrap; font-size:12.5px; margin-left:2px !important; }
+    /* Sit above the fixed Review Picks bar instead of on top of it */
+    .toast{ bottom:calc(118px + env(safe-area-inset-bottom, 0px)); }
+  }
+  @media (max-width: 360px){
+    .tc-metrics{ grid-template-columns:1fr 1fr auto; }
+    .tc-metrics > div:nth-child(3){ display:none; }
+  }
+  @media (prefers-color-scheme: dark){
+    .portfolio-fab-count{ background:rgba(12,16,23,0.12); }
+    .portfolio-bar input{ background:var(--surface); }
+    .export-btn{ background:var(--surface); }
+    .mode-tab.active{ background:var(--border); border-color:var(--border-strong); box-shadow:none; }
+    .brand-mark .bm-bg{ fill:#1F2835; }
+    .brand-mark .bm-v{ stroke:#E7EBF1; }
+    .copy-btn .portfolio-fab-count{ background:rgba(12,16,23,0.12); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
 </style>
 </head>
 <body>
@@ -1032,16 +1336,14 @@
   <div class="header-top">
     <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI" style="cursor:pointer;">
       <div class="brand-mark">
-        <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo">
-          <rect x="3"    y="14.5" width="3.2" height="6"  rx="1.4" fill="#22C55E" fill-opacity="0.38"/>
-          <rect x="8"    y="11.5" width="3.2" height="9"  rx="1.4" fill="#22C55E" fill-opacity="0.60"/>
-          <rect x="13"   y="8"    width="3.2" height="12.5" rx="1.4" fill="#22C55E" fill-opacity="0.82"/>
-          <rect x="18"   y="3.5"  width="3.2" height="17" rx="1.4" fill="#4ADE80"/>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="bm-bg" width="32" height="32" rx="8"/>
+          <path class="bm-v" d="M8.5 11 L14.5 22"/>
+          <path class="bm-up" d="M14.5 22 L23.5 8.5"/>
+          <circle class="bm-tip" cx="23.5" cy="8.5" r="2.1"/>
         </svg>
       </div>
-      <div>
-        <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
-      </div>
+      <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
     </div>
 
     <div class="header-top-right">
@@ -1112,7 +1414,7 @@
 
     <div class="filter-headers-row">
       <button class="filter-header-btn" type="button" data-section="outlookSection" aria-expanded="false">
-        <span>Outlook &amp; Strategy</span>
+        <span>Strategy</span>
         <span class="summary-count" id="outlookCount" style="display:none;"></span>
         <span class="filter-chevron">›</span>
       </button>
@@ -1512,7 +1814,8 @@
     const color = obj.valuationLabel === 'Cheap' ? 'var(--green)' : obj.valuationLabel === 'Rich' ? 'var(--red)' : 'var(--text-faint)';
     const pct = obj.peVsSectorPct != null ? `${obj.peVsSectorPct >= 0 ? '+' : ''}${obj.peVsSectorPct}%` : '';
     const title = `P/E ${pct} vs. the median of ${obj.sectorPeerCount} ${obj.sector || ''} peers in THIS screen's universe — not a market-wide valuation.`;
-    return ` <span style="color:${color}; font-weight:700; font-size:10.5px; cursor:help;" title="${title}">${obj.valuationLabel}</span>`;
+    const cls = obj.valuationLabel === 'Cheap' ? 'cheap' : obj.valuationLabel === 'Rich' ? 'rich' : '';
+    return `<span class="val-tag ${cls}" title="${title}">${obj.valuationLabel}</span>`;
   }
 
   function render(list){
@@ -1562,18 +1865,22 @@
       // precision ($230.50), but this card layout has a tight, previously-
       // tested character budget, so a compact form here specifically
       const cardPrice = t.spot != null ? `$${Math.round(t.spot)}${staleMark(t.spotPriceStale)}→` : '';
+      const spotTxt = t.spot != null ? `$${Math.round(t.spot)}${staleMark(t.spotPriceStale)} → ` : '';
       cardList.innerHTML += `
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
-          <div class="trade-card-top" style="margin-bottom:6px;">
+          <div class="tc-head">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
+            <div class="tc-id">
+              <div class="tc-sym">${t.sym}<span class="tc-strat">${t.strat}</span>${valuationBadge(t)}</div>
+              <div class="tc-sub">${spotTxt}<b>${cardStrike}</b> · ${t.exp} (${t.dte}d)</div>
+            </div>
             ${pill}
           </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-            <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
-              <span class="${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}/${fmtPct(t.ap)}</span> · ${t.exp}·${t.dte}d${valuationBadge(t)}
-            </span>
-            ${meterHtml(t.score)}
+          <div class="tc-metrics">
+            <div><span class="tc-k">Return</span><span class="tc-v ${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}</span></div>
+            <div><span class="tc-k">Annualized</span><span class="tc-v">${fmtPct(t.ap)}</span></div>
+            <div><span class="tc-k">Prob.</span><span class="tc-v">${t.pot != null ? t.pot + '%' : '—'}</span></div>
+            <div class="tc-score"><span class="tc-k">Score</span>${meterHtml(t.score)}</div>
           </div>
         </div>`;
     });
@@ -1902,14 +2209,17 @@
 
       equityCardList.innerHTML += `
         <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
-          <div class="trade-card-top" style="margin-bottom:6px;">
+          <div class="tc-head">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}${valuationBadge(e)}</div>
+            <div class="tc-id">
+              <div class="tc-sym">${e.sym}${e.isETF ? '<span class="tc-strat">ETF</span>' : ''}${valuationBadge(e)}</div>
+            </div>
             ${trendPill(e.trend)}
           </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">${fmtPrice(e.price)}${staleMark(e.priceStale)} · RSI ${e.rsi ?? '—'}</span>
-            ${meterHtml(e.score)}
+          <div class="tc-metrics tc-metrics-eq">
+            <div><span class="tc-k">Price</span><span class="tc-v">${fmtPrice(e.price)}${staleMark(e.priceStale)}</span></div>
+            <div><span class="tc-k">RSI</span><span class="tc-v">${e.rsi ?? '—'}</span></div>
+            <div class="tc-score"><span class="tc-k">Score</span>${meterHtml(e.score)}</div>
           </div>
         </div>`;
     });

@@ -568,6 +568,9 @@
     transition:filter .12s; white-space:nowrap; flex-shrink:0;
   }
   .track-selected-btn:hover{ filter:brightness(1.08); }
+  /* In the bottom bar it shares the row with Review Picks — same height and
+     type size, equal width. */
+  .apply-bar-row .track-selected-btn{ flex:1; padding:10px 14px; font-size:12.5px; }
 
   /* ---------- RESULTS ---------- */
   /* Wrapped in the same card treatment (background/border/radius/padding)
@@ -1188,6 +1191,10 @@
            Summary on its own. -->
       <div class="apply-bar-row">
         <button class="copy-btn" id="portfolioSummaryBtn" style="flex:1;">Review Picks <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
+        <!-- "Track N for Backtest" lives here next to Review Picks (moved
+             2026-09-27 from the results card) and only shows once at least one
+             option trade is selected — see updateSelectionUI. -->
+        <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
       <div class="apply-bar-row2">
         <span class="active-count" id="activeCountLabel">2 filters active</span>
@@ -1200,12 +1207,10 @@
       <!-- The "N setups match your filters" sentence was removed from view
            2026-09-27 (it cost a whole extra line on mobile). The element and
            its ids stay in the DOM, hidden, so the JS that updates the count
-           doesn't need to change. The row itself only shows while the
-           "Track N for Backtest" button does (see updateSelectionUI), so an
-           empty row never leaves a stray gap. -->
+           doesn't need to change. The Track-for-Backtest button that used to
+           share this row now sits next to Review Picks in the bottom bar. -->
       <div class="results-count-row" id="resultsCountRow" style="display:none;">
         <div class="results-count" style="display:none;"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
-        <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
       <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
         <select id="sortSelect">
@@ -3225,8 +3230,6 @@
     const trackBtn = document.getElementById('trackSelectedBtn');
     if(trackBtn){
       trackBtn.style.display = selectedOptionIds.size ? '' : 'none';
-      const countRow = document.getElementById('resultsCountRow');
-      if(countRow) countRow.style.display = selectedOptionIds.size ? '' : 'none';
       document.getElementById('trackSelectedCount').textContent = selectedOptionIds.size;
     }
   }

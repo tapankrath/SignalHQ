@@ -177,12 +177,18 @@
      opened from a "Tools" button next to My Tickers, instead of a row between
      the Options/Stocks toggle and the filters. The buttons are still
      .mode-tab elements so switchMode() toggles .active / aria-selected. */
-  .mode-head-actions{ display:flex; align-items:center; gap:6px; }
+  .top-actions{
+    max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
+    box-sizing:border-box; display:flex; gap:8px;
+  }
+  .top-actions .tools-group{ flex:1; min-width:0; }
+  .top-actions .export-btn{ width:100%; justify-content:center; min-height:36px; box-sizing:border-box; }
+  .top-actions > .export-btn{ flex:1; min-width:0; }
   .tools-group{ position:relative; }
   .tools-caret{ font-size:10px; margin-left:2px; }
   .tools-group.is-active .tools-menu-btn{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
   .tools-menu{
-    position:absolute; right:0; top:calc(100% + 6px); z-index:80; min-width:170px;
+    position:absolute; left:0; top:calc(100% + 6px); z-index:80; min-width:170px;
     display:flex; flex-direction:column; gap:2px; padding:4px;
     background:var(--surface); border:1px solid var(--border-strong); border-radius:12px;
     box-shadow:0 10px 28px -8px rgba(11,14,19,0.35);
@@ -925,8 +931,8 @@
     .mode-nav{ padding:0 14px; gap:8px; }
     .mode-group-head{ height:30px; }
     .mode-group-title{ font-size:13.5px; }
-    .mode-group-head .export-btn{ padding:6px 9px; font-size:11px; }
-    .mode-group-head .export-btn svg{ display:none; }
+    .top-actions{ padding:0 14px; }
+    .top-actions .export-btn{ font-size:12.5px; }
     .mode-group-sub{ font-size:10.5px; margin-bottom:0; }
     .mode-toggle{ padding:2px; gap:2px; border-radius:10px; }
     .mode-tab{ min-height:34px; padding:6px 2px; font-size:11px; border-radius:8px; }
@@ -1045,13 +1051,27 @@
 
 </header>
 
-<!-- Page flow (reordered 2026-09-27): 1) capital + split, 2) pick Options or
-     Stocks & ETFs, then filters -> sort -> pick trades -> Review Picks below.
-     Allocation comes first because it's shared by both trade-idea tabs.
-     Ticker Lookup and Backtest are tools that never read it, so they're a
-     small secondary row instead of a peer group. While a tool is open the
-     allocation card is hidden and the tool's one-line note shows under the
-     tabs instead. -->
+<!-- Page flow (reordered 2026-09-27): utility row (Tools menu + My Tickers),
+     then 1) capital + split, 2) pick Options or Stocks & ETFs, then filters ->
+     sort -> pick trades -> Review Picks below. Tools (Ticker Lookup,
+     Backtest) and My Tickers never depend on the allocation or the filters,
+     so they sit above the capital card, out of the flow. While a tool is
+     open the allocation card is hidden and the tool's one-line note shows
+     under the toggle instead. -->
+<div class="top-actions">
+  <div class="tools-group" id="groupTools">
+    <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
+    <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
+      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
+      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
+    </div>
+  </div>
+  <button class="export-btn" id="tickersBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    My Tickers
+  </button>
+</div>
+
 <div class="portfolio-bar" id="allocationBar">
   <div class="portfolio-bar-inner">
     <label>
@@ -1070,28 +1090,7 @@
 </div>
 
 <nav class="mode-nav" aria-label="Sections">
-  <div class="mode-group is-active" id="groupIdeas" role="group" aria-labelledby="groupIdeasTitle">
-    <div class="mode-group-head">
-      <div class="mode-group-title" id="groupIdeasTitle">Trade ideas</div>
-      <div class="mode-head-actions">
-        <!-- Tools (Ticker Lookup, Backtest) live in a small menu up here, out
-             of the Options/Stocks -> filters flow (2026-09-27): they never
-             use the allocation, so they shouldn't sit between the toggle and
-             the filters. Same #tabLookup / #tabBacktest buttons as before,
-             so switchMode()'s active/aria-selected toggling is unchanged. -->
-        <div class="tools-group" id="groupTools">
-          <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
-          <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
-            <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
-            <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
-          </div>
-        </div>
-        <button class="export-btn" id="tickersBtn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          My Tickers
-        </button>
-      </div>
-    </div>
+  <div class="mode-group is-active" id="groupIdeas" role="group" aria-label="Trade ideas">
     <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
       <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
       <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>

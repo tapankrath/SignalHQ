@@ -1076,6 +1076,65 @@ def build_double_diagonal(tk, spot, expirations, today, atr):
 MAX_NEWS_HEADLINES = 3       # how many recent headlines to pull and score per ticker
 
 
+_RAW_NEWS_CACHE = {}   # symbol -> list of raw news items; the same ticker is fetched
+                       # twice per run (options trade + equity snapshot), so this
+                       # halves the news requests and the rate-limit exposure.
+
+
+def _collect_raw_news(tk, ticker_symbol):
+    """
+    Gathers raw news items from several Yahoo endpoints, in order, and returns
+    the first non-empty result as (items, source_label). Added because a single
+    source (tk.news) silently returning [] made EVERY ticker show "no recent
+    headlines" with no way to tell why:
+      1. tk.news / tk.get_news() — newer yfinance nests items under "content"
+         and generally has NO relatedTickers, so relevance falls back to a
+         text match against the headline.
+      2. yf.Search(symbol).news — a different endpoint whose items DO carry
+         relatedTickers (ground truth for relevance), and which often still
+         works when the first one is empty or blocked.
+    Every attempt is logged so an empty result is diagnosable from the run log.
+    """
+    if ticker_symbol in _RAW_NEWS_CACHE:
+        return _RAW_NEWS_CACHE[ticker_symbol]
+
+    attempts = []
+    result = ([], "none")
+
+    def try_source(label, fn):
+        try:
+            items = fn() or []
+            attempts.append(f"{label}={len(items)}")
+            return list(items)
+        except Exception as e:
+            attempts.append(f"{label}=ERR({type(e).__name__}: {str(e)[:80]})")
+            return []
+
+    items = try_source("tk.news", lambda: tk.news)
+    if items:
+        result = (items, "tk.news")
+    elif hasattr(tk, "get_news"):
+        items = try_source("get_news(all)", lambda: tk.get_news(count=20, tab="all"))
+        if items:
+            result = (items, "get_news(all)")
+
+    if not result[0]:
+        items = try_source("Search.news", lambda: yf.Search(ticker_symbol, news_count=15, max_results=1).news)
+        if items:
+            result = (items, "Search.news")
+
+    if not result[0]:
+        print(f"    {ticker_symbol} news: ALL sources empty ({', '.join(attempts)}) — "
+              f"Yahoo is likely blocking/rate-limiting this runner's IP")
+    elif len(attempts) > 1:
+        print(f"    {ticker_symbol} news: first source(s) empty, recovered via {result[1]} ({', '.join(attempts)})")
+
+    # Don't cache total failures — a later call in the same run may succeed.
+    if result[0]:
+        _RAW_NEWS_CACHE[ticker_symbol] = result
+    return result
+
+
 def fetch_news_and_sentiment(tk, ticker_symbol):
     """
     Pulls recent headlines via yfinance's free .news property and scores them with
@@ -1113,15 +1172,7 @@ def fetch_news_and_sentiment(tk, ticker_symbol):
     def normalize(s):
         return re.sub(r"[^a-z0-9]", "", s.lower())
 
-    try:
-        raw_news = tk.news or []
-    except Exception as e:
-        print(f"    {ticker_symbol} news: tk.news raised an exception: {e}")
-        raw_news = []
-
-    if not raw_news:
-        print(f"    {ticker_symbol} news: tk.news returned 0 raw items (Yahoo may be rate-limiting/blocking, "
-              f"or this ticker genuinely has no recent news — can't tell which without this line)")
+    raw_news, _news_source = _collect_raw_news(tk, ticker_symbol)
 
     # Best-effort brand-name candidates, used only for the text-match fallback
     # below — a failure here just means the fallback relies on the ticker
@@ -1148,7 +1199,8 @@ def fetch_news_and_sentiment(tk, ticker_symbol):
 
     def is_relevant(title, related_upper):
         if related_upper:
-            return ticker_symbol.upper() in related_upper
+            sym = ticker_symbol.upper()
+            return sym in related_upper or sym.replace("-", ".") in related_upper or sym.replace(".", "-") in related_upper
         title_lower = title.lower()
         if re.search(r"\b" + re.escape(ticker_symbol.lower()) + r"\b", title_lower):
             return True
@@ -1536,21 +1588,17 @@ def build_trade_for_ticker(ticker_symbol, index):
         # side with a defined-risk debit alternative (Bull/Bear ... Spread)
         # and the naked mirror of Covered Call (Cash-Secured Put) — all three
         # reuse the exact same delta-targeted strike-picking as their siblings.
-        #
-        # Updated 2026-09-26: Long Call, Long Put, and Double Diagonal removed
-        # from rotation entirely (not just unchecked by default) — dropped
-        # from the Outlook & Strategy filter list on the frontend, so a
-        # trade with one of these strat values could never surface there no
-        # matter how someone set their filters. Generating them here would
-        # just waste chain-fetch calls on strategies with nowhere to appear.
         if index % 4 == 0:
-            strat = "Iron Condor"
+            # Split the neutral slot itself between the two neutral strategies
+            # rather than adding a 5th bucket — still 1-in-4 tickers overall
+            # go neutral, just alternating which neutral structure they get.
+            strat = "Double Diagonal" if (index // 4) % 2 == 1 else "Iron Condor"
             side = "neutral"
         elif uptrend:
-            strat = ["Covered Call", "Bull Put Spread", "Cash-Secured Put", "Bull Call Spread"][index % 4]
+            strat = ["Covered Call", "Bull Put Spread", "Long Call", "Cash-Secured Put", "Bull Call Spread"][index % 5]
             side = "bull"
         else:
-            strat = ["Bear Call Spread", "Bear Put Spread"][index % 2]
+            strat = ["Bear Call Spread", "Long Put", "Bear Put Spread"][index % 3]
             side = "bear"
 
         # Evaluate every expiration candidate within the target window (up to the

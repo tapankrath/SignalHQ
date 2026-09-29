@@ -147,7 +147,7 @@
      on the page in ink, with "AI" in the accent green (red was dropped:
      on a trading screen it reads as a loss). */
   .brand{
-    display:flex; align-items:center; gap:9px; flex-shrink:0; min-width:0;
+    display:flex; align-items:center; gap:10px; flex-shrink:0; min-width:0;
     border-radius:8px; padding:2px 4px 2px 0;
   }
   .brand:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
@@ -261,13 +261,13 @@
   .lookup-tab-submit:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
 
   .brand-mark{
-    width:32px; height:32px; flex-shrink:0;
+    width:36px; height:36px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
   .brand-mark svg{ display:block; width:100%; height:100%; }
   .brand-mark .mark-tile{ fill:var(--mark-tile); }
   .brand-name{
-    font-family:var(--sans); font-weight:700; font-size:21px;
+    font-family:var(--sans); font-weight:700; font-size:24px;
     line-height:1; letter-spacing:-0.025em; color:var(--text);
     white-space:nowrap;
   }
@@ -891,10 +891,11 @@
        narrowing its input. */
     .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
-    .sticky-top{ gap:8px; padding-top:10px; padding-bottom:10px; }
+    .sticky-top{ gap:10px; padding-top:12px; padding-bottom:10px; }
     header{ gap:8px; }
-    .header-top{ padding:0 14px; gap:8px; }
-    .header-top-right{ gap:6px; }
+    .header-top{ padding:0 14px; gap:16px 8px; }
+    /* Status pill shrinks (and truncates) rather than wrapping under the logo. */
+    .header-top-right{ gap:6px; flex:1 1 0; min-width:0; justify-content:flex-end; }
     /* Actions drop to their own full-width row under the brand on phones. */
     .top-actions{ order:4; flex-basis:100%; }
     .top-actions .tools-group{ flex:1; min-width:0; }
@@ -927,9 +928,9 @@
     .mode-tab{ min-height:30px; padding:4px 4px; font-size:13px; border-radius:7px; }
     .tools-note{ padding:0 14px; }
     .tools-note > div{ padding:9px 12px; font-size:12px; }
-    .brand{ gap:8px; }
-    .brand-mark{ width:28px; height:28px; }
-    .brand-name{ font-size:19px; }
+    .brand{ gap:9px; }
+    .brand-mark{ width:34px; height:34px; }
+    .brand-name{ font-size:22px; }
     .export-btn{ padding:0 12px; font-size:12.5px; gap:5px; }
 
     .filter-grid{ grid-template-columns:1fr; }
@@ -962,6 +963,20 @@
     /* Was hidden here to make room for the Apply button that used to share
        this row (removed 2026-09-26, see apply-bar-row2's HTML comment) —
        now the only thing in that row, so it's shown again. */
+  }
+
+  /* Narrow phones (iPhone mini/SE, 375px): keep Cash / Options % /
+     Equities % on one line. */
+  @media (max-width: 380px){
+    .portfolio-bar-inner{ padding:5px 6px; gap:6px 2px; }
+    .portfolio-bar label{ gap:3px; font-size:12px; }
+    #portfolioCapital{ width:72px; padding:4px; }
+    #portfolioSplit, #portfolioEquitySplit{ width:38px; padding:4px 3px; }
+  }
+  @media (max-width: 370px){
+    .brand-mark{ width:32px; height:32px; }
+    .brand-name{ font-size:20px; }
+    .data-status{ font-size:10px; padding:0 8px; }
   }
 
   /* Dark mode component overrides — kept at the very end of the stylesheet

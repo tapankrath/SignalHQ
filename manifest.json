@@ -1,6 +1,6 @@
 {
-  "name": "SignalHQ — Ready-Made Option Trades",
-  "short_name": "SignalHQ",
+  "name": "VantEdgeAI — Ready-Made Option Trades",
+  "short_name": "VantEdgeAI",
   "description": "Screen ready-made options trades by outlook, risk, reward, and probability, built on end-of-day chain data.",
   "start_url": "./index.html",
   "scope": "./",

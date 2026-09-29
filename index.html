@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0C1210" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VantEdgeAI">
@@ -17,53 +17,44 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Sora:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Note: --amber* variable names are historical — they hold the green accent
        color now. Kept the names to avoid touching every var(--amber...) usage
        site; only the values changed. */
+    /* 2026-09-29 refresh: one palette built around a deep green-black ink
+       and a single "ledger green" accent. Red is reserved for bearish/loss
+       meaning only. */
     --bg:#FFFFFF;
     --surface:#FFFFFF;
-    --surface-2:#F3F4F7;
-    --border:#E1E4EA;
-    /* Was pure black — every pill/input/button using this token (SPY/QQQ
-       chips, Tickers/Export, the Cash/Opt%/Eq% inputs, Idle pill, etc.) read
-       as a hard-edged wireframe rather than a polished card. Softened to a
-       mid gray so shadows (added alongside, on chips/buttons that didn't
-       have one) carry the visual weight instead, matching the "hairline
-       under a shadow" intent this file's own shadow-scale comment states. */
-    --border-strong:#AFB5C2;
-    --text:#000000;
-    --text-dim:#374151;
-    --text-faint:#6B7280;
-    --amber:#16A34A;
-    --amber-strong:#0D8A3F;
-    --amber-soft:#DCFCE7;
-    --amber-border:#22C55E;
-    --green:#16A34A;
-    --green-soft:#DCFCE7;
-    --red:#DC2626;
-    --red-soft:#FEE2E2;
-    /* "Inverted" chip color — a black chip with white text (the toast, the
-       active mode tab) that's meant to read as strong/high-contrast against
-       the page regardless of theme. Kept as its own token, separate from
-       --text, specifically so dark mode (below) can flip it to a light chip
-       on dark text instead of quietly inheriting --text's flip and ending
-       up as a white-on-white chip. */
-    --invert-bg:#000000;
+    --surface-2:#F3F6F4;
+    --border:#DFE5E1;
+    --border-strong:#B9C3BD;
+    --text:#0E1B16;
+    --text-dim:#3E4B45;
+    --text-faint:#6A7670;
+    --amber:#08804C;
+    --amber-strong:#06703F;
+    --amber-soft:#E2F4EA;
+    --amber-border:#86CFA8;
+    --green:#08804C;
+    --green-soft:#E2F4EA;
+    --red:#D0393B;
+    --red-soft:#FCE8E7;
+    /* Inverted chip (toast, active tab) — its own token so dark mode can
+       flip it to a light chip instead of inheriting --text's flip. */
+    --invert-bg:#0E1B16;
     --invert-text:#FFFFFF;
-    --radius:16px;
-    --radius-sm:10px;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --mono: 'IBM Plex Mono', 'SF Mono', monospace;
-    /* Soft elevation scale — used on card-level containers instead of (or
-       alongside) hairline borders, for a more "raised" fintech-card feel.
-       --border itself is lightened below so borders read as a hairline
-       under the shadow rather than competing with it. */
-    --shadow-sm:0 1px 2px rgba(16,24,40,0.05), 0 1px 3px rgba(16,24,40,0.04);
-    --shadow-md:0 2px 6px rgba(16,24,40,0.06), 0 8px 20px rgba(16,24,40,0.07);
-    --shadow-lg:0 12px 40px rgba(16,24,40,0.16);
+    --mark-tile:#0E1B16;
+    --radius:14px;
+    --radius-sm:8px;
+    --control-h:36px;
+    --sans:'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --mono:'IBM Plex Mono', 'SF Mono', ui-monospace, Menlo, monospace;
+    --shadow-sm:0 1px 2px rgba(14,27,22,0.05);
+    --shadow-md:0 2px 6px rgba(14,27,22,0.06), 0 8px 20px rgba(14,27,22,0.06);
+    --shadow-lg:0 16px 44px rgba(14,27,22,0.18);
   }
 
   /* Dark mode — follows the device/browser's system appearance automatically
@@ -77,27 +68,28 @@
      active. */
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#0B0C0E;
-      --surface:#0B0C0E;
-      --surface-2:#1C1F25;
-      --border:#2B2F36;
-      --border-strong:#4B525C;
-      --text:#F2F3F5;
-      --text-dim:#B9BEC7;
-      --text-faint:#868C96;
-      --amber:#16A34A;
-      --amber-strong:#4ADE80;
-      --amber-soft:#123321;
-      --amber-border:#1F7A44;
-      --green:#34D399;
-      --green-soft:#123321;
-      --red:#F87171;
-      --red-soft:#3A1518;
-      --invert-bg:#F2F3F5;
-      --invert-text:#0B0C0E;
-      --shadow-sm:0 1px 2px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+      --bg:#0C1210;
+      --surface:#0C1210;
+      --surface-2:#17201C;
+      --border:#26312C;
+      --border-strong:#3F4B45;
+      --text:#EEF2EF;
+      --text-dim:#B3BDB7;
+      --text-faint:#85908A;
+      --amber:#1FA866;
+      --amber-strong:#5ADB93;
+      --amber-soft:#11291D;
+      --amber-border:#1F6B45;
+      --green:#3ECF85;
+      --green-soft:#11291D;
+      --red:#F2787A;
+      --red-soft:#361719;
+      --invert-bg:#EEF2EF;
+      --invert-text:#0C1210;
+      --mark-tile:#1B2A23;
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.5);
       --shadow-md:0 2px 6px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.45);
-      --shadow-lg:0 12px 40px rgba(0,0,0,0.6);
+      --shadow-lg:0 16px 44px rgba(0,0,0,0.6);
     }
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -118,7 +110,8 @@
     min-height:100vh;
     width:100%;
     max-width:100vw;
-    letter-spacing:-0.012em;
+    font-size:14px;
+    line-height:1.45;
   }
   body{
     position:relative;
@@ -127,42 +120,37 @@
   button{ font-family:inherit; cursor:pointer; }
   input,select{ font-family:inherit; }
   .num{ font-family:var(--mono); font-variant-numeric:tabular-nums; }
+  .ticker-sym, .mm-val, .meter-score, .tracked-stat-val, .tracked-pnl-figures{ font-variant-numeric:tabular-nums; }
 
   /* ---------- HEADER ---------- */
   .sticky-top{
     position:sticky; top:0; z-index:40;
     background:var(--surface);
-    display:flex; flex-direction:column; gap:12px;
-    padding-top:10px; padding-bottom:6px;
+    display:flex; flex-direction:column; gap:10px;
+    padding-top:12px; padding-bottom:12px;
+    border-bottom:1px solid var(--border);
   }
-  header{ display:flex; flex-direction:column; gap:16px; }
+  header{ display:flex; flex-direction:column; gap:10px; }
+  /* Brand, Tools / My Tickers and the data status share one row on wide
+     screens (2026-09-29) — the actions used to take a full-width row of
+     their own under a mostly-empty header. On phones they wrap back onto
+     their own row (see the mobile block). */
   .header-top{
     max-width:1080px; margin:0 auto; width:100%;
     padding:0 18px;
-    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px 14px;
     box-sizing:border-box;
   }
-  /* Badge treatment (2026-09-20): the wordmark now sits in its own fixed-dark
-     chip with a colored border, deliberately independent of the page's own
-     light/dark theme — a logo that "stands out" needs to read the same way
-     regardless of what mode the surrounding app is in, the same way a sticker
-     or a real product badge would. */
+  /* Logo refresh (2026-09-29): the gradient-outlined dark badge is gone.
+     The mark is a small ink tile holding a "V" whose right arm turns into a
+     green price line rising to a dot — the V is also the upside. The wordmark sits
+     on the page in ink, with "AI" in the accent green (red was dropped:
+     on a trading screen it reads as a loss). */
   .brand{
-    display:flex; align-items:center; gap:10px; flex-shrink:0; min-width:0;
-    /* 2026-09-20 polish: two-layer background = dark fill clipped to the padding
-       box + a green->red gradient painted under the (transparent) 1.5px border,
-       so the outline literally carries the two brand colors instead of a muted
-       rose that fought the red "AI". A faint top highlight + tight shadow lifts
-       the badge off the page without a heavy sticker-like edge. */
-    border:1.5px solid transparent; border-radius:12px;
-    background:
-      linear-gradient(180deg,#151A22 0%,#0B0E13 100%) padding-box,
-      linear-gradient(120deg,#22C55E 0%,#1E9E52 38%,#C93A3F 62%,#F0484D 100%) border-box;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 1px 2px rgba(11,14,19,0.28), 0 6px 16px -6px rgba(11,14,19,0.35);
-    padding:6px 16px 6px 8px;
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    text-rendering:geometricPrecision;
+    display:flex; align-items:center; gap:9px; flex-shrink:0; min-width:0;
+    border-radius:8px; padding:2px 4px 2px 0;
   }
+  .brand:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
 
   /* Two labeled groups instead of one flat row of four tabs (2026-09-21).
      "Trade ideas" (Options, Stocks & ETFs) are the tabs the allocation bar
@@ -179,21 +167,17 @@
      opened from a "Tools" button next to My Tickers, instead of a row between
      the Options/Stocks toggle and the filters. The buttons are still
      .mode-tab elements so switchMode() toggles .active / aria-selected. */
-  .top-actions{
-    max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
-    box-sizing:border-box; display:flex; gap:8px;
-  }
-  .top-actions .tools-group{ flex:1; min-width:0; }
-  .top-actions .export-btn{ width:100%; justify-content:center; min-height:36px; box-sizing:border-box; }
-  .top-actions > .export-btn{ flex:1; min-width:0; }
+  .top-actions{ display:flex; gap:8px; order:2; }
+  .top-actions .export-btn{ justify-content:center; height:var(--control-h); box-sizing:border-box; }
+  .header-top-right{ order:3; margin-left:auto; }
   .tools-group{ position:relative; }
   .tools-caret{ font-size:10px; margin-left:2px; }
   .tools-group.is-active .tools-menu-btn{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
   .tools-menu{
     position:absolute; left:0; top:calc(100% + 6px); z-index:80; min-width:170px;
     display:flex; flex-direction:column; gap:2px; padding:4px;
-    background:var(--surface); border:1px solid var(--border-strong); border-radius:12px;
-    box-shadow:0 10px 28px -8px rgba(11,14,19,0.35);
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    box-shadow:var(--shadow-lg);
   }
   .tools-menu[hidden]{ display:none; }
   .tools-menu .mode-tab{
@@ -213,15 +197,15 @@
     margin-bottom:0;
   }
   .mode-toggle{
-    display:flex; gap:3px; padding:3px;
-    background:var(--surface-2); border:1px solid var(--border); border-radius:12px;
+    display:flex; gap:2px; padding:3px;
+    background:var(--surface-2); border:1px solid var(--border); border-radius:10px;
     box-sizing:border-box; width:100%;
   }
   .mode-tab{
-    flex:1; min-width:0; min-height:38px; padding:8px 10px;
-    font-family:inherit; font-size:13.5px; font-weight:700;
+    flex:1; min-width:0; min-height:32px; padding:6px 10px;
+    font-family:inherit; font-size:13.5px; font-weight:600;
     background:transparent; color:var(--text-dim);
-    border:1px solid transparent; border-radius:9px;
+    border:1px solid transparent; border-radius:7px;
     cursor:pointer; transition:background .12s, color .12s;
     white-space:nowrap;
   }
@@ -237,10 +221,10 @@
     box-sizing:border-box;
   }
   .tools-note > div{
-    background:var(--surface-2); border:1px solid var(--border); border-radius:14px;
-    padding:11px 16px; font-size:12.5px; line-height:1.45; color:var(--text-dim);
+    background:var(--surface-2); border:1px solid var(--border); border-radius:10px;
+    padding:9px 14px; font-size:12.5px; line-height:1.45; color:var(--text-dim);
   }
-  .tools-note strong{ color:var(--text); font-weight:800; }
+  .tools-note strong{ color:var(--text); font-weight:600; }
 
   /* "Ticker Lookup" tab (added 2026-09-19) — the on-demand single-ticker
      lookup used to be squeezed into the header (first as its own boxed
@@ -250,54 +234,49 @@
      "clear" (×) button on type="search" fields. Its own tab gives it a
      normal-sized input and a normal, clearly separate button instead. */
   .lookup-tab-panel{
-    max-width:1080px; margin:0 auto; padding:0 18px; box-sizing:border-box;
+    max-width:1080px; margin:0 auto; padding:14px 18px 0; box-sizing:border-box;
     text-align:center;
   }
-  .lookup-tab-label{ font-size:17px; font-weight:800; color:var(--text); margin-bottom:4px; }
+  .lookup-tab-label{ font-size:18px; font-weight:700; letter-spacing:-0.01em; color:var(--text); margin-bottom:4px; }
   .lookup-tab-sub{ font-size:13px; color:var(--text-dim); line-height:1.5; margin:0 auto 16px; max-width:480px; }
-  .lookup-tab-form{ display:flex; gap:10px; max-width:360px; margin:0 auto; }
+  .lookup-tab-form{ display:flex; gap:8px; max-width:380px; margin:0 auto; }
   .lookup-tab-input{
     flex:1; min-width:0; box-sizing:border-box;
     background:var(--surface-2); border:1px solid var(--border-strong);
-    color:var(--text); padding:11px 14px; border-radius:var(--radius-sm);
-    font-family:var(--mono); font-size:15px; font-weight:700;
+    color:var(--text); height:44px; padding:0 14px; border-radius:var(--radius-sm);
+    font-family:var(--mono); font-size:16px; font-weight:600;
     text-transform:uppercase; letter-spacing:0.02em; text-align:center;
   }
-  .lookup-tab-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:600; }
+  .lookup-tab-input::placeholder{ color:var(--text-faint); text-transform:none; font-family:var(--sans); font-weight:400; letter-spacing:0; }
   .lookup-tab-input:disabled{ opacity:0.6; }
   .lookup-tab-input::-webkit-search-cancel-button{ display:none; -webkit-appearance:none; }
   .lookup-tab-submit{
     display:flex; align-items:center; justify-content:center; gap:6px; white-space:nowrap;
     background:var(--amber); color:#fff; border:none;
-    padding:11px 18px; border-radius:var(--radius-sm); font-weight:700; font-size:14px;
-    cursor:pointer; box-shadow:0 2px 8px rgba(22,163,74,0.28);
+    height:44px; padding:0 18px; border-radius:var(--radius-sm); font-weight:600; font-size:14px;
+    cursor:pointer;
     transition:filter .12s;
   }
   .lookup-tab-submit:hover:not(:disabled){ filter:brightness(1.08); }
   .lookup-tab-submit:disabled{ opacity:0.5; cursor:not-allowed; box-shadow:none; }
 
   .brand-mark{
-    width:34px; height:34px; flex-shrink:0;
+    width:32px; height:32px; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
   .brand-mark svg{ display:block; width:100%; height:100%; }
-  /* Wordmark bumped back to Sora 800 (2026-09-29, was 700) for a bolder,
-     sharper mark. Slightly tighter tracking keeps the heavier cut from
-     looking loose. Grayscale antialiasing (set on .brand) stops macOS/iOS
-     subpixel rendering from fattening light-on-dark text. Colors stay
-     brightened (#4ADE80 / #FF5A5F) so both hold contrast on the near-black
-     badge. */
+  .brand-mark .mark-tile{ fill:var(--mark-tile); }
   .brand-name{
-    font-family:'Sora', var(--sans); font-weight:800; font-size:27px;
-    line-height:1; letter-spacing:-0.035em; color:#4ADE80;
-    font-feature-settings:'kern' 1;
+    font-family:var(--sans); font-weight:700; font-size:21px;
+    line-height:1; letter-spacing:-0.025em; color:var(--text);
+    white-space:nowrap;
   }
-  .brand-ai{ color:#FF5A5F; font-weight:800; margin-left:0.02em; }
+  .brand-ai{ color:var(--amber); font-weight:600; margin-left:0.03em; letter-spacing:-0.01em; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
     font-family:var(--mono); font-size:11.5px; color:var(--text-dim);
-    padding:6px 11px; border:1px solid var(--border); border-radius:20px;
+    height:30px; padding:0 11px; border:1px solid var(--border); border-radius:999px;
     background:var(--surface-2);
     /* Shrinks (instead of the flex default, which refuses to shrink below
        its own text width) so this pill loses the tug-of-war against the
@@ -306,7 +285,7 @@
     flex-shrink:1; min-width:0;
   }
   .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
-  #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; color:var(--text); }
+  #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:500; color:var(--text-dim); }
 
   .header-top-right{
     display:flex; align-items:center; gap:10px; min-width:0;
@@ -315,8 +294,10 @@
     display:flex; align-items:center; justify-content:center;
     color:var(--text);
     background:var(--surface-2); border:1px solid var(--border); border-radius:50%;
-    width:34px; height:34px; flex-shrink:0; cursor:pointer; padding:0;
+    width:32px; height:32px; flex-shrink:0; cursor:pointer; padding:0;
   }
+  .refresh-btn:hover{ border-color:var(--border-strong); }
+  .refresh-btn:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
   .refresh-btn:active{ opacity:0.7; }
   .refresh-btn.spinning svg{ animation:spin 0.7s linear infinite; }
   @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
@@ -331,21 +312,20 @@
      Filters card and everything else on the page, whose borders all line
      up at the shared page gutter). */
   .portfolio-bar-inner{
-    display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap;
+    display:flex; align-items:center; justify-content:flex-start; gap:10px 28px; flex-wrap:wrap;
     background:var(--surface-2); border:1px solid var(--border);
-    border-radius:14px; padding:10px 16px;
-    box-shadow:var(--shadow-sm);
+    border-radius:10px; padding:6px 12px;
   }
   .portfolio-bar label{
-    display:flex; align-items:center; gap:6px;
-    font-size:12.5px; font-weight:700; color:var(--text-dim);
+    display:flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:500; color:var(--text-dim);
     white-space:nowrap;
   }
   .portfolio-bar input{
-    box-sizing:border-box; height:36px;
-    font-size:16px; font-family:var(--mono); text-align:right;
+    box-sizing:border-box; height:32px;
+    font-size:16px; font-family:var(--mono); font-weight:500; text-align:right;
     background:var(--surface); border:1px solid var(--border-strong);
-    border-radius:7px; padding:7px 9px; color:var(--text);
+    border-radius:6px; padding:5px 8px; color:var(--text);
     box-shadow:inset 0 1px 2px rgba(16,24,40,0.04);
     transition:border-color .12s, box-shadow .12s;
   }
@@ -353,7 +333,7 @@
     outline:none; border-color:var(--amber);
     box-shadow:0 0 0 3px var(--amber-soft);
   }
-  #portfolioCapital{ width:120px; }
+  #portfolioCapital{ width:104px; }
   #portfolioSplit{ width:56px; }
   #portfolioEquitySplit{ width:56px; }
   /* Idle/"cash left" capital not claimed by either % input is still
@@ -387,18 +367,17 @@
   }
   .portfolio-line-stats b{ color:var(--text); font-weight:700; }
   .portfolio-line-stats .val-pos{ font-weight:700; margin-left:auto; }
-  .portfolio-line-warn{ color:var(--red); font-size:11.5px; font-weight:700; margin-top:3px; }
-  .portfolio-line-note{ color:var(--text-dim); font-size:11.5px; font-weight:700; margin-top:3px; }
+  .portfolio-line-warn{ color:var(--red); font-size:12px; font-weight:600; margin-top:3px; }
+  .portfolio-line-note{ color:var(--text-dim); font-size:12px; font-weight:400; line-height:1.5; margin-top:4px; }
 
   .export-btn{
     display:flex; align-items:center; gap:6px;
     background:var(--surface); border:1px solid var(--border-strong);
-    color:var(--text); padding:9px 14px; border-radius:8px;
-    font-size:12.5px; font-weight:700; flex-shrink:0;
-    box-shadow:var(--shadow-sm);
-    transition:border-color .15s, background .15s, box-shadow .15s;
+    color:var(--text); padding:0 14px; height:var(--control-h); border-radius:var(--radius-sm);
+    font-size:13px; font-weight:600; flex-shrink:0;
+    transition:border-color .15s, background .15s;
   }
-  .export-btn:hover{ border-color:var(--amber); background:var(--amber-soft); }
+  .export-btn:hover{ border-color:var(--text-faint); background:var(--surface-2); }
   .export-btn:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
 
   /* ---------- LAYOUT ---------- */
@@ -407,14 +386,13 @@
      top of that made the gap to the mode tabs look larger than the gaps
      used everywhere else on the page. Left/right/bottom unchanged (bottom
      stays tall to clear the fixed apply-bar on mobile). */
-  .layout{ max-width:1080px; margin:0 auto; padding:6px 18px 100px; }
+  .layout{ max-width:1080px; margin:0 auto; padding:14px 18px 100px; }
 
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:12px;
-    margin-bottom:12px;
-    box-shadow:var(--shadow-sm);
+    margin-bottom:10px;
   }
 
   .strat-dot{
@@ -423,14 +401,14 @@
   }
   .strat-dot.bull{ background:var(--green); }
   .strat-dot.bear{ background:var(--red); }
-  .strat-dot.neutral{ background:#9CA3AF; }
+  .strat-dot.neutral{ background:var(--text-faint); }
   .filter-hint{ font-size:10.5px; color:var(--text-faint); line-height:1.45; padding:0 12px 12px; }
 
   .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
   .filter-header-btn{
-    border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    padding:6px 8px; font-weight:700; font-size:11.5px; font-family:inherit; color:var(--text);
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface-2);
+    min-height:40px; padding:6px 12px; font-weight:600; font-size:13px; font-family:inherit; color:var(--text);
+    display:flex; flex-direction:row; align-items:center; justify-content:center; gap:8px;
     cursor:pointer; user-select:none; text-align:center; line-height:1.25;
     transition:border-color .12s, background .12s;
   }
@@ -440,14 +418,14 @@
   }
   .filter-header-btn[aria-expanded="true"] .filter-chevron{ transform:rotate(-90deg); }
   .filter-section{
-    border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
+    border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface-2);
     margin-top:8px;
   }
   .filter-section-body{ padding:12px 14px; }
   .summary-count{
-    font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--amber-strong);
-    background:var(--amber-soft); border:1px solid var(--amber-border);
-    padding:1px 7px; border-radius:10px;
+    font-family:var(--mono); font-size:11px; font-weight:600; color:var(--amber-strong);
+    background:var(--amber-soft); border:1px solid transparent;
+    padding:0 7px; line-height:18px; border-radius:999px;
   }
 
   .filter-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin-bottom:10px; }
@@ -455,7 +433,7 @@
   .check-row{
     display:flex; align-items:center; gap:9px;
     padding:7px 4px; border-radius:6px; cursor:pointer;
-    font-size:13px; font-weight:700; color:var(--text);
+    font-size:13.5px; font-weight:500; color:var(--text);
     transition:background .12s;
   }
   .check-row:hover{ background:var(--surface); }
@@ -500,7 +478,7 @@
     display:flex; align-items:center; justify-content:space-between; gap:10px;
     padding:9px 4px 4px; margin-top:2px; border-top:1px solid var(--border);
   }
-  .num-row label{ font-size:13px; font-weight:700; color:var(--text); }
+  .num-row label{ font-size:13px; font-weight:500; color:var(--text); }
   .num-row input[type="number"]{
     width:76px; background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); font-family:var(--mono); font-size:14px; font-weight:700;
@@ -513,24 +491,22 @@
 
   /* apply/reset/copy bar */
   .apply-bar{
-    margin-top:14px; padding-top:14px;
+    margin-top:12px; padding-top:12px; border-top:1px solid var(--border);
     display:flex; flex-direction:column; gap:8px;
   }
   .apply-bar-row{ display:flex; gap:8px; }
   .apply-bar-row2{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
   .apply-btn{
     flex:1; background:var(--amber); color:#fff; border:none;
-    padding:12px; border-radius:var(--radius-sm); font-weight:700; font-size:13.5px;
-    box-shadow:0 2px 8px rgba(22,163,74,0.28);
+    padding:12px; border-radius:var(--radius-sm); font-weight:600; font-size:14px;
     transition:filter .12s, box-shadow .12s;
   }
   .apply-btn:hover{ filter:brightness(1.08); }
   .apply-btn:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
   .apply-btn-compact{
-    width:100%; background:var(--amber-strong); color:#fff;
-    border:1px solid var(--amber-strong); padding:8px; border-radius:8px;
-    font-weight:700; font-size:12.5px; margin-bottom:8px;
-    box-shadow:0 2px 8px rgba(22,163,74,0.25);
+    width:100%; background:var(--amber); color:#fff;
+    border:1px solid var(--amber); height:var(--control-h); padding:0 12px; border-radius:var(--radius-sm);
+    font-weight:600; font-size:13px; margin-bottom:8px;
     transition:filter .12s, box-shadow .12s;
   }
   .apply-btn-compact:hover{ filter:brightness(1.08); }
@@ -541,24 +517,26 @@
      equal width (2026-09-27b) — previously Apply was outlined/light while
      Reset was solid, so hovering one looked "bold" and the other "light"
      next to it; matching them removes that mismatch. */
-  .apply-reset-row{ display:flex; gap:8px; margin-bottom:0; }
+  /* Reset is now the neutral partner of Apply (2026-09-29): same size and
+     weight so neither looks "light" next to the other, but only the action
+     that changes results is green. */
+  .apply-reset-row{ display:flex; gap:8px; margin-top:8px; margin-bottom:0; }
   .apply-reset-row .apply-btn-compact{ flex:1; margin-bottom:0; }
   .reset-btn-bold{
-    flex:1; background:var(--amber-strong); color:#fff; border:1px solid var(--amber-strong);
-    padding:8px; border-radius:8px; font-weight:700; font-size:12.5px;
-    box-shadow:0 2px 8px rgba(22,163,74,0.25);
-    transition:filter .12s, box-shadow .12s;
+    flex:1; background:var(--surface); color:var(--text); border:1px solid var(--border-strong);
+    height:var(--control-h); padding:0 12px; border-radius:var(--radius-sm); font-weight:600; font-size:13px;
+    transition:background .12s, border-color .12s;
   }
-  .reset-btn-bold:hover{ filter:brightness(1.08); }
+  .reset-btn-bold:hover{ background:var(--surface-2); border-color:var(--text-faint); }
   .reset-btn-bold:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
 
   .copy-btn{
     flex:1; background:var(--amber-soft); border:1px solid var(--amber-border); color:var(--amber-strong);
-    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:700;
+    min-height:40px; padding:8px 14px; border-radius:var(--radius-sm); font-size:13.5px; font-weight:600;
     transition:filter .12s;
   }
   .copy-btn:hover{ filter:brightness(0.97); }
-  .active-count{ font-family:var(--mono); font-size:11px; font-weight:700; color:var(--text-faint); white-space:nowrap; }
+  .active-count{ font-size:12px; font-weight:500; color:var(--text-faint); white-space:nowrap; }
 
   /* Checking row/card checkboxes already means "select these trades" for
      Portfolio Summary sizing — this reuses that exact same selection for a
@@ -566,7 +544,7 @@
      separate per-trade trip through each trade's modal. */
   .track-selected-btn{
     background:var(--amber); border:1px solid transparent; color:#fff;
-    padding:8px 13px; border-radius:8px; font-size:12px; font-weight:700;
+    padding:8px 13px; border-radius:var(--radius-sm); font-size:12.5px; font-weight:600;
     transition:filter .12s; white-space:nowrap; flex-shrink:0;
   }
   .track-selected-btn:hover{ filter:brightness(1.08); }
@@ -583,9 +561,8 @@
      DOM edges lined up exactly. This gives it the same visual gutter. */
   .results-panel{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:12px;
-    margin-bottom:12px;
-    box-shadow:var(--shadow-sm);
+    border-radius:var(--radius); padding:10px 12px;
+    margin-bottom:10px;
   }
   .results-bar{
     display:flex; align-items:center; justify-content:space-between;
@@ -593,18 +570,19 @@
   }
   .results-count-row{ display:flex; align-items:center; gap:8px; flex-wrap:nowrap; min-width:0; flex:1 1 auto; }
   .results-count{
-    font-size:13.5px; font-weight:700; color:var(--text-dim);
+    font-size:13.5px; font-weight:500; color:var(--text-dim);
     overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
   }
   .results-count strong{ color:var(--text); font-family:var(--mono); }
   .funnel-note{
-    font-family:var(--mono); font-size:11px; font-weight:700; color:var(--text-dim);
+    font-family:var(--mono); font-size:11px; font-weight:500; color:var(--text-dim);
     margin-top:10px; line-height:1.6;
   }
-  .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; color:var(--text-dim); }
+  .funnel-note:empty{ display:none; }
+  .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-dim); }
   .sort-wrap select{
     background:var(--surface); border:1px solid var(--border-strong);
-    color:var(--text); padding:7px 10px; border-radius:7px; font-size:16px;
+    color:var(--text); height:34px; padding:0 10px; border-radius:var(--radius-sm); font-size:16px;
   }
 
   .stale-mark{
@@ -628,33 +606,34 @@
     margin-bottom:16px;
   }
   @keyframes lookup-spin{ to{ transform:rotate(360deg); } }
-  .lookup-loading-text{ font-size:15px; font-weight:700; color:var(--text); }
+  .lookup-loading-text{ font-size:15px; font-weight:600; color:var(--text); }
   .lookup-loading-sub{ font-size:12.5px; color:var(--text-faint); margin-top:6px; line-height:1.5; max-width:280px; }
 
   .table-wrap{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); overflow-x:auto; overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
-    box-shadow:var(--shadow-sm);
   }
   table{ width:100%; min-width:720px; border-collapse:collapse; }
   thead th{
-    text-align:left; font-size:12.5px; letter-spacing:0;
-    color:var(--text-dim); font-weight:700; padding:11px 14px;
+    text-align:left; font-size:12px; letter-spacing:0;
+    color:var(--text-faint); font-weight:600; padding:10px 12px;
     border-bottom:1px solid var(--border); white-space:nowrap;
     background:var(--surface-2);
   }
   tbody tr{ border-bottom:1px solid var(--border); transition:background .12s; }
   tbody tr:last-child{ border-bottom:none; }
   tbody tr:hover{ background:var(--surface-2); }
-  tbody td{ padding:13px 14px; font-size:13px; font-weight:700; vertical-align:middle; white-space:nowrap; }
+  thead th:first-child, tbody td:first-child{ width:44px; padding-right:4px; }
+  thead th:last-child, tbody td:last-child{ padding-right:12px; text-align:right; }
+  tbody td{ padding:11px 12px; font-size:13px; font-weight:500; vertical-align:middle; white-space:nowrap; }
 
-  .ticker-sym{ font-weight:700; font-family:var(--mono); font-size:13.5px; }
-  .strat-name{ font-size:11.5px; color:var(--text-dim); }
+  .ticker-sym{ font-weight:600; font-family:var(--mono); font-size:13.5px; }
+  .strat-name{ font-size:12px; color:var(--text-dim); margin-top:1px; }
 
   .side-pill{
     display:inline-flex; align-items:center; gap:5px;
-    padding:3px 9px; border-radius:20px; font-size:11px; font-weight:700;
+    padding:2px 9px; border-radius:999px; font-size:11.5px; font-weight:600;
   }
   .side-pill.bull{ background:var(--green-soft); color:var(--green); }
   .side-pill.bear{ background:var(--red-soft); color:var(--red); }
@@ -666,14 +645,14 @@
 
   .meter{ display:flex; align-items:center; gap:8px; }
   .meter-ticks{ display:flex; gap:2px; }
-  .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:var(--border-strong); }
+  .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:var(--border); }
   .meter-ticks span.on{ background:var(--amber); }
-  .meter-score{ font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--amber-strong); min-width:26px; }
+  .meter-score{ font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--amber-strong); min-width:26px; }
 
   .row-action{
     background:var(--surface); border:1px solid var(--border-strong);
-    color:var(--text-dim); padding:7px 13px; border-radius:7px; font-size:11.5px;
-    font-weight:700; transition:all .12s;
+    color:var(--text); padding:6px 14px; border-radius:var(--radius-sm); font-size:12.5px;
+    font-weight:600; transition:all .12s;
   }
   .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
 
@@ -685,8 +664,7 @@
   }
   .trade-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:14px; padding:13px;
-    box-shadow:var(--shadow-sm);
+    border-radius:12px; padding:12px 14px;
     cursor:pointer; transition:border-color .12s, box-shadow .12s, transform .12s;
   }
   .trade-card:hover{ box-shadow:var(--shadow-md); border-color:var(--border-strong); }
@@ -703,14 +681,13 @@
   .tracked-card-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
   .tracked-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:14px; padding:13px 15px;
-    box-shadow:var(--shadow-sm);
+    border-radius:12px; padding:12px 14px;
   }
   .tracked-card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px; }
   .tracked-status-pill{
     display:inline-flex; align-items:center; gap:4px;
-    font-size:10.5px; font-weight:800; letter-spacing:0.02em; text-transform:uppercase;
-    padding:3px 9px; border-radius:20px; white-space:nowrap; flex-shrink:0;
+    font-size:11.5px; font-weight:600;
+    padding:2px 9px; border-radius:999px; white-space:nowrap; flex-shrink:0;
     background:var(--surface-2); color:var(--text-dim); border:1px solid var(--border);
   }
   .tracked-status-pill.status-open{ background:var(--green-soft); color:var(--green); border-color:transparent; }
@@ -726,35 +703,36 @@
   .tracked-stat{ flex:1; min-width:0; }
   .tracked-stat-dte{ flex:0.9; text-align:right; }
   .tracked-stat-label{
-    font-size:9.5px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase;
-    color:var(--text-faint); margin-bottom:3px;
+    font-size:11.5px; font-weight:500;
+    color:var(--text-faint); margin-bottom:2px;
   }
-  .tracked-stat-val{ font-family:var(--mono); font-size:13.5px; font-weight:700; color:var(--text); white-space:nowrap; }
-  .tracked-stat-val.is-pending{ font-family:inherit; font-size:12px; font-weight:700; color:var(--text-faint); }
+  .tracked-stat-val{ font-family:var(--mono); font-size:13.5px; font-weight:600; color:var(--text); white-space:nowrap; }
+  .tracked-stat-val.is-pending{ font-family:inherit; font-size:12px; font-weight:500; color:var(--text-faint); }
   .tracked-stat-date{ display:block; font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--text-faint); margin-top:1px; }
   .tracked-card-pnl{
     display:flex; align-items:baseline; justify-content:space-between; gap:10px;
     padding-top:10px;
   }
-  .tracked-pnl-figures{ font-family:var(--mono); font-size:17px; font-weight:700; color:var(--text-dim); }
+  .tracked-pnl-figures{ font-family:var(--mono); font-size:17px; font-weight:600; color:var(--text-dim); }
   .tracked-pnl-figures.val-pos{ color:var(--green); }
   .tracked-pnl-figures.val-neg{ color:var(--red); }
-  .tracked-pnl-sub{ font-size:11px; color:var(--text-faint); font-weight:700; margin-top:2px; }
+  .tracked-pnl-sub{ font-size:11.5px; color:var(--text-faint); font-weight:500; margin-top:2px; }
   .tracked-remove-btn{
-    background:none; border:none; color:var(--text-faint); font-size:11.5px; font-weight:700;
+    background:none; border:none; color:var(--text-faint); font-size:12px; font-weight:500;
     cursor:pointer; padding:4px 0; text-decoration:underline; text-underline-offset:2px;
   }
   .tracked-remove-btn:hover{ color:var(--red); }
   .tracked-empty-state{
-    text-align:center; color:var(--text-dim); font-weight:700; font-size:13.5px;
-    padding:32px 18px; background:var(--surface); border:1px solid var(--border);
-    border-radius:14px; margin-bottom:16px; line-height:1.7;
+    text-align:center; color:var(--text-dim); font-weight:400; font-size:13.5px;
+    padding:28px 22px; background:var(--surface); border:1px solid var(--border);
+    border-radius:12px; margin-bottom:16px; line-height:1.6;
   }
+  .tracked-empty-state strong{ display:inline-block; color:var(--text); font-size:15px; font-weight:600; margin-bottom:4px; }
   .tracked-export-box{
     background:var(--surface-2); border:1px solid var(--border);
     border-radius:14px; padding:14px 16px;
   }
-  .tracked-export-label{ font-size:13px; font-weight:800; color:var(--text); margin-bottom:4px; }
+  .tracked-export-label{ font-size:13.5px; font-weight:600; color:var(--text); margin-bottom:4px; }
   .tracked-export-sub{ font-size:12px; color:var(--text-dim); line-height:1.55; margin-bottom:12px; }
   .modal-copy-btn-secondary.is-tracked{
     background:var(--green-soft); color:var(--green); border-color:transparent;
@@ -768,20 +746,21 @@
 
   /* ---------- MODAL ---------- */
   .modal-scrim{
-    display:none; position:fixed; inset:0; background:rgba(19,23,34,0.45);
+    display:none; position:fixed; inset:0; background:rgba(8,16,12,0.5);
     z-index:80; align-items:center; justify-content:center; padding:20px;
   }
   .modal-scrim.show{ display:flex; }
   .trade-modal{
     width:100%; max-width:440px; background:var(--surface);
-    border:1px solid var(--border); border-radius:18px;
-    padding:22px; max-height:86vh; overflow-y:auto;
+    border:1px solid var(--border); border-radius:16px;
+    padding:20px; max-height:86vh; overflow-y:auto;
     box-shadow:var(--shadow-lg);
   }
-  .modal-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px; }
+  .modal-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:4px; }
+  .modal-title{ font-family:var(--sans); font-size:18px; font-weight:700; letter-spacing:-0.015em; line-height:1.25; color:var(--text); padding-top:3px; }
   .modal-close{
     background:var(--surface-2); border:1px solid var(--border); color:var(--text-dim);
-    width:28px; height:28px; border-radius:7px; font-size:15px; line-height:1;
+    width:32px; height:32px; border-radius:var(--radius-sm); font-size:15px; line-height:1;
     display:flex; align-items:center; justify-content:center; flex-shrink:0;
   }
   .modal-close:hover{ color:var(--text); border-color:var(--border-strong); }
@@ -792,7 +771,7 @@
     margin-bottom:16px;
   }
   .mm-label{ font-size:12px; color:var(--text-dim); letter-spacing:0; margin-bottom:3px; }
-  .mm-val{ font-family:var(--mono); font-size:14.5px; font-weight:700; }
+  .mm-val{ font-family:var(--mono); font-size:14.5px; font-weight:600; }
   .modal-note{ font-size:12px; color:var(--text-dim); line-height:1.55; margin-bottom:16px; }
 
   .news-section-header{
@@ -800,8 +779,8 @@
     margin-top:16px; margin-bottom:10px;
   }
   .news-section-header .mm-label{
-    font-size:11.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--text-faint); margin-bottom:0;
+    font-size:13px; font-weight:600; letter-spacing:0;
+    color:var(--text); margin-bottom:0;
   }
   .sentiment-badge{
     display:inline-flex; align-items:center; gap:5px;
@@ -815,19 +794,19 @@
     text-decoration:none; transition:border-color .12s, background .12s;
   }
   .news-headline:hover{ border-color:var(--border-strong); background:var(--surface-2); }
-  .news-headline-title{ font-size:12.5px; font-weight:700; color:var(--text); line-height:1.4; margin-bottom:4px; }
+  .news-headline-title{ font-size:13px; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:4px; }
   .news-headline-meta{ font-size:10.5px; color:var(--text-faint); font-weight:600; display:flex; gap:6px; }
   .news-empty{ font-size:12px; color:var(--text-faint); padding:10px 0; }
   .modal-copy-btn{
     width:100%; background:var(--amber); color:#fff; border:none;
-    padding:11px; border-radius:8px; font-weight:700; font-size:13px;
+    padding:11px; border-radius:var(--radius-sm); font-weight:600; font-size:13.5px;
   }
   .ticker-action-row{ display:flex; gap:8px; margin-bottom:8px; }
   .ticker-action-row .modal-copy-btn{ flex:2; }
   .modal-copy-btn-secondary{
     flex:1; background:var(--surface); color:var(--text-dim);
     border:1px solid var(--border-strong);
-    padding:11px; border-radius:8px; font-weight:700; font-size:13px;
+    padding:11px; border-radius:var(--radius-sm); font-weight:600; font-size:13.5px;
     transition:border-color .12s, color .12s;
   }
   .modal-copy-btn-secondary:hover{ border-color:var(--text-dim); color:var(--text); }
@@ -841,8 +820,8 @@
   .ticker-chip{
     display:inline-flex; align-items:center; gap:6px;
     background:var(--surface-2); border:1px solid var(--border-strong);
-    padding:5px 6px 5px 10px; border-radius:20px;
-    font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--text);
+    padding:4px 6px 4px 10px; border-radius:999px;
+    font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--text);
   }
   .ticker-chip.etf{ background:var(--amber-soft); border-color:var(--amber-border); color:var(--amber-strong); }
   .ticker-chip button{
@@ -854,12 +833,13 @@
   .ticker-add-row{ display:flex; gap:8px; margin-bottom:10px; }
   .ticker-add-row input{
     flex:1; background:var(--surface); border:1px solid var(--border-strong);
-    color:var(--text); font-size:16px; padding:9px 12px; border-radius:7px;
+    color:var(--text); font-size:16px; height:40px; padding:0 12px; border-radius:var(--radius-sm);
     font-family:var(--mono); text-transform:uppercase;
   }
+  .ticker-add-row input::placeholder{ text-transform:none; font-family:var(--sans); color:var(--text-faint); }
   .ticker-add-row button{
     background:var(--amber); color:#fff; border:none;
-    width:38px; border-radius:7px; font-size:18px; font-weight:700; flex-shrink:0;
+    width:40px; height:40px; border-radius:var(--radius-sm); font-size:18px; font-weight:600; flex-shrink:0;
   }
   .ticker-add-row button:hover{ filter:brightness(1.08); }
   .ticker-etf-check{ display:flex; align-items:center; gap:7px; font-size:12px; color:var(--text-dim); margin-bottom:14px; }
@@ -884,8 +864,8 @@
   .toast{
     position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
     background:var(--invert-bg); color:var(--invert-text);
-    font-family:var(--mono); font-size:12.5px; font-weight:700;
-    padding:10px 18px; border-radius:20px; z-index:90;
+    font-size:13px; font-weight:500;
+    padding:10px 18px; border-radius:999px; z-index:90;
     opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
     box-shadow:0 8px 24px rgba(16,24,40,0.25);
   }
@@ -897,7 +877,7 @@
        purpose so the SPY/QQQ pills, "EOD data" pill, mode tabs, cash inputs
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
-    .layout{ padding:6px 14px 155px; }
+    .layout{ padding:12px 14px 155px; }
     /* Shrinks the sort dropdown enough that it and Min Trade Profit's
        label+input fit on one line at phone width now that "Sort by" (the
        text label) is gone — the full-size 16px select alone was already
@@ -909,14 +889,19 @@
        is selected in full. Room for Min Trade Profit on the same row comes
        from shortening ITS label instead (see the JS-set text below) and
        narrowing its input. */
-    .sort-wrap select{ font-size:12.5px; padding:6px 5px; }
+    .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
-    .sticky-top{ gap:12px; padding-top:10px; padding-bottom:6px; }
-    header{ gap:12px; }
+    .sticky-top{ gap:8px; padding-top:10px; padding-bottom:10px; }
+    header{ gap:8px; }
     .header-top{ padding:0 14px; gap:8px; }
-    .header-top-right{ gap:8px; }
-    .data-status{ font-size:10px; padding:5px 9px; gap:4px; max-width:155px; }
-    .refresh-btn{ width:30px; height:30px; }
+    .header-top-right{ gap:6px; }
+    /* Actions drop to their own full-width row under the brand on phones. */
+    .top-actions{ order:4; flex-basis:100%; }
+    .top-actions .tools-group{ flex:1; min-width:0; }
+    .top-actions .tools-group .export-btn{ width:100%; }
+    .top-actions > .export-btn{ flex:1; min-width:0; }
+    .data-status{ font-size:10.5px; height:28px; padding:0 9px; gap:5px; max-width:160px; }
+    .refresh-btn{ width:28px; height:28px; }
     .refresh-btn svg{ width:15px; height:15px; }
     /* Down to 3 fields (Cash / Options % / Equities %) now that Idle isn't
        shown, so labels stay spelled out at every width instead of
@@ -928,43 +913,51 @@
        of each input's actual scrollWidth vs its box width, with a
        deliberate buffer left over rather than an exact match. */
     .portfolio-bar{ padding:0 14px; }
-    .portfolio-bar-inner{ gap:6px 4px; padding:8px 6px; row-gap:7px; }
-    .portfolio-bar label{ gap:2px; font-size:12px; }
-    #portfolioCapital{ width:68px; height:32px; padding:6px 4px; }
-    #portfolioSplit{ width:34px; height:32px; padding:6px 2px; }
-    #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
+    .portfolio-bar-inner{ justify-content:space-between; gap:6px 4px; padding:5px 8px; }
+    .portfolio-bar label{ gap:4px; font-size:12.5px; }
+    #portfolioCapital{ width:76px; height:30px; padding:4px 5px; }
+    #portfolioSplit{ width:40px; height:30px; padding:4px 4px; }
+    #portfolioEquitySplit{ width:40px; height:30px; padding:4px 4px; }
     .mode-nav{ padding:0 14px; gap:8px; }
     .mode-group-head{ height:30px; }
     .mode-group-title{ font-size:13.5px; }
-    .top-actions{ padding:0 14px; }
-    .top-actions .export-btn{ font-size:12.5px; }
+    .top-actions .export-btn{ font-size:13px; }
     .mode-group-sub{ font-size:10.5px; margin-bottom:0; }
-    .mode-toggle{ padding:2px; gap:2px; border-radius:10px; }
-    .mode-tab{ min-height:34px; padding:6px 2px; font-size:11px; border-radius:8px; }
+    .mode-toggle{ padding:3px; gap:2px; border-radius:10px; }
+    .mode-tab{ min-height:30px; padding:4px 4px; font-size:13px; border-radius:7px; }
     .tools-note{ padding:0 14px; }
     .tools-note > div{ padding:9px 12px; font-size:12px; }
-    .brand{ gap:7px; border-width:1.5px; border-radius:10px; padding:5px 12px 5px 6px; }
+    .brand{ gap:8px; }
     .brand-mark{ width:28px; height:28px; }
-    .brand-name{ font-size:21px; }
-    .export-btn{ padding:8px 12px; font-size:11.5px; gap:4px; }
+    .brand-name{ font-size:19px; }
+    .export-btn{ padding:0 12px; font-size:12.5px; gap:5px; }
 
     .filter-grid{ grid-template-columns:1fr; }
 
+    /* Three category buttons share a phone-width row: label on top, count +
+       chevron on one line beneath, so the buttons stay equal height. */
     .filter-header-btn{
-      padding:5px 6px; font-size:10.5px; gap:1px;
+      flex-wrap:wrap; align-content:center; min-height:48px;
+      padding:5px 6px; font-size:12px; gap:2px 5px; line-height:1.2;
     }
-    .summary-count{ font-size:10px; padding:1px 6px; }
+    .filter-header-btn > span:first-child{ flex-basis:100%; }
+    .summary-count{ font-size:10.5px; padding:0 6px; line-height:16px; }
     .filter-header-btn .filter-chevron{ font-size:13px; }
+    .filter-card{ padding:10px; }
 
     .table-wrap{ display:none; }
-    .card-list{ display:flex; }
+    /* No card-inside-a-card on phones — the outer frame cost ~26px of the
+       width the ticker/strategy line needs. */
+    .card-list{ display:flex; background:none; border:none; padding:0; border-radius:0; }
+    .trade-card{ padding:11px 12px; }
 
     .apply-bar{
       position:fixed; left:0; right:0; bottom:0; z-index:70;
       background:var(--surface);
       padding:12px 14px; padding-bottom:calc(12px + env(safe-area-inset-bottom));
       margin-top:0;
-      box-shadow:0 -4px 16px rgba(16,24,40,0.06);
+      border-top:1px solid var(--border);
+      box-shadow:0 -6px 18px rgba(14,27,22,0.06);
     }
     /* Was hidden here to make room for the Apply button that used to share
        this row (removed 2026-09-26, see apply-bar-row2's HTML comment) —
@@ -984,7 +977,7 @@
        it as a solid badge fill behind white text, where the brighter value
        would wash out. Give just this badge a fixed, deliberately darker
        green instead of following --amber-strong. */
-    .portfolio-fab-count{ background:#15803D; }
+    .portfolio-fab-count{ background:#0E8450; }
     /* Same story for the red strategy/quality checkboxes: --red is
        brightened above for text legibility, but the checked-box fill needs
        a darker, more saturated red for the white checkmark to read clearly. */
@@ -996,7 +989,7 @@
     .check-row input[type="checkbox"][data-quality="sell"]:checked,
     #trendDownFilter:checked,
     #valRichFilter:checked{
-      background:#DC2626; border-color:#DC2626;
+      background:#C93434; border-color:#C93434;
     }
     /* --surface equals --bg in dark mode (mirrors the light-mode design,
        where a white button on a white page still read fine via its border
@@ -1015,11 +1008,14 @@
        (--surface-2, one step lighter than --bg) they sink into it, darker
        than their own container. A dedicated shade lighter than the tray
        restores that "raised field" relationship. */
-    .portfolio-bar input{ background:#262A31; }
-    /* .brand-name/.brand-ai need no dark-mode override any more — the
-       wordmark now lives inside its own fixed-dark badge (see .brand),
-       independent of the page's light/dark theme, so its colors stay the
-       same in both. */
+    .portfolio-bar input{ background:#1F2A25; }
+    /* The logo tile follows --mark-tile; a hairline keeps its edge visible
+       against the near-black page. */
+    .brand-mark .mark-edge{ stroke:rgba(255,255,255,0.10); }
+    /* Solid green buttons use a deeper fill than --amber so white labels
+       keep AA contrast. */
+    .apply-btn-compact, .apply-btn, .lookup-tab-submit, .modal-copy-btn,
+    .ticker-add-row button, .track-selected-btn{ background:#0E8450; border-color:#0E8450; color:#fff; }
   }
 
 </style>
@@ -1031,16 +1027,29 @@
   <div class="header-top">
     <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI" style="cursor:pointer;">
       <div class="brand-mark">
-        <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo" shape-rendering="crispEdges">
-          <rect x="3"    y="14.5" width="3.2" height="6"  rx="1.4" fill="#22C55E" fill-opacity="0.55"/>
-          <rect x="8"    y="11.5" width="3.2" height="9"  rx="1.4" fill="#22C55E" fill-opacity="0.72"/>
-          <rect x="13"   y="8"    width="3.2" height="12.5" rx="1.4" fill="#22C55E" fill-opacity="0.90"/>
-          <rect x="18"   y="3.5"  width="3.2" height="17" rx="1.4" fill="#4ADE80"/>
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="mark-tile" width="32" height="32" rx="8"/>
+          <rect class="mark-edge" x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none" stroke="transparent"/>
+          <path d="M6.5 8.5 L14 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M14 24 L25.5 7" fill="none" stroke="#3ECF85" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="25.5" cy="7" r="3.2" fill="#3ECF85"/>
         </svg>
       </div>
-      <div>
-        <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
+      <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
+    </div>
+
+    <div class="top-actions">
+      <div class="tools-group" id="groupTools">
+        <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
+        <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
+          <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
+          <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
+        </div>
       </div>
+      <button class="export-btn" id="tickersBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        My Tickers
+      </button>
     </div>
 
     <div class="header-top-right">
@@ -1049,7 +1058,7 @@
         <span id="dataStatusText">Loading data…</span>
       </div>
       <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data live (takes a few minutes)" title="Refresh data">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       </button>
     </div>
   </div>
@@ -1063,20 +1072,6 @@
      so they sit above the capital card, out of the flow. While a tool is
      open the allocation card is hidden and the tool's one-line note shows
      under the toggle instead. -->
-<div class="top-actions">
-  <div class="tools-group" id="groupTools">
-    <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
-    <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
-      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
-      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
-    </div>
-  </div>
-  <button class="export-btn" id="tickersBtn">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-    My Tickers
-  </button>
-</div>
-
 <div class="portfolio-bar" id="allocationBar">
   <div class="portfolio-bar-inner">
     <label>
@@ -1257,7 +1252,7 @@
 
 <div class="layout" id="stocksView" style="display:none;">
 
-  <div class="results-panel" style="margin-top:14px;">
+  <div class="results-panel">
     <div class="results-bar">
       <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
       <div class="sort-wrap">
@@ -1340,7 +1335,7 @@
 </div>
 
 <div class="layout" id="backtestView" style="display:none;">
-  <div class="results-panel" style="margin-top:14px;">
+  <div class="results-panel">
     <div class="results-bar">
       <div class="results-count"><strong id="backtestTrackedCount">0</strong> <span id="backtestCountLabel">trades tracked</span></div>
     </div>
@@ -1495,7 +1490,7 @@
   function meterHtml(score){
     let ticks = '';
     for(let i=1;i<=10;i++){ ticks += `<span class="${i<=score?'on':''}"></span>`; }
-    return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${score}.0</span></div>`;
+    return `<div class="meter"><div class="meter-ticks">${ticks}</div><span class="meter-score">${Number(score).toFixed(1)}</span></div>`;
   }
 
   // Shared between trade cards/table/modal AND equity cards/table/modal —
@@ -1989,7 +1984,7 @@
         <div><div class="mm-label">Dividend Yield</div><div class="mm-val">${e.dividendYield != null ? e.dividendYield + '%' : '—'}</div></div>
         <div><div class="mm-label">Market Cap</div><div class="mm-val">${fmtMarketCap(e.marketCap)}</div></div>
         <div><div class="mm-label">Volume vs 30-day Avg</div><div class="mm-val">${e.volRatio != null ? e.volRatio + '×' : '—'}</div></div>
-        <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${e.score}.0 / 10</div></div>
+        <div><div class="mm-label">Composite Score</div><div class="mm-val" style="color:var(--amber-strong);">${Number(e.score).toFixed(1)} / 10</div></div>
       </div>
 
       ${e.priceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}
@@ -2007,7 +2002,7 @@
     modalScrim.classList.add('show');
     document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
     document.getElementById('modalCopyBtn').addEventListener('click', async ()=>{
-      const summary = `${e.sym} ${fmtPrice(e.price)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${e.score}.0`;
+      const summary = `${e.sym} ${fmtPrice(e.price)} · ${e.trend} · RSI ${e.rsi ?? '—'} · 1yr ${fmtPct(e.chg1y)} · Div Yield ${e.dividendYield != null ? e.dividendYield + '%' : '—'} · News: ${sentimentLabel} · Composite ${Number(e.score).toFixed(1)}`;
       const ok = await copyText(summary);
       showToast(ok ? 'Summary copied' : 'Copy blocked — select the text manually');
     });
@@ -2094,7 +2089,7 @@
         </div>`;
       tradeModal.innerHTML = `
         <div class="modal-top">
-          <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
+          <div class="modal-title">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
         <div class="modal-note" style="margin-top:12px;">Enter a capital amount in the bar at the top of the page to see position sizing.</div>
@@ -2124,7 +2119,7 @@
     if(totalSelected === 0){
       tradeModal.innerHTML = `
         <div class="modal-top">
-          <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
+          <div class="modal-title">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
         <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">Check at least one trade or ticker (in either tab) to build a position-sizing summary.</div>
@@ -2220,7 +2215,7 @@
 
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:19px;">Portfolio Summary</div>
+        <div class="modal-title">Portfolio Summary</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <button class="modal-copy-btn" id="clearSelectionsBtn" style="background:var(--surface-2); color:var(--red); border:1px solid var(--border-strong); margin-bottom:8px;">Clear all selections (${totalSelected})</button>
@@ -2324,7 +2319,7 @@
     const n = payload.options.length + payload.equities.length;
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:19px;">Export Selection</div>
+        <div class="modal-title">Export Selection</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">${n} selected, plus your capital and split. Copy the code (or download it as a file) and use "Import Selection" on the other browser — its summary will match this one.</div>
@@ -2385,7 +2380,7 @@
   function showImportDialog(){
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:19px;">Import Selection</div>
+        <div class="modal-title">Import Selection</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">Paste the code from "Export Selection" on the other browser, or choose the .json file it downloaded. This adds to whatever's already checked here rather than replacing it.</div>
@@ -2670,7 +2665,7 @@
         <div><div class="mm-label">Put/Call OI</div><div class="mm-val">${t.pcOI.toFixed(2)}</div></div>
         <div><div class="mm-label">Put/Call Volume</div><div class="mm-val">${t.pcVol.toFixed(2)}</div></div>
         <div><div class="mm-label">Max Loss (est.)</div><div class="mm-val val-neg">$${t.maxLoss.toLocaleString()}</div></div>
-        <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${t.score}.0 / 10</div></div>
+        <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${Number(t.score).toFixed(1)} / 10</div></div>
         ${earningsHtml}
         ${volRegimeHtml}
         ${valuationHtml}
@@ -2700,7 +2695,7 @@
       const roiPart = t.roc != null ? `${roiLabel} +${t.roc}%` : '';
       const annPart = t.ap != null ? `${annRoiLabel} +${t.ap}%` : '';
       const movePart = t.breakevenMovePct != null ? `Move to Breakeven ${t.breakevenMovePct >= 0 ? '+' : ''}${t.breakevenMovePct}%` : '';
-      const parts = [`${t.sym} ${t.strat} ${t.strike}`, `exp ${t.exp} (${t.dte}d)`, potPart, roiPart, annPart, movePart, `IV Rank ${t.ivr}`, `News: ${sentimentLabel}`, `Composite ${t.score}.0`].filter(Boolean);
+      const parts = [`${t.sym} ${t.strat} ${t.strike}`, `exp ${t.exp} (${t.dte}d)`, potPart, roiPart, annPart, movePart, `IV Rank ${t.ivr}`, `News: ${sentimentLabel}`, `Composite ${Number(t.score).toFixed(1)}`].filter(Boolean);
       const summary = parts.join(' · ');
       const ok = await copyText(summary);
       showToast(ok ? 'Trade summary copied' : 'Copy blocked — select the text manually');
@@ -2894,7 +2889,7 @@
     }
 
     if(list.length === 0){
-      cardList.innerHTML = `<div class="tracked-empty-state">Nothing tracked yet.<br>Open any recommendation and tap "Track for Backtest" to start following its P&amp;L as DTE counts down.</div>`;
+      cardList.innerHTML = `<div class="tracked-empty-state"><strong>Nothing tracked yet</strong><br>Open any recommendation and tap "Track for Backtest" to start following its P&amp;L as DTE counts down.</div>`;
       statusNote.textContent = '';
       return;
     }
@@ -3137,7 +3132,7 @@
   async function openTickersModal(){
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage My Tickers</div>
+        <div class="modal-title">Manage My Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-strat">Loading current watchlist…</div>
@@ -3149,7 +3144,7 @@
 
     tradeModal.innerHTML = `
       <div class="modal-top">
-        <div class="ticker-sym" style="font-size:17px;">Manage My Tickers</div>
+        <div class="modal-title">Manage My Tickers</div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
       <div class="modal-strat">These are your pinned tickers — always screened. On top of them, the data pull automatically adds the 50 most liquid US stocks above $50B market cap (refreshed daily). Adding a ticker here doesn't update your live site by itself — it prepares the file below for you to download and commit to GitHub.</div>

@@ -1065,7 +1065,8 @@
   .hero .refresh-btn:hover{ background:rgba(255,255,255,0.14); }
   .hero .refresh-btn:disabled{ opacity:0.6; cursor:default; }
 
-  .hero-wrap{ max-width:1080px; margin:0 auto; padding:6px 18px 4px; }
+  /* Market tiles ride inside the pinned header, right under the navy bar. */
+  .app-header .market-tiles{ margin-top:8px; }
   .market-tiles{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:8px; }
   .market-tiles:empty{ display:none; }
   .mkt-tile{
@@ -1104,7 +1105,7 @@
     .hero .brand-name{ font-size:19px; }
     .hero .data-status{ font-size:11.5px; margin-top:3px; }
     .hero .refresh-btn{ height:32px; padding:0 11px 0 9px; font-size:12.5px; }
-    .hero-wrap{ padding:4px 14px 2px; }
+    .app-header .market-tiles{ margin-top:6px; }
     .market-tiles{ gap:6px; }
     .mkt-tile{ padding:6px 3px 5px; border-radius:10px; }
     .mkt-label{ font-size:9px; letter-spacing:0.06em; }
@@ -1225,12 +1226,9 @@
         <span>Refresh</span>
       </button>
     </div>
+    <div class="market-tiles" id="marketTiles" aria-live="polite" aria-label="Market condition"></div>
   </div>
 </div>
-
-<section class="hero-wrap" aria-label="Market condition">
-  <div class="market-tiles" id="marketTiles" aria-live="polite"></div>
-</section>
 
 <div class="sticky-top">
 <header>

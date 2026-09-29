@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T22:50:52.647931+00:00",
+  "generated_at": "2026-09-29T23:07:10.668955+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -220,9 +220,15 @@
       "pcVol": 0.41,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.17,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Is Sandisk a Millionaire-Maker Stock After Its 2026 Run?",
           "publisher": "Motley Fool",
@@ -234,12 +240,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/youd-invested-1-000-invesco-222000584.html",
           "sentiment": 0.51
-        },
-        {
-          "title": "Why Corning Stock Topped the Market on Tuesday",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-corning-stock-topped-market-221753227.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -298,9 +298,15 @@
       "pcVol": 0.72,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.29,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Should You Buy The Dip In MongoDB Stock?",
           "publisher": "Trefis",
@@ -312,12 +318,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/technology/ai/articles/innodata-vs-nebius-group-n-213701506.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "Meta Platforms (META) Could Be 30% Undervalued On Its Enterprise AI Push",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-could-30-210736669.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Cheap",
@@ -380,6 +380,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Why Is Warby Parker (WRBY) Stock Soaring Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-warby-parker-wrby-stock-225602768.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Bot Traffic Will Be \u201c1000X\u201d Bigger Than Human Traffic in Just Five Years, According to Cloudflare CEO",
           "publisher": "TIKR",
           "link": "https://finance.yahoo.com/technology/articles/bot-traffic-1000x-bigger-human-221740295.html",
@@ -389,12 +395,6 @@
           "title": "Should You Buy The Dip In MongoDB Stock?",
           "publisher": "Trefis",
           "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-mongodb-stock-215931106.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "WeightWatchers (WW) Stock Trades Up, Here Is Why",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/weightwatchers-ww-stock-trades-why-214402282.html",
           "sentiment": 0.0
         }
       ],
@@ -2059,28 +2059,9 @@
       "pcVol": 0.19,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.09,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "What Could Surprise Cisco Stock Investors On The Upside?",
-          "publisher": "Trefis",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/could-surprise-cisco-stock-investors-220812554.html",
-          "sentiment": 0.27
-        },
-        {
-          "title": "Is Arista Networks Stock As Expensive As It Looks?",
-          "publisher": "Trefis",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/arista-networks-stock-expensive-looks-214156380.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Cisco Stock Slips as 4,100 Daily Alerts Force AgenticOps",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/cisco-stock-slips-4-100-185246785.html",
-          "sentiment": 0.0
-        }
-      ],
+      "newsHeadlines": [],
       "volRegime": "Fair",
       "ivRvRatio": 1.09,
       "realizedVol": 28.5,
@@ -2395,28 +2376,9 @@
       "pcVol": 0.48,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": -0.15,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Iren (BIT:IRE) And The Infrastructure Upgrade Narrative Behind Its Valuation",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-bit-ire-infrastructure-upgrade-190631990.html",
-          "sentiment": 0.54
-        },
-        {
-          "title": "Crypto Stocks Rise With Bitcoin Above $84K \u2013 Analysts Raise Riot, Robinhood Price Targets",
-          "publisher": "Stocktwits",
-          "link": "https://finance.yahoo.com/markets/crypto/articles/crypto-stocks-rise-bitcoin-above-141225285.html",
-          "sentiment": -0.56
-        },
-        {
-          "title": "B. Riley Cuts Price Target on Iren to $91 From $96, Keeps Buy Rating",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/b-riley-cuts-price-target-114445973.html",
-          "sentiment": -0.42
-        }
-      ],
+      "newsHeadlines": [],
       "volRegime": "Fair",
       "ivRvRatio": 1.13,
       "realizedVol": 65.7,
@@ -2669,9 +2631,28 @@
       "pcVol": 1.72,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.28,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures Rise With Micron, Inflation Data Due; Yields Pressure Stocks But Bloom Energy Soars",
+          "publisher": "Investor's Business Daily",
+          "link": "https://finance.yahoo.com/m/0f05df74-8e19-37cc-8a3a-5b6885fbc760/dow-jones-futures-rise-with.html",
+          "sentiment": 0.83
+        },
+        {
+          "title": "Is Sandisk a Millionaire-Maker Stock After Its 2026 Run?",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-millionaire-maker-stock-2026-222000928.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Sandisk to Report First Quarter Fiscal Year 2027 Results on October 29, 2026",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-report-first-quarter-fiscal-213000799.html",
+          "sentiment": 0.0
+        }
+      ],
       "volRegime": "Fair",
       "ivRvRatio": 1.04,
       "realizedVol": 74.7,
@@ -2826,9 +2807,15 @@
       "pcVol": 0.81,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.26,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.02,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        },
         {
           "title": "S&P 500, Dow Extend Losses From Elevated Yield Pressure \u2014 SPCX, TGT, AAPL, MU, NTAP In Focus",
           "publisher": "Stocktwits",
@@ -2840,12 +2827,6 @@
           "publisher": "Business Wire",
           "link": "https://finance.yahoo.com/technology/articles/earthtraq-demonstrates-tens-meters-rf-222400672.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Trump Defends Light-Touch AI Strategy After Industry Sounds Alarms",
-          "publisher": "The Wall Street Journal",
-          "link": "https://finance.yahoo.com/m/98193ac6-4174-3a8b-935e-b798c4cc40ea/trump-defends-light-touch-ai.html",
-          "sentiment": -0.27
         }
       ],
       "volRegime": "Fair",
@@ -3076,9 +3057,16 @@
       "pcVol": 0.21,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.42,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        }
+      ],
       "volRegime": "Rich",
       "ivRvRatio": 1.29,
       "realizedVol": 25.6,
@@ -3989,26 +3977,26 @@
       "pcVol": 0.96,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.27,
+      "newsSentiment": -0.22,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Robinhood is rolling out agentic AI trading accounts for the masses",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/stocks/article/robinhood-is-rolling-out-agentic-ai-trading-accounts-for-the-masses-230517174.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Markets to Be Open Seven Days a Week; Bruce Markets to Launch First Continuous Weekend U.S. Equities Trading with Strategic Investments Led by PEAK6 and Robinhood",
+          "publisher": "PR Newswire",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/markets-open-seven-days-week-230000524.html",
+          "sentiment": 0.0
+        },
         {
           "title": "EXCLUSIVE: America's Gambling Problem Is Getting Worse, Prediction Markets Can Be 'Equally Risky,' Researcher Says",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/small-business/articles/exclusive-americas-gambling-problem-getting-203010159.html",
           "sentiment": -0.66
-        },
-        {
-          "title": "SEC Clears Tesla's New Retail Voting System. What Changes for Investors?",
-          "publisher": "BeInCrypto",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sec-clears-teslas-retail-voting-175835903.html",
-          "sentiment": 0.08
-        },
-        {
-          "title": "Forget \u2018Market Uncertainty.\u2019 Here\u2019s the Real Issue Behind Oura\u2019s Halted IPO.",
-          "publisher": "Barrons.com",
-          "link": "https://finance.yahoo.com/m/522457dd-d95d-391e-9368-5023ad38f3b9/forget-%E2%80%98market-uncertainty.%E2%80%99.html",
-          "sentiment": -0.23
         }
       ],
       "volRegime": "Fair",
@@ -4409,9 +4397,28 @@
       "pcVol": 1.87,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.57,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "KLAC's Backlog Surges on AI Demand: Can It Outpace AMAT & ASML?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/klacs-backlog-surges-ai-demand-140200246.html",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Will Dragonfly G5 Momentum Sustain ONTO's Growth Engine?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/dragonfly-g5-momentum-sustain-ontos-111000946.html",
+          "sentiment": 0.38
+        },
+        {
+          "title": "Teradyne Strengthens AI Test Portfolio: Can It Beat KLAC & COHU?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/teradyne-strengthens-ai-test-portfolio-151600517.html",
+          "sentiment": 0.79
+        }
+      ],
       "volRegime": "Rich",
       "ivRvRatio": 1.31,
       "realizedVol": 49.1,
@@ -5220,9 +5227,15 @@
       "dividendYield": 0.44,
       "marketCap": 5486440087552,
       "score": 9.1,
-      "newsSentiment": 0.17,
+      "newsSentiment": 0.31,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Is Sandisk a Millionaire-Maker Stock After Its 2026 Run?",
           "publisher": "Motley Fool",
@@ -5234,12 +5247,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/youd-invested-1-000-invesco-222000584.html",
           "sentiment": 0.51
-        },
-        {
-          "title": "Why Corning Stock Topped the Market on Tuesday",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-corning-stock-topped-market-221753227.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -5270,9 +5277,15 @@
       "dividendYield": 0.29,
       "marketCap": 1882072023040,
       "score": 8.5,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.29,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        },
         {
           "title": "Should You Buy The Dip In MongoDB Stock?",
           "publisher": "Trefis",
@@ -5284,12 +5297,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/technology/ai/articles/innodata-vs-nebius-group-n-213701506.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "Meta Platforms (META) Could Be 30% Undervalued On Its Enterprise AI Push",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-could-30-210736669.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Fair",
@@ -5324,6 +5331,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Why Is Warby Parker (WRBY) Stock Soaring Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-warby-parker-wrby-stock-225602768.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Bot Traffic Will Be \u201c1000X\u201d Bigger Than Human Traffic in Just Five Years, According to Cloudflare CEO",
           "publisher": "TIKR",
           "link": "https://finance.yahoo.com/technology/articles/bot-traffic-1000x-bigger-human-221740295.html",
@@ -5333,12 +5346,6 @@
           "title": "Should You Buy The Dip In MongoDB Stock?",
           "publisher": "Trefis",
           "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-mongodb-stock-215931106.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "WeightWatchers (WW) Stock Trades Up, Here Is Why",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/weightwatchers-ww-stock-trades-why-214402282.html",
           "sentiment": 0.0
         }
       ],
@@ -6300,28 +6307,9 @@
       "dividendYield": 1.57,
       "marketCap": 421620252672,
       "score": 5.0,
-      "newsSentiment": 0.09,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "What Could Surprise Cisco Stock Investors On The Upside?",
-          "publisher": "Trefis",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/could-surprise-cisco-stock-investors-220812554.html",
-          "sentiment": 0.27
-        },
-        {
-          "title": "Is Arista Networks Stock As Expensive As It Looks?",
-          "publisher": "Trefis",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/arista-networks-stock-expensive-looks-214156380.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Cisco Stock Slips as 4,100 Daily Alerts Force AgenticOps",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/cisco-stock-slips-4-100-185246785.html",
-          "sentiment": 0.0
-        }
-      ],
+      "newsHeadlines": [],
       "valuationLabel": "Cheap",
       "peVsSectorPct": -20.3,
       "sectorMedianPE": 40.3,
@@ -6492,28 +6480,9 @@
       "dividendYield": null,
       "marketCap": 16306147328,
       "score": 8.5,
-      "newsSentiment": -0.15,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [
-        {
-          "title": "Iren (BIT:IRE) And The Infrastructure Upgrade Narrative Behind Its Valuation",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-bit-ire-infrastructure-upgrade-190631990.html",
-          "sentiment": 0.54
-        },
-        {
-          "title": "Crypto Stocks Rise With Bitcoin Above $84K \u2013 Analysts Raise Riot, Robinhood Price Targets",
-          "publisher": "Stocktwits",
-          "link": "https://finance.yahoo.com/markets/crypto/articles/crypto-stocks-rise-bitcoin-above-141225285.html",
-          "sentiment": -0.56
-        },
-        {
-          "title": "B. Riley Cuts Price Target on Iren to $91 From $96, Keeps Buy Rating",
-          "publisher": "MT Newswires",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/b-riley-cuts-price-target-114445973.html",
-          "sentiment": -0.42
-        }
-      ]
+      "newsHeadlines": []
     },
     {
       "sym": "RKLB",
@@ -6634,9 +6603,28 @@
       "dividendYield": null,
       "marketCap": 253269737472,
       "score": 9.1,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.28,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Dow Jones Futures Rise With Micron, Inflation Data Due; Yields Pressure Stocks But Bloom Energy Soars",
+          "publisher": "Investor's Business Daily",
+          "link": "https://finance.yahoo.com/m/0f05df74-8e19-37cc-8a3a-5b6885fbc760/dow-jones-futures-rise-with.html",
+          "sentiment": 0.83
+        },
+        {
+          "title": "Is Sandisk a Millionaire-Maker Stock After Its 2026 Run?",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-millionaire-maker-stock-2026-222000928.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Sandisk to Report First Quarter Fiscal Year 2027 Results on October 29, 2026",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-report-first-quarter-fiscal-213000799.html",
+          "sentiment": 0.0
+        }
+      ],
       "valuationLabel": "Cheap",
       "peVsSectorPct": -41.9,
       "sectorMedianPE": 40.3,
@@ -6715,9 +6703,15 @@
       "dividendYield": null,
       "marketCap": 1967248900096,
       "score": 7.4,
-      "newsSentiment": -0.26,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.02,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        },
         {
           "title": "S&P 500, Dow Extend Losses From Elevated Yield Pressure \u2014 SPCX, TGT, AAPL, MU, NTAP In Focus",
           "publisher": "Stocktwits",
@@ -6729,12 +6723,6 @@
           "publisher": "Business Wire",
           "link": "https://finance.yahoo.com/technology/articles/earthtraq-demonstrates-tens-meters-rf-222400672.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Trump Defends Light-Touch AI Strategy After Industry Sounds Alarms",
-          "publisher": "The Wall Street Journal",
-          "link": "https://finance.yahoo.com/m/98193ac6-4174-3a8b-935e-b798c4cc40ea/trump-defends-light-touch-ai.html",
-          "sentiment": -0.27
         }
       ]
     },
@@ -6857,9 +6845,16 @@
       "dividendYield": 0.26,
       "marketCap": 4169429680128,
       "score": 5.6,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.42,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+          "publisher": "Reuters",
+          "link": "https://finance.yahoo.com/news/trump-host-zuckerberg-anthropics-amodei-100709180.html",
+          "sentiment": 0.42
+        }
+      ],
       "valuationLabel": "Cheap",
       "peVsSectorPct": -22.6,
       "sectorMedianPE": 22.1,
@@ -7334,26 +7329,26 @@
       "dividendYield": null,
       "marketCap": 104491343872,
       "score": 7.9,
-      "newsSentiment": -0.27,
+      "newsSentiment": -0.22,
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
+        {
+          "title": "Robinhood is rolling out agentic AI trading accounts for the masses",
+          "publisher": "Yahoo Finance",
+          "link": "https://finance.yahoo.com/markets/stocks/article/robinhood-is-rolling-out-agentic-ai-trading-accounts-for-the-masses-230517174.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Markets to Be Open Seven Days a Week; Bruce Markets to Launch First Continuous Weekend U.S. Equities Trading with Strategic Investments Led by PEAK6 and Robinhood",
+          "publisher": "PR Newswire",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/markets-open-seven-days-week-230000524.html",
+          "sentiment": 0.0
+        },
         {
           "title": "EXCLUSIVE: America's Gambling Problem Is Getting Worse, Prediction Markets Can Be 'Equally Risky,' Researcher Says",
           "publisher": "Benzinga",
           "link": "https://finance.yahoo.com/small-business/articles/exclusive-americas-gambling-problem-getting-203010159.html",
           "sentiment": -0.66
-        },
-        {
-          "title": "SEC Clears Tesla's New Retail Voting System. What Changes for Investors?",
-          "publisher": "BeInCrypto",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/sec-clears-teslas-retail-voting-175835903.html",
-          "sentiment": 0.08
-        },
-        {
-          "title": "Forget \u2018Market Uncertainty.\u2019 Here\u2019s the Real Issue Behind Oura\u2019s Halted IPO.",
-          "publisher": "Barrons.com",
-          "link": "https://finance.yahoo.com/m/522457dd-d95d-391e-9368-5023ad38f3b9/forget-%E2%80%98market-uncertainty.%E2%80%99.html",
-          "sentiment": -0.23
         }
       ],
       "valuationLabel": "Rich",
@@ -7576,9 +7571,28 @@
       "dividendYield": 0.49,
       "marketCap": 256472924160,
       "score": 6.9,
-      "newsSentiment": 0.0,
-      "newsSentimentLabel": "Neutral",
-      "newsHeadlines": [],
+      "newsSentiment": 0.57,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "KLAC's Backlog Surges on AI Demand: Can It Outpace AMAT & ASML?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/klacs-backlog-surges-ai-demand-140200246.html",
+          "sentiment": 0.54
+        },
+        {
+          "title": "Will Dragonfly G5 Momentum Sustain ONTO's Growth Engine?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/dragonfly-g5-momentum-sustain-ontos-111000946.html",
+          "sentiment": 0.38
+        },
+        {
+          "title": "Teradyne Strengthens AI Test Portfolio: Can It Beat KLAC & COHU?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/technology/ai/articles/teradyne-strengthens-ai-test-portfolio-151600517.html",
+          "sentiment": 0.79
+        }
+      ],
       "valuationLabel": "Rich",
       "peVsSectorPct": 33.5,
       "sectorMedianPE": 40.3,
@@ -7995,7 +8009,7 @@
     "costPerContract": 515.5
   },
   "market": {
-    "asOf": "2026-09-29T22:50:52.647923+00:00",
+    "asOf": "2026-09-29T23:07:10.668940+00:00",
     "gauges": [
       {
         "key": "nasdaq",

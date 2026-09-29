@@ -2576,33 +2576,57 @@
   document.getElementById('resetFilters').addEventListener('click', resetFilters);
 
   // Sticky Apply/Reset row: on phones the Review Picks bar is fixed to the
-  // bottom of the screen, so the row has to stick just above it. Measure that
-  // bar (its height changes with the safe-area inset and the Track button)
-  // and flag when the row is actually floating over the list.
+  // bottom of the screen, so the row has to stick just above it.
+  // The gap is measured from where the bar's top edge actually is on screen
+  // (not from its height, captured once): on iPhone the home-indicator safe
+  // area is added to the bar's padding after launch, and a height read too
+  // early left the row ~34px too low, hidden behind the bar. It's re-measured
+  // on every scroll, section toggle, resize, rotation and return to the app,
+  // so it self-corrects.
   (function(){
     const row = document.getElementById('applyResetRow');
     const bottomBar = document.querySelector('#optionsView .apply-bar');
     if(!row || !bottomBar) return;
-    let offset = 0;
-    function measure(){
-      offset = getComputedStyle(bottomBar).position === 'fixed' ? bottomBar.offsetHeight : 0;
-      document.documentElement.style.setProperty('--sticky-actions-bottom', offset + 'px');
-      checkStuck();
-    }
-    function checkStuck(){
+    let offset = -1;
+    function update(){
+      const isFixed = getComputedStyle(bottomBar).position === 'fixed';
+      const next = isFixed ? Math.max(0, Math.round(window.innerHeight - bottomBar.getBoundingClientRect().top)) : 0;
+      if(next !== offset){
+        offset = next;
+        document.documentElement.style.setProperty('--sticky-actions-bottom', offset + 'px');
+      }
       if(row.offsetParent === null){ row.classList.remove('is-stuck'); return; }
+      const rowBottom = row.getBoundingClientRect().bottom;
       const limit = window.innerHeight - offset;
-      row.classList.toggle('is-stuck', row.getBoundingClientRect().bottom >= limit - 1);
+      row.classList.toggle('is-stuck', rowBottom >= limit - 1);
+      // Belt and braces: if the row still ends up under the bar (browser
+      // quirk in how sticky's viewport is sized), push it up by the overlap.
+      if(isFixed){
+        const overlap = rowBottom - bottomBar.getBoundingClientRect().top;
+        if(overlap > 1){
+          offset += Math.ceil(overlap);
+          document.documentElement.style.setProperty('--sticky-actions-bottom', offset + 'px');
+        }
+      }
     }
     let ticking = false;
-    window.addEventListener('scroll', ()=>{
+    function schedule(){
       if(ticking) return; ticking = true;
-      requestAnimationFrame(()=>{ ticking = false; checkStuck(); });
-    }, { passive:true });
-    window.addEventListener('resize', measure);
-    if(window.ResizeObserver) new ResizeObserver(measure).observe(bottomBar);
-    document.querySelectorAll('.filter-header-btn').forEach(b => b.addEventListener('click', ()=> requestAnimationFrame(checkStuck)));
-    measure();
+      requestAnimationFrame(()=>{ ticking = false; update(); });
+    }
+    window.addEventListener('scroll', schedule, { passive:true });
+    window.addEventListener('resize', schedule);
+    window.addEventListener('orientationchange', ()=> setTimeout(update, 300));
+    window.addEventListener('pageshow', schedule);
+    document.addEventListener('visibilitychange', schedule);
+    if(window.visualViewport) window.visualViewport.addEventListener('resize', schedule);
+    if(window.ResizeObserver){
+      try{ new ResizeObserver(schedule).observe(bottomBar, { box:'border-box' }); }
+      catch(_){ new ResizeObserver(schedule).observe(bottomBar); }
+    }
+    document.querySelectorAll('.filter-header-btn').forEach(b => b.addEventListener('click', schedule));
+    update();
+    setTimeout(update, 500); // after fonts/safe-area settle
   })();
 
   // sort takes effect immediately on the currently-filtered list, no need to hit Apply

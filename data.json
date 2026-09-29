@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T01:56:17.900446+00:00",
+  "generated_at": "2026-09-29T03:09:35.825198+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -74,7 +74,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -3.6,
+      "peVsSectorPct": -3.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -158,7 +158,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -30.0,
+      "peVsSectorPct": -29.9,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -236,7 +236,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -29.7,
+      "peVsSectorPct": -29.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -279,8 +279,8 @@
       "pcVol": 1.22,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": -0.16,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.13,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Meta enters the enterprise AI battle",
@@ -289,16 +289,16 @@
           "sentiment": -0.38
         },
         {
+          "title": "Meta Hasn't Split Its Stock Since Its IPO. Would a Stock Split Get It Into the Dow?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/28/meta-hasn-t-split-its-stock-since-its-ipo-would-a-stock-split-get-it-into-the-dow/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Meta\u2019s AI ambitions put BlackRock\u2019s prediction under spotlight",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/innovation/metas-ai-ambitions-put-blackrocks-prediction-under-spotlight",
           "sentiment": 0.0
-        },
-        {
-          "title": "I Tried Meta\u2019s Muse AI Agent. It\u2019s Helpful and Scary at the Same Time.",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/tech/personal-tech/meta-muse-ai-agent-review-ab956101?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.1
         }
       ],
       "volRegime": "Fair",
@@ -559,7 +559,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.7,
+      "peVsSectorPct": -48.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -975,7 +975,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 102.7,
+      "peVsSectorPct": 103.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1155,7 +1155,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.7,
+      "peVsSectorPct": -48.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1233,7 +1233,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 21211.2,
+      "peVsSectorPct": 21237.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1276,9 +1276,15 @@
       "pcVol": 0.81,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "FISV Heads For Worst Month Since October 2025 As Jana Reportedly Pushes Fiserv To Deepen Cost Cuts, Tap Palantir",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/fisv-heads-for-worst-month-since-october-2025-as-jana-reportedly-pushes-fiserv-to-deepen-cost-cuts-tap-palantir/cZMmZItRBXk",
+          "sentiment": -0.78
+        },
         {
           "title": "Michael Burry Swaps MU, NBIS, NVDA, PLTR Shorts For Puts \u2014 Says AI Bubble May Burst \u2018Sooner Than Later\u2019",
           "publisher": "Stocktwits",
@@ -1290,12 +1296,6 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/palantir-stock-falls-sovereign-ai-171319108.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "The $1 Trillion Question Facing Palantir Stock",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/28/the-1-trillion-question-facing-palantir-stock/",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -1317,7 +1317,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 291.9,
+      "peVsSectorPct": 292.3,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1407,7 +1407,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -17.4,
+      "peVsSectorPct": -17.3,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1491,7 +1491,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -19.1,
+      "peVsSectorPct": -19.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1569,7 +1569,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 2258.3,
+      "peVsSectorPct": 2261.2,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1653,7 +1653,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 78.8,
+      "peVsSectorPct": 79.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1923,6 +1923,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Costco (COST) Collects More Membership Fees. How Much Does It Give Back?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Costco cuts prices on everyday items as inflation wallops shoppers",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/costco-cuts-prices-everyday-items-inflation-costco-stock",
@@ -1933,12 +1939,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-keep-growing-one-230842116.html",
           "sentiment": 0.18
-        },
-        {
-          "title": "Costco Just Got a Reality Check From Wall Street",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-just-got-reality-check-202532104.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -2051,7 +2051,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -20.8,
+      "peVsSectorPct": -20.7,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2135,10 +2135,332 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 106.4,
+      "peVsSectorPct": 106.7,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
+    },
+    {
+      "sym": "GEV",
+      "strat": "Cash-Secured Put",
+      "side": "bull",
+      "isETF": false,
+      "spot": 949.77,
+      "spotPriceStale": false,
+      "strike": "$840 P",
+      "hedge": null,
+      "exp": "Nov 6",
+      "dte": 38,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 41,
+      "ap": 21.2,
+      "ivr": 39,
+      "ivRankLimited": false,
+      "dailyReturn": 48.82,
+      "roc": 2.21,
+      "score": 4.8,
+      "buy": true,
+      "sell": false,
+      "ema": true,
+      "earningsSoon": true,
+      "daysToEarnings": 29,
+      "marginOfSafety": true,
+      "delta": -0.2,
+      "iv": 53.5,
+      "premium": 18.55,
+      "breakeven": 821.45,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 82145.0,
+      "pcOI": 5.29,
+      "pcVol": 6.06,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "GE Vernova (GEV) Has a $176 Billion Backlog. Can It Turn Demand Into Durable Growth?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/ge-vernova-gev-176-billion-012212886.html",
+          "sentiment": 0.27
+        },
+        {
+          "title": "Why GE Vernova (GEV) Is Back In The Spotlight",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ge-vernova-gev-back-160845740.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "X-Energy vs. GE Vernova: Is the New IPO the Better Buy?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/27/energymaterials-ipo-name-vs-established-peer-is-th/",
+          "sentiment": 0.44
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.18,
+      "realizedVol": 45.4,
+      "expDate": "2026-11-06",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 840.0,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "APLD",
+      "strat": "Bear Put Spread",
+      "side": "bear",
+      "isETF": false,
+      "spot": 24.53,
+      "spotPriceStale": false,
+      "strike": "$24/24",
+      "hedge": null,
+      "exp": "Oct 16",
+      "dte": 17,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 43,
+      "ap": 4045.3,
+      "ivr": 8,
+      "ivRankLimited": false,
+      "dailyReturn": null,
+      "roc": 188.41,
+      "score": 6.2,
+      "buy": false,
+      "sell": true,
+      "ema": false,
+      "earningsSoon": true,
+      "daysToEarnings": 8,
+      "marginOfSafety": false,
+      "delta": -0.45,
+      "iv": 89.9,
+      "premium": 0.35,
+      "breakeven": 24.16,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 34.5,
+      "pcOI": 0.51,
+      "pcVol": 0.41,
+      "debitStrategy": true,
+      "potIsProfitProb": true,
+      "newsSentiment": -0.12,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Why Applied Digital (APLD) Stock Is Trading Lower Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-applied-digital-apld-stock-231036235.html",
+          "sentiment": -0.3
+        },
+        {
+          "title": "Applied Digital Falls 6% Despite $70 Buy Initiation at Jones Trading; TeraWulf and Core Scientific Drop 4%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/28/applied-digital-falls-6-despite-70-buy-initiation-at-jones-trading-terawulf-and-core-scientific-drop-4/",
+          "sentiment": -0.27
+        },
+        {
+          "title": "Here Are Monday\u2019s Top Wall Street Analyst Research Calls: Applied Digital, Autodesk, Datadog, First Solar, L3Harris Technologies, PepsiCo, Roblox, Snowflake, TeraWulf and More",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/28/here-are-mondays-top-wall-street-analyst-research-calls-applied-digital-autodesk-datadog-first-solar-l3harris-technologies-pepsico-roblox-snowflake-terawulf-and-more/",
+          "sentiment": 0.2
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.21,
+      "realizedVol": 74.5,
+      "expDate": "2026-10-16",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 24.5,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 23.5,
+          "action": "sell",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "IREN",
+      "strat": "Iron Condor",
+      "side": "neutral",
+      "isETF": false,
+      "spot": 41.72,
+      "spotPriceStale": false,
+      "strike": "$34/36/53/55",
+      "hedge": null,
+      "exp": "Oct 30",
+      "dte": 31,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 44,
+      "ap": 409.2,
+      "ivr": 0,
+      "ivRankLimited": false,
+      "dailyReturn": 2.24,
+      "roc": 34.75,
+      "score": 6.1,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 37,
+      "marginOfSafety": true,
+      "delta": -0.02,
+      "iv": 78.0,
+      "premium": 0.7,
+      "breakeven": 35.3,
+      "breakevenLow": 35.3,
+      "breakevenHigh": 53.7,
+      "breakevenMovePct": null,
+      "maxLoss": 130.5,
+      "pcOI": 1.11,
+      "pcVol": 0.82,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": -0.08,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "IREN Stock Is Up 17% in 2026. Here\u2019s Where the Stock Could Go",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/iren-stock-is-up-17-in-2026-heres-where-the-stock-could-go?ref=yahoofinance",
+          "sentiment": 0.0
+        },
+        {
+          "title": "IREN Just Got a Reality Check From Wall Street",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/iren-just-got-reality-check-145246343.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "IREN vs. Riot Platforms: Which Bitcoin-to-AI Stock Looks Stronger Now?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-vs-riot-platforms-bitcoin-142800496.html",
+          "sentiment": -0.25
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.16,
+      "realizedVol": 67.0,
+      "expDate": "2026-10-30",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 36.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 34.0,
+          "action": "buy",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 53.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "call",
+          "strike": 55.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "sym": "RKLB",
+      "strat": "Bull Put Spread",
+      "side": "bull",
+      "isETF": false,
+      "spot": 72.19,
+      "spotPriceStale": false,
+      "strike": "$63/61",
+      "hedge": null,
+      "exp": "Oct 23",
+      "dte": 24,
+      "backExp": null,
+      "backExpDate": null,
+      "pot": 39,
+      "ap": 505.7,
+      "ivr": 4,
+      "ivRankLimited": false,
+      "dailyReturn": 2.77,
+      "roc": 33.25,
+      "score": 6.3,
+      "buy": true,
+      "sell": false,
+      "ema": false,
+      "earningsSoon": false,
+      "daysToEarnings": 41,
+      "marginOfSafety": true,
+      "delta": -0.2,
+      "iv": 70.6,
+      "premium": 0.67,
+      "breakeven": 62.34,
+      "breakevenLow": null,
+      "breakevenHigh": null,
+      "breakevenMovePct": null,
+      "maxLoss": 133.5,
+      "pcOI": 0.88,
+      "pcVol": 1.24,
+      "debitStrategy": false,
+      "potIsProfitProb": false,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Prediction: Rocket Lab Stock Trades Above $100 Again Before 2029",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/28/prediction-rocket-lab-stock-trades-above-usd100-again-before-2029/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Rocket Lab (RKLB) Nails Back To Back September Launches With 100% Mission Record",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-nails-back-000859003.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Rocket Lab Corporation (RKLB) Declines More Than Market: Some Information for Investors",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-corporation-rklb-declines-211505431.html",
+          "sentiment": 0.0
+        }
+      ],
+      "volRegime": "Rich",
+      "ivRvRatio": 1.36,
+      "realizedVol": 51.8,
+      "expDate": "2026-10-23",
+      "legs": [
+        {
+          "type": "put",
+          "strike": 63.0,
+          "action": "sell",
+          "qty": 1
+        },
+        {
+          "type": "put",
+          "strike": 61.0,
+          "action": "buy",
+          "qty": 1
+        }
+      ]
     },
     {
       "sym": "MU",
@@ -2178,9 +2500,15 @@
       "pcVol": 1.44,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Baird's strong agentic AI call on Micron is spot on",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/why-baird-raised-micron-price-target",
+          "sentiment": 0.51
+        },
         {
           "title": "Marvell Technology, Semtech, Lattice Semiconductor, and Micron Stocks Trade Down, What You Need To Know",
           "publisher": "StockStory",
@@ -2309,7 +2637,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -40.6,
+      "peVsSectorPct": -40.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2352,7 +2680,7 @@
       "pcVol": 1.39,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -2362,16 +2690,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Bank of America resets AMD price target after major milestone",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/bank-of-america-raises-amd-price-target-akamai-anthropic-deal",
+          "sentiment": 0.0
+        },
+        {
           "title": "AMD to buy Fei-Fei Li's World Labs in $8.2 billion bet on 'physical AI'",
           "publisher": "Reuters",
           "link": "https://finance.yahoo.com/news/amd-acquires-world-labs-8-203900428.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "AMD, Intel, Western Digital, Vishay Intertechnology, and Penguin Solutions Stocks Trade Down, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-western-digital-vishay-225436808.html",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Fair",
@@ -2405,7 +2733,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 297.5,
+      "peVsSectorPct": 298.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2448,8 +2776,8 @@
       "pcVol": 0.34,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Elon Musk's Tesla and SpaceX have a huge week on tap",
@@ -2458,16 +2786,16 @@
           "sentiment": 0.32
         },
         {
-          "title": "Dow Jones Futures: Trump Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla In Focus",
+          "title": "Dow Jones Futures: Trump Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla Sell Off",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-trump-stock-market-losses-elon-musk-spacex-tesla/?src=A00220&yptr=yahoo",
           "sentiment": -0.4
         },
         {
-          "title": "TSLA Heads Into Friday\u2019s Delivery Print With Family-Targeted Model Y L Already Sold Into Next Year",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-heads-into-friday-s-delivery-print-with-family-targeted-model-y-l-already-sold-into-next-year/cZMj9bdRBXL",
-          "sentiment": 0.58
+          "title": "Tesla (TSLA) has a Growing Warranty Bill. Are Future Margins Paying for Past Sales?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-growing-warranty-bill-020857410.html",
+          "sentiment": 0.18
         }
       ],
       "volRegime": "Fair",
@@ -2489,7 +2817,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 1530.5,
+      "peVsSectorPct": 1593.1,
       "sectorMedianPE": 20.3,
       "sectorPeerCount": 3,
       "sector": "Consumer Cyclical"
@@ -2623,9 +2951,15 @@
       "pcVol": 0.31,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.21,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Intel (INTC) Shared Its Factory Bill. Did It Give Up Too Much Flexibility?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/intel-intc-shared-factory-bill-021940270.html",
+          "sentiment": 0.59
+        },
         {
           "title": "AMD, Intel, Western Digital, Vishay Intertechnology, and Penguin Solutions Stocks Trade Down, What You Need To Know",
           "publisher": "StockStory",
@@ -2637,12 +2971,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/28/intel-vs-nvidia-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Here's Why Intel (INTC) Fell More Than Broader Market",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-intel-intc-fell-204503805.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -2767,9 +3095,15 @@
       "pcVol": 0.7,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Broadcom's Dividend Has Grown About 90-Fold Since 2010. Its Next Raise Usually Comes in December.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/28/broadcom-s-dividend-has-grown-about-90-fold-since-2010-its-next-raise-usually-comes-in-december/",
+          "sentiment": 0.0
+        },
         {
           "title": "Not Nvidia, Not AMD. Broadcom's Custom Silicon Business Is Quietly Becoming an AI Chip Powerhouse",
           "publisher": "Motley Fool",
@@ -2781,12 +3115,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/28/broadcom-vs-marvell-technology-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Broadcom Stock Slips Lower as $115 Billion Forecast Raises the Conversion Bar",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-slips-lower-115-193550273.html",
-          "sentiment": 0.15
         }
       ],
       "volRegime": "Rich",
@@ -2808,7 +3136,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 11.0,
+      "peVsSectorPct": 11.1,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2983,7 +3311,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 63.0,
+      "peVsSectorPct": 63.2,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -3061,7 +3389,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 3.6,
+      "peVsSectorPct": 3.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -3157,7 +3485,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -58.1,
+      "peVsSectorPct": -58.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -3241,7 +3569,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 34.4,
+      "peVsSectorPct": 34.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -3397,7 +3725,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 48.5,
+      "peVsSectorPct": 48.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -3536,9 +3864,15 @@
       "pcVol": 0.26,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.02,
+      "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Walmart (WMT) Delivers Forgotten Groceries Fast. Can Small Orders Make Money?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/small-business/articles/walmart-wmt-delivers-forgotten-groceries-023241175.html",
+          "sentiment": -0.23
+        },
         {
           "title": "Walmart and Target compete in key sector",
           "publisher": "TheStreet",
@@ -3550,12 +3884,6 @@
           "publisher": "USA TODAY",
           "link": "https://www.usatoday.com/story/money/retail/2026/09/28/walmart-ceo-against-personalized-prices-ai/91993420007/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Walmart Denies Using Customers\u2019 Personal Data for Its Dynamic Pricing: \u2018Prices Can Change\u2019",
-          "publisher": "First for Money",
-          "link": "https://firstformoney.com/walmart-denies-using-customers-personal-data-for-its-dynamic-pricing-prices-can-change/",
-          "sentiment": -0.05
         }
       ],
       "volRegime": "Rich",
@@ -3831,79 +4159,6 @@
       ]
     },
     {
-      "sym": "GEV",
-      "strat": "Cash-Secured Put",
-      "side": "bull",
-      "isETF": false,
-      "spot": 949.77,
-      "spotPriceStale": false,
-      "strike": "$840 P",
-      "hedge": null,
-      "exp": "Nov 6",
-      "dte": 38,
-      "backExp": null,
-      "backExpDate": null,
-      "pot": 41,
-      "ap": 21.2,
-      "ivr": 39,
-      "ivRankLimited": false,
-      "dailyReturn": 48.82,
-      "roc": 2.21,
-      "score": 4.8,
-      "buy": true,
-      "sell": false,
-      "ema": true,
-      "earningsSoon": true,
-      "daysToEarnings": 29,
-      "marginOfSafety": true,
-      "delta": -0.2,
-      "iv": 53.5,
-      "premium": 18.55,
-      "breakeven": 821.45,
-      "breakevenLow": null,
-      "breakevenHigh": null,
-      "breakevenMovePct": null,
-      "maxLoss": 82145.0,
-      "pcOI": 5.29,
-      "pcVol": 6.06,
-      "debitStrategy": false,
-      "potIsProfitProb": false,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "GE Vernova (GEV) Has a $176 Billion Backlog. Can It Turn Demand Into Durable Growth?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/energy/articles/ge-vernova-gev-176-billion-012212886.html",
-          "sentiment": 0.27
-        },
-        {
-          "title": "Why GE Vernova (GEV) Is Back In The Spotlight",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ge-vernova-gev-back-160845740.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "X-Energy vs. GE Vernova: Is the New IPO the Better Buy?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/27/energymaterials-ipo-name-vs-established-peer-is-th/",
-          "sentiment": 0.44
-        }
-      ],
-      "volRegime": "Rich",
-      "ivRvRatio": 1.18,
-      "realizedVol": 45.4,
-      "expDate": "2026-11-06",
-      "legs": [
-        {
-          "type": "put",
-          "strike": 840.0,
-          "action": "sell",
-          "qty": 1
-        }
-      ]
-    },
-    {
       "sym": "CAT",
       "strat": "Cash-Secured Put",
       "side": "bull",
@@ -4055,7 +4310,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -13.7,
+      "peVsSectorPct": -13.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -4133,7 +4388,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 26.5,
+      "peVsSectorPct": 26.7,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -4217,7 +4472,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 4.1,
+      "peVsSectorPct": 4.2,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -4481,7 +4736,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -50.7,
+      "peVsSectorPct": -50.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -4524,7 +4779,7 @@
       "pcVol": 4.86,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -4534,16 +4789,16 @@
           "sentiment": 0.69
         },
         {
+          "title": "Bank of America resets AMD price target after major milestone",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/bank-of-america-raises-amd-price-target-akamai-anthropic-deal",
+          "sentiment": 0.0
+        },
+        {
           "title": "Bank of America has a blunt message for S&P 500 investors",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/bank-of-america-sp500-earnings-politics",
           "sentiment": 0.0
-        },
-        {
-          "title": "Bank of America (BAC) is Investing for Growth. Can Its Earnings Keep the Pace?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-bac-investing-growth-230553808.html",
-          "sentiment": 0.38
         }
       ],
       "volRegime": "Rich",
@@ -4608,20 +4863,20 @@
       "pcVol": 1.55,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Goldman Sachs board discussed plan to name Waldron as next CEO- WSJ",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-board-discussed-plan-235441804.html",
-          "sentiment": 0.0
+          "title": "Is Goldman Sachs Group (GS) Undervalued Following Its Bond Offerings And Recent Share Price Slide?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-group-gs-undervalued-020819679.html",
+          "sentiment": 0.3
         },
         {
-          "title": "Goldman Sachs Has Discussed a Succession Plan",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-28-2026/card/goldman-sachs-has-discussed-a-succession-plan-OU16ipuDSH7Qo3xNoTF2?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.2
+          "title": "Goldman Sachs Board Reportedly Discussed Plan for CEO David Solomon to Step Down, Hand the Top Job to President John Waldron",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-board-reportedly-discussed-013417132.html",
+          "sentiment": 0.61
         },
         {
           "title": "Goldman\u2019s Board Has Discussed a Plan to Name John Waldron as Its Next CEO",
@@ -4846,7 +5101,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -3.6,
+      "peVsSectorPct": -3.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -4896,7 +5151,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -30.0,
+      "peVsSectorPct": -29.9,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -4946,7 +5201,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -29.7,
+      "peVsSectorPct": -29.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -4973,8 +5228,8 @@
       "dividendYield": 0.28,
       "marketCap": 1823046369280,
       "score": 8.5,
-      "newsSentiment": -0.16,
-      "newsSentimentLabel": "Negative",
+      "newsSentiment": -0.13,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Meta enters the enterprise AI battle",
@@ -4983,16 +5238,16 @@
           "sentiment": -0.38
         },
         {
+          "title": "Meta Hasn't Split Its Stock Since Its IPO. Would a Stock Split Get It Into the Dow?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/28/meta-hasn-t-split-its-stock-since-its-ipo-would-a-stock-split-get-it-into-the-dow/",
+          "sentiment": 0.0
+        },
+        {
           "title": "Meta\u2019s AI ambitions put BlackRock\u2019s prediction under spotlight",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/crypto/innovation/metas-ai-ambitions-put-blackrocks-prediction-under-spotlight",
           "sentiment": 0.0
-        },
-        {
-          "title": "I Tried Meta\u2019s Muse AI Agent. It\u2019s Helpful and Scary at the Same Time.",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/tech/personal-tech/meta-muse-ai-agent-review-ab956101?siteid=yhoof2&yptr=yahoo",
-          "sentiment": -0.1
         }
       ],
       "valuationLabel": "Fair",
@@ -5121,7 +5376,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.7,
+      "peVsSectorPct": -48.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5357,7 +5612,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 102.7,
+      "peVsSectorPct": 103.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5457,7 +5712,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -48.7,
+      "peVsSectorPct": -48.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5507,7 +5762,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 21211.2,
+      "peVsSectorPct": 21237.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5534,9 +5789,15 @@
       "dividendYield": null,
       "marketCap": 450525396992,
       "score": 7.9,
-      "newsSentiment": 0.11,
+      "newsSentiment": -0.15,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "FISV Heads For Worst Month Since October 2025 As Jana Reportedly Pushes Fiserv To Deepen Cost Cuts, Tap Palantir",
+          "publisher": "Stocktwits",
+          "link": "https://stocktwits.com/news-articles/markets/equity/fisv-heads-for-worst-month-since-october-2025-as-jana-reportedly-pushes-fiserv-to-deepen-cost-cuts-tap-palantir/cZMmZItRBXk",
+          "sentiment": -0.78
+        },
         {
           "title": "Michael Burry Swaps MU, NBIS, NVDA, PLTR Shorts For Puts \u2014 Says AI Bubble May Burst \u2018Sooner Than Later\u2019",
           "publisher": "Stocktwits",
@@ -5548,16 +5809,10 @@
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/palantir-stock-falls-sovereign-ai-171319108.html",
           "sentiment": 0.34
-        },
-        {
-          "title": "The $1 Trillion Question Facing Palantir Stock",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/28/the-1-trillion-question-facing-palantir-stock/",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 291.9,
+      "peVsSectorPct": 292.3,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5601,7 +5856,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -17.4,
+      "peVsSectorPct": -17.3,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5651,7 +5906,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -19.1,
+      "peVsSectorPct": -19.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5701,7 +5956,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 2258.3,
+      "peVsSectorPct": 2261.2,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5751,7 +6006,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 78.8,
+      "peVsSectorPct": 79.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -5893,6 +6148,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Costco (COST) Collects More Membership Fees. How Much Does It Give Back?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-collects-more-membership-022301447.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Costco cuts prices on everyday items as inflation wallops shoppers",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/costco-cuts-prices-everyday-items-inflation-costco-stock",
@@ -5903,12 +6164,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-keep-growing-one-230842116.html",
           "sentiment": 0.18
-        },
-        {
-          "title": "Costco Just Got a Reality Check From Wall Street",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/costco-just-got-reality-check-202532104.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -5958,7 +6213,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -20.8,
+      "peVsSectorPct": -20.7,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6008,9 +6263,193 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 106.4,
+      "peVsSectorPct": 106.7,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
+    },
+    {
+      "sym": "GEV",
+      "isETF": false,
+      "price": 949.77,
+      "priceStale": false,
+      "high52wk": 1195.94,
+      "low52wk": 529.18,
+      "pctFromHigh": -20.6,
+      "pctFromLow": 79.5,
+      "trend": "Uptrend",
+      "rsi": 50.0,
+      "chg1m": -0.4,
+      "chg3m": -13.9,
+      "chg6m": 11.4,
+      "chg1y": 58.0,
+      "volRatio": 0.75,
+      "peRatio": 27.2,
+      "sector": "Industrials",
+      "industry": "Specialty Industrial Machinery",
+      "pegRatio": 1.87,
+      "dividendYield": 0.21,
+      "marketCap": 252955656192,
+      "score": 7.0,
+      "newsSentiment": 0.24,
+      "newsSentimentLabel": "Positive",
+      "newsHeadlines": [
+        {
+          "title": "GE Vernova (GEV) Has a $176 Billion Backlog. Can It Turn Demand Into Durable Growth?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/energy/articles/ge-vernova-gev-176-billion-012212886.html",
+          "sentiment": 0.27
+        },
+        {
+          "title": "Why GE Vernova (GEV) Is Back In The Spotlight",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ge-vernova-gev-back-160845740.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "X-Energy vs. GE Vernova: Is the New IPO the Better Buy?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/27/energymaterials-ipo-name-vs-established-peer-is-th/",
+          "sentiment": 0.44
+        }
+      ]
+    },
+    {
+      "sym": "APLD",
+      "isETF": false,
+      "price": 24.53,
+      "priceStale": false,
+      "high52wk": 50.72,
+      "low52wk": 19.0,
+      "pctFromHigh": -51.6,
+      "pctFromLow": 29.1,
+      "trend": "Strong Downtrend",
+      "rsi": 41.5,
+      "chg1m": -10.6,
+      "chg3m": -35.1,
+      "chg6m": 3.2,
+      "chg1y": 10.7,
+      "volRatio": 0.96,
+      "peRatio": null,
+      "sector": "Technology",
+      "industry": "Information Technology Services",
+      "pegRatio": 1.83,
+      "dividendYield": null,
+      "marketCap": 7338644480,
+      "score": 3.4,
+      "newsSentiment": -0.12,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Why Applied Digital (APLD) Stock Is Trading Lower Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-applied-digital-apld-stock-231036235.html",
+          "sentiment": -0.3
+        },
+        {
+          "title": "Applied Digital Falls 6% Despite $70 Buy Initiation at Jones Trading; TeraWulf and Core Scientific Drop 4%",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/28/applied-digital-falls-6-despite-70-buy-initiation-at-jones-trading-terawulf-and-core-scientific-drop-4/",
+          "sentiment": -0.27
+        },
+        {
+          "title": "Here Are Monday\u2019s Top Wall Street Analyst Research Calls: Applied Digital, Autodesk, Datadog, First Solar, L3Harris Technologies, PepsiCo, Roblox, Snowflake, TeraWulf and More",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/09/28/here-are-mondays-top-wall-street-analyst-research-calls-applied-digital-autodesk-datadog-first-solar-l3harris-technologies-pepsico-roblox-snowflake-terawulf-and-more/",
+          "sentiment": 0.2
+        }
+      ]
+    },
+    {
+      "sym": "IREN",
+      "isETF": false,
+      "price": 41.72,
+      "priceStale": false,
+      "high52wk": 76.87,
+      "low52wk": 28.93,
+      "pctFromHigh": -45.7,
+      "pctFromLow": 44.2,
+      "trend": "Strong Uptrend",
+      "rsi": 46.0,
+      "chg1m": 2.9,
+      "chg3m": -9.1,
+      "chg6m": 18.9,
+      "chg1y": -9.2,
+      "volRatio": 0.65,
+      "peRatio": null,
+      "sector": "Financial Services",
+      "industry": "Capital Markets",
+      "pegRatio": 3.11,
+      "dividendYield": null,
+      "marketCap": 16440127488,
+      "score": 8.5,
+      "newsSentiment": -0.08,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "IREN Stock Is Up 17% in 2026. Here\u2019s Where the Stock Could Go",
+          "publisher": "TIKR",
+          "link": "https://www.tikr.com/blog/iren-stock-is-up-17-in-2026-heres-where-the-stock-could-go?ref=yahoofinance",
+          "sentiment": 0.0
+        },
+        {
+          "title": "IREN Just Got a Reality Check From Wall Street",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/technology/ai/articles/iren-just-got-reality-check-145246343.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "IREN vs. Riot Platforms: Which Bitcoin-to-AI Stock Looks Stronger Now?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/iren-vs-riot-platforms-bitcoin-142800496.html",
+          "sentiment": -0.25
+        }
+      ]
+    },
+    {
+      "sym": "RKLB",
+      "isETF": false,
+      "price": 72.19,
+      "priceStale": false,
+      "high52wk": 151.0,
+      "low52wk": 37.57,
+      "pctFromHigh": -52.2,
+      "pctFromLow": 92.1,
+      "trend": "Uptrend",
+      "rsi": 55.7,
+      "chg1m": 6.9,
+      "chg3m": -26.3,
+      "chg6m": 18.5,
+      "chg1y": 53.6,
+      "volRatio": 0.82,
+      "peRatio": null,
+      "sector": "Industrials",
+      "industry": "Aerospace & Defense",
+      "pegRatio": null,
+      "dividendYield": null,
+      "marketCap": 46159081472,
+      "score": 7.4,
+      "newsSentiment": 0.0,
+      "newsSentimentLabel": "Neutral",
+      "newsHeadlines": [
+        {
+          "title": "Prediction: Rocket Lab Stock Trades Above $100 Again Before 2029",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/28/prediction-rocket-lab-stock-trades-above-usd100-again-before-2029/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Rocket Lab (RKLB) Nails Back To Back September Launches With 100% Mission Record",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-nails-back-000859003.html",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Rocket Lab Corporation (RKLB) Declines More Than Market: Some Information for Investors",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-corporation-rklb-declines-211505431.html",
+          "sentiment": 0.0
+        }
+      ]
     },
     {
       "sym": "MU",
@@ -6035,9 +6474,15 @@
       "dividendYield": 0.05,
       "marketCap": 1190357762048,
       "score": 9.1,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.33,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Baird's strong agentic AI call on Micron is spot on",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/why-baird-raised-micron-price-target",
+          "sentiment": 0.51
+        },
         {
           "title": "Marvell Technology, Semtech, Lattice Semiconductor, and Micron Stocks Trade Down, What You Need To Know",
           "publisher": "StockStory",
@@ -6102,7 +6547,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -40.6,
+      "peVsSectorPct": -40.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6129,7 +6574,7 @@
       "dividendYield": null,
       "marketCap": 992332546048,
       "score": 7.3,
-      "newsSentiment": 0.06,
+      "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
@@ -6139,20 +6584,20 @@
           "sentiment": 0.0
         },
         {
+          "title": "Bank of America resets AMD price target after major milestone",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/bank-of-america-raises-amd-price-target-akamai-anthropic-deal",
+          "sentiment": 0.0
+        },
+        {
           "title": "AMD to buy Fei-Fei Li's World Labs in $8.2 billion bet on 'physical AI'",
           "publisher": "Reuters",
           "link": "https://finance.yahoo.com/news/amd-acquires-world-labs-8-203900428.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "AMD, Intel, Western Digital, Vishay Intertechnology, and Penguin Solutions Stocks Trade Down, What You Need To Know",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intel-western-digital-vishay-225436808.html",
-          "sentiment": 0.18
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 297.5,
+      "peVsSectorPct": 298.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6172,15 +6617,15 @@
       "chg6m": -1.2,
       "chg1y": -19.3,
       "volRatio": 1.03,
-      "peRatio": 331.0,
+      "peRatio": 343.7,
       "sector": "Consumer Cyclical",
       "industry": "Auto Manufacturers",
       "pegRatio": 4.45,
       "dividendYield": null,
       "marketCap": 1411765764096,
       "score": 6.8,
-      "newsSentiment": 0.16,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.03,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Elon Musk's Tesla and SpaceX have a huge week on tap",
@@ -6189,20 +6634,20 @@
           "sentiment": 0.32
         },
         {
-          "title": "Dow Jones Futures: Trump Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla In Focus",
+          "title": "Dow Jones Futures: Trump Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla Sell Off",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-trump-stock-market-losses-elon-musk-spacex-tesla/?src=A00220&yptr=yahoo",
           "sentiment": -0.4
         },
         {
-          "title": "TSLA Heads Into Friday\u2019s Delivery Print With Family-Targeted Model Y L Already Sold Into Next Year",
-          "publisher": "Stocktwits",
-          "link": "https://stocktwits.com/news-articles/markets/equity/tsla-heads-into-friday-s-delivery-print-with-family-targeted-model-y-l-already-sold-into-next-year/cZMj9bdRBXL",
-          "sentiment": 0.58
+          "title": "Tesla (TSLA) has a Growing Warranty Bill. Are Future Margins Paying for Past Sales?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-growing-warranty-bill-020857410.html",
+          "sentiment": 0.18
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 1530.5,
+      "peVsSectorPct": 1593.1,
       "sectorMedianPE": 20.3,
       "sectorPeerCount": 3
     },
@@ -6275,9 +6720,15 @@
       "dividendYield": null,
       "marketCap": 613346770944,
       "score": 8.5,
-      "newsSentiment": 0.21,
+      "newsSentiment": 0.4,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Intel (INTC) Shared Its Factory Bill. Did It Give Up Too Much Flexibility?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/technology/articles/intel-intc-shared-factory-bill-021940270.html",
+          "sentiment": 0.59
+        },
         {
           "title": "AMD, Intel, Western Digital, Vishay Intertechnology, and Penguin Solutions Stocks Trade Down, What You Need To Know",
           "publisher": "StockStory",
@@ -6289,12 +6740,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/28/intel-vs-nvidia-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Here's Why Intel (INTC) Fell More Than Broader Market",
-          "publisher": "Zacks",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-intel-intc-fell-204503805.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -6352,9 +6797,15 @@
       "dividendYield": 0.74,
       "marketCap": 1668717871104,
       "score": 4.2,
-      "newsSentiment": 0.2,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Broadcom's Dividend Has Grown About 90-Fold Since 2010. Its Next Raise Usually Comes in December.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/09/28/broadcom-s-dividend-has-grown-about-90-fold-since-2010-its-next-raise-usually-comes-in-december/",
+          "sentiment": 0.0
+        },
         {
           "title": "Not Nvidia, Not AMD. Broadcom's Custom Silicon Business Is Quietly Becoming an AI Chip Powerhouse",
           "publisher": "Motley Fool",
@@ -6366,16 +6817,10 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/coverage/better-buy/2026/09/28/broadcom-vs-marvell-technology-which-semiconductor-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
-        },
-        {
-          "title": "Broadcom Stock Slips Lower as $115 Billion Forecast Raises the Conversion Bar",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-slips-lower-115-193550273.html",
-          "sentiment": 0.15
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 11.0,
+      "peVsSectorPct": 11.1,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6425,7 +6870,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 63.0,
+      "peVsSectorPct": 63.2,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6445,7 +6890,7 @@
       "chg6m": 44.7,
       "chg1y": 138.8,
       "volRatio": 0.91,
-      "peRatio": 42.0,
+      "peRatio": 41.9,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
       "pegRatio": 0.96,
@@ -6475,7 +6920,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 3.6,
+      "peVsSectorPct": 3.5,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6525,7 +6970,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -58.1,
+      "peVsSectorPct": -58.0,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6575,7 +7020,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 34.4,
+      "peVsSectorPct": 34.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6669,7 +7114,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 48.5,
+      "peVsSectorPct": 48.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -6746,9 +7191,15 @@
       "dividendYield": 0.92,
       "marketCap": 865281966080,
       "score": 5.8,
-      "newsSentiment": -0.02,
+      "newsSentiment": -0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Walmart (WMT) Delivers Forgotten Groceries Fast. Can Small Orders Make Money?",
+          "publisher": "Insider Monkey",
+          "link": "https://finance.yahoo.com/small-business/articles/walmart-wmt-delivers-forgotten-groceries-023241175.html",
+          "sentiment": -0.23
+        },
         {
           "title": "Walmart and Target compete in key sector",
           "publisher": "TheStreet",
@@ -6760,12 +7211,6 @@
           "publisher": "USA TODAY",
           "link": "https://www.usatoday.com/story/money/retail/2026/09/28/walmart-ceo-against-personalized-prices-ai/91993420007/",
           "sentiment": 0.0
-        },
-        {
-          "title": "Walmart Denies Using Customers\u2019 Personal Data for Its Dynamic Pricing: \u2018Prices Can Change\u2019",
-          "publisher": "First for Money",
-          "link": "https://firstformoney.com/walmart-denies-using-customers-personal-data-for-its-dynamic-pricing-prices-can-change/",
-          "sentiment": -0.05
         }
       ]
     },
@@ -6885,7 +7330,7 @@
       "chg6m": -3.7,
       "chg1y": 46.4,
       "volRatio": 0.88,
-      "peRatio": 20.9,
+      "peRatio": 20.7,
       "sector": "Energy",
       "industry": "Oil & Gas Integrated",
       "pegRatio": 1.38,
@@ -6912,52 +7357,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-exxonmobil-061800247.html",
           "sentiment": 0.0
-        }
-      ]
-    },
-    {
-      "sym": "GEV",
-      "isETF": false,
-      "price": 949.77,
-      "priceStale": false,
-      "high52wk": 1195.94,
-      "low52wk": 529.18,
-      "pctFromHigh": -20.6,
-      "pctFromLow": 79.5,
-      "trend": "Uptrend",
-      "rsi": 50.0,
-      "chg1m": -0.4,
-      "chg3m": -13.9,
-      "chg6m": 11.4,
-      "chg1y": 58.0,
-      "volRatio": 0.75,
-      "peRatio": 27.2,
-      "sector": "Industrials",
-      "industry": "Specialty Industrial Machinery",
-      "pegRatio": 1.87,
-      "dividendYield": 0.21,
-      "marketCap": 252955656192,
-      "score": 7.0,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
-      "newsHeadlines": [
-        {
-          "title": "GE Vernova (GEV) Has a $176 Billion Backlog. Can It Turn Demand Into Durable Growth?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/energy/articles/ge-vernova-gev-176-billion-012212886.html",
-          "sentiment": 0.27
-        },
-        {
-          "title": "Why GE Vernova (GEV) Is Back In The Spotlight",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ge-vernova-gev-back-160845740.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "X-Energy vs. GE Vernova: Is the New IPO the Better Buy?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/27/energymaterials-ipo-name-vs-established-peer-is-th/",
-          "sentiment": 0.44
         }
       ]
     },
@@ -7023,7 +7422,7 @@
       "chg6m": 7.4,
       "chg1y": 0.8,
       "volRatio": 0.88,
-      "peRatio": 12.6,
+      "peRatio": 12.7,
       "sector": "Financial Services",
       "industry": "Insurance - Diversified",
       "pegRatio": 10.06,
@@ -7053,7 +7452,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -13.7,
+      "peVsSectorPct": -13.0,
       "sectorMedianPE": 14.6,
       "sectorPeerCount": 6
     },
@@ -7103,7 +7502,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 26.5,
+      "peVsSectorPct": 26.7,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -7153,7 +7552,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 4.1,
+      "peVsSectorPct": 4.2,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -7303,7 +7702,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -50.7,
+      "peVsSectorPct": -50.6,
       "sectorMedianPE": 40.5,
       "sectorPeerCount": 28
     },
@@ -7330,7 +7729,7 @@
       "dividendYield": 2.26,
       "marketCap": 387887759360,
       "score": 4.9,
-      "newsSentiment": 0.36,
+      "newsSentiment": 0.23,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
@@ -7340,16 +7739,16 @@
           "sentiment": 0.69
         },
         {
+          "title": "Bank of America resets AMD price target after major milestone",
+          "publisher": "TheStreet",
+          "link": "https://www.thestreet.com/investing/stocks/bank-of-america-raises-amd-price-target-akamai-anthropic-deal",
+          "sentiment": 0.0
+        },
+        {
           "title": "Bank of America has a blunt message for S&P 500 investors",
           "publisher": "TheStreet",
           "link": "https://www.thestreet.com/investing/stocks/bank-of-america-sp500-earnings-politics",
           "sentiment": 0.0
-        },
-        {
-          "title": "Bank of America (BAC) is Investing for Growth. Can Its Earnings Keep the Pace?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-bac-investing-growth-230553808.html",
-          "sentiment": 0.38
         }
       ],
       "valuationLabel": "Cheap",
@@ -7380,20 +7779,20 @@
       "dividendYield": 2.14,
       "marketCap": 266794532864,
       "score": 4.7,
-      "newsSentiment": 0.07,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.3,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
-          "title": "Goldman Sachs board discussed plan to name Waldron as next CEO- WSJ",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-board-discussed-plan-235441804.html",
-          "sentiment": 0.0
+          "title": "Is Goldman Sachs Group (GS) Undervalued Following Its Bond Offerings And Recent Share Price Slide?",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-group-gs-undervalued-020819679.html",
+          "sentiment": 0.3
         },
         {
-          "title": "Goldman Sachs Has Discussed a Succession Plan",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-28-2026/card/goldman-sachs-has-discussed-a-succession-plan-OU16ipuDSH7Qo3xNoTF2?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.2
+          "title": "Goldman Sachs Board Reportedly Discussed Plan for CEO David Solomon to Step Down, Hand the Top Job to President John Waldron",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-board-reportedly-discussed-013417132.html",
+          "sentiment": 0.61
         },
         {
           "title": "Goldman\u2019s Board Has Discussed a Plan to Name John Waldron as Its Next CEO",

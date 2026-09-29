@@ -1140,8 +1140,18 @@
     </div>
 
     <div class="apply-bar">
+      <!-- Track for Backtest moved here from the results-count-row above
+           (2026-09-29) — that freed up the "N setups match your filters"
+           line, and this is the more natural home for it anyway: sitting
+           right next to Selected, only appearing when there's actually an
+           option trade selected to track (same visibility logic as
+           before, just relocated — see updatePortfolioCount()). "View
+           Summary" renamed to "Selected" since the old label read as if it
+           always had something to show, when it's really just a count of
+           what's checked. -->
       <div class="apply-bar-row">
-        <button class="copy-btn" id="portfolioSummaryBtn" style="flex:1;">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
+        <button class="copy-btn" id="portfolioSummaryBtn" style="flex:1;">Selected <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
+        <button class="track-selected-btn" id="trackSelectedBtn" style="display:none; flex:1;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
       <!-- The Apply button that used to live here was redundant with the
            compact one right above the 3 category boxes (added 2026-09-26) —
@@ -1161,7 +1171,6 @@
     <div class="results-bar">
       <div class="results-count-row">
         <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
-        <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
       <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
         <select id="sortSelect">
@@ -1270,7 +1279,7 @@
   </footer>
 
   <div class="apply-bar">
-    <button class="apply-btn" id="portfolioSummaryBtnStocks">View Summary <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
+    <button class="apply-btn" id="portfolioSummaryBtnStocks">Selected <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
   </div>
 </div>
 

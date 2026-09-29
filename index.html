@@ -167,9 +167,13 @@
      opened from a "Tools" button next to My Tickers, instead of a row between
      the Options/Stocks toggle and the filters. The buttons are still
      .mode-tab elements so switchMode() toggles .active / aria-selected. */
-  .top-actions{ display:flex; gap:8px; order:2; }
+  .top-actions{ display:flex; gap:8px; order:2; flex:1 1 auto; }
   .top-actions .export-btn{ justify-content:center; height:var(--control-h); box-sizing:border-box; }
-  .header-top-right{ order:3; margin-left:auto; }
+  .header-top-right{ order:4; }
+  /* Options capital lives in the header row on wide screens (right side,
+     before the data status); on phones it wraps to its own row. */
+  .header-top .portfolio-bar{ order:3; width:auto; max-width:none; margin:0; padding:0; }
+  .header-top .portfolio-bar-inner{ height:var(--control-h); padding:0 3px 0 12px; gap:10px; flex-wrap:nowrap; }
   .tools-group{ position:relative; }
   .tools-caret{ font-size:10px; margin-left:2px; }
   .tools-group.is-active .tools-menu-btn{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
@@ -333,15 +337,21 @@
     outline:none; border-color:var(--amber);
     box-shadow:0 0 0 3px var(--amber-soft);
   }
-  #portfolioCapital{ width:104px; }
-  #portfolioSplit{ width:56px; }
-  #portfolioEquitySplit{ width:56px; }
-  /* Idle/"cash left" capital not claimed by either % input is still
-     computed (updateCashLeftDisplay(), and independently again in the
-     Portfolio Summary modal) — it's just not surfaced as its own field
-     here anymore, so the row stays to the 3 fields that are actually
-     set directly: Cash, Options %, Equities %. */
-
+  #portfolioCapital{ width:128px; }
+  /* Options capital row: label left, $-prefixed field right. */
+  .portfolio-bar-inner{ justify-content:space-between; }
+  .capital-field{ position:relative; display:flex; align-items:center; }
+  .capital-sym{
+    position:absolute; left:9px; pointer-events:none;
+    font-family:var(--mono); font-size:15px; font-weight:500; color:var(--text-faint);
+  }
+  .capital-field input{ padding-left:22px !important; }
+  /* Back link shown in the tool note while Lookup/Backtest is open. */
+  .tools-back{
+    margin-left:8px; padding:0; background:none; border:none;
+    font:inherit; font-weight:600; color:var(--amber-strong);
+    text-decoration:underline; text-underline-offset:2px; cursor:pointer;
+  }
   .portfolio-fab-count{
     background:var(--amber-strong); color:#fff;
     border-radius:12px; padding:2px 8px; font-family:var(--mono); font-size:12px;
@@ -591,6 +601,8 @@
   }
   .funnel-note:empty{ display:none; }
   .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-dim); }
+  #optionsView .sort-wrap{ flex:1 1 auto; }
+  .min-profit-label{ margin-left:auto; }
   .sort-wrap select{
     background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); height:34px; padding:0 10px; border-radius:var(--radius-sm); font-size:16px;
@@ -901,7 +913,8 @@
        is selected in full. Room for Min Trade Profit on the same row comes
        from shortening ITS label instead (see the JS-set text below) and
        narrowing its input. */
-    .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; }
+    .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; min-width:0; flex:0 1 auto; }
+    .min-profit-label{ white-space:nowrap; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
     .sticky-top{ gap:10px; padding-top:12px; padding-bottom:10px; }
     header{ gap:8px; }
@@ -909,7 +922,10 @@
     /* Status pill shrinks (and truncates) rather than wrapping under the logo. */
     .header-top-right{ gap:6px; flex:1 1 0; min-width:0; justify-content:flex-end; }
     /* Actions drop to their own full-width row under the brand on phones. */
+    .header-top-right{ order:2; }
     .top-actions{ order:4; flex-basis:100%; }
+    .header-top .portfolio-bar{ order:5; flex-basis:100%; }
+    .header-top .portfolio-bar-inner{ height:auto; padding:5px 5px 5px 12px; }
     .top-actions .tools-group{ flex:1; min-width:0; }
     .top-actions .tools-group .export-btn{ width:100%; }
     .top-actions > .export-btn{ flex:1; min-width:0; }
@@ -925,12 +941,10 @@
        still wrap in the field. Verified via headless-browser measurement
        of each input's actual scrollWidth vs its box width, with a
        deliberate buffer left over rather than an exact match. */
-    .portfolio-bar{ padding:0 14px; }
-    .portfolio-bar-inner{ justify-content:space-between; gap:6px 4px; padding:5px 8px; }
+    .portfolio-bar{ padding:0; }
+    .portfolio-bar-inner{ gap:6px 8px; padding:5px 6px 5px 12px; }
     .portfolio-bar label{ gap:4px; font-size:12.5px; }
-    #portfolioCapital{ width:76px; height:30px; padding:4px 5px; }
-    #portfolioSplit{ width:40px; height:30px; padding:4px 4px; }
-    #portfolioEquitySplit{ width:40px; height:30px; padding:4px 4px; }
+    #portfolioCapital{ width:128px; height:32px; }
     .mode-nav{ padding:0 14px; gap:8px; }
     .mode-group-head{ height:30px; }
     .mode-group-title{ font-size:13.5px; }
@@ -980,10 +994,14 @@
   /* Narrow phones (iPhone mini/SE, 375px): keep Cash / Options % /
      Equities % on one line. */
   @media (max-width: 380px){
-    .portfolio-bar-inner{ padding:5px 6px; gap:6px 2px; }
-    .portfolio-bar label{ gap:3px; font-size:12px; }
-    #portfolioCapital{ width:72px; padding:4px; }
-    #portfolioSplit, #portfolioEquitySplit{ width:38px; padding:4px 3px; }
+    .portfolio-bar-inner{ padding:5px 8px; }
+  }
+  @media (max-width: 380px){
+    .sort-wrap select{ font-size:12.5px; padding:0 4px; }
+    .min-profit-label{ font-size:12px; }
+    .trade-card .ticker-sym{ font-size:13px !important; }
+    .trade-card .ticker-sym span{ font-size:11px !important; }
+    .trade-card .side-pill{ padding:2px 7px; font-size:11px; }
   }
   @media (max-width: 370px){
     .brand-mark{ width:32px; height:32px; }
@@ -1069,6 +1087,7 @@
       <div class="tools-group" id="groupTools">
         <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
         <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
+          <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options'); closeToolsMenu();">Option trades</button>
           <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
           <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
         </div>
@@ -1077,6 +1096,19 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         My Tickers
       </button>
+    </div>
+
+    <!-- Options-only as of 2026-09-29: the Stocks & ETFs tab and the
+         Cash / Options % / Equities % split are gone. One capital figure is
+         allocated entirely to the option trades you pick. -->
+    <div class="portfolio-bar" id="allocationBar">
+      <div class="portfolio-bar-inner">
+        <label for="portfolioCapital">Options capital</label>
+        <div class="capital-field">
+          <span class="capital-sym" id="cashLabelSym">$</span>
+          <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="100000" value="100000" aria-label="Options capital in dollars">
+        </div>
+      </div>
     </div>
 
     <div class="header-top-right">
@@ -1099,31 +1131,6 @@
      so they sit above the capital card, out of the flow. While a tool is
      open the allocation card is hidden and the tool's one-line note shows
      under the toggle instead. -->
-<div class="portfolio-bar" id="allocationBar">
-  <div class="portfolio-bar-inner">
-    <label>
-      Cash <span id="cashLabelSym">$</span>
-      <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="50000" value="100000">
-    </label>
-    <label>
-      Options %
-      <input type="text" id="portfolioSplit" inputmode="numeric" value="100">
-    </label>
-    <label>
-      Equities %
-      <input type="text" id="portfolioEquitySplit" inputmode="numeric" value="0">
-    </label>
-  </div>
-</div>
-
-<nav class="mode-nav" aria-label="Sections">
-  <div class="mode-group is-active" id="groupIdeas" role="group" aria-label="Trade ideas">
-    <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
-      <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
-      <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-    </div>
-  </div>
-</nav>
 <div class="tools-note" id="toolsNote" style="display:none;" aria-live="polite"></div>
 </div>
 
@@ -1242,7 +1249,7 @@
       <div class="results-count-row" id="resultsCountRow" style="display:none;">
         <div class="results-count" style="display:none;"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
       </div>
-      <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
+      <div class="sort-wrap">
         <select id="sortSelect">
           <option value="score">Composite rating</option>
           <option value="ap">Annualized profit</option>
@@ -1254,7 +1261,7 @@
              sort/display control on this same bar — still updates on every
              keystroke (see liveApplyMinProfit), still the same
              #minTradeProfitInput id everything else already refers to. -->
-        <span style="margin-left:4px;">Min trade profit %</span>
+        <span class="min-profit-label">Min trade profit %</span>
         <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20" style="width:60px; background:var(--surface); border:1px solid var(--border-strong); color:var(--text); font-family:var(--mono); font-size:13px; font-weight:700; padding:6px 7px; border-radius:7px; text-align:center;">
       </div>
     </div>
@@ -1283,80 +1290,10 @@
   <div class="card-list" id="cardList"></div>
 </div>
 
-<div class="layout" id="stocksView" style="display:none;">
-
-  <div class="results-panel">
-    <div class="results-bar">
-      <div class="results-count"><strong id="equityCount">…</strong> tickers screened</div>
-      <div class="sort-wrap">
-        Sort by
-        <select id="equitySortSelect">
-          <option value="score">Composite score</option>
-          <option value="chg1y">1-year change</option>
-        </select>
-      </div>
-    </div>
-    <div class="sort-wrap" style="margin-top:12px;">
-      Show
-      <select id="equityTypeSelect" style="flex:1;">
-        <option value="all">All</option>
-        <option value="stocks">Stocks only</option>
-        <option value="etfs">ETFs only</option>
-      </select>
-    </div>
-    <!-- Trend filter — same "check any, neither checked = no filter" pattern
-         as the Options tab's Outlook & Strategy checkboxes. Matches on
-         e.trend via .includes() so "Uptrend" also catches "Strong Uptrend" and
-         "Downtrend" also catches "Strong Downtrend" — Neutral only shows up
-         when neither box is checked. -->
-    <div class="sort-wrap" style="margin-top:12px; gap:16px;">
-      Trend
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendUpFilter"><span class="strat-dot bull"></span>Uptrend</label>
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="trendDownFilter"><span class="strat-dot bear"></span>Downtrend</label>
-    </div>
-    <!-- Valuation filter — same "check any, neither checked = no filter"
-         pattern as Trend above. A ticker with no valuationLabel (too few
-         same-sector peers in this run — see MIN_SECTOR_PEERS_FOR_VALUATION)
-         never passes either box, same as any other optional field. -->
-    <div class="sort-wrap" style="margin-top:12px; gap:16px;">
-      Valuation
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="valCheapFilter"><span class="strat-dot bull"></span>Cheap</label>
-      <label class="check-row" style="padding:2px 4px 2px 0;"><input type="checkbox" id="valRichFilter"><span class="strat-dot bear"></span>Rich</label>
-    </div>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Symbol</th>
-          <th>Price</th>
-          <th>Trend</th>
-          <th>RSI</th>
-          <th>Composite</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="equityTableBody"></tbody>
-    </table>
-  </div>
-
-  <div class="card-list" id="equityCardList"></div>
-
-  <footer>
-    Screens the same free EOD data and ticker list as the Options tab, evaluated as plain stock/ETF buy candidates instead of options strategies. "Trend" is a moving-average-alignment heuristic (8/20/50-day EMA), not a prediction. RSI is a standard 14-day momentum indicator. P/E, dividend yield, and market cap come from Yahoo's fundamentals data, which is frequently incomplete — especially for ETFs, where expense ratio, holdings, and AUM aren't reliably available for free at all. For research purposes only — not a recommendation to buy or sell any security.
-  </footer>
-
-  <div class="apply-bar">
-    <button class="apply-btn" id="portfolioSummaryBtnStocks">Review Picks <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
-  </div>
-</div>
-
 <div class="layout" id="lookupView" style="display:none;">
   <div class="lookup-tab-panel">
     <div class="lookup-tab-label">Look up any ticker, live</div>
-    <div class="lookup-tab-sub">Runs the same screen as the watchlist tabs, on demand, for one symbol at a time — not limited to the tracked list. Takes up to a minute.</div>
+    <div class="lookup-tab-sub">Runs the same options screen on demand for one symbol — not limited to your tracked list. Takes up to a minute.</div>
     <form class="lookup-tab-form" id="lookupForm">
       <input type="search" class="lookup-tab-input" id="lookupInput" placeholder="Ticker symbol" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" aria-label="Look up any ticker live">
       <button type="submit" class="lookup-tab-submit" id="lookupSubmitBtn">
@@ -1765,11 +1702,7 @@
     if(e.target.matches('input[type="checkbox"]') || e.target.id === 'minTradeProfitInput') updateSectionBadges();
   });
 
-  // --- Stocks & ETFs mode ---
-  let currentEquityList = [];
-  const equityTbody = document.getElementById('equityTableBody');
-  const equityCardList = document.getElementById('equityCardList');
-
+  // --- Equity snapshot (used only by Ticker Lookup when a symbol has no option setup) ---
   function currentEquitiesSource(){
     return equities;
   }
@@ -1777,12 +1710,12 @@
   // Three tabs as of 2026-09-19 (Options / Stocks & ETFs / Ticker Lookup) —
   // table-driven rather than a boolean so adding the third didn't mean
   // rewriting every line here a second time.
-  const MODE_VIEWS = { options: 'optionsView', stocks: 'stocksView', lookup: 'lookupView', backtest: 'backtestView' };
-  const MODE_TABS = { options: 'tabOptions', stocks: 'tabStocks', lookup: 'tabLookup', backtest: 'tabBacktest' };
+  const MODE_VIEWS = { options: 'optionsView', lookup: 'lookupView', backtest: 'backtestView' };
+  const MODE_TABS = { options: 'tabOptions', lookup: 'tabLookup', backtest: 'tabBacktest' };
 
   const TOOL_NOTES = {
-    lookup:   '<strong>Ticker Lookup</strong> works on any symbol and doesn\'t use your allocation.',
-    backtest: '<strong>Backtest</strong> follows the P&amp;L of trades you\'ve tracked as their expiry gets closer. It doesn\'t use your allocation.'
+    lookup:   '<strong>Ticker Lookup</strong> works on any symbol and doesn\'t use your options capital.',
+    backtest: '<strong>Backtest</strong> follows the P&amp;L of trades you\'ve tracked as their expiry gets closer.'
   };
 
   // Tools popover (Ticker Lookup / Backtest) open/close.
@@ -1812,19 +1745,15 @@
     // Allocation only sizes Options / Stocks & ETFs picks. On the Tool tabs
     // it's swapped for a one-line note saying what that tool is for.
     const isTool = mode === 'lookup' || mode === 'backtest';
-    document.getElementById('groupIdeas').classList.toggle('is-active', !isTool);
     document.getElementById('groupTools').classList.toggle('is-active', isTool);
     document.getElementById('allocationBar').style.display = isTool ? 'none' : '';
     const toolsNote = document.getElementById('toolsNote');
     toolsNote.style.display = isTool ? '' : 'none';
-    if(isTool) toolsNote.innerHTML = `<div>${TOOL_NOTES[mode]}</div>`;
-
-    if(mode === 'stocks'){
-      // always re-render (not just the first time) — cheap for ~20 rows, and
-      // guarantees correctness if the user switches tabs before loadTrades()
-      // has actually finished fetching data.json
-      renderEquities(sortEquities(filteredEquities()));
+    if(isTool){
+      toolsNote.innerHTML = `<div>${TOOL_NOTES[mode]}<button type="button" class="tools-back" id="toolsBackBtn">Back to trades</button></div>`;
+      document.getElementById('toolsBackBtn').addEventListener('click', ()=> switchMode('options'));
     }
+
     if(mode === 'backtest'){
       renderBacktestView();
     }
@@ -1835,148 +1764,9 @@
     // one extra tap, but a reliably-working sticky header matters more.
   }
 
-  function filterEquitiesByType(list){
-    const type = document.getElementById('equityTypeSelect').value;
-    if(type === 'stocks') return list.filter(e => !e.isETF);
-    if(type === 'etfs') return list.filter(e => e.isETF);
-    return list;
-  }
-
-  // e.trend is one of "Strong Uptrend"/"Uptrend"/"Neutral"/"Downtrend"/
-  // "Strong Downtrend" (see fetch_data.py's classify_trend()) — .includes()
-  // buckets the "Strong ..." variants in with their plain counterpart, same
-  // as trendPill() already does for the pill's bull/bear coloring below.
-  function filterEquitiesByTrend(list){
-    const wantUp = document.getElementById('trendUpFilter').checked;
-    const wantDown = document.getElementById('trendDownFilter').checked;
-    if(!wantUp && !wantDown) return list; // neither checked = no trend filter
-    return list.filter(e => {
-      const trend = e.trend || '';
-      return (wantUp && trend.includes('Uptrend')) || (wantDown && trend.includes('Downtrend'));
-    });
-  }
-
-  // Same pattern as filterEquitiesByTrend above — a ticker with no
-  // valuationLabel at all (too few same-sector peers in this run) never
-  // passes either box, same as any other optional field elsewhere.
-  function filterEquitiesByValuation(list){
-    const wantCheap = document.getElementById('valCheapFilter').checked;
-    const wantRich = document.getElementById('valRichFilter').checked;
-    if(!wantCheap && !wantRich) return list;
-    return list.filter(e => (wantCheap && e.valuationLabel === 'Cheap') || (wantRich && e.valuationLabel === 'Rich'));
-  }
-
-  // Single spot for the type + trend + valuation filter chain, so every call
-  // site below stays in sync automatically instead of each one needing its
-  // own update whenever a new equity filter gets added.
-  function filteredEquities(){
-    return filterEquitiesByValuation(filterEquitiesByTrend(filterEquitiesByType(currentEquitiesSource())));
-  }
-
-  function sortEquities(list){
-    const sortBy = document.getElementById('equitySortSelect').value;
-    const sorted = [...list];
-    switch(sortBy){
-      case 'chg1y':
-        sorted.sort((a,b)=> (b.chg1y ?? -Infinity) - (a.chg1y ?? -Infinity));
-        break;
-      case 'score':
-      default:
-        sorted.sort((a,b)=> b.score - a.score);
-    }
-    return sorted;
-  }
-
+  // Shared formatters (used by option trades, the equity snapshot and the summary).
   function fmtPct(v){ return v == null ? '—' : `${v >= 0 ? '+' : ''}${v}%`; }
   function pctClass(v){ return v == null ? '' : (v >= 0 ? 'val-pos' : 'val-neg'); }
-
-  function trendPill(trend){
-    const bullish = trend.includes('Uptrend');
-    const bearish = trend.includes('Downtrend');
-    const cls = bullish ? 'bull' : bearish ? 'bear' : '';
-    const style = cls ? '' : 'style="background:var(--surface-2); color:var(--text-dim); border-color:var(--border);"';
-    return `<span class="side-pill ${cls}" ${style}><span class="dot"></span>${trend}</span>`;
-  }
-
-  function renderEquities(list){
-    currentEquityList = list;
-    equityTbody.innerHTML = '';
-    equityCardList.innerHTML = '';
-    document.getElementById('equityCount').textContent = list.length;
-
-    if(list.length === 0){
-      const typeVal = document.getElementById('equityTypeSelect').value;
-      const diag = `(diagnostic: equities array has ${equities.length} total item(s) loaded · type filter = "${typeVal}" · after filtering = ${list.length})`;
-      equityTbody.innerHTML = `<tr><td colspan="7" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:500; color:var(--text-faint);">${diag}</span></td></tr>`;
-      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:500; color:var(--text-faint);">${diag}</span></div>`;
-      return;
-    }
-
-    list.forEach((e, idx)=>{
-      const eid = equityId(e);
-      const isChecked = selectedEquityIds.has(eid);
-
-      equityTbody.innerHTML += `
-        <tr class="row-action" data-eidx="${idx}" style="cursor:pointer;">
-          <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label></td>
-          <td><span class="ticker-sym">${e.sym}</span>${e.isETF ? ' <span style="color:var(--text-faint); font-size:11px;">ETF</span>' : ''}${valuationBadge(e)}</td>
-          <td class="num">${fmtPrice(e.price)}${staleMark(e.priceStale)}</td>
-          <td>${trendPill(e.trend)}</td>
-          <td class="num">${e.rsi ?? '—'}</td>
-          <td>${meterHtml(e.score)}</td>
-          <td style="color:var(--text-faint); font-size:12px;">View ›</td>
-        </tr>`;
-
-      equityCardList.innerHTML += `
-        <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
-          <div class="trade-card-top" style="margin-bottom:6px;">
-            <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:500; font-size:12px;">ETF</span>' : ''}${valuationBadge(e)}</div>
-            ${trendPill(e.trend)}
-          </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:700;">${fmtPrice(e.price)}${staleMark(e.priceStale)} · RSI ${e.rsi ?? '—'}</span>
-            ${meterHtml(e.score)}
-          </div>
-        </div>`;
-    });
-  }
-
-  document.getElementById('equitySortSelect').addEventListener('change', ()=>{
-    renderEquities(sortEquities(currentEquityList));
-  });
-  document.getElementById('equityTypeSelect').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filteredEquities()));
-  });
-  document.getElementById('trendUpFilter').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filteredEquities()));
-  });
-  document.getElementById('trendDownFilter').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filteredEquities()));
-  });
-  document.getElementById('valCheapFilter').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filteredEquities()));
-  });
-  document.getElementById('valRichFilter').addEventListener('change', ()=>{
-    renderEquities(sortEquities(filteredEquities()));
-  });
-
-  document.addEventListener('click', (e)=>{
-    const target = e.target.closest('#equityTableBody .row-action, #equityCardList .trade-card');
-    if(!target) return;
-    const idx = parseInt(target.dataset.eidx, 10);
-    const equity = currentEquityList[idx];
-    if(equity) openEquityModal(equity);
-  });
-  document.addEventListener('keydown', (e)=>{
-    if(e.key !== 'Enter' && e.key !== ' ') return;
-    const card = e.target.closest('#equityCardList .trade-card');
-    if(!card) return;
-    e.preventDefault();
-    const idx = parseInt(card.dataset.eidx, 10);
-    const equity = currentEquityList[idx];
-    if(equity) openEquityModal(equity);
-  });
 
   function openEquityModal(e){
     const sentimentLabel = e.newsSentimentLabel || 'Neutral';
@@ -2043,28 +1833,15 @@
 
   // Plain-text rendering of the Portfolio Summary modal — the "Download
   // Summary" button's payload. Takes the exact numbers openPortfolioSummary()
-  // already computed (equityRowsData/optionRowsData carry the same
-  // per-position shares/contracts/used figures the rendered rows show) so
+  // already computed (optionRowsData carries the same
+  // per-position contracts/used figures the rendered rows show) so
   // the file always matches what's on screen.
-  function buildPortfolioSummaryText({ capital, optionsPct, equityPct, cashLeftPct, isOverAllocated, equityCapital, optionsCapital, cashLeftCapital, equityRowsData, optionRowsData, totalUsed, unallocated, hedge }){
+  function buildPortfolioSummaryText({ capital, optionRowsData, totalUsed, unallocated, hedge }){
     const lines = [];
     lines.push('VantEdgeAI — Portfolio Summary');
     lines.push(`Generated ${new Date().toLocaleString()}`);
     lines.push('');
-    lines.push(`Total Capital: ${curSym()}${capital.toLocaleString()}`);
-    lines.push(`Split: ${equityPct}% Equity / ${optionsPct}% Options / ${cashLeftPct}% Cash${isOverAllocated ? '  [Options % + Equity % exceed 100% — Cash Left shown as 0 until the split is brought back to 100% or under]' : ''}`);
-    lines.push(`Equities Allocation: ${curSym()}${Math.round(equityCapital).toLocaleString()}`);
-    lines.push(`Options Allocation: ${curSym()}${Math.round(optionsCapital).toLocaleString()}`);
-    lines.push(`Cash Left (Not Invested): ${curSym()}${Math.round(cashLeftCapital).toLocaleString()}`);
-
-    if(equityRowsData.length){
-      lines.push('');
-      lines.push(`Equities (${equityRowsData.length} selected, split equally):`);
-      equityRowsData.forEach(({e, shares, used})=>{
-        const warn = shares === 0 ? ' — budget too small for 1 share' : '';
-        lines.push(`  ${e.sym}: price ${fmtPrice(e.price)}, shares ${shares}, ${curSym()}${used.toFixed(2)}${warn}`);
-      });
-    }
+    lines.push(`Options Capital: ${curSym()}${capital.toLocaleString()}`);
 
     if(optionRowsData.length){
       lines.push('');
@@ -2077,7 +1854,7 @@
 
     lines.push('');
     lines.push(`Total Deployed: ${curSym()}${Math.round(totalUsed).toLocaleString()}`);
-    lines.push(`Rounding Leftover: ${curSym()}${Math.round(unallocated).toLocaleString()}`);
+    lines.push(`Left Over: ${curSym()}${Math.round(unallocated).toLocaleString()}`);
 
     if(hedge){
       lines.push('');
@@ -2085,28 +1862,17 @@
     }
 
     lines.push('');
-    lines.push('Sizing calculator only — not a live order, not investment advice, and does not check your actual account buying power. Capital is split equally across whatever was checked, not weighted by score, conviction, or risk. Verify live pricing before placing any order.');
+    lines.push('Sizing calculator only — not a live order, not investment advice, and does not check your actual account buying power. Options capital is split equally across the checked trades, not weighted by score, conviction, or risk. Verify live pricing before placing any order.');
     return lines.join('\n');
   }
 
   function openPortfolioSummary(){
     const capitalRaw = document.getElementById('portfolioCapital').value.trim();
     const capital = parseFloat(capitalRaw);
-    let optionsPct = parseFloat(document.getElementById('portfolioSplit').value);
-    if(isNaN(optionsPct)) optionsPct = 0;
-    optionsPct = Math.min(100, Math.max(0, optionsPct));
-    let equityPct = parseFloat(document.getElementById('portfolioEquitySplit').value);
-    if(isNaN(equityPct)) equityPct = 0;
-    equityPct = Math.min(100, Math.max(0, equityPct));
-    // Whatever's left over after both explicit allocations — never negative
-    // here (over-allocation is shown as a warning below, not silently
-    // absorbed by clamping the capital math).
-    const cashLeftPct = Math.max(0, 100 - optionsPct - equityPct);
-    const isOverAllocated = (optionsPct + equityPct) > 100;
-
+    // Options-only (2026-09-29): all of the capital goes to the option trades
+    // you've checked, split equally.
     const selectedTrades = trades.filter(t => selectedOptionIds.has(optionId(t)));
-    const selectedEquities = currentEquitiesSource().filter(e => selectedEquityIds.has(equityId(e)));
-    const totalSelected = selectedTrades.length + selectedEquities.length;
+    const totalSelected = selectedTrades.length;
 
     if(!capitalRaw || isNaN(capital) || capital <= 0){
       const clearBtn = totalSelected > 0
@@ -2125,7 +1891,7 @@
           <div class="modal-title">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
-        <div class="modal-note" style="margin-top:12px;">Enter a capital amount in the bar at the top of the page to see position sizing.</div>
+        <div class="modal-note" style="margin-top:12px;">Enter your options capital in the bar at the top of the page to see position sizing.</div>
         ${trackBtn}
         ${clearBtn}
         ${exportImportBtns}`;
@@ -2155,7 +1921,7 @@
           <div class="modal-title">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
-        <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">Check at least one trade or ticker (in either tab) to build a position-sizing summary.</div>
+        <div class="modal-note" style="margin-top:12px; margin-bottom:10px;">Check at least one trade to build a position-sizing summary.</div>
         <button class="modal-copy-btn" id="importSelectionBtn" style="background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Import Selection</button>`;
       modalScrim.classList.add('show');
       document.getElementById('modalCloseBtn').addEventListener('click', closeTradeModal);
@@ -2163,41 +1929,12 @@
       return;
     }
 
-    const equityCapital = capital * equityPct / 100;
-    const optionsCapital = capital * optionsPct / 100;
-    // cash-left = cash - (options $ + equity $) — never negative here even
-    // if the two % inputs together exceed 100; that case is flagged via
-    // isOverAllocated instead of letting this go negative and confusing the
-    // deployed-capital math below.
-    const cashLeftCapital = isOverAllocated ? 0 : capital * cashLeftPct / 100;
-    const perEquityBudget = selectedEquities.length ? equityCapital / selectedEquities.length : 0;
+    const optionsCapital = capital;
     const perOptionBudget = selectedTrades.length ? optionsCapital / selectedTrades.length : 0;
+    let totalOptionsUsed = 0;
 
-    let totalEquityUsed = 0, totalOptionsUsed = 0;
-
-    // Computed once as plain data (not just HTML strings) so the same
-    // per-position numbers back both the rendered rows below and the
-    // plain-text "Download Summary" export — one source of truth instead
-    // of two copies of the sizing math that could drift apart.
-    const equityRowsData = selectedEquities.map(e=>{
-      const shares = Math.floor(perEquityBudget / e.price);
-      const used = shares * e.price;
-      totalEquityUsed += used;
-      return { e, shares, used };
-    });
-    const equityRows = equityRowsData.map(({e, shares, used})=>{
-      const warn = shares === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 share</div>` : '';
-      return `<div class="portfolio-line-item">
-        <div class="portfolio-line-title">${e.sym}</div>
-        <div class="portfolio-line-stats">
-          <span>Price <b>${fmtPrice(e.price)}</b></span>
-          <span>Shares <b>${shares}</b></span>
-          <span class="val-pos">${curSym()}${used.toFixed(2)}</span>
-        </div>
-        ${warn}
-      </div>`;
-    }).join('');
-
+    // Computed once as plain data so the same per-position numbers back both
+    // the rendered rows and the plain-text "Download Summary" export.
     const optionRowsData = selectedTrades.map(t=>{
       const contracts = t.maxLoss > 0 ? Math.floor(perOptionBudget / t.maxLoss) : 0;
       const used = contracts * t.maxLoss;
@@ -2217,7 +1954,7 @@
       </div>`;
     }).join('');
 
-    const totalUsed = totalEquityUsed + totalOptionsUsed;
+    const totalUsed = totalOptionsUsed;
     const unallocated = capital - totalUsed;
 
     // A single suggested tail-risk hedge (see build_hedge_candidate() in
@@ -2241,9 +1978,7 @@
     })() : '';
 
     const summaryText = buildPortfolioSummaryText({
-      capital, optionsPct, equityPct, cashLeftPct, isOverAllocated,
-      equityCapital, optionsCapital, cashLeftCapital,
-      equityRowsData, optionRowsData, totalUsed, unallocated, hedge,
+      capital, optionRowsData, totalUsed, unallocated, hedge,
     });
 
     tradeModal.innerHTML = `
@@ -2257,17 +1992,9 @@
         <button class="modal-copy-btn" id="importSelectionBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Import Selection</button>
       </div>
       <div class="modal-metrics">
-        <div><div class="mm-label">Total Capital</div><div class="mm-val">${curSym()}${capital.toLocaleString()}</div></div>
-        <div><div class="mm-label">Split</div><div class="mm-val" style="${isOverAllocated ? 'color:var(--red);' : ''}">${equityPct}% Equity / ${optionsPct}% Options / ${cashLeftPct}% Cash</div></div>
-        <div><div class="mm-label">Equities Allocation</div><div class="mm-val">${curSym()}${equityCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
-        <div><div class="mm-label">Options Allocation</div><div class="mm-val">${curSym()}${optionsCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
-        <div><div class="mm-label">Cash Left (Not Invested)</div><div class="mm-val">${curSym()}${cashLeftCapital.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Options Capital</div><div class="mm-val">${curSym()}${capital.toLocaleString()}</div></div>
+        <div><div class="mm-label">Per Trade</div><div class="mm-val">${curSym()}${perOptionBudget.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
       </div>
-      ${isOverAllocated ? `<div class="portfolio-line-warn" style="margin:-8px 0 12px;">Options % + Equity % add up to more than 100% — Cash Left is showing as ${curSym()}0 until you bring the split back to 100% or under.</div>` : ''}
-
-      ${selectedEquities.length ? `
-      <div class="news-section-header"><span class="mm-label" style="margin:0;">Equities (${selectedEquities.length} selected, split equally)</span></div>
-      <div class="portfolio-line-list">${equityRows}</div>` : ''}
 
       ${selectedTrades.length ? `
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Options (${selectedTrades.length} selected, split equally)</span></div>
@@ -2276,12 +2003,12 @@
 
       <div class="modal-metrics">
         <div><div class="mm-label">Total Deployed</div><div class="mm-val val-pos">${curSym()}${totalUsed.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
-        <div><div class="mm-label">Rounding Leftover</div><div class="mm-val">${curSym()}${unallocated.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
+        <div><div class="mm-label">Left Over</div><div class="mm-val">${curSym()}${unallocated.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
       </div>
 
       ${hedgeSection}
 
-      <div class="modal-note">Position sizing splits each category's capital EQUALLY across whatever you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" for options uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Share/contract counts round down, so "Rounding Leftover" reflects both rounding leftovers within the Equities/Options buckets and any category with nothing checked in it — it's separate from "Cash Left (Not Invested)" above, which is cash the split itself never allocated to either bucket. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
+      <div class="modal-note">Position sizing splits your options capital EQUALLY across the trades you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Contract counts round down, so "Left Over" is what rounding leaves undeployed. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
       <button class="modal-copy-btn" id="downloadSummaryBtn">Download Summary</button>
     `;
     modalScrim.classList.add('show');
@@ -2330,10 +2057,8 @@
       v: 1,
       exportedAt: new Date().toISOString(),
       capital: document.getElementById('portfolioCapital').value,
-      optionsPct: document.getElementById('portfolioSplit').value,
-      equityPct: document.getElementById('portfolioEquitySplit').value,
       options: trades.filter(t => selectedOptionIds.has(optionId(t))).map(strip),
-      equities: currentEquitiesSource().filter(e => selectedEquityIds.has(equityId(e))).map(strip),
+      equities: [],
     };
   }
   // Classic UTF-8-safe base64 idiom — plain btoa() chokes on non-Latin1
@@ -2349,7 +2074,7 @@
   function showExportDialog(){
     const payload = buildExportPayload();
     const code = encodePayload(payload);
-    const n = payload.options.length + payload.equities.length;
+    const n = payload.options.length;
     tradeModal.innerHTML = `
       <div class="modal-top">
         <div class="modal-title">Export Selection</div>
@@ -2397,15 +2122,8 @@
       if(!trades.some(x => optionId(x) === id)) trades.push(t);
       if(selectedOptionIds.has(id)) skipped++; else { selectedOptionIds.add(id); added++; }
     });
-    (Array.isArray(payload.equities) ? payload.equities : []).forEach(e => {
-      if(!e || !e.sym) return;
-      const id = equityId(e);
-      if(!equities.some(x => equityId(x) === id)) equities.push(e);
-      if(selectedEquityIds.has(id)) skipped++; else { selectedEquityIds.add(id); added++; }
-    });
+    // Stock/ETF picks in older exports are ignored — this tool is options-only now.
     if(payload.capital)          document.getElementById('portfolioCapital').value = payload.capital;
-    if(payload.optionsPct != null) document.getElementById('portfolioSplit').value = payload.optionsPct;
-    if(payload.equityPct != null)  document.getElementById('portfolioEquitySplit').value = payload.equityPct;
     updatePortfolioCount();
     return { added, skipped };
   }
@@ -2471,7 +2189,6 @@
   }
 
   document.getElementById('portfolioSummaryBtn').addEventListener('click', openPortfolioSummary);
-  document.getElementById('portfolioSummaryBtnStocks').addEventListener('click', openPortfolioSummary);
 
   function sortTrades(list){
     const sortBy = document.getElementById('sortSelect').value;
@@ -3313,11 +3030,10 @@
     location.reload();
   });
 
-  // --- Portfolio builder: checkbox selection + capital/split inputs ---
+  // --- Portfolio builder: checkbox selection + options capital ---
   function updatePortfolioCount(){
-    const n = selectedOptionIds.size + selectedEquityIds.size;
+    const n = selectedOptionIds.size;
     document.getElementById('portfolioSelectedCount').textContent = n;
-    document.getElementById('portfolioSelectedCountStocks').textContent = n;
 
     // Track-selected only covers option trades (Backtest needs the per-leg
     // pricing data options carry) — equity-only selections don't show it.
@@ -3338,48 +3054,19 @@
       // keep the table-row and mobile-card checkboxes for the same trade in sync —
       // both exist in the DOM at once (CSS just hides one based on screen width)
       document.querySelectorAll(`[data-oid="${CSS.escape(id)}"]`).forEach(other => { other.checked = cb.checked; });
-    } else if(cb.dataset.eid){
-      const id = cb.dataset.eid;
-      if(cb.checked) selectedEquityIds.add(id); else selectedEquityIds.delete(id);
-      document.querySelectorAll(`[data-eid="${CSS.escape(id)}"]`).forEach(other => { other.checked = cb.checked; });
     }
     updatePortfolioCount();
   });
 
-  // Options % and Equity % are independent inputs (not derived from one
-  // another), so whatever's left over — cash not claimed by either — is
-  // still computed here any time either field changes, even though it's
-  // no longer shown in the header row itself (it remains visible in the
-  // Portfolio Summary modal via buildPortfolioSummaryText()'s own
-  // cashLeftPct/isOverAllocated calc). Left un-clamped on purpose (not
-  // forced to sum to 100) so typing isn't fought mid-edit.
-  function updateCashLeftDisplay(){
-    let opt = parseFloat(document.getElementById('portfolioSplit').value);
-    if(isNaN(opt)) opt = 0;
-    opt = Math.min(100, Math.max(0, opt));
-    let eq = parseFloat(document.getElementById('portfolioEquitySplit').value);
-    if(isNaN(eq)) eq = 0;
-    eq = Math.min(100, Math.max(0, eq));
-    const cashLeft = 100 - opt - eq;
-    return cashLeft;
-  }
-  document.getElementById('portfolioSplit').addEventListener('input', updateCashLeftDisplay);
-  document.getElementById('portfolioEquitySplit').addEventListener('input', updateCashLeftDisplay);
-  updateCashLeftDisplay();
 
   // Called after the refresh button's live re-fetch lands: re-read data.json
-  // and re-render whichever of the two watchlist tabs is active. The Ticker
-  // Lookup tab has nothing of its own to re-render here — its result is a
-  // one-off, not part of data.json.
+  // and re-render the option trade list (rendered even while a Tool is open,
+  // so it's current when you come back).
   async function reloadAndRerenderData(){
     await loadTrades(); // re-fetches data.json fresh (cache:'no-store') and updates the status badge
-    if(document.getElementById('tabOptions').classList.contains('active')){
-      render(sortTrades(computeFiltered()));
-      renderFunnel();
-      updateActiveCount();
-    } else if(document.getElementById('tabStocks').classList.contains('active')){
-      renderEquities(sortEquities(filteredEquities()));
-    }
+    render(sortTrades(computeFiltered()));
+    renderFunnel();
+    updateActiveCount();
   }
 
   // Refresh button (top-right icon). Does a full LIVE re-fetch of the whole
@@ -3694,12 +3381,6 @@
     render(sortTrades(computeFiltered()));
     renderFunnel();
     updateActiveCount();
-    // covers the (unlikely but possible) case where the user is already on
-    // the Stocks or Ticker Lookup tab by the time this resolves — harmless
-    // to pre-render the (hidden) equities view either way
-    if(!document.getElementById('tabOptions').classList.contains('active')){
-      renderEquities(sortEquities(filteredEquities()));
-    }
   });
 
   updateTrackedBadge();

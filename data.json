@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T13:08:26.535695+00:00",
+  "generated_at": "2026-09-29T13:17:01.152310+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -139,7 +139,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -29.0,
+      "peVsSectorPct": -29.7,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -933,7 +933,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 293.3,
+      "peVsSectorPct": 296.5,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -1598,7 +1598,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 115.1,
+      "peVsSectorPct": 107.2,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2051,7 +2051,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 1545.8,
+      "peVsSectorPct": 1593.1,
       "sectorMedianPE": 20.3,
       "sectorPeerCount": 3,
       "sector": "Consumer Cyclical"
@@ -2313,7 +2313,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 11.4,
+      "peVsSectorPct": 10.1,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -2775,8 +2775,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 118.9,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": 118.2,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -2906,8 +2906,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 261.4,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": 260.1,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -3084,7 +3084,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 28.2,
+      "peVsSectorPct": 27.0,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28,
       "sector": "Technology"
@@ -3421,8 +3421,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -10.2,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": -10.5,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -3486,8 +3486,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -1.1,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": -0.7,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -3665,7 +3665,7 @@
       "chg6m": 43.3,
       "chg1y": -0.2,
       "volRatio": 0.89,
-      "peRatio": 28.7,
+      "peRatio": 28.4,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
       "pegRatio": 1.68,
@@ -3676,7 +3676,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -29.0,
+      "peVsSectorPct": -29.7,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28
     },
@@ -3800,8 +3800,8 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 1.1,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": 0.7,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6
     },
     {
@@ -4091,7 +4091,7 @@
       "chg6m": 31.0,
       "chg1y": 4.8,
       "volRatio": 0.63,
-      "peRatio": 158.9,
+      "peRatio": 160.2,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
       "pegRatio": 1.83,
@@ -4102,7 +4102,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 293.3,
+      "peVsSectorPct": 296.5,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28
     },
@@ -4220,7 +4220,7 @@
       "industry": "Electronic Components",
       "pegRatio": 0.94,
       "dividendYield": 0.74,
-      "marketCap": 130577858560,
+      "marketCap": 130312495104,
       "score": 6.4,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -4389,7 +4389,7 @@
       "chg6m": 165.7,
       "chg1y": 206.4,
       "volRatio": 0.76,
-      "peRatio": 86.9,
+      "peRatio": 83.7,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 1.39,
@@ -4400,7 +4400,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 115.1,
+      "peVsSectorPct": 107.2,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28
     },
@@ -4590,7 +4590,7 @@
       "chg6m": 200.9,
       "chg1y": 276.7,
       "volRatio": 1.08,
-      "peRatio": 156.3,
+      "peRatio": 161.2,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 0.64,
@@ -4601,7 +4601,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 286.9,
+      "peVsSectorPct": 299.0,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28
     },
@@ -4621,7 +4621,7 @@
       "chg6m": -1.2,
       "chg1y": -19.3,
       "volRatio": 1.03,
-      "peRatio": 334.1,
+      "peRatio": 343.7,
       "sector": "Consumer Cyclical",
       "industry": "Auto Manufacturers",
       "pegRatio": 4.45,
@@ -4632,7 +4632,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 1545.8,
+      "peVsSectorPct": 1593.1,
       "sectorMedianPE": 20.3,
       "sectorPeerCount": 3
     },
@@ -4657,7 +4657,7 @@
       "industry": "Aerospace & Defense",
       "pegRatio": null,
       "dividendYield": null,
-      "marketCap": 1917553606656,
+      "marketCap": 1916449062912,
       "score": 7.4,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -4737,7 +4737,7 @@
       "chg6m": 16.7,
       "chg1y": 7.4,
       "volRatio": 0.84,
-      "peRatio": 45.0,
+      "peRatio": 44.5,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 0.35,
@@ -4748,7 +4748,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 11.4,
+      "peVsSectorPct": 10.1,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28
     },
@@ -4897,7 +4897,7 @@
       "industry": "Drug Manufacturers - General",
       "pegRatio": 1.17,
       "dividendYield": 0.58,
-      "marketCap": 1056517390336,
+      "marketCap": 1056062046208,
       "score": 8.5,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -4965,8 +4965,8 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 118.9,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": 118.2,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6
     },
     {
@@ -4985,12 +4985,12 @@
       "chg6m": -11.1,
       "chg1y": 6.4,
       "volRatio": 0.64,
-      "peRatio": 39.4,
+      "peRatio": 39.3,
       "sector": "Consumer Defensive",
       "industry": "Discount Stores",
       "pegRatio": 4.15,
       "dividendYield": 0.91,
-      "marketCap": 865281966080,
+      "marketCap": 862636277760,
       "score": 5.8,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -5023,8 +5023,8 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 261.4,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": 260.1,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6
     },
     {
@@ -5139,8 +5139,8 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -10.9,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": -11.2,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6
     },
     {
@@ -5159,7 +5159,7 @@
       "chg6m": 31.4,
       "chg1y": 78.7,
       "volRatio": 0.93,
-      "peRatio": 51.8,
+      "peRatio": 51.3,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
       "pegRatio": 1.8,
@@ -5170,7 +5170,7 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 28.2,
+      "peVsSectorPct": 27.0,
       "sectorMedianPE": 40.4,
       "sectorPeerCount": 28
     },
@@ -5325,8 +5325,8 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -10.2,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": -10.5,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6
     },
     {
@@ -5345,7 +5345,7 @@
       "chg6m": 15.2,
       "chg1y": 16.2,
       "volRatio": 0.88,
-      "peRatio": 14.1,
+      "peRatio": 14.2,
       "sector": "Financial Services",
       "industry": "Capital Markets",
       "pegRatio": 1.16,
@@ -5356,8 +5356,8 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -1.1,
-      "sectorMedianPE": 14.2,
+      "peVsSectorPct": -0.7,
+      "sectorMedianPE": 14.3,
       "sectorPeerCount": 6
     },
     {
@@ -5376,7 +5376,7 @@
       "chg6m": -0.5,
       "chg1y": 37.4,
       "volRatio": 1.01,
-      "peRatio": 19.9,
+      "peRatio": 19.8,
       "sector": "Energy",
       "industry": "Oil & Gas Integrated",
       "pegRatio": 0.89,
@@ -5408,7 +5408,7 @@
       "industry": "Advertising Agencies",
       "pegRatio": 0.67,
       "dividendYield": null,
-      "marketCap": 103549992960,
+      "marketCap": 103152672768,
       "score": 2.2,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",

@@ -2206,6 +2206,55 @@ def build_equity_snapshot(ticker_symbol, is_etf):
         return None
 
 
+# --- Market snapshot (added 2026-09-29) --------------------------------------
+# Four headline gauges for the page's market-condition tiles. Real index
+# levels (not ETF proxies), each with the move vs. the previous close. On an
+# intraday run yfinance's last daily bar is today's in-progress session, so
+# the change is "today so far"; on the post-close run it's the full day.
+# "inverse" marks gauges where a rise is bad for stocks (VIX) so the frontend
+# can color them the right way round.
+MARKET_GAUGES = [
+    {"key": "nasdaq", "label": "Nasdaq",  "symbol": "^IXIC"},
+    {"key": "sp500",  "label": "S&P 500", "symbol": "^GSPC"},
+    {"key": "dow",    "label": "Dow",     "symbol": "^DJI"},
+    {"key": "vix",    "label": "VIX",     "symbol": "^VIX", "inverse": True},
+]
+
+
+def build_market_snapshot():
+    """
+    Returns {"asOf": iso, "gauges": [...]} or None. Best-effort per gauge: one
+    index failing to fetch just drops that tile; the frontend hides the whole
+    strip only when every gauge failed. Never raises.
+    """
+    gauges = []
+    for g in MARKET_GAUGES:
+        try:
+            hist = yf.Ticker(g["symbol"]).history(period="5d")
+            closes = hist["Close"].dropna() if not hist.empty else []
+            if len(closes) < 2:
+                print(f"  market: not enough history for {g['symbol']}, skipping")
+                continue
+            last = float(closes.iloc[-1])
+            prev = float(closes.iloc[-2])
+            if math.isnan(last) or math.isnan(prev) or prev <= 0:
+                continue
+            gauges.append({
+                "key": g["key"],
+                "label": g["label"],
+                "symbol": g["symbol"],
+                "value": round(last, 2),
+                "change": round(last - prev, 2),
+                "changePct": round((last - prev) / prev * 100, 2),
+                "inverse": bool(g.get("inverse", False)),
+            })
+        except Exception as e:
+            print(f"  market: {g['symbol']} failed: {e}")
+    if not gauges:
+        return None
+    return {"asOf": datetime.now(timezone.utc).isoformat(), "gauges": gauges}
+
+
 def build_hedge_candidate():
     """
     Suggests one small tail-risk hedge — a single OTM QQQ put — to sit
@@ -2542,12 +2591,18 @@ def main():
         # is absent, same as any other optional field in this file.
         print(f"  hedge candidate unavailable this run — omitting from {OUTPUT_PATH}")
 
+    print("Fetching market snapshot (Nasdaq, S&P 500, Dow, VIX)...")
+    market = build_market_snapshot()
+    if not market:
+        print("  market snapshot unavailable this run — the page hides the tiles")
+
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "yfinance (unofficial, free, EOD)",
         "trades": trades,
         "equities": equities,
         "hedge": hedge,
+        "market": market,
     }
     if UNIVERSE_META:
         output["universe"] = UNIVERSE_META

@@ -129,19 +129,12 @@
 
   /* ---------- HEADER ---------- */
   .sticky-top{
-    position:sticky; top:0; z-index:40;
+    position:relative; z-index:40;
     background:var(--bg);
     display:flex; flex-direction:column; gap:10px;
     padding-top:10px; padding-bottom:10px;
     border-bottom:1px solid transparent;
     transition:background .15s, border-color .15s, box-shadow .15s;
-  }
-  /* Once it's actually pinned (hero scrolled away), it becomes a white bar. */
-  .sticky-top.is-pinned{
-    background:var(--surface);
-    border-bottom-color:var(--border);
-    box-shadow:0 6px 18px -14px rgba(11,21,38,0.35);
-    padding-top:max(10px, env(safe-area-inset-top));
   }
   header{ display:flex; flex-direction:column; gap:10px; }
   /* Brand, Tools / My Tickers and the data status share one row on wide
@@ -942,7 +935,7 @@
        purpose so the SPY/QQQ pills, "EOD data" pill, mode tabs, cash inputs
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
-    .layout{ padding:12px 14px 155px; }
+    .layout{ padding:10px 14px 155px; }
     /* Shrinks the sort dropdown enough that it and Min Trade Profit's
        label+input fit on one line at phone width now that "Sort by" (the
        text label) is gone — the full-size 16px select alone was already
@@ -957,19 +950,20 @@
     .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; min-width:0; flex:0 1 auto; }
     .min-profit-label{ white-space:nowrap; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
-    .sticky-top{ gap:10px; padding-top:12px; padding-bottom:10px; }
+    .sticky-top{ gap:8px; padding-top:8px; padding-bottom:0; }
     header{ gap:8px; }
     .header-top{ padding:0 14px; gap:16px 8px; }
     /* Status pill shrinks (and truncates) rather than wrapping under the logo. */
     .header-top-right{ gap:6px; flex:1 1 0; min-width:0; justify-content:flex-end; }
     /* Actions drop to their own full-width row under the brand on phones. */
-    .header-top-right{ order:2; }
-    .top-actions{ order:4; flex-basis:100%; }
-    .header-top .portfolio-bar{ order:5; flex-basis:100%; }
-    .header-top .portfolio-bar-inner{ height:auto; padding:5px 5px 5px 12px; }
-    .top-actions .tools-group{ flex:1; min-width:0; }
-    .top-actions .tools-group .export-btn{ width:100%; }
-    .top-actions > .export-btn{ flex:1; min-width:0; }
+    /* One row on phones (2026-09-29c): Tools | Tickers | Capital. The two
+       buttons keep their natural width; Capital takes what's left. */
+    .header-top{ flex-wrap:nowrap; }
+    .top-actions{ order:2; flex:0 0 auto; gap:6px; }
+    .header-top .portfolio-bar{ order:3; flex:1 1 auto; min-width:0; }
+    .header-top .portfolio-bar-inner{ height:var(--control-h); padding:0 3px 0 10px; gap:8px; }
+    .top-actions .export-btn{ padding:0 12px; }
+    .capital-field{ flex:1 1 auto; min-width:0; }
     .data-status{ font-size:10.5px; height:28px; padding:0 9px; gap:5px; max-width:160px; }
     .refresh-btn{ width:28px; height:28px; }
     .refresh-btn svg{ width:15px; height:15px; }
@@ -985,7 +979,7 @@
     .portfolio-bar{ padding:0; }
     .portfolio-bar-inner{ gap:6px 8px; padding:5px 6px 5px 12px; }
     .portfolio-bar label{ gap:4px; font-size:12.5px; }
-    #portfolioCapital{ width:128px; height:32px; }
+    #portfolioCapital{ width:100%; min-width:0; height:30px; }
     .mode-nav{ padding:0 14px; gap:8px; }
     .mode-group-head{ height:30px; }
     .mode-group-title{ font-size:13.5px; }
@@ -1032,52 +1026,51 @@
        now the only thing in that row, so it's shown again. */
   }
 
-  /* ---------- HERO + MARKET CONDITION (2026-09-29) ---------- */
-  .hero-wrap{ max-width:1080px; margin:0 auto; padding:14px 18px 12px; }
+  /* ---------- PINNED HEADER + MARKET CONDITION (2026-09-29b) ---------- */
+  .app-header{
+    position:sticky; top:0; z-index:45;
+    background:var(--bg);
+    padding:max(10px, env(safe-area-inset-top)) 0 8px;
+  }
+  .app-header-inner{ max-width:1080px; margin:0 auto; padding:0 18px; box-sizing:border-box; }
   .hero{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
     position:relative; overflow:hidden; isolation:isolate;
-    border-radius:22px; padding:22px 24px 22px;
+    border-radius:16px; padding:10px 12px 10px 10px;
     background:
-      radial-gradient(120% 140% at 100% 100%, rgba(38,168,104,0.30) 0%, rgba(38,168,104,0) 55%),
-      linear-gradient(135deg, #0E1A33 0%, #111B31 55%, #0F2228 100%);
+      radial-gradient(90% 180% at 100% 100%, rgba(38,168,104,0.32) 0%, rgba(38,168,104,0) 60%),
+      linear-gradient(120deg, #0E1A33 0%, #111B31 55%, #0F2228 100%);
     border:1px solid rgba(255,255,255,0.06);
-    box-shadow:0 18px 40px -18px rgba(11,21,38,0.55);
+    box-shadow:0 10px 24px -14px rgba(11,21,38,0.6);
     color:#fff;
   }
-  .hero .brand{ gap:16px; padding:0; }
-  .hero .brand-mark{ width:60px; height:60px; border-radius:16px; padding:2px;
+  .hero .brand{ gap:11px; padding:0; min-width:0; }
+  .hero .brand-mark{ width:42px; height:42px; border-radius:12px; padding:1px;
     background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); }
   .hero .brand-mark .mark-tile{ fill:#0B1526; }
-  .hero .brand-name{ color:#fff; font-size:32px; letter-spacing:-0.03em; }
+  .brand-text{ min-width:0; }
+  .hero .brand-name{ color:#fff; font-size:21px; letter-spacing:-0.025em; }
   .hero .brand-ai{ color:#3ECF85; }
-  .hero-kicker{
-    margin-top:6px; font-size:12px; font-weight:600; letter-spacing:0.16em;
-    text-transform:uppercase; color:rgba(209,219,235,0.62);
+  .hero .data-status{
+    background:none; border:none; padding:0; height:auto; margin-top:4px; gap:6px;
+    font-family:var(--sans); font-size:12px; max-width:none;
   }
-  .hero-copy{
-    margin-top:16px; max-width:62ch;
-    font-size:15px; line-height:1.55; color:rgba(221,229,241,0.72);
+  .hero #dataStatusText{ font-weight:500; color:rgba(209,219,235,0.72); }
+  .hero .pulse-dot{ box-shadow:0 0 0 3px rgba(62,207,133,0.22); }
+  .hero .refresh-btn{
+    width:auto; height:34px; flex-shrink:0; gap:6px; padding:0 12px 0 10px;
+    border-radius:999px; font-size:13px; font-weight:600;
+    color:#fff; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16);
   }
-  .hero-copy b{ color:#fff; font-weight:600; }
+  .hero .refresh-btn:hover{ background:rgba(255,255,255,0.14); }
+  .hero .refresh-btn:disabled{ opacity:0.6; cursor:default; }
 
-  .market-head{
-    display:flex; align-items:center; justify-content:space-between; gap:10px;
-    margin:14px 2px 8px;
-  }
-  .market-head .data-status{ background:none; border:none; padding:0; height:auto; font-family:var(--sans); font-size:13px; }
-  .market-head #dataStatusText{ font-weight:600; color:var(--text-faint); }
-  .market-head .refresh-btn{
-    width:auto; height:32px; border-radius:999px; padding:0 12px 0 10px; gap:6px;
-    font-size:13px; font-weight:600; background:var(--surface); border:1px solid var(--border);
-    box-shadow:var(--shadow-sm);
-  }
-  .market-head .refresh-btn:disabled{ opacity:0.6; cursor:default; }
-
+  .hero-wrap{ max-width:1080px; margin:0 auto; padding:6px 18px 4px; }
   .market-tiles{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:8px; }
   .market-tiles:empty{ display:none; }
   .mkt-tile{
-    background:var(--surface); border:1.5px solid var(--border); border-radius:14px;
-    padding:10px 8px 9px; text-align:center; min-width:0;
+    background:var(--surface); border:1.5px solid var(--border); border-radius:12px;
+    padding:8px 6px 7px; text-align:center; min-width:0;
     box-shadow:var(--shadow-sm);
   }
   .mkt-tile.is-up{
@@ -1089,45 +1082,47 @@
     background:color-mix(in srgb, var(--red-vivid) 6%, var(--surface));
   }
   .mkt-label{
-    font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    font-size:10.5px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--text-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   .mkt-value{
-    margin-top:3px; font-size:19px; font-weight:700; letter-spacing:-0.02em;
+    margin-top:2px; font-size:18px; font-weight:700; letter-spacing:-0.02em;
     color:var(--text); font-variant-numeric:tabular-nums; white-space:nowrap;
   }
-  .mkt-change{ margin-top:1px; font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .mkt-change{ font-size:12.5px; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
   .mkt-change.is-up{ color:var(--green); }
   .mkt-change.is-down{ color:var(--red); }
-  .market-empty{
-    grid-column:1 / -1; text-align:center; font-size:12.5px; color:var(--text-faint);
-    padding:10px; border:1px dashed var(--border-strong); border-radius:12px;
-  }
-  .hero-wrap + .sticky-top{ margin-top:4px; }
+  /* Before the first data run with market data: one quiet line, not a box. */
+  .market-empty{ grid-column:1 / -1; font-size:12px; color:var(--text-faint); padding:2px 4px 0; }
 
   @media (max-width: 720px){
-    .hero-wrap{ padding:12px 14px 10px; }
-    .hero{ border-radius:20px; padding:18px 18px 18px; }
-    .hero .brand{ gap:13px; }
-    .hero .brand-mark{ width:52px; height:52px; border-radius:14px; }
-    .hero .brand-name{ font-size:27px; }
-    .hero-kicker{ font-size:10.5px; letter-spacing:0.14em; margin-top:5px; }
-    .hero-copy{ margin-top:13px; font-size:14px; }
+    .app-header{ padding:max(8px, env(safe-area-inset-top)) 0 6px; }
+    .app-header-inner{ padding:0 14px; }
+    .hero{ border-radius:14px; padding:8px 10px 8px 8px; }
+    .hero .brand{ gap:10px; }
+    .hero .brand-mark{ width:38px; height:38px; border-radius:11px; }
+    .hero .brand-name{ font-size:19px; }
+    .hero .data-status{ font-size:11.5px; margin-top:3px; }
+    .hero .refresh-btn{ height:32px; padding:0 11px 0 9px; font-size:12.5px; }
+    .hero-wrap{ padding:4px 14px 2px; }
     .market-tiles{ gap:6px; }
-    .mkt-tile{ padding:8px 4px 7px; border-radius:12px; }
-    .mkt-label{ font-size:9.5px; letter-spacing:0.06em; }
-    .mkt-value{ font-size:15px; }
-    .mkt-change{ font-size:12px; }
+    .mkt-tile{ padding:6px 3px 5px; border-radius:10px; }
+    .mkt-label{ font-size:9px; letter-spacing:0.06em; }
+    .mkt-value{ font-size:14.5px; margin-top:1px; }
+    .mkt-change{ font-size:11.5px; }
   }
   @media (max-width: 370px){
-    .mkt-value{ font-size:13.5px; }
-    .hero .brand-name{ font-size:24px; }
+    .mkt-value{ font-size:13px; }
+    .hero .refresh-btn span{ display:none; }
+    .hero .refresh-btn{ width:32px; padding:0; }
   }
 
   /* Narrow phones (iPhone mini/SE, 375px): keep Cash / Options % /
      Equities % on one line. */
   @media (max-width: 380px){
-    .portfolio-bar-inner{ padding:5px 8px; }
+    .header-top .portfolio-bar-inner{ padding:0 3px 0 8px; gap:6px; }
+    .top-actions .export-btn{ padding:0 10px; }
+    #tickersBtn svg{ display:none; }
   }
   @media (max-width: 380px){
     .sort-wrap select{ font-size:12.5px; padding:0 4px; }
@@ -1201,37 +1196,39 @@
 </head>
 <body>
 
-<!-- Hero + market condition (2026-09-29). Scrolls away; only the
-     Tools / My Tickers / capital bar below stays pinned. -->
-<section class="hero-wrap" aria-label="VantEdgeAI overview">
-  <div class="hero">
-    <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI">
-      <div class="brand-mark">
-        <svg width="56" height="56" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect class="mark-tile" width="32" height="32" rx="8"/>
-          <path d="M6.5 8.5 L14 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round"/>
-          <path d="M14 24 L25.5 7" fill="none" stroke="#3ECF85" stroke-width="3.4" stroke-linecap="round"/>
-          <circle cx="25.5" cy="7" r="3.2" fill="#3ECF85"/>
-        </svg>
+<!-- Compact pinned header (2026-09-29b): logo, name, data status and
+     Refresh in one slim navy bar that stays at the top. Market tiles and the
+     Tools / capital row below it scroll with the page, leaving the rest of
+     the screen for trades. -->
+<div class="app-header">
+  <div class="app-header-inner">
+    <div class="hero">
+      <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI">
+        <div class="brand-mark">
+          <svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="mark-tile" width="32" height="32" rx="8"/>
+            <path d="M6.5 8.5 L14 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round"/>
+            <path d="M14 24 L25.5 7" fill="none" stroke="#3ECF85" stroke-width="3.4" stroke-linecap="round"/>
+            <circle cx="25.5" cy="7" r="3.2" fill="#3ECF85"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
+          <div class="data-status">
+            <span class="pulse-dot" id="dataStatusDot"></span>
+            <span id="dataStatusText">Loading data…</span>
+          </div>
+        </div>
       </div>
-      <div class="brand-text">
-        <div class="brand-name">VantEdge<span class="brand-ai">AI</span></div>
-        <div class="hero-kicker">Option trade screener</div>
-      </div>
+      <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data live (takes a few minutes)" title="Refresh data">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <span>Refresh</span>
+      </button>
     </div>
-    <p class="hero-copy">Ready-made option trades, screened every market day on <b>outlook</b>, <b>risk</b>, <b>reward</b> and <b>probability</b> — pick, size, and track them in one place.</p>
   </div>
+</div>
 
-  <div class="market-head">
-    <div class="data-status">
-      <span class="pulse-dot" id="dataStatusDot"></span>
-      <span id="dataStatusText">Loading data…</span>
-    </div>
-    <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data live (takes a few minutes)" title="Refresh data">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-      <span>Refresh</span>
-    </button>
-  </div>
+<section class="hero-wrap" aria-label="Market condition">
   <div class="market-tiles" id="marketTiles" aria-live="polite"></div>
 </section>
 
@@ -1249,7 +1246,7 @@
       </div>
       <button class="export-btn" id="tickersBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        My Tickers
+        Tickers
       </button>
     </div>
 
@@ -1258,7 +1255,7 @@
          allocated entirely to the option trades you pick. -->
     <div class="portfolio-bar" id="allocationBar">
       <div class="portfolio-bar-inner">
-        <label for="portfolioCapital">Options capital</label>
+        <label for="portfolioCapital">Capital</label>
         <div class="capital-field">
           <span class="capital-sym" id="cashLabelSym">$</span>
           <input type="text" id="portfolioCapital" inputmode="decimal" placeholder="100000" value="100000" aria-label="Options capital in dollars">
@@ -2018,7 +2015,7 @@
     lines.push('VantEdgeAI — Portfolio Summary');
     lines.push(`Generated ${new Date().toLocaleString()}`);
     lines.push('');
-    lines.push(`Options Capital: ${curSym()}${capital.toLocaleString()}`);
+    lines.push(`Capital: ${curSym()}${capital.toLocaleString()}`);
 
     if(optionRowsData.length){
       lines.push('');
@@ -2068,7 +2065,7 @@
           <div class="modal-title">Portfolio Summary</div>
           <button class="modal-close" id="modalCloseBtn">✕</button>
         </div>
-        <div class="modal-note" style="margin-top:12px;">Enter your options capital in the bar at the top of the page to see position sizing.</div>
+        <div class="modal-note" style="margin-top:12px;">Enter your capital in the Capital box near the top of the page to see position sizing.</div>
         ${trackBtn}
         ${clearBtn}
         ${exportImportBtns}`;
@@ -2169,7 +2166,7 @@
         <button class="modal-copy-btn" id="importSelectionBtn" style="flex:1; background:var(--surface-2); color:var(--text); border:1px solid var(--border-strong);">Import Selection</button>
       </div>
       <div class="modal-metrics">
-        <div><div class="mm-label">Options Capital</div><div class="mm-val">${curSym()}${capital.toLocaleString()}</div></div>
+        <div><div class="mm-label">Capital</div><div class="mm-val">${curSym()}${capital.toLocaleString()}</div></div>
         <div><div class="mm-label">Per Trade</div><div class="mm-val">${curSym()}${perOptionBudget.toLocaleString(undefined,{maximumFractionDigits:0})}</div></div>
       </div>
 
@@ -2185,7 +2182,7 @@
 
       ${hedgeSection}
 
-      <div class="modal-note">Position sizing splits your options capital EQUALLY across the trades you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Contract counts round down, so "Left Over" is what rounding leaves undeployed. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
+      <div class="modal-note">Position sizing splits your capital EQUALLY across the trades you've checked — it doesn't weight by score, conviction, or risk. "Cost/Contract" uses each trade's estimated max loss (its full collateral/risk basis), not the premium received, since that's what capital is actually tied up as. Contract counts round down, so "Left Over" is what rounding leaves undeployed. Selections stay checked across filter and sort changes on purpose — so you can pick some, adjust filters, and pick more — but that also means something checked earlier stays counted even after it scrolls out of view. Use "Clear all selections" above if this summary includes picks you no longer want. This is a sizing calculator only — not a live order, not investment advice, and it doesn't check your actual account buying power.</div>
       <button class="modal-copy-btn" id="downloadSummaryBtn">Download Summary</button>
     `;
     modalScrim.classList.add('show');
@@ -2450,7 +2447,7 @@
     // list, bring the (now short) filter card back under the header so the
     // refreshed results are right below it.
     const card = document.querySelector('#optionsView .filter-card');
-    const header = document.querySelector('.sticky-top');
+    const header = document.querySelector('.app-header');
     const top = card.getBoundingClientRect().top - header.getBoundingClientRect().height - 10;
     if(top < 0) window.scrollBy({ top, behavior: 'smooth' });
   });
@@ -2468,18 +2465,6 @@
   }
   document.getElementById('minTradeProfitInput').addEventListener('input', liveApplyMinProfit);
   document.getElementById('resetFilters').addEventListener('click', resetFilters);
-
-  // Pinned state for the top toolbar: transparent over the page at rest,
-  // a white bar once the hero has scrolled away and it's stuck to the top.
-  (function(){
-    const bar = document.querySelector('.sticky-top');
-    if(!bar) return;
-    let raf = 0;
-    const check = ()=>{ raf = 0; bar.classList.toggle('is-pinned', bar.getBoundingClientRect().top <= 0.5 && window.scrollY > 4); };
-    window.addEventListener('scroll', ()=>{ if(!raf) raf = requestAnimationFrame(check); }, { passive:true });
-    window.addEventListener('resize', check);
-    check();
-  })();
 
   // Sticky Apply/Reset row: on phones the Review Picks bar is fixed to the
   // bottom of the screen, so the row has to stick just above it.

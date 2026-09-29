@@ -112,11 +112,13 @@
     color:var(--text);
     font-family:var(--sans);
     -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
     text-rendering:optimizeLegibility;
+    font-optical-sizing:auto;
     min-height:100vh;
     width:100%;
     max-width:100vw;
-    letter-spacing:-0.006em;
+    letter-spacing:-0.012em;
   }
   body{
     position:relative;
@@ -130,7 +132,7 @@
   .sticky-top{
     position:sticky; top:0; z-index:40;
     background:var(--surface);
-    display:flex; flex-direction:column; gap:10px;
+    display:flex; flex-direction:column; gap:12px;
     padding-top:10px; padding-bottom:6px;
   }
   header{ display:flex; flex-direction:column; gap:16px; }
@@ -170,9 +172,34 @@
   .mode-nav{
     max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
     box-sizing:border-box;
-    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px;
+    display:flex; flex-direction:column; gap:8px;
   }
-  .mode-group{ min-width:0; display:flex; flex-direction:column; gap:3px; }
+  .mode-group{ min-width:0; max-width:520px; display:flex; flex-direction:column; gap:6px; }
+  /* Tools menu (2026-09-27): Ticker Lookup / Backtest sit in a small popover
+     opened from a "Tools" button next to My Tickers, instead of a row between
+     the Options/Stocks toggle and the filters. The buttons are still
+     .mode-tab elements so switchMode() toggles .active / aria-selected. */
+  .top-actions{
+    max-width:1080px; margin:0 auto; width:100%; padding:0 18px;
+    box-sizing:border-box; display:flex; gap:8px;
+  }
+  .top-actions .tools-group{ flex:1; min-width:0; }
+  .top-actions .export-btn{ width:100%; justify-content:center; min-height:36px; box-sizing:border-box; }
+  .top-actions > .export-btn{ flex:1; min-width:0; }
+  .tools-group{ position:relative; }
+  .tools-caret{ font-size:10px; margin-left:2px; }
+  .tools-group.is-active .tools-menu-btn{ background:var(--invert-bg); color:var(--invert-text); border-color:var(--invert-bg); }
+  .tools-menu{
+    position:absolute; left:0; top:calc(100% + 6px); z-index:80; min-width:170px;
+    display:flex; flex-direction:column; gap:2px; padding:4px;
+    background:var(--surface); border:1px solid var(--border-strong); border-radius:12px;
+    box-shadow:0 10px 28px -8px rgba(11,14,19,0.35);
+  }
+  .tools-menu[hidden]{ display:none; }
+  .tools-menu .mode-tab{
+    flex:none; width:100%; text-align:left; min-height:38px; padding:8px 12px;
+    font-size:13px; border-radius:8px;
+  }
   .mode-group-head{
     display:flex; align-items:center; justify-content:space-between; gap:8px;
     height:40px; /* fixed so both groups' captions and tab tracks line up */
@@ -183,7 +210,7 @@
   }
   .mode-group-sub{
     font-size:12px; line-height:1.35; font-weight:700; color:var(--text);
-    margin-bottom:5px;
+    margin-bottom:0;
   }
   .mode-toggle{
     display:flex; gap:3px; padding:3px;
@@ -236,7 +263,7 @@
     font-family:var(--mono); font-size:15px; font-weight:700;
     text-transform:uppercase; letter-spacing:0.02em; text-align:center;
   }
-  .lookup-tab-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:500; }
+  .lookup-tab-input::placeholder{ color:var(--text-faint); text-transform:none; font-weight:600; }
   .lookup-tab-input:disabled{ opacity:0.6; }
   .lookup-tab-input::-webkit-search-cancel-button{ display:none; -webkit-appearance:none; }
   .lookup-tab-submit{
@@ -254,18 +281,18 @@
     display:flex; align-items:center; justify-content:center;
   }
   .brand-mark svg{ display:block; width:100%; height:100%; }
-  /* Wordmark: Sora 700 (was 800) at 27px with tighter tracking. The 800 cut
-     filled in its counters at small sizes and read soft/blobby on dark;
-     700 keeps the geometric, flat-terminal look but with crisp, open letter
-     shapes. Grayscale antialiasing (set on .brand) stops macOS/iOS subpixel
-     rendering from fattening light-on-dark text. Colors are brightened one
-     step (#4ADE80 / #FF5A5F) so both hold contrast on the near-black badge. */
+  /* Wordmark bumped back to Sora 800 (2026-09-29, was 700) for a bolder,
+     sharper mark. Slightly tighter tracking keeps the heavier cut from
+     looking loose. Grayscale antialiasing (set on .brand) stops macOS/iOS
+     subpixel rendering from fattening light-on-dark text. Colors stay
+     brightened (#4ADE80 / #FF5A5F) so both hold contrast on the near-black
+     badge. */
   .brand-name{
-    font-family:'Sora', var(--sans); font-weight:700; font-size:27px;
-    line-height:1; letter-spacing:-0.03em; color:#4ADE80;
+    font-family:'Sora', var(--sans); font-weight:800; font-size:27px;
+    line-height:1; letter-spacing:-0.035em; color:#4ADE80;
     font-feature-settings:'kern' 1;
   }
-  .brand-ai{ color:#FF5A5F; font-weight:700; margin-left:0.02em; }
+  .brand-ai{ color:#FF5A5F; font-weight:800; margin-left:0.02em; }
 
   .data-status{
     display:flex; align-items:center; gap:6px;
@@ -360,14 +387,14 @@
   }
   .portfolio-line-stats b{ color:var(--text); font-weight:700; }
   .portfolio-line-stats .val-pos{ font-weight:700; margin-left:auto; }
-  .portfolio-line-warn{ color:var(--red); font-size:11.5px; font-weight:600; margin-top:3px; }
-  .portfolio-line-note{ color:var(--text-dim); font-size:11.5px; font-weight:600; margin-top:3px; }
+  .portfolio-line-warn{ color:var(--red); font-size:11.5px; font-weight:700; margin-top:3px; }
+  .portfolio-line-note{ color:var(--text-dim); font-size:11.5px; font-weight:700; margin-top:3px; }
 
   .export-btn{
     display:flex; align-items:center; gap:6px;
     background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); padding:9px 14px; border-radius:8px;
-    font-size:12.5px; font-weight:600; flex-shrink:0;
+    font-size:12.5px; font-weight:700; flex-shrink:0;
     box-shadow:var(--shadow-sm);
     transition:border-color .15s, background .15s, box-shadow .15s;
   }
@@ -380,13 +407,13 @@
      top of that made the gap to the mode tabs look larger than the gaps
      used everywhere else on the page. Left/right/bottom unchanged (bottom
      stays tall to clear the fixed apply-bar on mobile). */
-  .layout{ max-width:1080px; margin:0 auto; padding:10px 18px 100px; }
+  .layout{ max-width:1080px; margin:0 auto; padding:6px 18px 100px; }
 
   /* ---------- FILTER TOOLBAR ---------- */
   .filter-card{
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:12px;
-    margin-bottom:16px;
+    margin-bottom:12px;
     box-shadow:var(--shadow-sm);
   }
 
@@ -402,7 +429,7 @@
   .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
   .filter-header-btn{
     border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    padding:6px 8px; font-weight:600; font-size:11.5px; font-family:inherit; color:var(--text);
+    padding:6px 8px; font-weight:700; font-size:11.5px; font-family:inherit; color:var(--text);
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
     cursor:pointer; user-select:none; text-align:center; line-height:1.25;
     transition:border-color .12s, background .12s;
@@ -414,7 +441,7 @@
   .filter-header-btn[aria-expanded="true"] .filter-chevron{ transform:rotate(-90deg); }
   .filter-section{
     border:1px solid var(--border); border-radius:9px; background:var(--surface-2);
-    margin-bottom:8px;
+    margin-top:8px;
   }
   .filter-section-body{ padding:12px 14px; }
   .summary-count{
@@ -428,7 +455,7 @@
   .check-row{
     display:flex; align-items:center; gap:9px;
     padding:7px 4px; border-radius:6px; cursor:pointer;
-    font-size:13px; font-weight:600; color:var(--text);
+    font-size:13px; font-weight:700; color:var(--text);
     transition:background .12s;
   }
   .check-row:hover{ background:var(--surface); }
@@ -473,7 +500,7 @@
     display:flex; align-items:center; justify-content:space-between; gap:10px;
     padding:9px 4px 4px; margin-top:2px; border-top:1px solid var(--border);
   }
-  .num-row label{ font-size:13px; font-weight:600; color:var(--text); }
+  .num-row label{ font-size:13px; font-weight:700; color:var(--text); }
   .num-row input[type="number"]{
     width:76px; background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); font-family:var(--mono); font-size:14px; font-weight:700;
@@ -500,26 +527,38 @@
   .apply-btn:hover{ filter:brightness(1.08); }
   .apply-btn:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
   .apply-btn-compact{
-    flex:1; background:var(--surface-2); color:var(--amber-strong);
-    border:1px solid var(--amber-border); padding:8px; border-radius:8px;
+    width:100%; background:var(--amber-strong); color:#fff;
+    border:1px solid var(--amber-strong); padding:8px; border-radius:8px;
     font-weight:700; font-size:12.5px; margin-bottom:8px;
-    transition:background .12s;
+    box-shadow:0 2px 8px rgba(22,163,74,0.25);
+    transition:filter .12s, box-shadow .12s;
   }
-  .apply-btn-compact:hover{ background:var(--amber-soft); }
+  .apply-btn-compact:hover{ filter:brightness(1.08); }
   .apply-btn-compact:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
-  .reset-btn{
-    flex:1; background:var(--surface); border:1px solid var(--border-strong); color:var(--text-dim);
-    padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:600;
-    transition:border-color .12s, color .12s;
+
+  /* Apply + Reset side by side, right under the 3 filter category boxes
+     (moved 2026-09-27). Both now share the same solid, bold green look and
+     equal width (2026-09-27b) — previously Apply was outlined/light while
+     Reset was solid, so hovering one looked "bold" and the other "light"
+     next to it; matching them removes that mismatch. */
+  .apply-reset-row{ display:flex; gap:8px; margin-bottom:0; }
+  .apply-reset-row .apply-btn-compact{ flex:1; margin-bottom:0; }
+  .reset-btn-bold{
+    flex:1; background:var(--amber-strong); color:#fff; border:1px solid var(--amber-strong);
+    padding:8px; border-radius:8px; font-weight:700; font-size:12.5px;
+    box-shadow:0 2px 8px rgba(22,163,74,0.25);
+    transition:filter .12s, box-shadow .12s;
   }
-  .reset-btn:hover{ border-color:var(--text-dim); color:var(--text); }
+  .reset-btn-bold:hover{ filter:brightness(1.08); }
+  .reset-btn-bold:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
+
   .copy-btn{
     flex:1; background:var(--amber-soft); border:1px solid var(--amber-border); color:var(--amber-strong);
     padding:10px 14px; border-radius:8px; font-size:12.5px; font-weight:700;
     transition:filter .12s;
   }
   .copy-btn:hover{ filter:brightness(0.97); }
-  .active-count{ font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-faint); white-space:nowrap; }
+  .active-count{ font-family:var(--mono); font-size:11px; font-weight:700; color:var(--text-faint); white-space:nowrap; }
 
   /* Checking row/card checkboxes already means "select these trades" for
      Portfolio Summary sizing — this reuses that exact same selection for a
@@ -531,6 +570,9 @@
     transition:filter .12s; white-space:nowrap; flex-shrink:0;
   }
   .track-selected-btn:hover{ filter:brightness(1.08); }
+  /* In the bottom bar it shares the row with Review Picks — same height and
+     type size, equal width. */
+  .apply-bar-row .track-selected-btn{ flex:1; padding:10px 14px; font-size:12.5px; }
 
   /* ---------- RESULTS ---------- */
   /* Wrapped in the same card treatment (background/border/radius/padding)
@@ -541,8 +583,8 @@
      DOM edges lined up exactly. This gives it the same visual gutter. */
   .results-panel{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:14px 18px;
-    margin-bottom:16px;
+    border-radius:var(--radius); padding:12px;
+    margin-bottom:12px;
     box-shadow:var(--shadow-sm);
   }
   .results-bar{
@@ -551,15 +593,15 @@
   }
   .results-count-row{ display:flex; align-items:center; gap:8px; flex-wrap:nowrap; min-width:0; flex:1 1 auto; }
   .results-count{
-    font-size:13.5px; font-weight:600; color:var(--text-dim);
+    font-size:13.5px; font-weight:700; color:var(--text-dim);
     overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
   }
   .results-count strong{ color:var(--text); font-family:var(--mono); }
   .funnel-note{
-    font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text-dim);
+    font-family:var(--mono); font-size:11px; font-weight:700; color:var(--text-dim);
     margin-top:10px; line-height:1.6;
   }
-  .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:var(--text-dim); }
+  .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; color:var(--text-dim); }
   .sort-wrap select{
     background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); padding:7px 10px; border-radius:7px; font-size:16px;
@@ -605,7 +647,7 @@
   tbody tr{ border-bottom:1px solid var(--border); transition:background .12s; }
   tbody tr:last-child{ border-bottom:none; }
   tbody tr:hover{ background:var(--surface-2); }
-  tbody td{ padding:13px 14px; font-size:13px; font-weight:600; vertical-align:middle; white-space:nowrap; }
+  tbody td{ padding:13px 14px; font-size:13px; font-weight:700; vertical-align:middle; white-space:nowrap; }
 
   .ticker-sym{ font-weight:700; font-family:var(--mono); font-size:13.5px; }
   .strat-name{ font-size:11.5px; color:var(--text-dim); }
@@ -631,14 +673,14 @@
   .row-action{
     background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text-dim); padding:7px 13px; border-radius:7px; font-size:11.5px;
-    font-weight:600; transition:all .12s;
+    font-weight:700; transition:all .12s;
   }
   .row-action:hover{ border-color:var(--amber); color:var(--amber-strong); background:var(--amber-soft); }
 
   .card-list{
-    display:none; flex-direction:column; gap:10px;
+    display:none; flex-direction:column; gap:8px;
     background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:10px;
+    border-radius:var(--radius); padding:12px;
     box-shadow:var(--shadow-sm);
   }
   .trade-card{
@@ -688,8 +730,8 @@
     color:var(--text-faint); margin-bottom:3px;
   }
   .tracked-stat-val{ font-family:var(--mono); font-size:13.5px; font-weight:700; color:var(--text); white-space:nowrap; }
-  .tracked-stat-val.is-pending{ font-family:inherit; font-size:12px; font-weight:600; color:var(--text-faint); }
-  .tracked-stat-date{ display:block; font-family:var(--mono); font-size:10.5px; font-weight:600; color:var(--text-faint); margin-top:1px; }
+  .tracked-stat-val.is-pending{ font-family:inherit; font-size:12px; font-weight:700; color:var(--text-faint); }
+  .tracked-stat-date{ display:block; font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--text-faint); margin-top:1px; }
   .tracked-card-pnl{
     display:flex; align-items:baseline; justify-content:space-between; gap:10px;
     padding-top:10px;
@@ -697,14 +739,14 @@
   .tracked-pnl-figures{ font-family:var(--mono); font-size:17px; font-weight:700; color:var(--text-dim); }
   .tracked-pnl-figures.val-pos{ color:var(--green); }
   .tracked-pnl-figures.val-neg{ color:var(--red); }
-  .tracked-pnl-sub{ font-size:11px; color:var(--text-faint); font-weight:600; margin-top:2px; }
+  .tracked-pnl-sub{ font-size:11px; color:var(--text-faint); font-weight:700; margin-top:2px; }
   .tracked-remove-btn{
     background:none; border:none; color:var(--text-faint); font-size:11.5px; font-weight:700;
     cursor:pointer; padding:4px 0; text-decoration:underline; text-underline-offset:2px;
   }
   .tracked-remove-btn:hover{ color:var(--red); }
   .tracked-empty-state{
-    text-align:center; color:var(--text-dim); font-weight:600; font-size:13.5px;
+    text-align:center; color:var(--text-dim); font-weight:700; font-size:13.5px;
     padding:32px 18px; background:var(--surface); border:1px solid var(--border);
     border-radius:14px; margin-bottom:16px; line-height:1.7;
   }
@@ -773,8 +815,8 @@
     text-decoration:none; transition:border-color .12s, background .12s;
   }
   .news-headline:hover{ border-color:var(--border-strong); background:var(--surface-2); }
-  .news-headline-title{ font-size:12.5px; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:4px; }
-  .news-headline-meta{ font-size:10.5px; color:var(--text-faint); font-weight:500; display:flex; gap:6px; }
+  .news-headline-title{ font-size:12.5px; font-weight:700; color:var(--text); line-height:1.4; margin-bottom:4px; }
+  .news-headline-meta{ font-size:10.5px; color:var(--text-faint); font-weight:600; display:flex; gap:6px; }
   .news-empty{ font-size:12px; color:var(--text-faint); padding:10px 0; }
   .modal-copy-btn{
     width:100%; background:var(--amber); color:#fff; border:none;
@@ -828,13 +870,13 @@
     background:var(--surface-2); border:1px solid var(--border); border-radius:8px; resize:vertical;
   }
   .ticker-github-link{
-    display:block; text-align:center; font-size:12px; font-weight:600; color:var(--amber-strong);
+    display:block; text-align:center; font-size:12px; font-weight:700; color:var(--amber-strong);
     padding:11px; border:1px solid var(--amber-border); border-radius:8px; text-decoration:none;
     margin-top:8px;
   }
   .ticker-github-link:hover{ background:var(--amber-soft); }
   .ticker-github-link-secondary{
-    border-color:transparent; color:var(--text-faint); font-weight:500;
+    border-color:transparent; color:var(--text-faint); font-weight:600;
     padding:8px; margin-top:2px;
   }
   .ticker-github-link-secondary:hover{ background:var(--surface-2); color:var(--text-dim); }
@@ -842,7 +884,7 @@
   .toast{
     position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
     background:var(--invert-bg); color:var(--invert-text);
-    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    font-family:var(--mono); font-size:12.5px; font-weight:700;
     padding:10px 18px; border-radius:20px; z-index:90;
     opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
     box-shadow:0 8px 24px rgba(16,24,40,0.25);
@@ -855,7 +897,7 @@
        purpose so the SPY/QQQ pills, "EOD data" pill, mode tabs, cash inputs
        and filter card all line up on the same left edge instead of each
        row starting 2px off from its neighbors. */
-    .layout{ padding:8px 14px 155px; }
+    .layout{ padding:6px 14px 155px; }
     /* Shrinks the sort dropdown enough that it and Min Trade Profit's
        label+input fit on one line at phone width now that "Sort by" (the
        text label) is gone — the full-size 16px select alone was already
@@ -869,7 +911,7 @@
        narrowing its input. */
     .sort-wrap select{ font-size:12.5px; padding:6px 5px; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
-    .sticky-top{ gap:8px; padding-top:10px; padding-bottom:6px; }
+    .sticky-top{ gap:12px; padding-top:10px; padding-bottom:6px; }
     header{ gap:12px; }
     .header-top{ padding:0 14px; gap:8px; }
     .header-top-right{ gap:8px; }
@@ -891,12 +933,12 @@
     #portfolioCapital{ width:68px; height:32px; padding:6px 4px; }
     #portfolioSplit{ width:34px; height:32px; padding:6px 2px; }
     #portfolioEquitySplit{ width:34px; height:32px; padding:6px 2px; }
-    .mode-nav{ padding:0 14px; gap:10px; }
+    .mode-nav{ padding:0 14px; gap:8px; }
     .mode-group-head{ height:30px; }
     .mode-group-title{ font-size:13.5px; }
-    .mode-group-head .export-btn{ padding:6px 9px; font-size:11px; }
-    .mode-group-head .export-btn svg{ display:none; }
-    .mode-group-sub{ font-size:10.5px; margin-bottom:4px; }
+    .top-actions{ padding:0 14px; }
+    .top-actions .export-btn{ font-size:12.5px; }
+    .mode-group-sub{ font-size:10.5px; margin-bottom:0; }
     .mode-toggle{ padding:2px; gap:2px; border-radius:10px; }
     .mode-tab{ min-height:34px; padding:6px 2px; font-size:11px; border-radius:8px; }
     .tools-note{ padding:0 14px; }
@@ -989,10 +1031,10 @@
   <div class="header-top">
     <div class="brand" onclick="location.reload()" role="button" tabindex="0" aria-label="Reload VantEdgeAI" style="cursor:pointer;">
       <div class="brand-mark">
-        <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo">
-          <rect x="3"    y="14.5" width="3.2" height="6"  rx="1.4" fill="#22C55E" fill-opacity="0.38"/>
-          <rect x="8"    y="11.5" width="3.2" height="9"  rx="1.4" fill="#22C55E" fill-opacity="0.60"/>
-          <rect x="13"   y="8"    width="3.2" height="12.5" rx="1.4" fill="#22C55E" fill-opacity="0.82"/>
+        <svg width="34" height="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="VantEdgeAI logo" shape-rendering="crispEdges">
+          <rect x="3"    y="14.5" width="3.2" height="6"  rx="1.4" fill="#22C55E" fill-opacity="0.55"/>
+          <rect x="8"    y="11.5" width="3.2" height="9"  rx="1.4" fill="#22C55E" fill-opacity="0.72"/>
+          <rect x="13"   y="8"    width="3.2" height="12.5" rx="1.4" fill="#22C55E" fill-opacity="0.90"/>
           <rect x="18"   y="3.5"  width="3.2" height="17" rx="1.4" fill="#4ADE80"/>
         </svg>
       </div>
@@ -1014,36 +1056,27 @@
 
 </header>
 
-<nav class="mode-nav" aria-label="Sections">
-  <div class="mode-group is-active" id="groupIdeas" role="group" aria-labelledby="groupIdeasTitle">
-    <div class="mode-group-head">
-      <div class="mode-group-title" id="groupIdeasTitle">Trade ideas</div>
-      <button class="export-btn" id="tickersBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        My Tickers
-      </button>
-    </div>
-    <div class="mode-group-sub">Sized to your allocation</div>
-    <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
-      <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
-      <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
-    </div>
-  </div>
-
-  <div class="mode-group" id="groupTools" role="group" aria-labelledby="groupToolsTitle">
-    <div class="mode-group-head">
-      <div class="mode-group-title" id="groupToolsTitle">Tools</div>
-    </div>
-    <div class="mode-group-sub">No allocation needed</div>
-    <div class="mode-toggle" role="tablist" aria-label="Tools">
-      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup')">Ticker Lookup</button>
-      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest')">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
+<!-- Page flow (reordered 2026-09-27): utility row (Tools menu + My Tickers),
+     then 1) capital + split, 2) pick Options or Stocks & ETFs, then filters ->
+     sort -> pick trades -> Review Picks below. Tools (Ticker Lookup,
+     Backtest) and My Tickers never depend on the allocation or the filters,
+     so they sit above the capital card, out of the flow. While a tool is
+     open the allocation card is hidden and the tool's one-line note shows
+     under the toggle instead. -->
+<div class="top-actions">
+  <div class="tools-group" id="groupTools">
+    <button class="export-btn tools-menu-btn" id="toolsMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="tools-caret">▾</span></button>
+    <div class="tools-menu" id="toolsMenu" role="tablist" aria-label="Tools" hidden>
+      <button class="mode-tab" id="tabLookup" role="tab" aria-selected="false" onclick="switchMode('lookup'); closeToolsMenu();">Ticker Lookup</button>
+      <button class="mode-tab" id="tabBacktest" role="tab" aria-selected="false" onclick="switchMode('backtest'); closeToolsMenu();">Backtest<span class="backtest-count" id="backtestCount" style="display:none;"></span></button>
     </div>
   </div>
-</nav>
+  <button class="export-btn" id="tickersBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    My Tickers
+  </button>
+</div>
 
-<!-- Allocation only applies to the two "Trade ideas" tabs, so it sits directly
-     under them and is swapped for a one-line note when a Tool tab is open. -->
 <div class="portfolio-bar" id="allocationBar">
   <div class="portfolio-bar-inner">
     <label>
@@ -1060,6 +1093,15 @@
     </label>
   </div>
 </div>
+
+<nav class="mode-nav" aria-label="Sections">
+  <div class="mode-group is-active" id="groupIdeas" role="group" aria-label="Trade ideas">
+    <div class="mode-toggle" role="tablist" aria-label="Trade ideas">
+      <button class="mode-tab active" id="tabOptions" role="tab" aria-selected="true" onclick="switchMode('options')">Options</button>
+      <button class="mode-tab" id="tabStocks" role="tab" aria-selected="false" onclick="switchMode('stocks')">Stocks &amp; ETFs</button>
+    </div>
+  </div>
+</nav>
 <div class="tools-note" id="toolsNote" style="display:none;" aria-live="polite"></div>
 </div>
 
@@ -1086,24 +1128,29 @@
     </div>
 
     <!-- Compact Apply, right next to the 3 category boxes above (added
-         2026-09-26) — always in view above whichever section is expanded,
-         instead of a reach back down to the bottom bar. Reset to defaults
-         moved up to sit right alongside it (2026-09-29): the two belong
-         together (both act on the filter state itself), while View Summary
-         below is a different kind of action (viewing your selection), so it
-         stays on its own down there instead. -->
-    <div style="display:flex; gap:8px; margin-bottom:8px;">
-      <button class="reset-btn" id="resetFilters">Reset to defaults</button>
-      <button class="apply-btn-compact" type="button" id="applyFiltersTop" style="margin-bottom:0;">Apply filters</button>
+         2026-09-26) — the full-size Apply filters button at the bottom of
+         .filter-card is still there for whenever you're scrolled deep into
+         an open section's checkboxes, but it's a real reach back up to the
+         top-of-card boxes otherwise. Same applyFilters() as that one; just
+         a second, closer entry point to it, not a replacement.
+
+         Reset to defaults sits right next to it (moved here 2026-09-27 from
+         the bottom apply-bar, alongside View Summary, where it didn't
+         really belong — resetting is part of the same filtering action as
+         applying, not a portfolio action) and is styled as a solid, bold
+         green button so it's not missed next to Apply. -->
+    <div class="apply-reset-row">
+      <button class="apply-btn-compact" type="button" id="applyFiltersTop">Apply filters</button>
+      <button class="reset-btn-bold" id="resetFilters">Reset to defaults</button>
     </div>
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call" checked> <span class="strat-dot bull"></span>Covered Call</label>
+        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put" checked> <span class="strat-dot bull"></span>Cash-Secured Put</label>
+        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put"> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Iron Condor"> <span class="strat-dot neutral"></span>Iron Condor</label>
+        <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread"> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
@@ -1111,9 +1158,9 @@
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
       </div>
       <div class="filter-section-body" style="padding-top:0; border-top:1px solid var(--border); margin-top:4px;">
-        <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
         <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
-        <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
         <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
       </div>
     </div>
@@ -1140,27 +1187,17 @@
     </div>
 
     <div class="apply-bar">
-      <!-- Track for Backtest moved here from the results-count-row above
-           (2026-09-29) — that freed up the "N setups match your filters"
-           line, and this is the more natural home for it anyway: sitting
-           right next to Selected, only appearing when there's actually an
-           option trade selected to track (same visibility logic as
-           before, just relocated — see updatePortfolioCount()). "View
-           Summary" renamed to "Selected" since the old label read as if it
-           always had something to show, when it's really just a count of
-           what's checked. -->
+      <!-- Reset to defaults moved up next to Apply filters (2026-09-27) —
+           it's a filtering action, not a portfolio one, so it belongs by
+           Apply rather than by View Summary. This row is now just View
+           Summary on its own. -->
       <div class="apply-bar-row">
-        <button class="copy-btn" id="portfolioSummaryBtn" style="flex:1;">Selected <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
-        <button class="track-selected-btn" id="trackSelectedBtn" style="display:none; flex:1;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
+        <button class="copy-btn" id="portfolioSummaryBtn" style="flex:1;">Review Picks <span class="portfolio-fab-count" id="portfolioSelectedCount">0</span></button>
+        <!-- "Track N for Backtest" lives here next to Review Picks (moved
+             2026-09-27 from the results card) and only shows once at least one
+             option trade is selected — see updateSelectionUI. -->
+        <button class="track-selected-btn" id="trackSelectedBtn" style="display:none;">Track <span id="trackSelectedCount">0</span> for Backtest</button>
       </div>
-      <!-- The Apply button that used to live here was redundant with the
-           compact one right above the 3 category boxes (added 2026-09-26) —
-           that one's always in view above whichever section is expanded,
-           so having a second, identical button pinned at the bottom too
-           just meant two "Apply filters" buttons on screen at once for no
-           real benefit. Kept the active-count text (re-shown on mobile
-           below, where it used to be hidden specifically to make room for
-           this now-removed button) so the row isn't left empty. -->
       <div class="apply-bar-row2">
         <span class="active-count" id="activeCountLabel">2 filters active</span>
       </div>
@@ -1169,8 +1206,13 @@
 
   <div class="results-panel">
     <div class="results-bar">
-      <div class="results-count-row">
-        <div class="results-count"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
+      <!-- The "N setups match your filters" sentence was removed from view
+           2026-09-27 (it cost a whole extra line on mobile). The element and
+           its ids stay in the DOM, hidden, so the JS that updates the count
+           doesn't need to change. The Track-for-Backtest button that used to
+           share this row now sits next to Review Picks in the bottom bar. -->
+      <div class="results-count-row" id="resultsCountRow" style="display:none;">
+        <div class="results-count" style="display:none;"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
       </div>
       <div class="sort-wrap" style="flex-wrap:wrap; row-gap:8px;">
         <select id="sortSelect">
@@ -1279,7 +1321,7 @@
   </footer>
 
   <div class="apply-bar">
-    <button class="apply-btn" id="portfolioSummaryBtnStocks">Selected <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
+    <button class="apply-btn" id="portfolioSummaryBtnStocks">Review Picks <span class="portfolio-fab-count" id="portfolioSelectedCountStocks">0</span></button>
   </div>
 </div>
 
@@ -1478,8 +1520,8 @@
     cardList.innerHTML = '';
 
     if(list.length === 0){
-      tbody.innerHTML = `<tr><td colspan="9" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</td></tr>`;
-      cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</div>`;
+      tbody.innerHTML = `<tr><td colspan="9" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</td></tr>`;
+      cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</div>`;
     }
 
     list.forEach((t, idx)=>{
@@ -1495,7 +1537,7 @@
         <tr>
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
-            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:400;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
+            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:500;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
             <div class="strat-name">${t.strat}${valuationBadge(t)}</div>
           </td>
           <td>${pill}</td>
@@ -1523,7 +1565,7 @@
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:400; font-size:12px;">· ${stratShort}</span></div>
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:500; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:500; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
@@ -1715,6 +1757,23 @@
     backtest: '<strong>Backtest</strong> follows the P&amp;L of trades you\'ve tracked as their expiry gets closer. It doesn\'t use your allocation.'
   };
 
+  // Tools popover (Ticker Lookup / Backtest) open/close.
+  function closeToolsMenu(){
+    const m = document.getElementById('toolsMenu'), b = document.getElementById('toolsMenuBtn');
+    if(m) m.hidden = true;
+    if(b) b.setAttribute('aria-expanded', 'false');
+  }
+  document.getElementById('toolsMenuBtn').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const m = document.getElementById('toolsMenu');
+    m.hidden = !m.hidden;
+    e.currentTarget.setAttribute('aria-expanded', String(!m.hidden));
+  });
+  document.addEventListener('click', (e)=>{
+    if(!e.target.closest('#groupTools')) closeToolsMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeToolsMenu(); });
+
   function switchMode(mode){
     for(const key in MODE_VIEWS){
       const isActive = key === mode;
@@ -1820,8 +1879,8 @@
     if(list.length === 0){
       const typeVal = document.getElementById('equityTypeSelect').value;
       const diag = `(diagnostic: equities array has ${equities.length} total item(s) loaded · type filter = "${typeVal}" · after filtering = ${list.length})`;
-      equityTbody.innerHTML = `<tr><td colspan="7" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:400; color:var(--text-faint);">${diag}</span></td></tr>`;
-      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:600; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:400; color:var(--text-faint);">${diag}</span></div>`;
+      equityTbody.innerHTML = `<tr><td colspan="7" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:500; color:var(--text-faint);">${diag}</span></td></tr>`;
+      equityCardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No tickers match this view.<br><span style="font-family:var(--mono); font-size:11px; font-weight:500; color:var(--text-faint);">${diag}</span></div>`;
       return;
     }
 
@@ -1844,11 +1903,11 @@
         <div class="trade-card" data-eidx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-eid="${eid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:12px;">ETF</span>' : ''}${valuationBadge(e)}</div>
+            <div class="ticker-sym" style="flex:1;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:500; font-size:12px;">ETF</span>' : ''}${valuationBadge(e)}</div>
             ${trendPill(e.trend)}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:600;">${fmtPrice(e.price)}${staleMark(e.priceStale)} · RSI ${e.rsi ?? '—'}</span>
+            <span style="font-family:var(--mono); font-size:12.5px; color:var(--text-dim); font-weight:700;">${fmtPrice(e.price)}${staleMark(e.priceStale)} · RSI ${e.rsi ?? '—'}</span>
             ${meterHtml(e.score)}
           </div>
         </div>`;
@@ -1912,7 +1971,7 @@
     tradeModal.innerHTML = `
       <div class="modal-top">
         <div>
-          <div class="ticker-sym" style="font-size:19px;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:400; font-size:14px;">ETF</span>' : ''}</div>
+          <div class="ticker-sym" style="font-size:19px;">${e.sym}${e.isETF ? ' <span style="color:var(--text-faint); font-weight:500; font-size:14px;">ETF</span>' : ''}</div>
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
@@ -1923,8 +1982,8 @@
         <div><div class="mm-label">3-Month Change</div><div class="mm-val ${pctClass(e.chg3m)}">${fmtPct(e.chg3m)}</div></div>
         <div><div class="mm-label">6-Month Change</div><div class="mm-val ${pctClass(e.chg6m)}">${fmtPct(e.chg6m)}</div></div>
         <div><div class="mm-label">1-Year Change</div><div class="mm-val ${pctClass(e.chg1y)}">${fmtPct(e.chg1y)}</div></div>
-        <div><div class="mm-label">52-Week High</div><div class="mm-val">${fmtPrice(e.high52wk)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromHigh)})</span></div></div>
-        <div><div class="mm-label">52-Week Low</div><div class="mm-val">${fmtPrice(e.low52wk)} <span style="color:var(--text-faint); font-weight:400;">(${fmtPct(e.pctFromLow)})</span></div></div>
+        <div><div class="mm-label">52-Week High</div><div class="mm-val">${fmtPrice(e.high52wk)} <span style="color:var(--text-faint); font-weight:500;">(${fmtPct(e.pctFromHigh)})</span></div></div>
+        <div><div class="mm-label">52-Week Low</div><div class="mm-val">${fmtPrice(e.low52wk)} <span style="color:var(--text-faint); font-weight:500;">(${fmtPct(e.pctFromLow)})</span></div></div>
         <div><div class="mm-label">P/E Ratio</div><div class="mm-val">${e.peRatio ?? '—'}</div></div>
         ${e.valuationLabel ? `<div><div class="mm-label">Valuation vs. Sector Peers</div><div class="mm-val" style="color:${e.valuationLabel === 'Cheap' ? 'var(--green)' : e.valuationLabel === 'Rich' ? 'var(--red)' : 'var(--text-faint)'};">${e.valuationLabel} (${e.peVsSectorPct >= 0 ? '+' : ''}${e.peVsSectorPct}%, ${e.sectorPeerCount} peers)</div></div>` : ''}
         <div><div class="mm-label">Dividend Yield</div><div class="mm-val">${e.dividendYield != null ? e.dividendYield + '%' : '—'}</div></div>
@@ -2120,7 +2179,7 @@
     const optionRows = optionRowsData.map(({t, contracts, used})=>{
       const warn = contracts === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 contract</div>` : '';
       return `<div class="portfolio-line-item">
-        <div class="portfolio-line-title">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${t.strat}</span></div>
+        <div class="portfolio-line-title">${t.sym} <span style="color:var(--text-faint); font-weight:500; font-size:12px;">${t.strat}</span></div>
         <div class="portfolio-line-stats">
           <span>Cost/Contract <b>$${t.maxLoss.toLocaleString()}</b></span>
           <span>Contracts <b>${contracts}</b></span>
@@ -2142,7 +2201,7 @@
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Suggested Hedge</span></div>
       <div class="portfolio-line-list">
         <div class="portfolio-line-item">
-          <div class="portfolio-line-title">${hedge.symbol} $${hedge.strike} Put <span style="color:var(--text-faint); font-weight:400; font-size:12px;">exp ${hedge.exp} (${hedge.dte}d)</span></div>
+          <div class="portfolio-line-title">${hedge.symbol} $${hedge.strike} Put <span style="color:var(--text-faint); font-weight:500; font-size:12px;">exp ${hedge.exp} (${hedge.dte}d)</span></div>
           <div class="portfolio-line-stats">
             <span>Delta <b>${hedge.delta}</b></span>
             <span>${hedge.otmPct}% OTM</span>
@@ -2436,34 +2495,24 @@
   // The exact state Apply/Reset return to — edit this if your "sensible defaults" change.
   // Keep the `checked` attributes in the filter markup above in sync with this
   // list, since they set the state on first load (this list only drives Reset).
-  // Updated 2026-09-23 (again): default set is now every single-leg/defined-
-  // risk PREMIUM-SELLING credit strategy — Covered Call, Bull Put Spread,
-  // Cash-Secured Put, Bear Call Spread, Iron Condor — all the same trade
-  // shape (time decay works for you, no specific move required to profit).
-  // Double Diagonal dropped too: not for the same directional-bet reason as
-  // Bull Call Spread/Bear Put Spread earlier, but because it has no roc/ap
-  // and the Min Trade Profit floor below always excludes roc-less trades
-  // (see build_double_diagonal's docstring) — it was checked-but-invisible
-  // by default either way, so simpler to just leave it off. Min Trade Profit
-  // floor lowered from 20% to 15%.
-  // Updated 2026-09-24: Iron Condor dropped from the default set — down to
-  // the 4 single-leg/two-leg credit strategies (Covered Call, Bull Put
-  // Spread, Cash-Secured Put, Bear Call Spread). Still one tap away in the
-  // filter list for anyone who wants the neutral, defined-risk structure by
-  // default too.
+  // Updated 2026-09-27: default Outlook & Strategy set is now Bull Put
+  // Spread, Bear Call Spread, and Iron Condor, plus all 4 P/C ratio
+  // checkboxes (OI/Vol, both the bullish <0.7 and bearish >1.4 sides) —
+  // Covered Call, Cash-Secured Put, Bull Call Spread, and Bear Put Spread
+  // are no longer checked by default.
   const DEFAULT_CHECKED = [
-    '[data-strat="Covered Call"]',
     '[data-strat="Bull Put Spread"]',
-    '[data-strat="Cash-Secured Put"]',
     '[data-strat="Bear Call Spread"]',
+    '[data-strat="Iron Condor"]',
+    '[data-pcoi="bull"]',
+    '[data-pcoi="bear"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',
   ];
   const DEFAULT_MIN_TRADE_PROFIT = 20;
-  const DEFAULT_SORT = 'dte'; // "Days to expiration" — matches the <option selected> above;
-                               // kept here too so "Reset to defaults" restores the sort order,
-                               // not just the checkboxes/min-profit, if someone changed it.
+
+  const DEFAULT_SORT = 'dte';
 
   function resetFilters(){
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);
@@ -2596,7 +2645,7 @@
     tradeModal.innerHTML = `
       <div class="modal-top">
         <div>
-          <div class="ticker-sym" style="font-size:19px;">${t.sym} <span style="color:var(--text-faint); font-weight:400; font-size:14px;">${t.strike}</span></div>
+          <div class="ticker-sym" style="font-size:19px;">${t.sym} <span style="color:var(--text-faint); font-weight:500; font-size:14px;">${t.strike}</span></div>
         </div>
         <button class="modal-close" id="modalCloseBtn">✕</button>
       </div>
@@ -2886,7 +2935,7 @@
       if(live && live.pnlDollars != null){
         const isZero = Math.abs(live.pnlDollars) < 0.005;
         const cls = isZero ? '' : (live.pnlDollars >= 0 ? 'val-pos' : 'val-neg');
-        pnlHtml = `<div class="tracked-pnl-figures ${cls}">${fmtMoney(live.pnlDollars)} <span style="font-weight:600; font-size:12px;">(${fmtPct(live.pnlPct)})</span></div>`;
+        pnlHtml = `<div class="tracked-pnl-figures ${cls}">${fmtMoney(live.pnlDollars)} <span style="font-weight:700; font-size:12px;">(${fmtPct(live.pnlPct)})</span></div>`;
       } else {
         pnlHtml = `<div class="tracked-pnl-sub">No live P&amp;L yet — ${entryWord} ${entryVal} at entry</div>`;
       }
@@ -2894,7 +2943,7 @@
       return `
         <div class="tracked-card">
           <div class="tracked-card-top">
-            <div class="ticker-sym" style="font-size:14.5px;">${pos.sym} <span style="color:var(--text-faint); font-weight:400; font-size:12px;">${pos.strike}</span>
+            <div class="ticker-sym" style="font-size:14.5px;">${pos.sym} <span style="color:var(--text-faint); font-weight:500; font-size:12px;">${pos.strike}</span>
               <div class="strat-name">${pos.strat}</div>
             </div>
             <span class="tracked-status-pill ${statusCls}">${statusLabel}</span>

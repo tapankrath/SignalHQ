@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0C1210" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#111823" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VantEdgeAI">
@@ -23,38 +23,41 @@
     /* Note: --amber* variable names are historical — they hold the green accent
        color now. Kept the names to avoid touching every var(--amber...) usage
        site; only the values changed. */
-    /* 2026-09-29 refresh: one palette built around a deep green-black ink
-       and a single "ledger green" accent. Red is reserved for bearish/loss
-       meaning only. */
-    --bg:#FFFFFF;
+    /* 2026-09-29 "cool & bright" pass: crisp cool-slate neutrals, a light
+       gray page with white cards lifted off it, deep navy ink, and one
+       ledger-green accent. --accent-vivid is for decorative marks only
+       (meter bars, dots, side stripes) — never for text. Red = bearish/loss. */
+    --bg:#F2F4F7;
     --surface:#FFFFFF;
-    --surface-2:#F3F6F4;
-    --border:#DFE5E1;
-    --border-strong:#B9C3BD;
-    --text:#0E1B16;
-    --text-dim:#3E4B45;
-    --text-faint:#6A7670;
-    --amber:#08804C;
-    --amber-strong:#06703F;
-    --amber-soft:#E2F4EA;
-    --amber-border:#86CFA8;
-    --green:#08804C;
-    --green-soft:#E2F4EA;
-    --red:#D0393B;
-    --red-soft:#FCE8E7;
+    --surface-2:#F4F6F9;
+    --border:#E2E7ED;
+    --border-strong:#C4CCD6;
+    --text:#0B1526;
+    --text-dim:#3C4859;
+    --text-faint:#636E80;
+    --amber:#0A8754;
+    --amber-strong:#067A48;
+    --amber-soft:#E4F6EC;
+    --amber-border:#8FD4AE;
+    --green:#0A8754;
+    --green-soft:#E4F6EC;
+    --accent-vivid:#12B76A;
+    --red:#D6353B;
+    --red-soft:#FDEBEC;
+    --red-vivid:#F04449;
     /* Inverted chip (toast, active tab) — its own token so dark mode can
        flip it to a light chip instead of inheriting --text's flip. */
-    --invert-bg:#0E1B16;
+    --invert-bg:#0B1526;
     --invert-text:#FFFFFF;
-    --mark-tile:#0E1B16;
+    --mark-tile:#0B1526;
     --radius:14px;
     --radius-sm:8px;
     --control-h:36px;
     --sans:'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, sans-serif;
     --mono:'IBM Plex Mono', 'SF Mono', ui-monospace, Menlo, monospace;
-    --shadow-sm:0 1px 2px rgba(14,27,22,0.05);
-    --shadow-md:0 2px 6px rgba(14,27,22,0.06), 0 8px 20px rgba(14,27,22,0.06);
-    --shadow-lg:0 16px 44px rgba(14,27,22,0.18);
+    --shadow-sm:0 1px 2px rgba(11,21,38,0.06), 0 0 0 1px rgba(11,21,38,0.02);
+    --shadow-md:0 2px 4px rgba(11,21,38,0.05), 0 10px 24px -6px rgba(11,21,38,0.12);
+    --shadow-lg:0 20px 48px -8px rgba(11,21,38,0.28);
   }
 
   /* Dark mode — follows the device/browser's system appearance automatically
@@ -68,25 +71,27 @@
      active. */
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#0C1210;
-      --surface:#0C1210;
-      --surface-2:#17201C;
-      --border:#26312C;
-      --border-strong:#3F4B45;
-      --text:#EEF2EF;
-      --text-dim:#B3BDB7;
-      --text-faint:#85908A;
-      --amber:#1FA866;
-      --amber-strong:#5ADB93;
-      --amber-soft:#11291D;
-      --amber-border:#1F6B45;
-      --green:#3ECF85;
-      --green-soft:#11291D;
-      --red:#F2787A;
-      --red-soft:#361719;
-      --invert-bg:#EEF2EF;
-      --invert-text:#0C1210;
-      --mark-tile:#1B2A23;
+      --bg:#090E15;
+      --surface:#111823;
+      --surface-2:#18212D;
+      --border:#243040;
+      --border-strong:#3A475A;
+      --text:#EDF1F6;
+      --text-dim:#AEB8C6;
+      --text-faint:#8390A2;
+      --amber:#1AA866;
+      --amber-strong:#4ADE93;
+      --amber-soft:#0F2A1F;
+      --amber-border:#1D6B47;
+      --green:#3ED68A;
+      --green-soft:#0F2A1F;
+      --accent-vivid:#2FD583;
+      --red:#F57A7D;
+      --red-soft:#3A171B;
+      --red-vivid:#FF5A5F;
+      --invert-bg:#EDF1F6;
+      --invert-text:#090E15;
+      --mark-tile:#1A2535;
       --shadow-sm:0 1px 2px rgba(0,0,0,0.5);
       --shadow-md:0 2px 6px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.45);
       --shadow-lg:0 16px 44px rgba(0,0,0,0.6);
@@ -129,6 +134,7 @@
     display:flex; flex-direction:column; gap:10px;
     padding-top:12px; padding-bottom:12px;
     border-bottom:1px solid var(--border);
+    box-shadow:0 6px 18px -14px rgba(11,21,38,0.35);
   }
   header{ display:flex; flex-direction:column; gap:10px; }
   /* Brand, Tools / My Tickers and the data status share one row on wide
@@ -288,7 +294,7 @@
        fixed-size (flex-shrink:0 below) and this is the one that gives. */
     flex-shrink:1; min-width:0;
   }
-  .pulse-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
+  .pulse-dot{ width:7px; height:7px; border-radius:50%; background:var(--accent-vivid); flex-shrink:0; box-shadow:0 0 0 3px color-mix(in srgb, var(--accent-vivid) 22%, transparent); }
   #dataStatusText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:500; color:var(--text-dim); }
 
   .header-top-right{
@@ -359,6 +365,7 @@
   }
 
   .row-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
+  .row-checkbox, .card-checkbox{ accent-color:var(--amber); }
   .card-checkbox{ width:19px; height:19px; cursor:pointer; flex-shrink:0; }
   .checkbox-wrap{
     display:inline-flex; align-items:center; justify-content:center;
@@ -403,14 +410,15 @@
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:12px;
     margin-bottom:10px;
+    box-shadow:var(--shadow-sm);
   }
 
   .strat-dot{
     display:inline-block; width:8px; height:8px; border-radius:50%;
     margin-right:7px; vertical-align:middle;
   }
-  .strat-dot.bull{ background:var(--green); }
-  .strat-dot.bear{ background:var(--red); }
+  .strat-dot.bull{ background:var(--accent-vivid); }
+  .strat-dot.bear{ background:var(--red-vivid); }
   .strat-dot.neutral{ background:var(--text-faint); }
   .filter-hint{ font-size:10.5px; color:var(--text-faint); line-height:1.45; padding:0 12px 12px; }
 
@@ -422,7 +430,8 @@
     cursor:pointer; user-select:none; text-align:center; line-height:1.25;
     transition:border-color .12s, background .12s;
   }
-  .filter-header-btn[aria-expanded="true"]{ border-color:var(--text); background:var(--surface); }
+  .filter-header-btn:hover{ border-color:var(--border-strong); }
+  .filter-header-btn[aria-expanded="true"]{ border-color:var(--amber); background:var(--surface); box-shadow:0 0 0 3px var(--amber-soft); }
   .filter-header-btn .filter-chevron{
     font-size:15px; color:var(--text-faint); transform:rotate(90deg); transition:transform .15s; line-height:1;
   }
@@ -519,7 +528,7 @@
     font-weight:600; font-size:13px; margin-bottom:8px;
     transition:filter .12s, box-shadow .12s;
   }
-  .apply-btn-compact:hover{ filter:brightness(1.08); }
+  .apply-btn-compact:hover{ background:var(--amber-strong); border-color:var(--amber-strong); }
   .apply-btn-compact:focus-visible{ outline:2px solid var(--amber-strong); outline-offset:2px; }
 
   /* Apply + Reset side by side, right under the 3 filter category boxes
@@ -557,6 +566,8 @@
     transition:filter .12s;
   }
   .copy-btn:hover{ filter:brightness(0.97); }
+  .copy-btn.has-picks{ background:var(--amber); border-color:var(--amber); color:#fff; }
+  .copy-btn.has-picks .portfolio-fab-count{ background:#fff; color:var(--amber-strong); }
   .active-count{ font-size:12px; font-weight:500; color:var(--text-faint); white-space:nowrap; }
 
   /* Checking row/card checkboxes already means "select these trades" for
@@ -571,7 +582,13 @@
   .track-selected-btn:hover{ filter:brightness(1.08); }
   /* In the bottom bar it shares the row with Review Picks — same height and
      type size, equal width. */
-  .apply-bar-row .track-selected-btn{ flex:1; padding:10px 14px; font-size:12.5px; }
+  .apply-bar-row .track-selected-btn{ flex:1; padding:10px 14px; font-size:13.5px; }
+  /* Review Picks is the primary action; Track is its secondary partner. */
+  .apply-bar-row .track-selected-btn{
+    background:var(--surface); color:var(--amber-strong);
+    border:1px solid var(--amber-border); min-height:40px;
+  }
+  .apply-bar-row .track-selected-btn:hover{ filter:none; background:var(--amber-soft); }
 
   /* ---------- RESULTS ---------- */
   /* Wrapped in the same card treatment (background/border/radius/padding)
@@ -584,6 +601,7 @@
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); padding:10px 12px;
     margin-bottom:10px;
+    box-shadow:var(--shadow-sm);
   }
   .results-bar{
     display:flex; align-items:center; justify-content:space-between;
@@ -636,6 +654,7 @@
     background:var(--surface); border:1px solid var(--border);
     border-radius:var(--radius); overflow-x:auto; overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
+    box-shadow:var(--shadow-sm);
   }
   table{ width:100%; min-width:720px; border-collapse:collapse; }
   thead th{
@@ -646,7 +665,7 @@
   }
   tbody tr{ border-bottom:1px solid var(--border); transition:background .12s; }
   tbody tr:last-child{ border-bottom:none; }
-  tbody tr:hover{ background:var(--surface-2); }
+  tbody tr:hover{ background:color-mix(in srgb, var(--accent-vivid) 5%, var(--surface)); }
   thead th:first-child, tbody td:first-child{ width:44px; padding-right:4px; }
   thead th:last-child, tbody td:last-child{ padding-right:12px; text-align:right; }
   tbody td{ padding:11px 12px; font-size:13px; font-weight:500; vertical-align:middle; white-space:nowrap; }
@@ -669,7 +688,7 @@
   .meter{ display:flex; align-items:center; gap:8px; }
   .meter-ticks{ display:flex; gap:2px; }
   .meter-ticks span{ width:4px; height:14px; border-radius:1px; background:var(--border); }
-  .meter-ticks span.on{ background:var(--amber); }
+  .meter-ticks span.on{ background:var(--accent-vivid); }
   .meter-score{ font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--amber-strong); min-width:26px; }
 
   .row-action{
@@ -687,11 +706,26 @@
   }
   .trade-card{
     background:var(--surface); border:1px solid var(--border);
-    border-radius:12px; padding:12px 14px;
+    border-radius:12px; padding:12px 14px 12px 16px;
+    position:relative; overflow:hidden;
+    box-shadow:var(--shadow-sm);
     cursor:pointer; transition:border-color .12s, box-shadow .12s, transform .12s;
   }
   .trade-card:hover{ box-shadow:var(--shadow-md); border-color:var(--border-strong); }
   .trade-card:active{ border-color:var(--border-strong); box-shadow:var(--shadow-sm); transform:scale(0.994); }
+  /* Thin stripe on the card's left edge encodes the trade's side at a glance. */
+  .trade-card::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
+    background:var(--border-strong);
+  }
+  .trade-card:has(.side-pill.bull)::before{ background:var(--accent-vivid); }
+  .trade-card:has(.side-pill.bear)::before{ background:var(--red-vivid); }
+  /* Picked trades get a green outline and faint tint — cards and table rows. */
+  .trade-card:has(.card-checkbox:checked){
+    border-color:var(--amber-border);
+    background:color-mix(in srgb, var(--accent-vivid) 5%, var(--surface));
+  }
+  tbody tr:has(.row-checkbox:checked){ background:color-mix(in srgb, var(--accent-vivid) 7%, var(--surface)); }
   .trade-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
 
   /* ---------- BACKTEST TAB ---------- */
@@ -1053,14 +1087,15 @@
        (--surface-2, one step lighter than --bg) they sink into it, darker
        than their own container. A dedicated shade lighter than the tray
        restores that "raised field" relationship. */
-    .portfolio-bar input{ background:#1F2A25; }
+    .portfolio-bar input{ background:#0E141D; }
     /* The logo tile follows --mark-tile; a hairline keeps its edge visible
        against the near-black page. */
     .brand-mark .mark-edge{ stroke:rgba(255,255,255,0.10); }
     /* Solid green buttons use a deeper fill than --amber so white labels
        keep AA contrast. */
     .apply-btn-compact, .apply-btn, .lookup-tab-submit, .modal-copy-btn,
-    .ticker-add-row button, .track-selected-btn{ background:#0E8450; border-color:#0E8450; color:#fff; }
+    .ticker-add-row button, .copy-btn.has-picks{ background:#0E8450; border-color:#0E8450; color:#fff; }
+    .copy-btn.has-picks .portfolio-fab-count{ background:#fff; color:#0E8450; }
   }
 
 </style>
@@ -3034,6 +3069,7 @@
   function updatePortfolioCount(){
     const n = selectedOptionIds.size;
     document.getElementById('portfolioSelectedCount').textContent = n;
+    document.getElementById('portfolioSummaryBtn').classList.toggle('has-picks', n > 0);
 
     // Track-selected only covers option trades (Backtest needs the per-leg
     // pricing data options carry) — equity-only selections don't show it.

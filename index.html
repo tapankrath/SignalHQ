@@ -404,7 +404,7 @@
   .strat-dot.neutral{ background:var(--text-faint); }
   .filter-hint{ font-size:10.5px; color:var(--text-faint); line-height:1.45; padding:0 12px 12px; }
 
-  .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px; }
+  .filter-headers-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:0; }
   .filter-header-btn{
     border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface-2);
     min-height:40px; padding:6px 12px; font-weight:600; font-size:13px; font-family:inherit; color:var(--text);
@@ -520,7 +520,18 @@
   /* Reset is now the neutral partner of Apply (2026-09-29): same size and
      weight so neither looks "light" next to the other, but only the action
      that changes results is green. */
-  .apply-reset-row{ display:flex; gap:8px; margin-top:8px; margin-bottom:0; }
+  .apply-reset-row{
+    display:flex; gap:8px; margin:0 -12px; padding:8px 12px 0;
+    position:sticky; bottom:var(--sticky-actions-bottom, 0px);
+    transition:box-shadow .15s;
+  }
+  /* Stuck over the list: a hairline + soft lift so it reads as a toolbar
+     floating above the checkboxes rather than part of them. */
+  .apply-reset-row.is-stuck{
+    z-index:5; background:var(--surface);
+    padding-bottom:8px;
+    box-shadow:0 -1px 0 var(--border), 0 -8px 16px -10px rgba(14,27,22,0.25);
+  }
   .apply-reset-row .apply-btn-compact{ flex:1; margin-bottom:0; }
   .reset-btn-bold{
     flex:1; background:var(--surface); color:var(--text); border:1px solid var(--border-strong);
@@ -865,7 +876,8 @@
     position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
     background:var(--invert-bg); color:var(--invert-text);
     font-size:13px; font-weight:500;
-    padding:10px 18px; border-radius:999px; z-index:90;
+    padding:10px 18px; border-radius:20px; z-index:90;
+    width:max-content; max-width:calc(100vw - 32px); text-align:center; line-height:1.4;
     opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
     box-shadow:0 8px 24px rgba(16,24,40,0.25);
   }
@@ -1149,10 +1161,6 @@
          really belong — resetting is part of the same filtering action as
          applying, not a portfolio action) and is styled as a solid, bold
          green button so it's not missed next to Apply. -->
-    <div class="apply-reset-row">
-      <button class="apply-btn-compact" type="button" id="applyFiltersTop">Apply filters</button>
-      <button class="reset-btn-bold" id="resetFilters">Reset to defaults</button>
-    </div>
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
@@ -1194,6 +1202,16 @@
         <label class="check-row"><input type="checkbox" data-risk="etfOnly"> ETFs only</label>
         <label class="check-row"><input type="checkbox" data-risk="marginOfSafety"> Margin of safety (ATR-based)</label>
       </div>
+    </div>
+
+    <!-- Apply / Reset (moved 2026-09-29) sit AFTER the filter sections and are
+         position:sticky to the bottom: with every section closed they land
+         right under the 3 category buttons as before, but while a section is
+         open they ride just above the Review Picks bar, so you can apply or
+         reset from anywhere in the checkbox list. -->
+    <div class="apply-reset-row" id="applyResetRow">
+      <button class="apply-btn-compact" type="button" id="applyFiltersTop">Apply filters</button>
+      <button class="reset-btn-bold" id="resetFilters">Reset to defaults</button>
     </div>
 
     <div class="apply-bar">
@@ -2532,7 +2550,16 @@
     applyFilters();
   }
 
-  document.getElementById('applyFiltersTop').addEventListener('click', applyFilters);
+  document.getElementById('applyFiltersTop').addEventListener('click', ()=>{
+    applyFilters();
+    // Sections collapse on apply; if you tapped Apply from deep in a long
+    // list, bring the (now short) filter card back under the header so the
+    // refreshed results are right below it.
+    const card = document.querySelector('#optionsView .filter-card');
+    const header = document.querySelector('.sticky-top');
+    const top = card.getBoundingClientRect().top - header.getBoundingClientRect().height - 10;
+    if(top < 0) window.scrollBy({ top, behavior: 'smooth' });
+  });
 
   // Min trade profit's own live update — deliberately lighter than
   // applyFilters() above: just recompute/re-render/update the funnel and
@@ -2547,6 +2574,36 @@
   }
   document.getElementById('minTradeProfitInput').addEventListener('input', liveApplyMinProfit);
   document.getElementById('resetFilters').addEventListener('click', resetFilters);
+
+  // Sticky Apply/Reset row: on phones the Review Picks bar is fixed to the
+  // bottom of the screen, so the row has to stick just above it. Measure that
+  // bar (its height changes with the safe-area inset and the Track button)
+  // and flag when the row is actually floating over the list.
+  (function(){
+    const row = document.getElementById('applyResetRow');
+    const bottomBar = document.querySelector('#optionsView .apply-bar');
+    if(!row || !bottomBar) return;
+    let offset = 0;
+    function measure(){
+      offset = getComputedStyle(bottomBar).position === 'fixed' ? bottomBar.offsetHeight : 0;
+      document.documentElement.style.setProperty('--sticky-actions-bottom', offset + 'px');
+      checkStuck();
+    }
+    function checkStuck(){
+      if(row.offsetParent === null){ row.classList.remove('is-stuck'); return; }
+      const limit = window.innerHeight - offset;
+      row.classList.toggle('is-stuck', row.getBoundingClientRect().bottom >= limit - 1);
+    }
+    let ticking = false;
+    window.addEventListener('scroll', ()=>{
+      if(ticking) return; ticking = true;
+      requestAnimationFrame(()=>{ ticking = false; checkStuck(); });
+    }, { passive:true });
+    window.addEventListener('resize', measure);
+    if(window.ResizeObserver) new ResizeObserver(measure).observe(bottomBar);
+    document.querySelectorAll('.filter-header-btn').forEach(b => b.addEventListener('click', ()=> requestAnimationFrame(checkStuck)));
+    measure();
+  })();
 
   // sort takes effect immediately on the currently-filtered list, no need to hit Apply
   document.getElementById('sortSelect').addEventListener('change', ()=>{

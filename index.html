@@ -355,11 +355,18 @@
   }
   .capital-field input{ padding-left:22px !important; }
   /* Back link shown in the tool note while Lookup/Backtest is open. */
+  /* "Back to trades" while a Tool is open: a clear, full-height button on
+     the left of the note (was a small underlined text link). */
+  .tools-note > .tools-note-row{ display:flex; align-items:center; gap:12px; padding:8px 12px 8px 8px; }
+  .tools-note-text{ min-width:0; }
   .tools-back{
-    margin-left:8px; padding:0; background:none; border:none;
-    font:inherit; font-weight:600; color:var(--amber-strong);
-    text-decoration:underline; text-underline-offset:2px; cursor:pointer;
+    flex-shrink:0; display:inline-flex; align-items:center; gap:4px;
+    height:38px; padding:0 14px 0 10px; border-radius:var(--radius-sm);
+    background:var(--invert-bg); color:var(--invert-text); border:none;
+    font:inherit; font-size:14px; font-weight:600; white-space:nowrap; cursor:pointer;
   }
+  .tools-back:hover{ filter:brightness(1.15); }
+  .tools-back:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
   .portfolio-fab-count{
     background:var(--amber-strong); color:#fff;
     border-radius:12px; padding:2px 8px; font-family:var(--mono); font-size:12px;
@@ -1890,7 +1897,7 @@
   const MODE_TABS = { options: 'tabOptions', lookup: 'tabLookup', backtest: 'tabBacktest' };
 
   const TOOL_NOTES = {
-    lookup:   '<strong>Ticker Lookup</strong> works on any symbol and doesn\'t use your options capital.',
+    lookup:   '<strong>Ticker Lookup</strong> works on any symbol and doesn\'t use your capital.',
     backtest: '<strong>Backtest</strong> follows the P&amp;L of trades you\'ve tracked as their expiry gets closer.'
   };
 
@@ -1926,7 +1933,14 @@
     const toolsNote = document.getElementById('toolsNote');
     toolsNote.style.display = isTool ? '' : 'none';
     if(isTool){
-      toolsNote.innerHTML = `<div>${TOOL_NOTES[mode]}<button type="button" class="tools-back" id="toolsBackBtn">Back to trades</button></div>`;
+      // A real button (not an inline link) so the way home is obvious.
+      toolsNote.innerHTML = `<div class="tools-note-row">
+        <button type="button" class="tools-back" id="toolsBackBtn" aria-label="Back to option trades">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          Back to trades
+        </button>
+        <span class="tools-note-text">${TOOL_NOTES[mode]}</span>
+      </div>`;
       document.getElementById('toolsBackBtn').addEventListener('click', ()=> switchMode('options'));
     }
 

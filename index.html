@@ -1562,7 +1562,8 @@
     const statusText = document.getElementById('dataStatusText');
     const statusDot = document.getElementById('dataStatusDot');
     try{
-      const res = await fetch('data.json', { cache:'no-store' });
+      // ?_= bypasses GitHub Pages' CDN copy (it can hold data.json ~10 min).
+      const res = await fetch(`data.json?_=${Date.now()}`, { cache:'no-store' });
       if(!res.ok) throw new Error(`data.json fetch failed: ${res.status}`);
       const json = await res.json();
       // Butterfly and Calendar Spread were retired 2026-09-20; an older cached
@@ -2481,6 +2482,40 @@
   }
   document.getElementById('minTradeProfitInput').addEventListener('input', liveApplyMinProfit);
   document.getElementById('resetFilters').addEventListener('click', resetFilters);
+
+  // Auto-pick-up of new data (2026-09-30). iOS freezes a backgrounded page,
+  // so a data run that lands while the phone is locked was only seen after a
+  // full close/reopen. Now, whenever the app comes back on screen (and every
+  // 5 minutes while it stays open), it quietly checks data.json's
+  // generated_at and, if a newer run exists, re-renders in place — keeping
+  // your picks, filters and capital.
+  (function(){
+    const MIN_GAP_MS = 20 * 1000;       // don't re-check more often than this
+    const POLL_MS    = 5 * 60 * 1000;   // background poll while visible
+    let lastCheck = 0, busy = false;
+    async function checkForNewData(){
+      if(busy || document.visibilityState !== 'visible') return;
+      if(Date.now() - lastCheck < MIN_GAP_MS) return;
+      busy = true; lastCheck = Date.now();
+      try{
+        const res = await fetch(`data.json?_=${Date.now()}`, { cache:'no-store' });
+        if(!res.ok) return;
+        const json = await res.json();
+        const fresh = json.generated_at ? new Date(json.generated_at).getTime() : NaN;
+        const current = dataGeneratedAt ? new Date(dataGeneratedAt).getTime() : NaN;
+        if(isFinite(fresh) && (!isFinite(current) || fresh > current)){
+          await reloadAndRerenderData();
+          showToast(`Updated with latest data (${formatDataTimestamp(json.generated_at)})`);
+        }
+      }catch(_){ /* offline or mid-deploy — try again next time */ }
+      finally{ busy = false; }
+    }
+    document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState === 'visible') checkForNewData(); });
+    window.addEventListener('pageshow', e => { if(e.persisted) checkForNewData(); });
+    window.addEventListener('focus', checkForNewData);
+    window.addEventListener('online', checkForNewData);
+    setInterval(checkForNewData, POLL_MS);
+  })();
 
   // Sticky Apply/Reset row: on phones the Review Picks bar is fixed to the
   // bottom of the screen, so the row has to stick just above it.

@@ -2207,17 +2207,19 @@ def build_equity_snapshot(ticker_symbol, is_etf):
 
 
 # --- Market snapshot (added 2026-09-29) --------------------------------------
-# Four headline gauges for the page's market-condition tiles. Real index
-# levels (not ETF proxies), each with the move vs. the previous close. On an
+# Four headline gauges for the page's market-condition tiles: the QQQ / SPY /
+# IWM ETFs (Nasdaq-100, S&P 500, Russell 2000 small caps) plus the VIX index,
+# each with the move vs. the previous close. Switched from index levels
+# (^IXIC/^GSPC/^DJI) to tradeable ETFs on 2026-09-30. On an
 # intraday run yfinance's last daily bar is today's in-progress session, so
 # the change is "today so far"; on the post-close run it's the full day.
 # "inverse" marks gauges where a rise is bad for stocks (VIX) so the frontend
 # can color them the right way round.
 MARKET_GAUGES = [
-    {"key": "nasdaq", "label": "Nasdaq",  "symbol": "^IXIC"},
-    {"key": "sp500",  "label": "S&P 500", "symbol": "^GSPC"},
-    {"key": "dow",    "label": "Dow",     "symbol": "^DJI"},
-    {"key": "vix",    "label": "VIX",     "symbol": "^VIX", "inverse": True},
+    {"key": "qqq", "label": "QQQ", "symbol": "QQQ"},
+    {"key": "spy", "label": "SPY", "symbol": "SPY"},
+    {"key": "iwm", "label": "IWM", "symbol": "IWM"},
+    {"key": "vix", "label": "VIX", "symbol": "^VIX", "inverse": True},
 ]
 
 
@@ -2591,7 +2593,7 @@ def main():
         # is absent, same as any other optional field in this file.
         print(f"  hedge candidate unavailable this run — omitting from {OUTPUT_PATH}")
 
-    print("Fetching market snapshot (Nasdaq, S&P 500, Dow, VIX)...")
+    print("Fetching market snapshot (QQQ, SPY, IWM, VIX)...")
     market = build_market_snapshot()
     if not market:
         print("  market snapshot unavailable this run — the page hides the tiles")

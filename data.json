@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T21:07:58.536129+00:00",
+  "generated_at": "2026-09-30T23:09:35.204257+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,8 +40,8 @@
       "pcVol": 0.64,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Apple's new CEO John Ternus plans on making some changes",
@@ -50,16 +50,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Apple Predicted To Sell 6 Million iPhone Duo Handsets This Year",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/apple-stock-aapl-iphone-duo-2026-sales-forecast/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "New Apple CEO Makes Surprising Move After Tim Cook Exit",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/apple-ceo-makes-surprising-move-180443018.html",
           "sentiment": 0.27
-        },
-        {
-          "title": "Apple, Alphabet, Nvidia Lead Powerful Tech Rally as Rate Fears Fade",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-alphabet-nvidia-lead-powerful-175803008.html",
-          "sentiment": 0.54
         }
       ],
       "volRegime": "Fair",
@@ -292,14 +292,14 @@
       "pcVol": 0.29,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.09,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Meta & Anthropic CEOs: 'Whoever wins AI, wins'",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/meta-anthropic-ceos-whoever-wins-220208252.html",
-          "sentiment": 0.81
+          "title": "Alexandr Wang Praises Meta's Muse for Tackling an Everyday Neighborhood Problem: 'Seriously Awesome Use Case'",
+          "publisher": "Benzinga",
+          "link": "https://tech.yahoo.com/ai/meta-ai/articles/alexandr-wang-praises-metas-muse-203010636.html",
+          "sentiment": 0.62
         },
         {
           "title": "Meta Stock Slides as Muse Faces OpenAI Threat",
@@ -370,26 +370,26 @@
       "pcVol": 0.45,
       "debitStrategy": true,
       "potIsProfitProb": false,
-      "newsSentiment": 0.32,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "VIG Cannot Own Meta\u2019s or Alphabet\u2019s Dividends Until 2035 at the Earliest: The 10-Year Rule Written Into Its Index",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/30/vig-cannot-own-metas-or-alphabets-dividends-until-2035-at-the-earliest-the-10-year-rule-written-into-its-index/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Google Unveils New AI Model Gemini 4 Argon, Sending Alphabet Stock Higher",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/google-ai-gemini-4-argon-alphabet-stock-d3df631c?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Alphabet stock slips on report of internal doubts over Gemini 4",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-stock-slips-report-internal-203029696.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "Why Is Alphabet (GOOGL) Signing A White House AI Safety Accord?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/why-alphabet-googl-signing-white-171625155.html",
-          "sentiment": 0.42
-        },
-        {
-          "title": "Alphabet Rallies 3% as Traders Weigh White House Safety Accord; Apple Gains 2.5%, Meta Platforms Treads Water",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/30/alphabet-rallies-3-as-traders-weigh-white-house-safety-accord-apple-gains-2-5-meta-platforms-treads-water/",
-          "sentiment": 0.83
         }
       ],
       "volRegime": "Rich",
@@ -636,8 +636,8 @@
       "pcVol": 0.4,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.4,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.13,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Constellation Energy stock climbs on Amazon nuclear power deal",
@@ -646,16 +646,16 @@
           "sentiment": 0.42
         },
         {
-          "title": "Amazon Tries to Boost Nuclear Power in Maryland After Scrapping Data Center Deal",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/business/energy-oil/amazon-tries-to-boost-nuclear-power-in-maryland-after-scrapping-data-center-deal-d551385e?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.53
-        },
-        {
           "title": "Amazon Signs $1 Billion Synopsys Deal as AWS Steps Up Nvidia Challenge",
           "publisher": "Benzinga Prediction Markets",
           "link": "https://finance.yahoo.com/technology/ai/articles/amazon-signs-1-billion-synopsys-193319799.html",
           "sentiment": 0.25
+        },
+        {
+          "title": "Amazon Stock Has 46% Upside. Muse and Dots Threats Are \u2018Overstated.\u2019",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/amazon-stock-meta-muse-openai-dots-64ca6378?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.27
         }
       ],
       "volRegime": "Rich",
@@ -1179,7 +1179,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -41.2,
+      "peVsSectorPct": -41.7,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30,
       "sector": "Technology"
@@ -1222,9 +1222,15 @@
       "pcVol": 1.54,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.21,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "CrowdStrike (CRWD) Stock May Be Overvalued On Blueprint Alliance News",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-stock-may-overvalued-211447326.html",
+          "sentiment": 0.0
+        },
         {
           "title": "BlackBerry Advances 5% on Continued QNX Momentum; Palo Alto Networks Gains 4%, CrowdStrike Edges Up 2%",
           "publisher": "24/7 Wall St.",
@@ -1236,12 +1242,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/617148/is-crowdstrike-stock-paying-you-enough-for-the-swings/2026-09-30",
           "sentiment": 0.0
-        },
-        {
-          "title": "All In On Cybersecurity: The Choice Between Palo Alto Networks or Crowdstrike Not Difficult",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/30/all-in-on-cybersecurity-the-choice-between-palo-alto-networks-or-crowdstrike-not-difficult/",
-          "sentiment": 0.28
         }
       ],
       "volRegime": "Fair",
@@ -1865,9 +1865,15 @@
       "pcVol": 2.24,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.41,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Home Depot (HD) Declines More Than Market: Some Information for Investors",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-declines-more-204503161.html",
+          "sentiment": 0.0
+        },
         {
           "title": "The $66 Billion Consolation Prize For HD Shareholders",
           "publisher": "Trefis",
@@ -1879,12 +1885,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-vs-lowe-045457828.html",
           "sentiment": 0.02
-        },
-        {
-          "title": "Which Value Stock Is the More Obvious Buy Now: Home Depot Under $310 a Share or Lowe's Under $200 a Share?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/29/which-value-stock-is-the-more-obvious-buy-now-home/",
-          "sentiment": 0.7
         }
       ],
       "volRegime": "Rich",
@@ -2122,9 +2122,15 @@
       "pcVol": 3.0,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "What Changed In Marvell's Story?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616923/what-changed-in-marvells-story/2026-09-30",
+          "sentiment": 0.0
+        },
         {
           "title": "What Is The True Hidden Price Of Marvell Stock?",
           "publisher": "Trefis",
@@ -2135,12 +2141,6 @@
           "title": "Better AI Chip Stock to Buy Today: Broadcom vs. Marvell",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/30/better-ai-chip-stock-to-buy-today-broadcom-vs-marv/",
-          "sentiment": 0.44
-        },
-        {
-          "title": "ASML Holding N.V. vs. Marvell Technology: Which Technology Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/30/asml-holding-n-v-vs-marvell-technology-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
         }
       ],
@@ -2788,9 +2788,15 @@
       "pcVol": 0.72,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.53,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "MP Materials (MP) Looks Re Rated After Texas Magnet Campus Win",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/mp-materials-mp-looks-rated-221018563.html",
+          "sentiment": 0.59
+        },
         {
           "title": "MP Materials Surges 6% as Traders Weigh Critical Minerals Growth Story; USA Rare Earth Rises 3%, Critical Metals Stays Flat",
           "publisher": "24/7 Wall St.",
@@ -2802,12 +2808,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/30/mp-materials-and-usa-rare-earth-rallied-on-a-green/",
           "sentiment": 0.54
-        },
-        {
-          "title": "MP Materials Just Sank 21% in a Month. Is It Time to Sell, or Is This a Prime Buying Opportunity?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/28/mp-materials-just-sank-21-in-a-month-is-it-time-to-sell-or-is-this-a-prime-buying-opportunity/",
-          "sentiment": -0.18
         }
       ],
       "volRegime": "Rich",
@@ -3522,6 +3522,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "SpaceX Just Got a Little Closer to a Tesla Merger",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/spacex-tesla-stock-merger-bb985d61?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "SpaceXAI considers four-tier pricing model for Grok and X users - Bloomberg",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/spacexai-considers-four-tier-pricing-181516980.html",
@@ -3532,12 +3538,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/research/options/spacex-stock-spcx-tech-dividend-options-strategy-covered-call-markets-trading/?src=A00220&yptr=yahoo",
           "sentiment": 0.34
-        },
-        {
-          "title": "SpaceX's AI Deals Could Generate $54 Billion as It Targets $100 Billion ARR",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/spacexs-ai-deals-could-generate-150308299.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -3613,9 +3613,15 @@
       "pcVol": 0.29,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": -0.01,
+      "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX Just Got a Little Closer to a Tesla Merger",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/spacex-tesla-stock-merger-bb985d61?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Which Automaker Stock Dominated in September: Tesla, Ford, or General Motors?",
           "publisher": "24/7 Wall St.",
@@ -3627,12 +3633,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/tesla-q3-deliveries-elon-musk-roadster-electric-vehicles-spacex/?src=A00220&yptr=yahoo",
           "sentiment": -0.4
-        },
-        {
-          "title": "Why Tesla\u2019s $25 Billion Credit Line Is a High-Stakes Bet on AI and Robotaxis",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/teslas-stock-cash-crunch-ai-55963c4d?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.38
         }
       ],
       "volRegime": "Rich",
@@ -3768,26 +3768,26 @@
       "pcVol": 0.13,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.32,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "VIG Cannot Own Meta\u2019s or Alphabet\u2019s Dividends Until 2035 at the Earliest: The 10-Year Rule Written Into Its Index",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/30/vig-cannot-own-metas-or-alphabets-dividends-until-2035-at-the-earliest-the-10-year-rule-written-into-its-index/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Google Unveils New AI Model Gemini 4 Argon, Sending Alphabet Stock Higher",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/google-ai-gemini-4-argon-alphabet-stock-d3df631c?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Alphabet stock slips on report of internal doubts over Gemini 4",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-stock-slips-report-internal-203029696.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "Why Is Alphabet (GOOGL) Signing A White House AI Safety Accord?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/why-alphabet-googl-signing-white-171625155.html",
-          "sentiment": 0.42
-        },
-        {
-          "title": "Alphabet Rallies 3% as Traders Weigh White House Safety Accord; Apple Gains 2.5%, Meta Platforms Treads Water",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/30/alphabet-rallies-3-as-traders-weigh-white-house-safety-accord-apple-gains-2-5-meta-platforms-treads-water/",
-          "sentiment": 0.83
         }
       ],
       "volRegime": "Rich",
@@ -4283,9 +4283,15 @@
       "pcVol": 13.88,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.55,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.13,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Eli Lilly (LLY) Suffers a Larger Drop Than the General Market: Key Insights",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-suffers-larger-204504722.html",
+          "sentiment": -0.64
+        },
         {
           "title": "Move Aside Retatrutide, Eli Lilly Just Beat Its Next-Gen Obesity Drug",
           "publisher": "Investor's Business Daily",
@@ -4297,12 +4303,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/eli-lilly-lly-stock-stays-200926900.html",
           "sentiment": 0.42
-        },
-        {
-          "title": "Eli Lilly Scores Major Win for Key Eczema Drug",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/healthcare/articles/eli-lilly-scores-major-win-181149748.html",
-          "sentiment": 0.62
         }
       ],
       "volRegime": "Rich",
@@ -4443,6 +4443,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Visa (V) Falls More Steeply Than Broader Market: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-falls-more-steeply-204506783.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Visa Stocks Fall as Open Cyber Defense Answers Agentic Threats",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/visa-stocks-fall-open-cyber-174330545.html",
@@ -4453,12 +4459,6 @@
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/crypto/articles/open-standard-issues-dollar-stablecoin-165442644.html",
           "sentiment": 0.03
-        },
-        {
-          "title": "Visa (V) Deepens Visa Direct Integration For Real Time Payouts",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-deepens-visa-direct-081219271.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -4620,21 +4620,21 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Will Robinhood's Vlad Tenev debate AMC's Adam Aron on stock tokens?",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/will-robinhoods-vlad-tenev-debate-amcs-adam-aron-on-stock-tokens-145200935.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Robinhood expands AI agentic trading with automation and 24/7 cycle",
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/robinhood-expands-ai-agentic-trading-with-automation-and-247-cycle-135003062.html",
           "sentiment": 0.1
         },
         {
-          "title": "Robinhood Gives Retail Traders Institutional Tools With AI Trading Bots",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/robinhood-ai-trading-bots-agentic-trading-hood-stock/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Robinhood brings round-the-clock trading to select stocks",
-          "publisher": "Proactive",
-          "link": "https://www.proactiveinvestors.com/companies/news/1099390/robinhood-brings-round-the-clock-trading-to-select-stocks-1099390.html",
+          "title": "Stocks to Watch Recap: Micron, Boeing, Robinhood, Mattel",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-30-2026/card/stocks-to-watch-boeing-robinhood-micron-Zh5aqWdDbnLhaNy9BEHm?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -5277,6 +5277,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "UnitedHealth Group (UNH) Dips More Than Broader Market: What You Should Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-group-unh-dips-more-205006829.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Her Surgery Is Set for January. Her Broker Learned in August That UnitedHealthcare May Leave Her County in 2027",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/personal-finance/2026/09/30/her-surgery-is-set-for-january-her-broker-learned-in-august-that-unitedhealthcare-may-leave-her-county-in-2027/",
@@ -5286,12 +5292,6 @@
           "title": "UnitedHealth Group (UNH) Puts Robert Hunter At The Center Of Its Leadership Reset",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-puts-robert-111113050.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Robert Hunter Named UnitedHealth (UNH) Insurance President",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/healthcare/articles/robert-hunter-named-unitedhealth-unh-065806145.html",
           "sentiment": 0.0
         }
       ],
@@ -5541,6 +5541,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Here's Why Goldman Sachs (GS) Fell More Than Broader Market",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-goldman-sachs-gs-204503129.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Goldman pushes Fed rate hike to December after cooler inflation",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/economy/policy/articles/goldman-pushes-fed-rate-hike-193329752.html",
@@ -5551,12 +5557,6 @@
           "publisher": "Proactive",
           "link": "https://www.proactiveinvestors.com/companies/news/1099395/goldman-sachs-ceo-succession-would-signal-continuity-bank-of-america-says-1099395.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "Goldman Sachs (GS) Maps CEO Handover to John Waldron by 2028",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-gs-maps-ceo-130940870.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -5625,6 +5625,12 @@
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
+          "title": "Chevron And 2 Other Pipeline Stocks To Own",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/energy/articles/chevron-2-other-pipeline-stocks-220955844.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Chevron Has More Going for It Than Higher Oil Prices",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/30/chevron-has-more-going-for-it-than-higher-oil-prices/",
@@ -5635,12 +5641,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/energy/articles/chevron-exxonmobil-ink-potential-crude-122300063.html",
           "sentiment": -0.57
-        },
-        {
-          "title": "Chevron (CVX) Stock Still Looks Undervalued Following Its 141% Run",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/chevron-cvx-stock-still-looks-180711024.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -5759,8 +5759,8 @@
       "dividendYield": 0.33,
       "marketCap": 4860153954304,
       "score": 8.5,
-      "newsSentiment": 0.27,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Apple's new CEO John Ternus plans on making some changes",
@@ -5769,16 +5769,16 @@
           "sentiment": 0.0
         },
         {
+          "title": "Apple Predicted To Sell 6 Million iPhone Duo Handsets This Year",
+          "publisher": "Investor's Business Daily",
+          "link": "https://www.investors.com/news/technology/apple-stock-aapl-iphone-duo-2026-sales-forecast/?src=A00220&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "New Apple CEO Makes Surprising Move After Tim Cook Exit",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/markets/stocks/articles/apple-ceo-makes-surprising-move-180443018.html",
           "sentiment": 0.27
-        },
-        {
-          "title": "Apple, Alphabet, Nvidia Lead Powerful Tech Rally as Rate Fears Fade",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/apple-alphabet-nvidia-lead-powerful-175803008.html",
-          "sentiment": 0.54
         }
       ],
       "valuationLabel": "Fair",
@@ -5903,14 +5903,14 @@
       "dividendYield": 0.28,
       "marketCap": 1847400464384,
       "score": 8.5,
-      "newsSentiment": 0.09,
+      "newsSentiment": 0.03,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "Meta & Anthropic CEOs: 'Whoever wins AI, wins'",
-          "publisher": "Yahoo Finance Video",
-          "link": "https://finance.yahoo.com/video/meta-anthropic-ceos-whoever-wins-220208252.html",
-          "sentiment": 0.81
+          "title": "Alexandr Wang Praises Meta's Muse for Tackling an Everyday Neighborhood Problem: 'Seriously Awesome Use Case'",
+          "publisher": "Benzinga",
+          "link": "https://tech.yahoo.com/ai/meta-ai/articles/alexandr-wang-praises-metas-muse-203010636.html",
+          "sentiment": 0.62
         },
         {
           "title": "Meta Stock Slides as Muse Faces OpenAI Threat",
@@ -5953,26 +5953,26 @@
       "dividendYield": 0.26,
       "marketCap": 4167227932672,
       "score": 5.6,
-      "newsSentiment": 0.32,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "VIG Cannot Own Meta\u2019s or Alphabet\u2019s Dividends Until 2035 at the Earliest: The 10-Year Rule Written Into Its Index",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/30/vig-cannot-own-metas-or-alphabets-dividends-until-2035-at-the-earliest-the-10-year-rule-written-into-its-index/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Google Unveils New AI Model Gemini 4 Argon, Sending Alphabet Stock Higher",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/google-ai-gemini-4-argon-alphabet-stock-d3df631c?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Alphabet stock slips on report of internal doubts over Gemini 4",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-stock-slips-report-internal-203029696.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "Why Is Alphabet (GOOGL) Signing A White House AI Safety Accord?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/why-alphabet-googl-signing-white-171625155.html",
-          "sentiment": 0.42
-        },
-        {
-          "title": "Alphabet Rallies 3% as Traders Weigh White House Safety Accord; Apple Gains 2.5%, Meta Platforms Treads Water",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/30/alphabet-rallies-3-as-traders-weigh-white-house-safety-accord-apple-gains-2-5-meta-platforms-treads-water/",
-          "sentiment": 0.83
         }
       ],
       "valuationLabel": "Cheap",
@@ -6103,8 +6103,8 @@
       "dividendYield": null,
       "marketCap": 2687409848320,
       "score": 5.6,
-      "newsSentiment": 0.4,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.13,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
           "title": "Constellation Energy stock climbs on Amazon nuclear power deal",
@@ -6113,16 +6113,16 @@
           "sentiment": 0.42
         },
         {
-          "title": "Amazon Tries to Boost Nuclear Power in Maryland After Scrapping Data Center Deal",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/business/energy-oil/amazon-tries-to-boost-nuclear-power-in-maryland-after-scrapping-data-center-deal-d551385e?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.53
-        },
-        {
           "title": "Amazon Signs $1 Billion Synopsys Deal as AWS Steps Up Nvidia Challenge",
           "publisher": "Benzinga Prediction Markets",
           "link": "https://finance.yahoo.com/technology/ai/articles/amazon-signs-1-billion-synopsys-193319799.html",
           "sentiment": 0.25
+        },
+        {
+          "title": "Amazon Stock Has 46% Upside. Muse and Dots Threats Are \u2018Overstated.\u2019",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/amazon-stock-meta-muse-openai-dots-64ca6378?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.27
         }
       ],
       "valuationLabel": "Cheap",
@@ -6388,7 +6388,7 @@
       "chg6m": 23.8,
       "chg1y": -1.8,
       "volRatio": 0.64,
-      "peRatio": 21.2,
+      "peRatio": 21.0,
       "sector": "Technology",
       "industry": "Software - Application",
       "pegRatio": 0.75,
@@ -6418,7 +6418,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -41.2,
+      "peVsSectorPct": -41.7,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30
     },
@@ -6445,9 +6445,15 @@
       "dividendYield": null,
       "marketCap": 271086747648,
       "score": 7.3,
-      "newsSentiment": 0.21,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.11,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "CrowdStrike (CRWD) Stock May Be Overvalued On Blueprint Alliance News",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-stock-may-overvalued-211447326.html",
+          "sentiment": 0.0
+        },
         {
           "title": "BlackBerry Advances 5% on Continued QNX Momentum; Palo Alto Networks Gains 4%, CrowdStrike Edges Up 2%",
           "publisher": "24/7 Wall St.",
@@ -6459,12 +6465,6 @@
           "publisher": "Trefis",
           "link": "https://www.trefis.com/articles/617148/is-crowdstrike-stock-paying-you-enough-for-the-swings/2026-09-30",
           "sentiment": 0.0
-        },
-        {
-          "title": "All In On Cybersecurity: The Choice Between Palo Alto Networks or Crowdstrike Not Difficult",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/30/all-in-on-cybersecurity-the-choice-between-palo-alto-networks-or-crowdstrike-not-difficult/",
-          "sentiment": 0.28
         }
       ],
       "valuationLabel": "Rich",
@@ -6806,9 +6806,15 @@
       "dividendYield": 3.24,
       "marketCap": 283832713216,
       "score": 2.6,
-      "newsSentiment": 0.41,
+      "newsSentiment": 0.18,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Home Depot (HD) Declines More Than Market: Some Information for Investors",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-declines-more-204503161.html",
+          "sentiment": 0.0
+        },
         {
           "title": "The $66 Billion Consolation Prize For HD Shareholders",
           "publisher": "Trefis",
@@ -6820,12 +6826,6 @@
           "publisher": "Insider Monkey",
           "link": "https://finance.yahoo.com/markets/stocks/articles/home-depot-hd-vs-lowe-045457828.html",
           "sentiment": 0.02
-        },
-        {
-          "title": "Which Value Stock Is the More Obvious Buy Now: Home Depot Under $310 a Share or Lowe's Under $200 a Share?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/investing/2026/09/29/which-value-stock-is-the-more-obvious-buy-now-home/",
-          "sentiment": 0.7
         }
       ],
       "valuationLabel": "Fair",
@@ -6952,9 +6952,15 @@
       "dividendYield": 0.09,
       "marketCap": 237446742016,
       "score": 7.9,
-      "newsSentiment": 0.43,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "What Changed In Marvell's Story?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/616923/what-changed-in-marvells-story/2026-09-30",
+          "sentiment": 0.0
+        },
         {
           "title": "What Is The True Hidden Price Of Marvell Stock?",
           "publisher": "Trefis",
@@ -6965,12 +6971,6 @@
           "title": "Better AI Chip Stock to Buy Today: Broadcom vs. Marvell",
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/30/better-ai-chip-stock-to-buy-today-broadcom-vs-marv/",
-          "sentiment": 0.44
-        },
-        {
-          "title": "ASML Holding N.V. vs. Marvell Technology: Which Technology Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://www.fool.com/coverage/better-buy/2026/09/30/asml-holding-n-v-vs-marvell-technology-which-technology-stock-is-a-better-buy-in-2026/",
           "sentiment": 0.44
         }
       ],
@@ -7336,9 +7336,15 @@
       "dividendYield": null,
       "marketCap": 8422424064,
       "score": 3.1,
-      "newsSentiment": 0.27,
+      "newsSentiment": 0.53,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "MP Materials (MP) Looks Re Rated After Texas Magnet Campus Win",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/mp-materials-mp-looks-rated-221018563.html",
+          "sentiment": 0.59
+        },
         {
           "title": "MP Materials Surges 6% as Traders Weigh Critical Minerals Growth Story; USA Rare Earth Rises 3%, Critical Metals Stays Flat",
           "publisher": "24/7 Wall St.",
@@ -7350,12 +7356,6 @@
           "publisher": "Motley Fool",
           "link": "https://www.fool.com/investing/2026/09/30/mp-materials-and-usa-rare-earth-rallied-on-a-green/",
           "sentiment": 0.54
-        },
-        {
-          "title": "MP Materials Just Sank 21% in a Month. Is It Time to Sell, or Is This a Prime Buying Opportunity?",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/28/mp-materials-just-sank-21-in-a-month-is-it-time-to-sell-or-is-this-a-prime-buying-opportunity/",
-          "sentiment": -0.18
         }
       ]
     },
@@ -7658,8 +7658,8 @@
       "dividendYield": 0.05,
       "marketCap": 1202927960064,
       "score": 9.1,
-      "newsSentiment": 0.24,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.22,
+      "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
           "title": "Micron reports earnings, PCE estimates and ADP employment report: What to Watch",
@@ -7668,16 +7668,16 @@
           "sentiment": 0.0
         },
         {
-          "title": "Dow Jones Futures: Micron Rises On Hot Earnings After Treasury Yields Pressure Stocks",
+          "title": "Dow Jones Futures: Micron Earnings Crush Views, S&P 500 At Critical Level As Treasury Yields Rise",
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-micron-rises-earnings-treasury-yields/?src=A00220&yptr=yahoo",
-          "sentiment": -0.1
+          "sentiment": -0.27
         },
         {
-          "title": "Stock Market Today: Dow Knocked Down, Nasdaq Pares Gain; Micron Holds Firm After Earnings Soar",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-inflation-data-micron-earnings-mu-stock/?src=A00220&yptr=yahoo",
-          "sentiment": 0.82
+          "title": "Micron Reports Another Dazzling Quarter. The Bears Remain Unconvinced.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/micron-earnings-stock-price-6c25895f?siteid=yhoof2&yptr=yahoo",
+          "sentiment": -0.38
         }
       ],
       "valuationLabel": "Cheap",
@@ -7812,6 +7812,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "SpaceX Just Got a Little Closer to a Tesla Merger",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/spacex-tesla-stock-merger-bb985d61?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
+        {
           "title": "SpaceXAI considers four-tier pricing model for Grok and X users - Bloomberg",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/spacexai-considers-four-tier-pricing-181516980.html",
@@ -7822,12 +7828,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/research/options/spacex-stock-spcx-tech-dividend-options-strategy-covered-call-markets-trading/?src=A00220&yptr=yahoo",
           "sentiment": 0.34
-        },
-        {
-          "title": "SpaceX's AI Deals Could Generate $54 Billion as It Targets $100 Billion ARR",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/spacexs-ai-deals-could-generate-150308299.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -7854,9 +7854,15 @@
       "dividendYield": null,
       "marketCap": 1401338986496,
       "score": 6.6,
-      "newsSentiment": -0.01,
+      "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "SpaceX Just Got a Little Closer to a Tesla Merger",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/spacex-tesla-stock-merger-bb985d61?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Which Automaker Stock Dominated in September: Tesla, Ford, or General Motors?",
           "publisher": "24/7 Wall St.",
@@ -7868,12 +7874,6 @@
           "publisher": "Investor's Business Daily",
           "link": "https://www.investors.com/news/tesla-q3-deliveries-elon-musk-roadster-electric-vehicles-spacex/?src=A00220&yptr=yahoo",
           "sentiment": -0.4
-        },
-        {
-          "title": "Why Tesla\u2019s $25 Billion Credit Line Is a High-Stakes Bet on AI and Robotaxis",
-          "publisher": "Barrons.com",
-          "link": "https://www.barrons.com/articles/teslas-stock-cash-crunch-ai-55963c4d?siteid=yhoof2&yptr=yahoo",
-          "sentiment": 0.38
         }
       ],
       "valuationLabel": "Rich",
@@ -7950,26 +7950,26 @@
       "dividendYield": 0.26,
       "marketCap": 4208075997184,
       "score": 5.6,
-      "newsSentiment": 0.32,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": -0.1,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "VIG Cannot Own Meta\u2019s or Alphabet\u2019s Dividends Until 2035 at the Earliest: The 10-Year Rule Written Into Its Index",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/etf/2026/09/30/vig-cannot-own-metas-or-alphabets-dividends-until-2035-at-the-earliest-the-10-year-rule-written-into-its-index/",
+          "sentiment": 0.0
+        },
+        {
+          "title": "Google Unveils New AI Model Gemini 4 Argon, Sending Alphabet Stock Higher",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/google-ai-gemini-4-argon-alphabet-stock-d3df631c?siteid=yhoof2&yptr=yahoo",
+          "sentiment": 0.0
+        },
         {
           "title": "Alphabet stock slips on report of internal doubts over Gemini 4",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-stock-slips-report-internal-203029696.html",
           "sentiment": -0.3
-        },
-        {
-          "title": "Why Is Alphabet (GOOGL) Signing A White House AI Safety Accord?",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/technology/ai/articles/why-alphabet-googl-signing-white-171625155.html",
-          "sentiment": 0.42
-        },
-        {
-          "title": "Alphabet Rallies 3% as Traders Weigh White House Safety Accord; Apple Gains 2.5%, Meta Platforms Treads Water",
-          "publisher": "24/7 Wall St.",
-          "link": "https://247wallst.com/investing/2026/09/30/alphabet-rallies-3-as-traders-weigh-white-house-safety-accord-apple-gains-2-5-meta-platforms-treads-water/",
-          "sentiment": 0.83
         }
       ],
       "valuationLabel": "Cheap",
@@ -8200,9 +8200,15 @@
       "dividendYield": 0.58,
       "marketCap": 1031816085504,
       "score": 8.5,
-      "newsSentiment": 0.55,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.13,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Eli Lilly (LLY) Suffers a Larger Drop Than the General Market: Key Insights",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/eli-lilly-lly-suffers-larger-204504722.html",
+          "sentiment": -0.64
+        },
         {
           "title": "Move Aside Retatrutide, Eli Lilly Just Beat Its Next-Gen Obesity Drug",
           "publisher": "Investor's Business Daily",
@@ -8214,12 +8220,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/eli-lilly-lly-stock-stays-200926900.html",
           "sentiment": 0.42
-        },
-        {
-          "title": "Eli Lilly Scores Major Win for Key Eczema Drug",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/healthcare/articles/eli-lilly-scores-major-win-181149748.html",
-          "sentiment": 0.62
         }
       ],
       "valuationLabel": "Fair",
@@ -8304,6 +8304,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Visa (V) Falls More Steeply Than Broader Market: What Investors Need to Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-falls-more-steeply-204506783.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Visa Stocks Fall as Open Cyber Defense Answers Agentic Threats",
           "publisher": "GuruFocus.com",
           "link": "https://finance.yahoo.com/technology/ai/articles/visa-stocks-fall-open-cyber-174330545.html",
@@ -8314,12 +8320,6 @@
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/markets/crypto/articles/open-standard-issues-dollar-stablecoin-165442644.html",
           "sentiment": 0.03
-        },
-        {
-          "title": "Visa (V) Deepens Visa Direct Integration For Real Time Payouts",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/visa-v-deepens-visa-direct-081219271.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
@@ -8400,21 +8400,21 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Will Robinhood's Vlad Tenev debate AMC's Adam Aron on stock tokens?",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/will-robinhoods-vlad-tenev-debate-amcs-adam-aron-on-stock-tokens-145200935.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Robinhood expands AI agentic trading with automation and 24/7 cycle",
           "publisher": "Yahoo Finance Video",
           "link": "https://finance.yahoo.com/video/robinhood-expands-ai-agentic-trading-with-automation-and-247-cycle-135003062.html",
           "sentiment": 0.1
         },
         {
-          "title": "Robinhood Gives Retail Traders Institutional Tools With AI Trading Bots",
-          "publisher": "Investor's Business Daily",
-          "link": "https://www.investors.com/news/robinhood-ai-trading-bots-agentic-trading-hood-stock/?src=A00220&yptr=yahoo",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Robinhood brings round-the-clock trading to select stocks",
-          "publisher": "Proactive",
-          "link": "https://www.proactiveinvestors.com/companies/news/1099390/robinhood-brings-round-the-clock-trading-to-select-stocks-1099390.html",
+          "title": "Stocks to Watch Recap: Micron, Boeing, Robinhood, Mattel",
+          "publisher": "The Wall Street Journal",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-30-2026/card/stocks-to-watch-boeing-robinhood-micron-Zh5aqWdDbnLhaNy9BEHm?siteid=yhoof2&yptr=yahoo",
           "sentiment": 0.0
         }
       ],
@@ -8790,6 +8790,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "UnitedHealth Group (UNH) Dips More Than Broader Market: What You Should Know",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-group-unh-dips-more-205006829.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Her Surgery Is Set for January. Her Broker Learned in August That UnitedHealthcare May Leave Her County in 2027",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/personal-finance/2026/09/30/her-surgery-is-set-for-january-her-broker-learned-in-august-that-unitedhealthcare-may-leave-her-county-in-2027/",
@@ -8799,12 +8805,6 @@
           "title": "UnitedHealth Group (UNH) Puts Robert Hunter At The Center Of Its Leadership Reset",
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/healthcare/articles/unitedhealth-group-unh-puts-robert-111113050.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Robert Hunter Named UnitedHealth (UNH) Insurance President",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/healthcare/articles/robert-hunter-named-unitedhealth-unh-065806145.html",
           "sentiment": 0.0
         }
       ],
@@ -8940,6 +8940,12 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
+          "title": "Here's Why Goldman Sachs (GS) Fell More Than Broader Market",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-goldman-sachs-gs-204503129.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Goldman pushes Fed rate hike to December after cooler inflation",
           "publisher": "Investing.com",
           "link": "https://finance.yahoo.com/economy/policy/articles/goldman-pushes-fed-rate-hike-193329752.html",
@@ -8950,12 +8956,6 @@
           "publisher": "Proactive",
           "link": "https://www.proactiveinvestors.com/companies/news/1099395/goldman-sachs-ceo-succession-would-signal-continuity-bank-of-america-says-1099395.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "Goldman Sachs (GS) Maps CEO Handover to John Waldron by 2028",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-gs-maps-ceo-130940870.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -8990,6 +8990,12 @@
       "newsSentimentLabel": "Negative",
       "newsHeadlines": [
         {
+          "title": "Chevron And 2 Other Pipeline Stocks To Own",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/energy/articles/chevron-2-other-pipeline-stocks-220955844.html",
+          "sentiment": 0.0
+        },
+        {
           "title": "Chevron Has More Going for It Than Higher Oil Prices",
           "publisher": "24/7 Wall St.",
           "link": "https://247wallst.com/investing/2026/09/30/chevron-has-more-going-for-it-than-higher-oil-prices/",
@@ -9000,12 +9006,6 @@
           "publisher": "Zacks",
           "link": "https://finance.yahoo.com/energy/articles/chevron-exxonmobil-ink-potential-crude-122300063.html",
           "sentiment": -0.57
-        },
-        {
-          "title": "Chevron (CVX) Stock Still Looks Undervalued Following Its 141% Run",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/chevron-cvx-stock-still-looks-180711024.html",
-          "sentiment": 0.0
         }
       ]
     },
@@ -9074,7 +9074,7 @@
     "costPerContract": 632.5
   },
   "market": {
-    "asOf": "2026-09-30T21:07:58.536117+00:00",
+    "asOf": "2026-09-30T23:09:35.204247+00:00",
     "gauges": [
       {
         "key": "qqq",

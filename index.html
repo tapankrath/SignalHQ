@@ -31,10 +31,12 @@
     --surface:#FFFFFF;
     --surface-2:#F4F6F9;
     --border:#E2E7ED;
-    --border-strong:#C4CCD6;
+    --border-strong:#AEB8C5;
     --text:#0B1526;
-    --text-dim:#3C4859;
-    --text-faint:#636E80;
+    /* Darkened 2026-09-30 for readability: secondary text was too light
+       on phones in daylight. faint ≈7.5:1 on white, dim ≈13:1. */
+    --text-dim:#263243;
+    --text-faint:#4A5568;
     --amber:#0A8754;
     --amber-strong:#067A48;
     --amber-soft:#E4F6EC;
@@ -77,8 +79,8 @@
       --border:#243040;
       --border-strong:#3A475A;
       --text:#EDF1F6;
-      --text-dim:#AEB8C6;
-      --text-faint:#8390A2;
+      --text-dim:#CFD6E0;
+      --text-faint:#A9B4C3;
       --amber:#1AA866;
       --amber-strong:#4ADE93;
       --amber-soft:#0F2A1F;
@@ -1055,7 +1057,7 @@
     background:none; border:none; padding:0; height:auto; margin-top:4px; gap:6px;
     font-family:var(--sans); font-size:12px; max-width:none;
   }
-  .hero #dataStatusText{ font-weight:500; color:rgba(209,219,235,0.72); }
+  .hero #dataStatusText{ font-weight:500; color:rgba(226,233,243,0.92); }
   .hero .pulse-dot{ box-shadow:0 0 0 3px rgba(62,207,133,0.22); }
   .hero .refresh-btn{
     width:auto; height:34px; flex-shrink:0; gap:6px; padding:0 12px 0 10px;
@@ -1083,7 +1085,7 @@
     background:color-mix(in srgb, var(--red-vivid) 6%, var(--surface));
   }
   .mkt-label{
-    font-size:10.5px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--text-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   .mkt-value{
@@ -1108,7 +1110,7 @@
     .app-header .market-tiles{ margin-top:12px; }
     .market-tiles{ gap:6px; }
     .mkt-tile{ padding:6px 3px 5px; border-radius:10px; }
-    .mkt-label{ font-size:9px; letter-spacing:0.06em; }
+    .mkt-label{ font-size:10px; letter-spacing:0.05em; color:var(--text-dim); }
     .mkt-value{ font-size:14.5px; margin-top:1px; }
     .mkt-change{ font-size:11.5px; }
   }
@@ -1702,7 +1704,7 @@
         <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-faint); font-weight:500; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-faint); font-weight:500; font-size:12px;">· ${stratShort}</span></div>
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-dim); font-weight:500; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-dim); font-weight:500; font-size:12px;">· ${stratShort}</span></div>
             ${pill}
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
@@ -2116,7 +2118,7 @@
     const optionRows = optionRowsData.map(({t, contracts, used})=>{
       const warn = contracts === 0 ? `<div class="portfolio-line-warn">Budget too small for 1 contract</div>` : '';
       return `<div class="portfolio-line-item">
-        <div class="portfolio-line-title">${t.sym} <span style="color:var(--text-faint); font-weight:500; font-size:12px;">${t.strat}</span></div>
+        <div class="portfolio-line-title">${t.sym} <span style="color:var(--text-dim); font-weight:500; font-size:12px;">${t.strat}</span></div>
         <div class="portfolio-line-stats">
           <span>Cost/Contract <b>$${t.maxLoss.toLocaleString()}</b></span>
           <span>Contracts <b>${contracts}</b></span>
@@ -2138,7 +2140,7 @@
       <div class="news-section-header"><span class="mm-label" style="margin:0;">Suggested Hedge</span></div>
       <div class="portfolio-line-list">
         <div class="portfolio-line-item">
-          <div class="portfolio-line-title">${hedge.symbol} $${hedge.strike} Put <span style="color:var(--text-faint); font-weight:500; font-size:12px;">exp ${hedge.exp} (${hedge.dte}d)</span></div>
+          <div class="portfolio-line-title">${hedge.symbol} $${hedge.strike} Put <span style="color:var(--text-dim); font-weight:500; font-size:12px;">exp ${hedge.exp} (${hedge.dte}d)</span></div>
           <div class="portfolio-line-stats">
             <span>Delta <b>${hedge.delta}</b></span>
             <span>${hedge.otmPct}% OTM</span>
@@ -2923,7 +2925,7 @@
       return `
         <div class="tracked-card">
           <div class="tracked-card-top">
-            <div class="ticker-sym" style="font-size:14.5px;">${pos.sym} <span style="color:var(--text-faint); font-weight:500; font-size:12px;">${pos.strike}</span>
+            <div class="ticker-sym" style="font-size:14.5px;">${pos.sym} <span style="color:var(--text-dim); font-weight:500; font-size:12px;">${pos.strike}</span>
               <div class="strat-name">${pos.strat}</div>
             </div>
             <span class="tracked-status-pill ${statusCls}">${statusLabel}</span>

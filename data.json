@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T01:15:20.924065+00:00",
+  "generated_at": "2026-09-30T01:19:15.682295+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -40,9 +40,15 @@
       "pcVol": 0.92,
       "debitStrategy": false,
       "potIsProfitProb": false,
-      "newsSentiment": 0.05,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.44,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "History Says Nvidia's Record $150 Billion Buyback Is Good News for the Stock",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/history-says-nvidias-record-150-010301431.html",
+          "sentiment": 0.69
+        },
         {
           "title": "S&P 500 investors may have more tech exposure than they think: Here's how one wealth manager mitigates concentration risk",
           "publisher": "TheStreet",
@@ -54,12 +60,6 @@
           "publisher": "TheStreet",
           "link": "https://finance.yahoo.com/technology/articles/apple-betting-1-999-consumers-233700549.html",
           "sentiment": 0.36
-        },
-        {
-          "title": "S&P 500, Dow Extend Losses From Elevated Yield Pressure \u2014 SPCX, TGT, AAPL, MU, NTAP In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-dow-extend-losses-223008654.html",
-          "sentiment": -0.49
         }
       ],
       "volRegime": "Fair",
@@ -220,9 +220,15 @@
       "pcVol": 0.82,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.6,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "History Says Nvidia's Record $150 Billion Buyback Is Good News for the Stock",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/history-says-nvidias-record-150-010301431.html",
+          "sentiment": 0.69
+        },
         {
           "title": "Why Marvell Technology Stock Triumphed on Tuesday",
           "publisher": "Motley Fool",
@@ -234,12 +240,6 @@
           "publisher": "Barrons.com",
           "link": "https://finance.yahoo.com/m/dab15f88-c8fc-3d86-ad85-dd86743d84e6/review-%26-preview%3A-yields-beat.html",
           "sentiment": 0.61
-        },
-        {
-          "title": "Schwab's Dividend ETF Has Nearly Quadrupled Its Payout Since 2012",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/schwabs-dividend-etf-nearly-quadrupled-234601626.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -642,9 +642,15 @@
       "pcVol": 0.41,
       "debitStrategy": true,
       "potIsProfitProb": true,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "How much AMZN stock does Amazon\u2019s founder Jeff Bezos actually own?",
+          "publisher": "TheStreet",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/much-amzn-stock-does-amazon-011405388.html",
+          "sentiment": 0.0
+        },
         {
           "title": "S&P 500 investors may have more tech exposure than they think: Here's how one wealth manager mitigates concentration risk",
           "publisher": "TheStreet",
@@ -656,12 +662,6 @@
           "publisher": "Trefis",
           "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-mongodb-stock-215931106.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Amazon appears to be mystery tenant at Galleria North Tower in Dallas",
-          "publisher": "The Real Deal",
-          "link": "https://finance.yahoo.com/real-estate/articles/amazon-appears-mystery-tenant-galleria-211013513.html",
-          "sentiment": 0.18
         }
       ],
       "volRegime": "Rich",
@@ -4313,7 +4313,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -11.6,
+      "peVsSectorPct": -10.9,
       "sectorMedianPE": 14.2,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
@@ -5090,9 +5090,15 @@
       "dividendYield": 0.32,
       "marketCap": 4807323025408,
       "score": 8.5,
-      "newsSentiment": 0.05,
-      "newsSentimentLabel": "Neutral",
+      "newsSentiment": 0.44,
+      "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "History Says Nvidia's Record $150 Billion Buyback Is Good News for the Stock",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/history-says-nvidias-record-150-010301431.html",
+          "sentiment": 0.69
+        },
         {
           "title": "S&P 500 investors may have more tech exposure than they think: Here's how one wealth manager mitigates concentration risk",
           "publisher": "TheStreet",
@@ -5104,12 +5110,6 @@
           "publisher": "TheStreet",
           "link": "https://finance.yahoo.com/technology/articles/apple-betting-1-999-consumers-233700549.html",
           "sentiment": 0.36
-        },
-        {
-          "title": "S&P 500, Dow Extend Losses From Elevated Yield Pressure \u2014 SPCX, TGT, AAPL, MU, NTAP In Focus",
-          "publisher": "Stocktwits",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-dow-extend-losses-223008654.html",
-          "sentiment": -0.49
         }
       ],
       "valuationLabel": "Fair",
@@ -5190,9 +5190,15 @@
       "dividendYield": 0.44,
       "marketCap": 5486440087552,
       "score": 9.1,
-      "newsSentiment": 0.37,
+      "newsSentiment": 0.6,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "History Says Nvidia's Record $150 Billion Buyback Is Good News for the Stock",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/history-says-nvidias-record-150-010301431.html",
+          "sentiment": 0.69
+        },
         {
           "title": "Why Marvell Technology Stock Triumphed on Tuesday",
           "publisher": "Motley Fool",
@@ -5204,12 +5210,6 @@
           "publisher": "Barrons.com",
           "link": "https://finance.yahoo.com/m/dab15f88-c8fc-3d86-ad85-dd86743d84e6/review-%26-preview%3A-yields-beat.html",
           "sentiment": 0.61
-        },
-        {
-          "title": "Schwab's Dividend ETF Has Nearly Quadrupled Its Payout Since 2012",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/schwabs-dividend-etf-nearly-quadrupled-234601626.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -5440,9 +5440,15 @@
       "dividendYield": null,
       "marketCap": 2660659888128,
       "score": 5.0,
-      "newsSentiment": 0.15,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.09,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "How much AMZN stock does Amazon\u2019s founder Jeff Bezos actually own?",
+          "publisher": "TheStreet",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/much-amzn-stock-does-amazon-011405388.html",
+          "sentiment": 0.0
+        },
         {
           "title": "S&P 500 investors may have more tech exposure than they think: Here's how one wealth manager mitigates concentration risk",
           "publisher": "TheStreet",
@@ -5454,12 +5460,6 @@
           "publisher": "Trefis",
           "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-mongodb-stock-215931106.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "Amazon appears to be mystery tenant at Galleria North Tower in Dallas",
-          "publisher": "The Real Deal",
-          "link": "https://finance.yahoo.com/real-estate/articles/amazon-appears-mystery-tenant-galleria-211013513.html",
-          "sentiment": 0.18
         }
       ],
       "valuationLabel": "Cheap",
@@ -7515,7 +7515,7 @@
       "chg6m": 6.0,
       "chg1y": 0.1,
       "volRatio": 0.74,
-      "peRatio": 12.6,
+      "peRatio": 12.7,
       "sector": "Financial Services",
       "industry": "Insurance - Diversified",
       "pegRatio": 10.06,
@@ -7545,7 +7545,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -11.6,
+      "peVsSectorPct": -10.9,
       "sectorMedianPE": 14.2,
       "sectorPeerCount": 6
     },
@@ -7998,7 +7998,7 @@
   ],
   "hedge": null,
   "market": {
-    "asOf": "2026-09-30T01:15:20.924051+00:00",
+    "asOf": "2026-09-30T01:19:15.682284+00:00",
     "gauges": [
       {
         "key": "nasdaq",

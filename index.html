@@ -628,6 +628,14 @@
   .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-dim); }
   #optionsView .sort-wrap{ flex:1 1 auto; }
   .min-profit-label{ margin-left:auto; }
+  .liq-wrap{ flex-basis:100%; display:flex; justify-content:flex-end; align-items:center; gap:16px; flex-wrap:wrap; }
+  .liq-field{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-dim); white-space:nowrap; }
+  .num-filter{
+    width:60px; height:34px; box-sizing:border-box; background:var(--surface);
+    border:1px solid var(--border-strong); color:var(--text); border-radius:7px;
+    font-family:var(--mono); font-size:13px; font-weight:700; padding:6px 7px; text-align:center;
+  }
+  .num-filter::placeholder{ color:var(--text-faint); font-weight:500; }
   .sort-wrap select{
     background:var(--surface); border:1px solid var(--border-strong);
     color:var(--text); height:34px; padding:0 10px; border-radius:var(--radius-sm); font-size:16px;
@@ -956,6 +964,9 @@
        narrowing its input. */
     .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; min-width:0; flex:0 1 auto; }
     .min-profit-label{ white-space:nowrap; }
+    .liq-wrap{ gap:12px; }
+    .liq-field{ font-size:12.5px; gap:6px; }
+    .num-filter{ width:52px; height:32px; padding:6px 3px; }
     .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
     .sticky-top{ gap:8px; padding-top:8px; padding-bottom:0; }
     header{ gap:8px; }
@@ -1554,6 +1565,17 @@
         <span class="min-profit-label">Min trade profit %</span>
         <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20" style="width:60px; background:var(--surface); border:1px solid var(--border-strong); color:var(--text); font-family:var(--mono); font-size:13px; font-weight:700; padding:6px 7px; border-radius:7px; text-align:center;">
       </div>
+      <!-- Liquidity filters (2026-09-30). The fetch records each trade's
+           weakest-leg open interest and bid-ask width; these screen on them
+           live, like Min trade profit. Blank or 0 = off. -->
+      <div class="liq-wrap">
+        <label class="liq-field" for="minOIInput">Min OI
+          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="10" value="50" placeholder="any">
+        </label>
+        <label class="liq-field" for="maxSpreadInput">Max bid-ask %
+          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="20" placeholder="any">
+        </label>
+      </div>
     </div>
   </div>
 
@@ -1811,8 +1833,8 @@
     cardList.innerHTML = '';
 
     if(list.length === 0){
-      tbody.innerHTML = `<tr><td colspan="9" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</td></tr>`;
-      cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening reward or risk thresholds.</div>`;
+      tbody.innerHTML = `<tr><td colspan="9" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening the reward, risk or liquidity (Min OI / Max bid-ask) settings.</td></tr>`;
+      cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening the reward, risk or liquidity (Min OI / Max bid-ask) settings.</div>`;
     }
 
     list.forEach((t, idx)=>{
@@ -1972,6 +1994,22 @@
     pool = pool.filter(t=> t.roc != null && t.roc > minTradeProfit);
     funnel.push({ label:`After Min Trade Profit (>${minTradeProfit}%)`, count: pool.length });
 
+    // Liquidity (2026-09-30): weakest leg's open interest and bid-ask width,
+    // recorded by the fetch in t.liquidity. Blank/0 turns a filter off.
+    // Trades from data runs before then have no t.liquidity and pass (so the
+    // list doesn't empty until the next run fills it in); a leg with no real
+    // two-sided quote (worstSpreadPct null) fails Max bid-ask.
+    const minOI = parseFloat(document.getElementById('minOIInput').value);
+    if(isFinite(minOI) && minOI > 0){
+      pool = pool.filter(t => !t.liquidity || (t.liquidity.minOI != null && t.liquidity.minOI >= minOI));
+      funnel.push({ label:`After Min OI (>=${minOI})`, count: pool.length });
+    }
+    const maxSpread = parseFloat(document.getElementById('maxSpreadInput').value);
+    if(isFinite(maxSpread) && maxSpread > 0){
+      pool = pool.filter(t => !t.liquidity || (t.liquidity.worstSpreadPct != null && t.liquidity.worstSpreadPct <= maxSpread));
+      funnel.push({ label:`After Max bid-ask (<=${maxSpread}%)`, count: pool.length });
+    }
+
     lastFunnel = funnel;
     return pool;
   }
@@ -2019,6 +2057,8 @@
     let n = document.querySelectorAll(`.filter-card input[type="checkbox"]:checked:is(${FILTER_CHECKBOX_SELECTOR})`).length;
     const minTradeProfitInput = document.getElementById('minTradeProfitInput');
     if(Number(minTradeProfitInput.value) !== DEFAULT_MIN_TRADE_PROFIT) n += 1;
+    if(document.getElementById('minOIInput').value.trim() !== String(DEFAULT_MIN_OI)) n += 1;
+    if(document.getElementById('maxSpreadInput').value.trim() !== String(DEFAULT_MAX_SPREAD)) n += 1;
     activeCountLabel.textContent = `${n} filter${n===1?'':'s'} active`;
     updateSectionBadges();
   }
@@ -2589,6 +2629,8 @@
     '[data-risk="excludeEarnings"]',
   ];
   const DEFAULT_MIN_TRADE_PROFIT = 20;
+  const DEFAULT_MIN_OI = 50;
+  const DEFAULT_MAX_SPREAD = 20;
 
   const DEFAULT_SORT = 'dte';
 
@@ -2596,6 +2638,8 @@
     document.querySelectorAll(`.filter-card input[type="checkbox"]:not(:disabled):is(${FILTER_CHECKBOX_SELECTOR})`).forEach(cb=>cb.checked=false);
     DEFAULT_CHECKED.forEach(sel => { document.querySelector(sel).checked = true; });
     document.getElementById('minTradeProfitInput').value = DEFAULT_MIN_TRADE_PROFIT;
+    document.getElementById('minOIInput').value = DEFAULT_MIN_OI;
+    document.getElementById('maxSpreadInput').value = DEFAULT_MAX_SPREAD;
     document.getElementById('sortSelect').value = DEFAULT_SORT;
     applyFilters();
   }
@@ -2623,6 +2667,8 @@
     updateActiveCount();
   }
   document.getElementById('minTradeProfitInput').addEventListener('input', liveApplyMinProfit);
+  document.getElementById('minOIInput').addEventListener('input', liveApplyMinProfit);
+  document.getElementById('maxSpreadInput').addEventListener('input', liveApplyMinProfit);
   document.getElementById('resetFilters').addEventListener('click', resetFilters);
 
   // Auto-pick-up of new data (2026-09-30). iOS freezes a backgrounded page,
@@ -2758,20 +2804,24 @@
   const modalScrim = document.getElementById('modalScrim');
   const tradeModal = document.getElementById('tradeModal');
 
-  // Liquidity of the trade's legs (data runs from 2026-09-30 on; older trades
-  // simply don't show these two rows). Every published leg already passed the
-  // fetch's gate (OI >= 100, bid-ask <= 20% of mid); this shows how much room
-  // it had, and the plain mid next to the realistic-fill price all the
-  // return figures are based on.
+  // Liquidity of the trade's legs, recorded by the fetch (runs from
+  // 2026-09-30 on; older trades just don't show these rows). The trade is
+  // priced at the mid; "est. fill" shows the same legs giving up a quarter of
+  // each bid-ask width — roughly what a real order might get.
   function liquidityHtml(t){
     const q = t && t.liquidity;
     if(!q) return '';
-    const pct = Number(q.worstSpreadPct);
-    const tone = pct <= 10 ? 'val-pos' : (pct <= 20 ? '' : 'val-neg');
-    const credit = !t.debitStrategy;
+    const pct = q.worstSpreadPct;
+    const hasPct = pct != null && isFinite(Number(pct));
+    const tone = !hasPct ? 'val-neg' : (pct <= 10 ? 'val-pos' : (pct <= 20 ? '' : 'val-neg'));
+    const wide = hasPct ? `${Number(pct).toFixed(0)}% wide` : 'no two-sided quote';
+    const oi = q.minOI != null ? Number(q.minOI).toLocaleString() : '—';
+    const kind = t.debitStrategy ? 'Debit' : 'Credit';
+    const fill = (q.midPremium != null && q.fillPremium != null)
+      ? `$${Number(q.midPremium).toFixed(2)} → $${Number(q.fillPremium).toFixed(2)}` : '—';
     return `
-        <div><div class="mm-label">Liquidity (weakest leg)</div><div class="mm-val"><span class="${tone}">${isFinite(pct) ? pct.toFixed(0) + '% wide' : '—'}</span> · OI ${q.minOI != null ? Number(q.minOI).toLocaleString() : '—'}</div></div>
-        <div><div class="mm-label">${credit ? 'Credit' : 'Debit'}: mid → est. fill</div><div class="mm-val">$${Number(q.midPremium).toFixed(2)} → $${Number(q.fillPremium).toFixed(2)}</div></div>`;
+        <div><div class="mm-label">Liquidity (weakest leg)</div><div class="mm-val"><span class="${tone}">${wide}</span> · OI ${oi}</div></div>
+        <div><div class="mm-label">${kind}: mid → est. fill</div><div class="mm-val">${fill}</div></div>`;
   }
 
   function openTradeModal(t){

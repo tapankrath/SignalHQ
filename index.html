@@ -1308,6 +1308,15 @@
     .hero .brand-name{ font-size:23px; }
   }
 
+  /* Near matches below the exact results */
+  .near-divider{ display:flex; flex-direction:column; gap:3px; padding:10px 4px 2px; }
+  tr.near-divider td{ padding:14px 14px 6px !important; background:var(--surface-2); }
+  tr.near-divider .near-sub{ margin-left:10px; }
+  .near-sub{ font-size:12px; color:var(--text-faint); }
+  .trade-card.is-near{ border-style:dashed; }
+  tr.is-near{ opacity:0.92; }
+  .near-note{ margin-top:6px; font-family:var(--mono); font-size:11px; font-weight:500; color:var(--text-faint); }
+
   /* Dark mode component overrides — kept at the very end of the stylesheet
      on purpose. Each of these targets a class that already has its own
      rule earlier in this file at the same specificity; CSS breaks a
@@ -1485,16 +1494,16 @@
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread"> <span class="strat-dot bear"></span>Bear Put Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread" checked> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
       </div>
       <div class="filter-section-body" style="padding-top:0; border-top:1px solid var(--border); margin-top:4px;">
-        <label class="check-row"><input type="checkbox" data-pcoi="bull" checked> P/C OI &lt; 0.7</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bull"> P/C OI &lt; 0.7</label>
         <label class="check-row"><input type="checkbox" data-pcvol="bull"> P/C Vol &lt; 0.7</label>
-        <label class="check-row"><input type="checkbox" data-pcoi="bear" checked> P/C OI &gt; 1.4</label>
+        <label class="check-row"><input type="checkbox" data-pcoi="bear"> P/C OI &gt; 1.4</label>
         <label class="check-row"><input type="checkbox" data-pcvol="bear"> P/C Vol &gt; 1.4</label>
       </div>
     </div>
@@ -1577,10 +1586,10 @@
           <input type="number" id="minTradeProfitInput" class="num-filter" inputmode="decimal" min="0" max="500" step="1" value="20">
         </label>
         <label class="ctrl-cell" for="minOIInput"><span>Min OI</span>
-          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="10" value="50" placeholder="any">
+          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="5" value="25" placeholder="any">
         </label>
         <label class="ctrl-cell" for="maxSpreadInput"><span>Max bid-ask %</span>
-          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="20" placeholder="any">
+          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="30" placeholder="any">
         </label>
       </div>
     </div>
@@ -1835,6 +1844,9 @@
   }
 
   function render(list){
+    const exactCount = list.length;
+    const near = nearMisses(list);
+    list = list.concat(near);
     currentList = list;
     tbody.innerHTML = '';
     cardList.innerHTML = '';
@@ -1845,6 +1857,13 @@
     }
 
     list.forEach((t, idx)=>{
+      if(idx === exactCount && near.length){
+        const head = exactCount === 0 ? 'No exact matches — closest setups' : 'Closest matches';
+        const sub = 'Pass your strategy, quality and risk choices; miss one of the number thresholds.';
+        tbody.innerHTML += `<tr class="near-divider"><td colspan="9"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></td></tr>`;
+        cardList.innerHTML += `<div class="near-divider"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></div>`;
+      }
+      const nearNote = t.__near ? `<div class="near-note">Misses: ${t.__near.join(' · ')}</div>` : '';
       const pill = t.side==='bull'
         ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
         : t.side==='bear'
@@ -1854,11 +1873,11 @@
       const isChecked = selectedOptionIds.has(oid);
 
       tbody.innerHTML += `
-        <tr>
+        <tr class="${t.__near ? 'is-near' : ''}">
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
             <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:500;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
-            <div class="strat-name">${t.strat}${valuationBadge(t)}</div>
+            <div class="strat-name">${t.strat}${valuationBadge(t)}</div>${nearNote}
           </td>
           <td>${pill}</td>
           <td class="num">${t.exp} <span style="color:var(--text-faint);">· ${t.dte}d</span></td>
@@ -1882,7 +1901,7 @@
       // tested character budget, so a compact form here specifically
       const cardPrice = t.spot != null ? `$${Math.round(t.spot)}${staleMark(t.spotPriceStale)}→` : '';
       cardList.innerHTML += `
-        <div class="trade-card" data-idx="${idx}" role="button" tabindex="0">
+        <div class="trade-card${t.__near ? ' is-near' : ''}" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
             <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-dim); font-weight:500; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-dim); font-weight:500; font-size:12px;">· ${stratShort}</span></div>
@@ -1893,15 +1912,45 @@
               <span class="${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}/${fmtPct(t.ap)}</span> · ${t.exp}·${t.dte}d${valuationBadge(t)}
             </span>
             ${meterHtml(t.score)}
-          </div>
+          </div>${nearNote}
         </div>`;
     });
 
-    resultCountEl.textContent = list.length;
-    resultCountLabelEl.textContent = list.length === 1 ? 'setup matches' : 'setups match';
+    resultCountEl.textContent = exactCount;
+    resultCountLabelEl.textContent = exactCount === 1 ? 'setup matches' : 'setups match';
   }
 
   let lastFunnel = null;
+  let lastPreThresholdPool = [];
+
+  // Near matches (2026-10-01). When fewer than MIN_RESULTS trades pass every
+  // filter, the list is topped up with the best-scoring trades that pass
+  // your strategy / quality / risk choices but miss one of the numeric
+  // thresholds (Min profit, Min OI, Max bid-ask). They're shown under a
+  // divider, each saying exactly what it misses, so exact matches are never
+  // confused with them.
+  const MIN_RESULTS = 5;
+  function nearMissReasons(t){
+    const r = [];
+    const mp = Math.max(0, Number(document.getElementById('minTradeProfitInput').value) || 0);
+    if(t.roc == null || !(t.roc > mp)) r.push(t.roc == null ? 'no profit figure' : `profit ${t.roc}% ≤ ${mp}%`);
+    const q = t.liquidity;
+    const oi = parseFloat(document.getElementById('minOIInput').value);
+    if(q && isFinite(oi) && oi > 0 && !(q.minOI != null && q.minOI >= oi)) r.push(`OI ${q.minOI ?? '—'} < ${oi}`);
+    const sp = parseFloat(document.getElementById('maxSpreadInput').value);
+    if(q && isFinite(sp) && sp > 0 && !(q.worstSpreadPct != null && q.worstSpreadPct <= sp)) r.push(q.worstSpreadPct == null ? 'no two-sided quote' : `bid-ask ${Math.round(q.worstSpreadPct)}% > ${sp}%`);
+    return r;
+  }
+  function nearMisses(matched){
+    const need = MIN_RESULTS - matched.length;
+    if(need <= 0) return [];
+    const have = new Set(matched.map(optionId));
+    return lastPreThresholdPool
+      .filter(t => !have.has(optionId(t)) && t.roc != null)
+      .sort((a,b) => (b.score ?? 0) - (a.score ?? 0))
+      .slice(0, need)
+      .map(t => Object.assign(Object.create(t), { __near: nearMissReasons(t) }));
+  }
 
   function computeFiltered(){
     const activeStrats = Array.from(document.querySelectorAll('[data-strat]:checked')).map(cb=>cb.dataset.strat);
@@ -1996,6 +2045,7 @@
     // the three strategies this affected, were removed from the Outlook &
     // Strategy list and from generation entirely) — left in place as a
     // guard for if a future strategy addition has the same "no roc" shape.
+    lastPreThresholdPool = pool;   // after strategy/quality/risk, before the numeric thresholds
     const minTradeProfitInput = document.getElementById('minTradeProfitInput');
     const minTradeProfit = Math.max(0, Number(minTradeProfitInput.value) || 0);
     pool = pool.filter(t=> t.roc != null && t.roc > minTradeProfit);
@@ -2629,15 +2679,15 @@
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',
     '[data-strat="Iron Condor"]',
-    '[data-pcoi="bull"]',
-    '[data-pcoi="bear"]',
+    '[data-strat="Bull Call Spread"]',
+    '[data-strat="Bear Put Spread"]',
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',
   ];
   const DEFAULT_MIN_TRADE_PROFIT = 20;
-  const DEFAULT_MIN_OI = 50;
-  const DEFAULT_MAX_SPREAD = 20;
+  const DEFAULT_MIN_OI = 25;
+  const DEFAULT_MAX_SPREAD = 30;
 
   const DEFAULT_SORT = 'dte';
 

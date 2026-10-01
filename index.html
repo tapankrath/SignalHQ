@@ -1308,6 +1308,12 @@
     .hero .brand-name{ font-size:23px; }
   }
 
+  /* Ticker colored by trade side */
+  .sym-bull{ color:var(--green); }
+  .sym-bear{ color:var(--red); }
+  .sym-neutral{ color:var(--text-faint); }
+  .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
   /* Near matches below the exact results */
   .near-divider{ display:flex; flex-direction:column; gap:3px; padding:10px 4px 2px; }
   tr.near-divider td{ padding:14px 14px 6px !important; background:var(--surface-2); }
@@ -1586,10 +1592,10 @@
           <input type="number" id="minTradeProfitInput" class="num-filter" inputmode="decimal" min="0" max="500" step="1" value="15">
         </label>
         <label class="ctrl-cell" for="minOIInput"><span>Min OI</span>
-          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="50" value="200" placeholder="any">
+          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="50" value="100" placeholder="any">
         </label>
         <label class="ctrl-cell" for="maxSpreadInput"><span>Max bid-ask %</span>
-          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="15" placeholder="any">
+          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="5" value="100" placeholder="any">
         </label>
       </div>
     </div>
@@ -1601,7 +1607,6 @@
         <tr>
           <th></th>
           <th>Symbol / Strategy</th>
-          <th>Side</th>
           <th>Exp / DTE</th>
           <th>Prob.</th>
           <th>Return</th>
@@ -1852,7 +1857,7 @@
     cardList.innerHTML = '';
 
     if(list.length === 0){
-      tbody.innerHTML = `<tr><td colspan="9" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening the reward, risk or liquidity (Min OI / Max bid-ask) settings.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="8" style="padding:32px 14px; text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening the reward, risk or liquidity (Min OI / Max bid-ask) settings.</td></tr>`;
       cardList.innerHTML = `<div class="trade-card" style="text-align:center; color:var(--text-dim); font-weight:700; font-size:14px;">No setups match these filters. Try loosening the reward, risk or liquidity (Min OI / Max bid-ask) settings.</div>`;
     }
 
@@ -1860,10 +1865,14 @@
       if(idx === exactCount && near.length){
         const head = exactCount === 0 ? 'No matches — near misses only' : 'Near misses — not matches';
         const sub = 'Each falls just short of a number threshold (see “Misses”). Not a recommendation at your settings.';
-        tbody.innerHTML += `<tr class="near-divider"><td colspan="9"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></td></tr>`;
+        tbody.innerHTML += `<tr class="near-divider"><td colspan="8"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></td></tr>`;
         cardList.innerHTML += `<div class="near-divider"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></div>`;
       }
       const nearNote = t.__near ? `<div class="near-note">Misses: ${t.__near.join(' · ')}</div>` : '';
+      // Side shown by coloring the ticker itself (2026-10-01) — replaces the
+      // Bullish/Bearish/Neutral chip and the table's Side column.
+      const sideName = t.side==='bull' ? 'Bullish' : t.side==='bear' ? 'Bearish' : 'Neutral';
+      const symHtml = `<span class="sym-side sym-${t.side==='bull'||t.side==='bear' ? t.side : 'neutral'}" title="${sideName}">${t.sym}<span class="sr-only"> (${sideName})</span></span>`;
       const pill = t.side==='bull'
         ? `<span class="side-pill bull"><span class="dot"></span>Bullish</span>`
         : t.side==='bear'
@@ -1876,10 +1885,9 @@
         <tr class="${t.__near ? 'is-near' : ''}">
           <td><label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="row-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label></td>
           <td>
-            <div class="ticker-sym">${t.sym} <span style="color:var(--text-faint); font-weight:500;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
+            <div class="ticker-sym">${symHtml} <span style="color:var(--text-faint); font-weight:500;">${t.spot != null ? `$${t.spot.toFixed(2)}${staleMark(t.spotPriceStale)} · ` : ''}${t.strike}</span></div>
             <div class="strat-name">${t.strat}${valuationBadge(t)}</div>${nearNote}
           </td>
-          <td>${pill}</td>
           <td class="num">${t.exp} <span style="color:var(--text-faint);">· ${t.dte}d</span></td>
           <td class="num">${t.pot != null ? t.pot + '%' : '—'}${t.potIsProfitProb ? '<span class="stale-mark" style="color:var(--text-faint);" title="Probability of Profit, not probability of touching a strike — this trade\'s only meaningful risk number isn\'t touch-based (see the modal for why).">POP</span>' : ''}</td>
           <td class="num ${t.roc != null ? 'val-pos' : ''}">${fmtPct(t.roc)}</td>
@@ -1904,8 +1912,7 @@
         <div class="trade-card${t.__near ? ' is-near' : ''}" data-idx="${idx}" role="button" tabindex="0">
           <div class="trade-card-top" style="margin-bottom:6px;">
             <label class="checkbox-wrap" onclick="event.stopPropagation()"><input type="checkbox" class="card-checkbox" data-oid="${oid}" ${isChecked ? 'checked' : ''}></label>
-            <div class="ticker-sym" style="flex:1; font-size:14px;">${t.sym} <span style="color:var(--text-dim); font-weight:500; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-dim); font-weight:500; font-size:12px;">· ${stratShort}</span></div>
-            ${pill}
+            <div class="ticker-sym" style="flex:1; font-size:14px;">${symHtml} <span style="color:var(--text-dim); font-weight:500; font-size:12px;">${cardPrice}</span><span style="color:var(--text); font-weight:700; font-size:12px;">${cardStrike}</span> <span style="color:var(--text-dim); font-weight:500; font-size:12px;">· ${stratShort}</span></div>
           </div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
             <span style="font-family:var(--mono); font-size:11px; font-weight:700; white-space:nowrap; color:var(--text-dim);">
@@ -2712,10 +2719,10 @@
   ];
   // 15% (2026-10-01): suits credit spreads, which typically return 13-30%.
   const DEFAULT_MIN_TRADE_PROFIT = 15;
-  // 200 / 15% (2026-10-01): on live data every trade passing this is easy
-  // to trade (weakest legs OI 275+, all <= ~11% wide).
-  const DEFAULT_MIN_OI = 200;
-  const DEFAULT_MAX_SPREAD = 15;
+  // 100 / 100% (2026-10-01): Min OI on, bid-ask effectively off by default
+  // (tighten it in the box when you want only very liquid trades).
+  const DEFAULT_MIN_OI = 100;
+  const DEFAULT_MAX_SPREAD = 100;
 
   const DEFAULT_SORT = 'dte';
 

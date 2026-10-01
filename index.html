@@ -1169,26 +1169,38 @@
     background:repeating-linear-gradient(135deg, var(--border-strong) 0 1px, transparent 1px 7px);
     opacity:0.55;
   }
+  /* Header bar in dark warm ink (2026-09-30b) — the white bar on cream paper
+     was too low-contrast. Same in both themes; contrast on the bar:
+     name 15.7:1, green "AI" 10.3:1, UPDATED label 12.2:1. */
   .hero{
-    background:var(--surface); color:var(--text);
-    border:1px solid var(--border); border-radius:20px;
-    box-shadow:0 14px 32px -20px rgba(40,26,12,0.45), 0 1px 0 rgba(255,255,255,0.7) inset;
+    background:#1C1713; color:#F6F0E6;
+    border:1px solid #2E2620; border-radius:20px;
+    box-shadow:0 16px 34px -20px rgba(28,23,19,0.65), inset 0 1px 0 rgba(255,255,255,0.05);
+    background-image:radial-gradient(80% 160% at 100% 100%, rgba(74,222,147,0.14) 0%, rgba(74,222,147,0) 60%);
   }
-  .hero .brand-mark{ background:none; border:none; padding:0; border-radius:11px; }
+  .hero .brand-mark{ background:none; border:none; padding:0; border-radius:11px; box-shadow:0 0 0 1px rgba(255,255,255,0.14); }
+  .hero .brand-mark .mark-tile{ fill:#2A231C; }
   .hero .brand-name{
     font-family:var(--serif); font-weight:400; font-size:30px; line-height:0.95;
-    letter-spacing:-0.01em; color:var(--text);
+    letter-spacing:-0.01em; color:#F6F0E6;
   }
-  .hero .brand-ai{ color:var(--amber); font-style:italic; font-weight:400; margin-left:0.02em; }
+  .hero .brand-ai{ color:#4ADE93; font-style:italic; font-weight:400; margin-left:0.02em; }
   .hero .data-status{ margin-top:5px; }
   .hero #dataStatusText{
     font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:0.13em;
-    text-transform:uppercase; color:var(--amber-strong);
+    text-transform:uppercase; color:#8FE8B8;
   }
+  .hero .pulse-dot{ background:#4ADE93; box-shadow:0 0 0 3px rgba(74,222,147,0.25); }
+  .hero .pulse-dot[data-state="seed"]{ background:#B3A898; box-shadow:0 0 0 3px rgba(179,168,152,0.25); }
+  .hero .pulse-dot[data-state="error"]{ background:#FF7A6E; box-shadow:0 0 0 3px rgba(255,122,110,0.28); }
   .hero .refresh-btn{
-    background:var(--invert-bg); color:var(--invert-text); border:none; border-radius:11px;
+    background:#F6F0E6; color:#1C1713; border:none; border-radius:11px;
   }
-  .hero .refresh-btn:hover{ background:var(--invert-bg); filter:brightness(1.25); }
+  .hero .refresh-btn:hover{ background:#FFFFFF; filter:none; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .hero{ background-color:#26201A; border-color:rgba(255,255,255,0.12); }
+  }
+  :root[data-theme="dark"] .hero{ background-color:#26201A; border-color:rgba(255,255,255,0.12); }
 
   /* Market tiles: mono labels, serif figures */
   .mkt-tile{ border-width:1px; border-radius:14px; box-shadow:none; padding-top:9px; }
@@ -1708,10 +1720,10 @@
       const dateLabel = formatDataTimestamp(json.generated_at);
       if(dateLabel){
         statusText.textContent = `Updated ${dateLabel}`;
-        statusDot.style.background = 'var(--green)';
+        statusDot.dataset.state = 'ok';
       } else {
         statusText.textContent = 'Seed data — not live yet';
-        statusDot.style.background = 'var(--text-faint)';
+        statusDot.dataset.state = 'seed';
       }
     }catch(err){
       console.error('Failed to load data.json', err);
@@ -1720,7 +1732,7 @@
       hedge = null;
       renderMarket(null, 'Market data unavailable — tap Refresh or try again shortly.');
       statusText.textContent = 'Data unavailable';
-      statusDot.style.background = 'var(--red)';
+      statusDot.dataset.state = 'error';
     }
   }
 

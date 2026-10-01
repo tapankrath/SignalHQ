@@ -1260,34 +1260,6 @@ def fetch_news_and_sentiment(tk, ticker_symbol):
     return round(avg, 2), label, headlines
 
 
-def compute_collar_hedge(puts, spot, dte, call_premium):
-    """
-    Suggests a protective put that would turn a Covered Call into a collar.
-    This is genuinely different math from compute_naked_hedge — a covered
-    call's risk is the STOCK declining, not option assignment, so the "max
-    loss" here is the gap between spot and the protective put's strike, net
-    of the combined premium (call collected, put paid). Reuses the same
-    delta-targeted strike-picking already used for the call leg, for the
-    protective put too, rather than a separate ad-hoc rule.
-    """
-    picked = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
-    if not picked:
-        return None
-    row, _ = picked
-    put_strike = float(row["strike"])
-    put_cost = mid_price(row)
-    net_credit_per_share = call_premium - put_cost
-    # floored at 0: a negative result means the net credit alone exceeds the
-    # spot-to-put gap, i.e. the worst case is still a net gain, not a loss —
-    # simpler to show "$0 max loss" than a confusing negative "loss" figure
-    max_loss = max(0.0, (spot - put_strike - net_credit_per_share) * 100)
-    return {
-        "hedgeStrike": put_strike,
-        "hedgeCost": round(put_cost, 2),
-        "cappedMaxLoss": round(max_loss, 2),
-    }
-
-
 def try_strategy_pick(strat, calls, puts, spot, dte):
     """
     Attempts to pick strikes for `strat` against one expiration's chain.
@@ -1295,45 +1267,6 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
     the reason gets logged by the caller, and used to try the next expiration
     candidate rather than silently giving up on the whole ticker.
     """
-    if strat == "Covered Call":
-        picked_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
-        if not picked_row:
-            return None, f"no call near target delta — {chain_diagnostics(calls, spot)}"
-        row, delta = picked_row
-        premium = mid_price(row)
-        strike = float(row["strike"])
-        return {
-            "premium": premium, "strike_for_pot": strike, "collateral": spot,
-            "breakeven": spot - premium, "max_loss": round((spot - premium) * 100, 2),
-            "strike_label": f"${strike:.0f} C", "iv": safe_float(row.get("impliedVolatility")) * 100,
-            "delta_for_output": delta,
-            "hedge": compute_collar_hedge(puts, spot, dte, premium),
-            # Tracks the short call leg only, not the underlying shares — a
-            # covered call's own roc/premium accounting above is already just
-            # the call premium (collateral is spot, not "P&L on the stock"),
-            # so later mark-to-market re-pricing follows that same convention
-            # rather than pretending to track full stock+option P&L.
-            "legs": [{"type": "call", "strike": strike, "action": "sell", "qty": 1}],
-        }, None
-
-    if strat == "Cash-Secured Put":
-        # The naked mirror of Covered Call above: same 20-delta target strike,
-        # but no underlying shares — collateral is the cash needed to buy 100
-        # shares at the strike if assigned, not the stock's own price.
-        picked_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
-        if not picked_row:
-            return None, f"no put near target delta — {chain_diagnostics(puts, spot)}"
-        row, delta = picked_row
-        premium = mid_price(row)
-        strike = float(row["strike"])
-        return {
-            "premium": premium, "strike_for_pot": strike, "collateral": strike,
-            "breakeven": strike - premium, "max_loss": round((strike - premium) * 100, 2),
-            "strike_label": f"${strike:.0f} P", "iv": safe_float(row.get("impliedVolatility")) * 100,
-            "delta_for_output": delta,
-            "legs": [{"type": "put", "strike": strike, "action": "sell", "qty": 1}],
-        }, None
-
     if strat == "Bull Put Spread":
         short_row = pick_strike_by_delta(puts, spot, dte, TARGET_SHORT_DELTA, "put")
         if not short_row:
@@ -1585,9 +1518,10 @@ def build_trade_for_ticker(ticker_symbol, index):
         # Calendar Spread were removed 2026-09-20 — their payoff shape didn't
         # fit the profit-target intent of this screen. Cash-Secured Put, Bull
         # Call Spread and Bear Put Spread added 2026-09-21 to round out each
-        # side with a defined-risk debit alternative (Bull/Bear ... Spread)
-        # and the naked mirror of Covered Call (Cash-Secured Put) — all three
-        # reuse the exact same delta-targeted strike-picking as their siblings.
+        # side with a defined-risk debit alternative. Covered Call and
+        # Cash-Secured Put were removed 2026-09-30: their 1-3% per-trade
+        # return on full share/cash collateral never fit this screen's
+        # profit-target filters, so they were generated but never shown.
         if index % 4 == 0:
             # Split the neutral slot itself between the two neutral strategies
             # rather than adding a 5th bucket — still 1-in-4 tickers overall
@@ -1595,7 +1529,7 @@ def build_trade_for_ticker(ticker_symbol, index):
             strat = "Double Diagonal" if (index // 4) % 2 == 1 else "Iron Condor"
             side = "neutral"
         elif uptrend:
-            strat = ["Covered Call", "Bull Put Spread", "Long Call", "Cash-Secured Put", "Bull Call Spread"][index % 5]
+            strat = ["Bull Put Spread", "Long Call", "Bull Call Spread"][index % 3]
             side = "bull"
         else:
             strat = ["Bear Call Spread", "Long Put", "Bear Put Spread"][index % 3]

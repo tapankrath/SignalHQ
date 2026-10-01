@@ -7,8 +7,8 @@
 
 <link rel="manifest" href="manifest.json">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111823" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F2EB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110E" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VantEdgeAI">
@@ -17,49 +17,47 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Note: --amber* variable names are historical — they hold the green accent
        color now. Kept the names to avoid touching every var(--amber...) usage
        site; only the values changed. */
-    /* 2026-09-29 "cool & bright" pass: crisp cool-slate neutrals, a light
-       gray page with white cards lifted off it, deep navy ink, and one
-       ledger-green accent. --accent-vivid is for decorative marks only
-       (meter bars, dots, side stripes) — never for text. Red = bearish/loss. */
-    --bg:#F2F4F7;
-    --surface:#FFFFFF;
-    --surface-2:#F4F6F9;
-    --border:#E2E7ED;
-    --border-strong:#AEB8C5;
-    --text:#0B1526;
-    /* Darkened 2026-09-30 for readability: secondary text was too light
-       on phones in daylight. faint ≈7.5:1 on white, dim ≈13:1. */
-    --text-dim:#263243;
-    --text-faint:#4A5568;
-    --amber:#0A8754;
-    --amber-strong:#067A48;
-    --amber-soft:#E4F6EC;
-    --amber-border:#8FD4AE;
-    --green:#0A8754;
-    --green-soft:#E4F6EC;
-    --accent-vivid:#12B76A;
-    --red:#D6353B;
-    --red-soft:#FDEBEC;
-    --red-vivid:#F04449;
-    /* Inverted chip (toast, active tab) — its own token so dark mode can
-       flip it to a light chip instead of inheriting --text's flip. */
-    --invert-bg:#0B1526;
-    --invert-text:#FFFFFF;
-    --mark-tile:#0B1526;
+    /* 2026-09-30 editorial pass (inspired by agenkit.xyz): warm paper
+       background, warm near-black ink, a condensed serif for display type,
+       monospace uppercase "eyebrow" labels, thin warm borders. Our ledger
+       green stays the accent so gain/loss colors keep their meaning.
+       Contrast on cream: ink 16:1, dim 11:1, faint 7.3:1, green 5:1. */
+    --bg:#F6F2EB;
+    --surface:#FFFDF9;
+    --surface-2:#F1ECE3;
+    --border:#E4DCD0;
+    --border-strong:#C9BEAE;
+    --text:#1C1713;
+    --text-dim:#3B332B;
+    --text-faint:#574E44;
+    --amber:#08774A;
+    --amber-strong:#06683F;
+    --amber-soft:#E5F2E8;
+    --amber-border:#9CCDAE;
+    --green:#08774A;
+    --green-soft:#E5F2E8;
+    --accent-vivid:#16A862;
+    --red:#C2362F;
+    --red-soft:#F9E6E2;
+    --red-vivid:#E2483F;
+    --invert-bg:#1C1713;
+    --invert-text:#FBF7F1;
+    --mark-tile:#1C1713;
     --radius:14px;
     --radius-sm:8px;
     --control-h:36px;
     --sans:'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, sans-serif;
     --mono:'IBM Plex Mono', 'SF Mono', ui-monospace, Menlo, monospace;
-    --shadow-sm:0 1px 2px rgba(11,21,38,0.06), 0 0 0 1px rgba(11,21,38,0.02);
-    --shadow-md:0 2px 4px rgba(11,21,38,0.05), 0 10px 24px -6px rgba(11,21,38,0.12);
-    --shadow-lg:0 20px 48px -8px rgba(11,21,38,0.28);
+    --shadow-sm:0 1px 2px rgba(60,40,20,0.05);
+    --shadow-md:0 2px 4px rgba(60,40,20,0.05), 0 12px 28px -10px rgba(60,40,20,0.16);
+    --shadow-lg:0 24px 56px -12px rgba(40,26,12,0.30);
+    --serif:'Instrument Serif', 'Iowan Old Style', Georgia, serif;
   }
 
   /* Dark mode — follows the device/browser's system appearance automatically
@@ -73,27 +71,27 @@
      active. */
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#090E15;
-      --surface:#111823;
-      --surface-2:#18212D;
-      --border:#243040;
-      --border-strong:#3A475A;
-      --text:#EDF1F6;
-      --text-dim:#CFD6E0;
-      --text-faint:#A9B4C3;
+      --bg:#14110E;
+      --surface:#1C1814;
+      --surface-2:#24201B;
+      --border:#332D26;
+      --border-strong:#4A4239;
+      --text:#F3EDE4;
+      --text-dim:#D6CDC1;
+      --text-faint:#B3A898;
       --amber:#1AA866;
       --amber-strong:#4ADE93;
-      --amber-soft:#0F2A1F;
-      --amber-border:#1D6B47;
-      --green:#3ED68A;
-      --green-soft:#0F2A1F;
+      --amber-soft:#132A1E;
+      --amber-border:#1F6B47;
+      --green:#4ADE93;
+      --green-soft:#132A1E;
       --accent-vivid:#2FD583;
-      --red:#F57A7D;
-      --red-soft:#3A171B;
-      --red-vivid:#FF5A5F;
-      --invert-bg:#EDF1F6;
-      --invert-text:#090E15;
-      --mark-tile:#1A2535;
+      --red:#F58A7F;
+      --red-soft:#3A1C18;
+      --red-vivid:#FF6A5C;
+      --invert-bg:#F3EDE4;
+      --invert-text:#14110E;
+      --mark-tile:#0E0B09;
       --shadow-sm:0 1px 2px rgba(0,0,0,0.5);
       --shadow-md:0 2px 6px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.45);
       --shadow-lg:0 16px 44px rgba(0,0,0,0.6);
@@ -1056,7 +1054,7 @@
   .hero .brand{ gap:11px; padding:0; min-width:0; }
   .hero .brand-mark{ width:42px; height:42px; border-radius:12px; padding:1px;
     background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); }
-  .hero .brand-mark .mark-tile{ fill:#0B1526; }
+  .hero .brand-mark .mark-tile{ fill:var(--mark-tile); }
   .brand-text{ min-width:0; }
   .hero .brand-name{ color:#fff; font-size:21px; letter-spacing:-0.025em; }
   .hero .brand-ai{ color:#3ECF85; }
@@ -1147,6 +1145,136 @@
     .data-status{ font-size:10px; padding:0 8px; }
   }
 
+  /* =====================================================================
+     EDITORIAL LAYER (2026-09-30). Restyles existing components only — no
+     layout or behavior changes. Patterns borrowed from agenkit.xyz:
+     frosted floating nav, serif display type, mono eyebrows, mono chips,
+     dark terminal block, hatched divider, faint corner glow.
+     ===================================================================== */
+  body{
+    background-image:radial-gradient(70% 45% at 100% 0%, color-mix(in srgb, var(--accent-vivid) 9%, transparent) 0%, transparent 70%);
+    background-repeat:no-repeat;
+  }
+  /* Mono uppercase label — the "KIT · V2.2.0" look. */
+  .eyebrow{ font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber-strong); }
+
+  /* Pinned header: frosted page strip + floating light bar + hatched edge */
+  .app-header{
+    background:color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px);
+    padding-bottom:0 !important;
+  }
+  .app-header::after{
+    content:""; display:block; height:7px; margin-top:10px;
+    background:repeating-linear-gradient(135deg, var(--border-strong) 0 1px, transparent 1px 7px);
+    opacity:0.55;
+  }
+  .hero{
+    background:var(--surface); color:var(--text);
+    border:1px solid var(--border); border-radius:20px;
+    box-shadow:0 14px 32px -20px rgba(40,26,12,0.45), 0 1px 0 rgba(255,255,255,0.7) inset;
+  }
+  .hero .brand-mark{ background:none; border:none; padding:0; border-radius:11px; }
+  .hero .brand-name{
+    font-family:var(--serif); font-weight:400; font-size:30px; line-height:0.95;
+    letter-spacing:-0.01em; color:var(--text);
+  }
+  .hero .brand-ai{ color:var(--amber); font-style:italic; font-weight:400; margin-left:0.02em; }
+  .hero .data-status{ margin-top:5px; }
+  .hero #dataStatusText{
+    font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--amber-strong);
+  }
+  .hero .refresh-btn{
+    background:var(--invert-bg); color:var(--invert-text); border:none; border-radius:11px;
+  }
+  .hero .refresh-btn:hover{ background:var(--invert-bg); filter:brightness(1.25); }
+
+  /* Market tiles: mono labels, serif figures */
+  .mkt-tile{ border-width:1px; border-radius:14px; box-shadow:none; padding-top:9px; }
+  .mkt-tile.is-up{ background:color-mix(in srgb, var(--accent-vivid) 6%, var(--surface)); border-color:color-mix(in srgb, var(--accent-vivid) 38%, var(--border)); }
+  .mkt-tile.is-down{ background:color-mix(in srgb, var(--red-vivid) 6%, var(--surface)); border-color:color-mix(in srgb, var(--red-vivid) 34%, var(--border)); }
+  .mkt-label{ font-family:var(--mono); font-weight:500; letter-spacing:0.14em; color:var(--text-faint); }
+  .mkt-value{ font-family:var(--serif); font-weight:400; font-size:30px; letter-spacing:0; line-height:1.05; margin-top:2px; }
+  .mkt-change{ font-family:var(--mono); font-weight:500; font-size:12px; }
+
+  /* Toolbar */
+  .export-btn{ border-radius:11px; background:var(--surface); }
+  .header-top .portfolio-bar-inner{ background:var(--surface); border-radius:11px; }
+  .header-top .portfolio-bar label{
+    font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--text-faint);
+  }
+
+  /* Cards & panels: thin warm borders, softer corners, no heavy shadow */
+  .filter-card, .results-panel, .table-wrap{ border-radius:18px; box-shadow:none; }
+  .trade-card{ border-radius:14px; box-shadow:0 1px 0 rgba(60,40,20,0.04); }
+  .filter-header-btn{ border-radius:11px; }
+  .apply-btn-compact, .reset-btn-bold, .copy-btn, .track-selected-btn{ border-radius:11px; }
+
+  /* Side pills become mono chips */
+  .side-pill{
+    font-family:var(--mono); font-weight:500; font-size:11px; letter-spacing:0.02em;
+    background:transparent !important; border:1px solid var(--border-strong); padding:2px 9px;
+  }
+  .trade-card-top{ gap:8px; }
+  .trade-card .side-pill{ flex-shrink:0; }
+  .side-pill.bull{ border-color:var(--amber-border); }
+  .side-pill.bear{ border-color:color-mix(in srgb, var(--red) 40%, var(--border)); }
+
+  /* Table header in eyebrow style */
+  thead th{ font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; }
+  /* Mono chips are wider than the old pills; keep the table inside its card. */
+  tbody td .side-pill{ padding:2px 8px; }
+  tbody td, thead th{ padding-left:10px; padding-right:10px; }
+
+  /* Serif display headings */
+  .modal-title{ font-family:var(--serif); font-weight:400; font-size:28px; letter-spacing:-0.005em; line-height:1.05; }
+  .lookup-tab-label{ font-family:var(--serif); font-weight:400; font-size:38px; letter-spacing:-0.01em; line-height:1.05; margin-bottom:8px; }
+  .tracked-empty-state strong{ font-family:var(--serif); font-weight:400; font-size:26px; }
+
+  /* Ticker Lookup as a dark terminal block with a green $ prompt */
+  .lookup-tab-form{
+    max-width:460px; align-items:center; gap:6px; padding:6px;
+    background:#1C1713; border:1px solid #2E2620; border-radius:14px;
+    box-shadow:0 18px 40px -24px rgba(28,23,19,0.6);
+  }
+  .lookup-tab-form::before{
+    content:"$"; font-family:var(--mono); font-size:16px; font-weight:500; color:#4ADE93; padding-left:10px;
+  }
+  .lookup-tab-input{
+    flex:1; min-width:0; background:transparent !important; border:none !important;
+    color:#F3EDE4 !important; text-align:left; padding:0 6px !important; box-shadow:none !important;
+  }
+  .lookup-tab-input::placeholder{ color:#9C9183 !important; }
+  .lookup-tab-input:focus{ outline:none; }
+  .lookup-tab-form:focus-within{ border-color:#4ADE93; }
+  .lookup-tab-submit{ border-radius:10px; }
+
+  @media (max-width: 720px){
+    .hero{ border-radius:18px; }
+    .hero .brand-name{ font-size:26px; }
+    .hero #dataStatusText{ font-size:10px; letter-spacing:0.11em; }
+    .mkt-value{ font-size:22px; }
+    .mkt-label{ letter-spacing:0.1em; }
+    .mkt-change{ font-size:11px; }
+    .app-header::after{ margin-top:8px; height:6px; }
+    /* The card's colored left stripe already shows the side, so the chip's
+       dot is dropped on phones to keep the strategy name on one line. */
+    .trade-card .side-pill{ font-size:10.5px; letter-spacing:0; padding:1px 7px; }
+    .trade-card .side-pill .dot{ display:none; }
+    .trade-card-top{ gap:6px; }
+    .lookup-tab-label{ font-size:32px; }
+  }
+  @media (max-width: 380px){
+    .trade-card .side-pill{ font-size:10px; padding:1px 5px; }
+    .trade-card-top{ gap:4px; }
+  }
+  @media (max-width: 370px){
+    .mkt-value{ font-size:19px; }
+    .hero .brand-name{ font-size:23px; }
+  }
+
   /* Dark mode component overrides — kept at the very end of the stylesheet
      on purpose. Each of these targets a class that already has its own
      rule earlier in this file at the same specificity; CSS breaks a
@@ -1191,7 +1319,7 @@
        (--surface-2, one step lighter than --bg) they sink into it, darker
        than their own container. A dedicated shade lighter than the tray
        restores that "raised field" relationship. */
-    .portfolio-bar input{ background:#0E141D; }
+    .portfolio-bar input{ background:#120F0C; }
     /* The logo tile follows --mark-tile; a hairline keeps its edge visible
        against the near-black page. */
     .brand-mark .mark-edge{ stroke:rgba(255,255,255,0.10); }

@@ -1195,7 +1195,9 @@
   .mkt-tile.is-up{ background:color-mix(in srgb, var(--accent-vivid) 6%, var(--surface)); border-color:color-mix(in srgb, var(--accent-vivid) 38%, var(--border)); }
   .mkt-tile.is-down{ background:color-mix(in srgb, var(--red-vivid) 6%, var(--surface)); border-color:color-mix(in srgb, var(--red-vivid) 34%, var(--border)); }
   .mkt-label{ font-family:var(--mono); font-weight:500; letter-spacing:0.14em; color:var(--text-faint); }
-  .mkt-value{ font-family:var(--serif); font-weight:400; font-size:30px; letter-spacing:0; line-height:1.05; margin-top:2px; }
+  /* Same sans + tabular figures as the rest of the app's numbers (the big
+     serif figures read as out of place next to the cards). */
+  .mkt-value{ font-family:var(--sans); font-weight:600; font-size:20px; letter-spacing:-0.01em; line-height:1.2; margin-top:3px; font-variant-numeric:tabular-nums; }
   .mkt-change{ font-family:var(--mono); font-weight:500; font-size:12px; }
 
   /* Toolbar */
@@ -1255,7 +1257,7 @@
     .hero{ border-radius:18px; }
     .hero .brand-name{ font-size:26px; }
     .hero #dataStatusText{ font-size:10px; letter-spacing:0.11em; }
-    .mkt-value{ font-size:22px; }
+    .mkt-value{ font-size:15.5px; margin-top:2px; }
     .mkt-label{ letter-spacing:0.1em; }
     .mkt-change{ font-size:11px; }
     .app-header::after{ margin-top:8px; height:6px; }
@@ -1271,7 +1273,7 @@
     .trade-card-top{ gap:4px; }
   }
   @media (max-width: 370px){
-    .mkt-value{ font-size:19px; }
+    .mkt-value{ font-size:14px; }
     .hero .brand-name{ font-size:23px; }
   }
 

@@ -1494,8 +1494,8 @@
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread" checked> <span class="strat-dot bull"></span>Bull Call Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread" checked> <span class="strat-dot bear"></span>Bear Put Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
+        <label class="check-row"><input type="checkbox" data-strat="Bear Put Spread"> <span class="strat-dot bear"></span>Bear Put Spread</label>
       </div>
       <div class="filter-hint">
         <span class="strat-dot bull"></span>Bullish&nbsp; &nbsp;<span class="strat-dot bear"></span>Bearish&nbsp; &nbsp;<span class="strat-dot neutral"></span>Neutral — check any strategy, results combine every side that matches.
@@ -2704,8 +2704,8 @@
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',
     '[data-strat="Iron Condor"]',
-    '[data-strat="Bull Call Spread"]',
-    '[data-strat="Bear Put Spread"]',
+    // Bull Call / Bear Put Spread off by default (2026-10-01): debit spreads
+    // need a sizable move to pay off — too aggressive as a default.
     '[data-quality="buy"]',
     '[data-quality="sell"]',
     '[data-risk="excludeEarnings"]',

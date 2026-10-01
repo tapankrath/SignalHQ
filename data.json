@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T23:21:20.474331+00:00",
+  "generated_at": "2026-10-01T23:37:13.511906+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -238,9 +238,15 @@
         "fillPremium": 3.18
       },
       "potIsProfitProb": true,
-      "newsSentiment": 0.26,
+      "newsSentiment": 0.21,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "SpaceX's Terafab Will Be Bigger Than Any Building on Earth. Here's When Investors Will Profit.",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacexs-terafab-bigger-building-earth-232500302.html",
+          "sentiment": 0.44
+        },
         {
           "title": "Why Jacobs Solutions (J) Stock Is Up Today",
           "publisher": "StockStory",
@@ -252,12 +258,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-taiwan-semiconductor-manufacturing-stock-225000459.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
-          "sentiment": 0.6
         }
       ],
       "volRegime": "Rich",
@@ -4361,6 +4361,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "SpaceX's Terafab Will Be Bigger Than Any Building on Earth. Here's When Investors Will Profit.",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacexs-terafab-bigger-building-earth-232500302.html",
+          "sentiment": 0.44
+        },
+        {
           "title": "Planet Launches Suncatcher, Tanager-2, and 18 SuperDove Satellites",
           "publisher": "Business Wire",
           "link": "https://finance.yahoo.com/technology/articles/planet-launches-suncatcher-tanager-2-224200368.html",
@@ -4371,12 +4377,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-gets-fair-220550617.html",
           "sentiment": 0.71
-        },
-        {
-          "title": "SpaceX vs. Lockheed Martin: Which Aerospace Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-vs-lockheed-martin-aerospace-214401711.html",
-          "sentiment": 0.44
         }
       ],
       "volRegime": "Fair",
@@ -6808,9 +6808,15 @@
       "dividendYield": 0.44,
       "marketCap": 5574576046080,
       "score": 9.1,
-      "newsSentiment": 0.26,
+      "newsSentiment": 0.21,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "SpaceX's Terafab Will Be Bigger Than Any Building on Earth. Here's When Investors Will Profit.",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacexs-terafab-bigger-building-earth-232500302.html",
+          "sentiment": 0.44
+        },
         {
           "title": "Why Jacobs Solutions (J) Stock Is Up Today",
           "publisher": "StockStory",
@@ -6822,12 +6828,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-taiwan-semiconductor-manufacturing-stock-225000459.html",
           "sentiment": 0.0
-        },
-        {
-          "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
-          "sentiment": 0.6
         }
       ],
       "valuationLabel": "Cheap",
@@ -9002,6 +9002,12 @@
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
         {
+          "title": "SpaceX's Terafab Will Be Bigger Than Any Building on Earth. Here's When Investors Will Profit.",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/technology/ai/articles/spacexs-terafab-bigger-building-earth-232500302.html",
+          "sentiment": 0.44
+        },
+        {
           "title": "Planet Launches Suncatcher, Tanager-2, and 18 SuperDove Satellites",
           "publisher": "Business Wire",
           "link": "https://finance.yahoo.com/technology/articles/planet-launches-suncatcher-tanager-2-224200368.html",
@@ -9012,12 +9018,6 @@
           "publisher": "Simply Wall St.",
           "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-gets-fair-220550617.html",
           "sentiment": 0.71
-        },
-        {
-          "title": "SpaceX vs. Lockheed Martin: Which Aerospace Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-vs-lockheed-martin-aerospace-214401711.html",
-          "sentiment": 0.44
         }
       ]
     },
@@ -9374,7 +9374,7 @@
       "peRatio": 38.7,
       "sector": "Healthcare",
       "industry": "Drug Manufacturers - General",
-      "pegRatio": 1.17,
+      "pegRatio": 1.14,
       "dividendYield": 0.6,
       "marketCap": 1025368784896,
       "score": 8.5,
@@ -9716,7 +9716,7 @@
       "peRatio": 35.6,
       "sector": "Industrials",
       "industry": "Farm & Heavy Construction Machinery",
-      "pegRatio": 1.45,
+      "pegRatio": 1.42,
       "dividendYield": 0.8,
       "marketCap": 379852324864,
       "score": 7.7,
@@ -10208,7 +10208,7 @@
     "costPerContract": 622.5
   },
   "market": {
-    "asOf": "2026-10-01T23:21:20.474318+00:00",
+    "asOf": "2026-10-01T23:37:13.511891+00:00",
     "gauges": [
       {
         "key": "qqq",

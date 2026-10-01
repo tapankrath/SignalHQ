@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T01:09:00.039886+00:00",
+  "generated_at": "2026-10-01T01:19:04.627836+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -327,7 +327,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 24.7,
+      "peVsSectorPct": 21.0,
       "sectorMedianPE": 21.9,
       "sectorPeerCount": 5,
       "sector": "Communication Services"
@@ -509,8 +509,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 1.8,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": 1.1,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -1249,7 +1249,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 339.7,
+      "peVsSectorPct": 343.6,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30,
       "sector": "Technology"
@@ -1591,7 +1591,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 90.3,
+      "peVsSectorPct": 87.8,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30,
       "sector": "Technology"
@@ -1817,7 +1817,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -0.5,
+      "peVsSectorPct": 0.0,
       "sectorMedianPE": 20.0,
       "sectorPeerCount": 3,
       "sector": "Consumer Cyclical"
@@ -2154,7 +2154,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -22.2,
+      "peVsSectorPct": -22.3,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4,
       "sector": "Industrials"
@@ -2567,7 +2567,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 0.6,
+      "peVsSectorPct": 0.7,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4,
       "sector": "Industrials"
@@ -3132,7 +3132,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 25.7,
+      "peVsSectorPct": 24.0,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30,
       "sector": "Technology"
@@ -4071,7 +4071,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 53.7,
+      "peVsSectorPct": 58.4,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30,
       "sector": "Technology"
@@ -4331,8 +4331,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 119.4,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": 118.5,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -4469,9 +4469,9 @@
           "sentiment": 0.1
         },
         {
-          "title": "Stocks to Watch Recap: Micron, Boeing, Robinhood, Mattel",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-30-2026/card/stocks-to-watch-boeing-robinhood-micron-Zh5aqWdDbnLhaNy9BEHm?siteid=yhoof2&yptr=yahoo",
+          "title": "Robinhood Markets Unveils 24/7 Trading, AI Agents and Private-Market Push at HOOD Summit",
+          "publisher": "MarketBeat",
+          "link": "https://www.marketbeat.com/instant-alerts/event-robinhood-markets-unveils-247-trading-ai-agents-and-private-market-push-at-hood-summit-2026-09-30/?utm_source=yahoofinance&utm_medium=yahoofinance",
           "sentiment": 0.0
         }
       ],
@@ -4506,8 +4506,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 258.4,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": 255.9,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -4747,7 +4747,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -0.6,
+      "peVsSectorPct": -0.7,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4,
       "sector": "Industrials"
@@ -4831,8 +4831,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -10.4,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": -11.0,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -5341,8 +5341,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -9.7,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": -10.3,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -5425,8 +5425,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -1.8,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": -1.1,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6,
       "sector": "Financial Services"
     },
@@ -5737,7 +5737,7 @@
       "chg6m": 29.4,
       "chg1y": 3.3,
       "volRatio": 0.89,
-      "peRatio": 27.3,
+      "peRatio": 26.5,
       "sector": "Communication Services",
       "industry": "Internet Content & Information",
       "pegRatio": 0.98,
@@ -5767,7 +5767,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 24.7,
+      "peVsSectorPct": 21.0,
       "sectorMedianPE": 21.9,
       "sectorPeerCount": 5
     },
@@ -5867,8 +5867,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 1.8,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": 1.1,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6
     },
     {
@@ -6329,7 +6329,7 @@
       "chg6m": 27.8,
       "chg1y": 1.1,
       "volRatio": 0.62,
-      "peRatio": 158.5,
+      "peRatio": 159.9,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
       "pegRatio": 1.8,
@@ -6359,7 +6359,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 339.7,
+      "peVsSectorPct": 343.6,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30
     },
@@ -6529,12 +6529,12 @@
       "chg6m": 17.1,
       "chg1y": 92.6,
       "volRatio": 0.74,
-      "peRatio": 68.6,
+      "peRatio": 67.7,
       "sector": "Technology",
       "industry": "Electronic Components",
       "pegRatio": 0.95,
       "dividendYield": 0.73,
-      "marketCap": 132447068160,
+      "marketCap": 132177903616,
       "score": 6.7,
       "newsSentiment": 0.0,
       "newsSentimentLabel": "Neutral",
@@ -6559,7 +6559,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 90.3,
+      "peVsSectorPct": 87.8,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30
     },
@@ -6647,7 +6647,7 @@
       "chg6m": -11.1,
       "chg1y": -25.4,
       "volRatio": 1.29,
-      "peRatio": 19.9,
+      "peRatio": 20.0,
       "sector": "Consumer Cyclical",
       "industry": "Home Improvement Retail",
       "pegRatio": 2.43,
@@ -6677,7 +6677,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -0.5,
+      "peVsSectorPct": 0.0,
       "sectorMedianPE": 20.0,
       "sectorPeerCount": 3
     },
@@ -6873,7 +6873,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -22.2,
+      "peVsSectorPct": -22.3,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4
     },
@@ -7081,7 +7081,7 @@
       "chg6m": 24.0,
       "chg1y": 49.4,
       "volRatio": 1.01,
-      "peRatio": 35.3,
+      "peRatio": 35.4,
       "sector": "Industrials",
       "industry": "Engineering & Construction",
       "pegRatio": 0.62,
@@ -7111,7 +7111,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 0.6,
+      "peVsSectorPct": 0.7,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4
     },
@@ -7360,7 +7360,7 @@
       "industry": "Semiconductor Equipment & Materials",
       "pegRatio": 0.76,
       "dividendYield": 0.62,
-      "marketCap": 13013941248,
+      "marketCap": 12983562240,
       "score": 8.1,
       "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
@@ -7405,7 +7405,7 @@
       "chg6m": 115.0,
       "chg1y": 222.9,
       "volRatio": 0.94,
-      "peRatio": 364.4,
+      "peRatio": 355.1,
       "sector": "Industrials",
       "industry": "Electrical Equipment & Parts",
       "pegRatio": 0.66,
@@ -7435,7 +7435,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 938.2,
+      "peVsSectorPct": 910.2,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4
     },
@@ -7455,7 +7455,7 @@
       "chg6m": 15.1,
       "chg1y": 7.3,
       "volRatio": 0.73,
-      "peRatio": 45.3,
+      "peRatio": 44.7,
       "sector": "Technology",
       "industry": "Semiconductors",
       "pegRatio": 0.35,
@@ -7479,7 +7479,7 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": 25.7,
+      "peVsSectorPct": 24.0,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30
     },
@@ -7654,7 +7654,7 @@
       "industry": "Aerospace & Defense",
       "pegRatio": null,
       "dividendYield": null,
-      "marketCap": 1988603281408,
+      "marketCap": 1987457843200,
       "score": 7.4,
       "newsSentiment": 0.11,
       "newsSentimentLabel": "Neutral",
@@ -7991,7 +7991,7 @@
       "chg6m": 51.8,
       "chg1y": 127.9,
       "volRatio": 0.89,
-      "peRatio": 55.4,
+      "peRatio": 57.1,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
       "pegRatio": 1.51,
@@ -8021,7 +8021,7 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 53.7,
+      "peVsSectorPct": 58.4,
       "sectorMedianPE": 36.0,
       "sectorPeerCount": 30
     },
@@ -8046,7 +8046,7 @@
       "industry": "Drug Manufacturers - General",
       "pegRatio": 1.17,
       "dividendYield": 0.58,
-      "marketCap": 1031816085504,
+      "marketCap": 1031371358208,
       "score": 8.5,
       "newsSentiment": 0.13,
       "newsSentimentLabel": "Neutral",
@@ -8141,7 +8141,7 @@
       "chg6m": 21.5,
       "chg1y": 6.0,
       "volRatio": 1.19,
-      "peRatio": 30.6,
+      "peRatio": 30.7,
       "sector": "Financial Services",
       "industry": "Credit Services",
       "pegRatio": 1.66,
@@ -8171,8 +8171,8 @@
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 119.4,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": 118.5,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6
     },
     {
@@ -8191,12 +8191,12 @@
       "chg6m": -13.7,
       "chg1y": 5.6,
       "volRatio": 1.03,
-      "peRatio": 37.7,
+      "peRatio": 37.5,
       "sector": "Consumer Defensive",
       "industry": "Discount Stores",
       "pegRatio": 4.1,
       "dividendYield": 0.93,
-      "marketCap": 827003568128,
+      "marketCap": 824474861568,
       "score": 5.6,
       "newsSentiment": -0.13,
       "newsSentimentLabel": "Neutral",
@@ -8260,15 +8260,15 @@
           "sentiment": 0.1
         },
         {
-          "title": "Stocks to Watch Recap: Micron, Boeing, Robinhood, Mattel",
-          "publisher": "The Wall Street Journal",
-          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-30-2026/card/stocks-to-watch-boeing-robinhood-micron-Zh5aqWdDbnLhaNy9BEHm?siteid=yhoof2&yptr=yahoo",
+          "title": "Robinhood Markets Unveils 24/7 Trading, AI Agents and Private-Market Push at HOOD Summit",
+          "publisher": "MarketBeat",
+          "link": "https://www.marketbeat.com/instant-alerts/event-robinhood-markets-unveils-247-trading-ai-agents-and-private-market-push-at-hood-summit-2026-09-30/?utm_source=yahoofinance&utm_medium=yahoofinance",
           "sentiment": 0.0
         }
       ],
       "valuationLabel": "Rich",
-      "peVsSectorPct": 258.4,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": 255.9,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6
     },
     {
@@ -8413,7 +8413,7 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -0.6,
+      "peVsSectorPct": -0.7,
       "sectorMedianPE": 35.1,
       "sectorPeerCount": 4
     },
@@ -8463,8 +8463,8 @@
         }
       ],
       "valuationLabel": "Fair",
-      "peVsSectorPct": -10.4,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": -11.0,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6
     },
     {
@@ -8757,8 +8757,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -9.7,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": -10.3,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6
     },
     {
@@ -8777,7 +8777,7 @@
       "chg6m": 9.3,
       "chg1y": 18.9,
       "volRatio": 0.86,
-      "peRatio": 13.7,
+      "peRatio": 13.9,
       "sector": "Financial Services",
       "industry": "Capital Markets",
       "pegRatio": 1.13,
@@ -8807,8 +8807,8 @@
         }
       ],
       "valuationLabel": "Cheap",
-      "peVsSectorPct": -1.8,
-      "sectorMedianPE": 13.9,
+      "peVsSectorPct": -1.1,
+      "sectorMedianPE": 14.1,
       "sectorPeerCount": 6
     },
     {
@@ -8827,7 +8827,7 @@
       "chg6m": 0.6,
       "chg1y": 37.4,
       "volRatio": 0.68,
-      "peRatio": 19.9,
+      "peRatio": 19.7,
       "sector": "Energy",
       "industry": "Oil & Gas Integrated",
       "pegRatio": 0.89,
@@ -8878,7 +8878,7 @@
       "industry": "Advertising Agencies",
       "pegRatio": 0.66,
       "dividendYield": null,
-      "marketCap": 97566908416,
+      "marketCap": 97192550400,
       "score": 2.2,
       "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
@@ -8910,7 +8910,7 @@
   ],
   "hedge": null,
   "market": {
-    "asOf": "2026-10-01T01:09:00.039869+00:00",
+    "asOf": "2026-10-01T01:19:04.627823+00:00",
     "gauges": [
       {
         "key": "qqq",

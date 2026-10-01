@@ -2758,6 +2758,22 @@
   const modalScrim = document.getElementById('modalScrim');
   const tradeModal = document.getElementById('tradeModal');
 
+  // Liquidity of the trade's legs (data runs from 2026-09-30 on; older trades
+  // simply don't show these two rows). Every published leg already passed the
+  // fetch's gate (OI >= 100, bid-ask <= 20% of mid); this shows how much room
+  // it had, and the plain mid next to the realistic-fill price all the
+  // return figures are based on.
+  function liquidityHtml(t){
+    const q = t && t.liquidity;
+    if(!q) return '';
+    const pct = Number(q.worstSpreadPct);
+    const tone = pct <= 10 ? 'val-pos' : (pct <= 20 ? '' : 'val-neg');
+    const credit = !t.debitStrategy;
+    return `
+        <div><div class="mm-label">Liquidity (weakest leg)</div><div class="mm-val"><span class="${tone}">${isFinite(pct) ? pct.toFixed(0) + '% wide' : '—'}</span> · OI ${q.minOI != null ? Number(q.minOI).toLocaleString() : '—'}</div></div>
+        <div><div class="mm-label">${credit ? 'Credit' : 'Debit'}: mid → est. fill</div><div class="mm-val">$${Number(q.midPremium).toFixed(2)} → $${Number(q.fillPremium).toFixed(2)}</div></div>`;
+  }
+
   function openTradeModal(t){
     const sentimentLabel = t.newsSentimentLabel || 'Neutral';
     const sentimentColor = sentimentLabel === 'Positive' ? 'var(--green)' : sentimentLabel === 'Negative' ? 'var(--red)' : 'var(--text-faint)';
@@ -2848,6 +2864,7 @@
         <div><div class="mm-label">Composite Rating</div><div class="mm-val" style="color:var(--amber-strong);">${Number(t.score).toFixed(1)} / 10</div></div>
         ${earningsHtml}
         ${volRegimeHtml}
+        ${liquidityHtml(t)}
         ${valuationHtml}
       </div>
       ${t.spotPriceStale ? `<div class="modal-note" style="margin-bottom:14px; color:var(--red);">† This price may be lagging the live market — Yahoo's free data feed can still show the prior session's close for a while after hours, even though this run happened later. Screen for a live or delayed quote before trading off it.</div>` : ''}

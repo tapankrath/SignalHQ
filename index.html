@@ -1586,10 +1586,10 @@
           <input type="number" id="minTradeProfitInput" class="num-filter" inputmode="decimal" min="0" max="500" step="1" value="20">
         </label>
         <label class="ctrl-cell" for="minOIInput"><span>Min OI</span>
-          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="5" value="25" placeholder="any">
+          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="50" value="200" placeholder="any">
         </label>
         <label class="ctrl-cell" for="maxSpreadInput"><span>Max bid-ask %</span>
-          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="30" placeholder="any">
+          <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="15" placeholder="any">
         </label>
       </div>
     </div>
@@ -1858,8 +1858,8 @@
 
     list.forEach((t, idx)=>{
       if(idx === exactCount && near.length){
-        const head = exactCount === 0 ? 'No exact matches — closest setups' : 'Closest matches';
-        const sub = 'Pass your strategy, quality and risk choices; miss one of the number thresholds.';
+        const head = exactCount === 0 ? 'No matches — near misses only' : 'Near misses — not matches';
+        const sub = 'Each falls just short of a number threshold (see “Misses”). Not a recommendation at your settings.';
         tbody.innerHTML += `<tr class="near-divider"><td colspan="9"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></td></tr>`;
         cardList.innerHTML += `<div class="near-divider"><span class="eyebrow">${head}</span><span class="near-sub">${sub}</span></div>`;
       }
@@ -1923,33 +1923,58 @@
   let lastFunnel = null;
   let lastPreThresholdPool = [];
 
-  // Near matches (2026-10-01). When fewer than MIN_RESULTS trades pass every
-  // filter, the list is topped up with the best-scoring trades that pass
-  // your strategy / quality / risk choices but miss one of the numeric
-  // thresholds (Min profit, Min OI, Max bid-ask). They're shown under a
-  // divider, each saying exactly what it misses, so exact matches are never
-  // confused with them.
+  // Near misses (2026-10-01, reworked same day). When fewer than
+  // MIN_RESULTS trades pass every filter, the list is topped up with trades
+  // that pass your strategy / quality / risk choices and fall SLIGHTLY short
+  // of a number threshold. Rules, so they can't mislead:
+  //   - ranked by how close they come (relative shortfall summed across the
+  //     thresholds they miss), not by composite score;
+  //   - anything that misses badly is excluded outright: profit below half
+  //     of Min profit, OI below half of Min OI, bid-ask more than double
+  //     Max bid-ask, or a leg with no two-sided quote;
+  //   - shown under their own divider, dashed, each with a "Misses:" line.
   const MIN_RESULTS = 5;
-  function nearMissReasons(t){
-    const r = [];
-    const mp = Math.max(0, Number(document.getElementById('minTradeProfitInput').value) || 0);
-    if(t.roc == null || !(t.roc > mp)) r.push(t.roc == null ? 'no profit figure' : `profit ${t.roc}% ≤ ${mp}%`);
+  function thresholdValues(){
+    const num = id => parseFloat(document.getElementById(id).value);
+    const mp = Math.max(0, num('minTradeProfitInput') || 0);
+    const oi = num('minOIInput'), sp = num('maxSpreadInput');
+    return { mp, oi: (isFinite(oi) && oi > 0) ? oi : null, sp: (isFinite(sp) && sp > 0) ? sp : null };
+  }
+  // -> null if the trade misses any threshold badly; otherwise
+  //    { shortfall, reasons } (no reasons = it isn't actually a miss)
+  function missProfile(t){
+    const { mp, oi, sp } = thresholdValues();
+    let shortfall = 0; const reasons = [];
+    if(t.roc == null) return null;
+    if(!(t.roc > mp)){
+      if(mp > 0 && t.roc < mp / 2) return null;
+      shortfall += mp > 0 ? (mp - t.roc) / mp : 0;
+      reasons.push(`profit ${t.roc}% ≤ ${mp}%`);
+    }
     const q = t.liquidity;
-    const oi = parseFloat(document.getElementById('minOIInput').value);
-    if(q && isFinite(oi) && oi > 0 && !(q.minOI != null && q.minOI >= oi)) r.push(`OI ${q.minOI ?? '—'} < ${oi}`);
-    const sp = parseFloat(document.getElementById('maxSpreadInput').value);
-    if(q && isFinite(sp) && sp > 0 && !(q.worstSpreadPct != null && q.worstSpreadPct <= sp)) r.push(q.worstSpreadPct == null ? 'no two-sided quote' : `bid-ask ${Math.round(q.worstSpreadPct)}% > ${sp}%`);
-    return r;
+    if(q && oi != null && !(q.minOI != null && q.minOI >= oi)){
+      if(q.minOI == null || q.minOI < oi / 2) return null;
+      shortfall += (oi - q.minOI) / oi;
+      reasons.push(`OI ${Number(q.minOI).toLocaleString()} < ${Number(oi).toLocaleString()}`);
+    }
+    if(q && sp != null && !(q.worstSpreadPct != null && q.worstSpreadPct <= sp)){
+      if(q.worstSpreadPct == null || q.worstSpreadPct > sp * 2) return null;
+      shortfall += (q.worstSpreadPct - sp) / sp;
+      reasons.push(`bid-ask ${Math.round(q.worstSpreadPct)}% > ${sp}%`);
+    }
+    return { shortfall, reasons };
   }
   function nearMisses(matched){
     const need = MIN_RESULTS - matched.length;
     if(need <= 0) return [];
     const have = new Set(matched.map(optionId));
     return lastPreThresholdPool
-      .filter(t => !have.has(optionId(t)) && t.roc != null)
-      .sort((a,b) => (b.score ?? 0) - (a.score ?? 0))
+      .filter(t => !have.has(optionId(t)))
+      .map(t => ({ t, m: missProfile(t) }))
+      .filter(x => x.m && x.m.reasons.length)
+      .sort((a,b) => (a.m.shortfall - b.m.shortfall) || ((b.t.score ?? 0) - (a.t.score ?? 0)))
       .slice(0, need)
-      .map(t => Object.assign(Object.create(t), { __near: nearMissReasons(t) }));
+      .map(x => Object.assign(Object.create(x.t), { __near: x.m.reasons }));
   }
 
   function computeFiltered(){
@@ -2686,8 +2711,10 @@
     '[data-risk="excludeEarnings"]',
   ];
   const DEFAULT_MIN_TRADE_PROFIT = 20;
-  const DEFAULT_MIN_OI = 25;
-  const DEFAULT_MAX_SPREAD = 30;
+  // 200 / 15% (2026-10-01): on live data every trade passing this is easy
+  // to trade (weakest legs OI 275+, all <= ~11% wide).
+  const DEFAULT_MIN_OI = 200;
+  const DEFAULT_MAX_SPREAD = 15;
 
   const DEFAULT_SORT = 'dte';
 

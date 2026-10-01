@@ -642,96 +642,60 @@ def chain_diagnostics(df, spot=None):
             return (f"{len(df)} rows with valid IV, but every strike is wildly inconsistent with "
                     f"spot ${spot:.2f} (strike range {strikes.min():.0f}-{strikes.max():.0f}) — "
                     f"likely a stale/un-adjusted chain, check for a recent stock split")
-    try:
-        n_liquid = sum(1 for _, r in df.iterrows() if leg_is_liquid(r))
-    except Exception:
-        n_liquid = "?"
-    return (f"{len(df)} rows, {len(valid)} with valid IV (range {valid.min():.2f}-{valid.max():.2f}), "
-            f"{n_liquid} liquid (OI>={MIN_LEG_OPEN_INTEREST}, bid-ask<={MAX_LEG_SPREAD_PCT*100:.0f}% of mid)")
+    return f"{len(df)} rows, {len(valid)} with valid IV (range {valid.min():.2f}-{valid.max():.2f})"
 
 
-# --- Leg liquidity & realistic fills (added 2026-09-30) ---------------------
-# Every leg of every recommendation must be tradeable: a real two-sided
-# market, enough open interest, and a bid-ask that isn't wider than
-# MAX_LEG_SPREAD_PCT of the mid (with an absolute allowance so cheap
-# options aren't rejected for a few cents of width). Middle-of-the-road
-# thresholds — stricter would be ~250 OI / 10%, looser ~50 OI / 30%.
-MIN_LEG_OPEN_INTEREST = 100
-MAX_LEG_SPREAD_PCT = 0.20
-MIN_LEG_SPREAD_ALLOWANCE = 0.10   # $ — width up to this is always OK
-# Prices assume you give up this fraction of each leg's bid-ask width versus
-# the mid: sells fill at mid - f*width, buys at mid + f*width. So premium,
-# return %, breakeven and max loss reflect a realistic fill, not the mid.
+# --- Leg liquidity (recorded only; added 2026-09-30) --------------------------
+# Strike selection and pricing are unchanged (delta-based picks, priced at the
+# mid). Each trade just carries its legs' liquidity so the page's "Min OI" and
+# "Max bid-ask %" filters can screen on it. FILL_SLIPPAGE_FRACTION only feeds
+# the informational "est. fill" figure in the trade details.
 FILL_SLIPPAGE_FRACTION = 0.25
 
 
 def leg_quote(row):
-    """(bid, ask, mid, width, open_interest) for one chain row."""
+    """(bid, ask, mid, width, open_interest) for one chain row; mid is 0 when
+    there isn't a real two-sided market."""
     bid = safe_float(row.get("bid"))
     ask = safe_float(row.get("ask"))
     oi = safe_float(row.get("openInterest"))
-    mid = (bid + ask) / 2 if (bid > 0 and ask > 0) else 0.0
-    return bid, ask, mid, max(0.0, ask - bid), oi
+    two_sided = bid > 0 and ask > 0 and ask >= bid
+    mid = (bid + ask) / 2 if two_sided else 0.0
+    return bid, ask, mid, (ask - bid) if two_sided else 0.0, oi
 
 
-def leg_is_liquid(row):
-    bid, ask, mid, width, oi = leg_quote(row)
-    if bid <= 0 or ask <= 0 or ask < bid:
-        return False               # no real two-sided market (stale last-price only)
-    if oi < MIN_LEG_OPEN_INTEREST:
-        return False
-    return width <= max(MAX_LEG_SPREAD_PCT * mid, MIN_LEG_SPREAD_ALLOWANCE)
-
-
-def fill_sell(row):
-    """Realistic price received selling this leg."""
-    _, _, mid, width, _ = leg_quote(row)
-    return mid - FILL_SLIPPAGE_FRACTION * width
-
-
-def fill_buy(row):
-    """Realistic price paid buying this leg."""
-    _, _, mid, width, _ = leg_quote(row)
-    return mid + FILL_SLIPPAGE_FRACTION * width
-
-
-def pick_wing_row(sorted_df):
+def liquidity_summary(legs, calls, puts):
     """
-    The second leg of a spread: prefers the 2nd-next further-OTM strike (the
-    long-standing convention), then steps further out, then falls back to the
-    adjacent strike — taking the first one that passes leg_is_liquid().
-    `sorted_df` is already ordered moving away from the first leg's strike.
+    Worst-leg numbers for data.json:
+      minOI           lowest open interest across the legs
+      worstSpreadPct  widest leg's bid-ask as % of its mid — None when any
+                      leg has no two-sided quote (the page treats that as
+                      failing a Max bid-ask filter)
+      midPremium      net premium at the mid (what the trade is priced at)
+      fillPremium     same, giving up FILL_SLIPPAGE_FRACTION of each width
     """
-    n = len(sorted_df)
-    if n == 0:
-        return None
-    order = list(range(min(1, n - 1), min(n, 6)))
-    if n > 1:
-        order.append(0)
-    for i in order:
-        row = sorted_df.iloc[i]
-        if leg_is_liquid(row):
-            return row
-    return None
-
-
-def liquidity_summary(legs, calls, puts, mid_premium, fill_premium):
-    """Worst-leg liquidity numbers carried into data.json for the trade modal."""
-    min_oi, worst_pct = None, 0.0
+    min_oi, worst, no_quote = None, 0.0, False
+    mid_net, fill_net = 0.0, 0.0
     for leg in legs or []:
         chain = calls if leg.get("type") == "call" else puts
         match = chain[chain["strike"] == leg.get("strike")]
         if match.empty:
+            no_quote = True
             continue
         _, _, mid, width, oi = leg_quote(match.iloc[0])
         min_oi = oi if min_oi is None else min(min_oi, oi)
-        if mid > 0:
-            worst_pct = max(worst_pct, width / mid)
+        if mid <= 0:
+            no_quote = True
+            continue
+        worst = max(worst, width / mid)
+        sign = 1 if leg.get("action") == "sell" else -1
+        mid_net += sign * mid
+        fill_net += sign * mid - FILL_SLIPPAGE_FRACTION * width
     return {
         "minOI": int(min_oi) if min_oi is not None else None,
-        "worstSpreadPct": round(worst_pct * 100, 1),
-        "midPremium": round(mid_premium, 2),
-        "fillPremium": round(fill_premium, 2),
+        "worstSpreadPct": None if no_quote else round(worst * 100, 1),
+        "midPremium": None if no_quote else round(abs(mid_net), 2),
+        "fillPremium": None if no_quote else round(abs(fill_net), 2),
     }
 
 
@@ -761,10 +725,6 @@ def pick_strike_by_delta(chain_df, spot, dte_days, target_delta, option_type):
             continue
         delta = bs_delta(spot, strike, dte_days, iv, option_type)
         if math.isnan(delta):
-            continue
-        # Liquidity gate (2026-09-30): skip strikes you couldn't really trade;
-        # the closest-delta LIQUID strike wins instead.
-        if not leg_is_liquid(row):
             continue
         diff = abs(abs(delta) - target_delta)
         if best_diff is None or diff < best_diff:
@@ -865,17 +825,7 @@ def evaluate_expiration_candidate(tk, strat, side, spot, cand_exp, cand_dte, atr
     fields, reason = try_strategy_pick(strat, calls, puts, spot, cand_dte)
     if not fields:
         return None, reason
-
-    # Same legs priced at the plain mid, for the "mid vs. est. fill" line in
-    # the trade details (premium itself is already the realistic fill).
-    _mid_premium = 0.0
-    for _leg in fields.get("legs") or []:
-        _chain = calls if _leg["type"] == "call" else puts
-        _m = _chain[_chain["strike"] == _leg["strike"]]
-        if not _m.empty:
-            _q = leg_quote(_m.iloc[0])[2]
-            _mid_premium += _q if _leg["action"] == "sell" else -_q
-    liquidity = liquidity_summary(fields.get("legs"), calls, puts, abs(_mid_premium), fields["premium"])
+    liquidity = liquidity_summary(fields.get("legs"), calls, puts)
 
     premium = fields["premium"]
     collateral = fields["collateral"]
@@ -1085,7 +1035,7 @@ def build_double_diagonal(tk, spot, expirations, today, atr):
         np_row, np_delta = near_short_put
         near_call_strike = float(nc_row["strike"])
         near_put_strike = float(np_row["strike"])
-        near_credit = fill_sell(nc_row) + fill_sell(np_row)
+        near_credit = mid_price(nc_row) + mid_price(np_row)
 
         tried_far_this_near = 0
         for far_exp, far_dte in far_candidates[:MAX_DIAGONAL_FAR_CANDIDATES]:
@@ -1115,7 +1065,7 @@ def build_double_diagonal(tk, spot, expirations, today, atr):
                 failure_reasons.append(f"{near_exp}/{far_exp}: far strikes aren't wider than near strikes, skipping")
                 continue
 
-            far_debit = fill_buy(fc_row) + fill_buy(fp_row)
+            far_debit = mid_price(fc_row) + mid_price(fp_row)
             net_debit = far_debit - near_credit
             if net_debit <= 0:
                 failure_reasons.append(f"{near_exp}/{far_exp}: net debit isn't positive (${net_debit:.2f}), unusable quote")
@@ -1382,11 +1332,9 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         lower_strikes = puts[puts["strike"] < short_strike].sort_values("strike", ascending=False)
         if lower_strikes.empty:
             return None, "no further-OTM strike available for the long leg"
-        long_row = pick_wing_row(lower_strikes)
-        if long_row is None:
-            return None, "no liquid further-OTM strike for the second leg (open interest / bid-ask too thin)"
+        long_row = lower_strikes.iloc[min(1, len(lower_strikes) - 1)]
         long_strike = float(long_row["strike"])
-        premium = fill_sell(s_row) - fill_buy(long_row)
+        premium = mid_price(s_row) - mid_price(long_row)
         width = short_strike - long_strike
         return {
             "premium": premium, "strike_for_pot": short_strike, "collateral": width,
@@ -1412,11 +1360,9 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         lower_strikes = puts[puts["strike"] < put_short_strike].sort_values("strike", ascending=False)
         if lower_strikes.empty:
             return None, "no further-OTM strike available for condor's put long leg"
-        put_long_row = pick_wing_row(lower_strikes)
-        if put_long_row is None:
-            return None, "no liquid further-OTM strike for the second leg (open interest / bid-ask too thin)"
+        put_long_row = lower_strikes.iloc[min(1, len(lower_strikes) - 1)]
         put_long_strike = float(put_long_row["strike"])
-        put_premium = fill_sell(ps_row) - fill_buy(put_long_row)
+        put_premium = mid_price(ps_row) - mid_price(put_long_row)
         put_width = put_short_strike - put_long_strike
 
         call_short_row = pick_strike_by_delta(calls, spot, dte, TARGET_SHORT_DELTA, "call")
@@ -1427,11 +1373,9 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         higher_strikes = calls[calls["strike"] > call_short_strike].sort_values("strike")
         if higher_strikes.empty:
             return None, "no further-OTM strike available for condor's call long leg"
-        call_long_row = pick_wing_row(higher_strikes)
-        if call_long_row is None:
-            return None, "no liquid further-OTM strike for the second leg (open interest / bid-ask too thin)"
+        call_long_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
         call_long_strike = float(call_long_row["strike"])
-        call_premium = fill_sell(cs_row) - fill_buy(call_long_row)
+        call_premium = mid_price(cs_row) - mid_price(call_long_row)
         call_width = call_long_strike - call_short_strike
 
         total_premium = put_premium + call_premium
@@ -1470,11 +1414,9 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         higher_strikes = calls[calls["strike"] > short_strike].sort_values("strike")
         if higher_strikes.empty:
             return None, "no further-OTM strike available for the long leg"
-        long_row = pick_wing_row(higher_strikes)
-        if long_row is None:
-            return None, "no liquid further-OTM strike for the second leg (open interest / bid-ask too thin)"
+        long_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
         long_strike = float(long_row["strike"])
-        premium = fill_sell(s_row) - fill_buy(long_row)
+        premium = mid_price(s_row) - mid_price(long_row)
         width = long_strike - short_strike
         return {
             "premium": premium, "strike_for_pot": short_strike, "collateral": width,
@@ -1492,7 +1434,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         if not picked_row:
             return None, f"no call near target delta — {chain_diagnostics(calls, spot)}"
         row, delta = picked_row
-        premium = fill_buy(row)
+        premium = mid_price(row)
         strike = float(row["strike"])
         return {
             "premium": premium, "strike_for_pot": strike, "collateral": premium,
@@ -1507,7 +1449,7 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         if not picked_row:
             return None, f"no put near target delta — {chain_diagnostics(puts, spot)}"
         row, delta = picked_row
-        premium = fill_buy(row)
+        premium = mid_price(row)
         strike = float(row["strike"])
         return {
             "premium": premium, "strike_for_pot": strike, "collateral": premium,
@@ -1530,11 +1472,9 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         higher_strikes = calls[calls["strike"] > long_strike].sort_values("strike")
         if higher_strikes.empty:
             return None, "no further-OTM strike available for the short leg"
-        short_row = pick_wing_row(higher_strikes)
-        if short_row is None:
-            return None, "no liquid further-OTM strike for the second leg (open interest / bid-ask too thin)"
+        short_row = higher_strikes.iloc[min(1, len(higher_strikes) - 1)]
         short_strike = float(short_row["strike"])
-        premium = fill_buy(l_row) - fill_sell(short_row)  # net debit paid (realistic fill)
+        premium = mid_price(l_row) - mid_price(short_row)  # net debit paid
         width = short_strike - long_strike
         max_profit = width - premium
         if max_profit <= 0:
@@ -1562,11 +1502,9 @@ def try_strategy_pick(strat, calls, puts, spot, dte):
         lower_strikes = puts[puts["strike"] < long_strike].sort_values("strike", ascending=False)
         if lower_strikes.empty:
             return None, "no further-OTM strike available for the short leg"
-        short_row = pick_wing_row(lower_strikes)
-        if short_row is None:
-            return None, "no liquid further-OTM strike for the second leg (open interest / bid-ask too thin)"
+        short_row = lower_strikes.iloc[min(1, len(lower_strikes) - 1)]
         short_strike = float(short_row["strike"])
-        premium = fill_buy(l_row) - fill_sell(short_row)  # net debit paid (realistic fill)
+        premium = mid_price(l_row) - mid_price(short_row)  # net debit paid
         width = long_strike - short_strike
         max_profit = width - premium
         if max_profit <= 0:
@@ -2379,7 +2317,7 @@ def build_hedge_candidate():
             if not picked:
                 continue
             row, delta = picked
-            premium = fill_buy(row)  # realistic price to buy the hedge put
+            premium = mid_price(row)
             if premium <= 0:
                 continue
             iv = safe_float(row.get("impliedVolatility"), default=0.0) * 100

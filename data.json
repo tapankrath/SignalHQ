@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T22:39:45.827974+00:00",
+  "generated_at": "2026-10-01T23:21:20.474331+00:00",
   "source": "yfinance (unofficial, free, EOD)",
   "trades": [
     {
@@ -238,26 +238,26 @@
         "fillPremium": 3.18
       },
       "potIsProfitProb": true,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Jacobs Solutions (J) Stock Is Up Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-jacobs-solutions-j-stock-230107162.html",
+          "sentiment": 0.18
+        },
+        {
+          "title": "Prediction: Taiwan Semiconductor Manufacturing Stock Will Skyrocket After Oct. 15",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-taiwan-semiconductor-manufacturing-stock-225000459.html",
+          "sentiment": 0.0
+        },
         {
           "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
           "sentiment": 0.6
-        },
-        {
-          "title": "Nvidia (NVDA) Stock Gets Fair Value Boost As AI Demand And Analyst Views Shift",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-gets-fair-220550617.html",
-          "sentiment": 0.71
-        },
-        {
-          "title": "Chinese state funds backed purchases of restricted Nvidia AI chips, report says",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/chinese-state-funds-backed-purchases-215942410.html",
-          "sentiment": -0.36
         }
       ],
       "volRegime": "Rich",
@@ -338,15 +338,15 @@
           "sentiment": -0.32
         },
         {
-          "title": "Cathie Wood's ARK says Meta's metaverse has a new rival: Meta itself",
-          "publisher": "TheStreet",
-          "link": "https://finance.yahoo.com/technology/ai/articles/cathie-woods-ark-says-metas-215834968.html",
+          "title": "Mark Zuckerberg's Muse Could Charge You for Saving You Money \u2014 META President Reveals AI Agent's Potential Monetization Model",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mark-zuckerbergs-muse-could-charge-220010918.html",
           "sentiment": 0.0
         },
         {
-          "title": "Can Reality Labs Ever Earn Enough to Justify Meta\u2019s Spending?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/reality-labs-ever-earn-enough-213913507.html",
+          "title": "Cathie Wood's ARK says Meta's metaverse has a new rival: Meta itself",
+          "publisher": "TheStreet",
+          "link": "https://finance.yahoo.com/technology/ai/articles/cathie-woods-ark-says-metas-215834968.html",
           "sentiment": 0.0
         }
       ],
@@ -418,9 +418,15 @@
         "fillPremium": 1.43
       },
       "potIsProfitProb": false,
-      "newsSentiment": 0.32,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Planet Launches Suncatcher, Tanager-2, and 18 SuperDove Satellites",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/technology/articles/planet-launches-suncatcher-tanager-2-224200368.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Can Reality Labs Ever Earn Enough to Justify Meta\u2019s Spending?",
           "publisher": "Insider Monkey",
@@ -432,12 +438,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/better-quantum-computing-stock-ionq-213500639.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "BAG Ventures Closes $11.3M Fund With Support From Google, Amazon, And More",
-          "publisher": "AfroTech",
-          "link": "https://finance.yahoo.com/technology/ai/articles/bag-ventures-closes-11-3m-211808316.html",
-          "sentiment": 0.53
         }
       ],
       "volRegime": "Rich",
@@ -1254,9 +1254,15 @@
         "fillPremium": 4.17
       },
       "potIsProfitProb": true,
-      "newsSentiment": 0.17,
+      "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "EPAM, DXC, Everforth, EXL, and Grid Dynamics Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/epam-dxc-everforth-exl-grid-224507189.html",
+          "sentiment": 0.27
+        },
         {
           "title": "Concentrix, Huron, and TaskUs Shares Skyrocket, What You Need To Know",
           "publisher": "StockStory",
@@ -1268,12 +1274,6 @@
           "publisher": "Trefis",
           "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-stock-real-bargain-173244863.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "Can You Make Money Off Salesforce Stock Now?",
-          "publisher": "Trefis",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/money-off-salesforce-stock-now-171946870.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Fair",
@@ -1524,9 +1524,15 @@
         "fillPremium": 3.03
       },
       "potIsProfitProb": false,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: Taiwan Semiconductor Manufacturing Stock Will Skyrocket After Oct. 15",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-taiwan-semiconductor-manufacturing-stock-225000459.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Intel vs. Taiwan Semiconductor Manufacturing: Which Technology Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -1537,12 +1543,6 @@
           "title": "Applied Materials vs. Broadcom: Which Semiconductor Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-vs-broadcom-semiconductor-182942297.html",
-          "sentiment": 0.44
-        },
-        {
-          "title": "Applied Materials vs. ASML: Which Technology Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-vs-asml-technology-180528751.html",
           "sentiment": 0.44
         }
       ],
@@ -2168,9 +2168,15 @@
         "fillPremium": 6.76
       },
       "potIsProfitProb": true,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Birmingham Loft Conversion Cost Quote Service Expanded",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/real-estate/articles/birmingham-loft-conversion-cost-quote-225500617.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Costco has an AI problem that will make your holiday cost more",
           "publisher": "TheStreet",
@@ -2178,16 +2184,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "ResourceWise Launches U.S. Unbleached Corrugated Box Cost Index for Cost-Based Contract Adjustments",
-          "publisher": "TMX Newsfile",
-          "link": "https://finance.yahoo.com/markets/commodities/articles/resourcewise-launches-u-unbleached-corrugated-191700972.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Clean Power Alliance Tests Zero-Cost Daytime Electricity",
-          "publisher": "PR Newswire",
-          "link": "https://finance.yahoo.com/energy/articles/clean-power-alliance-tests-zero-160000646.html",
-          "sentiment": 0.4
+          "title": "Swelling Bets Against Treasuries Are Fueling Repo Borrowing Cost",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/markets/currencies/articles/swelling-bets-against-treasuries-fueling-210739578.html",
+          "sentiment": 0.23
         }
       ],
       "volRegime": "Rich",
@@ -2717,9 +2717,15 @@
         "fillPremium": 1.04
       },
       "potIsProfitProb": true,
-      "newsSentiment": 0.53,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Intuitive Machines vs. Rocket Lab: Which Space Stock Can Send Your Returns Into Orbit in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/intuitive-machines-vs-rocket-lab-231001182.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Elon Musk Lowers Starship Expectations, Rocket Lab Surges On Electron Deal",
           "publisher": "Investor's Business Daily",
@@ -2731,12 +2737,6 @@
           "publisher": "MT Newswires",
           "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-shares-rise-securing-181955979.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Rocket Lab Just Got a Massive Vote of Confidence in Electron",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-just-got-massive-170601228.html",
-          "sentiment": 0.51
         }
       ],
       "volRegime": "Rich",
@@ -4357,9 +4357,15 @@
         "fillPremium": 1.49
       },
       "potIsProfitProb": false,
-      "newsSentiment": 0.45,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Planet Launches Suncatcher, Tanager-2, and 18 SuperDove Satellites",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/technology/articles/planet-launches-suncatcher-tanager-2-224200368.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Nvidia (NVDA) Stock Gets Fair Value Boost As AI Demand And Analyst Views Shift",
           "publisher": "Simply Wall St.",
@@ -4371,12 +4377,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-vs-lockheed-martin-aerospace-214401711.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "DOD Targets 'Absolute Technological Dominance,' Taps Musk, Luckey",
-          "publisher": "Investor's Business Daily",
-          "link": "https://finance.yahoo.com/m/cf05a4fd-bcf2-307d-8c42-3ef39e50415c/dod-targets-%27absolute.html",
-          "sentiment": 0.2
         }
       ],
       "volRegime": "Fair",
@@ -4458,16 +4458,16 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
-          "sentiment": 0.6
-        },
-        {
           "title": "Dow Jones Futures: Stocks Rise Off Support As Yields Tumble, Micron, Meta In Focus; Tesla, Jobs Report Due",
           "publisher": "Investor's Business Daily",
           "link": "https://finance.yahoo.com/m/f6c899dd-7f15-3879-b266-51980008982d/dow-jones-futures%3A-stocks.html",
           "sentiment": -0.32
+        },
+        {
+          "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
+          "sentiment": 0.6
         },
         {
           "title": "Why the Tesla Roadster Event Was Delayed\u2014and What It Means for the Stock",
@@ -6090,9 +6090,15 @@
         "fillPremium": 4.54
       },
       "potIsProfitProb": true,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "EPAM, DXC, Everforth, EXL, and Grid Dynamics Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/epam-dxc-everforth-exl-grid-224507189.html",
+          "sentiment": 0.27
+        },
         {
           "title": "Concentrix, Huron, and TaskUs Shares Skyrocket, What You Need To Know",
           "publisher": "StockStory",
@@ -6104,12 +6110,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/better-quantum-computing-stock-ionq-213500639.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "Why IBM (IBM) Stock Is Trading Up Today",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ibm-ibm-stock-trading-211707996.html",
-          "sentiment": 0.0
         }
       ],
       "volRegime": "Rich",
@@ -6704,7 +6704,7 @@
       "peRatio": 37.8,
       "sector": "Technology",
       "industry": "Consumer Electronics",
-      "pegRatio": 2.64,
+      "pegRatio": 2.67,
       "dividendYield": 0.32,
       "marketCap": 4820749516800,
       "score": 8.5,
@@ -6754,7 +6754,7 @@
       "peRatio": 28.6,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
-      "pegRatio": 1.65,
+      "pegRatio": 1.67,
       "dividendYield": 0.76,
       "marketCap": 3807819857920,
       "score": 9.1,
@@ -6808,26 +6808,26 @@
       "dividendYield": 0.44,
       "marketCap": 5574576046080,
       "score": 9.1,
-      "newsSentiment": 0.32,
+      "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Why Jacobs Solutions (J) Stock Is Up Today",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/why-jacobs-solutions-j-stock-230107162.html",
+          "sentiment": 0.18
+        },
+        {
+          "title": "Prediction: Taiwan Semiconductor Manufacturing Stock Will Skyrocket After Oct. 15",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-taiwan-semiconductor-manufacturing-stock-225000459.html",
+          "sentiment": 0.0
+        },
         {
           "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
           "sentiment": 0.6
-        },
-        {
-          "title": "Nvidia (NVDA) Stock Gets Fair Value Boost As AI Demand And Analyst Views Shift",
-          "publisher": "Simply Wall St.",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-gets-fair-220550617.html",
-          "sentiment": 0.71
-        },
-        {
-          "title": "Chinese state funds backed purchases of restricted Nvidia AI chips, report says",
-          "publisher": "Investing.com",
-          "link": "https://finance.yahoo.com/technology/ai/articles/chinese-state-funds-backed-purchases-215942410.html",
-          "sentiment": -0.36
         }
       ],
       "valuationLabel": "Cheap",
@@ -6854,7 +6854,7 @@
       "peRatio": 27.4,
       "sector": "Communication Services",
       "industry": "Internet Content & Information",
-      "pegRatio": 0.98,
+      "pegRatio": 0.96,
       "dividendYield": 0.29,
       "marketCap": 1849311100928,
       "score": 7.9,
@@ -6868,15 +6868,15 @@
           "sentiment": -0.32
         },
         {
-          "title": "Cathie Wood's ARK says Meta's metaverse has a new rival: Meta itself",
-          "publisher": "TheStreet",
-          "link": "https://finance.yahoo.com/technology/ai/articles/cathie-woods-ark-says-metas-215834968.html",
+          "title": "Mark Zuckerberg's Muse Could Charge You for Saving You Money \u2014 META President Reveals AI Agent's Potential Monetization Model",
+          "publisher": "Benzinga",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mark-zuckerbergs-muse-could-charge-220010918.html",
           "sentiment": 0.0
         },
         {
-          "title": "Can Reality Labs Ever Earn Enough to Justify Meta\u2019s Spending?",
-          "publisher": "Insider Monkey",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/reality-labs-ever-earn-enough-213913507.html",
+          "title": "Cathie Wood's ARK says Meta's metaverse has a new rival: Meta itself",
+          "publisher": "TheStreet",
+          "link": "https://finance.yahoo.com/technology/ai/articles/cathie-woods-ark-says-metas-215834968.html",
           "sentiment": 0.0
         }
       ],
@@ -6908,9 +6908,15 @@
       "dividendYield": 0.26,
       "marketCap": 4096171966464,
       "score": 5.3,
-      "newsSentiment": 0.32,
-      "newsSentimentLabel": "Positive",
+      "newsSentiment": 0.15,
+      "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Planet Launches Suncatcher, Tanager-2, and 18 SuperDove Satellites",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/technology/articles/planet-launches-suncatcher-tanager-2-224200368.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Can Reality Labs Ever Earn Enough to Justify Meta\u2019s Spending?",
           "publisher": "Insider Monkey",
@@ -6922,12 +6928,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/better-quantum-computing-stock-ionq-213500639.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "BAG Ventures Closes $11.3M Fund With Support From Google, Amazon, And More",
-          "publisher": "AfroTech",
-          "link": "https://finance.yahoo.com/technology/ai/articles/bag-ventures-closes-11-3m-211808316.html",
-          "sentiment": 0.53
         }
       ],
       "valuationLabel": "Cheap",
@@ -6954,7 +6954,7 @@
       "peRatio": 14.3,
       "sector": "Financial Services",
       "industry": "Banks - Diversified",
-      "pegRatio": 1.55,
+      "pegRatio": 1.54,
       "dividendYield": 1.99,
       "marketCap": 885654487040,
       "score": 4.0,
@@ -7054,7 +7054,7 @@
       "peRatio": 20.0,
       "sector": "Consumer Cyclical",
       "industry": "Internet Retail",
-      "pegRatio": 1.46,
+      "pegRatio": 1.48,
       "dividendYield": null,
       "marketCap": 2677486387200,
       "score": 4.8,
@@ -7246,7 +7246,7 @@
       "peRatio": 83.5,
       "sector": "Technology",
       "industry": "Software - Application",
-      "pegRatio": 0.94,
+      "pegRatio": 0.97,
       "dividendYield": null,
       "marketCap": 142424817664,
       "score": 7.9,
@@ -7296,7 +7296,7 @@
       "peRatio": 13.5,
       "sector": "Technology",
       "industry": "Software - Application",
-      "pegRatio": 0.56,
+      "pegRatio": 0.58,
       "dividendYield": null,
       "marketCap": 95908798464,
       "score": 3.9,
@@ -7346,13 +7346,19 @@
       "peRatio": 21.3,
       "sector": "Technology",
       "industry": "Software - Application",
-      "pegRatio": 0.75,
+      "pegRatio": 0.77,
       "dividendYield": 0.77,
       "marketCap": 194795864064,
       "score": 6.7,
-      "newsSentiment": 0.17,
+      "newsSentiment": 0.26,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "EPAM, DXC, Everforth, EXL, and Grid Dynamics Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/epam-dxc-everforth-exl-grid-224507189.html",
+          "sentiment": 0.27
+        },
         {
           "title": "Concentrix, Huron, and TaskUs Shares Skyrocket, What You Need To Know",
           "publisher": "StockStory",
@@ -7364,12 +7370,6 @@
           "publisher": "Trefis",
           "link": "https://finance.yahoo.com/markets/stocks/articles/adobe-stock-real-bargain-173244863.html",
           "sentiment": 0.2
-        },
-        {
-          "title": "Can You Make Money Off Salesforce Stock Now?",
-          "publisher": "Trefis",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/money-off-salesforce-stock-now-171946870.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -7500,9 +7500,15 @@
       "dividendYield": 0.89,
       "marketCap": 2381628833792,
       "score": 8.5,
-      "newsSentiment": 0.44,
+      "newsSentiment": 0.29,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Prediction: Taiwan Semiconductor Manufacturing Stock Will Skyrocket After Oct. 15",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-taiwan-semiconductor-manufacturing-stock-225000459.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Intel vs. Taiwan Semiconductor Manufacturing: Which Technology Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
@@ -7513,12 +7519,6 @@
           "title": "Applied Materials vs. Broadcom: Which Semiconductor Stock Is a Better Buy in 2026?",
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-vs-broadcom-semiconductor-182942297.html",
-          "sentiment": 0.44
-        },
-        {
-          "title": "Applied Materials vs. ASML: Which Technology Stock Is a Better Buy in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-vs-asml-technology-180528751.html",
           "sentiment": 0.44
         }
       ],
@@ -7596,7 +7596,7 @@
       "peRatio": 990.6,
       "sector": "Technology",
       "industry": "Software - Infrastructure",
-      "pegRatio": 1.98,
+      "pegRatio": 2.03,
       "dividendYield": null,
       "marketCap": 324132503552,
       "score": 7.9,
@@ -7788,7 +7788,7 @@
       "peRatio": 19.8,
       "sector": "Consumer Cyclical",
       "industry": "Home Improvement Retail",
-      "pegRatio": 2.43,
+      "pegRatio": 2.4,
       "dividendYield": 3.28,
       "marketCap": 281807388672,
       "score": 2.5,
@@ -7838,13 +7838,19 @@
       "peRatio": 44.1,
       "sector": "Consumer Defensive",
       "industry": "Discount Stores",
-      "pegRatio": 4.48,
+      "pegRatio": 4.58,
       "dividendYield": 0.65,
       "marketCap": 405561769984,
       "score": 3.5,
-      "newsSentiment": 0.13,
+      "newsSentiment": 0.08,
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
+        {
+          "title": "Birmingham Loft Conversion Cost Quote Service Expanded",
+          "publisher": "GlobeNewswire",
+          "link": "https://finance.yahoo.com/real-estate/articles/birmingham-loft-conversion-cost-quote-225500617.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Costco has an AI problem that will make your holiday cost more",
           "publisher": "TheStreet",
@@ -7852,16 +7858,10 @@
           "sentiment": 0.0
         },
         {
-          "title": "ResourceWise Launches U.S. Unbleached Corrugated Box Cost Index for Cost-Based Contract Adjustments",
-          "publisher": "TMX Newsfile",
-          "link": "https://finance.yahoo.com/markets/commodities/articles/resourcewise-launches-u-unbleached-corrugated-191700972.html",
-          "sentiment": 0.0
-        },
-        {
-          "title": "Clean Power Alliance Tests Zero-Cost Daytime Electricity",
-          "publisher": "PR Newswire",
-          "link": "https://finance.yahoo.com/energy/articles/clean-power-alliance-tests-zero-160000646.html",
-          "sentiment": 0.4
+          "title": "Swelling Bets Against Treasuries Are Fueling Repo Borrowing Cost",
+          "publisher": "Bloomberg",
+          "link": "https://finance.yahoo.com/markets/currencies/articles/swelling-bets-against-treasuries-fueling-210739578.html",
+          "sentiment": 0.23
         }
       ]
     },
@@ -8130,9 +8130,15 @@
       "dividendYield": null,
       "marketCap": 45052899328,
       "score": 6.8,
-      "newsSentiment": 0.53,
+      "newsSentiment": 0.36,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Intuitive Machines vs. Rocket Lab: Which Space Stock Can Send Your Returns Into Orbit in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/intuitive-machines-vs-rocket-lab-231001182.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Elon Musk Lowers Starship Expectations, Rocket Lab Surges On Electron Deal",
           "publisher": "Investor's Business Daily",
@@ -8144,12 +8150,6 @@
           "publisher": "MT Newswires",
           "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-shares-rise-securing-181955979.html",
           "sentiment": 0.54
-        },
-        {
-          "title": "Rocket Lab Just Got a Massive Vote of Confidence in Electron",
-          "publisher": "GuruFocus.com",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-just-got-massive-170601228.html",
-          "sentiment": 0.51
         }
       ]
     },
@@ -8998,9 +8998,15 @@
       "dividendYield": null,
       "marketCap": 1951826313216,
       "score": 7.4,
-      "newsSentiment": 0.45,
+      "newsSentiment": 0.38,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "Planet Launches Suncatcher, Tanager-2, and 18 SuperDove Satellites",
+          "publisher": "Business Wire",
+          "link": "https://finance.yahoo.com/technology/articles/planet-launches-suncatcher-tanager-2-224200368.html",
+          "sentiment": 0.0
+        },
         {
           "title": "Nvidia (NVDA) Stock Gets Fair Value Boost As AI Demand And Analyst Views Shift",
           "publisher": "Simply Wall St.",
@@ -9012,12 +9018,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-vs-lockheed-martin-aerospace-214401711.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "DOD Targets 'Absolute Technological Dominance,' Taps Musk, Luckey",
-          "publisher": "Investor's Business Daily",
-          "link": "https://finance.yahoo.com/m/cf05a4fd-bcf2-307d-8c42-3ef39e50415c/dod-targets-%27absolute.html",
-          "sentiment": 0.2
         }
       ]
     },
@@ -9048,16 +9048,16 @@
       "newsSentimentLabel": "Neutral",
       "newsHeadlines": [
         {
-          "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
-          "publisher": "Motley Fool",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
-          "sentiment": 0.6
-        },
-        {
           "title": "Dow Jones Futures: Stocks Rise Off Support As Yields Tumble, Micron, Meta In Focus; Tesla, Jobs Report Due",
           "publisher": "Investor's Business Daily",
           "link": "https://finance.yahoo.com/m/f6c899dd-7f15-3879-b266-51980008982d/dow-jones-futures%3A-stocks.html",
           "sentiment": -0.32
+        },
+        {
+          "title": "What Is the Worst-Performing \"Magnificent Seven\" Stock in 2026?",
+          "publisher": "Motley Fool",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/worst-performing-magnificent-seven-stock-222500061.html",
+          "sentiment": 0.6
         },
         {
           "title": "Why the Tesla Roadster Event Was Delayed\u2014and What It Means for the Stock",
@@ -9274,7 +9274,7 @@
       "peRatio": 58.1,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
-      "pegRatio": 1.51,
+      "pegRatio": 1.53,
       "dividendYield": 0.4,
       "marketCap": 425609428992,
       "score": 6.2,
@@ -9324,7 +9324,7 @@
       "peRatio": 17.2,
       "sector": "Technology",
       "industry": "Computer Hardware",
-      "pegRatio": 0.86,
+      "pegRatio": 0.87,
       "dividendYield": 0.13,
       "marketCap": 166771818496,
       "score": 8.1,
@@ -9424,7 +9424,7 @@
       "peRatio": 62.8,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
-      "pegRatio": 1.12,
+      "pegRatio": 1.11,
       "dividendYield": 0.5,
       "marketCap": 694641033216,
       "score": 7.9,
@@ -9474,7 +9474,7 @@
       "peRatio": 38.9,
       "sector": "Consumer Defensive",
       "industry": "Discount Stores",
-      "pegRatio": 4.1,
+      "pegRatio": 3.99,
       "dividendYield": 0.95,
       "marketCap": 829709352960,
       "score": 2.4,
@@ -9520,7 +9520,7 @@
       "peRatio": 30.6,
       "sector": "Financial Services",
       "industry": "Credit Services",
-      "pegRatio": 1.66,
+      "pegRatio": 1.63,
       "dividendYield": 0.75,
       "marketCap": 675566321664,
       "score": 4.8,
@@ -9620,7 +9620,7 @@
       "peRatio": 21.1,
       "sector": "Energy",
       "industry": "Oil & Gas Integrated",
-      "pegRatio": 1.38,
+      "pegRatio": 1.39,
       "dividendYield": 2.53,
       "marketCap": 673613414400,
       "score": 7.6,
@@ -9816,7 +9816,7 @@
       "peRatio": 54.7,
       "sector": "Technology",
       "industry": "Semiconductor Equipment & Materials",
-      "pegRatio": 1.88,
+      "pegRatio": 1.86,
       "dividendYield": 0.47,
       "marketCap": 261431951360,
       "score": 6.9,
@@ -9870,9 +9870,15 @@
       "dividendYield": 3.07,
       "marketCap": 212564361216,
       "score": 3.5,
-      "newsSentiment": 0.25,
+      "newsSentiment": 0.34,
       "newsSentimentLabel": "Positive",
       "newsHeadlines": [
+        {
+          "title": "EPAM, DXC, Everforth, EXL, and Grid Dynamics Stocks Trade Up, What You Need To Know",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/epam-dxc-everforth-exl-grid-224507189.html",
+          "sentiment": 0.27
+        },
         {
           "title": "Concentrix, Huron, and TaskUs Shares Skyrocket, What You Need To Know",
           "publisher": "StockStory",
@@ -9884,12 +9890,6 @@
           "publisher": "Motley Fool",
           "link": "https://finance.yahoo.com/markets/stocks/articles/better-quantum-computing-stock-ionq-213500639.html",
           "sentiment": 0.44
-        },
-        {
-          "title": "Why IBM (IBM) Stock Is Trading Up Today",
-          "publisher": "StockStory",
-          "link": "https://finance.yahoo.com/markets/stocks/articles/why-ibm-ibm-stock-trading-211707996.html",
-          "sentiment": 0.0
         }
       ],
       "valuationLabel": "Cheap",
@@ -9966,7 +9966,7 @@
       "peRatio": 30.0,
       "sector": "Healthcare",
       "industry": "Drug Manufacturers - General",
-      "pegRatio": 2.81,
+      "pegRatio": 2.78,
       "dividendYield": 2.02,
       "marketCap": 623344353280,
       "score": 4.7,
@@ -10208,7 +10208,7 @@
     "costPerContract": 622.5
   },
   "market": {
-    "asOf": "2026-10-01T22:39:45.827961+00:00",
+    "asOf": "2026-10-01T23:21:20.474318+00:00",
     "gauges": [
       {
         "key": "qqq",

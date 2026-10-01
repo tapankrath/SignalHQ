@@ -1449,9 +1449,7 @@
 
     <div class="filter-section" id="outlookSection" style="display:none;">
       <div class="filter-section-body">
-        <label class="check-row"><input type="checkbox" data-strat="Covered Call"> <span class="strat-dot bull"></span>Covered Call</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Put Spread" checked> <span class="strat-dot bull"></span>Bull Put Spread</label>
-        <label class="check-row"><input type="checkbox" data-strat="Cash-Secured Put"> <span class="strat-dot bull"></span>Cash-Secured Put</label>
         <label class="check-row"><input type="checkbox" data-strat="Bear Call Spread" checked> <span class="strat-dot bear"></span>Bear Call Spread</label>
         <label class="check-row"><input type="checkbox" data-strat="Iron Condor" checked> <span class="strat-dot neutral"></span>Iron Condor</label>
         <label class="check-row"><input type="checkbox" data-strat="Bull Call Spread"> <span class="strat-dot bull"></span>Bull Call Spread</label>
@@ -1696,7 +1694,9 @@
       const json = await res.json();
       // Butterfly and Calendar Spread were retired 2026-09-20; an older cached
       // data.json may still carry them until the next data run replaces it.
-      const RETIRED_STRATS = new Set(['Butterfly', 'Calendar Spread']);
+      // Covered Call and Cash-Secured Put retired 2026-09-30 (fetch no longer
+      // builds them); this hides any left in a data.json from before then.
+      const RETIRED_STRATS = new Set(['Butterfly', 'Calendar Spread', 'Covered Call', 'Cash-Secured Put']);
       trades = Array.isArray(json.trades) ? json.trades.filter(t => !RETIRED_STRATS.has(t.strat)) : [];
       equities = Array.isArray(json.equities) ? json.equities : [];
       hedge = json.hedge && typeof json.hedge === 'object' ? json.hedge : null;
@@ -2562,8 +2562,8 @@
   // Updated 2026-09-27: default Outlook & Strategy set is now Bull Put
   // Spread, Bear Call Spread, and Iron Condor, plus all 4 P/C ratio
   // checkboxes (OI/Vol, both the bullish <0.7 and bearish >1.4 sides) —
-  // Covered Call, Cash-Secured Put, Bull Call Spread, and Bear Put Spread
-  // are no longer checked by default.
+  // Bull Call Spread and Bear Put Spread are not checked by default
+  // (Covered Call and Cash-Secured Put were removed entirely 2026-09-30).
   const DEFAULT_CHECKED = [
     '[data-strat="Bull Put Spread"]',
     '[data-strat="Bear Call Spread"]',

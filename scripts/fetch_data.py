@@ -1578,18 +1578,26 @@ def build_trade_for_ticker(ticker_symbol, index):
         # Cash-Secured Put were removed 2026-09-30: their 1-3% per-trade
         # return on full share/cash collateral never fit this screen's
         # profit-target filters, so they were generated but never shown.
+        # 2026-10-01: Long Call, Long Put and Double Diagonal are no longer
+        # generated — the page had dropped them from its strategy list, so
+        # ~1 in 3 tickers each run produced a trade nobody could see. Every
+        # slot now gets one of the five strategies the page shows: neutral ->
+        # Iron Condor; trending tickers alternate between their direction's
+        # credit and debit spread. (The Double Diagonal builder is left in
+        # place, just unused.)
         if index % 4 == 0:
-            # Split the neutral slot itself between the two neutral strategies
-            # rather than adding a 5th bucket — still 1-in-4 tickers overall
-            # go neutral, just alternating which neutral structure they get.
-            strat = "Double Diagonal" if (index // 4) % 2 == 1 else "Iron Condor"
+            strat = "Iron Condor"
             side = "neutral"
-        elif uptrend:
-            strat = ["Bull Put Spread", "Long Call", "Bull Call Spread"][index % 3]
-            side = "bull"
         else:
-            strat = ["Bear Call Spread", "Long Put", "Bear Put Spread"][index % 3]
-            side = "bear"
+            # position among the non-neutral slots, so the two choices
+            # alternate evenly (index % 2 alone would skew 2:1)
+            directional_pos = index - (index // 4) - 1
+            if uptrend:
+                strat = ["Bull Put Spread", "Bull Call Spread"][directional_pos % 2]
+                side = "bull"
+            else:
+                strat = ["Bear Call Spread", "Bear Put Spread"][directional_pos % 2]
+                side = "bear"
 
         # Evaluate every expiration candidate within the target window (up to the
         # cap), and keep whichever produces the best annualized profit — instead

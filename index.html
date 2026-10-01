@@ -627,9 +627,16 @@
   .funnel-note:empty{ display:none; }
   .sort-wrap{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-dim); }
   #optionsView .sort-wrap{ flex:1 1 auto; }
-  .min-profit-label{ margin-left:auto; }
-  .liq-wrap{ flex-basis:100%; display:flex; justify-content:flex-end; align-items:center; gap:16px; flex-wrap:wrap; }
-  .liq-field{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-dim); white-space:nowrap; }
+  /* Sort + numeric filters grid. Wide screens: one row, evenly spaced. */
+  .ctrl-grid{
+    display:grid !important; grid-template-columns:repeat(4, auto); justify-content:space-between;
+    align-items:center; gap:10px 24px; width:100%;
+  }
+  .ctrl-cell{
+    display:flex; align-items:center; justify-content:space-between; gap:8px; min-width:0;
+    font-size:13px; font-weight:500; color:var(--text-dim); white-space:nowrap;
+  }
+  .ctrl-sort select{ width:100%; min-width:0; }
   .num-filter{
     width:60px; height:34px; box-sizing:border-box; background:var(--surface);
     border:1px solid var(--border-strong); color:var(--text); border-radius:7px;
@@ -963,11 +970,11 @@
        from shortening ITS label instead (see the JS-set text below) and
        narrowing its input. */
     .sort-wrap select{ font-size:13px; height:32px; padding:0 6px; min-width:0; flex:0 1 auto; }
-    .min-profit-label{ white-space:nowrap; }
-    .liq-wrap{ gap:12px; }
-    .liq-field{ font-size:12.5px; gap:6px; }
+    /* Phones: 2x2 — equal columns; each cell's label sits left, box right,
+       so labels align down the left and boxes down the right of each column. */
+    .ctrl-grid{ grid-template-columns:1fr 1fr; justify-content:stretch; gap:8px 14px; }
+    .ctrl-cell{ font-size:12.5px; gap:6px; }
     .num-filter{ width:52px; height:32px; padding:6px 3px; }
-    .sort-wrap #minTradeProfitInput{ width:42px; padding:6px 3px; box-sizing:border-box; }
     .sticky-top{ gap:8px; padding-top:8px; padding-bottom:0; }
     header{ gap:8px; }
     .header-top{ padding:0 14px; gap:16px 8px; }
@@ -1145,7 +1152,8 @@
   }
   @media (max-width: 380px){
     .sort-wrap select{ font-size:12.5px; padding:0 4px; }
-    .min-profit-label{ font-size:12px; }
+    .ctrl-cell{ font-size:12px; }
+    .ctrl-grid{ column-gap:10px; }
     .trade-card .ticker-sym{ font-size:13px !important; }
     .trade-card .ticker-sym span{ font-size:11px !important; }
     .trade-card .side-pill{ padding:2px 7px; font-size:11px; }
@@ -1550,29 +1558,28 @@
       <div class="results-count-row" id="resultsCountRow" style="display:none;">
         <div class="results-count" style="display:none;"><strong id="resultCount">…</strong> <span id="resultCountLabel">setups match</span> your filters</div>
       </div>
-      <div class="sort-wrap">
-        <select id="sortSelect">
-          <option value="score">Composite rating</option>
-          <option value="ap">Annualized profit</option>
-          <option value="roc">Trade profit</option>
-          <option value="pot">Probability of touch</option>
-          <option value="dte" selected>Days to expiration</option>
-        </select>
-        <!-- Moved here from the filter card 2026-09-26, alongside the other
-             sort/display control on this same bar — still updates on every
-             keystroke (see liveApplyMinProfit), still the same
-             #minTradeProfitInput id everything else already refers to. -->
-        <span class="min-profit-label">Min trade profit %</span>
-        <input type="number" id="minTradeProfitInput" inputmode="decimal" min="0" max="500" step="1" value="20" style="width:60px; background:var(--surface); border:1px solid var(--border-strong); color:var(--text); font-family:var(--mono); font-size:13px; font-weight:700; padding:6px 7px; border-radius:7px; text-align:center;">
-      </div>
-      <!-- Liquidity filters (2026-09-30). The fetch records each trade's
-           weakest-leg open interest and bid-ask width; these screen on them
-           live, like Min trade profit. Blank or 0 = off. -->
-      <div class="liq-wrap">
-        <label class="liq-field" for="minOIInput">Min OI
+      <!-- Sort + the three numeric filters as one aligned grid (2026-09-30):
+           2x2 on phones (labels down the left of each column, boxes down the
+           right), a single row on wider screens. Ids are unchanged. Min trade
+           profit, Min OI and Max bid-ask all update live; blank/0 turns the
+           two liquidity filters off. -->
+      <div class="sort-wrap ctrl-grid">
+        <div class="ctrl-cell ctrl-sort">
+          <select id="sortSelect" aria-label="Sort by">
+            <option value="score">Composite rating</option>
+            <option value="ap">Annualized profit</option>
+            <option value="roc">Trade profit</option>
+            <option value="pot">Probability of touch</option>
+            <option value="dte" selected>Days to expiration</option>
+          </select>
+        </div>
+        <label class="ctrl-cell" for="minTradeProfitInput"><span>Min profit %</span>
+          <input type="number" id="minTradeProfitInput" class="num-filter" inputmode="decimal" min="0" max="500" step="1" value="20">
+        </label>
+        <label class="ctrl-cell" for="minOIInput"><span>Min OI</span>
           <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="10" value="50" placeholder="any">
         </label>
-        <label class="liq-field" for="maxSpreadInput">Max bid-ask %
+        <label class="ctrl-cell" for="maxSpreadInput"><span>Max bid-ask %</span>
           <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="1" value="20" placeholder="any">
         </label>
       </div>

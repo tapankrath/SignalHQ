@@ -29,7 +29,17 @@
     "GEV",
     "APLD",
     "IREN",
-    "RKLB"
+    "RKLB",
+    "UBER",
+    "STRL",
+    "IONQ",
+    "MP",
+    "VTI",
+    "VUG",
+    "VOO",
+    "AMKR",
+    "BE",
+    "AVGO"
   ],
   "etfs": [
     "QQQ",
@@ -41,6 +51,9 @@
     "GLD",
     "SOXL",
     "TQQQ",
-    "SPY"
+    "SPY",
+    "VTI",
+    "VUG",
+    "VOO"
   ]
 }

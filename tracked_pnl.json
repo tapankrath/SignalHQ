@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-02T15:07:31.727368+00:00",
+  "generated_at": "2026-10-02T16:08:07.261692+00:00",
   "positions": [
     {
       "id": "AAPL|Iron_Condor|2026-10-16|$318/322/355/360",
       "status": "open",
       "dteRemaining": 14,
-      "lastUpdated": "2026-10-02T15:07:30.937140+00:00",
-      "currentPremium": 1.05,
-      "pnlDollars": 46.5,
-      "pnlPct": 30.79,
+      "lastUpdated": "2026-10-02T16:08:06.429308+00:00",
+      "currentPremium": 1.12,
+      "pnlDollars": 39.5,
+      "pnlPct": 26.16,
       "history": [
         {
           "date": "2026-09-25",
@@ -58,7 +58,7 @@
       "id": "MSFT|Bull_Put_Spread|2026-10-05|$482/478",
       "status": "open",
       "dteRemaining": 3,
-      "lastUpdated": "2026-10-02T15:07:31.123768+00:00",
+      "lastUpdated": "2026-10-02T16:08:06.578258+00:00",
       "currentPremium": 0.01,
       "pnlDollars": 152.0,
       "pnlPct": 99.35,
@@ -111,10 +111,10 @@
       "id": "CSCO|Iron_Condor|2026-10-02|$101/103/110/112",
       "status": "open",
       "dteRemaining": 0,
-      "lastUpdated": "2026-10-02T15:07:31.243826+00:00",
-      "currentPremium": 1.35,
-      "pnlDollars": -72.0,
-      "pnlPct": -114.29,
+      "lastUpdated": "2026-10-02T16:08:06.711744+00:00",
+      "currentPremium": 1.4,
+      "pnlDollars": -77.0,
+      "pnlPct": -122.22,
       "history": [
         {
           "date": "2026-09-25",
@@ -164,10 +164,10 @@
       "id": "SPCX|Iron_Condor|2026-10-30|$125/134/172/180",
       "status": "open",
       "dteRemaining": 28,
-      "lastUpdated": "2026-10-02T15:07:31.446550+00:00",
-      "currentPremium": 1.8,
-      "pnlDollars": 57.5,
-      "pnlPct": 24.16,
+      "lastUpdated": "2026-10-02T16:08:06.909146+00:00",
+      "currentPremium": 1.77,
+      "pnlDollars": 61.0,
+      "pnlPct": 25.63,
       "history": [
         {
           "date": "2026-09-25",
@@ -217,10 +217,10 @@
       "id": "LLY|Bear_Call_Spread|2026-10-23|$1280/1290",
       "status": "open",
       "dteRemaining": 21,
-      "lastUpdated": "2026-10-02T15:07:31.588169+00:00",
-      "currentPremium": 0.29,
-      "pnlDollars": 222.5,
-      "pnlPct": 88.29,
+      "lastUpdated": "2026-10-02T16:08:07.067665+00:00",
+      "currentPremium": 0.25,
+      "pnlDollars": 226.5,
+      "pnlPct": 89.88,
       "history": [
         {
           "date": "2026-09-25",
@@ -270,8 +270,8 @@
       "id": "UNH|Iron_Condor|2026-10-02|$352/358/388/392",
       "status": "open",
       "dteRemaining": 0,
-      "lastUpdated": "2026-10-02T15:07:31.727361+00:00",
-      "currentPremium": 0.0,
+      "lastUpdated": "2026-10-02T16:08:07.261683+00:00",
+      "currentPremium": 0.01,
       "pnlDollars": 170.5,
       "pnlPct": 99.71,
       "history": [

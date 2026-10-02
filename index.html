@@ -1592,7 +1592,7 @@
           <input type="number" id="minTradeProfitInput" class="num-filter" inputmode="decimal" min="0" max="500" step="1" value="15">
         </label>
         <label class="ctrl-cell" for="minOIInput"><span>Min OI</span>
-          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="50" value="100" placeholder="any">
+          <input type="number" id="minOIInput" class="num-filter" inputmode="numeric" min="0" step="50" value="250" placeholder="any">
         </label>
         <label class="ctrl-cell" for="maxSpreadInput"><span>Max bid-ask %</span>
           <input type="number" id="maxSpreadInput" class="num-filter" inputmode="decimal" min="0" max="200" step="5" value="100" placeholder="any">
@@ -2719,9 +2719,10 @@
   ];
   // 15% (2026-10-01): suits credit spreads, which typically return 13-30%.
   const DEFAULT_MIN_TRADE_PROFIT = 15;
-  // 100 / 100% (2026-10-01): Min OI on, bid-ask effectively off by default
-  // (tighten it in the box when you want only very liquid trades).
-  const DEFAULT_MIN_OI = 100;
+  // 250 / 100% (2026-10-01): the universe is popular, >$100B names, so a
+  // weakest leg with only ~100 open contracts is a red flag. Bid-ask is
+  // effectively off by default — tighten it in the box when wanted.
+  const DEFAULT_MIN_OI = 250;
   const DEFAULT_MAX_SPREAD = 100;
 
   const DEFAULT_SORT = 'dte';
